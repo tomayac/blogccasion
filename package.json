@@ -1,0 +1,28 @@
+{
+  "name": "blogccasion",
+  "version": "1.0.0",
+  "description": "https://blog.tomayac.com/",
+  "scripts": {
+    "clean": "rm -rf dist && cp -R ./src/static ./dist && cp -R ./src/images ./dist",
+    "serve": "npm run clean && npx eleventy --input=src --output=dist --serve",
+    "build": "npm run clean && npx eleventy --input=src --output=dist",
+    "debug": "npm run clean && DEBUG=* npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomayac/blogccasion.git"
+  },
+  "keywords": [
+    "blogccasion"
+  ],
+  "author": "Thomas Steiner <steiner.thomas@gmail.com> (http://blog.tomayac.com/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tomayac/blogccasion/issues"
+  },
+  "homepage": "https://github.com/tomayac/blogccasion#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.6.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.3"
+  }
+}

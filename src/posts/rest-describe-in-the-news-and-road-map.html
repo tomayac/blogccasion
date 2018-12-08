@@ -1,0 +1,16 @@
+---
+layout: layouts/post.njk
+title: "REST Describe in the news and Road Map"
+author: "Thomas Steiner"
+date: "2007-04-27T11:10:57"
+slug: "rest-describe-in-the-news-and-road-map"
+tags:
+  - Work
+---
+<b>REST Describe in the news and Road Map</b><br />
+<br />
+<img hspace="4" vspace="4" src="http://ajaxian.com/wp-content/themes/ajaxian/images/favicon.ico" align="left" alt="Ajaxian logo" />Dion Almaer over at Ajaxian has <a href="http://ajaxian.com/archives/google-rest-describe-wadl-toolkit">blogged</a> about yesterday's Beta release of <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html">REST Describe</a>. Now I am looking forward to receiving some sort of feedback, and hopefully some more WADL files for existing REST Web Services. In addition to that, a short Road Map of what I am planning for the next release:<br />
+<br />
+Plans for the v0.2 release:<ul><li>Add a <b>Grammar and Includes Discoverer</b> server-side component that parses the output of a request in order to find the contained grammars and includes. Because of the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a> limitation of today's Ajax implementations in browser this has to be proxied on the server.</li><li>Add the possibility to <b>upload WADL files</b>, parse them, and have them displayed nicely in the WADL tree in order to make modifications to the file. This will be either a simple textarea where you can paste the WADL file, or (probably later because of security concerns) a server-side upload.</li></ul>Plans for later releases:<ul><li>Let users <b>save their WADLs</b> on the server.</li><li>Add the possibility to <b>create code from WADLs</b> (I call this feature <i>REST Compile</i>)</li><li>Have some <b>spider extract links from API documentation</b> for easier batch URI analysis. I am pretty sure that something like this has been implemented before.</li></ul>Thanks <a href="http://wordpress.chanezon.com">Patrick</a> and <a href="http://www.programmableweb.com/about">John</a> for your ideas so far. Again, due to the relatively broad coverage this project has gained, I would like to point to the fact that this is <i>not an official Google product</i>.<br />
+<br />
+<small>Image from <a href="http://ajaxian.com/wp-content/themes/ajaxian/images/favicon.ico">ajaxian.com</a></small>

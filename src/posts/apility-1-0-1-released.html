@@ -1,0 +1,34 @@
+---
+layout: layouts/post.njk
+title: "APIlity 1.0.1 released"
+author: "Thomas Steiner"
+date: "2005-10-23T01:45:13"
+slug: "apility-1-0-1-released"
+tags:
+  - Work
+---
+<b>Dear APIlity users,</b><br />
+<br />
+<img src="http://www.google.com/apis/adwords/images/google_small.gif" alt="Google AdWords logo" align="left" />The latest release of <a href="http://google-apility.sourceforge.net/" target="_blank">APIlity</a> is ready. This one took a little longer but after a long coding marathon it is finally ripe to be pushed into the wild. Click here to <a href="http://prdownloads.sourceforge.net/google-apility/apility_1.0.1.zip?download" target="_blank">downloaded APIlity</a>.<br />
+<br />
+The <a href="https://sourceforge.net/project/shownotes.php?group_id=144351&release_id=365519" target="_blank">complete release notes</a> can be seen here. This release includes some new features like:<br />
+<ul><br />
+<li><b>GeoTargets</b><br />
+Now supports all GeoTargets (cities, countries, metros, regions)<br />
+<div style="padding:0em 0em 0em 3em;"><small><u>IMPORTANT:</u><br />
+this comes along with changes to the object structure of Campaign objects.<br />
+The old "countries" attribute has been <i>replaced</i> by two new attributes:<br />
+  1) "geoTargetType" attribute<br />
+  2) "geoTargets" attribute</small></div></li><br />
+<li><b>Test Suite</b><br />
+APIlity now comes with a complete test suite (view the Readme_TestSuite.txt file for details)<br />
+</li><br />
+<li><b>Documentation</b><br />
+The documentation (mainly index.html) was updated and now covers all changes. <a href="http://google-apility.sourceforge.net/" target="_blank">Check the docs out</a> here.<br />
+</li><br />
+</ul><br />
+Nathan White also pointed to a <font color="red">possible security issue</font> with authentication.ini. Please <a href="http://google-apility.sourceforge.net/" target="_blank">read the "Getting started" section</a> of the docs. Nothing to worry about, but to be aware of.<br />
+<br />
+The next release will finally introduce the in-doc samples (I wanted to push the release now, samples can be copied & pasted from the test suite meanwhile). In addition to that APIlity will include the Criterion service. It is planned to support the best out of both worlds transparently till the Keyword service gets disabled.<br />
+<br />
+Does anyone already have a <b>Criterion.php</b> implementation? If so feel free to become part of the APIlity developer crew by emailing it to tomac AT google DOT com. Thanks in advance for your contribution to the APIlity project!

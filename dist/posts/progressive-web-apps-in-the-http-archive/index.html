@@ -1,0 +1,951 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>blog.tomayac.com &raquo; Blog von Thomas Steiner &raquo; homoblogiens</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta property="twitter:account_id" content="1510101733">
+    <meta name="amp-google-client-id-api" content="googleanalytics">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="canonical" href="/takeout.php">
+    <link rel="alternate" type="application/atom+xml" title="Blog von Thomas Steiner homoblogiens" href="./atom.php">
+    <link type="text/plain" rel="author" href="https://tomayac.com/humans.txt">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript>
+      <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+    </noscript>
+    <style amp-custom>#header,
+#navigation {
+	background-color: #eee;
+	margin: 0 0 .5em
+}
+#content,
+#header {
+	width: 100%;
+	border: 1px dashed silver
+}
+#aside,
+#content,
+#footer,
+#header,
+#navigation {
+	border: 1px dashed silver
+}
+#content a,
+#footer a {
+	padding: .2em;
+	text-decoration: none
+}
+#aside a,
+#content a,
+#content>h3 a,
+#footer a,
+#navigation a {
+	text-decoration: none
+}
+#aside a:hover,
+#aside a:link,
+#aside a:visited,
+#content h2,
+#content h3,
+#content>h3 a,
+#footer a,
+body {
+	color: #000
+}
+html {
+	box-sizing: border-box
+}
+*,
+::after,
+::before {
+	box-sizing: inherit
+}
+body {
+	background-color: #fff;
+	font-size: 12pt;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+}
+#blog,
+#ccasion {
+	font-size: 1.5em;
+	position: absolute;
+	font-weight: 700
+}
+#blog {
+	top: 0;
+	left: 1em;
+	z-index: 1;
+	color: #ffd700
+}
+#ccasion {
+	top: .05em;
+	left: 2.12em;
+	z-index: 2;
+	color: #ff8032
+}
+#login {
+	position: absolute;
+	top: .05em;
+	right: .5em
+}
+#header {
+	font-size: 1.2em;
+	max-width: 1400px;
+	padding: 0;
+	overflow: hidden
+}
+#aside h2,
+#navigation h2 {
+	font-size: .9em
+}
+#container {
+	display: -webkit-flex;
+	display: flex;
+	margin: 0 .5em;
+	max-width: calc(1400px - .5em)
+}
+@media (min-width: 480px) {
+	#container {
+		-webkit-flex-direction: row;
+		flex-direction: row
+	}
+}
+@media (max-width: 480px) {
+	#container {
+		-webkit-flex-direction: column;
+		flex-direction: column
+	}
+}
+#navigation-aside {
+	display: -webkit-flex;
+	display: flex
+}
+@media (min-width: 480px) {
+	#navigation-aside {
+		-webkit-flex-direction: column;
+		flex-direction: column
+	}
+}
+#navigation {
+	width: 120px
+}
+#navigation h2 {
+	margin: 0;
+	background-color: #ffd700
+}
+#navigation a {
+	display: block;
+	overflow-x: hidden;
+	padding: 0 0 .2em;
+	font-weight: 700;
+	color: #000
+}
+.category0:hover {
+	background-color: #c0c0ff
+}
+.category1:hover {
+	background-color: #ff8032
+}
+.category2:hover {
+	background-color: #80ff00
+}
+.category3:hover {
+	background-color: #ff0080
+}
+.category4:hover {
+	background-color: #ff0
+}
+.category5:hover {
+	background-color: #80ff80
+}
+.category6:hover {
+	background-color: #ff8080
+}
+.category7:hover {
+	background-color: #c0ff80
+}
+.category8:hover {
+	background-color: #ffc080
+}
+#aside h2,
+#content h2 {
+	background-color: #ffd700;
+	margin: 0
+}
+#aside a:hover,
+#footer a:hover {
+	background-color: #80ffff
+}
+#aside {
+	width: 120px;
+	margin: 0 .5em .5em 0;
+	background-color: #eee;
+	overflow-x: hidden
+}
+#aside svg {
+	vertical-align: middle
+}
+#aside p {
+	margin: .5em
+}
+#aside a {
+	display: block;
+	padding: 0;
+	font-size: 1em;
+	font-weight: 400
+}
+#content a,
+#content h2,
+#content h3,
+#footer a {
+	font-weight: 700
+}
+#content {
+	margin: 0;
+	text-align: justify
+}
+#content h2 {
+	font-size: 1.2em
+}
+#content h3 {
+	font-size: 1.1em;
+	margin: 0;
+	background-color: #ff8032
+}
+#content p {
+	font-size: 1em;
+	margin: .5em 0;
+	text-align: justify
+}
+#content img {
+	margin: .5em 1em
+}
+#content hr {
+	height: 1px;
+	text-align: left;
+	margin-left: 0;
+	border: 1px solid silver
+}
+#content small {
+	font-size: .9em;
+	padding: .5em 0
+}
+#content pre {
+	font-family: monospace;
+	color: #00f;
+	background-color: #ffa;
+	margin: 2.5em;
+	font-size: .9em;
+	white-space: pre-wrap;
+	text-overflow: ellipsis;
+	overflow-x: scroll
+}
+#content a {
+	display: inline
+}
+#content a:link {
+	color: #00f
+}
+#content a:visited {
+	color: #00008b
+}
+#content a:hover {
+	color: #00f;
+	text-decoration: underline
+}
+#footer {
+	max-width: 1400px;
+	margin: .5em 0 0;
+	padding: .5em
+}
+#footer ul {
+	list-style: none
+}
+#footer li::before {
+	content: "» "
+}
+.blogPost {
+	padding: .5em
+}
+.commentForm,
+.commentList {
+	display: none
+}
+ul {
+	padding-left: .5em;
+	list-style-position: inside
+}
+amp-iframe,
+iframe {
+	max-width: 533px
+}
+@media (max-width: 480px) {
+	#navigation-aside {
+		-webkit-flex-direction: row;
+		flex-direction: row
+	}
+	#navigation {
+		width: 50%
+	}
+	#aside>amp-img,
+	#navigation amp-img {
+		-webkit-transform-origin: left;
+		-webkit-transform: scaleX(2);
+		transform-origin: left;
+		transform: scaleX(2)
+	}
+	#aside {
+		width: 50%;
+		margin: 0 0 .5em .5em
+	}
+	amp-iframe,
+	amp-img,
+	iframe,
+	img {
+		max-width: 100%;
+		layout: responsive
+	}
+}</style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <a href="/">
+        <amp-img src="./static/img/city.jpg" alt="" width="1400" height="20"></amp-img>
+      </a>
+      <a href="/">
+        <div id="blog">blog</div>
+        <div id="ccasion">occasion</div>
+      </a>
+      &nbsp;<strong>l'occasion</strong> <em>f</em> - Gelegenheit <em>f</em>, die ~ , der ~; <em>bei Gelegenheit</em> - <strong>&agrave; l'occasion</strong>
+    </header>
+    <div id="container">
+      <div id="navigation-aside">
+        <nav id="navigation">
+          <h2>Categories</h2>
+          <a href="/">
+            <amp-img src="./static/img/mountains_sunrise.jpg" alt="" width="120" height="23"></amp-img>
+          </a>
+          <a class='category0' href='categories/private'>&nbsp;Private</a>
+          <a class='category1' href='categories/work'>&nbsp;Work</a>
+          <a class='category2' href='categories/technical'>&nbsp;Technical</a>
+          <a class='category3' href='categories/political'>&nbsp;Political</a>
+          <a class='category4' href='categories/france'>&nbsp;France</a>
+        </nav>
+        <aside id="aside">
+          <h2>Related</h2>
+          <amp-img src="./static/img/palms.jpg" alt="" width="120" height="23"></amp-img>
+          <div>
+            <p>
+              <a href="atom.php" rel="me">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 256 256">
+                  <rect width="246" height="246" rx="50" ry="50" x="5" y="5" fill="#F49C52"/>
+                  <rect width="236" height="236" rx="47" ry="47" x="10" y="10" fill="#F49C52"/>
+                  <circle cx="68" cy="189" r="24" fill="#FFF"/>
+                  <path d="M160 213h-34a82 82 0 0 0-82-82v-34a116 116 0 0 1 116 116zM184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" fill="#FFF"/>
+                </svg>
+                Blog Feed
+              </a>
+            </p>
+            <p>
+              <a href="https://twitter.com/tomayac" rel="me">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="16" width="16" version="1.1" viewBox="0 0 182.7 150.7">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path d="m0 10h1366.9v1110.9h-1366.9z"/>
+                    </clipPath>
+                  </defs>
+                  <g transform="matrix(1.3333 0 0 -1.3333 0 150.67)">
+                    <g transform="scale(.1)">
+                      <g clip-path="url(#clipPath20)">
+                        <path d="m1366.9 989.4c-50.3-22.3-104.3-37.4-161-44.2 57.9 34.7 102.3 89.7 123.3 155.2-54.2-32.1-114.2-55.5-178.1-68-51.1 54.5-124 88.6-204.7 88.6-154.9 0-280.4-125.5-280.4-280.4 0-22 2.5-43.4 7.3-63.9-233.1 11.7-439.7 123.4-578 293-24.1-41.4-38-89.6-38-141 0-97.3 49.5-183.1 124.8-233.4-46 1.4-89.2 14.1-127 35.1 0-1.2 0-2.3 0-3.5 0-135.9 96.7-249.2 225-275-23.5-6.4-48.3-9.8-73.9-9.8-18.1 0-35.6 1.7-52.8 5 35.7-111.4 139.3-192.5 262-194.8-96.1-75.2-217-120-348.4-120-22.6 0-45 1.3-66.9 3.9 124.2-79.6 271.6-126 429.9-126 515.8 0 797.9 427.3 797.9 797.9 0 12.2-0.3 24.2-0.8 36.3 54.8 39.6 102.3 89 139.9 145.2" fill="#55ACEE"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                @tomayac
+              </a>
+            </p>
+            <p>
+              <a href="https://tomayac.com/tweets" rel="me">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="16" width="16" version="1.1" viewBox="0 0 182.7 150.7">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path d="m0 10h1366.9v1110.9h-1366.9z"/>
+                    </clipPath>
+                  </defs>
+                  <g transform="matrix(1.3333 0 0 -1.3333 0 150.67)">
+                    <g transform="scale(.1)">
+                      <g clip-path="url(#clipPath20)">
+                        <path d="m1366.9 989.4c-50.3-22.3-104.3-37.4-161-44.2 57.9 34.7 102.3 89.7 123.3 155.2-54.2-32.1-114.2-55.5-178.1-68-51.1 54.5-124 88.6-204.7 88.6-154.9 0-280.4-125.5-280.4-280.4 0-22 2.5-43.4 7.3-63.9-233.1 11.7-439.7 123.4-578 293-24.1-41.4-38-89.6-38-141 0-97.3 49.5-183.1 124.8-233.4-46 1.4-89.2 14.1-127 35.1 0-1.2 0-2.3 0-3.5 0-135.9 96.7-249.2 225-275-23.5-6.4-48.3-9.8-73.9-9.8-18.1 0-35.6 1.7-52.8 5 35.7-111.4 139.3-192.5 262-194.8-96.1-75.2-217-120-348.4-120-22.6 0-45 1.3-66.9 3.9 124.2-79.6 271.6-126 429.9-126 515.8 0 797.9 427.3 797.9 797.9 0 12.2-0.3 24.2-0.8 36.3 54.8 39.6 102.3 89 139.9 145.2" fill="#55ACEE"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                Tweet Archive
+              </a>
+            </p>
+            <p>
+              <a href="pgp_public_key.asc">🔐 PGP Public Key</a>
+            </p>
+          </div>
+        </aside>
+      </div>
+      <main id="content">
+        <h2>A Look Inside the Think Tank...</h2>
+        <wrapped>
+  <p><strong>Thomas Steiner</strong>, Google Hamburg, Germany</p>
+<p><amp-img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4e7.png"/> <a href="mailto:tomac@google.com">tomac@google.com</a>  <amp-img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f426.png"/> <a href="https://twitter.com/tomayac" rel="nofollow">@tomayac</a>  <amp-img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f638.png"/> <a href="https://github.com/tomayac">tomayac</a></p>
+<h4>
+<a id="user-content-abstract" class="anchor"></span></a><em>Abstract</em>
+</h4>
+<p><em>In this document, we present three different approaches and discuss their particular pros and cons for extracting data about Progressive Web Apps (PWA) from the HTTP Archive. Approach&nbsp;1 is based on data that is tracked in the context of runs of the Lighthouse tool, Approach&nbsp;2 is based on use counters in the Chrome browser to record per-page anonymous aggregated metrics on feature usage, and Approach&nbsp;3 is based on parsing the source code of web pages for traces of service worker registrations and Web App Manifest references. We find that by all three approaches the popularity of PWAs increases roughly linearly over time and provide further research ideas based on the extracted data, whose underlying queries we share publicly.</em></p>
+<h4>
+<a id="user-content-introduction-to-progressive-web-apps" class="anchor"></span></a>Introduction to Progressive Web Apps</h4>
+<p>Progressive Web Apps (PWA) are a new class of web applications, enabled for the most part by the <a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API" rel="nofollow">Service Worker APIs</a>. Service workers allow apps to support <em>network-independent loading</em> by intercepting network requests to deliver programmatic or cached responses, service workers can receive <em>push notifications</em> and <em>synchronize</em> data in the background even when the corresponding app is not running, and service workerstogether with <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" rel="nofollow">Web App Manifests</a>allow users to <em>install</em> PWAs to their devices home screens. Service workers were <a href="https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html" rel="nofollow">first implemented in Chrome 40 Beta</a> released in December 2014, and the term <em>Progressive Web Apps</em> was <a href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/" rel="nofollow">coined by Frances Berriman and Alex Russell</a> in 2015.</p>
+<h4>
+<a id="user-content-research-questions-and-problem-statement" class="anchor"></span></a>Research Questions and Problem Statement</h4>
+<p>As service workers are now finally <a href="https://jakearchibald.github.io/isserviceworkerready/" rel="nofollow">implemented in all major browsers</a>, we at the Google Web Developer Relations team were wondering <em>how many PWAs are actually out there in the wild and how do they make use of these new technologies?</em> Certain advanced APIs like <a href="https://developers.google.com/web/updates/2015/12/background-sync" rel="nofollow">Background Sync</a> are currently still <a href="https://caniuse.com/#feat=background-sync" rel="nofollow">only available on Chromium-based browsers</a>, so as an additional question we looked into <em>what features do these PWAs actually useor in the sense of progressive enhancementtry to use?</em>
+Our first idea was to check some of the curated PWA catalogues, for example, <a href="https://pwa.rocks/" rel="nofollow">PWA.rocks</a>, <a href="https://pwa-directory.appspot.com/" rel="nofollow">PWA Directory</a>, <a href="https://outweb.io/" rel="nofollow">Outweb</a>, or <a href="https://www.pwastats.com/" rel="nofollow">PWA Stats</a>. The problem with such catalogues is that they suffer from what we call <em>submission bias</em>. <a href="https://outweb.io/1506520224205" rel="nofollow">Anecdotal</a> <a href="https://www.pwastats.com/2017/06/forbes/" rel="nofollow">evidence</a> <a href="https://pwa-directory.appspot.com/pwas/5758305695694848" rel="nofollow">shows</a> that authors of PWAs want to be included in as many catalogues as possible, but oftentimes the listed examples are not very representative of <em>the</em> web and rather longtail. For example, at the time of writing, the <a href="https://pwa-directory.appspot.com/pwas/4816176644358144" rel="nofollow">first listed PWA</a> on <em>PWA Directory</em> is <a href="https://feuerwehr-eisolzried.de/" rel="nofollow">feuerwehr-eisolzried.de</a>, a PWA on the <em>"latest news, dates and more from [the] fire department in Eisolzried, Bavaria."</em> Second, while <em>PWA Stats</em> offers tags, for example, on the <a href="https://www.pwastats.com/tags/notifications" rel="nofollow">use of notifications</a>, not all PWA features are classified in their tagging system. In short, PWA catalogues are not very well suited for answering our research questions.</p>
+<h4>
+<a id="user-content-the-http-archive-to-the-rescue" class="anchor"></span></a>The HTTP Archive to the Rescue</h4>
+<p>The <a href="https://httparchive.org/" rel="nofollow">HTTP Archive</a> tracks how the web is built and provides historical data to quantitatively illustrate how the web is evolving. The archives crawlers process <a href="https://httparchive.org/faq#how-does-the-http-archive-decide-which-urls-to-test" rel="nofollow">500,000 URLs</a> for both desktop and mobile twice a month. These URLs come from the most popular 500,000 sites in the <a href="http://www.alexa.com/topsites" rel="nofollow">Alexa Top 1,000,000</a> list and are mostly homepages that may or may not be representative for the rest of the site. The data in the HTTP Archive can be <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/docs/bigquery-gettingstarted.md">queried through BigQuery</a>, where multiple tables are available in the <code>httparchive</code> project. As these tables tend to get fairly big, they are partitioned, but multiple associated tables can be queried using the <a href="https://cloud.google.com/bigquery/docs/querying-wildcard-tables" rel="nofollow">wildcard symbol '*'</a>. For our purposes, three families of tables are relevant, leading to three different approaches:</p>
+<ul>
+<li>
+<code>httparchive.lighthouse.*</code>, which contains data about <a href="https://developers.google.com/web/tools/lighthouse/" rel="nofollow">Lighthouse</a> runs.</li>
+<li>
+<code>httparchive.pages.*</code>, which contain the JSON-encoded parent documents <a href="https://w3c.github.io/web-performance/specs/HAR/Overview.html" rel="nofollow">HAR</a> data.</li>
+<li>
+<code>httparchive.response_bodies.*</code>, which contains the raw response bodies of all resources and sub-resources of all sites in the archive.</li>
+</ul>
+<p>In the following, we will discuss all three approaches and their particular pros and cons, as well as present the extractable data and ideas for further research. All <a href="https://github.com/tomayac/http-archive-progressive-web-apps">queries are also available on GitHub</a> and are released under the terms of the Apache 2.0 license.</p>
+<p><strong><amp-img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a0.png"/> Warning:</strong> while BigQuery grants everyone a certain amount of <a href="https://cloud.google.com/bigquery/pricing#free" rel="nofollow">free quota per month</a>, on-demand pricing kicks in once the free quota is consumed. Currently, this is <a href="https://cloud.google.com/bigquery/pricing#on_demand_pricing" rel="nofollow">$5 per terabyte</a>. Some of the shown queries process 70+(!)&nbsp;terabytes! You can see the amount of data that will be processed by clicking on the <em>Validator</em> icon:</p>
+<p><a href="./images/image_0.png" target="_blank"><amp-img layout="responsive" width="1532" height="182" src="./images/image_0.png" alt="Notice of the amount of to-be-processed data"></a></p>
+<h4>
+<a id="user-content-approach-1-httparchivelighthouse-tables" class="anchor"></span></a>Approach 1: <code>httparchive.lighthouse.*</code> Tables</h4>
+<h5>
+<a id="user-content-description" class="anchor"></span></a>Description</h5>
+<p><a href="https://developers.google.com/web/tools/lighthouse/" rel="nofollow">Lighthouse</a> is an automated open-source tool for improving the quality of web pages. One can run it against any web page, public or requiring authentication. It has audits for <em>Performance</em>, <em>Accessibility</em>, <em>Progressive Web App</em>, and more. The <code>httparchive.lighthouse.*</code> tables contain JSON dumps (<a href="https://gist.github.com/tomayac/05fed2d4bfa94fe066c705510a3c2103">example</a>) of past reports that can be extracted via BigQuery.</p>
+<h5>
+<a id="user-content-cons" class="anchor"></span></a>Cons</h5>
+<p>The biggest con is that obviously the tables only contain data of web pages that were ever run through the tool, so there is a blind spot. Additionally, while latest versions of Lighthouse process mobile <em>and</em> desktop pages, the currently used Lighthouse only processes mobile pages, so there are no results for desktop. One pitfall when working with these tables is that in a past version of Lighthouse <em>Progressive Web App</em> was the first category that was shown in the tool, however the <a href="https://github.com/GoogleChrome/lighthouse/issues/3599">order was flipped</a> in the current version so that now <em>Performance</em> is first. In the query we need to take this corner case into account.</p>
+<h5>
+<a id="user-content-pros" class="anchor"></span></a>Pros</h5>
+<p>On the positive side, Lighthouse has clear scoring guidelines based on the <a href="https://developers.google.com/web/progressive-web-apps/checklist#baseline" rel="nofollow">Baseline PWA Checklist</a> for each version of the tool (<a href="https://developers.google.com/web/tools/lighthouse/scoring#pwa" rel="nofollow">v2</a>, <a href="https://developers.google.com/web/tools/lighthouse/v3/scoring#pwa" rel="nofollow">v3</a>), so by requiring a minimum <em>Progressive Web App</em> score of ?75, we can, to some extent, determine what PWA features we want to have included, namely, we can require offline capabilities and make sure the app can be added to the home screen.</p>
+<h5>
+<a id="user-content-query-and-results" class="anchor"></span></a>Query and Results</h5>
+<p>Running the query below and then selecting distinct PWA URLs returns <a href="https://docs.google.com/spreadsheets/d/1zxpfuEW06oG6wXWq96Zrs0FjzDVVDUTpRcNu9TkiyIw/edit?usp=sharing" rel="nofollow">799 unique PWA results</a> that are known to work offline and to be installable to the users home screen.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+CREATE TEMPORARY FUNCTION
+  getPWAScore(report STRING)
+  RETURNS FLOAT64
+  LANGUAGE js <span class="pl-k">AS</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+<span class="pl-s">$=JSON.parse(report);</span>
+<span class="pl-s">return $.reportCategories.find(i =&gt; i.name === 'Progressive Web App').score;</span>
+<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-pds">"</span></span>;
+<span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">IF</span> NOT EXISTS
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.lighthouse_pwas<span class="pl-pds">`</span></span> <span class="pl-k">AS</span>
+<span class="pl-k">SELECT</span>
+  DISTINCT url <span class="pl-k">AS</span> pwa_url,
+  IFNULL(rank,
+    <span class="pl-c1">1000000</span>) <span class="pl-k">AS</span> rank,
+  <span class="pl-k">date</span>,
+  platform,
+  CAST(ROUND(score) <span class="pl-k">AS</span> INT64) <span class="pl-k">AS</span> lighthouse_pwa_score
+<span class="pl-k">FROM</span> (
+  <span class="pl-k">SELECT</span>
+    REGEXP_REPLACE(JSON_EXTRACT(report,
+        <span class="pl-s"><span class="pl-pds">"</span>$.url<span class="pl-pds">"</span></span>), <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-pds">"</span>, <span class="pl-pds">"</span><span class="pl-pds">"</span>) AS url,</span>
+<span class="pl-s">    getPWAScore(report) AS score,</span>
+<span class="pl-s">    REGEXP_REPLACE(REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-pds">"</span></span>\d{<span class="pl-c1">4</span>}(?:_\d{<span class="pl-c1">2</span>}){<span class="pl-c1">2</span>}<span class="pl-s"><span class="pl-pds">"</span>), <span class="pl-pds">"</span></span>_<span class="pl-s"><span class="pl-pds">"</span>, <span class="pl-pds">"</span></span><span class="pl-k">-</span><span class="pl-s"><span class="pl-pds">"</span>) AS date,</span>
+<span class="pl-s">    REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-pds">"</span></span>.<span class="pl-k">*</span>_(\w<span class="pl-k">+</span>)$<span class="pl-s"><span class="pl-pds">"</span>) AS platform</span>
+<span class="pl-s">  FROM</span>
+<span class="pl-s">    `httparchive.lighthouse.*`</span>
+<span class="pl-s">  WHERE</span>
+<span class="pl-s">    report IS NOT NULL</span>
+<span class="pl-s">    AND JSON_EXTRACT(report,</span>
+<span class="pl-s">      <span class="pl-pds">"</span></span>$.<span class="pl-c1">audits</span>.<span class="pl-c1">service</span><span class="pl-k">-</span><span class="pl-c1">worker</span>.<span class="pl-c1">score</span><span class="pl-s"><span class="pl-pds">"</span>) = 'true' )</span>
+<span class="pl-s">LEFT JOIN (</span>
+<span class="pl-s">  SELECT</span>
+<span class="pl-s">    Alexa_rank AS rank,</span>
+<span class="pl-s">    Alexa_domain AS domain</span>
+<span class="pl-s">  FROM</span>
+<span class="pl-s">    # Hard-coded due to https://github.com/HTTPArchive/bigquery/issues/42</span>
+<span class="pl-s">    `httparchive.urls.20170315`</span>
+<span class="pl-s">  WHERE</span>
+<span class="pl-s">    Alexa_rank IS NOT NULL</span>
+<span class="pl-s">    AND Alexa_domain IS NOT NULL ) AS urls</span>
+<span class="pl-s">ON</span>
+<span class="pl-s">  urls.domain = NET.REG_DOMAIN(url)</span>
+<span class="pl-s">WHERE</span>
+<span class="pl-s">  # Lighthouse <span class="pl-pds">"</span></span>Good<span class="pl-s"><span class="pl-pds">"</span> threshold</span>
+<span class="pl-s">  score &gt;= 75</span>
+<span class="pl-s">GROUP BY</span>
+<span class="pl-s">  url,</span>
+<span class="pl-s">  date,</span>
+<span class="pl-s">  score,</span>
+<span class="pl-s">  platform,</span>
+<span class="pl-s">  date,</span>
+<span class="pl-s">  rank</span>
+<span class="pl-s">ORDER BY</span>
+<span class="pl-s">  rank ASC,</span>
+<span class="pl-s">  url,</span>
+<span class="pl-s">  date DESC;</span></pre></div>
+<h5>
+<a id="user-content-research-ideas" class="anchor"></span></a>Research Ideas</h5>
+<p>An interesting analysis we can run based on this data is the development of average Lighthouse PWA scores over time and the number of PWAs (note that the presented naive approach does not take the in relation also growing HTTP Archive into account, but purely counts absolute numbers).</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  <span class="pl-k">date</span>,
+  <span class="pl-c1">count</span> (DISTINCT pwa_url) <span class="pl-k">AS</span> total_pwas,
+  round(<span class="pl-c1">AVG</span>(lighthouse_pwa_score), <span class="pl-c1">1</span>) <span class="pl-k">AS</span> avg_lighthouse_pwa_score
+<span class="pl-k">FROM</span>
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.lighthouse_pwas<span class="pl-pds">`</span></span>
+<span class="pl-k">GROUP BY</span>
+  <span class="pl-k">date</span>
+<span class="pl-k">ORDER BY</span>
+  <span class="pl-k">date</span>;</pre></div>
+<p><a href="./images/image_1.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="./images/image_1.png" alt="Average PWA scores over time, the trend is going up from ~83 (of 100) in June 2017 to ~85 (of 100) in May 2018"></a></p>
+<p><a href="./images/image_2.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="./images/image_2.png" alt="Number of PWAs over time, the trend is going up from ~100 in June 2017 to ~340 in May 2018"></a></p>
+<h4>
+<a id="user-content-approach-2-httparchivepages-tables" class="anchor"></span></a>Approach 2: <code>httparchive.pages.*</code> Tables</h4>
+<h5>
+<a id="user-content-description-1" class="anchor"></span></a>Description</h5>
+<p>Another straightforward way for estimating the amount of PWAs (however completely neglecting Web App Manifests) is to look for so-called <a href="https://cs.chromium.org/chromium/src/third_party/blink/public/platform/web_feature.mojom" rel="nofollow">use counters</a> in the <code>httparchive.pages.*</code> tables. Particularly interesting is the <code>ServiceWorkerControlledPage</code> use counter, which, <a href="https://groups.google.com/a/chromium.org/d/msg/blink-api-owners-discuss/uxwEuxCRfGA/_1VdL4_EBAAJ" rel="nofollow">according to Chrome engineer Matt Falkenhagen</a>, <em>is counted whenever a page is controlled by a service worker, which typically happens only on subsequent loads.</em></p>
+<h5>
+<a id="user-content-cons-1" class="anchor"></span></a>Cons</h5>
+<p>No qualitative attributes other than the absolute fact that a service worker controlled the loading of the page can be extracted. More importantly, as the counter is typically triggered on subsequent loads only (and not on the first load that the crawler sees), this method undercounts and only contains sites that claim their clients (<code>self.clients.claim()</code>) on the first load.</p>
+<h5>
+<a id="user-content-pros-1" class="anchor"></span></a>Pros</h5>
+<p>On the bright side, the precision is high due to the browser-level tracking, so we can be sure the page actually registered a service worker. The query also covers both desktop and mobile.</p>
+<h5>
+<a id="user-content-query-and-results-1" class="anchor"></span></a>Query and Results</h5>
+<p>This approach, at time of writing, turns up <a href="https://docs.google.com/spreadsheets/d/16jJQF4ACqOKnypCC1jqUqpC3mO-guBZAaSA-P9tbJJg/edit?usp=sharing" rel="nofollow">5,368 unique results</a>, however, as mentioned before, not all of these results <em>necessarily</em> qualify as PWA due to the potentially missing Web App Manifest that affects the installability of the app.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">IF</span> NOT EXISTS
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.usecounters_pwas<span class="pl-pds">`</span></span> <span class="pl-k">AS</span>
+<span class="pl-k">SELECT</span>
+  DISTINCT REGEXP_REPLACE(url, <span class="pl-s"><span class="pl-pds">"</span>^http:<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>https:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> pwa_url,
+  IFNULL(rank,
+    <span class="pl-c1">1000000</span>) <span class="pl-k">AS</span> rank,
+  <span class="pl-k">date</span>,
+  platform
+<span class="pl-k">FROM</span> (
+  <span class="pl-k">SELECT</span>
+    DISTINCT url,
+    REGEXP_REPLACE(REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-s"><span class="pl-pds">"</span>\d{4}(?:_\d{2}){2}<span class="pl-pds">"</span></span>), <span class="pl-s"><span class="pl-pds">"</span>_<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> <span class="pl-k">date</span>,
+    REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-s"><span class="pl-pds">"</span>.*_(\w+)$<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> platform
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>httparchive.pages.*<span class="pl-pds">`</span></span>
+  <span class="pl-k">WHERE</span>
+    <span class="pl-c"><span class="pl-c">#</span> From https://cs.chromium.org/chromium/src/third_party/blink/public/platform/web_feature.mojom</span>
+    JSON_EXTRACT(payload,
+      <span class="pl-s"><span class="pl-pds">'</span>$._blinkFeatureFirstUsed.Features.ServiceWorkerControlledPage<span class="pl-pds">'</span></span>) <span class="pl-k">IS NOT NULL</span>)
+<span class="pl-k">LEFT JOIN</span> (
+  <span class="pl-k">SELECT</span>
+    Alexa_domain <span class="pl-k">AS</span> domain,
+    Alexa_rank <span class="pl-k">AS</span> rank
+  <span class="pl-k">FROM</span>
+    <span class="pl-c"><span class="pl-c">#</span> Hard-coded due to https://github.com/HTTPArchive/bigquery/issues/42</span>
+    <span class="pl-s"><span class="pl-pds">`</span>httparchive.urls.20170315<span class="pl-pds">`</span></span> <span class="pl-k">AS</span> urls
+  <span class="pl-k">WHERE</span>
+    Alexa_rank <span class="pl-k">IS NOT NULL</span>
+    <span class="pl-k">AND</span> Alexa_domain <span class="pl-k">IS NOT NULL</span> )
+<span class="pl-k">ON</span>
+  domain <span class="pl-k">=</span> <span class="pl-c1">NET</span>.<span class="pl-c1">REG_DOMAIN</span>(url)
+<span class="pl-k">ORDER BY</span>
+  rank <span class="pl-k">ASC</span>,
+  <span class="pl-k">date</span> <span class="pl-k">DESC</span>,
+  pwa_url;</pre></div>
+<h5>
+<a id="user-content-research-ideas-1" class="anchor"></span></a>Research Ideas</h5>
+<p>Similar to the second query in <em>Approach&nbsp;1</em> from above, we can also track the number of pages controlled by a service worker over time (the gap in the September 1, 2017 dataset is due to a parsing issue in the data collection pipeline).</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  <span class="pl-k">date</span>,
+  <span class="pl-c1">count</span> (DISTINCT pwa_url) <span class="pl-k">AS</span> total_pwas
+<span class="pl-k">FROM</span>
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.usecounters_pwas<span class="pl-pds">`</span></span>
+<span class="pl-k">GROUP BY</span>
+  <span class="pl-k">date</span>
+<span class="pl-k">ORDER BY</span>
+  <span class="pl-k">date</span>;</pre></div>
+<p><a href="./images/image_3.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="./images/image_3.png" alt="Number of pages controlled by a service worker over time, the trend is going up from ~100 in December 2016 to ~2,000 in June 2018"></a></p>
+<h4>
+<a id="user-content-approach-3-httparchiveresponse_body-tables" class="anchor"></span></a>Approach 3: <code>httparchive.response_body.*</code> Tables</h4>
+<h5>
+<a id="user-content-description-2" class="anchor"></span></a>Description</h5>
+<p>A third less obvious way to answer our research questions is to look at actual response bodies. The <code>httparchive.response_bodies.*</code> tables contain raw data of all resources and sub-resources of all sites in the archive, so we can use fulltext search to find patterns that are indicators for the presence of PWA features like, for instance, the existence of variations of the string <code>navigator.serviceWorker.register("</code> that provide a clue that the page might be registering a service worker on the one hand, and variations of <code>&lt;link rel="manifest"</code> that point to a potential Web App Manifest on the other hand.</p>
+<h5>
+<a id="user-content-cons-2" class="anchor"></span></a>Cons</h5>
+<p>The downside of this approach is that we are trying to parse HTML with regular expressions to begin with, which is <a href="https://stackoverflow.com/a/1732454" rel="nofollow">commonly known to be impossible</a> and a <a href="https://www.reddit.com/r/ProgrammerHumor/comments/6ytfw5/parsing_html_using_regular_expressions/" rel="nofollow">bad practice</a>. One example where things can go wrong is that we might detect out-commented code or struggle with incorrectly nested code.</p>
+<h5>
+<a id="user-content-pros-2" class="anchor"></span></a>Pros</h5>
+<p>Despite all challenges, as the service worker JavaScript files and the Web App Manifest JSON files are subresources of the page and therefore stored in the <code>httparchive.response_bodies.*</code> tables, we can still bravely attempt to examine their contents and try to gain an in-depth understanding of the PWAs capabilities. By checking the service worker JavaScript code for the events the service worker listens to, we can see if a PWAat least in theorydeals with Web Push notifications, handles fetches, <em>etc.</em>, and by looking at the Web App Manifest JSON document, we can see if the PWA specifies a start URL, provides a name, and so on.</p>
+<h5>
+<a id="user-content-query-and-results-2" class="anchor"></span></a>Query and Results</h5>
+<p>We have split the analysis of service workers and Web App Manifests, and use a common helper table to extract PWA candidates from the large response body tables. As references to service worker script files and Web App Manifest JSON files may be relative or absolute, we need a <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions" rel="nofollow">User-Defined Function</a> to resolve paths like <code>../../manifest.json</code> relative to their base URL. Our function is a hacky simplification based on <a href="https://nodejs.org/docs/latest/api/path.html#path_path_resolve_paths" rel="nofollow">path.resolve([...paths])</a> in Node.js and not very elegant. We deliberately ignore references that would require executing JavaScript, for example, URLs like <code>window.location.href + 'sw.js'</code>, so our regular expressions are a bit involved to make sure we exclude these cases.</p>
+<h6>
+<a id="user-content-pwa-candidates-helper-table" class="anchor"></span></a>PWA Candidates Helper Table</h6>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+CREATE TEMPORARY FUNCTION
+  pathResolve(path1 STRING,
+    path2 STRING)
+  RETURNS STRING
+  LANGUAGE js <span class="pl-k">AS</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+<span class="pl-s">  function normalizeStringPosix(e,t){for(var n="",r=-1,i=0,l=void 0,o=!1,h=0;h&lt;=e.length;++h){if(h&lt;e.length)l=e.charCodeAt(h);else{if(l===SLASH)break;l=SLASH}if(l===SLASH){if(r===h-1||1===i);else if(r!==h-1&amp;&amp;2===i){if(n.length&lt;2||!o||n.charCodeAt(n.length-1)!==DOT||n.charCodeAt(n.length-2)!==DOT)if(n.length&gt;2){for(var g=n.length-1,a=g;a&gt;=0&amp;&amp;n.charCodeAt(a)!==SLASH;--a);if(a!==g){n=-1===a?"":n.slice(0,a),r=h,i=0,o=!1;continue}}else if(2===n.length||1===n.length){n="",r=h,i=0,o=!1;continue}t&amp;&amp;(n.length&gt;0?n+="/..":n="..",o=!0)}else{var f=e.slice(r+1,h);n.length&gt;0?n+="/"+f:n=f,o=!1}r=h,i=0}else l===DOT&amp;&amp;-1!==i?++i:i=-1}return n}function resolvePath(){for(var e=[],t=0;t&lt;arguments.length;t++)e[t]=arguments[t];for(var n="",r=!1,i=void 0,l=e.length-1;l&gt;=-1&amp;&amp;!r;l--){var o=void 0;l&gt;=0?o=e[l]:(void 0===i&amp;&amp;(i=getCWD()),o=i),0!==o.length&amp;&amp;(n=o+"/"+n,r=o.charCodeAt(0)===SLASH)}return n=normalizeStringPosix(n,!r),r?"/"+n:n.length&gt;0?n:"."}var SLASH=47,DOT=46,getCWD=function(){return""};if(/^https?:/.test(path2)){return path2;}if(/^\//.test(path2)){return path1+path2.substr(1);}return resolvePath(path1, path2).replace(/^(https?:\/)/, '$1/');</span>
+<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-pds">"</span></span>;
+<span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">IF</span> NOT EXISTS
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.pwa_candidates<span class="pl-pds">`</span></span> <span class="pl-k">AS</span>
+<span class="pl-k">SELECT</span>
+  DISTINCT REGEXP_REPLACE(page, <span class="pl-s"><span class="pl-pds">"</span>^http:<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>https:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> pwa_url,
+  IFNULL(rank,
+    <span class="pl-c1">1000000</span>) <span class="pl-k">AS</span> rank,
+  pathResolve(REGEXP_REPLACE(page, <span class="pl-s"><span class="pl-pds">"</span>^http:<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>https:<span class="pl-pds">"</span></span>),
+    REGEXP_EXTRACT(body, <span class="pl-s"><span class="pl-pds">"</span>navigator\.serviceWorker\.register\s*\(\s*[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]([^<span class="pl-cce">\</span>),<span class="pl-cce">\</span>s<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]<span class="pl-k">+</span>)<span class="pl-s"><span class="pl-pds">"</span>)) AS sw_url,</span>
+<span class="pl-s">  pathResolve(REGEXP_REPLACE(page, <span class="pl-pds">"</span></span>^http:<span class="pl-s"><span class="pl-pds">"</span>, <span class="pl-pds">"</span></span>https:<span class="pl-s"><span class="pl-pds">"</span>),</span>
+<span class="pl-s">    REGEXP_EXTRACT(REGEXP_EXTRACT(body, <span class="pl-pds">"</span></span>(<span class="pl-k">&lt;</span>link[^<span class="pl-k">&gt;</span>]<span class="pl-k">+</span>rel<span class="pl-k">=</span>[<span class="pl-s"><span class="pl-pds">"</span>']?manifest[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]?[^&gt;]+&gt;)"), "href=[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]?([^\s<span class="pl-s"><span class="pl-pds">"</span>'&gt;]+)[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]?")) AS manifest_url</span>
+<span class="pl-s">FROM</span>
+<span class="pl-s">  `httparchive.response_bodies.*`</span>
+<span class="pl-s">LEFT JOIN (</span>
+<span class="pl-s">  SELECT</span>
+<span class="pl-s">    Alexa_domain AS domain,</span>
+<span class="pl-s">    Alexa_rank AS rank</span>
+<span class="pl-s">  FROM</span>
+<span class="pl-s">    # Hard-coded due to https://github.com/HTTPArchive/bigquery/issues/42</span>
+<span class="pl-s">    `httparchive.urls.20170315` AS urls</span>
+<span class="pl-s">  WHERE</span>
+<span class="pl-s">    Alexa_rank IS NOT NULL</span>
+<span class="pl-s">    AND Alexa_domain IS NOT NULL )</span>
+<span class="pl-s">ON</span>
+<span class="pl-s">  domain = NET.REG_DOMAIN(page)</span>
+<span class="pl-s">WHERE</span>
+<span class="pl-s">  (REGEXP_EXTRACT(body, "navigator<span class="pl-cce">\</span>.serviceWorker<span class="pl-cce">\</span>.register<span class="pl-cce">\</span>s*<span class="pl-cce">\</span>(<span class="pl-cce">\</span>s*[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]([^\),\s<span class="pl-s"><span class="pl-pds">"</span>']+)<span class="pl-pds">"</span></span>) <span class="pl-k">IS NOT NULL</span>
+    <span class="pl-k">AND</span> REGEXP_EXTRACT(body, <span class="pl-s"><span class="pl-pds">"</span>navigator\.serviceWorker\.register\s*\(\s*[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]([^<span class="pl-cce">\</span>),<span class="pl-cce">\</span>s<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]<span class="pl-k">+</span>)<span class="pl-s"><span class="pl-pds">"</span>) != <span class="pl-pds">"</span></span><span class="pl-k">/</span><span class="pl-s"><span class="pl-pds">"</span>)</span>
+<span class="pl-s">  AND (REGEXP_EXTRACT(REGEXP_EXTRACT(body, <span class="pl-pds">"</span></span>(<span class="pl-k">&lt;</span>link[^<span class="pl-k">&gt;</span>]<span class="pl-k">+</span>rel<span class="pl-k">=</span>[<span class="pl-s"><span class="pl-pds">"</span>']?manifest[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]?[^&gt;]+&gt;)"), "href=[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]?([^\s<span class="pl-s"><span class="pl-pds">"</span>'&gt;]+)[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]?") IS NOT NULL</span>
+<span class="pl-s">    AND REGEXP_EXTRACT(REGEXP_EXTRACT(body, "(&lt;link[^&gt;]+rel=[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]?manifest[<span class="pl-s"><span class="pl-pds">"</span>']?[^&gt;]+&gt;)<span class="pl-pds">"</span></span>), <span class="pl-s"><span class="pl-pds">"</span>href=[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]?([^<span class="pl-cce">\</span>s<span class="pl-cce">"</span><span class="pl-pds">'</span></span><span class="pl-k">&gt;</span>]<span class="pl-k">+</span>)[<span class="pl-s"><span class="pl-pds">"</span>']?<span class="pl-pds">"</span></span>) <span class="pl-k">!=</span> <span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span>)
+<span class="pl-k">ORDER BY</span>
+  rank <span class="pl-k">ASC</span>,
+  pwa_url;</pre></div>
+<h6>
+<a id="user-content-web-app-manifests-analysis" class="anchor"></span></a>Web App Manifests Analysis</h6>
+<p>Based on this helper table, we can then run the analysis of the Web App Manifests. We check for the existence of properties defined in the <a href="https://www.w3.org/TR/appmanifest/#webappmanifest-dictionary" rel="nofollow"><code>WebAppManifest</code> dictionary</a> combined with non-standard, but well-known properties like <code>"gcm_sender_id"</code> from the deprecated <a href="https://developers.google.com/cloud-messaging/" rel="nofollow">Google Cloud Messaging</a> or <code>"share_target"</code> from the currently <a href="https://wicg.github.io/web-share-target/#extension-to-the-web-app-manifest" rel="nofollow">in flux Web Share Target API</a>. Turns out, not many manifests are in the archive; from 2,823 candidate manifest URLs in the helper table we actually only find <a href="https://docs.google.com/spreadsheets/d/1VE9hoj7Ag7E3kOG4BKc8NKISg1w0BZVQkGdCq4MJ6hw/edit?usp=sharing" rel="nofollow">30 unique Web App Manifests</a> and thus PWAs in the response bodies, but these at least archived in several versions.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+  <span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">IF</span> NOT EXISTS <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.web_app_manifests<span class="pl-pds">`</span></span> <span class="pl-k">AS</span>
+<span class="pl-k">SELECT</span>
+  pwa_url,
+  rank,
+  manifest_url,
+  <span class="pl-k">date</span>,
+  platform,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>dir<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> dir_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>lang<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> lang_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>name<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> name_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>short_name<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> short_name_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>description<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> description_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>scope<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> scope_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>icons<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> icons_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>display<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> display_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>orientation<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> orientation_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>start_url<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> start_url_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>serviceworker<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> serviceworker_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>theme_color<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> theme_color_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>related_applications<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> related_applications_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>prefer_related_applications<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> prefer_related_applications_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>background_color<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> background_color_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>categories<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> categories_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>screenshots<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> screenshots_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>iarc_rating_id<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> iarc_rating_id_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>gcm_sender_id<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> gcm_sender_id_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>gcm_user_visible_only<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> gcm_user_visible_only_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>share_target<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> share_target_property,
+  REGEXP_CONTAINS(manifest_code,
+    r<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>supports_share<span class="pl-s"><span class="pl-pds">"</span>s*:<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> supports_share_property
+<span class="pl-k">FROM</span>
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.pwa_candidates<span class="pl-pds">`</span></span>
+<span class="pl-k">JOIN</span> (
+  <span class="pl-k">SELECT</span>
+    url,
+    body <span class="pl-k">AS</span> manifest_code,
+    REGEXP_REPLACE(REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-s"><span class="pl-pds">"</span>\d{4}(?:_\d{2}){2}<span class="pl-pds">"</span></span>), <span class="pl-s"><span class="pl-pds">"</span>_<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> <span class="pl-k">date</span>,
+    REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-s"><span class="pl-pds">"</span>.*_(\w+)$<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> platform
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>httparchive.response_bodies.*<span class="pl-pds">`</span></span>
+  <span class="pl-k">WHERE</span>
+    body <span class="pl-k">IS NOT NULL</span>
+    <span class="pl-k">AND</span> body <span class="pl-k">!=</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+    <span class="pl-k">AND</span> url <span class="pl-k">IN</span> (
+    <span class="pl-k">SELECT</span>
+      DISTINCT manifest_url
+    <span class="pl-k">FROM</span>
+      <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.pwa_candidates<span class="pl-pds">`</span></span>) ) <span class="pl-k">AS</span> manifest_bodies
+<span class="pl-k">ON</span>
+  <span class="pl-c1">manifest_bodies</span>.<span class="pl-c1">url</span> <span class="pl-k">=</span> manifest_url
+<span class="pl-k">ORDER BY</span>
+  rank <span class="pl-k">ASC</span>,
+  pwa_url,
+  <span class="pl-k">date</span> <span class="pl-k">DESC</span>,
+  platform,
+  manifest_url;</pre></div>
+<h6>
+<a id="user-content-research-ideas-2" class="anchor"></span></a>Research Ideas</h6>
+<p>With this data at hand, we can extract all (well, not really <em>all</em>, but all known according to our query) PWAs that still use the deprecated Google Cloud Messaging service.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  DISTINCT pwa_url,
+  manifest_url
+<span class="pl-k">FROM</span>
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.web_app_manifests<span class="pl-pds">`</span></span>
+<span class="pl-k">WHERE</span>
+  gcm_sender_id_property;</pre></div>
+<h6>
+<a id="user-content-service-workers-analysis" class="anchor"></span></a>Service Workers Analysis</h6>
+<p>Similarly to the analysis of Web App Manifests, the analysis of the various <a href="https://www.w3.org/TR/service-workers-1/#execution-context-events" rel="nofollow"><code>ServiceWorkerGlobalScope</code> events </a>is based on regular expressions. Events can be listened to using two JavaScript syntaxes: <em>(i)</em> the property syntax (<em>e.g.</em>, <code>self.oninstall = []</code> or <em>(ii)</em> the event listener syntax (<em>e.g.</em>, <code>self.addEventListener('install', [])</code>). As an additional data point, we extract potential uses of the increasingly popular library <a href="https://developers.google.com/web/tools/workbox/" rel="nofollow">Workbox</a> by looking for telling traces of various Workbox versions in the code. Running this query we obtain <a href="https://docs.google.com/spreadsheets/d/1rrSh3tXje9WnySfX8oRafY7Aduunv6X0rq_jmcBicIM/edit?usp=sharing" rel="nofollow">1,151 unique service workers</a> and thus PWAs.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">IF</span> NOT EXISTS
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.service_workers<span class="pl-pds">`</span></span> <span class="pl-k">AS</span>
+<span class="pl-k">SELECT</span>
+  pwa_url,
+  rank,
+  sw_url,
+  <span class="pl-k">date</span>,
+  platform,
+  REGEXP_CONTAINS(sw_code, r<span class="pl-s"><span class="pl-pds">"</span>.oninstalls*=|addEventListener(s*[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]install[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]<span class="pl-s"><span class="pl-pds">"</span>) AS install_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r<span class="pl-pds">"</span></span>.onactivates<span class="pl-k">*</span><span class="pl-k">=</span>|addEventListener(s<span class="pl-k">*</span>[<span class="pl-s"><span class="pl-pds">"</span>']activate[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]") AS activate_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r"<span class="pl-cce">.</span>onfetch<span class="pl-cce">s</span>*=|addEventListener<span class="pl-cce">(s</span>*[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]fetch[<span class="pl-s"><span class="pl-pds">"</span>']<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> fetch_event,
+  REGEXP_CONTAINS(sw_code, r<span class="pl-s"><span class="pl-pds">"</span>.onpushs*=|addEventListener(s*[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]push[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]<span class="pl-s"><span class="pl-pds">"</span>) AS push_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r<span class="pl-pds">"</span></span>.onnotificationclicks<span class="pl-k">*</span><span class="pl-k">=</span>|addEventListener(s<span class="pl-k">*</span>[<span class="pl-s"><span class="pl-pds">"</span>']notificationclick[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]") AS notificationclick_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r"<span class="pl-cce">.</span>onnotificationclose<span class="pl-cce">s</span>*=|addEventListener<span class="pl-cce">(s</span>*[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]notificationclose[<span class="pl-s"><span class="pl-pds">"</span>']<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> notificationclose_event,
+  REGEXP_CONTAINS(sw_code, r<span class="pl-s"><span class="pl-pds">"</span>.onsyncs*=|addEventListener(s*[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]sync[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]<span class="pl-s"><span class="pl-pds">"</span>) AS sync_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r<span class="pl-pds">"</span></span>.oncanmakepayments<span class="pl-k">*</span><span class="pl-k">=</span>|addEventListener(s<span class="pl-k">*</span>[<span class="pl-s"><span class="pl-pds">"</span>']canmakepayment[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]") AS canmakepayment_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r"<span class="pl-cce">.</span>onpaymentrequest<span class="pl-cce">s</span>*=|addEventListener<span class="pl-cce">(s</span>*[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]paymentrequest[<span class="pl-s"><span class="pl-pds">"</span>']<span class="pl-pds">"</span></span>) <span class="pl-k">AS</span> paymentrequest_event,
+  REGEXP_CONTAINS(sw_code, r<span class="pl-s"><span class="pl-pds">"</span>.onmessages*=|addEventListener(s*[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]message[<span class="pl-cce">"</span><span class="pl-pds">'</span></span>]<span class="pl-s"><span class="pl-pds">"</span>) AS message_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r<span class="pl-pds">"</span></span>.onmessageerrors<span class="pl-k">*</span><span class="pl-k">=</span>|addEventListener(s<span class="pl-k">*</span>[<span class="pl-s"><span class="pl-pds">"</span>']messageerror[<span class="pl-pds">"</span></span><span class="pl-s"><span class="pl-pds">'</span>]") AS messageerror_event,</span>
+<span class="pl-s">  REGEXP_CONTAINS(sw_code, r"new Workbox|new workbox|workbox<span class="pl-cce">.</span>precaching<span class="pl-cce">.</span>|workbox<span class="pl-cce">.</span>strategies<span class="pl-cce">.</span>") AS uses_workboxjs</span>
+<span class="pl-s">FROM</span>
+<span class="pl-s">  `progressive_web_apps.pwa_candidates`</span>
+<span class="pl-s">JOIN (</span>
+<span class="pl-s">  SELECT</span>
+<span class="pl-s">    url,</span>
+<span class="pl-s">    body AS sw_code,</span>
+<span class="pl-s">    REGEXP_REPLACE(REGEXP_EXTRACT(_TABLE_SUFFIX, "<span class="pl-cce">\</span>d{4}(?:_<span class="pl-cce">\</span>d{2}){2}"), "_", "-") AS date,</span>
+<span class="pl-s">    REGEXP_EXTRACT(_TABLE_SUFFIX, ".*_(<span class="pl-cce">\</span>w+)$") AS platform</span>
+<span class="pl-s">  FROM</span>
+<span class="pl-s">    `httparchive.response_bodies.*`</span>
+<span class="pl-s">  WHERE</span>
+<span class="pl-s">    body IS NOT NULL</span>
+<span class="pl-s">    AND body != ""</span>
+<span class="pl-s">    AND url IN (</span>
+<span class="pl-s">    SELECT</span>
+<span class="pl-s">      DISTINCT sw_url</span>
+<span class="pl-s">    FROM</span>
+<span class="pl-s">      `progressive_web_apps.pwa_candidates`) ) AS sw_bodies</span>
+<span class="pl-s">ON</span>
+<span class="pl-s">  sw_bodies.url = sw_url</span>
+<span class="pl-s">ORDER BY</span>
+<span class="pl-s">  rank ASC,</span>
+<span class="pl-s">  pwa_url,</span>
+<span class="pl-s">  date DESC,</span>
+<span class="pl-s">  platform,</span>
+<span class="pl-s">  sw_url;</span></pre></div>
+<h6>
+<a id="user-content-research-ideas-3" class="anchor"></span></a>Research Ideas</h6>
+<p>Having detailed service worker data allows for interesting analyses. For example, we can use this data to track Workbox usage over time.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  <span class="pl-k">date</span>,
+  <span class="pl-c1">count</span> (uses_workboxjs) <span class="pl-k">AS</span> total_uses_workbox
+<span class="pl-k">FROM</span>
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.service_workers<span class="pl-pds">`</span></span>
+<span class="pl-k">WHERE</span>
+  uses_workboxjs
+  <span class="pl-k">AND</span> platform <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>mobile<span class="pl-pds">'</span></span>
+<span class="pl-k">GROUP BY</span>
+  <span class="pl-k">date</span>
+<span class="pl-k">ORDER BY</span>
+  <span class="pl-k">date</span>;</pre></div>
+<p><a href="./images/image_4.png" target="_blank"><amp-img  layout="responsive" width="1200" height="742" src="./images/image_4.png" alt="Workbox usage over time, the trend is going up from ~1 in August 2017 to ~46 in June 2018"></a></p>
+<p>Lines of code (LOC) is a great metric (<a href="https://en.wikipedia.org/wiki/Source_lines_of_code#Utility" rel="nofollow">not</a>) to estimate a teams productivity and to predict a tasks complexity. Lets analyze the development of a given sites service worker in terms of string length. Seems like the team deserves a raise <amp-img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png"/></p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  DISTINCT pwa_url,
+  sw_url,
+  <span class="pl-k">date</span>,
+  CHAR_LENGTH(body) <span class="pl-k">AS</span> sw_length
+<span class="pl-k">FROM</span>
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.service_workers<span class="pl-pds">`</span></span>
+<span class="pl-k">JOIN</span>
+  <span class="pl-s"><span class="pl-pds">`</span>httparchive.response_bodies.*<span class="pl-pds">`</span></span>
+<span class="pl-k">ON</span>
+  sw_url <span class="pl-k">=</span> url
+  <span class="pl-k">AND</span> <span class="pl-k">date</span> <span class="pl-k">=</span> REGEXP_REPLACE(REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-s"><span class="pl-pds">"</span>\d{4}(?:_\d{2}){2}<span class="pl-pds">"</span></span>), <span class="pl-s"><span class="pl-pds">"</span>_<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>)
+  <span class="pl-k">AND</span> platform <span class="pl-k">=</span> REGEXP_EXTRACT(_TABLE_SUFFIX, <span class="pl-s"><span class="pl-pds">"</span>.*_(\w+)$<span class="pl-pds">"</span></span>)
+<span class="pl-k">WHERE</span>
+  <span class="pl-c"><span class="pl-c">#</span> Redacted</span>
+  pwa_url <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>https://example.com/<span class="pl-pds">"</span></span>
+  <span class="pl-k">AND</span> platform <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>mobile<span class="pl-pds">"</span></span>
+<span class="pl-k">ORDER BY</span>
+  <span class="pl-k">date</span> <span class="pl-k">ASC</span>;</pre></div>
+<p><a href="./images/image_5.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="./images/image_5.png" alt="String length of an anonymized site&#39;s service worker over time, the trend is going up from ~16,000 characters in March 2016 to ~28,000 characters in June 2018"></a></p>
+<p>A final idea is to examine service worker events over time and see if there are interesting developments. Something that stands out in the analysis is how increasingly the <code>fetch</code> event is being listened to as well as the <code>message</code> event. Both are an indicator for more complex offline handling scenarios.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  <span class="pl-k">date</span>,
+  <span class="pl-c1">COUNT</span>(IF (install_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> install_events,
+  <span class="pl-c1">COUNT</span>(IF ( activate_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> activate_events,
+  <span class="pl-c1">COUNT</span>(IF ( fetch_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> fetch_events,
+  <span class="pl-c1">COUNT</span>(IF ( push_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> push_events,
+  <span class="pl-c1">COUNT</span>(IF ( notificationclick_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> notificationclick_events,
+  <span class="pl-c1">COUNT</span>(IF ( notificationclose_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> notificationclose_events,
+  <span class="pl-c1">COUNT</span>(IF ( sync_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> sync_events,
+  <span class="pl-c1">COUNT</span>(IF ( canmakepayment_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> canmakepayment_events,
+  <span class="pl-c1">COUNT</span>(IF ( paymentrequest_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> paymentrequest_events,
+  <span class="pl-c1">COUNT</span>(IF ( message_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> message_events,
+  <span class="pl-c1">COUNT</span>(IF ( messageerror_event,
+      TRUE,
+      <span class="pl-k">NULL</span>)) <span class="pl-k">AS</span> messageerror_events
+<span class="pl-k">FROM</span>
+  <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.service_workers<span class="pl-pds">`</span></span>
+<span class="pl-k">WHERE</span>
+  NOT uses_workboxjs
+  <span class="pl-k">AND</span> <span class="pl-k">date</span> <span class="pl-k">LIKE</span> <span class="pl-s"><span class="pl-pds">"</span>2018-%<span class="pl-pds">"</span></span>
+<span class="pl-k">GROUP BY</span>
+  <span class="pl-k">date</span>
+<span class="pl-k">ORDER BY</span>
+  <span class="pl-k">date</span>;</pre></div>
+<p><a href="./images/image_6.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="./images/image_6.png" alt="Service worker events over time, showing an increasing usage of the fetch and the message event from February to June 2018"></a></p>
+<h4>
+<a id="user-content-meta-approach-approaches-13-combined" class="anchor"></span></a>Meta Approach: <em>Approaches 13</em> Combined</h4>
+<p>An interesting meta analysis is to combine all approaches to get a feeling for the overall landscape of PWAs in the HTTP Archive (with all aforementioned pros and cons regarding precision and recall applied). If we run the query below, we find exactly <a href="https://docs.google.com/spreadsheets/d/1XcSa59AwZZiqz7QdEH6CncU6lnSgzAEAOMbyI-aHBow/edit?usp=sharing" rel="nofollow">6,647 unique PWAs</a>. They may not necessarily still be PWAs today; some of the previously very prominent PWA lighthouse cases are known to have regressed, and some were only very briefly experimenting with the technologies, but in the HTTP Archive we have evidence of the glory moment in history where all of these pages fulfilled at least one of our three approaches criteria for being counted as a PWA.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  DISTINCT pwa_url,
+  rank
+<span class="pl-k">FROM</span> (
+  <span class="pl-k">SELECT</span>
+    DISTINCT pwa_url,
+    rank
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.lighthouse_pwas<span class="pl-pds">`</span></span> <span class="pl-k">union all</span>
+  <span class="pl-k">SELECT</span>
+    DISTINCT pwa_url,
+    rank
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.service_workers<span class="pl-pds">`</span></span> <span class="pl-k">union all</span>
+  <span class="pl-k">SELECT</span>
+    DISTINCT pwa_url,
+    rank
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.usecounters_pwas<span class="pl-pds">`</span></span>)
+<span class="pl-k">ORDER BY</span>
+  rank <span class="pl-k">ASC</span>;</pre></div>
+<p>If we aggregate by dates and ignore some runaway values, we can see linear growth in the total number of PWAs, with a slight decline at the end of our observation period that we will have an eye on in future research.</p>
+<div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
+<span class="pl-k">SELECT</span>
+  DISTINCT <span class="pl-k">date</span>,
+  <span class="pl-c1">COUNT</span>(pwa_url) <span class="pl-k">AS</span> pwas
+<span class="pl-k">FROM</span> (
+  <span class="pl-k">SELECT</span>
+    DISTINCT <span class="pl-k">date</span>,
+    pwa_url
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.lighthouse_pwas<span class="pl-pds">`</span></span>
+  <span class="pl-k">UNION ALL</span>
+  <span class="pl-k">SELECT</span>
+    DISTINCT <span class="pl-k">date</span>,
+    pwa_url
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.service_workers<span class="pl-pds">`</span></span>
+  <span class="pl-k">UNION ALL</span>
+  <span class="pl-k">SELECT</span>
+    DISTINCT <span class="pl-k">date</span>,
+    pwa_url
+  <span class="pl-k">FROM</span>
+    <span class="pl-s"><span class="pl-pds">`</span>progressive_web_apps.usecounters_pwas<span class="pl-pds">`</span></span>)
+<span class="pl-k">GROUP BY</span>
+  <span class="pl-k">date</span>
+<span class="pl-k">ORDER BY</span>
+  <span class="pl-k">date</span>;</pre></div>
+<p><a href="./images/image_7.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="./images/image_7.png" alt="PWAs over time showing linear growth from February 2017 to June 2018, with a slight decline in May and June 2018"></a></p>
+<h4>
+<a id="user-content-future-work-and-conclusions" class="anchor"></span></a>Future Work and Conclusions</h4>
+<p>In this document, we have presented three different approaches to extracting PWA data from the HTTP Archive. Each has its individual pros and cons, but especially <em>Approach 3</em> has proven very interesting as a basis for further analyses. All presented queries are evergreen in a sense that they are not tied to a particular crawls tables, allowing for ongoing analyses also in the future. Depending on peoples interest, we will see to what extent the data can be made generally available as part of the HTTP Archives public tables. There are likewise interesting research opportunities by combining our results with the <a href="https://developers.google.com/web/tools/chrome-user-experience-report/" rel="nofollow">Chrome User Experience Report</a> that is also <a href="https://developers.google.com/web/tools/chrome-user-experience-report/getting-started#query-dataset" rel="nofollow">accessible with BigQuery</a>.
+Concluding, the overall trends show in the right direction. More and more pages are controlled by a service worker, leading to PWAs with a generally increasing Lighthouse PWA score. Something to watch out for is the decline in PWAs observed in the <em>Meta Approach</em>, which, however, is not reflected in the most precise and neutral <em>Approach 2</em>, where rather the opposite is the case. We look forward to learning about new ways people make use of our research and to PWAs becoming more and more mainstream.</p>
+<h4>
+<a id="user-content-acknowledgements" class="anchor"></span></a>Acknowledgements</h4>
+<p>In no particular order we would like to thank <a href="https://twitter.com/mathias" rel="nofollow">Mathias Bynens</a> for help with shaping one of the initial queries, <a href="https://twitter.com/kenjibaheux" rel="nofollow">Kenji Baheux</a> for pointers that led to <em>Approach 2</em>, <a href="https://twitter.com/rick_viscomi" rel="nofollow">Rick Viscomi</a> and <a href="https://twitter.com/patmeenan?lang=en" rel="nofollow">Patrick Meenan</a> for general HTTP Archive help and the video series, <a href="https://twitter.com/jeffposnick" rel="nofollow">Jeff Posnick</a>, <a href="https://twitter.com/ade_oshineye" rel="nofollow">Ade Oshineye</a>, <a href="https://twitter.com/igrigorik" rel="nofollow">Ilya Grigorik</a>, <a href="https://twitter.com/JohnMu" rel="nofollow">John Mueller</a>, <a href="https://twitter.com/cheneytsai?lang=en" rel="nofollow">Cheney Tsai</a>, <a href="https://twitter.com/mcmd" rel="nofollow">Miguel Carlos Martínez Díaz</a>, and <a href="https://twitter.com/ebidel" rel="nofollow">Eric Bidelman</a> for editorial comments, as well as <a href="https://twitter.com/falkenmatto?lang=en" rel="nofollow">Matt Falkenhagen</a> and <a href="https://twitter.com/mgiuca" rel="nofollow">Matt Giuca</a> for providing technical background on use counters.</p>
+<wrapped>
+
+      </main>
+    </div>
+    <footer id="footer">
+      <ul>
+        <li>© 2005–2018 <a href="./">Thomas Steiner</a></li>
+        <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+        <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+        <li><small>This website uses Google Analytics</small></li>
+      </ul>
+      <amp-analytics type="googleanalytics">
+        <script type="application/json">
+          {
+            "vars": {
+              "account": "UA-2040927-1"
+            },
+            "triggers": {
+              "defaultPageview": {
+                "on": "visible",
+                "request": "pageview"
+              }
+            }
+          }
+        </script>
+      </amp-analytics>
+    </footer>
+  </body>
+</html>

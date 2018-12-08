@@ -1,0 +1,34 @@
+---
+layout: layouts/post.njk
+title: "iPhone 3.1.2 Update Hints and Reminders"
+author: "Thomas Steiner"
+date: "2010-01-06T12:21:00"
+slug: "iphone-3-1-2-update-hints-and-reminders"
+tags:
+  - Technical
+---
+<b>iPhone 3.1.2 Update Hints and Reminders</b><br />
+<br />
+I have taken the small, but still important step from iPhone 3.1 to iPhone 3.1.2 (mostly important because of the fix of the coma mode bug, <a href="http://en.wikipedia.org/wiki/IPhone_OS_version_history#3.1.2">iPhone OS 3.1.2 Changelog</a>). My previous <a href="http://blog.tomayac.de/index.php?date=2009-02-16&time=00:51:32&perma=iPhone+3G%3A+Firmware+Download+Links%2C+Search+Engine+Tweaks%2C+Bookmarking+Hacks%2C+%22slide+to+unlock%22+Customization.html">manual tweaks after a firmware update list</a> has saved me a great amount of time for this task.  <br />
+<br />
+I <a href="http://twitter.com/tomayac/status/7406158321">decided</a> to buy <a href="http://www.pragmatixconsulting.com/iphoneApps/PkgBackup_User_Guide.html">PkgBackup</a>, and it saved most of my Cydia packages, however, I lost some files, mainly because I did not pay enough attention. Thus adding to the list two stupid reminders:<br />
+ <br />
+<b>Things to keep in mind</b><br />
+<ul><li>Backup <b>Cycorder videos</b><br />
+<pre>/var/mobile/Media/Videos</pre></li><li>Backup <b>MxTube videos</b><br />
+<pre>/var/mobile/Media/MxTube</pre></li></ul><br />
+<b>Additional manual tweaks</b><br />
+<ul><li>Delete <b>annoying UI sound</b> files:<ul><li>Camera shutter sound<pre>/System/Library/Audio/UISounds/photoShutter.caf</pre></li><li>Keyboard click sound (because Cydia keyboard still clicks even if clicks are disabled)<pre>/System/Library/Audio/UISounds/Tock.caf</pre></li><li>Charging sound / plug-in sound<pre>/System/Library/Audio/UISounds/beep-beep.caf</pre></li></ul></li><li>Enable <b>EDGE / APN Settings</b> (just because it's possible): <a href="http://www.simonblog.com/2009/09/07/how-to-enable-edgeapn-editing-on-jailbroken-iphone/">http://www.simonblog.com/2009/09/07/how-to-enable-edgeapn-editing-on-jailbroken-iphone/</a></li><li>Enable <b>iPhone 3G Tethering</b> (obviously do this at your own risk): <a href="http://thebeatmix.blogspot.com/2009/10/enable-tethering-on-iphone-312-only-3g.html">http://thebeatmix.blogspot.com/2009/10/enable-tethering-on-iphone-312-only-3g.html</a></li></ul>What are your iPhone update stories? Did I miss something?<br />
+<br />
+<b>Update 1</b><br />
+<br />
+The missing carrier logo bug can be fixed by accessing <pre>/var/mobile/Library/Carrier Bundle.bundle ## symbolic link</pre>Then edit <pre>carrier.plist</pre>Search for <pre>&lt;key&gt;StatusBarImages&lt;/key&gt;<br />
+&lt;array&gt;<br />
+  &lt;dict&gt;<br />
+    &lt;key&gt;AllowPrefixMatching&lt;/key&gt;<br />
+    &lt;true/&gt;<br />
+    &lt;key&gt;CarrierName&lt;/key&gt;<br />
+    &lt;string&gt;T-Mobile&lt;/string&gt;<br />
+    [...]<br />
+&lt;/array&gt;</pre> and delete the plaintext carrier name (in my example "T-Mobile"). You should end up with <pre>    &lt;key&gt;CarrierName&lt;/key&gt;<br />
+    &lt;string&gt;&lt;/string&gt;</pre>
