@@ -3,8 +3,17 @@ const fs = require('fs');
 posts = fs.readFileSync('old_posts.backup', {encoding: 'utf8'});
 
 posts.split(/\n*FICKEN FICKEN FICKEN\n*/gm).forEach(post => {
-  const filename = 'posts/' + post.replace(/[\s\S]*slug:\s"(.*?)"$\n[\s\S]*/gm, '$1.html')
+  const year = post.replace(/[\s\S]*^date:\s"(\d\d\d\d)-(\d\d)-(\d\d)T[\s\S]*/gm, '$1');
+  const month = post.replace(/[\s\S]*^date:\s"(\d\d\d\d)-(\d\d)-(\d\d)T[\s\S]*/gm, '$2');
+  const day = post.replace(/[\s\S]*^date:\s"(\d\d\d\d)-(\d\d)-(\d\d)T[\s\S]*/gm, '$3');
+  const slug = post.replace(/[\s\S]*slug:\s"(.*?)"$[\s\S]*/gm, '$1');
   post = post.replace(/title:\s(.*?)$/gm, 'layout: layouts/post.njk\ntitle: $1')
-  console.log(filename)
-  fs.writeFileSync(filename, post);
+  post = post.replace(/slug:\s(.*?)$/gm, 'permalink: ' + year + '/' + month + '/' + day + '/' + slug + '/index.html')
+  /*
+  try {fs.mkdirSync(year)}catch(e){}
+  try {fs.mkdirSync(year + '/' + month)}catch(e){}
+  try {fs.mkdirSync(year + '/' + month + '/' + day)}catch(e){}
+  try {fs.mkdirSync(year + '/' + month + '/' + day + '/' + slug)}catch(e){}
+  */
+  fs.writeFileSync('posts/' +  year + '-' + month + '-' + day + '_' + slug + '.html', post);
 })
