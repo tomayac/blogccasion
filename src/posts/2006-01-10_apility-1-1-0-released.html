@@ -1,0 +1,29 @@
+---
+layout: layouts/post.njk
+title: "APIlity 1.1.0 released"
+author: "Thomas Steiner"
+date: "2006-01-10T02:43:53"
+permalink: 2006/01/10/apility-1-1-0-released-024353/index.html
+tags:
+  - Work
+---
+<b>Dear APIlity users</b><img src="http://www.google.com/apis/adwords/images/google_small.gif" alt="Google AdWords logo" align="left" /><br />
+<br />
+<a href="http://prdownloads.sourceforge.net/google-apility/apility_1.1.0.zip?download" target="_blank">APIlity 1.1.0</a> is finally ready. This is a <u>major</u> release, an upgrade is recommanded to all APIlity users.<br />
+Please check out the <a href="https://sourceforge.net/project/shownotes.php?release_id=382573&group_id=144351" target="_blank">complete ChangeLog</a>.<br />
+This release primarily introduces <a href="http://services.google.com/ads_inquiry/sitetarget?hl=en" target="_blank">CPM-based bidding</a>. This comes along with a new class <span style="font-face:fixed-family:serif;">Criterion.php</span> for be it <b>KeywordCriteria</b> or be it <b>WebsiteCriteria</b>. However, the already existing Keyword objects are still fully supported. This is the promised "best out of both worlds" feature. In spite of all, the new release hopefully is <b>completely compatible</b> to the older versions.<br />
+The <a href="http://google-apility.sourceforge.net/resources/apility_hierarchy.png" target="_blank">object hierarchy</a> has been extended to reflect the new features:<br />
+<a href="http://google-apility.sourceforge.net/resources/apility_hierarchy.png" target="_blank"><img border="0" src="http://google-apility.sourceforge.net/resources/apility_hierarchy.png" alt="APIlity object hierarchy" width="300"/></a><br />
+Therefore the <a href="http://google-apility.sourceforge.net/resources/apility_organigram.png" target="_blank">class organigram</a> has been slightly changed:<br />
+<a href="http://google-apility.sourceforge.net/resources/apility_organigram.png" target="_blank"><img border="0" src="http://google-apility.sourceforge.net/resources/apility_organigram.png" alt="APIlity object hierarchy" width="300"/></a><br />
+<b>The most important new features</b>:<br />
+<ol><li>New <b>CPM-based bidding</b> feature</li><li>AdGroup object extended<br />
+AdGroups now have an <b>additional maxCpm attribute</b>. This influences<br />
+respectively introduces the following functions:<ul><li>addAdGroup() (calling parameters canged)</li><li>getMaxCpm()</li><li>setMaxCpm()</li><li>getAllCriteria()</li></ul></li><br />
+<li>Campaigns can have <b>CampaignNegativeWebsiteCriteria</b> and<br />
+<b>CampaignNegativeKeywordCriteria</b></li><li>New <b>Report download function</b>. The Report class now offers two new functions:<br />
+<ul><li>downloadXmlReport()</li><li>downloadCsvReport()</li></ul>This allows (re-)downloading of already existing reports.</li></ol><br />
+This version took a relatively long time to complete. There are several reasons for this:<br />
+<ul><li><b>Hidden dependencies</b> for example in <span style="font-family:monospace;">AdGroup.php</span>, <span style="font-family:monospace;">Report.php</span> and even <span style="font-family:monospace;">Campaign.php</span>. New functions where needed for AdGroups as the introduction of Criteria included an extension of the AdGroup objects by a MaxCPM attribute. There were three possibilities to handle this: <ol><li>have <b>WebsiteCriterion AdGroups</b> <u>and</u> <b>KeywordCriterion AdGroups</b> (logic, but complex as another sub-class level would be required)</li><li>modify the maxCpc attribute to represent a <u>unique</u> <b>maxCost attribute</b> (logic as the idea of maximum cost remains, but not downwards compatible)</li><li>simply <b>add a maxCpm attribute</b> (not 100% logic as only one of the two maxXxx values can be set, but downwards compatible)</li></ol>I decided to choose option three as it is simple, compatible and requires no adaptions to already existing scripts.</li><li>With the <b>'best out of both worlds' feature</b> I want to enable clients to get the most out of the API, including the 'old' Keyword functions. However, when the Keyword Service gets deactivated, the Keyword functions can be simply removed.</li><li>The question of the <b>Criterion structure</b> was to decide <ol><li>either to model the native API structure (Keyword and Website are <b>both subclasses of Criterion</b>)</li><li>or to create a <b>new Website object</b></li></ol> Personally I would have decided to introduce a new Website object, but for <b>consistency reasons</b> I kept to the native API structure.</li></ul><br />
+There remains a small logic weak point in the native API structure: <a href="http://www.google.com/apis/adwords/developer/Campaign.html" target="_blank">Campaigns</a> have the <b>CampaignNegativeKeywords</b> attribute but at the same time support the <b>CampaignNegativeWebsiteCriteria</b> pseudo-attribute (in APIlity only). <ol><li>either the <b>CampaignNegativeKeywords attribute should be removed from the Campaign object</b> and Campaign negative items should be managed completely in the Criterion service (IMHO not so logic)</li><li>or there should be <b>added a CampaignNegativeWebsites attribute to the Campaign object</b> (very logic, requires deeper changes however).</li></ol></li></ul><br />
+<small>Images from <a href="http://www.google.com/apis/adwords/images/google_small.gif" target="_blank">google.com/apis/adwords</a> and <a href="http://google-apility.sourceforge.net/" target="_blank">google-apility.sourceforge.net</a></small>

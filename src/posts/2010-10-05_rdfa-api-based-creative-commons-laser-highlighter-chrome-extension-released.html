@@ -1,0 +1,16 @@
+---
+layout: layouts/post.njk
+title: "RDFa API-based Creative Commons Laser Highlighter Chrome Extension Released"
+author: "Thomas Steiner"
+date: "2010-10-05T11:34:56"
+permalink: 2010/10/05/rdfa-api-based-creative-commons-laser-highlighter-chrome-extension-released-113456/index.html
+tags:
+  - Technical
+---
+<b>RDFa API-based Creative Commons Laser Highlighter Chrome Extension Released</b><br />
+<br />
+I have released a very early alpha state pure JavaScript implementation of the <a href="http://www.w3.org/TR/rdfa-api/">RDFa API draft spec</a>. It has still many flaws, but at this stage it's already usable enough to be the foundation for a Chrome extension: the <a href="http://bit.ly/rdfalaser">RDFa Creative Commons Laser Highlighter</a>. Rather than calling <span style="font-family:monospace;">document.*</span> you call <span style="font-family:monospace;">LinkedData.API.*</span> (I've put the API in my own namespace to avoid confusion with potential native implementations, and yepp, I do vote for renaming the API). I have coded an extension around <a href="http://www.w3.org/TR/rdfa-api/#data-based-web-page-modification">example 1.3</a> from the current draft spec. The whole magic happens in just two calls:<pre>LinkedData.API.data.context.setMapping(<br />
+   'cc',<br />
+   'http://creativecommons.org/ns#');<br />
+LinkedData.API.getElementsByProperty('cc:license');</pre>The extension is more or less just a toy, but the provided JavaScript code should already be good enough to test the examples in the latest spec draft. The library is implemented using XPath and not at all intended to be fast, or elegant, and currently just supports RDFa and has many of the advanced API calls mocked out. I'm happy to keep improving the code if anyone is interested. Just let me know.<br />
+<a href="http://bit.ly/rdfalaser"><img style="border:none;" src="https://chrome.google.com/extensions/img/iceopjodmdipccjbknbjolkfogkgloei/1286224107.49/screenshot/5001" alt="Chrome Extensions: RDFa Creative Commons Laser Highlighter" /></a>

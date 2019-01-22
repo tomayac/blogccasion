@@ -1,0 +1,26 @@
+---
+layout: layouts/post.njk
+title: "Note to myself regarding JSON"
+author: "Thomas Steiner"
+date: "2008-05-22T15:34:24"
+permalink: 2008/05/22/note-to-myself-regarding-json-153424/index.html
+tags:
+  - Technical
+---
+<b>Note to myself regarding JSON</b><br />
+<br />
+I have been fiddling around with the <a href="http://www.json.org/">JSON</a> notation for a project at Google using <a href="http://www.crockford.com/">Douglas Crockford</a>'s implementation of a JSON encoder/decoder called <a href="http://www.json.org/json2.js">json2.js</a>. JSON is at an interesting point in its life since its "invention". It is widely used, browsers can interpret it with <span style="font-family:monospace; color:red;">eval('(' + jsonString + ')');</span>. Firefox 2 kind of supports JSON encoding with <span style="font-family:monospace; color:red;">Object.toSource();</span> which is not supported on other browsers, though. Firefox 3 ships with a native JSON implementation (see John Resig's blog entry on the  <a href="http://ejohn.org/blog/the-state-of-json/">state of JSON</a> for more details). One of the problems this situation brings along is the general dilemma with whether it is a good idea or not to extend the prototypes of objects in JavaScript. Think of an extension like <span style="font-family:monospace; color:red;">Object.prototype.toJSON</span>. If one day browser vendors would ship with a native JSON implementation using the same name, users would be forced to live with the overridden version, a "slow" pure JavaScript implementation, rather than a "fast" native implementation. Douglas Crockford chose this approach in the first place (<a href="http://www.json.org/json.js">json.js</a>). It has been fixed with a global JSON object in the current release json2.js.<br />
+<br />
+<b>JSON is not forgiving</b><br />
+Is this correct JSON?<br />
+<span style="font-family:monospace; color:red;">{<br />
+&nbsp;&nbsp;'name': 'Lena',<br />
+&nbsp;&nbsp;'location': 'Hamburg'<br />
+}</span><br />
+It <i>is</i> correct object literal notation in JavaScript, but <i>not</i> correct JSON. The difference is minimal, but makes JSON parsers like the above json2.js fail. The correct form is<br />
+<span style="font-family:monospace; color:red;">{<br />
+&nbsp;&nbsp;"name": "Lena",<br />
+&nbsp;&nbsp;"location": "Hamburg"<br />
+}<br />
+</span><br />
+Note the quotes ["] that must be used (and not single apostrophes [']). Good to have picky tools like <a href="http://www.jsonlint.com/">JSONLint</a>. If you use JSON, and if you experience strange errors, then lint your JSON, and most likely you will bang your head against a wall afterwards.

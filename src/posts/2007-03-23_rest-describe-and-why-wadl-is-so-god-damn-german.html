@@ -1,0 +1,23 @@
+---
+layout: layouts/post.njk
+title: "REST Describe and why WADL is so god damn German"
+author: "Thomas Steiner"
+date: "2007-03-23T21:28:53"
+permalink: 2007/03/23/rest-describe-and-why-wadl-is-so-god-damn-german-212853/index.html
+tags:
+  - Work
+---
+<b>REST Describe and why WADL is so god damn German</b><br />
+<br />
+These days I am dealing a lot with the <a href="https://wadl.dev.java.net/wadl20061109.pdf">WADL spec</a> (PDF). WADL is one of the mightiest Web Service description languages out there. With the <a href="http://google-code-updates.blogspot.com/2007/03/gdata-for-picasa-web-albums.html">announcement</a> of the release of the new <a href="http://code.google.com/apis/picasaweb/overview.html">GData API</a> for Picasa Web Albums, the language's potential to describe features that are not known until run time will be put to the utmost. Imagine you want to describe a request like this:<br />
+<br />
+<code>http://picasaweb.google.com/data/feed/projection/user/userID/albumid/albumID/photoid/photoID?kind=kinds</code> <br />
+<br />
+There are a whole bunch of unknown path variables inside of the request URI:<ul><li>userID</li><li>albumID</li><li>photoID</li></ul>WADL is capable of describing this structure(!).<br />
+<br />
+Anyway, on my way to doing this in an automated way, I moved another  small step forward today. Have a look at the screenshot below: now there is one of these fancy in-application windows. This allows for different parameters to be tested directly from within REST Describe which can then be accepted for further analysis. What does the app do so far?<ol><li>It <b>resolves the URI</b> and extracts<ul><li>the endpoint</li><li>the request name</li><li>the request parameters</li><li>the fragment</li></ul></li><li>It then analysis the request parameters and does <b>basic type guessing</b> based on regular expressions</li><li>TODO: It then builds an <b>XML document tree</b> that will be the basis for the final WADL document</li></ol>Click on the screenshot to see a full-screen view:<br />
+<a href="./images/Google_REST_Describe_request_test.png"><img src="./images/Google_REST_Describe_request_test.png" alt="REST Describe Request Test dialog" width="300" border="0" /></a><br />
+<img src="http://www.lederhosen-aigner.de/assets/images/STRsMPFE_WADL_BEIGE_klein.JPG" align="right" alt="Wadln" height="80" /> So finally back to the confusing header: "Why WADL is so god damn German". You guys probably know this clich? of the typical German with leather pants and beer. In the bavarian dialect a "Wadl" is the calf, the lower part of your leg. Do an image search in order to see what <a href="http://images.google.com/images?q=%22stramme+wadln%22">"Stramme Wadln"</a> is. And no, neither do I look like that, nor do I come from Bavaria. <br />
+<br />
+<small><span style="color:gray;">Please note: REST Describe and REST Compile are no official Google products.</span></small><br />
+<small>Image from <a href="http://www.lederhosen-aigner.de/assets/images/STRsMPFE_WADL_BEIGE_klein.JPG">lederhosen-aigner.de</a></small>

@@ -1,0 +1,38 @@
+---
+layout: layouts/post.njk
+title: "Dear Google+"
+author: "Thomas Steiner"
+date: "2011-06-29T00:42:13"
+permalink: 2011/06/29/dear-google-004213/index.html
+tags:
+  - Work
+---
+<small><b>Full disclaimer:</b> I work for Google. I have dog-fooded Google+ internally. I was not at all involved in the project. I have posted a slightly different version of this letter to Google+ on launch day on the internal dog-food product, but without even knowing that Google+ would launch that day.</small><br />
+<br />
+<b>Dear Google+,</b><br />
+<br />
+The two of us didn't have much contact recently, mainly 'cause your pals Twitter and Facebook have been around for quite a while now, and I'm really bad at socializing in new environments. In Twitter and Facebook, I feel safe: I have my friends, my interesting content providers, my news-as-she-happens RSS replacements,... short, I hate to set up this network yet another time.<br />
+<br />
+Still, I did. Kind of. Work in progress. I put everyone in "Friends", no matter what. If I want to share private stuff, I email people, or put it in Docs, or, you know, walk up people and actually talk to them. Don't get me wrong, I'm a social networks guy! Totally sold to the concept even. I don't call my far-away friends, I love to unobtrusively follow their day lives, worries, and interesting stuff that they do on their news stream. Sometimes I comment or follow up, mostly I just consume. I hate to separate between "Friends", "Colleagues", "Family"; heck, sometimes it's even the same.<br />
+<br />
+Facebook is simple. If you use it as I do. No groups, just post publicly to everyone all the time, being very conservative, though, in what can be seen by non-friends. Twitter is complex. Hell, you have to RTFM to get the reply visibility rules, the difference between RT and native RT... Been there, read (past tense) the <i>fantastic</i> manual. I have yet to meet someone who actually enjoys RTFMing. The idea of circles is great, given that people go through the pain of setting them up.<br />
+<br />
+<img src="http://farm5.static.flickr.com/4087/4950942600_73930153f6.jpg" alt="Gai Pad Khing" width="250" height="188" /><br />
+<br />
+I follow some people on Google+&trade;. For example, there is Jack. He posts about JavaScript foo, his breakfasts, Thai cuisine experiments, all stuff Android, every once in a while he live-posts events he attends, and he has hooked up his FirstFM likes of the week, his Fivesquare check-ins, and every question he answers on StackUnderflow. I don't give a shi..., erm, no, wait. It's not my primary interest to learn about his failed Thai cuisine happenings, and his check-ins whatsoever. I prefer to follow a curated blog post on most events afterwards, rather than the live posts. I hate Thai cuisine. I love his Android posts, though. <span style="font-family:monospace;">console.log("And his JavaScript foo!");</span><br />
+<br />
+OK, let's make this actionable and concrete, or SMART<sup>*</sup> (Yay! McKinsey speak FTW!). Here is my wish list to you:<br />
+<ol><li>Let me filter out reactively topics of my friends' posts. Make it intelligent: mute all Fivesquare check-ins, posts about food,... It's a mix of hard-codable regular expressions for the easy parts, and some ontology magic. Gai Pad Khing is a Chinese-influenced dish that is popular in Laos and Thailand. It is also a named entity that we can extract from one of Jack's posts. Once it is a named entity, we can use what we (as the company Google) know: <a href="http://www.freebase.com/experimental/topic/standard/en/gai_pad_khing">freebase:gai_pad_khing</a>. Yepp, it's Freebase, yepp, it's Semantic Web, and no, it's neither academic, nor ivory tower. Look at this extract from the whole JSON file:<br />
+<pre>"type": [<br />
+  {<br />
+    "id": "/food/dish",<br />
+    "text": "Dish"<br />
+  }<br />
+]</pre><br />
+We know that Gai Pad Khing is food, and that it's a dish. So UI-wise it could just use the ontology tree: filter out all stuff dish, all stuff Thai cuisine, all stuff food,... Globally. Or only for Jack.</li><li>Let me mute temporarily without burning topics forever: during the Google I/O event, filter out all stuff I/O, but remove the filter automatically after the event. Or after 24h. Let me configure.</li><li>Bake-in the privacy / visibility controls right into the stream. If I see someone hanging out, changing her profile photo,... let me immediately decide if I want to see such events from others, and/or share mine with others. Unobtrusively, some nice UI consistent among all status updates whatsoever.</li></ol>So, Google+, here we are again. This has become an honest piece of user feedback, arguable for sure, and maybe factually wrong in some parts, overly simplifying in others, but hopefully some of it will be useful. I'm passionate about 1), as you might have noticed. I want you to succeed. I care. That's why I thought I'll write you this letter. Subjective by design...<br />
+<br />
+Yours sincerely,<br />
+@steiner.thomas (lame, I can't mention myself)<br />
+<br />
+<small>*) SMART: specific, measurable, attainable, realistic and timely.</small><br />
+<small>Image from <a href="http://www.flickr.com/photos/thefoodplace/4950942600/">flickr.com/photos/thefoodplace</a>. Used under a <a href="http://creativecommons.org/licenses/by/2.0/deed.en">Creative Commons</a> license.</small>

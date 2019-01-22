@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "https://blog.tomayac.com/",
   "scripts": {
-    "clean": "rm -rf dist && cp -R ./src/static ./dist && cp -R ./src/images ./dist",
+    "clean": "rm -rf dist && mkdir dist && cp -R ./src/static ./dist/static && cp -R ./src/images ./dist/images",
     "serve": "npm run clean && npx eleventy --input=src --output=dist --serve",
     "build": "npm run clean && npx eleventy --input=src --output=dist",
     "debug": "npm run clean && DEBUG=* npm run build"

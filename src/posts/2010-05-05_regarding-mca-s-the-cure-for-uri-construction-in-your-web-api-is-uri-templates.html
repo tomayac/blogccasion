@@ -1,0 +1,32 @@
+---
+layout: layouts/post.njk
+title: "Regarding mca's The Cure for URI Construction in your Web API is URI-Templates"
+author: "Thomas Steiner"
+date: "2010-05-05T12:29:23"
+permalink: 2010/05/05/regarding-mca-s-the-cure-for-uri-construction-in-your-web-api-is-uri-templates-122923/index.html
+tags:
+  - Technical
+---
+<b>Regarding mca's "The Cure for URI Construction in your Web API is URI-Templates"</b><br />
+<br />
+I saw this pattern recently where a blogger would write up a half-hour-long comment on someone else's blog, but not update his own blog for years, and then wondering why she wouldn't have time to work on her own blog... Recognizing myself here (oh, if <i>you</i> remember where you saw this pattern, too, please ping me so that I can give proper credits). Anyways, I follow Mike Amundsen (<a href="http://twitter.com/mamund">@mamund</a> on Twitter) and came across his tweet where he <a href="http://twitter.com/mamund/status/13391140080">announces</a> his blog post <a href="http://amundsen.com/blog/archives/1050">The Cure for URI Construction in your Web API is URI-Templates</a> (Mike, hope you forgive the upper case). First, please read his blog post, then second, if you're still here (or even came back after reading his post), you can read my <a href="http://amundsen.com/blog/archives/1050#IDComment72704675">comment</a> (reposted here, slightly reformatted, corrected the unavoidable typos, and probably introduced some new ones):<br />
+<br />
+<b>Hi Mike, </b><br />
+<br />
+A note from pedant's corner: in the example: <pre>===<br />http://www.example.org/messages?d2={date-start}&d2={date-start}&c={category}&o={owner-user-id}&t={title-text}....." rel="query" /&gt; <br />
+===</pre>you probably meant to write <pre>=== <br />
+&lt;link-template href="http://www.example.org/messages?d1={date-start}&d2={date-end}&c={category}&o={owner-user-id}&t={title-text}....." rel="query" /&gt; <br />
+=== </pre> Note the query parameter names/values and the <span style="font-family:monospace;">&lt;link&gt;</span> boilerplate. <br />
+<br />
+Nice write-up besides this. From a REST theorist's point of view I'd say we don't need URI templates at all, because APIs should just have one entry point (and no documented end point[s]). From a REST practicioner's point of view I agree that sometimes you might want to provide a little more guidance... <br />
+<br />
+With regards to query languages honestly I have not yet made my mind entirely up. As long as it is e.g. (sticking to the <a href="http://developer.yahoo.com/yql/">YQL</a> example): <pre>===<br />
+GET http://www.example.org/users?q={encoded-yql-SELECT-statement}<br />
+===</pre> I'm probably OK with it, however, as soon as we see things like: <pre>=== <br />
+GET http://www.example.org/users?q={encoded-yql-UPDATE-statement}<br />
+===</pre> we are back in the ugly land of <a href="http://www.amundsen.com/blog/archives/1040">tunneling RPC</a>... As I said, I have no final opinion yet, but I'm happy to learn from other commenters here. <br />
+<br />
+Thanks, <br />
+Tom <br />
+<br />
+<small><b>Disclaimer:</b> I'm <a href="http://twitter.com/tomayac">@tomayac</a> on Twitter and currently work on my PhD. You can track my progress via <a href="http://twitter.com/#search?q=%23tomsphd">#TomsPhD</a>.</small>

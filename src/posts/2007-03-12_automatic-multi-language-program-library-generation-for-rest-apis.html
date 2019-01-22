@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+title: "Automatic Multi Language Program Library Generation for REST APIs"
+author: "Thomas Steiner"
+date: "2007-03-12T17:11:27"
+permalink: 2007/03/12/automatic-multi-language-program-library-generation-for-rest-apis-171127/index.html
+tags:
+  - Work
+---
+<b>1) Automatic Multi Language Program Library Generation for REST APIs</b><br />
+<br />
+Since February 2007 I have started working on my Final Year Project whose (working) title is <i>"Automatic Multi Language Program Library Generation for REST APIs"</i>. This project was suggested by <a href="http://wordpress.chanezon.com/">Patrick Chanezon</a>, Checkout API Evangelist with Google Inc. The project's main goal is to create a compiler which allows for automatic client code generation in various programming languages. This should be based on a meta description of a RESTful web service. After a first "market" survey of the available description languages, and having been in touch with Marc (thanks again), my choice for the meta description language will probably be <a href="http://weblogs.java.net/blog/mhadley/">Marc Hadley's</a> approach named <a href="https://wadl.dev.java.net/">WADL</a>. The diagram below tries to illustrate the idea:<div style="background-color:white;"><img src="./images/Google_REST_Compile.png" alt="REST Compile" /></div><br />
+<b>2) Rich web application for WADL file creation</b><br />
+<br />
+In my opinion RESTful web services are in broad use because of their simplicity for human beings. However, writing a (WADL) description for already existing web services can be a rather annoying manual job. The project's second goal is thus to implement a rich web application which allows for more or less interactive WADL creation based on "copied and pasted" example code which is usually available in textual form in the human-readable docs of the web service. Below the correspondent diagram:<div style="background-color:white;"><img src="./images/Google_REST_Describe.png" alt="REST Describe" /></div>This is very much work in progress, i.e. there are no concrete results yet. However, for all those interested in the process, there are two main, and one minor resources you can have a look at every now and then:<ul><li>The project's report, published as an auto-updating Google document:<br />
+<a href="http://docs.google.com/Doc?id=dgdcn6h3_38fz2vn5">http://docs.google.com/Doc?id=dgdcn6h3_38fz2vn5</a></li><li>The project's hosted code base:<br />
+<a href="http://code.google.com/p/rest-api-code-gen/">http://code.google.com/p/rest-api-code-gen/</a></li><li>(My personal blog for background information):<br />
+<a href="http://blog.tomayac.de">http://blog.tomayac.de</a></li></ul>Looking forward to hearing back from you.<br />
+<br />
+<small>* Please note: REST Describe and REST Compile are no official Google products.</small>

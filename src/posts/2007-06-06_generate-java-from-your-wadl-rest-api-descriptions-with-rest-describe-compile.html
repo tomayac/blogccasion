@@ -1,0 +1,20 @@
+---
+layout: layouts/post.njk
+title: "Generate Java from your WADL REST API Descriptions with REST Describe & Compile"
+author: "Thomas Steiner"
+date: "2007-06-06T01:57:59"
+permalink: 2007/06/06/generate-java-from-your-wadl-rest-api-descriptions-with-rest-describe-compile-015759/index.html
+tags:
+  - Work
+---
+<b>Generate Java from your WADL REST API Descriptions with REST Describe & Compile</b><img src="http://www.dailly.info/java/illustrations/duke3.gif" alt="Java Duke" align="left" width="100" /><br />
+<br />
+After a busy week finally one of the more important mission objectives has been accomplished: <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html">REST Describe & Compile v0.3</a> generates <a href="http://java.sun.com/">Java</a>. Java is kind of 1990's. You need to explicitly create <i>getters and setters</i>, the strict <i>static typing</i> hinders you from simply comparing an int to null, for each optional parameter you need to create an own <i>constructor</i>, each file needs to be <i>compiled</i> before it can be tested,...<br />
+<br />
+One of the more subtile problems are types. Internally all types are Strings (this is what goes on the POST or GET wire), however, Java adds a typed layer on top of this. This means that for the getters you need to make sure that the type is <span style="font-family:monospace;">toString()</span>-able, whereas for the setters the correct type is strictly enforced. I am pretty biased, but in my opinion strict typing is anti-web.<br />
+<br />
+Whatever, version 0.3 brings another fun feature. Thanks to my wonderful future wife and in response to Eduard Pelegri i Llopart's <a href="http://blogs.sun.com/page/theaquarium?anchor=more_wadl_php_ruby_and">blog entry</a> REST Describe & Describe is now also available <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html?locale=ca"><img src="http://blog.tomayac.de/flag_catalan.png" align="absmiddle" border="0" />in Catalan</a>. <a href="http://sclipo.com/controller.php?p_action=view_detail&video_id=UWC2O7G1G0">Setze jutges</a> <span style="font-family:monospace;">:-)</span><br />
+<br />
+You can download the <a href="http://rest-api-code-gen.googlecode.com/files/rest_describe_v0.3.zip">source code</a> from the project's Google Code site, and as always the <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html">latest version</a> is available from my web space.<br />
+<br />
+<small>Image from <a href="http://www.dailly.info/java/illustrations/duke3.gif">dailly.info</a></small>
