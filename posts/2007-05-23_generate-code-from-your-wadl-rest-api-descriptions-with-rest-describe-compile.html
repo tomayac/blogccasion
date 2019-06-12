@@ -1,0 +1,59 @@
+---
+layout: layouts/post.njk
+title: "Generate Code from your WADL REST API Descriptions with REST Describe & Compile"
+author: "Thomas Steiner"
+date: "2007-05-23T17:08:48"
+permalink: 2007/05/23/generate-code-from-your-wadl-rest-api-descriptions-with-rest-describe-compile-170848/index.html
+tags:
+  - Work
+---
+<b>Generate Code from your WADL REST API Descriptions with REST Describe & Compile</b><br />
+<br />
+<img src="./images/REST_Describe_Logo.png" align="left" hspace="20" />The first comment by <i>britneyfreek</i> on Dion Almaer's <a href="http://ajaxian.com/archives/google-rest-describe-wadl-toolkit">blog post on Ajaxian.com</a> on REST Describe from some weeks ago is a little questioning:<br />
+<br />
+<img src="./images/REST_Compile_Logo.png" align="left" hspace="20" /><span style="color:gray;"><i>"this is rather cool and actually useful, isn't it? [...]"</i></span><br />
+<br />
+With today's <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html">v0.2 release of REST Describe & Compile</a> I hope that some more people will respond to this comment with <i>yes, it is</i>. The new version allows for <ul><li><b>WADL creation</b> based on sample request(s)</li><li><b>WADL editing</b> using an advanced interactive editor</li><li><b>Code generation</b> based on a WADL file which may be<ul><li>either created by REST Describe based on sample request(s),</li><li>or uploaded from an external source into REST Describe</li></ul></li></ul>At present code generation is limited to PHP, however, the architecture is completely modular so that generators can be easily added. For the next release it is planned to support Java, Python, Ruby, and C# (currently the corresponding buttons are grayed out). In the following I will describe the changes and new features in some more detail:<br />
+<br />
+<u>Recommended reading before getting started:</u> <a href="https://wadl.dev.java.net/">WADL spec</a>, <a href="http://blog.tomayac.de/index.php?date=2007-04-26&time=18:05:54&perma=REST+Describe+first+.html">REST Describe v0.1 release note</a>, <a href="http://blog.programmableweb.com/2007/03/22/wadl-and-google-rest-compile/">introduction to REST Compile by ProgrammableWeb.com</a><br />
+<br />
+<b>WADL feature support almost complete</b><br />
+<br />
+<a href="./images/rest_describe_context.png"><img src="./images/rest_describe_context.png" width="200" border="0" align="left" /></a>The new version has almost complete feature support for WADL. In the REST Describe WADL editor the <b>degree of freedom has greatly increased</b> which means that a lot of hard-wired code from the last release has been generalized. Now you can modify your WADL file completely interactively, with context-sensitive behavior of the editor. For example <span style="font-family:monospace;">&lt;param&gt;</span> elements adapt their available features depending on their parent node, and each object let's you just add the particularly allowed sub-objects. This helps you create valid WADLs. The idea of the editor is to mix the properties of a syntax-highlighted XML file, a tree, and all this enriched by WADL-specific features like the type estimation with a custom types manager.<br />
+<br />
+<b>WADL Parser allows for editing of existing descriptions</b><br />
+<br />
+<a href="./images/rest_describe_wadl_upload.png"><img src="./images/rest_describe_wadl_upload.png" width="200" border="0" align="right" /></a>The more WADL will gain interest with <a href="http://en.wikipedia.org/wiki/RESTafarian">RESTafarians</a>, the more WADL files will get written. The v0.2 parsing feature allows you to <b>upload any WADL out there</b> in this crazy world, edit it in the REST Describe application, or even create code from it. When you check out WADL uploading be sure to give the <a href="http://www.crummy.com/software/wadl.rb/delicious.wadl">del.icio.us WADL</a> a try (it is hard-coded as a demo in the WADL Upload dialog, you need to adapt the version available on the referenced web site). Once you hit the OK button the file gets parsed, a tree gets created, and then you can play with the file, create code from it, or even save it and then upload it again (this was my test to see whether the parsing feature worked). Parsed files will show up in fullscreen mode, but of course you can easily leave this mode if you feel like.<br />
+<br />
+<b>More RESTful behavior</b><br />
+<br />
+<a href="./images/rest_describe_restful.png"><img src="./images/rest_describe_restful.png" width="150" border="0" align="left" /></a>Even if most REST APIs are somewhat not completely REST (e.g. you place all your requests to one endpoint and a parameter contains the actual operation), there are a lot of others that actually are RESTful. REST Describe now lets you <b>choose the HTTP method</b> that should be used for the request. This is not a big change, however an important one. Thanks to <a href="http://yeahrock.de/">Jan Schulz-Hofen</a> for his reminder (see his comment [Yeah] on my v0.1 release <a href="http://blog.tomayac.de/index.php?date=2007-04-26&time=18:05:54&perma=REST+Describe+first+.html">blog entry</a>).<br />
+<br />
+<b>Code Generation, or what I call REST Compile</b><br />
+<br />
+<a href="./images/rest_describe_php.png"><img src="./images/rest_describe_php.png" width="200" border="0" align="right" /></a>By <a href="http://en.wikipedia.org/wiki/Compiler">definition</a> a <span style="color:gray;"><i>"compiler is a computer program that translates a computer program written in one computer language [...] into an equivalent program written in another computer language"</i></span>. I take this definition a little sloppy and replace the first "computer program" by a "service description", and the "equivalent" by "implementing this service", and even if this does not really result in an English phrase, you probably got the idea. Once you have a WADL, implementation in a programming language is just a localization problem. Wait a minute. Did I write <i><b>localization problem</b></i>? Yes, because this is basically what the code generation feature in REST Compile is based on (thanks for the localization joke, <a href="http://wordpress.chanezon.com/">Pat</a>). The application is created with <a href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>, and the toolkit's <a href="http://code.google.com/webtoolkit/documentation/com.google.gwt.i18n.client.Messages.html">I18N Message feature</a> which is based on Java property files provides us with a certain kind of template functionality. How does this work? Let's start with an explanation of the feature the way it was thought (i.e. for I18N):<br />
+<br />
+You start with a template in each language:<br />
+<span style="font-family:monospace;"><span style="color:darkblue;">runningOutOfDiskSpace</span> = Caution, you only have <span style="color:red;">{0}</span> left.</span><br />
+<span style="font-family:monospace;"><span style="color:darkblue;">runningOutOfDiskSpace</span> = Achtung, Sie haben nur noch <span style="color:red;">{0}</span> ?brig.</span><br />
+<br />
+At runtime the program inserts the actual amount of available disk space, and only the strings that need to be localized are kept in the property file. Now back to the code generation idea. For instance functions or methods or whatever you want to call them exist in almost every programming language. There are slight differences, however, the main idea is the same. Have a look at two equivalent functions, the first in Ruby and the second in PHP:<br />
+<table border="0"><tr><td><br />
+<pre><br />
+def welcome(name)<br />
+   puts "howdy #{name}"<br />
+end<br />
+</pre></td><br />
+<td><pre><br />
+function welcome($name) {<br />
+   echo "howdy" . $name;<br />
+}<br />
+</pre></td></tr></table>So "<span style="font-family:monospace;">}</span>" becomes "<span style="font-family:monospace;">end</span>", "<span style="font-family:monospace;">def</span>" becomes "<span style="font-family:monospace;">function</span>" and so on. For each language there are characteristic structures, only the dynamic content needs to be updated. What REST Compile does is that a <b>CodeGenerator fabric class</b> loads for example a <b>PHP5Generator class</b> which then loads its particular <b>Templates_PHP.properties file</b>. In consequence if you want to add another language, simply register your generator in the CodeGenerator factory, write your template file, add your dynamic code generating stuff to the generator, and there you go. By the way: this <b>I18N message abuse</b> allows code generation to happen <b>completely on the client side</b>. You could download the whole application and run it offline.<br />
+<br />
+<b>Getting started</b><br />
+<br />
+The <a href="http://rest-api-code-gen.googlecode.com/files/rest_describe_v0.2.zip">source code</a> is available under a BSD license. You can also check out the application directly in your browser. Therefore you might want to bookmark a link to the <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html">latest version of REST Describe & Compile</a>. It is also available <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html?locale=de">in German</a>. Looking forward to hearing back from you. If you happen to be around Barcelona, Spain on June 27th - 29th, Patrick Chanezon and me will be co-presenting on <a href="http://javasymposium.techtarget.com/europe/sessions.html">TheServerSide.com Java Symposium</a>. REST Describe & Compile will cover the second part of the presentation.<br />
+<br />
+WADL is a great REST description language. You have done an awesome job, <a href="http://weblogs.java.net/blog/mhadley/">Marc</a>! Hopefully other developers will pick up on this release, and make WADL <i><u>the</u></i> REST description language. Even if I would have named it <a href="http://blog.tomayac.de/index.php?date=2007-03-23&time=21:28:53&perma=REST+Describe+and+wh.html">differently</a>, though <span style="font-family:monospace;">;-)</span><br />
+<br />
+<small>Yes, I do work for and get paid by <a href="http://www.google.es/ca">Google</a> for working on this project, but no, the project is not an official Google product. Period.</small>

@@ -1,0 +1,536 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title> Why Build Progressive Web Apps: Never Lose a Click-Out! (Video Write-Up) » blog.tomayac.com </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta property="twitter:account_id" content="1510101733">
+    <meta name="amp-google-client-id-api" content="googleanalytics">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="canonical" href="/takeout.php">
+    <link rel="alternate" type="application/atom+xml" title="Blog von Thomas Steiner homoblogiens" href="./atom.php">
+    <link type="text/plain" rel="author" href="https://tomayac.com/humans.txt">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript>
+      <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+    </noscript>
+    <style amp-custom>#header,
+#navigation {
+	background-color: #eee;
+	margin: 0 0 .5em
+}
+#content,
+#header {
+	width: 100%;
+	border: 1px dashed silver
+}
+#aside,
+#content,
+#footer,
+#header,
+#navigation {
+	border: 1px dashed silver
+}
+#content a,
+#footer a {
+	padding: .2em;
+	text-decoration: none
+}
+#aside a,
+#content a,
+#content>h3 a,
+#footer a,
+#navigation a {
+	text-decoration: none
+}
+#aside a:hover,
+#aside a:link,
+#aside a:visited,
+#content h2,
+#content h3,
+#content>h3 a,
+#footer a,
+body {
+	color: #000
+}
+html {
+	box-sizing: border-box
+}
+*,
+::after,
+::before {
+	box-sizing: inherit
+}
+body {
+	background-color: #fff;
+	font-size: 12pt;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+}
+#blog,
+#ccasion {
+	font-size: 1.5em;
+	position: absolute;
+	font-weight: 700
+}
+#blog {
+	top: 0;
+	left: 1em;
+	z-index: 1;
+	color: #ffd700
+}
+#ccasion {
+	top: .05em;
+	left: 2.12em;
+	z-index: 2;
+	color: #ff8032
+}
+#login {
+	position: absolute;
+	top: .05em;
+	right: .5em
+}
+#header {
+	font-size: 1.2em;
+	max-width: 1400px;
+	padding: 0;
+	overflow: hidden
+}
+#aside h2,
+#navigation h2 {
+	font-size: .9em
+}
+#container {
+	display: -webkit-flex;
+	display: flex;
+	margin: 0 .5em;
+	max-width: calc(1400px - .5em)
+}
+@media (min-width: 480px) {
+	#container {
+		-webkit-flex-direction: row;
+		flex-direction: row
+	}
+}
+@media (max-width: 480px) {
+	#container {
+		-webkit-flex-direction: column;
+		flex-direction: column
+	}
+}
+#navigation-aside {
+	display: -webkit-flex;
+	display: flex
+}
+@media (min-width: 480px) {
+	#navigation-aside {
+		-webkit-flex-direction: column;
+		flex-direction: column
+	}
+}
+#navigation {
+	width: 120px
+}
+#navigation h2 {
+	margin: 0;
+	background-color: #ffd700
+}
+#navigation a {
+	display: block;
+	overflow-x: hidden;
+	padding: 0 0 .2em;
+	font-weight: 700;
+	color: #000
+}
+.category0:hover {
+	background-color: #c0c0ff
+}
+.category1:hover {
+	background-color: #ff8032
+}
+.category2:hover {
+	background-color: #80ff00
+}
+.category3:hover {
+	background-color: #ff0080
+}
+.category4:hover {
+	background-color: #ff0
+}
+.category5:hover {
+	background-color: #80ff80
+}
+.category6:hover {
+	background-color: #ff8080
+}
+.category7:hover {
+	background-color: #c0ff80
+}
+.category8:hover {
+	background-color: #ffc080
+}
+#aside h2,
+#content h2 {
+	background-color: #ffd700;
+	margin: 0
+}
+#aside a:hover,
+#footer a:hover {
+	background-color: #80ffff
+}
+#aside {
+	width: 120px;
+	margin: 0 .5em .5em 0;
+	background-color: #eee;
+	overflow-x: hidden
+}
+#aside svg {
+	vertical-align: middle
+}
+#aside p {
+	margin: .5em
+}
+#aside a {
+	display: block;
+	padding: 0;
+	font-size: 1em;
+	font-weight: 700
+}
+#content a,
+#content h2,
+#content h3,
+#footer a {
+	font-weight: 700
+}
+#content {
+	margin: 0;
+	text-align: justify
+}
+#content h2 {
+	font-size: 1.2em
+}
+#content h3 {
+	font-size: 1.1em;
+	margin: 0;
+	background-color: #ff8032
+}
+#content p {
+	font-size: 1em;
+	margin: .5em 0;
+	text-align: justify
+}
+#content img {
+	margin: .5em 1em
+}
+#content hr {
+	height: 1px;
+	text-align: left;
+	margin-left: 0;
+	border: 1px solid silver
+}
+#content small {
+	font-size: .9em;
+	padding: .5em 0
+}
+#content pre {
+	font-family: monospace;
+	color: #00f;
+	background-color: #ffa;
+	margin: 2.5em;
+	font-size: .9em;
+	white-space: pre-wrap;
+	text-overflow: ellipsis;
+	overflow-x: scroll
+}
+#content a {
+	display: inline
+}
+#content a:link {
+	color: #00f
+}
+#content a:visited {
+	color: #00008b
+}
+#content a:hover {
+	color: #00f;
+	text-decoration: underline
+}
+#footer {
+	max-width: 1400px;
+	margin: .5em 0 0;
+	padding: .5em
+}
+#footer ul {
+	list-style: none
+}
+#footer li::before {
+	content: "» "
+}
+.blogPost {
+	padding: .5em
+}
+.commentForm,
+.commentList {
+	display: none
+}
+ul {
+	padding-left: .5em;
+	list-style-position: inside
+}
+amp-iframe,
+iframe {
+	max-width: 533px
+}
+@media (max-width: 480px) {
+	#navigation-aside {
+		-webkit-flex-direction: row;
+		flex-direction: row
+	}
+	#navigation {
+		width: 50%
+	}
+	#aside>amp-img,
+	#navigation amp-img {
+		-webkit-transform-origin: left;
+		-webkit-transform: scaleX(2);
+		transform-origin: left;
+		transform: scaleX(2)
+	}
+	#aside {
+		width: 50%;
+		margin: 0 0 .5em .5em
+	}
+	amp-iframe,
+	amp-img,
+	iframe,
+	img {
+		max-width: 100%;
+		layout: responsive
+	}
+}</style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <a href="/">
+        <amp-img src="./static/img/city.jpg" alt="" width="1400" height="20"></amp-img>
+      </a>
+      <a href="/">
+        <div id="blog">blog</div>
+        <div id="ccasion">occasion</div>
+      </a>
+      &nbsp;<strong>l'occasion</strong> <em>f</em> - Gelegenheit <em>f</em>, die ~ , der ~; <em>bei Gelegenheit</em> - <strong>&agrave; l'occasion</strong>
+    </header>
+    <div id="container">
+      <div id="navigation-aside">
+        <nav id="navigation">
+          <h2>Categories</h2>
+          <a href="/">
+            <amp-img src="./static/img/mountains_sunrise.jpg" alt="" width="120" height="23"></amp-img>
+          </a>
+          <a class='category0' href='categories/private/'>&nbsp;Private</a>
+          <a class='category1' href='categories/work/'>&nbsp;Work</a>
+          <a class='category2' href='categories/technical/'>&nbsp;Technical</a>
+          <a class='category3' href='categories/political/'>&nbsp;Political</a>
+          <a class='category4' href='categories/france/'>&nbsp;France</a>
+        </nav>
+        <aside id="aside">
+          <h2>Related</h2>
+          <amp-img src="./static/img/palms.jpg" alt="" width="120" height="23"></amp-img>
+          <div>
+            <p>
+              <a href="atom.php" rel="me">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 256 256">
+                  <rect width="246" height="246" rx="50" ry="50" x="5" y="5" fill="#F49C52"/>
+                  <rect width="236" height="236" rx="47" ry="47" x="10" y="10" fill="#F49C52"/>
+                  <circle cx="68" cy="189" r="24" fill="#FFF"/>
+                  <path d="M160 213h-34a82 82 0 0 0-82-82v-34a116 116 0 0 1 116 116zM184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" fill="#FFF"/>
+                </svg>
+                Blog Feed
+              </a>
+            </p>
+            <p>
+              <a href="https://twitter.com/tomayac" rel="me">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="16" width="16" version="1.1" viewBox="0 0 182.7 150.7">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path d="m0 10h1366.9v1110.9h-1366.9z"/>
+                    </clipPath>
+                  </defs>
+                  <g transform="matrix(1.3333 0 0 -1.3333 0 150.67)">
+                    <g transform="scale(.1)">
+                      <g clip-path="url(#clipPath20)">
+                        <path d="m1366.9 989.4c-50.3-22.3-104.3-37.4-161-44.2 57.9 34.7 102.3 89.7 123.3 155.2-54.2-32.1-114.2-55.5-178.1-68-51.1 54.5-124 88.6-204.7 88.6-154.9 0-280.4-125.5-280.4-280.4 0-22 2.5-43.4 7.3-63.9-233.1 11.7-439.7 123.4-578 293-24.1-41.4-38-89.6-38-141 0-97.3 49.5-183.1 124.8-233.4-46 1.4-89.2 14.1-127 35.1 0-1.2 0-2.3 0-3.5 0-135.9 96.7-249.2 225-275-23.5-6.4-48.3-9.8-73.9-9.8-18.1 0-35.6 1.7-52.8 5 35.7-111.4 139.3-192.5 262-194.8-96.1-75.2-217-120-348.4-120-22.6 0-45 1.3-66.9 3.9 124.2-79.6 271.6-126 429.9-126 515.8 0 797.9 427.3 797.9 797.9 0 12.2-0.3 24.2-0.8 36.3 54.8 39.6 102.3 89 139.9 145.2" fill="#55ACEE"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                @tomayac
+              </a>
+            </p>
+            <p>
+              <a href="https://tomayac.com/tweets" rel="me">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="16" width="16" version="1.1" viewBox="0 0 182.7 150.7">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path d="m0 10h1366.9v1110.9h-1366.9z"/>
+                    </clipPath>
+                  </defs>
+                  <g transform="matrix(1.3333 0 0 -1.3333 0 150.67)">
+                    <g transform="scale(.1)">
+                      <g clip-path="url(#clipPath20)">
+                        <path d="m1366.9 989.4c-50.3-22.3-104.3-37.4-161-44.2 57.9 34.7 102.3 89.7 123.3 155.2-54.2-32.1-114.2-55.5-178.1-68-51.1 54.5-124 88.6-204.7 88.6-154.9 0-280.4-125.5-280.4-280.4 0-22 2.5-43.4 7.3-63.9-233.1 11.7-439.7 123.4-578 293-24.1-41.4-38-89.6-38-141 0-97.3 49.5-183.1 124.8-233.4-46 1.4-89.2 14.1-127 35.1 0-1.2 0-2.3 0-3.5 0-135.9 96.7-249.2 225-275-23.5-6.4-48.3-9.8-73.9-9.8-18.1 0-35.6 1.7-52.8 5 35.7-111.4 139.3-192.5 262-194.8-96.1-75.2-217-120-348.4-120-22.6 0-45 1.3-66.9 3.9 124.2-79.6 271.6-126 429.9-126 515.8 0 797.9 427.3 797.9 797.9 0 12.2-0.3 24.2-0.8 36.3 54.8 39.6 102.3 89 139.9 145.2" fill="#55ACEE"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                Tweet Archive
+              </a>
+            </p>
+            <p>
+              <a href="pgp_public_key.asc">🔐 PGP Public Key</a>
+            </p>
+          </div>
+        </aside>
+      </div>
+      <main id="content">
+        <h2>A Look Inside the Think Tank...</h2>
+        <wrapped>
+  <p>
+	<em>(This is the write-up of the first episode of my new YouTube show "Why Build Progressive Web Apps." If you prefer watching, the </em>
+	<a href="https://www.youtube.com/watch?v=4UK_TDTTWnQ">
+		<em>video</em>
+	</a>
+	<em> is embedded below. This post was <a href="https://medium.com/dev-channel/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-74cbbc466afd">cross-posted to Medium.com</a>.)</em>
+</p>
+<p>On the Google Chrome Developers
+	<a href="https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw">YouTube channel</a>, we have been pushing the concept of Progressive Web Apps (PWA) a fair bit, and there have been some great
+	<a href="https://youtu.be/Xryhxi45Q5M">success</a>
+	<a href="https://youtu.be/SJiKWwBtQaU">stories</a> of companies building PWAs. But you might wonder, what may have worked for the mentioned partners, might not necessarily work for your company. In my new video series called
+	<em>"Why build Progressive Web Apps,"</em> I want to show you common
+	<strong>
+		<em>use-case driven patterns for applying PWA features</em>
+	</strong> that set
+	<em>you</em> up for success. In the first episode, I look at affiliate sites and how they can manage to never lose a click-out.
+</p>
+<figure>
+  <amp-youtube width="480" height="270" layout="responsive" data-videoid="4UK_TDTTWnQ">
+  </amp-youtube>
+	<figcaption>"Why Build Progressive Web Apps," episode 1: Never Lose a Click-Out!</figcaption>
+</figure>
+<p>You have maybe seen or even used a
+	<strong>
+		<em>comparison site</em>
+	</strong> in the past. For example, to find out what is the cheapest internet provider, or to get the best hotel offer for your next vacation. Many of these comparison sites rely on
+	<strong>
+		<em>commission-based affiliate marketing</em>
+	</strong>: when you click out to a third-party vendor site and end up converting, the referring comparison site earns a small fee. In consequence, such sites want you to click through to the best offer, and under no circumstances do they want to risk losing a click-out.
+</p>
+<figure>
+	<amp-img layout="responsive" src="./images/1_0WfuXMlJ42Iwr_skzUGuqw(1).png" width="596" height="566"></amp-img>
+  <figcaption>Screenshots of exemplary comparison sites.</figcaption>
+</figure>
+<p>Many sessions with comparison sites happen "on the go," say, on the commute to work. And while in the majority of cases you might be connected, there are definitely situations where you lose your connection, like in a tunnel or when your signal strength drops to just one or two bars, and you end up being
+	<em>de facto</em> offline. Having an architecture that gives the network some time to respond, but that gracefully degrades to cached content or fallback placeholder content, can help improve the users experience drastically.
+</p>
+<figure>
+	<amp-img layout="responsive" src="./images/1_RhKI5NwhsLjLNbz4z3hVmw(1).png" width="495" height="379"></amp-img>
+	<figcaption>About to lose your mobile connection (Credits:
+		<a href="https://unsplash.com/photos/wVcQqwNeDj8">https://unsplash.com/photos/wVcQqwNeDj8</a>).
+	</figcaption>
+</figure>
+<p>In order to demonstrate how to deal with such situations, I have created my own sample comparison site called
+  <strong></strong>
+  <a href="https://googlechromelabs.github.io/affilicats/">
+  <strong>AffiliCats</strong>
+	</a> with purely dummy content, but coming from
+  <em>real APIs</em> like the
+  <a href="https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L64-L74">Wikimedia API</a>, the
+  <a href="https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L183-L189">Google Static Maps API</a>, the
+  <a href="https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L202-L204">Random Number API</a>, the
+  <a href="https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L202-L204">Bacon Ipsum API</a>, and the
+  <a href="https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L270">Place Kittens API</a>.
+</p>
+<figure>
+  <amp-img layout="responsive" src="./images/1_kQOTkBcYlmmc-73ZMI1x1w(1).png" width="384" height="770"></amp-img>
+  <figcaption>AffiliCats sample app (Source:
+    <a href="https://googlechromelabs.github.io/affilicats/">https://googlechromelabs.github.io/affilicats/</a>).
+	</figcaption>
+</figure>
+<p>The app has a big search bar on top where you can search for items, like cats. Each item has an image and a title, as well as offers and a
+  <em>"View Deal"</em> button that leads to the third-party vendors site. Then we have three tabs with more
+  <em>photos</em>,
+  <em>reviews</em>, and the
+  <em>location</em> of the item.
+</p>
+<figure>
+  <amp-img layout="responsive" src="./images/1_JQkbPVpR5JeuCh3hS0hfCw(1).png" width="1156" height="772"></amp-img>
+	<figcaption>AffiliCats tabs: photos, reviews, location (Source:
+    <a href="https://googlechromelabs.github.io/affilicats/">https://googlechromelabs.github.io/affilicats/</a>).
+  </figcaption>
+</figure>
+<p>Each tabs content is
+  <em>lazily loaded</em> on-demand with one, or multiple, fetch request. So in each case, the request can either
+  <em>succeed</em>,
+  <em>time out</em> if the network is too slow, or
+  <em>fail</em> from the start if were entirely offline.
+</p>
+<figure>
+  <amp-img layout="responsive" src="./images/1_bhhc-EdWtDyRu2RIMoHxvg(1).png" width="1015" height="384"></amp-img>
+	<figcaption>Waterfall diagram showing lazy-loading.</figcaption>
+</figure>
+<p>In the latter two cases, we want to respond with
+  <em>fallback content</em>, for example, a "reviews took too long to load" message, or a timeout image. When the network comes back, or the slow request eventually goes through, we can then dynamically replace the fallback or placeholder content with real content. The user can also decide to press "reload" and refresh the complete page. This is called "navigation request". If were offline, we can then show a fallback page with skeleton content.
+</p>
+<figure>
+  <amp-img layout="responsive" src="./images/1_64Q_v2GngYSeAOJ47HzaFw(1).png" width="1148" height="772"></amp-img>
+  <figcaption>Fallback content in case loading takes too long, offline placeholders, and dynamic&nbsp;loading.</figcaption>
+</figure>
+<p>Finally, lets see how we can make sure not to lose the click-out. What happens if the user clicks on the "View Deal" button when they are offline? Notice how most of the page is disabled, but the money-making button is still active?</p>
+  <figure>
+	<amp-img layout="responsive" src="./images/1_tCy-zJ0o6Q-0yGSweImtQg(1).png" width="1598" height="1028"></amp-img>
+	<figcaption>While the app is offline and most interactive features are disabled, the "View Deal" button can still be&nbsp;clicked.</figcaption>
+</figure>
+<p>A
+  <em>precached forwarding page</em> opens that waits for the connection to come back, and once online again, it then eventually still realizes the click-out, and drops our imaginary affiliate cookie
+</p>
+<figure>
+  <amp-img layout="responsive" src="./images/1_AcQw_-_PXUHaywmRltvYdw(1).png" width="1630" height="1027"></amp-img>
+	<figcaption>The precached forwarding page loads--even when offline--and waits for the connection to come back, to then eventually still realize the click-out.</figcaption>
+</figure>
+<p>You are invited to
+  <a href="https://googlechromelabs.github.io/affilicats/">play with this app</a> yourself and read the
+  <a href="https://github.com/GoogleChromeLabs/affilicats">source code</a>. I hope this has been useful, and maybe you can apply some of these patterns to your own websites. Thanks for reading, and see or read you for the next episode of "Why build Progressive Web Apps," where we will look at push notifications.
+</p>
+<wrapped>
+
+      </main>
+    </div>
+    <footer id="footer">
+      <ul>
+        <li>© 2005–2019 <a href="./">Thomas Steiner</a></li>
+        <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+        <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+        <li><small>This website uses Google Analytics</small></li>
+      </ul>
+      <amp-analytics type="googleanalytics">
+        <script type="application/json">
+          {
+            "vars": {
+              "account": "UA-2040927-1"
+            },
+            "triggers": {
+              "defaultPageview": {
+                "on": "visible",
+                "request": "pageview"
+              }
+            }
+          }
+        </script>
+      </amp-analytics>
+    </footer>
+  </body>
+</html>
