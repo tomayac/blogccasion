@@ -1,0 +1,9 @@
+---
+layout: index.njk
+---
+
+<ul>
+{%- for post in collections.technical -%}
+  <li>Hello {{ post.data.title }}</li>
+{%- endfor -%}
+</ul>

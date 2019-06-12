@@ -1,0 +1,14 @@
+---
+layout: layouts/post.njk
+title: "Dog food in REST Compile & Describe"
+author: "Thomas Steiner"
+date: "2007-05-31T09:59:42"
+permalink: 2007/05/31/dog-food-in-rest-compile-describe-095942/index.html
+tags:
+  - Work
+---
+<img src="http://www.buzzle.com/img/articleImages/16929-38med.jpg" alt="dog food" align="left" width="100" /><b>Dog food in REST Compile & Describe</b><br />
+<br />
+A lot of companies, including the <a href="http://www.google.com/">one</a> I work for, are eating their own <a href="http://en.wikipedia.org/wiki/Eat_one%27s_own_dog_food">dog food</a> as a means of improving the overall quality of their products. I am planning to follow this pattern in <a href="http://tomayac.de/rest-describe/latest/RestDescribe.html">REST Describe & Compile</a>, that is to say in the Grammars and Namespace Discoverer modules. I am thinking of a module that uses code created by REST Compile, and then executes this code in order to retrieve the namespaces and particular XML schemas a certain web service uses. So the process flow would be:<ol><li>Analyze a request URI and generate a first <b>reqest-based WADL</b></li><li>Use this WADL file to <b>generate request code</b></li><li><b>Execute the generated code</b> on the server, i.e. place a real API request</li><li>Harvest the returned response and <b>discover the contained namespaces and XML schemas</b></li><li>Refine the previously generated WADL, and <b>add the response-based WADL information</b></li><li>Return the <b>final version of the WADL</b></li><li>Return the <b>final version of the code</b> with proper response handling</li></ol>This raises the question about <i>security</i>. Is executing code on your server a good idea? How can evil requests be detected? Can someone create a request that transforms into WADL that then in turn transforms into code that harms your server? What do you think?<br />
+<br />
+<small>Image from <a href="http://www.buzzle.com/img/articleImages/16929-38med.jpg">buzzle.com</a></small>

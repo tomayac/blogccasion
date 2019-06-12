@@ -6,8 +6,8 @@ module.exports = (eleventyConfig) => {
   //eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addPassthroughCopy('static');
-  eleventyConfig.addPassthroughCopy('images');
+  eleventyConfig.addPassthroughCopy('src/static');
+  eleventyConfig.addPassthroughCopy('src/images');
 
   return {
     dir: {

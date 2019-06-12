@@ -1,0 +1,117 @@
+---
+layout: layouts/post.njk
+title: "Why Build Progressive Web Apps: Push, but Don't be Pushy!? (Video Write-Up)"
+author: "Thomas Steiner"
+date: "2018-12-05T09:44:52"
+permalink: 2018/12/05/why-build-progressive-web-apps-push-but-don-t-be-pushy-video-write-up-094452/index.html
+tags:
+  - Technical
+---
+<p>
+  <em>(This is the write-up of the second episode of my new YouTube show Why Build Progressive Web Apps. If you prefer watching, the </em>
+  <a href="https://www.youtube.com/watch?v=vRsVx8_94UQ">
+    <em>video</em>
+  </a>
+  <em> is embedded below.)</em>
+</p>
+<p>
+  <em>(Also check out the </em>
+  <a href="https://medium.com/dev-channel/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-74cbbc466afd">
+    <em>write-up of the first episode</em>
+  </a>
+  <em>, or watch the </em>
+  <a href="https://www.youtube.com/watch?v=4UK_TDTTWnQ">
+    <em>video</em>
+  </a>
+  <em>.)</em>
+</p>
+<p>Let's face it, on the web, push notifications have become a bit of an omnipresent annoyance. The reason for the bad reputation of push notifications--in my opinion--is that we have been, well, a bit too
+  <em>pushy</em> in trying to get people to allow them.
+</p>
+<figure>
+<amp-youtube width="480"
+  height="270"
+  layout="responsive"
+  data-videoid="vRsVx8_94UQ">
+</amp-youtube>
+  <figcaption>Why Build Progressive Web Apps, episode 2: Push, but Don't Be Pushy!</figcaption>
+</figure>
+<p>The folks over at Mozilla have phrased it like this in a
+  <a href="https://blog.mozilla.org/firefox/no-notifications/">blog post</a>:
+</p>
+<blockquote>Online, your attention is priceless. That's why every site in the universe wants permission to send you notifications about new stuff. It can be distracting at best and annoying at worst.</blockquote>
+<figure>
+  <amp-img layout="responsive" width="800" height="639" src="./images/1_Yo8RE2bX86Bvb-YHiyy--w.jpeg"></amp-img>
+    <figcaption>Blog post by Mozilla announcing the option to block push notifications globally.</figcaption>
+  </figure>
+  <p>A particularly
+    <em>bad practice</em> is to pop up the permission dialog on page load, without any context at all. Several high traffic sites have been caught doing this. To subscribe people to push notifications, you use the the
+    <code>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/PushManager">PushManager</a>
+    </code>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PushManager"> interface</a>. Now to be fair, this does not allow the developer to specify the context or the to-be-expected frequency of notifications. So where does this leave us?
+  </p>
+  <pre>const options = {
+  userVisibleOnly: true,
+  applicationServerKey: APPLICATION_SERVER_KEY,
+  // No way to specify context or frequency ¯\_(..)_/¯
+};
+const subscription = await reg.pushManager.subscribe(options);</pre>
+            <p>First, maybe let's take one step back and brainstorm why we would want push notifications in the first place. If done right,
+              <strong>
+                <em>push notifications are actually pretty great</em>
+              </strong>. For example, they can inform you if you have been
+              <em>outbid</em> on an auction site. They can alert you about
+              <em>severe weather conditions</em> in your hometown. On a less serious note, they can notify you when you have a
+              <em>match on a dating site</em>. Or they can let you know if there's a significant
+              <em>price drop</em> for something you're interested in. And yes, of course push notifications can also
+              <em>inform you of new content</em> on a news site.
+            </p>
+            <p>As I wrote above, there is no way on the API-level to inform users about the context of push notifications. All you can do with the options parameter is set a flag whether the notifications should be
+              <code>userVisibleOnly</code>, and provide the
+              <code>applicationServerKey</code>. In consequence, it's crucial that we as application developers provide the context for our notifications ourselves.
+            </p>
+            <p>Maybe you remember the
+              <a href="https://googlechromelabs.github.io/affilicats/">AffiliCats</a> sample app from the
+              <a href="https://www.youtube.com/watch?v=4UK_TDTTWnQ">first episode</a> of Why Build Progressive Web Apps. It's a simple app that simulates a comparison site where you can get great offers for cats. What's new this time is a
+              <strong>
+                <em>button for getting price drop</em>
+              </strong> alerts.
+            </p>
+            <figure>
+              <amp-img layout="responsive" width="394" height="800" src="./images/1_BKXrEPdrTaSeSGlWpFg-Ug.png"></amp-img>
+                <figcaption>AffiliCats app with price drop alerts (Source:
+                  <a href="https://googlechromelabs.github.io/affilicats/">https://googlechromelabs.github.io/affilicats/</a>).
+                </figcaption>
+              </figure>
+              <p>When you press it for the
+                <em>very</em> first time, the notifications permissions prompt pops up, and it's immediately clear that it's related to the price drop alerts.
+              </p>
+              <figure>
+                <amp-img layout="responsive" width="331" height="141" src="./images/1_dUCl2hLZNAzH_6uBnaTPRw.jpeg"></amp-img>
+                  <figcaption>Permission prompt after signing up for Price&nbsp;Alerts.</figcaption>
+                </figure>
+                <p>If you grant permission, the app subscribes you to a push notification endpoint that is configured to send out dummy notifications, and after a couple of seconds after subscribing, you should receive your first notification.</p>
+                <figure>
+                  <amp-img layout="responsive" width="376" height="208" src="./images/1_LXWa0wu8pGX7q_A8e3UyoA.png"></amp-img>
+                    <figcaption>Push notification announcing that prices for cats are going&nbsp;down.</figcaption>
+                  </figure>
+                  <p>So you can see, prices for cats are dropping, you better get one while they last. And there we have it, an actually useful push notification. It was
+                    <em>contextual</em>,
+                    <em>meaningful</em>, and
+                    <em>timely</em>. The
+                    <a href="https://googlechromelabs.github.io/affilicats/">AffiliCats</a> app is open source, go check out the
+                    <a href="https://github.com/googlechromelabs/affilicats">source code</a> if you want to see how it's implemented. Push notifications are a great power, and with great power comes great responsibility. If you remember one thing from this write-up, I hope it's
+                    <strong><em>context matters</em></strong>!
+                  </p>
+                  <p>In the next episode of
+                    <em>Why build Progressive Web Apps,</em> we look at another PWA super power:
+                    <em>Add to Home Screen</em>! Looking forward to reading our seeing you! In order not to miss it,
+                    <strong>
+                      <em>subscribe</em>
+                    </strong> to our
+                    <a href="https://medium.com/dev-channel">Medium Dev Channel</a>, the Chrome Developers
+                    <a href="https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw">YouTube channel</a>, follow
+                    <a href="https://twitter.com/ChromiumDev">@ChromiumDev</a> on Twitter?--?and if you like, I am
+                    <a href="https://twitter.com/tomayac">@tomayac</a> almost universally on the World Wide Internet.
+                  </p>

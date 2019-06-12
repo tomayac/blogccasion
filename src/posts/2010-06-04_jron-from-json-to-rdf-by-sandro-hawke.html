@@ -1,0 +1,68 @@
+---
+layout: layouts/post.njk
+title: "JRON - From JSON to RDF by Sandro Hawke"
+author: "Thomas Steiner"
+date: "2010-06-04T15:53:19"
+permalink: 2010/06/04/jron-from-json-to-rdf-by-sandro-hawke-155319/index.html
+tags:
+  - Technical
+---
+<b>JRON - From JSON to RDF by Sandro Hawke</b><br />
+<br />
+<a href="http://twitter.com/mamund">@mamund</a> pointed to <a href="http://twitter.com/sandhawke">@sandhawke</a>'s proposition to convert <a href="http://www.w3.org/RDF/">RDF</a> to <a href="http://www.json.org/">JSON</a>. Read his piece <a href="http://decentralyze.com/2010/06/04/from-json-to-rdf-in-six-easy-steps-with-jron/">From JSON to RDF in Six Easy Steps with JRON</a> first. Below, co-posting my comment I made there also on my blog:<br />
+<br />
+Hi Sandro,<br />
+<br />
+Interesting concept! I quite like it and I'm currently struggling with a relatively similar issue of embedding RDF in XML (Media RSS more specifically). Couple of remarks: you mix foaf_name and foaf.name in your examples, you probably meant to write '_' consistently, but in the end the choice is random. I tried to model the very simple concept below, taken from one of your presentations:<br />
+<br />
+In Notation 3 (I abused FOAF for the concept of nickname of a state here):<br />
+<br />
+<pre>@prefix foaf: &lt;http://xmlns.com/foaf/spec/&gt; .<br />
+<br />
+&lt;http://dbpedia.org/resource/Massachusetts&gt; foaf:nick "Bay State" .</pre><br />
+<br />
+I tried to convert this to JRON:<br />
+<br />
+<pre>{<br />
+    "dbpedia-owl_AdministrativeRegion" : "http://dbpedia.org/resource/Massachusetts",<br />
+    "foaf_nick" : "Bay State",<br />
+    "__prefixes": {<br />
+        "foaf_" : "http://xmlns.com/foaf/0.1/",<br />
+        "dbpedia-owl_" : "http://dbpedia.org/resource/" <br />
+    }<br />
+}</pre><br />
+<br />
+I think it is necessary to assign &lt;http://dbpedia.org/resource/Massachusetts&gt; a type (dbpedia-owl:AdministrativeRegion), as I believe with JRON it is not possible to express the simple concept in Notation 3 syntax above, or in RDF/XML syntax below:<br />
+<br />
+<pre>&lt;?xml version="1.0"?&gt;<br />
+&lt;rdf:Description<br />
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"<br />
+    xmlns:foaf="http://xmlns.com/foaf/spec/"<br />
+    rdf:about="http://dbpedia.org/resource/Massachusetts"&gt;<br />
+  &lt;foaf:nick&gt;Bay State&lt;/foaf:nick&gt; <br />
+&lt;/rdf:Description&gt;</pre><br />
+<br />
+Probably I'm just missing something obvious, though. Anyway, assuming my additional typed interpretation of JRON was correct, then hopefully I applied your xml:lang JRON transformation correctly?! See below:<br />
+<br />
+<pre>{<br />
+    "dbpedia-owl_AdministrativeRegion" : "http://dbpedia.org/resource/Massachusetts",<br />
+    "foaf_nick" : [<br />
+        {<br />
+            "__text" : "Bay State",<br />
+            "__lang" : "en" <br />
+        },<br />
+        {<br />
+            "__text" : "?tat de la Baie",<br />
+            "__lang" : "fr" <br />
+        } <br />
+    ] ,<br />
+    "__prefixes": {<br />
+        "foaf_" : "http://xmlns.com/foaf/0.1/",<br />
+        "dbpedia-owl_" : "http://dbpedia.org/resource/" <br />
+    }<br />
+}</pre><br />
+<br />
+Is there a better way to express any of this in JRON? Looking forward to your response. Thanks!<br />
+<br />
+Cheers,<br />
+Tom

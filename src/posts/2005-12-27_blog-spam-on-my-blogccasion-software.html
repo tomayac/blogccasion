@@ -1,0 +1,23 @@
+---
+layout: layouts/post.njk
+title: "Blog-Spam On My blogccasion Software"
+author: "Thomas Steiner"
+date: "2005-12-27T12:08:43"
+permalink: 2005/12/27/blog-spam-on-my-blogccasion-software-120843/index.html
+tags:
+  - Technical
+---
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/52/SpamInACan.jpg/180px-SpamInACan.jpg" alt="Spam" align="left" width="80" /><b>Comment spam on my personal blog</b><br />
+<br />
+Spam seems to be one of the most-spread evils of the internet age. Since december 26 it also reached my blog. I get a lot of <b>poker spam</b> from various online gambling sites. Besides the fact that I am a really poor poker player <small>(I am good at making a poker face but bad at having the adequate cards...)</small> I prefer losing offline instead of online.<br />
+<br />
+Enough reason to fight spam. I did some research and found out that comment spamming seems to be a huge problem on <a href="http://wordpress.org/" target="_blank">WordPress</a>, a popular semantic personal publishing platform. I am surprised at the fact that the spammers digged into my homebrew blogccasion software (<a href="http://blog.tomayac.de/index.php?date=2005-10-23&time=01:06:29&perma=Why+I+started+to+blo.html">my reasons for developping my own blogging software</a>). Its structure is very open (and designed as an experiment to <b>trust in the commenter's personal responsibility</b>). By now I experienced good results and only once decided to change a comment into a text link to the origin site (last comment on the <a href="http://blog.tomayac.de/index.php?date=2005-11-05&time=20:01:11&perma=Paris+Riots+November.html">blog entry on the Paris riots</a>).<br />
+<br />
+The comment form passes its contents to <span style="font-family:monospace;">WriteBlogComment.php</span> where first all HTML tags get removed and second the database entry gets written. I do not force the commenter neither to provide a valid email address nor to provide his name. Looks like this open structure is too na?ve in the age of spam bots. Common ways to fight comment spam are so-called <a href="http://en.wikipedia.org/wiki/CAPTCHA" target="_blank">Captchas</a> with the inconvenience of being a graphical solution. There has been a lot of <a href="http://www.w3.org/TR/turingtest/" target="_blank">research on the inaccesibility of captchas</a>. I try to keep to the <a href="http://www.nfb.org/tech/webacc.htm" target="_blank">web accesibility rules</a> as proposed by many organisations, among the W3C. So I developed a set of trivial arithmetic problems as proposed by the document mentioned above:<br />
+<br />
+<i>The goal [...] is to separate human from machine. One reasonable way to do this is to test for logic. Simple mathematical word puzzles, trivia, and the like may raise the bar for robots, at least to the point where using them is more attractive elsewhere.<br />
+Problems: Users with cognitive disabilities may still have trouble. Answers may need to be handled flexibly, if they require free-form text. A system would have to maintain a vast number of questions, or shift them around programmatically, in order to keep spiders from capturing them all.</i><br />
+<br />
+My <a href="http://blog.tomayac.de/arithmeticTriviaTuringTest.phps" target="_blank">simple Turing Test</a> can be used for free.<br />
+<br />
+<small>Image from <a href="http://en.wikipedia.org/wiki/SPAM" target="_blank">wikipedia.org</a></small>
