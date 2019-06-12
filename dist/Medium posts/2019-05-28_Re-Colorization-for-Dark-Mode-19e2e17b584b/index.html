@@ -1,0 +1,28 @@
+<p>A couple of weeks ago, I have collected feedback regarding people’s preferences when it comes to re-colorization of websites for dark mode. The core research question was: <em>“Do people expect images to look different in dark mode than in light mode?”</em></p>
+<p><a href="https://twitter.com/ChromiumDev/status/1123886638965383168">https://twitter.com/ChromiumDev/status/1123886638965383168</a></p>
+<h4>Survey and Results</h4>
+<p>I created a little <a href="https://dark-mode-colors.glitch.me/">Dark Mode Colors 🌘 Re-Colorization Playground app</a> that allows people to toy around with different re-colorization options and report their preferences in a survey. The playground app was shared <a href="https://twitter.com/ChromiumDev/status/1123886638965383168">on Twitter</a> and also on multiple Google-internal <em>misc</em> mailing lists with both technical and non-technical audiences.</p>
+<p><a href="https://dark-mode-colors.glitch.me/">https://dark-mode-colors.glitch.me/</a></p>
+<p>I’m now happy to briefly report on the results. All in all, I have collected 137 responses, the <a href="https://docs.google.com/spreadsheets/d/1OuvO64dGdGxRFDre5DOLozySfovDH1UXVcB46oZkeaQ/edit?usp=sharing">raw results are available in this spreadsheet</a>. The majority of people (57.7%) preferred a grayscale filter, 40.9% of people preferred no filter (that is, leaving the colors <em>as-is</em>), and a tiny fraction of people (1.5%) preferred a combination of grayscale and inversion filters. No one liked inversion in isolation, which is in accordance with findings from Szpiro <em>et al.</em> in their paper <a href="https://dl.acm.org/citation.cfm?id=2982168">How People with Low Vision Access Computing Devices: Understanding Challenges and Opportunities</a>.</p>
+<p><img src="img/1__zhej2fUeKP13mF__tzdRSNQ.png" alt=""></p>
+<p>Digging down on the 79 responses (the 57.7%) of people who preferred a grayscale filter, the majority opted for a value of 50%, with another small peak at 70%.</p>
+<p><img src="img/1__G7T9XxfQT1T7NmBEDs__uXA.png" alt=""></p>
+<p>In practice, this is what <em>No Filter</em> looks like:</p>
+<p><img src="img/1__HO__9wnkEjtutG0Wg__kgVSg.png" alt=""></p>
+<p>Compared to <em>Only Grayscale: 50%</em>:</p>
+<p><img src="img/1__jCfG5__8hEXO3pbBiKgikkw.png" alt=""></p>
+<p>The advantage of a grayscale filter is that the core color information of images is preserved, but some of the brilliance and vibrancy (that can be disturbing in <a href="https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d">contexts where people would typically use dark mode</a>) is reduced.</p>
+<h4>Re-Colorization in Practice</h4>
+<p>How can you put these findings in practice? One way is to make the amount of grayscaling flexible by leveraging <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS variables</a>:</p>
+<p>/* Somewhere in your CSS */</p>
+<p>--grayscale-percentage: 50%;</p>
+<p>img {<br>
+filter: grayscale(var(--grayscale-percentage));<br>
+}</p>
+<p>You can dynamically control the CSS variable via JavaScript:</p>
+<p>/* Somewhere in your JavaScript */</p>
+<p>const value = '70%';<br>
+document.documentElement.style.setProperty(<br>
+'--grayscale-percentage', value);</p>
+<h4>Conclusion</h4>
+<p>As a closing thought, when you implement dark mode for a site, always keep in mind your users. Not everyone may like your default re-colorization choices (which can well be to have no re-colorization). Luckily, modern CSS makes it possible to make this an <em>easy-to-expose</em> preference. Now let there be darkness!</p>

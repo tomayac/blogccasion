@@ -1,0 +1,37 @@
+<p><em>(This is the write-up of the third episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the</em> <a href="https://youtu.be/kENeCdS3fzU"><em>video</em></a> <em>is embedded below.)</em></p>
+<p><em>(Also check out the</em> <a href="https://medium.com/dev-channel/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-74cbbc466afd"><em>write-up of the first episode</em></a> <em>and the</em> <a href="https://medium.com/dev-channel/why-build-progressive-web-apps-push-but-dont-be-pushy-video-write-up-aa78296886e"><em>write-up of the second episode</em></a><em>, or watch the</em> <a href="https://www.youtube.com/watch?v=4UK_TDTTWnQ"><em>first episode video</em></a> <em>and the</em> <a href="https://www.youtube.com/watch?v=vRsVx8_94UQ"><em>second episode video</em></a><em>.)</em></p>
+<p>“Why Build Progressive Web Apps,” episode 3: If It’s Just a Bookmark, It’s not a PWA!</p>
+<p><em>Add to Home Screen</em> is a concept almost as old as the original iPhone. In fact, it was introduced in February 2008 with <a href="https://www.macworld.com/article/1131616/iphone_update.html">iPhone OS version 1.1.3</a>. Today, more than 10 years later, the feature has come a really long way. What started as a mere bookmark, has now turned into a PWA super power.</p>
+<p><img src="img/0__D3SYkEIMRjTA____Zt.jpg" alt="Add to Home Screen on iPhone OS 1.1.3.">
+Add to Home Screen on iPhone OS 1.1.3.</p>
+<p>Chrome first introduced Add to Home Screen banners <a href="https://www.youtube.com/watch?v=vl4-WMImj6I&amp;feature=youtu.be&amp;t=52">in Chrome 42</a>—we are talking May 2015. We have heard from developers like Alibaba, that <a href="https://developers.google.com/web/showcase/2016/alibaba">users re-engage 4 times more often</a> with their site added to home screen. So in the early days, it seemed like getting users to install a PWA was an immediate recipe for success. In consequence, we tuned the heuristics for add to home screen to prompt users sooner, which yielded to <a href="https://medium.com/dev-channel/the-new-and-improved-add-to-home-screen-1f79bdd464b0">48% more installs</a>.</p>
+<p><img src="img/1__L__G4VVFgBb0CsRvmGwu__Vw.png" alt="Alibaba users re-engage four times more often with their site added to home screen (Source: https://developers.google.com/web/showcase/2016/alibaba).">
+Alibaba users re-engage four times more often with their site added to home screen (Source: <a href="https://developers.google.com/web/showcase/2016/alibaba">https://developers.google.com/web/showcase/2016/alibaba</a>).</p>
+<p>In hindsight, this alone was not directly correlated with other app success metrics that you as a developer would care about, such as conversions. We introduced an improved variant of the feature in Chrome Beta 57 called <a href="https://developers.google.com/web/fundamentals/integration/webapks">WebAPK</a>, with better integration into Android, so apps were no longer just better bookmarks. Other new features included the ability to <em>change the app icon</em> and <em>app name</em> by changing the values in the Web App Manifest, and also to register a <em>scope of URLs</em> where the app would be launched for directly.</p>
+<p>But we have heard one thing loud and clear: <strong>developers want more control as to when their apps show the banner</strong>. For example, if you are an <em>airline site</em> and you have a PWA for storing boarding passes, it only makes sense to ask people to install it after they have actually bought a ticket. If you are a <em>news site</em> and your users are logged in, it might make sense to show the prompt immediately. And in some cases, even if you have a fully qualifying PWA, you might not even want to show the prompt at all. But most probably, you would want to define your own criteria in your app to determine who’s a loyal enough user to show the banner to.</p>
+<p>Let us see how we can do that in our good old friend <a href="https://googlechromelabs.github.io/affilicats/">🐈 AffiliCats</a> that we have introduced in our last two episodes. It simulates a comparison site where you can get great offers for cats. <em>AffiliCats makes money when someone clicks through to view one of the deals</em>. The app meets the PWA installability quality bar in Lighthouse but we want to <em>hold back the prompt until someone has actually viewed at least two deals</em>.</p>
+<p><img src="img/1__IaqDXu1RPsIcgLGTsY7eSw.png" alt="🐈 AffiliCats meets the PWA installability quality bar in Lighthouse.">
+🐈 AffiliCats meets the PWA installability quality bar in Lighthouse.</p>
+<p>Should the user then come back to the app — which they hopefully do — we can then show them a customized button that would trigger the browser’s prompt. We are in full control.</p>
+<p>window.addEventListener('beforeinstallprompt', (event) =&gt; {<br>
+let previouslyEngaged = localStorage.getItem('engagement');<br>
+if (!previouslyEngaged) {<br>
+console.log('Install button hidden due to no prior engagement');<br>
+return;<br>
+}<br>
+previouslyEngaged = parseInt(previouslyEngaged, 10);<br>
+if ((isNaN(previouslyEngaged)) ||<br>
+(previouslyEngaged &lt; INSTALL_THRESHOLD)) {<br>
+console.log('Install button hidden due to too low engagement');<br>
+return;<br>
+}<br>
+event.preventDefault();<br>
+installPromptEvent = event;<br>
+install.disabled = false;<br>
+install.hidden = false;<br>
+});</p>
+<p>⚠️ Note that in Google Chrome currently there also is a temporary <a href="https://developers.google.com/web/updates/2018/06/a2hs-updates#the_mini-infobar">mini-infobar</a> that you <em>cannot</em> control. The manually controlled “Install” button in the screenshot below is fully customizable. This is the behavior this article and the accompanying video are talking about.</p>
+<p><img src="img/1__Tdj__KTWvzc__wGRD__cYP5Lg.png" alt="🐈 AffiliCats with a customized “Install” button that only gets shown once the app engagement threshold has been reached.">
+🐈 AffiliCats with a customized “Install” button that only gets shown once the <a href="https://github.com/GoogleChromeLabs/affilicats/blob/b56aa28227b83366f696de27267ff4b69819a206/src/js/main.js#L351-L366">app engagement threshold</a> has been reached.</p>
+<p>Add to home screen is a <a href="https://emojipedia.org/superhero/">🦸</a> superpower that, if used wisely, can indeed have a massive impact on how users use your PWA, and if they perceive it as a real app worth a precious space on their home screen. As always, you are invited to <a href="https://googlechromelabs.github.io/affilicats/">play with this app</a> yourself and read the <a href="https://github.com/GoogleChromeLabs/affilicats">source code</a>.</p>
+<p>This is the final episode of <em>“Why build Progressive Web Apps”</em> in 2018. Looking forward to reading our seeing you in 2019! Do let us know in the comments on any of the videos or write-ups what you want us to cover next. In order not to miss future episodes, <strong><em>subscribe</em></strong> to our <a href="https://medium.com/dev-channel">Medium Dev Channel</a>, the Chrome Developers <a href="https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw">YouTube channel</a>, follow <a href="https://twitter.com/ChromiumDev">@ChromiumDev</a> on Twitter — and if you like, I am <a href="https://twitter.com/tomayac">@tomayac</a> almost universally on the World Wide Internet.</p>
