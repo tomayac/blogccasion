@@ -1,0 +1,53 @@
+---
+layout: layouts/post.njk
+title: "REST Describe & Compile in practice"
+author: "Thomas Steiner"
+date: "2007-06-14T15:06:52"
+permalink: 2007/06/14/rest-describe-compile-in-practice-150652/index.html
+tags:
+  - Work
+---
+<b>REST Describe & Compile in practice</b><br />
+<br />
+Nothing helps you get a better feeling for your products than using them yourself. This can be a painful experience, or pure pleasure. Anyway, being an egomaniac guy, I am always interested in the readers of this blog. Loyal readers leave links, so I decided to give Yahoo's <a href="http://developer.yahoo.com/search/siteexplorer/V1/inlinkData.html">Inbound Links API</a> a try. I navigated to the API's textual documentation, and based on the description created the following request URI:<br />
+<br />
+<span style="font-family:monospace;"><span style="color:darkblue;">http://search.yahooapis.com/SiteExplorerService/V1/inlinkData</span>?<br />
+&nbsp;&nbsp;<span style="color:darkgreen;">appid</span>=<span style="color:maroon;">YahooDemo</span>&<br />
+&nbsp;&nbsp;<span style="color:darkgreen;">query</span>=<span style="color:maroon;">https://blog.tomayac.com</span>&<br />
+&nbsp;&nbsp;<span style="color:darkgreen;">results</span>=<span style="color:maroon;">100</span>&<br />
+&nbsp;&nbsp;<span style="color:darkgreen;">start</span>=<span style="color:maroon;">1</span>&<br />
+&nbsp;&nbsp;<span style="color:darkgreen;">entire_site</span>=<span style="color:maroon;">1</span>&<br />
+&nbsp;&nbsp;<span style="color:darkgreen;">omit_inlinks</span>=<span style="color:maroon;">domain</span>&<br />
+&nbsp;&nbsp;<span style="color:darkgreen;">output</span>=<span style="color:maroon;">xml</span></span><br />
+<br />
+I then fed this URI into REST Describe & Compile and hit the "Analyze" button.<br />
+<br />
+The results were as follows:<br />
+<table><tr><td><br />
+<img width="100" src="/images/analyze1.png"><br />
+</td><td><ul><li><span style="color:darkgreen;">appid</span> xsd:string (supposed) &raquo; Estimation: true. Missing: parameter is required.</li><li><span style="color:darkgreen;">query</span> xsd:anyURI (sure) &raquo; Estimation: false. This is a string. Missing: parameter is required.</li><li><span style="color:darkgreen;">results</span> xsd:integer (sure) &raquo; Estimation: true. Missing: default is 50.</li><li><span style="color:darkgreen;">start</span> xsd:integer (supposed) &raquo; Estimation: true. Missing: default is 1.</li><li><span style="color:darkgreen;">entire_site</span> xsd:string (supposed) &raquo; Estimation: true/false. Parameter is 1 or no value.</li><li><span style="color:darkgreen;">omit_inlinks</span> xsd:string (supposed) &raquo; Estimation: false. This is one out of {none|domain|subdoamin}. Missing: default is none.</li><li><span style="color:darkgreen;">output</span> xsd:string (supposed) &raquo; Estimation: false. This is one out of {xml|json|php}. Missing: default is xml.</li></ul></td></tr></table>So all in all, the estimation rate is far from being perfect. The good news is: this does not matter much <span style="font-family:monospace;font-style:bold;">:-)</span><br />
+<br />
+<b>Custom types</b> like the <span style="color:darkgreen;">omit_links</span> one cannot be detected from a client-side-only analysis as we would have to read the remote schema. This is not allowed because of the <a href="http://www.mozilla.org/projects/security/components/same-origin.html">Same Origin Policy</a>. However, we can safely treat these parameters as strings instead. The <span style="color:darkgreen;">query</span> parameter was mis-estimated to be xsd:anyURI. Well, it has a value of "https://blog.tomayac.com", so no big surprise. The API documentation states that this should be string, but come on, this API is about inbound links, so the target must be a URI, right? So no problem treating it like one.<br />
+<br />
+The two <span style="color:darkgreen;">results</span> and <span style="color:darkgreen;">start</span> parameters were correctly identified as integers, however, the type for the latter parameter just being supposed. Why is this so? The response is the next parameter <span style="color:darkgreen;">entire_site</span>. This parameter actually is a boolean, however, the good folks at Yahoo use 1 instead of true as a value. REST Describe & Compile has this two-level type analysis feature <a href="https://blog.tomayac.com/index.php?date=2007-04-26&time=18:05:54&perma=REST+Describe+first+.html&">mentioned earlier</a> that in case of doubts also analyzes the parameter name. In none of the two cases the name starts with "is" or "has", or ends with "ed", which would be treated as boolean indicators. So the fallback is integer, however with just a "supposed" estimation quality rating. The two last parameters are custom types again, so nothing new to say.<br />
+<br />
+According to the <a href="http://developer.yahoo.com/search/errors.html">documentation</a>, the API throws some standard 400, 403, and 503 errors. These "Faults" are quickly added to the WADL using the editor. We are interested in the <span style="font-family:monospace;">&lt;Result&gt;</span> elements of the response XML, so we add this as a "Representation". The result is the <a href="/images/Yahoo!_Inbound_Links_API.wadl.xml">Yahoo! Inbound Links API WADL</a>.<br />
+<br />
+Next I hit the "Generate Code" button, then the "PHP 5" button, and out came PHP 5 code that I could directly use with the following script:<pre><code>&lt;?php<br />
+  require_once('InlinkApi.php5');<br />
+  $inlinkRequest = new InlinkDataRequest(<br />
+    'MySecretYahooToken',<br />
+    'https://blog.tomayac.com',<br />
+    10,<br />
+    1,<br />
+    1,<br />
+    'domain');<br />
+  $response = $inlinkRequest-&gt;submit();<br />
+  <br />
+  $xml = new SimpleXMLElement($response);<br />
+  echo '&lt;p&gt;' . $xml['totalResultsAvailable'] . ' sites link to here.&lt;/p&gt;';<br />
+  foreach ($xml-&gt;Result as $result) {<br />
+       echo '&lt;p&gt;' . $result->Title . ': &lt;a href="' . $result->ClickUrl .<br />
+         '"&gt;' . $result->Url . '&lt;/a&gt;&lt;/p&gt;';<br />
+  }  <br />
+?&gt;</code></pre>I did not have to change anything in the generated code. Try it out on your own: take my previously generated <a href="/images/Yahoo!_Inbound_Links_API.wadl.xml">WADL</a>, upload it to <a href="http://tomayac.com/rest-describe/latest/RestDescribe.html">REST Describe & Compile</a> and generate your own code. As a prove that I did not lie to you <a href="/images/inlinks.php5">check out my code</a> directly from here. Not so bad. What do you say?

@@ -1,0 +1,34 @@
+---
+layout: layouts/post.njk
+title: "Persistent Storage JavaScript Library"
+author: "Thomas Steiner"
+date: "2008-05-23T15:14:30"
+permalink: 2008/05/23/persistent-storage-javascript-library-151430/index.html
+tags:
+  - Technical
+---
+<b>Persistent Storage JavaScript Library</b><br />
+<br />
+The last few weeks I have been working on a gadget framework that allows for <a href="http://www.google.com/apis/adwords/">AdWords API</a> data to be accessed from within the <a href="http://www.google.com/ig">iGoogle</a> gadget infrastructure. I was looking for ways to store data persistently across sessions, and for <a href="https://blog.tomayac.com/index.php?date=2007-10-17&time=01:35:43&perma=Back+from+parental+l.html">obvious reasons</a> thought of using <a href="http://gears.google.com/">Google Gears</a>. A shortcoming of Gears is that it is not as widespread as it could be. Then I stumbled upon a <a href="http://ajaxian.com/archives/persistjs-cross-browser-client-side-persistent-storage">blog entry in Ajaxian</a> about PersistJS, a JavaScript library that promised persistent storage independent from the storage mechanism. Basically a high-level browser storage API. Having read through the post, I went to <a href="http://pablotron.org/?cid=1557">Paul Duncan's web page</a> and downloaded the <a href="http://pablotron.org/files/persist-js-0.1.0.tar.gz">PersistJS code</a>.<br />
+<br />
+The library is <b>ridiculously easy</b> to use while still being <b>perfectly elegant</b>. It detects the available storage possibilities and goes for the first available one. Usage is as simple as (copied from the page above):<br />
+<span style="font-family:monospace; color:red;"><br />
+<span style="color:darkgreen;">// create a new client-side persistent data store</span><br />
+var store = new Persist.Store('My Data Store');<br />
+<br />
+<span style="color:darkgreen;">// pretend data</span><br />
+var data = "pretend this is really long data that won't fit in a cookie";<br />
+<br />
+<span style="color:darkgreen;">// save data in store</span><br />
+store.set('saved_data', data);<br />
+<br />
+<span style="color:darkgreen;">// get data back from store, and prompt user with it</span><br />
+store.get('saved_data', function(ok, val) {<br />
+  if (ok)<br />
+    alert('saved data = ' + val);<br />
+});<br />
+<br />
+<span style="color:darkgreen;">// remove data from store</span><br />
+store.remove('saved_data');</span><br />
+<br />
+I love the way this falls back to the greatest common divisor, namely cookies. And probably the best thing about the library is that it does not detect browsers, but browser capabilities. This way it defaults to native implementations like <a href="http://developer.mozilla.org/en/docs/DOM:Storage">globalStorage</a> if these get implemented in later/other browser(s) versions. Kudos to Paul Duncan and thanks for sharing this!

@@ -1,0 +1,18 @@
+---
+layout: layouts/post.njk
+title: "Generate Ruby from your WADL REST API Descriptions with REST Describe & Compile"
+author: "Thomas Steiner"
+date: "2007-05-25T19:11:30"
+permalink: 2007/05/25/generate-ruby-from-your-wadl-rest-api-descriptions-with-rest-describe-compile-191130/index.html
+tags:
+  - Work
+---
+<b>Generate Ruby from your WADL REST API Descriptions with REST Describe & Compile</b><br />
+<br />
+I have been digging a bit into <a href="http://www.ruby-lang.org/">Ruby</a> today, and I must say that probably I will not really make friends with this hip language. Honestly, is it necessary to do stuff like this:<pre><br />
+puts "1, 2, " + 3.to_s<br />
+</pre><img src="/images/REST_Describe_Logo.png" align="left" hspace="20" />Mind the little <a href="http://www.ruby-doc.org/core/classes/Fixnum.html#M001069"><span style="font-family:monospace;">to_s</span></a> that has to convert the <a href="http://www.ruby-doc.org/core/classes/Fixnum.html">Fixnum</a> into a String before printing. I know, everything is an object, but come on, a scripting language should be somewhat more forgiving. At least this is what I think.<br />
+<br />
+<img src="/images/REST_Compile_Logo.png" align="left" hspace="20" />Anyway, the latest <a href="http://tomayac.com/rest-describe/latest/RestDescribe.html">version 0.2.1 of REST Describe & Compile</a> comes with Ruby support. As you can see from the introduction, I am not much a Ruby guy (yet), so any suggestions to improve the quality of the auto-generated code are highly appreciated.<br />
+<br />
+You can download the <a href="http://rest-api-code-gen.googlecode.com/files/rest_describe_v0.2.1.zip">source code</a> under a BSD license, and as always the <a href="http://tomayac.com/rest-describe/latest/RestDescribe.html">latest version</a> is available directly from my web space. Auch auf <a href="http://tomayac.com/rest-describe/latest/RestDescribe.html?locale=de">deutsch </a>. You can access older versions by hacking the URL: <span style="font-family:monospace;">http://tomayac.com/rest-describe/<span style="color:red;">0.X.Y</span>/RestDescribe.html</a></span>, where X and Y stand for the old version numbers.

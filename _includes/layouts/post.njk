@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-post
+---
+<article class="blogPost">
+  <header>
+    <a href="{{ page.url | url }}"><h3>{{ title }}</h3></a>
+    <div>
+      <small>
+        Created on <time datetime=""></time>
+        and categorized as <a class='' href=''></a>.
+      </small>
+    </div>
+    <div><small>Written by <b>Thomas Steiner</b>.</small></div>
+    <hr>
+  </header>
+  {{ content | safe }}
+</article>
+
