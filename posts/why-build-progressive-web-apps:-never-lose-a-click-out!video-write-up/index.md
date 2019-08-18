@@ -3,12 +3,9 @@ layout: layouts/post.njk
 title: "Why Build Progressive Web Apps: Never Lose a Click-Out!—Video Write-Up"
 description: "(This is the write-up of the first episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the video is embedded below.) (Also check out the the write-up of the…"
 date: "2018-12-03T14:03:09.463Z"
-categories:
-  - Web Development
-  - Progressive Web App
-  - Offline First
-  - Affiliate Marketing
-  - Service Worker
+permalink: 2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up/index.html
+tags:
+  - Technical
 ---
 
 _(This is the write-up of the first episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the_ [_video_](https://www.youtube.com/watch?v=4UK_TDTTWnQ) _is embedded below.)_

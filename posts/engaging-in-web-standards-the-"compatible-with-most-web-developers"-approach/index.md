@@ -3,12 +3,9 @@ layout: layouts/post.njk
 title: "Engaging in Web Standards—The “Compatible with Most Web Developers” Approach"
 description: "At Google, we have a humbling 👌(!) team of amazing Google Developer Experts that specialize on Web Technologies. The other day, one of them on a mailing list suggested the following feature…"
 date: "2019-02-05T17:02:06.441Z"
-categories:
-  - Web Development
-  - Standards
-  - W3c
-  - Wicg
-  - Tc39
+permalink: 2019/02/05/engaging-in-web-standards-the-compatible-with-most-web-developers-approach/index.html
+tags:
+  - Technical
 ---
 
 > 😨📖 **tl;dr:** Whether you want to add something new to an already existing feature or propose a completely new one, it all starts with finding out in what organization the standardization process for this kind of feature happens and where this organization’s discussions take place. This post suggests a possible approach to engaging in standardization work in a meaningful way for regular web developers whose day job is not standards by following along a step-by-step real-world example that takes you through the journey and encourages you to make your voice heard.

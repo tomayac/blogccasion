@@ -3,12 +3,9 @@ layout: layouts/post.njk
 title: "Let there be darkness! 🌚 Maybe…"
 description: "With Dark Mode, Apple in macOS Mojave introduced what they call “a dramatic new look that’s easy on your eyes and helps you focus on your work. [It] uses a dark color scheme that works system wide…"
 date: "2019-04-04T10:57:58.763Z"
-categories:
-  - UX
-  - Dark Mode
-  - Chrome
-  - Chromium
-  - Browsers
+permalink: 2019/04/04/let-there-be-darkness-maybe/index.html
+tags:
+  - Technical
 ---
 
 ## Dark Theme Developer Survey Results

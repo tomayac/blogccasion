@@ -3,12 +3,9 @@ layout: layouts/post.njk
 title: "Why Build Progressive Web Apps: If It’s Just a Bookmark, It’s not a PWA!—Video Write-Up"
 description: "(This is the write-up of the third episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the video is embedded below.) (Also check out the write-up of the first…"
 date: "2018-12-11T11:13:43.612Z"
-categories:
-  - Web Development
-  - Add To Home Screen
-  - A2hs
-  - Add To Homescreen
-  - Progressive Web App
+permalink: 2018/12/11/why-build-progressive-web-apps-if-its-just-a-bookmark-its-not-a-pwa-video-write-up/index.html
+tags:
+  - Technical
 ---
 
 _(This is the write-up of the third episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the_ [_video_](https://youtu.be/kENeCdS3fzU) _is embedded below.)_

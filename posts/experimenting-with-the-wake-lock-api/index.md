@@ -3,11 +3,9 @@ layout: layouts/post.njk
 title: "Experimenting with the Wake Lock API"
 description: "During this year’s Chrome Dev Summit, we wrote for the first time publicly about our capabilities project, code-named project fugu 🐡 (← the project label). The purpose of the project is to make the…"
 date: "2018-12-18T17:32:16.699Z"
-categories:
-  - JavaScript
-  - Project Fugu
-  - Wakelock
-  - Capabilities
+permalink: 2018/12/18/experimenting-with-the-wake-lock-api/index.html
+tags:
+  - Technical
 ---
 
 During this year’s [Chrome Dev Summit](https://developer.chrome.com/devsummit/), we wrote for the first time publicly about our [capabilities](https://developers.google.com/web/updates/capabilities) project, code-named [project fugu 🐡](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=proj-fugu&sort=m&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified) (← the project label). The purpose of the project is to make the web a first class platform for developing apps, and to do so in an open and transparent environment where the emphasis is on developer feedback.

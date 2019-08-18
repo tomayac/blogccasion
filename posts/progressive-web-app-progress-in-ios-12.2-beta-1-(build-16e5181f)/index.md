@@ -3,12 +3,9 @@ layout: layouts/post.njk
 title: "Progressive Web App Progress in iOS 12.2 Beta 1 (Build 16E5181f)"
 description: "As a regular (and passionate) iOS user with a strong belief in the Web, I beta-test any and all new iOS builds as soon as I can get my hands on them. My main motivation is to see how they do when it…"
 date: "2019-01-28T15:27:11.009Z"
-categories: 
-  - Progressive Web App
-  - iOS
-  - Webkit
-  - Apple
-  - Apple Safari
+permalink: 2019/01/28/progressive-web-app-progress-in-ios-12.2-beta-1-build-16e5181f/index.html
+tags:
+  - Technical
 ---
 
 As a regular (and passionate) iOS user with a strong belief in the Web, I beta-test any and all new iOS builds as soon as I can get my hands on them. My main motivation is to see how they do when it comes to Progressive Web App features. Each new iOS version comes with a new version of Safari, yet changes in Safari tend to almost never get highlighted in the iOS release notes (and the [12.2 beta 1 release notes](https://developer.apple.com/documentation/ios_release_notes/ios_12_2_beta_release_notes) were no exception). So my routine is to fire up my [🕵️‍♂️ PWA Feature Detector](https://tomayac.github.io/pwa-feature-detector/)—a simple testing tool described in an accompanying [📄 research paper](https://ai.google/research/pubs/pub46739)—and to look for potential changes myself.
@@ -82,14 +79,14 @@ While admittedly at times it might feel like shouting into a forrest, [sending f
 
 📢 So here is my call to action for universally great PWA support to all Safari users out there: **let us keep the WebKit team busy by filing bugs and commenting on existing ones**! They are listening! With experimental features included, [🕵️‍♂️ PWA Feature Detector](https://tomayac.github.io/pwa-feature-detector/) now makes Safari have four checkmarks ‘✔’, here is to the WebKit team to add some more!
 
-👉 If you want **Push Notifications** support, chime in on [WebKit Bug 182566](https://bugs.webkit.org/show_bug.cgi?id=182566).  
-👉 If you want **Background Sync** support, chime in on [WebKit Bug 182565](https://bugs.webkit.org/show_bug.cgi?id=182565).  
-👉 If you want **Storage Estimation** support, chime in on [WebKit Bug 185405](https://bugs.webkit.org/show_bug.cgi?id=185405).  
-✅ **(Fixed)** If you want `**getUserMedia**` support for PWAs, chime in on [WebKit Bug 185448](https://bugs.webkit.org/show_bug.cgi?id=185448).  
-👉 If you want **Web App Manifest icons** for PWAs, chime in on [WebKit Bug 183937](https://bugs.webkit.org/show_bug.cgi?id=183937).  
-👉 If you want **Add to Home Screen** support for PWAs, chime in on [WebKit bug 193959](https://bugs.webkit.org/show_bug.cgi?id=193959).  
-👉 If you want **Web Share Target API** support, chime in on [WebKit bug 194593](https://bugs.webkit.org/show_bug.cgi?id=194593).  
-👉 If you want **Web Share API — Level 2** support (file sharing), chime in on [WebKit bug 198606](https://bugs.webkit.org/show_bug.cgi?id=198606).  
+👉 If you want **Push Notifications** support, chime in on [WebKit Bug 182566](https://bugs.webkit.org/show_bug.cgi?id=182566).
+👉 If you want **Background Sync** support, chime in on [WebKit Bug 182565](https://bugs.webkit.org/show_bug.cgi?id=182565).
+👉 If you want **Storage Estimation** support, chime in on [WebKit Bug 185405](https://bugs.webkit.org/show_bug.cgi?id=185405).
+✅ **(Fixed)** If you want `**getUserMedia**` support for PWAs, chime in on [WebKit Bug 185448](https://bugs.webkit.org/show_bug.cgi?id=185448).
+👉 If you want **Web App Manifest icons** for PWAs, chime in on [WebKit Bug 183937](https://bugs.webkit.org/show_bug.cgi?id=183937).
+👉 If you want **Add to Home Screen** support for PWAs, chime in on [WebKit bug 193959](https://bugs.webkit.org/show_bug.cgi?id=193959).
+👉 If you want **Web Share Target API** support, chime in on [WebKit bug 194593](https://bugs.webkit.org/show_bug.cgi?id=194593).
+👉 If you want **Web Share API — Level 2** support (file sharing), chime in on [WebKit bug 198606](https://bugs.webkit.org/show_bug.cgi?id=198606).
 👉 If you want **Navigation Preload API** support, chime in on [WebKit bug 182852](https://bugs.webkit.org/show_bug.cgi?id=182852).
 
 ☝️ If you **do not see your issue**, [file a new bug](https://webkit.org/new-bug) 🆕. Duplication is fine according to the WebKit team. Use a company email address, tell them why and who needs the feature, and how many of your iOS users are missing out.

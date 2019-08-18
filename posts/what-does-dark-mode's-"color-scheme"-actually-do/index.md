@@ -3,12 +3,9 @@ layout: layouts/post.njk
 title: "What Does Dark Mode’s “color-scheme” Actually Do? 🤔"
 description: "This is actually talking about a new meta tag <meta name=\"color-scheme\"> and a CSS property color-scheme that were both proposed in a CSS WG GitHub issue (under the old name supported-color-schemes)…"
 date: "2019-04-03T10:36:26.499Z"
-categories:
-  - Web Development
-  - Dark Mode
-  - CSS
-  - User Agent
-  - Stylesheets
+permalink: 2019/04/03/what-does-dark-modes-color-scheme-actually-do/index.html
+tags:
+  - Technical
 ---
 
 The [Release Notes of Safari Technology Preview 71](https://webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/) mentioned two new dark mode features:

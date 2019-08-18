@@ -7,8 +7,7 @@ templateClass: tmpl-post
     <a href="{{ page.url | url }}"><h3>{{ title }}</h3></a>
     <div>
       <small>
-        Created on <time datetime=""></time>
-        and categorized as <a class='' href=''></a>.
+        Created on <b><time datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time></b>.
       </small>
     </div>
     <div><small>Written by <b>Thomas Steiner</b>.</small></div>

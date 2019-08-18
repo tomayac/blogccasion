@@ -29,9 +29,9 @@ page-section-gap{
 
 - You write your app logic with JavaScript (or TypeScript), with `App` as the top level object and `wx` as the object you get all the cool capabilities from. The [API](https://developers.weixin.qq.com/miniprogram/en/dev/api/) is incredibly powerful.
 
-<details>
-<summary>Here are the keys of the `wx` object</summary>
-<pre>
+Here are the keys of the `wx` object:
+
+```js
 [
   "addCard",
   "addNativeDownloadTask",
@@ -393,8 +393,8 @@ page-section-gap{
   "vibrateShort",
   "voiceSplitJoint",
   "writeBLECharacteristicValue"
-]</pre>
-</details>
+]
+```
 
 - You describe your interface with [WXML](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxml/), which is something between [JSX](https://reactjs.org/docs/introducing-jsx.html), [Vue's declarative rendering](https://vuejs.org/v2/guide/#Declarative-Rendering); it also reminds me of old concepts like XSLT's [`<xsl:if>`](https://www.w3.org/TR/xslt-30/#xsl-if):
 
