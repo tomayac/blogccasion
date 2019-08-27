@@ -5,7 +5,6 @@ eleventyExcludeFromCollections: true
 
 Options -MultiViews
 RewriteEngine On
-RewriteBase /blogccasion
 RewriteCond %{REQUEST_URI} ^/index\.php$
 RewriteCond %{QUERY_STRING} ^date=(\d{4})-(\d{2})-(\d{2})&time=(\d{2}):(\d{2}):(\d{2})&perma=(.*?)(?:\.html)?$
 RewriteRule ^(.*)$ %1/%2/%3/-%4%5%6/? [NC,L]
