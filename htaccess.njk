@@ -6,5 +6,5 @@ eleventyExcludeFromCollections: true
 Options -MultiViews
 RewriteEngine On
 RewriteBase /blogccasion
-RewriteRule ^\/index\.php\?date=(\d{4})-(\d{2})-(\d{2})&time=(\d{2}):(\d{2}):(\d{2})&perma=(.*?)(?:\.html)?$ /$1/$2/$3/generating-the-ellipsis-character-on-mac-windows-and-linux-$4$5$6/ [NC,L]
-RewriteRule ^\/ViewByCategories\.php\?category=(.*?)$ /tags\/$1\/ [NC,L]
+RewriteRule ^index\.php\?date=(\d{4})-(\d{2})-(\d{2})&time=(\d{2}):(\d{2}):(\d{2})&perma=(.*?)(?:\.html)?$ $1/$2/$3/generating-the-ellipsis-character-on-mac-windows-and-linux-$4$5$6/ [NC,L]
+RewriteRule ^ViewByCategories\.php\?category=(.*?)$ tags\/$1\/ [NC,L]
