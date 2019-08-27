@@ -6,8 +6,5 @@ eleventyExcludeFromCollections: true
 Options -MultiViews
 RewriteEngine On
 RewriteBase /blogccasion
-RewriteRule ^(\d{4})\/(\d{2})\/(\d{2})\/.*(\d{2})(\d{2})(\d{2})\/?$ /index.php?date=$1-$2-$3&time=$4:$5:$6 [NC,L]
-RewriteRule ^(\d{4})\/(\d{2})\/(\d{2})\/?$ /index.php?date=$1-$2-$3 [NC,L]
-RewriteRule ^(\d{4})\/(\d{2})\/?$ /index.php?dateMonth=$1-$2 [NC,L]
-RewriteRule ^(\d{4})\/?$ /index.php?dateYear=$1 [NC,L]
-RewriteRule ^categories\/(.*?)\/?$ /ViewByCategories.php?category=$1 [NC,L]
+RewriteRule ^\/index\.php\?date=(\d{4})-(\d{2})-(\d{2})&time=(\d{2}):(\d{2}):(\d{2})&perma=(.*?)(?:\.html)?$ /$1/$2/$3/-$4$5$6/ [NC,L]
+RewriteRule ^\/ViewByCategories\.php\?category=(.*?)$ /tags\/$1\/ [NC,L]
