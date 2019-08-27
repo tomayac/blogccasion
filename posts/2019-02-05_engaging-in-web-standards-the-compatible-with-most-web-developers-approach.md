@@ -28,7 +28,7 @@ Note how the article _“the”_ is lower case, everything else upper case. Acco
 
 ![World Wide Web Consortium (W3C) logo](/images/asset-1_3.png)
 
-### Contributing to Web Standards as Someone Who Self-Identifies as “Most Web Developers”
+#### Contributing to Web Standards as Someone Who Self-Identifies as “Most Web Developers”
 
 It would probably get a [`[citation needed]`](https://en.wikipedia.org/wiki/Wikipedia:Citation_needed) tag on Wikipedia, but the statement stands: “Most web developers just do not know how to provide feedback”. I ([Tom](https://twitter.com/tomayac), Google Web Developer Advocate 🥑) thought maybe I could attempt to address this challenge and try to come up with an answer. While I am _definitely not_ the most authoritative source for standards works, I have landed a few minor changes in various W3C specs. With that out of the way, let me guide you through **_my personal approach_** to potentially landing a feature request like “correct” title case support.
 
