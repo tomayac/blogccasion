@@ -10,4 +10,4 @@ RewriteCond %{QUERY_STRING} ^date=(\d{4})-(\d{2})-(\d{2})&time=(\d{2}):(\d{2}):(
 RewriteRule ${legacyposts:%4%5%6/} [NC,L,R=301]
 RewriteCond %{REQUEST_URI} ^/ViewByCategories\.php$
 RewriteCond %{QUERY_STRING} ^category=(.*?)$
-RewriteRule ^(.*)$ tags/%1/? [NC,L,R=301]
+RewriteRule ^(.*)$ /tags/%1/? [NC,L,R=301]
