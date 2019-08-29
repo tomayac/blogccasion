@@ -11,3 +11,4 @@ RewriteRule ^(.*)$ ${legacyposts:%4%5%6}? [NC,L,R=301]
 RewriteCond %{REQUEST_URI} ^/ViewByCategories\.php$
 RewriteCond %{QUERY_STRING} ^category=(.*?)$
 RewriteRule ^(.*)$ /tags/%1/? [NC,L,R=301]
+RewriteRule ^atom.php$ /feed/feed.xml? [NC,L,R=301]
