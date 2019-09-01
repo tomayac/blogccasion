@@ -1,32 +1,29 @@
-<!doctype html lang="en">
-<html ⚡>
+<!doctype html>
+<html>
   <head>
     <meta charset="utf-8">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta property="twitter:account_id" content="1510101733">
-    <meta name="amp-google-client-id-api" content="googleanalytics">
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="canonical" href="{{ page.url | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link type="text/plain" rel="author" href="https://tomayac.com/humans.txt">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
+
+    <style>
       #header,
       #navigation {
         background-color: #eee;
         margin: 0 0 .5em
       }
-
       #content,
       #header {
         width: 100%;
         max-width: 100%;
         border: 1px dashed silver
       }
-
       #aside,
       #content,
       #footer,
@@ -34,13 +31,11 @@
       #navigation {
         border: 1px dashed silver
       }
-
       #content a,
       #footer a {
         padding: .2em;
         text-decoration: none
       }
-
       #aside a,
       #content a,
       #content>h3 a,
@@ -48,7 +43,6 @@
       #navigation a {
         text-decoration: none
       }
-
       #aside a:hover,
       #aside a:link,
       #aside a:visited,
@@ -59,104 +53,82 @@
       body {
         color: #000
       }
-
       html {
         box-sizing: border-box
       }
-
       *,
       ::after,
       ::before {
         box-sizing: inherit
       }
-
       body {
         background-color: #fff;
-        font-size: 12pt;
+        font-size: 100%;
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
       }
-
       #blog,
       #ccasion {
         font-size: 1.5em;
         position: absolute;
         font-weight: 700
       }
-
       #blog {
         top: 0;
         left: 1em;
         z-index: 1;
         color: #ffd700
       }
-
       #ccasion {
         top: .05em;
         left: 2.12em;
         z-index: 2;
         color: #ff8032
       }
-
-      #login {
-        position: absolute;
-        top: .05em;
-        right: .5em
-      }
-
       #header {
         font-size: 1.2em;
         max-width: 1400px;
         padding: 0;
         overflow: hidden
       }
-
       #aside h2,
       #navigation h2 {
         font-size: .9em
       }
-
       #container {
         display: -webkit-flex;
         display: flex;
         margin: 0 .5em;
         max-width: calc(1400px - .5em)
       }
-
       @media (min-width:480px) {
         #container {
           -webkit-flex-direction: row;
           flex-direction: row
         }
       }
-
       @media (max-width:480px) {
         #container {
           -webkit-flex-direction: column;
           flex-direction: column
         }
       }
-
       #navigation-aside {
         display: -webkit-flex;
         display: flex
       }
-
       @media (min-width:480px) {
         #navigation-aside {
           -webkit-flex-direction: column;
           flex-direction: column
         }
       }
-
       #navigation {
         width: 120px
       }
-
       #navigation h2 {
         margin: 0;
         background-color: #ffd700
       }
-
       #navigation a {
         display: block;
         overflow-x: hidden;
@@ -164,179 +136,141 @@
         font-weight: 700;
         color: #000
       }
-
       .category0:hover {
         background-color: #c0c0ff
       }
-
       .category1:hover {
         background-color: #ff8032
       }
-
       .category2:hover {
         background-color: #80ff00
       }
-
       .category3:hover {
         background-color: #ff0080
       }
-
       .category4:hover {
         background-color: #ff0
       }
-
       .category5:hover {
         background-color: #80ff80
       }
-
       .category6:hover {
         background-color: #ff8080
       }
-
       .category7:hover {
         background-color: #c0ff80
       }
-
       .category8:hover {
         background-color: #ffc080
       }
-
       #aside h2,
       #content h2 {
         background-color: #ffd700;
         margin: 0
       }
-
       #aside a:hover,
       #footer a:hover {
         background-color: #80ffff
       }
-
       #aside {
         width: 120px;
         margin: 0 .5em .5em 0;
         background-color: #eee;
         overflow-x: hidden
       }
-
       #aside svg {
         vertical-align: middle
       }
-
       #aside p {
         margin: .5em
       }
-
       #aside a {
         display: block;
         padding: 0;
         font-size: 1em;
         font-weight: 400
       }
-
       #content a,
       #content h2,
       #content h3,
       #footer a {
         font-weight: 700
       }
-
       #content {
         margin: 0;
       }
-
       #content h2 {
         font-size: 1.2em
       }
-
       #content h3 {
         font-size: 1.1em;
         margin: 0;
         background-color: #ff8032
       }
-
       #content p {
         font-size: 1em;
         margin: .5em 0;
       }
-
       #content img {
         margin: .5em 1em;
         max-width: 100%;
       }
-
       #content hr {
         height: 1px;
         text-align: left;
         margin-left: 0;
         border: 1px solid silver
       }
-
       #content small {
         font-size: .9em;
         padding: .5em 0
       }
-
       #content a {
         display: inline
       }
-
       #content a:link {
         color: #00f
       }
-
       #content a:visited {
         color: #00008b
       }
-
       #content a:hover {
         color: #00f;
         text-decoration: underline
       }
-
       #footer {
         max-width: 1400px;
         margin: .5em 0 0;
         padding: .5em
       }
-
       #footer ul {
         list-style: none
       }
-
       #footer li::before {
         content: "» "
       }
-
       .blogPost {
         padding: .5em
       }
-
       .commentForm,
       .commentList {
         display: none
       }
-
       ul {
         padding-left: .5em;
         list-style-position: inside
       }
-
       pre {
         max-width: calc(100% - 1rem);
       }
-
       code {
         overflow-wrap: break-word;
         word-wrap: break-word;
         word-break: break-word;
       }
-
-      amp-iframe,
       iframe {
         max-width: 533px
       }
-
       @media (max-width:480px) {
         #navigation-aside {
           -webkit-flex-direction: row;
@@ -345,8 +279,8 @@
         #navigation {
           width: 50%
         }
-        #aside>amp-img,
-        #navigation amp-img {
+        #aside > img,
+        #navigation img {
           -webkit-transform-origin: left;
           -webkit-transform: scaleX(2);
           transform-origin: left;
@@ -356,8 +290,8 @@
           width: 50%;
           margin: 0 0 .5em .5em
         }
-        amp-iframe,
-        amp-img,
+        iframe,
+        img,
         iframe,
         img {
           max-width: 100%;
@@ -472,14 +406,10 @@
         cursor: help; }
 
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
   </head>
   <body>
     <header id="header">
-      <a href="/"><amp-img src="/static/city.jpg" alt="" width="1400" height="20"></amp-img></a>
+      <a href="/"><img src="/static/city.jpg" alt="" width="1400" height="20"></a>
       <a href="/"><div id="blog">blog</div><div id="ccasion">occasion</div></a>
       &nbsp;<strong>l'occasion</strong> <em>f</em> - Gelegenheit <em>f</em>, die ~ , der ~; <em>bei Gelegenheit</em> - <strong>&agrave; l'occasion</strong>
     </header>
@@ -488,22 +418,22 @@
 
         <nav id="navigation">
           <h2>Tags</h2>
-          <a href="/"><amp-img src="/static/mountains_sunrise.jpg" alt="" width="120" height="23"></amp-img></a>
+          <a href="/"><img src="/static/mountains_sunrise.jpg" alt="" width="120" height="23"></a>
           {% for tag in collections.tagList %}
             {% set tagUrl %}/tags/{{ tag }}/{% endset %}
             <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
           {% endfor %}
 
           <h2>Pages</h2>
-          <a href="/"><amp-img src="/static/mountains_sunrise.jpg" alt="" width="120" height="23"></amp-img></a>
-          {%- for nav in collections.nav | reverse -%}
-          <a class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}" href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a>
-          {%- endfor -%}
+          <a href="/"><img src="/static/mountains_sunrise.jpg" alt="" width="120" height="23"></a>
+          {% for nav in collections.nav | reverse %}
+            <a class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}" href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a>
+          {% endfor %}
         </nav>
 
         <aside id="aside">
           <h2>Related</h2>
-          <amp-img src="/static/palms.jpg" alt="" width="120" height="23"></amp-img>
+          <img src="/static/palms.jpg" alt="" width="120" height="23">
           <div>
             <p>
               <a href="{{ metadata.feed.path | url }}" rel="me"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 256 256"><rect width="246" height="246" rx="50" ry="50" x="5" y="5" fill="#F49C52"/><rect width="236" height="236" rx="47" ry="47" x="10" y="10" fill="#F49C52"/><circle cx="68" cy="189" r="24" fill="#FFF"/><path d="M160 213h-34a82 82 0 0 0-82-82v-34a116 116 0 0 1 116 116zM184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" fill="#FFF"/></svg> Blog Feed</a>
@@ -532,21 +462,6 @@
           <li>Contact and required <a href="/about/">legal info</a></li>
           <li><small>This website uses Google Analytics</small></li>
         </ul>
-        <amp-analytics type="googleanalytics">
-          <script type="application/json">
-            {
-              "vars": {
-                "account": "UA-2040927-1"
-              },
-              "triggers": {
-                "defaultPageview": {
-                  "on": "visible",
-                  "request": "pageview"
-                }
-              }
-            }
-          </script>
-        </amp-analytics>
       </footer>
   </body>
 </html>

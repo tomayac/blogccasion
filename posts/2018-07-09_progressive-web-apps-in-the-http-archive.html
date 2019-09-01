@@ -32,8 +32,8 @@ Our first idea was to check some of the curated PWA catalogues, for example, <a 
 <code>httparchive.response_bodies.*</code>, which contains the raw response bodies of all resources and sub-resources of all sites in the archive.</li>
 </ul>
 <p>In the following, we will discuss all three approaches and their particular pros and cons, as well as present the extractable data and ideas for further research. All <a href="https://github.com/tomayac/http-archive-progressive-web-apps">queries are also available on GitHub</a> and are released under the terms of the Apache 2.0 license.</p>
-<p><strong><amp-img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a0.png"/> Warning:</strong> while BigQuery grants everyone a certain amount of <a href="https://cloud.google.com/bigquery/pricing#free" rel="nofollow">free quota per month</a>, on-demand pricing kicks in once the free quota is consumed. Currently, this is <a href="https://cloud.google.com/bigquery/pricing#on_demand_pricing" rel="nofollow">$5 per terabyte</a>. Some of the shown queries process 70+(!)&nbsp;terabytes! You can see the amount of data that will be processed by clicking on the <em>Validator</em> icon:</p>
-<p><a href="/images/image_0.png" target="_blank"><amp-img layout="responsive" width="1532" height="182" src="/images/image_0.png" alt="Notice of the amount of to-be-processed data"></a></p>
+<p><strong><img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a0.png"/> Warning:</strong> while BigQuery grants everyone a certain amount of <a href="https://cloud.google.com/bigquery/pricing#free" rel="nofollow">free quota per month</a>, on-demand pricing kicks in once the free quota is consumed. Currently, this is <a href="https://cloud.google.com/bigquery/pricing#on_demand_pricing" rel="nofollow">$5 per terabyte</a>. Some of the shown queries process 70+(!)&nbsp;terabytes! You can see the amount of data that will be processed by clicking on the <em>Validator</em> icon:</p>
+<p><a href="/images/image_0.png" target="_blank"><img width="1532" height="182" src="/images/image_0.png" alt="Notice of the amount of to-be-processed data"></a></p>
 <h4>
 <a id="user-content-approach-1-httparchivelighthouse-tables" class="anchor"></span></a>Approach 1: <code>httparchive.lighthouse.*</code> Tables</h4>
 <h5>
@@ -118,8 +118,8 @@ CREATE TEMPORARY FUNCTION
   <span class="pl-k">date</span>
 <span class="pl-k">ORDER BY</span>
   <span class="pl-k">date</span>;</pre></div>
-<p><a href="/images/image_1.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="/images/image_1.png" alt="Average PWA scores over time, the trend is going up from ~83 (of 100) in June 2017 to ~85 (of 100) in May 2018"></a></p>
-<p><a href="/images/image_2.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="/images/image_2.png" alt="Number of PWAs over time, the trend is going up from ~100 in June 2017 to ~340 in May 2018"></a></p>
+<p><a href="/images/image_1.png" target="_blank"><img width="1200" height="742" src="/images/image_1.png" alt="Average PWA scores over time, the trend is going up from ~83 (of 100) in June 2017 to ~85 (of 100) in May 2018"></a></p>
+<p><a href="/images/image_2.png" target="_blank"><img width="1200" height="742" src="/images/image_2.png" alt="Number of PWAs over time, the trend is going up from ~100 in June 2017 to ~340 in May 2018"></a></p>
 <h4>
 <a id="user-content-approach-2-httparchivepages-tables" class="anchor"></span></a>Approach 2: <code>httparchive.pages.*</code> Tables</h4>
 <h5>
@@ -183,7 +183,7 @@ CREATE TEMPORARY FUNCTION
   <span class="pl-k">date</span>
 <span class="pl-k">ORDER BY</span>
   <span class="pl-k">date</span>;</pre></div>
-<p><a href="/images/image_3.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="/images/image_3.png" alt="Number of pages controlled by a service worker over time, the trend is going up from ~100 in December 2016 to ~2,000 in June 2018"></a></p>
+<p><a href="/images/image_3.png" target="_blank"><img width="1200" height="742" src="/images/image_3.png" alt="Number of pages controlled by a service worker over time, the trend is going up from ~100 in December 2016 to ~2,000 in June 2018"></a></p>
 <h4>
 <a id="user-content-approach-3-httparchiveresponse_body-tables" class="anchor"></span></a>Approach 3: <code>httparchive.response_body.*</code> Tables</h4>
 <h5>
@@ -398,8 +398,8 @@ CREATE TEMPORARY FUNCTION
   <span class="pl-k">date</span>
 <span class="pl-k">ORDER BY</span>
   <span class="pl-k">date</span>;</pre></div>
-<p><a href="/images/image_4.png" target="_blank"><amp-img  layout="responsive" width="1200" height="742" src="/images/image_4.png" alt="Workbox usage over time, the trend is going up from ~1 in August 2017 to ~46 in June 2018"></a></p>
-<p>Lines of code (LOC) is a great metric (<a href="https://en.wikipedia.org/wiki/Source_lines_of_code#Utility" rel="nofollow">not</a>) to estimate a teams productivity and to predict a tasks complexity. Lets analyze the development of a given sites service worker in terms of string length. Seems like the team deserves a raise <amp-img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png"/></p>
+<p><a href="/images/image_4.png" target="_blank"><img  width="1200" height="742" src="/images/image_4.png" alt="Workbox usage over time, the trend is going up from ~1 in August 2017 to ~46 in June 2018"></a></p>
+<p>Lines of code (LOC) is a great metric (<a href="https://en.wikipedia.org/wiki/Source_lines_of_code#Utility" rel="nofollow">not</a>) to estimate a teams productivity and to predict a tasks complexity. Lets analyze the development of a given sites service worker in terms of string length. Seems like the team deserves a raise <img width="24" height="24" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png"/></p>
 <div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
 <span class="pl-k">SELECT</span>
   DISTINCT pwa_url,
@@ -420,7 +420,7 @@ CREATE TEMPORARY FUNCTION
   <span class="pl-k">AND</span> platform <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>mobile<span class="pl-pds">"</span></span>
 <span class="pl-k">ORDER BY</span>
   <span class="pl-k">date</span> <span class="pl-k">ASC</span>;</pre></div>
-<p><a href="/images/image_5.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="/images/image_5.png" alt="String length of an anonymized site&#39;s service worker over time, the trend is going up from ~16,000 characters in March 2016 to ~28,000 characters in June 2018"></a></p>
+<p><a href="/images/image_5.png" target="_blank"><img width="1200" height="742" src="/images/image_5.png" alt="String length of an anonymized site&#39;s service worker over time, the trend is going up from ~16,000 characters in March 2016 to ~28,000 characters in June 2018"></a></p>
 <p>A final idea is to examine service worker events over time and see if there are interesting developments. Something that stands out in the analysis is how increasingly the <code>fetch</code> event is being listened to as well as the <code>message</code> event. Both are an indicator for more complex offline handling scenarios.</p>
 <div class="highlight highlight-source-sql"><pre><span class="pl-c"><span class="pl-c">#</span>standardSQL</span>
 <span class="pl-k">SELECT</span>
@@ -467,7 +467,7 @@ CREATE TEMPORARY FUNCTION
   <span class="pl-k">date</span>
 <span class="pl-k">ORDER BY</span>
   <span class="pl-k">date</span>;</pre></div>
-<p><a href="/images/image_6.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="/images/image_6.png" alt="Service worker events over time, showing an increasing usage of the fetch and the message event from February to June 2018"></a></p>
+<p><a href="/images/image_6.png" target="_blank"><img width="1200" height="742" src="/images/image_6.png" alt="Service worker events over time, showing an increasing usage of the fetch and the message event from February to June 2018"></a></p>
 <h4>
 <a id="user-content-meta-approach-approaches-13-combined" class="anchor"></span></a>Meta Approach: <em>Approaches 13</em> Combined</h4>
 <p>An interesting meta analysis is to combine all approaches to get a feeling for the overall landscape of PWAs in the HTTP Archive (with all aforementioned pros and cons regarding precision and recall applied). If we run the query below, we find exactly <a href="https://docs.google.com/spreadsheets/d/1XcSa59AwZZiqz7QdEH6CncU6lnSgzAEAOMbyI-aHBow/edit?usp=sharing" rel="nofollow">6,647 unique PWAs</a>. They may not necessarily still be PWAs today; some of the previously very prominent PWA lighthouse cases are known to have regressed, and some were only very briefly experimenting with the technologies, but in the HTTP Archive we have evidence of the glory moment in history where all of these pages fulfilled at least one of our three approaches criteria for being counted as a PWA.</p>
@@ -520,7 +520,7 @@ CREATE TEMPORARY FUNCTION
   <span class="pl-k">date</span>
 <span class="pl-k">ORDER BY</span>
   <span class="pl-k">date</span>;</pre></div>
-<p><a href="/images/image_7.png" target="_blank"><amp-img layout="responsive" width="1200" height="742" src="/images/image_7.png" alt="PWAs over time showing linear growth from February 2017 to June 2018, with a slight decline in May and June 2018"></a></p>
+<p><a href="/images/image_7.png" target="_blank"><img width="1200" height="742" src="/images/image_7.png" alt="PWAs over time showing linear growth from February 2017 to June 2018, with a slight decline in May and June 2018"></a></p>
 <h4>
 <a id="user-content-future-work-and-conclusions" class="anchor"></span></a>Future Work and Conclusions</h4>
 <p>In this document, we have presented three different approaches to extracting PWA data from the HTTP Archive. Each has its individual pros and cons, but especially <em>Approach 3</em> has proven very interesting as a basis for further analyses. All presented queries are evergreen in a sense that they are not tied to a particular crawls tables, allowing for ongoing analyses also in the future. Depending on peoples interest, we will see to what extent the data can be made generally available as part of the HTTP Archives public tables. There are likewise interesting research opportunities by combining our results with the <a href="https://developers.google.com/web/tools/chrome-user-experience-report/" rel="nofollow">Chrome User Experience Report</a> that is also <a href="https://developers.google.com/web/tools/chrome-user-experience-report/getting-started#query-dataset" rel="nofollow">accessible with BigQuery</a>.

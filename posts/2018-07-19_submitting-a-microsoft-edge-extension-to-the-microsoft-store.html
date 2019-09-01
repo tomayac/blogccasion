@@ -9,7 +9,7 @@ tags:
 ---
 <p>This is a bit of a rant, and a bit of a process documentation. I'm trying to submit the <a href="https://github.com/google/service-worker-detector">Service Worker Detector</a> browser extension to the <a href="https://www.microsoft.com/en-us/store/b/home">Microsoft Store</a>, so it can be one of the <a href="https://www.microsoft.com/store/collections/edgeextensions/">Edge extensions</a> everyone can easily install via a few mouse clicks. I have to say, the process is somewhat involved.</p>
 
-<p><amp-img layout="responsive" width="1200" height="675" src="/images/sw-detector-edge.jpg"></amp-img></p>
+<p><img width="1200" height="675" src="/images/sw-detector-edge.jpg"></p>
 
 <p>To start, it's whitelist only, so you have to <a href="http://aka.ms/extension-request">apply via the extension submission form</a>, which I did. For me, nothing really happened for a long time, so I chased down someone from the helpful <a href="https://twitter.com/MSEdgeDev">@MSEdgeDev team</a> who pulled some internal strings. Ultimately I got an email invite that I may now submit to the Store. While you can <a href="https://docs.microsoft.com/en-us/microsoft-edge/extensions/guides/creating-an-extension">develop and test extensions locally</a> mostly the Chrome way (that I am quite familiar with) by just loading the extension in developer mode, the process gets more complex for the actual Store submission (and required testing):</p>
 <ul>
@@ -29,6 +29,6 @@ Export-PfxCertificate -cert "Cert:\LocalMachine\My\SUP3RS3CR3TTHUMBPR1NT" -FileP
 
 <p>I'm now in the third iteration with their store review team where it's all working fine for me locally, but where they say it crashes on their side. Let's see how it ends. I guess the core issue is that <a href="https://www.npmjs.com/package/manifoldjs">ManifoldJS</a> can do a lot of things to shield me from something, something <a href="https://en.wikipedia.org/wiki/Universal_Windows_Platform">Windows UWP apps</a>, but where eventually you still need to read the <a href="https://docs.microsoft.com/en-us/windows/uwp/packaging/">UWP packaging docs</a> for the Microsoft Store submission that are clearly not written with extension developers in mind, but rather for regular Windows app developers.</p>
 
-<p><amp-img layout="responsive" width="1200" height="649" src="/images/sw-detector-store.jpg"></amp-img></p>
+<p><img width="1200" height="649" src="/images/sw-detector-store.jpg"></p>
 
 <p>Oh, and another thing I just realized: Edge <a href="https://caniuse.com/#feat=details">doesn't know</a> the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements. It <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13120279/">used to work</a> and <em>"[t]he implementation of this feature had shipped, but its quality was found lacking, hence this implementation was removed before Edge shipped last release. There currently [as of January 22, 2018] isn't [a] plan [Francois R. from the Microsoft Edge Team is] aware of to bring the feature back in the next update."</em> Sad. It is, however, mentioned as <em>Under Consideration</em> on the corresponding <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/detailssummary/?q=details">Edge Platform status page</a> with high priority, so here is hoping</p>
