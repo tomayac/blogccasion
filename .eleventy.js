@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const htmlmin = require("html-minifier");
 const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -66,6 +67,20 @@ module.exports = function(eleventyConfig) {
         });
       }
     }
+  });
+
+  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    if( outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+      });
+      return minified;
+    }
+
+    return content;
   });
 
   return {

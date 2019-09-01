@@ -29,5 +29,8 @@
     "luxon": "^1.17.2",
     "markdown-it": "^9.1.0",
     "markdown-it-anchor": "^5.2.4"
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0"
   }
 }
