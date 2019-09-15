@@ -212,8 +212,9 @@
         margin: .5em 0;
       }
       #content img {
-        margin: .5em 1em;
+        margin: .5em 0;
         max-width: 100%;
+        height: auto;
       }
       #content hr {
         height: 1px;
@@ -263,6 +264,10 @@
       pre {
         max-width: calc(100% - 1rem);
       }
+      p > code {
+        background-color: #eee;
+        color: #111;
+      }
       code {
         overflow-wrap: break-word;
         word-wrap: break-word;
@@ -295,7 +300,7 @@
         iframe,
         img {
           max-width: 100%;
-          layout: responsive
+          height: auto;
         }
       }
 
@@ -404,7 +409,6 @@
 
       .token.entity {
         cursor: help; }
-
     </style>
   </head>
   <body>
