@@ -22,7 +22,7 @@ In order for PWAs to be able to detect the presence or absence of system-level n
 we've proposed a new, aptly named CSS media query called `navigation-controls`.
 The [Explainer](https://github.com/fallaciousreasoning/backbutton-mediaquery/blob/master/explainer.md#css)
 goes into great detail on how this media query works, but the most basic way to use it
-can be seen in the code sample below:
+can be seen in the code sample below.
 
 ```css
 /**
