@@ -45,3 +45,10 @@ that you can download from François Beaufort's [Chromium Downloader](https://do
 ![Demo app running in dark mode, showing the dark mode favicon being used.](https://pbs.twimg.com/media/EJzWSAxWsAAdteb?format=png&name=small)
 
 ![Demo app running in light mode, showing the light mode favicon being used.](https://pbs.twimg.com/media/EJzWSAyXYAE624Z?format=png&name=small)
+
+Full credits to [Mathias Bynens](https://twitter.com/mathias),
+who [independently](https://bugs.chromium.org/p/chromium/issues/detail?id=294179#c72)
+has created almost the same [demo](https://numerous-sulfur.glitch.me) as me that I didn't check,
+but whose link to [Jake Archibald](https://twitter.com/jaffathecake)'s post https://jakearchibald.com/2016/svg-media-queries/ I followed. 
+Mathias has now filed the follow-up bug [crbug.com/1026539](https://crbug.com/1026539)
+that will improve the favicon update behavior (now you still need to reload the page after a color scheme change).
