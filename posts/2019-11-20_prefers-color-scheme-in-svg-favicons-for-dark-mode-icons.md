@@ -49,6 +49,7 @@ that you can download from François Beaufort's [Chromium Downloader](https://do
 Full credits to [Mathias Bynens](https://twitter.com/mathias),
 who [independently](https://bugs.chromium.org/p/chromium/issues/detail?id=294179#c72)
 has created almost the same [demo](https://numerous-sulfur.glitch.me) as me that I didn't check,
-but whose link to [Jake Archibald](https://twitter.com/jaffathecake)'s post https://jakearchibald.com/2016/svg-media-queries/ I followed. 
+but whose link to [Jake Archibald](https://twitter.com/jaffathecake)'s post
+[SVG &amp; media queries](https://jakearchibald.com/2016/svg-media-queries/) I did follow.
 Mathias has now filed the follow-up bug [crbug.com/1026539](https://crbug.com/1026539)
 that will improve the favicon update behavior (now you still need to reload the page after a color scheme change).
