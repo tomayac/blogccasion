@@ -2,25 +2,23 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<article class="blogPost">
+<article>
   <header>
     <a href="{{ page.url | url }}"><h3>{{ title }}</h3></a>
     <div>
+      <img class="author" src="/images/thomas_steiner.jpg"> »
+      <small><strong>Thomas Steiner</strong> » </small>
+      <small><strong><time datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time></strong> » </small>
       <small>
-        Created on <b><time datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time></b>.
         {% if tags %}
           {% for tag in tags %}
             {% if tag !== 'posts' %}
-              Categorized as
-              <a href="/tags/{{ tag }}" class="tag"><b>{{ tag }}</b></a>.
+              <a href="/tags/{{ tag }}" class="tag"><b>{{ tag }}</b></a>
             {% endif %}
           {% endfor %}
         {% endif %}
       </small>
     </div>
-    <div><small>Written by <b>Thomas Steiner</b>.</small></div>
-    <hr>
   </header>
   {{ content | safe }}
 </article>
-
