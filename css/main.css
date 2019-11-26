@@ -1,15 +1,18 @@
 :root {
-  font-size: 100%;
-  line-sizing: normal;
-  font-family: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue',  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-  line-height: 1.5;
-  --text-color: #111111;;
+  --text-color: #111111;
   --metadata-color: #555;
   --background-color: #fffff8;
   --main-background-color: #fff;
   --link-color: blue;
-  --border-color: #999;
-  --padding: 1rem;
+  --border-color: #666;
+  --padding: 0.75rem;
+}
+
+:root {
+  font-size: 100%;
+  line-sizing: normal;
+  font-family: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue',  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  line-height: 1.5;
 }
 
 *,
@@ -21,6 +24,7 @@
 body {
   color: var(--text-color);
   background-color: var(--background-color);
+  background-image: url(/static/background.svg);
   margin: 0;
   padding: var(--padding);
   display: flex;
@@ -32,20 +36,19 @@ a {
   text-decoration: none;
 }
 
-a:link,
-a:visited {
-
-}
-
 a:focus,
 a:hover,
 a:active {
   text-decoration: underline;
 }
 
+.header-footer-text,
+.footer-link {
+  color: #fff;
+}
+
 a.footer-link {
   border-bottom: solid 0.1rem var(--link-color);
-  color: white;
   text-decoration: none;
 }
 
@@ -59,15 +62,12 @@ h6 { font-size: 0.67rem; }
 
 h1, h2, h3, h4, h5, h6 {
   width: fit-content;
-  background: linear-gradient(to right,#ff8032, #ffd700);
+  background: linear-gradient(90deg, rgba(255,128,50,1) 0%, rgba(255,200,50,1) 100%);
   -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   text-decoration: none;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-.header-footer-text {
-  color: #fff;
 }
 
 .nav-item,
@@ -91,16 +91,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
 }
 
-header > a,
-a > h1,
-a > h2,
-a > h3,
-a > h4,
-a > h5,
-a > h6 {
-  text-decoration: none;
-}
-
 .container {
   display: grid;
 
@@ -109,8 +99,8 @@ a > h6 {
     "nav content aside"
     "footer footer footer";
 
-  grid-template-columns: 10rem minmax(0, 1fr) 10rem;
-  grid-template-rows: 250px 1fr auto;
+  grid-template-columns: 9rem minmax(0, 1fr) 9rem;
+  grid-template-rows: 250px 1fr 200px;
 
   max-width: 1024px;
   width: 100%;
@@ -120,7 +110,7 @@ a > h6 {
   border-left: solid 0.1rem var(--border-color);
   border-right: solid 0.1rem var(--border-color);
   border-top: solid 0.1rem var(--border-color);
-  border-radius: 0.25rem 0.25rem 0 0;
+  border-radius: var(--padding) var(--padding) 0 0;
   background-image: url(/static/header.jpg);
   background-position: bottom;
   background-repeat: no-repeat;
@@ -138,21 +128,6 @@ nav {
   grid-area: nav;
 }
 
-ul.postlist {
-  list-style-type: circle;
-}
-
-footer {
-  border-left: solid 0.1rem var(--border-color);
-  border-right: solid 0.1rem var(--border-color);
-  border-bottom: solid 0.1rem var(--border-color);
-  border-radius: 0 0 0.25rem 0.25rem;
-  padding: var(--padding);
-  background-image: url(/static/header.jpg);
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
 main {
   grid-area: content;
 }
@@ -163,6 +138,19 @@ aside {
 
 footer {
   grid-area: footer;
+}
+
+footer {
+  border-left: solid 0.1rem var(--border-color);
+  border-right: solid 0.1rem var(--border-color);
+  border-bottom: solid 0.1rem var(--border-color);
+  border-radius: 0 0 var(--padding) var(--padding);
+  padding: var(--padding);
+  background-image: url(/static/header.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
 }
 
 img {
@@ -191,30 +179,45 @@ svg.icon {
   vertical-align: middle;
 }
 
-nav > ul,
-aside > ul,
-footer > ul {
+nav ul,
+aside ul,
+footer ul {
   list-style: none;
   padding: 0;
 }
 
-.author {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 1rem;
-  vertical-align: middle;
+footer ul {
+  width: 100%;
+  margin-block-end: 0;
+}
+
+footer ul li:last-of-type {
+  text-align: right;
+}
+
+ul.postlist {
+  list-style-type: circle;
 }
 
 .postlist-link {
   color: var(--text-color);
 }
 
-.metadata,
-.postlist-date {
-  color: var(--metadata-color)
+.author {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  vertical-align: middle;
+  margin-inline-end: 0.25rem;
 }
 
-@media (min-width: 800px) {
+.metadata,
+.postlist-date {
+  color: var(--metadata-color);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 1024px) {
   :root {
     font-size: 112.5%;
   }
@@ -227,12 +230,13 @@ footer > ul {
     --background-color: #000;
     --main-background-color: #111;
     --link-color: red;
+    --border-color: #555;
     --metadata-color: #888;
   }
   h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(to right,#ffd700,#ff8032);
-    -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
   }
 }
 
@@ -257,17 +261,22 @@ footer > ul {
       auto; /* footer */
   }
 
+  aside ul,
+  nav ul {
+    margin-block-start: 0;
+  }
+
   nav ul {
     display: flex;
   }
 
   li {
-    margin: 0 var(--padding) 0 0;
+    margin-inline-end: var(--padding);
   }
 
   h1,
   h2 {
-    margin: 0;
+    margin:0;
   }
 
   nav,

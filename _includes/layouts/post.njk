@@ -6,18 +6,16 @@ templateClass: tmpl-post
   <header>
     <a href="{{ page.url | url }}"><h3>{{ title }}</h3></a>
     <div class="metadata">
-      <img class="author" src="/images/thomas_steiner.jpg">
-      <small>By <strong>Thomas Steiner</strong>, written on</small>
-      <small><strong><time datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time></strong></small>
-      <small>
-        {% if tags %}
-          {% for tag in tags %}
-            {% if tag !== 'posts' %}
-              <a href="/tags/{{ tag }}" class="tag"><b>{{ tag }}</b></a>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      </small>
+      <a href="/about/"><img class="author" src="/images/thomas_steiner.jpg"></a>
+      By <a href="/about/">Thomas Steiner</a>.
+      Written on <time datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time>.
+      {% if tags %}
+        {% for tag in tags %}
+          {% if tag !== 'posts' %}
+            <a href="/tags/{{ tag }}" class="tag"><b>{{ tag }}</b></a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     </div>
   </header>
   {{ content | safe }}
