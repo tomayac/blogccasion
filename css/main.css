@@ -111,7 +111,8 @@ h1, h2, h3, h4, h5, h6 {
   border-right: solid 0.1rem var(--border-color);
   border-top: solid 0.1rem var(--border-color);
   border-radius: var(--padding) var(--padding) 0 0;
-  background-image: url(/static/header.jpg);
+  background-image: url(/static/header.svg);
+  background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   display: flex;
@@ -146,7 +147,8 @@ footer {
   border-bottom: solid 0.1rem var(--border-color);
   border-radius: 0 0 var(--padding) var(--padding);
   padding: var(--padding);
-  background-image: url(/static/header.jpg);
+  background-image: url(/static/header.svg);
+  background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   display: flex;
