@@ -89,11 +89,11 @@ With all that said, do not let yourself be discouraged from engaging in web stan
 
 For another take on getting started with standards work, I also highly recommend watching my colleague [Mariko Kosaka](https://twitter.com/kosamari)’s talk “_What is/Who Makes ‘The Platform’”_.
 
-<Embed src="https://www.youtube.com/embed/xzzQWc-IqZI?feature=oembed" aspectRatio={undefined} caption="Mariko Kosaka’s talk “What is/Who Makes ‘The Platform’” on YouTube" />
+<Embed src="https://www.youtube.com/embed/xzzQWc-IqZI?feature=oembed" caption="Mariko Kosaka’s talk “What is/Who Makes ‘The Platform’” on YouTube" />
 
 For yet another take (and probably the most holistic one) ranging from identifying the issue to writing a Web Platform Test to proposing the actual spec change, watch [Jake Archibald](https://twitter.com/jaffathecake)’s and [Surma](https://twitter.com/DasSurma)’s episode _Changing Web Standards_ of their _HTTP 203_ series, embedded below.
 
-<Embed src="https://www.youtube.com/embed/y1TEPQz02iU?feature=oembed" aspectRatio={undefined} caption="Jake Archibald and Surma on “Changing Web Standards” on YouTube" />
+<Embed src="https://www.youtube.com/embed/y1TEPQz02iU?feature=oembed" caption="Jake Archibald and Surma on “Changing Web Standards” on YouTube" />
 
 #### 🙏 Acknowledgements
 

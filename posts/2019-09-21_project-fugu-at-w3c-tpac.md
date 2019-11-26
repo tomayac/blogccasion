@@ -226,7 +226,7 @@ where I can make some valuable contributions.
 To which [Mariko Kosaka](https://twitter.com/kosamari) fittingly
 [responds](https://twitter.com/kosamari/status/1173811848518356993):
 
-> [Y]]eah, but let's not forget getting to talk to that small set of people
+> [Y]eah, but let's not forget getting to talk to that small set of people
   most often comes with being very, very, very privileged. […]
 
 It's indeed a *massive privilege* to work for a company that has the money
