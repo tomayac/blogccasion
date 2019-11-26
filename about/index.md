@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/home.njk
 title: About Me
 tags:
   - nav
@@ -10,7 +10,7 @@ templateClass: tmpl-post
 
 Please feel free to contact me. There are many ways to do so...
 <div>
-  <img style="border: 0; border-radius: 50%;" src="/images/thomas_steiner.jpg" alt="Thomas Steiner" width="400" height="400">
+  <img style="border: 0; border-radius: 50%;" src="/images/thomas_steiner.jpg" alt="Thomas Steiner" width="200" height="200">
 </div>
 <b>Current Address:</b>
 <p>
