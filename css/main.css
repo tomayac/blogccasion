@@ -153,6 +153,7 @@ footer {
   background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
+  position: relative;
 }
 
 img {
@@ -193,10 +194,6 @@ footer ul {
   margin-block-end: 0;
 }
 
-footer ul li:last-of-type {
-  text-align: right;
-}
-
 ul.postlist {
   list-style-type: circle;
 }
@@ -217,6 +214,12 @@ ul.postlist {
 .postlist-date {
   color: var(--metadata-color);
   font-size: 0.75rem;
+}
+
+.validator {
+  position: absolute;
+  bottom: var(--padding);
+  right: var(--padding);
 }
 
 @media (min-width: 1024px) {
