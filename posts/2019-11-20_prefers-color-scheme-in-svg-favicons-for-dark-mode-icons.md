@@ -13,7 +13,7 @@ where this feature was demanded on September 18, 2013(!), was fixed.
 This means that you can style your icon with inline [`prefers-color-scheme`](https://web.dev/prefers-color-scheme)
 and you'll get two icons for the price of one!
 
-``` html
+```html
 <!-- icon.svg -->
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
   <style>
@@ -33,7 +33,7 @@ and you'll get two icons for the price of one!
 </svg>
 ```
 
-``` html
+```html
 <!-- index.html -->
 <link rel="icon" href="/icon.svg">
 ```

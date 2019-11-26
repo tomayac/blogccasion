@@ -34,7 +34,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("pgp_public_key.asc");
 
   /* Markdown Plugins */
