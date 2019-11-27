@@ -49,7 +49,7 @@ a:active {
   background-color: var(--background-color);
 }
 
-a.footer-link {
+.footer-link {
   text-decoration: underline;
   text-decoration-color: var(--link-color);
 }
