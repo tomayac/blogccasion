@@ -25,6 +25,7 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   background-image: url(/static/background.svg);
+  background-attachment: fixed;
   margin: 0;
   padding: var(--padding);
   display: flex;
@@ -48,8 +49,8 @@ a:active {
 }
 
 a.footer-link {
-  border-bottom: solid 0.1rem var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
 }
 
 h1 { font-size: 2rem; }
@@ -62,7 +63,7 @@ h6 { font-size: 0.67rem; }
 
 h1, h2, h3, h4, h5, h6 {
   width: fit-content;
-  background: linear-gradient(90deg, rgba(255,128,50,1) 0%, rgba(255,200,50,1) 100%);
+  background: linear-gradient(90deg, #ff8032 0%, #ffc832 100%);
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -76,7 +77,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: .25rem;
   padding: .1rem .25rem;
   text-decoration: none;
-  font-size: 0.75rem;
 }
 
 .tag {
@@ -84,11 +84,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-item {
-  background-color: darkolivegreen;
+  background-color: darkgreen;
 }
 
-.aside-item {
-  font-size: 0.75rem;
+.nav-item,
+.aside-item,
+.tag {
+  font-size: 0.875rem;
 }
 
 .container {
@@ -100,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
     "footer footer footer";
 
   grid-template-columns: 9rem minmax(0, 1fr) 9rem;
-  grid-template-rows: 250px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
 
   max-width: 1024px;
   width: 100%;
@@ -111,12 +113,10 @@ h1, h2, h3, h4, h5, h6 {
   border-right: solid 0.1rem var(--border-color);
   border-top: solid 0.1rem var(--border-color);
   border-radius: var(--padding) var(--padding) 0 0;
-  background-image: url(/static/header.svg);
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
+  background-image: url(/static/background.svg);
+  background-color: var(--background-color);
   display: flex;
-  padding: 1rem;
+  padding: var(--padding);
   justify-content: flex-end;
   flex-direction:column;
 }
@@ -147,10 +147,8 @@ footer {
   border-bottom: solid 0.1rem var(--border-color);
   border-radius: 0 0 var(--padding) var(--padding);
   padding: var(--padding);
-  background-image: url(/static/header.svg);
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
+  background-image: url(/static/background.svg);
+  background-color: var(--background-color);
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -195,11 +193,12 @@ footer ul {
 }
 
 ul.postlist {
-  list-style-type: circle;
+  padding-inline-start: 1.5em;
+  list-style-type: square;
 }
 
-.postlist-link {
-  color: var(--text-color);
+ul.postlist::marker {
+  color: #ff8032;
 }
 
 .author {
@@ -213,7 +212,7 @@ ul.postlist {
 .metadata,
 .postlist-date {
   color: var(--metadata-color);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 
 .validator {
@@ -259,7 +258,7 @@ ul.postlist {
 
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows:
-      120px /* header */
+      auto /* header */
       1fr /* content */
       auto /* nav */
       auto /* aside */
