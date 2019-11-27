@@ -45,7 +45,8 @@ a:active {
 
 .header-footer-text,
 .footer-link {
-  color: #fff;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 a.footer-link {
@@ -197,8 +198,8 @@ ul.postlist {
   list-style-type: square;
 }
 
-ul.postlist::marker {
-  color: #ff8032;
+ul.postlist ::marker {
+  color: #ffd700;
 }
 
 .author {
