@@ -1,14 +1,6 @@
 :root {
-  --text-color: #111111;
-  --metadata-color: #555;
-  --background-color: #fffff8;
-  --main-background-color: #fff;
-  --link-color: blue;
-  --border-color: #666;
   --padding: 0.75rem;
-}
 
-:root {
   font-size: 100%;
   line-sizing: normal;
   font-family: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue',  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
@@ -64,7 +56,6 @@ h6 { font-size: 0.67rem; }
 
 h1, h2, h3, h4, h5, h6 {
   width: fit-content;
-  background: linear-gradient(90deg, #ff8032 0%, #ffc832 100%);
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -96,15 +87,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   display: grid;
-
   grid-template-areas:
     "header header header"
     "nav content aside"
     "footer footer footer";
-
   grid-template-columns: 9rem minmax(0, 1fr) 9rem;
   grid-template-rows: auto 1fr auto;
-
   max-width: 1024px;
   width: 100%;
 }
@@ -228,23 +216,6 @@ ul.postlist ::marker {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    -webkit-font-smoothing: antialiased;
-    --text-color: #fefefe;
-    --background-color: #000;
-    --main-background-color: #111;
-    --link-color: red;
-    --border-color: #555;
-    --metadata-color: #888;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    background: linear-gradient(to right,#ffd700,#ff8032);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-}
-
 @media (max-width: 800px) {
   :root {
     --padding: 0.5rem;
@@ -256,7 +227,6 @@ ul.postlist ::marker {
       "nav"
       "aside"
       "footer";
-
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows:
       auto /* header */
