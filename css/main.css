@@ -210,6 +210,16 @@ ul.postlist ::marker {
   right: var(--padding);
 }
 
+dark-mode-toggle {
+  --dark-mode-toggle-light-icon: url(/static/sun.svg);
+  --dark-mode-toggle-dark-icon: url(/static/moon.svg);
+  --dark-mode-toggle-color: var(--text-color);
+  --dark-mode-toggle-icon-filter: invert(100%);
+  position: absolute;
+  bottom: calc(2 * var(--padding) + 31px);
+  right: var(--padding);
+}
+
 @media (min-width: 1024px) {
   :root {
     font-size: 112.5%;
