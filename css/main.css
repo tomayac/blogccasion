@@ -225,7 +225,7 @@ dark-mode-toggle {
 
 @media (max-width: 800px) {
   :root {
-    --padding: 0.5rem;
+    --padding: 0.25rem;
   }
   .container {
     grid-template-areas:
