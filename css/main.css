@@ -38,7 +38,6 @@ a:active {
 .header-footer-text,
 .footer-link {
   color: var(--text-color);
-  background-color: var(--background-color);
 }
 
 .footer-link {
@@ -102,8 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   border-right: solid 0.1rem var(--border-color);
   border-top: solid 0.1rem var(--border-color);
   border-radius: var(--padding) var(--padding) 0 0;
-  background-image: url(/static/background.svg);
-  background-color: var(--background-color);
+  background-image: linear-gradient(to bottom, transparent 0%, var(--main-background-color) 100%);
   display: flex;
   padding: var(--padding);
   justify-content: flex-end;
@@ -136,8 +134,7 @@ footer {
   border-bottom: solid 0.1rem var(--border-color);
   border-radius: 0 0 var(--padding) var(--padding);
   padding: var(--padding);
-  background-image: url(/static/background.svg);
-  background-color: var(--background-color);
+  background-image: linear-gradient(to top, transparent 0%, var(--main-background-color) 100%);
   display: flex;
   align-items: flex-end;
   position: relative;
