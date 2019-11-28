@@ -3,7 +3,7 @@
 
   font-size: 100%;
   line-sizing: normal;
-  font-family: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue',  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   line-height: 1.5;
 }
 
@@ -45,15 +45,22 @@ a:active {
   text-decoration-color: var(--link-color);
 }
 
-h1 { font-size: 2rem; }
-h1 { margin: 0.67em 0; }
+h1 {
+  font-size: 2rem;
+  margin: 0.67em 0;
+}
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.17rem; }
-h4 { font-size: 1.00rem; }
+h4 { font-size: 1rem; }
 h5 { font-size: 0.83rem; }
 h6 { font-size: 0.67rem; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   width: fit-content;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
@@ -65,8 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 .nav-item,
 .tag {
   color: white;
-  border-radius: .25rem;
-  padding: .1rem .25rem;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.25rem;
   text-decoration: none;
 }
 
@@ -97,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container > header {
+  grid-area: header;
   border-left: solid 0.1rem var(--border-color);
   border-right: solid 0.1rem var(--border-color);
   border-top: solid 0.1rem var(--border-color);
@@ -105,15 +113,12 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   padding: var(--padding);
   justify-content: flex-end;
-  flex-direction:column;
-}
-
-.container > header {
-  grid-area: header;
+  flex-direction: column;
 }
 
 nav {
   grid-area: nav;
+  border-left: solid 0.1rem var(--border-color);
 }
 
 main {
@@ -122,13 +127,11 @@ main {
 
 aside {
   grid-area: aside;
+  border-right: solid 0.1rem var(--border-color);
 }
 
 footer {
   grid-area: footer;
-}
-
-footer {
   border-left: solid 0.1rem var(--border-color);
   border-right: solid 0.1rem var(--border-color);
   border-bottom: solid 0.1rem var(--border-color);
@@ -143,14 +146,6 @@ footer {
 img {
   max-width: 100%;
   height: auto;
-}
-
-nav {
-  border-left: solid 0.1rem var(--border-color);
-}
-
-aside {
-  border-right: solid 0.1rem var(--border-color);
 }
 
 nav,
@@ -174,7 +169,6 @@ footer ul {
 }
 
 footer ul {
-  width: 100%;
   margin-block-end: 0;
 }
 
@@ -207,7 +201,7 @@ ul.postlist ::marker {
 
 .validator {
   position: absolute;
-  bottom: var(--padding);
+  bottom: calc(2 * var(--padding));
   right: var(--padding);
 }
 
@@ -216,8 +210,9 @@ dark-mode-toggle {
   --dark-mode-toggle-dark-icon: url(/static/moon.svg);
   --dark-mode-toggle-color: var(--text-color);
   --dark-mode-toggle-icon-filter: invert(100%);
+
   position: absolute;
-  bottom: calc(2.5 * var(--padding) + 31px);
+  bottom: calc(3.5 * var(--padding) + 31px);
   right: var(--padding);
 }
 
@@ -231,6 +226,7 @@ dark-mode-toggle {
   :root {
     --padding: 0.25rem;
   }
+
   .container {
     grid-template-areas:
       "header"
@@ -263,7 +259,7 @@ dark-mode-toggle {
 
   h1,
   h2 {
-    margin:0;
+    margin: 0;
   }
 
   nav,

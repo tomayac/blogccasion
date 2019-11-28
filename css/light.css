@@ -1,13 +1,18 @@
 :root {
-  --text-color: #111111;
+  --text-color: #111;
   --background-color: #fffff8;
   --metadata-color: #555;
-  --main-background-color-transparent: #ffffff00;
+  --main-background-color-transparent: #fff0;
   --main-background-color: #ffffffbf;
   --link-color: blue;
   --border-color: #666;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   background: linear-gradient(90deg, #ff8032 0%, #ffc832 100%);
 }

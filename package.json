@@ -53,7 +53,7 @@
       "property-no-unknown": [
         true,
         {
-          "ignoreProperties": []
+          "ignoreProperties": ["text-fill-color"]
         }
       ]
     }

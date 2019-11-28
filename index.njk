@@ -5,9 +5,8 @@ tags:
 navtitle: Home
 ---
 
-<p>
-  <h2>Thomas Steiner</h2>
-</p>
+<h2>Thomas Steiner</h2>
+
 <div class="metadata">
   <img class="author" src="/images/thomas_steiner.jpg" alt="Thomas Steiner headshot">
   <p>
@@ -17,9 +16,7 @@ navtitle: Home
   </p>
 </div>
 
-<p>
-  <h2>Latest Posts</h2>
-</p>
+<h2>Latest Posts</h2>
 
 {% set postslist = collections.posts | head(-10) %}
 {% include "postslist.njk" %}

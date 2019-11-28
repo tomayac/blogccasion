@@ -5,11 +5,16 @@
   --background-color: #000;
   --metadata-color: #888;
   --main-background-color: #111111bf;
-  --main-background-color-transparent: #11111100;
+  --main-background-color-transparent: #1110;
   --link-color: red;
   --border-color: #555;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  background: linear-gradient(to right,#ffd700,#ff8032);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: linear-gradient(to right, #ffd700, #ff8032);
 }
