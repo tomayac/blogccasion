@@ -5,17 +5,19 @@ templateClass: tmpl-post
 <article>
   <header>
     <a href="{{ page.url | url }}"><h3>{{ title }}</h3></a>
-    <div class="metadata">
-      <a href="/about/"><img class="author" src="/images/thomas_steiner.jpg" alt="Thomas Steiner headshot"></a>
-      By <a href="/about/">Thomas Steiner</a>.
-      Written on <time datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time>.
-      {% if tags %}
-        {% for tag in tags %}
-          {% if tag !== 'posts' %}
-            <a href="/tags/{{ tag }}" class="tag"><b>{{ tag }}</b></a>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+    <div class="metadata post-date">
+      <img class="author" src="/images/thomas_steiner.jpg" alt="Thomas Steiner headshot">
+      <p>
+        By <a href="/about/">Thomas Steiner</a>.
+        Written on <time datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time>.
+        {% if tags %}
+          {% for tag in tags %}
+            {% if tag !== 'posts' %}
+              <a href="/tags/{{ tag }}" class="tag"><b>{{ tag }}</b></a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </p>
     </div>
   </header>
   {{ content | safe }}

@@ -191,11 +191,15 @@ ul.postlist ::marker {
   width: 2rem;
   height: 2rem;
   border-radius: 0.5rem;
-  vertical-align: middle;
   margin-inline-end: 0.25rem;
 }
 
-.metadata,
+.metadata {
+  display: flex;
+  align-items: center;
+}
+
+.post-date,
 .postlist-date {
   color: var(--metadata-color);
   font-size: 0.875rem;
@@ -253,7 +257,8 @@ dark-mode-toggle {
   }
 
   li {
-    margin-inline-end: var(--padding);
+    margin-inline-end: calc(2 * var(--padding));
+    margin-block-end: calc(2 * var(--padding));
   }
 
   h1,
