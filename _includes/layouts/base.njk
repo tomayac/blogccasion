@@ -47,6 +47,11 @@
         </div>
       </header>
 
+      <main {% if templateClass %} class="{{ templateClass }}"{% endif %}>
+        {{ content | safe }}
+        <p>You can <a href="https://github.com/tomayac/blogccasion/tree/master/{{ page.inputPath }}" rel="nofollow">edit this page on GitHub</a>.</p>
+      </main>
+
       <nav>
         <h2>Pages</h2>
         <ul>
@@ -82,19 +87,14 @@
         </ul>
       </aside>
 
-      <main {% if templateClass %} class="{{ templateClass }}"{% endif %}>
-        {{ content | safe }}
-        <p>You can <a href="https://github.com/tomayac/blogccasion/tree/master/{{ page.inputPath }}" rel="nofollow">edit this page on GitHub</a>.</p>
-      </main>
-
       <footer id="footer">
-        <a class="validator" href="https://html5.validator.nu/?doc={{ metadata.url }}{{ page.url | url }}"><img src="/static/validhtml5.svg" width="88" height="31" alt="Valid HTML5 badge"></a>
-        <dark-mode-toggle permanent dark="Light Theme" light="Dark Theme"></dark-mode-toggle>
         <ul class="header-footer-text">
           <li>© 2005–2019 <a class="footer-link" href="/about">Thomas Steiner</a>.</li>
           <li>Distributed under <a class="footer-link" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</li>
           <li>Contact and required <a class="footer-link" href="/about/">legal info</a>.</li>
         </ul>
+        <dark-mode-toggle permanent dark="Light Theme" light="Dark Theme"></dark-mode-toggle>
+        <a class="validator" href="https://html5.validator.nu/?doc={{ metadata.url }}{{ page.url | url }}"><img src="/static/validhtml5.svg" width="88" height="31" alt="Valid HTML5 badge"></a>
       </footer>
     </div>
   </body>
