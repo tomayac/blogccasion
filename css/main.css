@@ -217,7 +217,7 @@ dark-mode-toggle {
   --dark-mode-toggle-color: var(--text-color);
   --dark-mode-toggle-icon-filter: invert(100%);
   position: absolute;
-  bottom: calc(2 * var(--padding) + 31px);
+  bottom: calc(2.5 * var(--padding) + 31px);
   right: var(--padding);
 }
 
