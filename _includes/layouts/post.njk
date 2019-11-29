@@ -23,3 +23,9 @@ templateClass: tmpl-post
   </header>
   {{ content | safe }}
 </article>
+
+<section>
+  <h3>Webmentions</h3>
+  {% set webmentionUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+  {% include 'webmentions.njk' %}
+</section>

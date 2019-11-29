@@ -3,6 +3,7 @@ const htmlmin = require("html-minifier");
 const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const filters = require('./_11ty/filters');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -27,6 +28,10 @@ module.exports = function(eleventyConfig) {
     }
 
     return array.slice(0, n);
+  });
+
+  Object.keys(filters).forEach(filterName => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
   });
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
