@@ -2,8 +2,8 @@
 layout: layouts/post.njk
 title: "The redesigned Blogccasion is live"
 author: "Thomas Steiner"
-date: "2019-11-20T09:26:04"
-permalink: 2019/09/21/the-redesigned-blogccasion-is-live/index.html
+date: "2019-11-29T16:02:43"
+permalink: 2019/09/29/the-redesigned-blogccasion-is-live/index.html
 tags:
   - Private
 ---
