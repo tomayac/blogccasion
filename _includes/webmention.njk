@@ -2,12 +2,12 @@
   <div class="webmention__meta">
     {% if webmention.author %}
       {% if webmention.author.photo %}
-      <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
+      <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy" class="author">
       {% else %}
-      <img src="{{ '/img/avatar.svg' | url }}" alt="" width="48" height="48">
+      <img src="{{ '/img/avatar.svg' | url }}" alt="" width="48" height="48" class="author">
       {% endif %}
       <span>
-        <a class="h-card u-url" {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong class="p-name">{{ webmention.author.name }}</strong></a>
+        <a {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong class="p-name">{{ webmention.author.name }}</strong></a>
       </span>
     {% else %}
       <span>
@@ -15,12 +15,12 @@
       </span>
     {% endif %}
     {% if webmention.published %}
-        <time class="postlist-date" datetime="{{ webmention.published }}">
-            {{ webmention.published | readableDateFromISO }}
-        </time>
+      <time class="postlist-date" datetime="{{ webmention.published }}">
+        {{ webmention.published | readableDateFromISO }}
+      </time>
     {% endif %}
   </div>
   <div>
-      {{ webmention.content.text }}
+    {{ webmention.content.text }}
   </div>
 </article>
