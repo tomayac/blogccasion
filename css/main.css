@@ -199,6 +199,10 @@ ul.postlist ::marker {
   font-size: 0.875rem;
 }
 
+.edit-on-github {
+  color: var(--metadata-color);
+}
+
 .validator {
   position: absolute;
   bottom: calc(2 * var(--padding));
