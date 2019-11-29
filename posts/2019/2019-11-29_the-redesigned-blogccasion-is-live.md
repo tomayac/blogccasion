@@ -69,6 +69,8 @@ Here're the resources that helped me build the new Blogccasion:
 - Some of the CSS is based on Mozilla's [CSS Remedy](https://github.com/mozdevs/cssremedy) project.
 - Last not least, the *Valid HTML5* badge is inspired by [Bradley Taunt](https://bradleytaunt.com/)'s
   article [Using HTML Validator Badges Again](https://bradleytaunt.com/html5-validator-badge/).
+- The *Synthwave '84* code theme for Visual Studio Code originally is from [Robb Owen](https://twitter.com/Robb0wen).
+  I'm using the port for [PrismJS](https://prismjs.com/) by [Marc Backes](https://twitter.com/themarcba).
 
 🙏 Thanks everyone for letting me stand on your shoulders!
 
