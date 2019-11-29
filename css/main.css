@@ -258,8 +258,9 @@ dark-mode-toggle {
   }
 
   h1,
-  h2 {
-    margin: 0;
+  h2,
+  h3 {
+    margin: var(--padding) 0;
   }
 
   nav,
