@@ -14,10 +14,13 @@
 {% set repliesSize = replies | size  %}
 
 {% if repliesSize > 0 %}
-<div class="webmention-replies">
-  <h4>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h4>
-  {% for webmention in replies %}
-    {% include 'webmention.njk' %}
-  {% endfor %}
-</div>
+  <section>
+    <h3>Webmentions</h3>
+    <div class="webmention-replies">
+      <h4>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h4>
+      {% for webmention in replies %}
+        {% include 'webmention.njk' %}
+      {% endfor %}
+    </div>
+  </section>
 {% endif %}

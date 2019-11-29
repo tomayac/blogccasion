@@ -25,8 +25,5 @@ templateClass: tmpl-post
   <p>[<span class="edit-on-github">You can <a href="https://github.com/tomayac/blogccasion/tree/master/{{ page.inputPath }}" rel="nofollow">edit this page on GitHub</a>.</span>]</p>
 </article>
 
-<section>
-  <h3>Webmentions</h3>
-  {% set webmentionUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
-  {% include 'webmentions.njk' %}
-</section>
+{% set webmentionUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% include 'webmentions.njk' %}
