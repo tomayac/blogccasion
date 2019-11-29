@@ -13,7 +13,7 @@ module.exports = {
     return mentions.filter(entry => !!entry[mentionType])
   },
 
-  readableDateFromISO: (dateStr, formatStr = "dd LLL yyyy 'at' hh:mma") => {
+  readableDateFromISO: (dateStr, formatStr = "ccc LLL dd yyyy 'at' HH:mm") => {
     return DateTime.fromISO(dateStr).toFormat(formatStr);
   }
 };

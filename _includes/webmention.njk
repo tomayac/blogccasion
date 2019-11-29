@@ -1,24 +1,23 @@
 <article class="webmention" id="webmention-{{ webmention['wm-id'] }}">
-  <div class="webmention__meta">
+  <div class="metadata post-date">
     {% if webmention.author %}
       {% if webmention.author.photo %}
       <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy" class="author">
       {% else %}
       <img src="{{ '/img/avatar.svg' | url }}" alt="" width="48" height="48" class="author">
       {% endif %}
-      <span>
-        <a {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong class="p-name">{{ webmention.author.name }}</strong></a>
-      </span>
+      <p>By <a {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong class="p-name">{{ webmention.author.name }}</strong></a>.
     {% else %}
-      <span>
-        <strong>Anonymous</strong>
+      <p><span>
+        By <strong>Anonymous</strong>.
       </span>
     {% endif %}
     {% if webmention.published %}
-      <time class="postlist-date" datetime="{{ webmention.published }}">
+      Written on <time class="postlist-date" datetime="{{ webmention.published }}">
         {{ webmention.published | readableDateFromISO }}
-      </time>
+      </time>.
     {% endif %}
+    </p>
   </div>
   <div>
     {{ webmention.content.text }}

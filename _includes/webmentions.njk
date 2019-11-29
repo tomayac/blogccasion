@@ -1,26 +1,44 @@
 <!-- Filter the cached mentions to only include ones matching the post's url -->
 {% set mentions = webmentions | getWebmentionsForUrl(metadata.url + webmentionUrl) %}
-<!-- Set reposts as mentions that are `repost-of`  -->
+
+<!-- Set reposts as mentions that are `repost-of` -->
 {% set reposts = mentions | webmentionsByType('repost-of') %}
 <!-- Count the total reposts -->
 {% set repostsSize = reposts | size %}
+
 <!-- Set likes as mentions that are `like-of`  -->
 {% set likes = mentions | webmentionsByType('like-of') %}
 <!-- Count the total likes -->
 {% set likesSize = likes | size %}
-<!-- Set replies as mentions that are `in-reply-to`  -->
-{% set replies = mentions | webmentionsByType('in-reply-to')  %}
-<!-- Count the total replies -->
-{% set repliesSize = replies | size  %}
 
-{% if repliesSize > 0 %}
+<!-- Set replies as mentions that are `in-reply-to`  -->
+{% set replies = mentions | webmentionsByType('in-reply-to') %}
+<!-- Count the total replies -->
+{% set repliesSize = replies | size %}
+
+<!-- Set replies as mentions that are `in-reply-to`  -->
+{% set mentionsOf = mentions | webmentionsByType('mention-of') %}
+<!-- Count the total mentionsOf -->
+{% set mentionsOfSize = mentionsOf | size %}
+
+{% if (repliesSize > 0) or (mentionsOfSize > 0) %}
   <section>
     <h3>Webmentions</h3>
-    <div class="webmention-replies">
-      <h4>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h4>
-      {% for webmention in replies %}
-        {% include 'webmention.njk' %}
-      {% endfor %}
-    </div>
+    {% if repliesSize > 0 %}
+      <div class="webmentions">
+        <h4>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h4>
+        {% for webmention in replies %}
+          {% include 'webmention.njk' %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if mentionsOfSize > 0 %}
+      <div class="webmentions">
+        <h4>{{ mentionsOfSize }} {% if mentionsOfSize == "1" %}Mention{% else %}Mentions{% endif %}</h4>
+        {% for webmention in mentionsOf %}
+          {% include 'webmention.njk' %}
+        {% endfor %}
+      </div>
+    {% endif %}
   </section>
 {% endif %}

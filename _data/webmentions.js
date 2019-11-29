@@ -37,7 +37,7 @@ function mergeWebmentions(a, b) {
 function writeToCache(data) {
   const dir = '_cache'
   const fileContent = JSON.stringify(data, null, 2)
-  // Create cache folder if it doesnt exist already
+  // Create cache folder if it doesn't exist already
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir)
   }
