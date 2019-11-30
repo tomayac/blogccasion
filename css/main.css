@@ -210,8 +210,8 @@ ul.postlist ::marker {
 }
 
 dark-mode-toggle {
-  --dark-mode-toggle-light-icon: url(/static/sun.svg);
-  --dark-mode-toggle-dark-icon: url(/static/moon.svg);
+  --dark-mode-toggle-light-icon: url(/static/moon.svg);
+  --dark-mode-toggle-dark-icon: url(/static/sun.svg);
   --dark-mode-toggle-color: var(--text-color);
   --dark-mode-toggle-icon-filter: invert(100%);
 
