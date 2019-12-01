@@ -64,16 +64,18 @@ then reset it to the initial value, and finally repeat this forever.
 
 ```html
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle fill="blue" cx="50" cy="50" r="45"/>
+  <circle fill="blue" cx="50" cy="50" r="45" />
   <script type="text/javascript"><![CDATA[
     const circle = document.querySelector('circle');
     let r = 45;
-		setInterval(() => {
-			circle.setAttribute('r', r--);
-			if (r === 0) {
+    const animate = () => {
+      circle.setAttribute('r', r--);
+      if (r === 0) {
         r = 45;
       }
-		}, 1000 / 60);
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
   ]]></script>
 </svg>
 ```
