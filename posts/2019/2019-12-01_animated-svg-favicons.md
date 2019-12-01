@@ -112,7 +112,8 @@ since it's the most compatible and future-proof variant.
     src="https://glitch.com/embed/#!/embed/animated-svg-favicon?path=icon_js.svg&previewSize=100"
     title="animated-svg-favicon on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
+    style="height: 100%; width: 100%; border: 0;"
+    loading="lazy">
   </iframe>
 </div>
 
