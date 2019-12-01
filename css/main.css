@@ -77,14 +77,14 @@ h6 {
 }
 
 .nav-item,
-.tag {
+.tag-item {
   color: white;
   border-radius: 0.25rem;
   padding: 0.1rem 0.25rem;
   text-decoration: none;
 }
 
-.tag {
+.tag-item {
   background-color: red;
 }
 
@@ -94,7 +94,7 @@ h6 {
 
 .nav-item,
 .aside-item,
-.tag {
+.tag-item {
   font-size: 0.875rem;
 }
 
