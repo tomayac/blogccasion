@@ -24,6 +24,13 @@ body {
   justify-content: center;
 }
 
+@supports (padding: max(1px)) {
+  body {
+    padding-left: max(var(--padding), env(safe-area-inset-left));
+    padding-right: max(var(--padding), env(safe-area-inset-right));
+  }
+}
+
 a {
   color: var(--link-color);
   text-decoration: none;
