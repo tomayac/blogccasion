@@ -116,7 +116,7 @@ h6 {
   border-right: solid 0.1rem var(--border-color);
   border-top: solid 0.1rem var(--border-color);
   border-radius: var(--padding) var(--padding) 0 0;
-  background-image: linear-gradient(to bottom, var(--main-background-color-transparent) 0%, var(--main-background-color) 100%);
+  background-image: linear-gradient(to bottom, var(--main-background-color-transparent) 0%, var(--main-background-color) 70%);
   display: flex;
   padding: var(--padding);
   justify-content: flex-end;
@@ -144,7 +144,7 @@ footer {
   border-bottom: solid 0.1rem var(--border-color);
   border-radius: 0 0 var(--padding) var(--padding);
   padding: var(--padding);
-  background-image: linear-gradient(to top, var(--main-background-color-transparent) 0%, var(--main-background-color) 100%);
+  background-image: linear-gradient(to top, var(--main-background-color-transparent) 0%, var(--main-background-color) 70%);
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -153,6 +153,20 @@ footer {
 img {
   max-width: 100%;
   height: auto;
+}
+
+abbr {
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
+}
+
+abbr::after {
+  content: "?";
+  font-size: 0.8rem;
+  position: relative;
+  top: -0.2rem;
+  color: var(--metadata-color);
+  padding-inline-start: 0.1rem;
 }
 
 nav,
