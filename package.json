@@ -8,6 +8,7 @@
     "start": "npx eleventy --serve",
     "postinstall": "shx cp ./node_modules/dark-mode-toggle/dist/dark-mode-toggle.min.mjs ./js/",
     "lint:css": "npx stylelint ./css/ --fix",
+    "webmentions": "npx webmention _site/feed/feed.xml --limit 0 --send",
     "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "@remy/webmention": "^1.4.3",
     "dark-mode-toggle": "^0.5.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.7.1",
