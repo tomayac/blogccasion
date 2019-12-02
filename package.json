@@ -10,6 +10,7 @@
     "clean": "shx rm -rf ./_site",
     "lint:css": "npx stylelint ./css/ --fix",
     "webmentions": "npx webmention _site/feed/feed.xml --limit 0 --send",
+    "screenshots": "npx ./_11ty/createScreenshots.js",
     "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
