@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover">
-    <meta property="twitter:account_id" content="1510101733">
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="monetization" content="$pay.stronghold.co/1a1c51358527bef4dc7bcc3e92b155ec07a">
-    <meta name="theme-color">
+    <meta name="theme-color" content="#111111">
+
+    <link rel="preload" href="/js/dark-mode-toggle.min.mjs">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
     <link rel="icon" href="/static/icon.png">
     <link rel="apple-touch-icon" href="/static/icon.png">
     <link rel="canonical" href="{{ page.url | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="author" href="https://tomayac.com/humans.txt" type="text/plain">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
     <script>
       if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
         document.documentElement.style.display = 'none';
@@ -28,12 +30,17 @@
     <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/prism-theme.css">
+
     <link rel="webmention" href="https://webmention.io/blog.tomayac.com/webmention">
     <link rel="pingback" href="https://webmention.io/blog.tomayac.com/xmlrpc">
+
     <link rel="manifest" href="/manifest.webmanifest">
+
     <title>{{ renderData.title or title or metadata.title }}</title>
+
     <script type="module" src="/js/script.mjs"></script>
 
+    <meta property="twitter:account_id" content="1510101733">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@tomayac">
     <meta name="twitter:title" content="{{ renderData.title or title or metadata.title }}">
