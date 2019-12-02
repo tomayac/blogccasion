@@ -46,6 +46,39 @@
     <meta property="og:description" content="{{ renderData.description or description or metadata.description }}">
     <meta property="og:image" content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ renderData.title or title or metadata.title }}",
+        "image": "https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png",
+        "url": "https://blog.tomayac.com{{ page.url | url }}",
+        "datePublished": "{{ page.date.toISOString() }}",
+        "dateCreated": "{{ page.date.toISOString() }}",
+        "dateModified": "{{ page.date.toISOString() }}",
+        "description": "{{ renderData.description or description or metadata.description }}",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://blog.tomayac.com/"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Thomas Steiner",
+          "email": "steiner.thomas@gmail.com",
+          "image": "https://blog.tomayac.com/static/icon.png"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Thomas Steiner",
+          "email": "steiner.thomas@gmail.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog.tomayac.com/static/icon.png"
+          }
+        }
+      }
+    </script>
+
   </head>
   <body>
     <div class="container">
