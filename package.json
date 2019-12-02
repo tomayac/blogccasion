@@ -7,6 +7,7 @@
     "watch": "npx eleventy --watch",
     "start": "npx eleventy --serve",
     "postinstall": "shx cp ./node_modules/dark-mode-toggle/dist/dark-mode-toggle.min.mjs ./js/",
+    "clean": "shx rm -rf ./_site",
     "lint:css": "npx stylelint ./css/ --fix",
     "webmentions": "npx webmention _site/feed/feed.xml --limit 0 --send",
     "debug": "DEBUG=* npx eleventy"
