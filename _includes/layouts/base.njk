@@ -33,6 +33,13 @@
     <link rel="manifest" href="/manifest.webmanifest">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <script type="module" src="/js/script.mjs"></script>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@tomayac">
+    <meta name="twitter:title" content="{{ renderData.title or title or metadata.title }}">
+    <meta name="twitter:description" content="{{ renderData.description or description or metadata.description }}">
+    <meta name="twitter:image" content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
+
   </head>
   <body>
     <div class="container">
