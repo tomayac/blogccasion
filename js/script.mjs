@@ -18,11 +18,10 @@ darkModeToggle.addEventListener('colorschemechange', () => {
 themeColor.content = getComputedStyle(root).getPropertyValue('--background-color');
 
 let imgs = [];
+const fallback = '/static/fallback.svg';
 
 if (articleBody) {
   imgs = articleBody.querySelectorAll('img');
-
-  const fallback = '/static/fallback.svg';
 
   const timeouts = {};
 
