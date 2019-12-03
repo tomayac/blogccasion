@@ -17,40 +17,42 @@ darkModeToggle.addEventListener('colorschemechange', () => {
 });
 themeColor.content = getComputedStyle(root).getPropertyValue('--background-color');
 
-const imgs = articleBody.querySelectorAll('img');
+if (articleBody) {
+  const imgs = articleBody.querySelectorAll('img');
 
-const fallback = '/static/fallback.svg';
+  const fallback = '/static/fallback.svg';
 
-const timeouts = {};
+  const timeouts = {};
 
-const onError = e => {
-  const img = e.target;
-  img.src = fallback;
-};
-
-const onLoad = e => {
-  const img = e.target;
-  clearTimeout(timeouts[img.src]);
-  delete timeouts[img.src];
-  img.removeEventListener('error', onError);
-};
-
-imgs.forEach(img => {
-  img.addEventListener('error', onError, {once: true});
-  img.addEventListener('load', onLoad, {once: true});
-
-  timeouts[img.src] = setTimeout(() => {
-    img.removeEventListener('error', onError);
-    img.removeEventListener('load', onLoad);
+  const onError = e => {
+    const img = e.target;
     img.src = fallback;
-  }, 25 * 1000);
+  };
 
-  if (img.complete) {
-    img.removeEventListener('load', onLoad);
-    img.removeEventListener('error', onError);
+  const onLoad = e => {
+    const img = e.target;
     clearTimeout(timeouts[img.src]);
     delete timeouts[img.src];
-  }
-});
+    img.removeEventListener('error', onError);
+  };
+
+  imgs.forEach(img => {
+    img.addEventListener('error', onError, {once: true});
+    img.addEventListener('load', onLoad, {once: true});
+
+    timeouts[img.src] = setTimeout(() => {
+      img.removeEventListener('error', onError);
+      img.removeEventListener('load', onLoad);
+      img.src = fallback;
+    }, 25 * 1000);
+
+    if (img.complete) {
+      img.removeEventListener('load', onLoad);
+      img.removeEventListener('error', onError);
+      clearTimeout(timeouts[img.src]);
+      delete timeouts[img.src];
+    }
+  });
+}
 
 export {articleBody, imgs, fallback};
