@@ -21,8 +21,12 @@ templateClass: tmpl-post
       </p>
     </div>
   </header>
-  {{ content | safe }}
-  <p>[<span class="edit-on-github">You can <a href="https://github.com/tomayac/blogccasion/tree/master/{{ page.inputPath }}" rel="nofollow">edit this page on GitHub</a>.</span>]</p>
+  <section>
+    {{ content | safe }}
+  </section>
+  <p class="edit-on-github">
+    You can <a href="https://github.com/tomayac/blogccasion/tree/master/{{ page.inputPath }}" rel="nofollow">edit this page on GitHub</a>.
+  </p>
 </article>
 
 {% set webmentionUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}

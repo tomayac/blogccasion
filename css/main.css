@@ -1,6 +1,7 @@
 :root {
   --padding: 0.75rem;
 
+  color-scheme: dark light;
   font-size: 100%;
   line-sizing: normal;
   font-family: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
@@ -74,6 +75,10 @@ h6 {
   -webkit-background-clip: text;
   background-clip: text;
   text-decoration: none;
+}
+
+article h1 {
+  font-size: 1.75rem;
 }
 
 .nav-item,
@@ -225,6 +230,8 @@ ul.postlist ::marker {
 }
 
 .edit-on-github {
+  text-align: right;
+  font-size: 0.875rem;
   color: var(--metadata-color);
 }
 
@@ -244,6 +251,38 @@ dark-mode-toggle {
   bottom: calc(3.5 * var(--padding) + 31px);
   right: var(--padding);
 }
+
+.share {
+  background-color: var(--link-color);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  border-radius: 0.25rem;
+  border: 1px solid var(--main-background-color);
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem 0.25rem 0.5rem calc(24px + 0.25rem);
+}
+
+.share:hover {
+  border: 1px solid var(--link-color);
+}
+
+.share:active {
+  position: relative;
+  top: 1px;
+}
+
+.share.share-ios {
+  background-image: url(/static/share-ios.svg);
+}
+
+.share.share-others {
+  background-image: url(/static/share-others.svg);
+}
+
 
 @media (min-width: 1024px) {
   :root {
