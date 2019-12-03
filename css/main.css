@@ -68,7 +68,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.webmention-anchor {
   width: fit-content;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
@@ -226,6 +227,10 @@ ul.postlist ::marker {
 .post-date,
 .postlist-date {
   color: var(--metadata-color);
+  font-size: 0.875rem;
+}
+
+.webmentions {
   font-size: 0.875rem;
 }
 

@@ -60,6 +60,10 @@ Here're the resources that helped me build the new Blogccasion:
   site [Hero Patterns](https://www.heropatterns.com/).
 - The core of my CSS Grid code is from Alligator's article
   [CSS Grid: Holy Grail Layout](https://alligator.io/css/css-grid-holy-grail-layout/).
+  I learned about the particularities of Grid's minimum size of an `fr` unit, which is `auto`
+  and which caused a Grid blowout described in [Chris Coyier](https://twitter.com/chriscoyier)'s
+  aptly named article
+  [Preventing a Grid Blowout](https://css-tricks.com/preventing-a-grid-blowout/).
 - The Webmentions integration is from [Sia Karamalego](https://sia.codes/)'s article
   [An In-Depth Tutorial of Webmentions + Eleventy](https://sia.codes/posts/webmentions-eleventy-in-depth/).
 - Some of the typography is inspired by [Matej Latin](https://twitter.com/matejlatin)'s article

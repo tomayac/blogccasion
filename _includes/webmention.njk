@@ -1,4 +1,4 @@
-<article class="webmention" id="webmention-{{ webmention['wm-id'] }}">
+<article id="webmention-{{ webmention['wm-id'] }}">
   <div class="metadata post-date">
     {% if webmention.author %}
       {% if webmention.author.photo %}
@@ -6,7 +6,7 @@
       {% else %}
       <img src="{{ '/static/avatar.svg' | url }}" alt="" width="48" height="48" class="author">
       {% endif %}
-      <p>By <a {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong class="p-name">{{ webmention.author.name }}</strong></a>.
+      <p>By <a {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong>{{ webmention.author.name }}</strong></a>.
     {% else %}
       <p><span>
         By <strong>Anonymous</strong>.
@@ -16,6 +16,7 @@
       Written on <time class="postlist-date" datetime="{{ webmention.published }}">
         {{ webmention.published | readableDateFromISO }}
       </time>.
+      <a class="webmention-anchor" href="#webmention-{{ webmention['wm-id'] }}">⚓️</a>
     {% endif %}
     </p>
   </div>
