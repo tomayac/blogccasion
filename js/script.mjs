@@ -45,7 +45,7 @@ if (articleBody) {
       img.removeEventListener('error', onError);
       img.removeEventListener('load', onLoad);
       img.src = fallback;
-    }, 25 * 1000);
+    }, 20 * 1000);
 
     if (img.complete) {
       img.removeEventListener('load', onLoad);
