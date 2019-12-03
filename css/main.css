@@ -304,6 +304,7 @@ dark-mode-toggle {
 }
 
 .share-image {
+  display: none; /* ToDo */
   font-size: 0.75rem;
   background-size: calc(24px * 0.75);
   padding: 0.25rem 0.1rem 0.25rem calc(24px * 0.75 + 0.1rem);
