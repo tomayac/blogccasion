@@ -13,7 +13,7 @@ const proxyImage = async (src) => {
 
 const imageToBlob = async (img) => {
   try {
-    if (!img.src.startsWith('/')) {
+    if (!img.src.startsWith('/') && !img.src.startsWith('data:')) {
       return await proxyImage(img.src);
     }
     return new Promise((resolve) => {
