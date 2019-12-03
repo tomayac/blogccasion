@@ -278,7 +278,7 @@ dark-mode-toggle {
   background-position-y: center;
   border-radius: 0.25rem;
   border: 1px solid var(--main-background-color);
-  display: inline-block;
+  display: block;
   cursor: pointer;
   color: #fff;
   font-family: inherit;
@@ -303,6 +303,11 @@ dark-mode-toggle {
   background-image: url(/static/share-others.svg);
 }
 
+.share-image {
+  font-size: 0.75rem;
+  background-size: calc(24px * 0.75);
+  padding: 0.25rem 0.1rem 0.25rem calc(24px * 0.75 + 0.1rem);
+}
 
 @media (min-width: 1024px) {
   :root {

@@ -53,4 +53,4 @@ imgs.forEach(img => {
   }
 });
 
-export {articleBody};
+export {articleBody, imgs, fallback};

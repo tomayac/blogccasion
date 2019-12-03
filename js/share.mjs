@@ -1,4 +1,4 @@
-import {articleBody} from '/js/script.mjs';
+import {articleBody, imgs as articleImages} from '/js/script.mjs';
 
 const share = async () => {
   try {
@@ -14,10 +14,16 @@ const share = async () => {
 
 const button = document.createElement('button');
 button.type = 'button';
-button.textContent = 'Share';
+button.textContent = 'Share Article';
 const isAppleBrowser = /Apple/.test(navigator.vendor);
 button.classList.add('share', isAppleBrowser ? 'share-ios' : 'share-others');
 button.addEventListener('click', share);
 const paragraph = document.createElement('p');
 paragraph.appendChild(button);
 articleBody.appendChild(paragraph);
+
+if ('canShare' in navigator && articleImages.length) {
+  import('./share-image.mjs');
+}
+
+export {articleImages, button};
