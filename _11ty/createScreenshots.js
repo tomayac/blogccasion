@@ -46,7 +46,7 @@ const start = async () => {
   const page = await browser.newPage();
 
   const urls = await parseSitemap();
-  for await (const url of urls) {
+  for (const url of urls) {
     const output =
         `./_site/${url.replace('https://blog.tomayac.com/', '')}screenshot`;
     await createScreenshots(page, url, output);
