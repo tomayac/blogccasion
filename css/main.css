@@ -78,6 +78,21 @@ h6,
   text-decoration: none;
 }
 
+pre,
+code,
+kbd {
+  /*font-size: calc(1rem * 16 / 13);*/
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+kbd {
+  color: #000;
+  background-color: lightgray;
+  border: solid 1px darkgray;
+  padding: -1px;
+  border-radius: 0.25rem;;
+}
+
 article h1 {
   font-size: 1.75rem;
 }

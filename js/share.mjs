@@ -15,8 +15,8 @@ const share = async () => {
 const button = document.createElement('button');
 button.type = 'button';
 button.textContent = 'Share';
-const isIOS = (/\b(iPad|iPhone|iPod)\b/.test(navigator.userAgent));
-button.classList.add('share', isIOS ? 'share-ios' : 'share-others');
+const isAppleBrowser = /Apple/.test(navigator.vendor);
+button.classList.add('share', isAppleBrowser ? 'share-ios' : 'share-others');
 button.addEventListener('click', share);
 const paragraph = document.createElement('p');
 paragraph.appendChild(button);
