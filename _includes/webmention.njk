@@ -1,26 +1,31 @@
-<article id="webmention-{{ webmention['wm-id'] }}">
-  <div class="metadata post-date">
-    {% if webmention.author %}
+{% if webmention.author and webmention.url %}
+  <article id="webmention-{{ webmention['wm-id'] }}">
+    <div class="metadata post-date">
       {% if webmention.author.photo %}
-      <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy" class="author">
+        <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy" class="author">
       {% else %}
-      <img src="{{ '/static/avatar.svg' | url }}" alt="" width="48" height="48" class="author">
+        <img src="{{ '/static/avatar.svg' | url }}" alt="" width="48" height="48" class="author">
       {% endif %}
-      <p>By <a {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong>{{ webmention.author.name }}</strong></a>.
-    {% else %}
-      <p><span>
-        By <strong>Anonymous</strong>.
-      </span>
-    {% endif %}
-    {% if webmention.published %}
-      Written on <time class="postlist-date" datetime="{{ webmention.published }}">
-        {{ webmention.published | readableDateFromISO }}
-      </time>.
+      <p>
+        By
+        <a href="{{ webmention.author.url or webmention.url }}" target="_blank" rel="noopener noreferrer">
+          {{ webmention.author.name or webmention.url }}
+        </a>.
+        {% if webmention.published %}
+          Written on
+          <time class="postlist-date" datetime="{{ webmention.published }}">
+            <a href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
+              {{ webmention.published | readableDateFromISO }}
+            </a>
+          </time>.
+        {% endif %}
+      </p>
       <a class="webmention-anchor" href="#webmention-{{ webmention['wm-id'] }}">⚓️</a>
+    </div>
+    {% if webmention.content.text %}
+      <div>
+        {{ webmention.content.text }}
+      </div>
     {% endif %}
-    </p>
-  </div>
-  <div>
-    {{ webmention.content.text }}
-  </div>
-</article>
+  </article>
+{% endif %}

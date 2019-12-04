@@ -232,6 +232,8 @@ ul.postlist ::marker {
   height: 2rem;
   border-radius: 0.5rem;
   margin-inline-end: 0.25rem;
+  background-image: linear-gradient(to bottom, lightgray 0%, var(--metadata-color) 100%);
+  flex-shrink: 0;
 }
 
 .metadata {
@@ -243,6 +245,7 @@ ul.postlist ::marker {
 .postlist-date {
   color: var(--metadata-color);
   font-size: 0.875rem;
+  word-break: break-all;
 }
 
 .webmentions {
