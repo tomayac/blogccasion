@@ -11,9 +11,7 @@ templateClass: tmpl-post
       <p>
         By <a href="/about/">Thomas Steiner</a>.
         Written on
-        <time datetime="{{ page.date.toISOString() }}">
-          <a href="{{ page.url | url }}">{{ page.date.toDateString() }}</a>
-        </time>.
+        <time datetime="{{ page.date.toISOString() }}"><a href="{{ page.url | url }}">{{ page.date.toDateString() }}</a></time>.
         {% if tags %}
           {% for tag in tags %}
             {% if tag !== 'posts' %}
