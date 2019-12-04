@@ -173,6 +173,7 @@ footer {
   border-right: solid 0.1rem var(--border-color);
   border-bottom: solid 0.1rem var(--border-color);
   border-radius: 0 0 var(--padding) var(--padding);
+  font-size: 0.875rem;
   padding: var(--padding);
   background-image: linear-gradient(to top, var(--main-background-color-transparent) 0%, var(--main-background-color) 70%);
   display: flex;
