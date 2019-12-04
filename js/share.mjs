@@ -4,7 +4,7 @@ const share = async () => {
   try {
     navigator.share({
       title: '',
-      text: `“${document.title}” by @tomayac 👉`,
+      text: `👉 “${document.title}” by @tomayac:`,
       url: document.querySelector('link[rel=canonical]').href,
     });
   } catch (err) {

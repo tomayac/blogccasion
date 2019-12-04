@@ -88,6 +88,10 @@ pre {
   overflow-x: auto;
 }
 
+code {
+  word-break: break-all;
+}
+
 kbd {
   color: #000;
   background-color: lightgray;
