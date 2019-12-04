@@ -106,7 +106,6 @@ article h1 {
 
 .nav-item,
 .tag-item {
-  color: white;
   border-radius: 0.25rem;
   padding: 0.1rem 0.25rem;
   text-decoration: none;
@@ -114,10 +113,12 @@ article h1 {
 }
 
 .tag-item {
+  color: #000;
   background-color: red;
 }
 
 .nav-item {
+  #fff;
   background-color: darkgreen;
 }
 
