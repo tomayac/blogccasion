@@ -8,16 +8,10 @@
       {% endif %}
       <p>
         By
-        <a href="{{ webmention.author.url or webmention.url }}" target="_blank" rel="noopener noreferrer">
-          {{ webmention.author.name or webmention.url }}
-        </a>.
+        <a href="{{ webmention.author.url or webmention.url }}" target="_blank" rel="noopener noreferrer">{{ webmention.author.name or webmention.url }}</a>.
         {% if webmention.published %}
           Written on
-          <time class="postlist-date" datetime="{{ webmention.published }}">
-            <a href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
-              {{ webmention.published | readableDateFromISO }}
-            </a>
-          </time>.
+          <time class="postlist-date" datetime="{{ webmention.published }}"><a href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">{{ webmention.published | readableDateFromISO }}</a></time>.
         {% endif %}
       </p>
       <a class="heading-effect" href="#webmention-{{ webmention['wm-id'] }}">⚓️</a>
