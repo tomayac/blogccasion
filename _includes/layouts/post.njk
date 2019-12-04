@@ -17,7 +17,7 @@ templateClass: tmpl-post
         {% if tags %}
           {% for tag in tags %}
             {% if tag !== 'posts' %}
-              <a href="/tags/{{ tag }}" class="tag-item"><b>{{ tag }}</b></a>
+              <a href="/tags/{{ tag }}" class="tag-item">{{ tag }}</a>
             {% endif %}
           {% endfor %}
         {% endif %}

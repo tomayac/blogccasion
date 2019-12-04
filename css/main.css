@@ -81,8 +81,11 @@ h6,
 pre,
 code,
 kbd {
-  /*font-size: calc(1rem * 16 / 13);*/
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+pre {
+  overflow-x: auto;
 }
 
 kbd {
@@ -90,7 +93,7 @@ kbd {
   background-color: lightgray;
   border: solid 1px darkgray;
   padding: -1px;
-  border-radius: 0.25rem;;
+  border-radius: 0.25rem;
 }
 
 article h1 {
@@ -103,6 +106,7 @@ article h1 {
   border-radius: 0.25rem;
   padding: 0.1rem 0.25rem;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .tag-item {
@@ -245,11 +249,23 @@ ul.postlist ::marker {
 .postlist-date {
   color: var(--metadata-color);
   font-size: 0.875rem;
+}
+
+.postlist-date {
+  white-space: nowrap;
+}
+
+.post-date a {
   word-break: break-all;
 }
 
 .webmentions {
   font-size: 0.875rem;
+}
+
+.webmention-content {
+  max-height: 7rem;
+  overflow-y: auto;
 }
 
 .edit-on-github {
@@ -307,7 +323,7 @@ dark-mode-toggle {
 }
 
 .share-image {
-  display: none; /* ToDo */
+  display: none;
   font-size: 0.75rem;
   background-size: calc(24px * 0.75);
   padding: 0.25rem 0.1rem 0.25rem calc(24px * 0.75 + 0.1rem);

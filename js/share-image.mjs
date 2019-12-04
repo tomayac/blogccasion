@@ -2,7 +2,7 @@ import {articleImages, button as buttonTempl} from './share.mjs';
 import {fallback} from './script.mjs';
 
 const proxyImage = async (src) => {
-  const url = `https://cors-anywhere.herokuapp.com/${src}`;
+  const url = `https://tomayac.com/cors-proxy/index.php?csurl=${src}`;
   try {
     const response = await fetch(url);
     return await response.blob();
@@ -12,9 +12,10 @@ const proxyImage = async (src) => {
 }
 
 const imageToBlob = async (img) => {
+  const src = img.getAttribute('src');
   try {
-    if (!img.src.startsWith('/') && !img.src.startsWith('data:')) {
-      return await proxyImage(img.src);
+    if (!src.startsWith('/') && !src.startsWith('data:')) {
+      return await proxyImage(src);
     }
     return new Promise((resolve) => {
       const canvas = document.createElement('canvas');
@@ -47,7 +48,7 @@ const share = async (e) => {
       url: document.querySelector('link[rel=canonical]').href,
     };
 
-    if (!(await navigator.canShare(data))) {
+    if (!navigator.canShare(data)) {
       throw new Error('Can\'t share data.', data);
     };
     await navigator.share(data);
