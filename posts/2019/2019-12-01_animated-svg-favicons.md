@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Animated SVG favicons"
 author: "Thomas Steiner"
 date: "2019-12-01T13:41:10"
-permalink: 2019/12/01/animated-svg-favicon/index.html
+permalink: 2019/12/01/animated-svg-favicons/index.html
 tags:
   - Technical
 ---
