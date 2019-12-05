@@ -119,7 +119,7 @@ since it's the most compatible and future-proof variant.
 
 ## Using Animated SVGs as Favicons
 
-Since [crbug.com/29417](https://crbug.com/29417) is fixed, Chrome *finally* supports SVG favicons,
+Since [crbug.com/294179](https://crbug.com/294179) is fixed, Chrome *finally* supports SVG favicons,
 alongside [many other browsers](https://caniuse.com/#feat=link-icon-svg).
 I have recently successfully experimented with
 [`prefers-color-scheme` in SVG favicons](/2019/09/21/prefers-color-scheme-in-svg-favicons-for-dark-mode-icons/),

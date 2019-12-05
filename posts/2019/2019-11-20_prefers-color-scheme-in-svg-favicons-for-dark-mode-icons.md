@@ -8,7 +8,7 @@ tags:
   - Technical
 ---
 
-🎉 Chrome finally accepts SVG favicons now that [crbug.com/294179](https://crbug.com/29417),
+🎉 Chrome finally accepts SVG favicons now that [crbug.com/294179](https://crbug.com/294179),
 where this feature was demanded on September 18, 2013(!), was fixed.
 This means that you can style your icon with inline [`prefers-color-scheme`](https://web.dev/prefers-color-scheme)
 and you'll get two icons for the price of one!
