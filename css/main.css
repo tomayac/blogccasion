@@ -89,7 +89,7 @@ pre {
 }
 
 code {
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 kbd {
@@ -262,7 +262,7 @@ ul.postlist ::marker {
 }
 
 .post-date a {
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .webmentions {
@@ -272,6 +272,10 @@ ul.postlist ::marker {
 .webmention-content {
   max-height: 7rem;
   overflow-y: auto;
+}
+
+.webmention-anchor {
+  margin-inline-start: 0.25rem;
 }
 
 .edit-on-github {

@@ -14,7 +14,7 @@
           <time class="postlist-date" datetime="{{ webmention.published }}"><a href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">{{ webmention.published | readableDateFromISO }}</a></time>.
         {% endif %}
       </p>
-      <a class="heading-effect" href="#webmention-{{ webmention['wm-id'] }}">⚓️</a>
+      <a class="webmention-anchor heading-effect" href="#webmention-{{ webmention['wm-id'] }}">⚓️</a>
     </div>
     {% if webmention.content.text %}
       <div class="webmention-content">
