@@ -13,3 +13,5 @@ RewriteCond %{REQUEST_URI} ^/ViewByCategories\.php$
 RewriteCond %{QUERY_STRING} ^category=(.*?)$
 RewriteRule ^(.*)$ /tags/%1/? [NC,L,R=301]
 RewriteRule ^atom.php$ /feed/feed.xml? [NC,L,R=301]
+
+Redirect 301 /2019/12/01/animated-svg-favicon/ /2019/12/01/animated-svg-favicons/
