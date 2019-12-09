@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Inspecting Facebook's WebView"
 author: "Thomas Steiner"
 date: "2019-12-09T18:13:49"
-permalink: /2019/12/09/2019-12-09_inspecting_facebooks_webview/index.html
+permalink: 2019/12/09/inspecting_facebooks_webview/index.html
 tags:
   - Technical
 ---
