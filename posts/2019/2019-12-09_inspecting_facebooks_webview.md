@@ -7,7 +7,6 @@ permalink: 2019/12/09/inspecting_facebooks_webview/index.html
 tags:
   - Technical
 ---
-
 Both
 [Facebook's Android app](https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en)
 as well as

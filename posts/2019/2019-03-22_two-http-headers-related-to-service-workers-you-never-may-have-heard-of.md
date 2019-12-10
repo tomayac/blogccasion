@@ -7,7 +7,6 @@ permalink: 2019/03/22/two-http-headers-related-to-service-workers-you-never-may-
 tags:
   - Technical
 ---
-
 ## The second one will make you talk to your webmaster…
 
 The other day, one of my former Google Mobile Solutions Consultant colleagues sent an email to an internal mailing list that (paraphrased) went like this:

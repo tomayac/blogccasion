@@ -7,7 +7,6 @@ permalink: 2019/08/15/a-quick-look-at-wechats-mini-programs/index.html
 tags:
   - Technical
 ---
-
 While preparing for my [presentation](https://events.google.cn/intl/zh-CN/developerdays2019/agenda/#table-row-1-7) at the [Google Developer Days 2019 in Shanghai, China](https://events.google.cn/intl/zh-CN/developerdays2019/) I was reminded again that China is a market where few super apps like [WeChat](https://www.wechat.com/en) host a [gazillion mini apps or mini programs](https://techcrunch.com/2018/11/07/wechat-mini-apps-200-million-users/) that fulfill everyday needs like booking cabs, reserving tables, etc.
 
 I got curious and [downloaded the SDK](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) and after playing a bit with the [Your First Mini App tutorial](https://developers.weixin.qq.com/miniprogram/en/dev/), I realized the whole thing is so close to building for the actual web, it both fascinates, intrigues, and honestly somewhat infuriates me.

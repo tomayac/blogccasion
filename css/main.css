@@ -203,6 +203,14 @@ abbr::after {
   padding-inline-start: 0.1rem;
 }
 
+blockquote::before {
+  content: "“";
+  color: var(--metadata-color);
+  font-size: 4rem;
+  position: absolute;
+  left: 1rem;
+}
+
 nav,
 aside,
 main {
@@ -260,6 +268,7 @@ ul.postlist ::marker {
   white-space: nowrap;
 }
 
+article a,
 .post-date a {
   overflow-wrap: break-word;
 }

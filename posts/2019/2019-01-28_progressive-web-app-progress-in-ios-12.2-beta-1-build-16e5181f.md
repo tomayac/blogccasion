@@ -7,7 +7,6 @@ permalink: 2019/01/28/progressive-web-app-progress-in-ios-12.2-beta-1-build-16e5
 tags:
   - Technical
 ---
-
 As a regular (and passionate) iOS user with a strong belief in the Web, I beta-test any and all new iOS builds as soon as I can get my hands on them. My main motivation is to see how they do when it comes to Progressive Web App features. Each new iOS version comes with a new version of Safari, yet changes in Safari tend to almost never get highlighted in the iOS release notes (and the [12.2 beta 1 release notes](https://developer.apple.com/documentation/ios_release_notes/ios_12_2_beta_release_notes) were no exception). So my routine is to fire up my [🕵️‍♂️ PWA Feature Detector](https://tomayac.github.io/pwa-feature-detector/)—a simple testing tool described in an accompanying [📄 research paper](https://ai.google/research/pubs/pub46739)—and to look for potential changes myself.
 
 ![[Research paper](https://ai.google/research/pubs/pub46739) “What is in a Web View? An Analysis of Progressive Web App Features When the Means of Web Access is not a Web Browser”.](/images/asset-1.png)

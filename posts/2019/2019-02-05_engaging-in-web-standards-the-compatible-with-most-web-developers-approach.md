@@ -7,7 +7,6 @@ permalink: 2019/02/05/engaging-in-web-standards-the-compatible-with-most-web-dev
 tags:
   - Technical
 ---
-
 > 😨📖 **tl;dr:** Whether you want to add something new to an already existing feature or propose a completely new one, it all starts with finding out in what organization the standardization process for this kind of feature happens and where this organization’s discussions take place. This post suggests a possible approach to engaging in standardization work in a meaningful way for regular web developers whose day job is not standards by following along a step-by-step real-world example that takes you through the journey and encourages you to make your voice heard.
 
 At Google, we have a humbling 👌(!) team of amazing [Google Developer Experts that specialize on Web Technologies](https://developers.google.com/experts/all/technology/web-technologies). The other day, one of them on a mailing list suggested the following feature (paraphrased from the email thread): “Consider adding support for a `titlecase` keyword for the CSS [`text-transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) property”. They explained:

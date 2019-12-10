@@ -7,7 +7,6 @@ permalink: 2019/04/03/what-does-dark-modes-color-scheme-actually-do/index.html
 tags:
   - Technical
 ---
-
 The [Release Notes of Safari Technology Preview 71](https://webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/) mentioned two new dark mode features:
 
 > • Added experimental support for a `supported-color-schemes` CSS property ([r238001](https://trac.webkit.org/changeset/238001/webkit/)).

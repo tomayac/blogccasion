@@ -7,10 +7,7 @@ permalink: 2019/05/28/re-colorization-for-dark-mode/index.html
 tags:
   - Technical
 ---
-
 A couple of weeks ago, I have collected feedback regarding people’s preferences when it comes to re-colorization of websites for dark mode. The core research question was: _“Do people expect images to look different in dark mode than in light mode?”_
-
-
 
 #### Survey and Results
 

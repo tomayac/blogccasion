@@ -7,7 +7,6 @@ permalink: 2019/09/29/the-redesigned-blogccasion-is-live/index.html
 tags:
   - Private
 ---
-
 I started to blog way back in [2005](/2005/10/23/why-i-started-to-blog-010629/),
 and while I was skeptical whether it would work out and was worth my time,
 I just tried it and danced 💃 and wrote like no one was watching

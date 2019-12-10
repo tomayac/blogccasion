@@ -7,7 +7,6 @@ permalink: 2019/09/21/project-fugu-at-w3c-tpac/index.html
 tags:
   - Technical
 ---
-
 This week, I attended my now third <abbr title="World Wide Web Consortium">W3C</abbr>
 <abbr title="Technical Plenary and Advisory Committee">TPAC</abbr>.
 After [TPAC&nbsp;2017](https://www.w3.org/2017/11/TPAC/Overview.html)

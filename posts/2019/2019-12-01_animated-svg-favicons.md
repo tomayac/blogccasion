@@ -7,7 +7,6 @@ permalink: 2019/12/01/animated-svg-favicons/index.html
 tags:
   - Technical
 ---
-
 When it comes to animating SVGs, there're three options: using
 <abbr title="Cascading Style Sheets">CSS</abbr>,
 <abbr title="JavaScript">JS</abbr>, or

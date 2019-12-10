@@ -7,7 +7,6 @@ permalink: 2019/09/16/not-all-is-nothing-finding-out-if-the-browser-supports-a-g
 tags:
   - Technical
 ---
-
 On the Google Chrome team, we're working on solving the interesting problem that some platforms
 like Windows&nbsp;10 show a native *←&nbsp;Back* button in the app window's title bar
 when the user has navigated into a standalone or fullscreen Progressive Web App (PWA).

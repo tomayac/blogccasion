@@ -7,7 +7,6 @@ permalink: 2018/12/04/why-build-progressive-web-apps-push-but-dont-be-pushy-vide
 tags:
   - Technical
 ---
-
 _(This is the write-up of the second episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the_ [_video_](https://www.youtube.com/watch?v=vRsVx8_94UQ) _is embedded below.)_
 
 _(Also check out the the_ [_write-up of the first episode_](https://medium.com/dev-channel/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-74cbbc466afd) _and the_ [_write-up of the third episode_](https://medium.com/dev-channel/why-build-progressive-web-apps-if-its-just-a-bookmark-it-s-not-a-pwa-video-write-up-7ccca1c58034)_, or watch the_ [_first episode video_](https://www.youtube.com/watch?v=4UK_TDTTWnQ) _and the_ [_third episode video_](https://youtu.be/kENeCdS3fzU)_.)_
