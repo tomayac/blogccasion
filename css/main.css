@@ -36,6 +36,11 @@ a {
   text-decoration: none;
 }
 
+article a,
+.post-date a {
+  overflow-wrap: break-word;
+}
+
 a:focus,
 a:hover,
 a:active {
@@ -266,11 +271,6 @@ ul.postlist ::marker {
 
 .postlist-date {
   white-space: nowrap;
-}
-
-article a,
-.post-date a {
-  overflow-wrap: break-word;
 }
 
 .webmentions {
