@@ -1,6 +1,7 @@
 const { DateTime } = require("luxon");
 const htmlmin = require("html-minifier");
 const fs = require("fs");
+const Terser = require("terser");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const filters = require('./_11ty/filters');
@@ -19,6 +20,21 @@ module.exports = function(eleventyConfig) {
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
+
+  // Minify JSON, used for Schema.org inline markup
+  eleventyConfig.addFilter("jsonMinify", function(code) {
+    return JSON.stringify(JSON.parse(code));
+  });
+
+  // Minify inline scripts
+  eleventyConfig.addFilter("jsmin", function(code) {
+    let minified = Terser.minify(code);
+    if( minified.error ) {
+        console.log("Terser error: ", minified.error);
+        return code;
+    }
+    return minified.code;
   });
 
   // Get the first `n` elements of a collection.

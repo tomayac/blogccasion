@@ -2,25 +2,27 @@
 permalink: /manifest.webmanifest
 eleventyExcludeFromCollections: true
 ---
-{
-  "name": "Blogccasion",
-  "short_name": "Blogccasion",
-  "start_url": "/",
-  "display": "minimal-ui",
-  "theme-color": "#111111",
-  "background-color": "#000000",
-  "icons": [
-    {
-      "src": "/static/maskable-icon.png",
-      "sizes": "360x360",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/static/icon.png",
-      "sizes": "400x400",
-      "type": "image/png",
-      "purpose": "any"
-    }
-  ]
-}
+{% set manifest %}
+  {
+    "name": "Blogccasion",
+    "short_name": "Blogccasion",
+    "start_url": "/",
+    "display": "minimal-ui",
+    "theme-color": "#111111",
+    "background-color": "#000000",
+    "icons": [
+      {
+        "src": "/static/maskable-icon.png",
+        "sizes": "360x360",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "/static/icon.png",
+        "sizes": "400x400",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ]
+  }
+{% endset %}{{ manifest | jsonMinify | safe }}
