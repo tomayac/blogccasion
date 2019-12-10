@@ -21,6 +21,7 @@ const parseSitemap = async () => {
 };
 
 const createScreenshots = async (page, url, output) => {
+  url = url.replace('https://blog.tomayac.com', 'http://localhost:8080');
   try {
     console.log('Creating screenshots for', url);
     await page.goto(url);
