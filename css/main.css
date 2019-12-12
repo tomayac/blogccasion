@@ -208,12 +208,17 @@ abbr::after {
   padding-inline-start: 0.1rem;
 }
 
+blockquote {
+  position: relative;
+  font-style: italic;
+}
+
 blockquote::before {
   content: "“";
   color: var(--metadata-color);
-  font-size: 4rem;
+  font-size: 3.5rem;
   position: absolute;
-  left: 1rem;
+  left: -2.5rem;
 }
 
 nav,
