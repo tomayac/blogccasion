@@ -1,4 +1,5 @@
 import './dark-mode-toggle.min.mjs';
+import './collect.mjs';
 
 const articleBody = document.querySelector('article section');
 
