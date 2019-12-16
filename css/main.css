@@ -407,3 +407,9 @@ dark-mode-toggle {
     border-right: solid 0.1rem var(--border-color);
   }
 }
+
+@media (max-width: 240px) {
+  main {
+    width: 100%;
+  }
+}

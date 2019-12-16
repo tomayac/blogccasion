@@ -5,7 +5,6 @@ tags:
   - nav
   - Private
 navtitle: About
-templateClass: tmpl-post
 ---
 Please feel free to contact me. There are many ways to do so...
 <div>
