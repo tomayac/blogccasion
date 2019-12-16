@@ -1,11 +1,11 @@
 :root {
-  --text-color: #111;
-  --background-color: #fffff8;
-  --main-background-color-transparent: #fff0;
-  --main-background-color: #ffffffd9;
-  --metadata-color: #555;
+  --text-color: hsl(0, 0%, 7%);
+  --background-color: hsl(60, 100%, 99%);
+  --main-background-color-transparent: hsla(0, 0%, 100%, 0);
+  --main-background-color: hsla(0, 0%, 100%, 0.85);
+  --metadata-color: hsl(0, 0%, 33%);
   --link-color: blue;
-  --border-color: #666;
+  --border-color: hsl(0, 0%, 40%);
 }
 
 h1,
@@ -15,5 +15,5 @@ h4,
 h5,
 h6,
 .heading-effect {
-  background: linear-gradient(90deg, #ff8032 0%, #ffc832 100%);
+  background: linear-gradient(90deg, hsl(23, 100%, 60%) 0%, hsl(44, 100%, 60%) 100%);
 }

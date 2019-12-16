@@ -97,7 +97,7 @@ code {
 }
 
 kbd {
-  color: #000;
+  color: hsl(0, 0%, 0%);
   background-color: lightgray;
   border: solid 1px darkgray;
   padding: -1px;
@@ -117,12 +117,12 @@ article h1 {
 }
 
 .tag-item {
-  color: #000;
+  color: hsl(0, 0%, 0%);
   background-color: red;
 }
 
 .nav-item {
-  color: #fff;
+  color: hsl(0, 0%, 100%);
   background-color: darkgreen;
 }
 
@@ -251,7 +251,7 @@ ul.postlist {
 }
 
 ul.postlist ::marker {
-  color: #ffd700;
+  color: hsl(51, 100%, 50%);
 }
 
 .author {
@@ -322,7 +322,7 @@ dark-mode-toggle {
   border: 1px solid var(--main-background-color);
   display: block;
   cursor: pointer;
-  color: #fff;
+  color: hsl(0, 0%, 100%);
   font-family: inherit;
   font-size: inherit;
   padding: 0.5rem 0.25rem 0.5rem calc(24px + 0.25rem);
@@ -386,6 +386,7 @@ dark-mode-toggle {
 
   nav ul {
     display: flex;
+    flex-wrap: wrap;
   }
 
   li {
@@ -409,6 +410,10 @@ dark-mode-toggle {
 }
 
 @media (max-width: 240px) {
+  .container {
+    overflow-x: hidden;
+  }
+
   main {
     width: 100%;
   }

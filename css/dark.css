@@ -1,13 +1,13 @@
 :root {
   -webkit-font-smoothing: antialiased;
 
-  --text-color: #fefefe;
-  --background-color: #000;
-  --main-background-color: #111111d9;
-  --main-background-color-transparent: #1110;
-  --metadata-color: #888;
+  --text-color: hsl(0, 0%, 100%);
+  --background-color: hsl(0, 0%, 0%);
+  --main-background-color: hsla(0, 0%, 7%, 0.85);
+  --main-background-color-transparent: hsla(0, 0%, 7%, 0);
+  --metadata-color: hsl(0, 0%, 53%);
   --link-color: red;
-  --border-color: #555;
+  --border-color: hsl(0, 0%, 33%);
 }
 
 h1,
@@ -17,5 +17,5 @@ h4,
 h5,
 h6,
 .heading-effect {
-  background: linear-gradient(to right, #ffd700, #ff8032);
+  background: linear-gradient(to right, hsl(51, 100%, 50%), hsl(23, 100%, 60%));
 }
