@@ -20,13 +20,15 @@
 
     <script type="module">
       {% set js %}
-        (new PerformanceObserver(async (entryList) => {
+        const po = new PerformanceObserver(async (entryList) => {
           const last = entryList.getEntries().pop();
           const lcp = last.renderTime || last.loadTime;
           const element = last.element;
           const module = await import('/js/largest-contentful-paint.mjs');
           module.render(lcp, element);
-        })).observe({type: 'largest-contentful-paint', buffered: true});
+          po.disconnect();
+        });
+        po.observe({type: 'largest-contentful-paint', buffered: true});
       {% endset %}
       {{ js | jsmin | safe }}
     </script>
