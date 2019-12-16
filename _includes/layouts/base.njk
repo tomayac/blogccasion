@@ -18,9 +18,21 @@
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="author" href="https://tomayac.com/humans.txt" type="text/plain">
 
+    <script type="module">
+      {% set js %}
+        (new PerformanceObserver(async (entryList) => {
+          const last = entryList.getEntries().pop();
+          const lcp = last.renderTime || last.loadTime;
+          const element = last.element;
+          const module = await import('/js/largest-contentful-paint.mjs');
+          module.render(lcp, element);
+        })).observe({type: 'largest-contentful-paint', buffered: true});
+      {% endset %}
+      {{ js | jsmin | safe }}
+    </script>
     <script>
       {% set js %}
-        if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+        if (matchMedia('(prefers-color-scheme:dark)').media === 'not all') {
           document.documentElement.style.display = 'none';
           document.head.insertAdjacentHTML(
               'beforeend',

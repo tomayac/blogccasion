@@ -177,7 +177,7 @@ footer {
   border-right: solid 0.1rem var(--border-color);
   border-bottom: solid 0.1rem var(--border-color);
   border-radius: 0 0 var(--padding) var(--padding);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   padding: var(--padding);
   background-image: linear-gradient(to top, var(--main-background-color-transparent) 0%, var(--main-background-color) 70%);
   display: flex;
@@ -350,6 +350,10 @@ dark-mode-toggle {
   font-size: 0.75rem;
   background-size: calc(24px * 0.75);
   padding: 0.25rem 0.1rem 0.25rem calc(24px * 0.75 + 0.1rem);
+}
+
+.largest-contentful-paint {
+  outline: dashed 0.25rem var(--link-color);
 }
 
 @media (min-width: 1024px) {
