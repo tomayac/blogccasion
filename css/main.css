@@ -228,6 +228,10 @@ main {
   padding: var(--padding);
 }
 
+svg.icon-container {
+  display: none;
+}
+
 svg.icon {
   width: 1rem;
   height: 1rem;
@@ -350,6 +354,10 @@ dark-mode-toggle {
   font-size: 0.75rem;
   background-size: calc(24px * 0.75);
   padding: 0.25rem 0.1rem 0.25rem calc(24px * 0.75 + 0.1rem);
+}
+
+.performance-metrics {
+  margin-block-start: var(--padding);
 }
 
 .largest-contentful-paint {

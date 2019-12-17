@@ -21,14 +21,32 @@
     <script type="module">
       {% set js %}
         const po = new PerformanceObserver(async (entryList) => {
-          const last = entryList.getEntries().pop();
-          const lcp = last.renderTime || last.loadTime;
-          const element = last.element;
-          const module = await import('/js/largest-contentful-paint.mjs');
-          module.render(lcp, element);
-          po.disconnect();
+          const module = await import('/js/performance-metrics.mjs');
+          for (let entry of entryList.getEntries()) {
+            switch (entry.entryType) {
+              case 'largest-contentful-paint':
+                module.render({type: 'lcp', value: entry.renderTime || entry.loadTime, element: entry.element});
+                break;
+              case 'layout-shift':
+                if (entry.hadRecentInput) {
+                  return;
+                }
+                module.render({type: 'cls', value: entry.value});
+                break;
+              case 'first-input':
+                module.render({type: 'fid', value: entry.processingStart - entry.startTime, name: entry.name});
+                po.disconnect();
+                break;
+            }
+          }
         });
-        po.observe({type: 'largest-contentful-paint', buffered: true});
+        po.observe({
+          entryTypes: [
+            'largest-contentful-paint',
+            'first-input',
+            'layout-shift',
+          ],
+        });
       {% endset %}
       {{ js | jsmin | safe }}
     </script>
@@ -148,14 +166,6 @@
         </ul>
       </nav>
 
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <symbol id="icon-rss" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></symbol>
-        <symbol id="icon-twitter" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></symbol>
-        <symbol id="icon-mastodon" aria-label="Mastodon" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%"/><path d="M409 290c-5 24-43 50-85 56-86 11-137-6-137-6 3 13-4 54 70 52 31 0 58-7 58-7l2 27c-51 24-107 15-140 6-67-17-79-90-81-162v-59c0-74 49-96 49-96 50-24 180-22 222 0 0 0 49 22 49 96 0 0 1 55-7 93" fill="#3088d4"/><path d="M358 202v91h-35v-88c0-18-8-27-23-27-18 0-27 11-27 33v47h-34v-47c0-22-9-33-27-33-15 0-23 9-23 27v88h-35v-91c0-18 5-60 52-60 39 0 50 37 50 37s10-37 50-37c45 0 52 42 52 60"/></symbol>
-        <symbol id="icon-pgp" aria-label="PGP Public Key" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#29303d"/><g fill="#29303d"><path stroke="#e0e4eb" stroke-width="32" d="M346 214v-37c0-123-180-123-180 0v37"/><rect fill="#ff0" height="210" rx="5%" width="280" x="115" y="210"/><circle cx="256" cy="296" r="28"/><path d="M262 296h-12l-16 69h44"/></g></symbol>
-        <symbol id="icon-github" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></symbol>
-      </svg>
-
       <aside>
         <h2>Related</h2>
         <ul>
@@ -173,10 +183,24 @@
           <li>© 2005–2019 <a class="footer-link" href="/about">Thomas Steiner</a>.</li>
           <li>Distributed under <a class="footer-link" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</li>
           <li>Contact and required <a class="footer-link" href="/about/">legal info</a>.</li>
+          <li hidden class="performance-metrics">
+            <span hidden class="lcp"><a href="https://web.dev/lcp" class="footer-link">LCP</a><span> was </span><a class="lcp-link footer-link"><code class="lcp-element"></code></a> at <span class="lcp-time"></span>s.</span>
+            <span hidden class="cls"><a href="https://web.dev/cls" class="footer-link">CLS</a><span> was </span><code class="cls-score"></code>.</span>
+            <span hidden class="fid"><a href="https://web.dev/fid" class="footer-link">FID</a><span> for </span><code class="fid-type"></code> event was <span class="fid-duration"></span>s.</span>
+          </li>
         </ul>
         <dark-mode-toggle permanent dark="Light Theme" light="Dark Theme"></dark-mode-toggle>
         <a class="validator" href="https://validator.w3.org/nu/?doc={{ metadata.url }}{{ page.url | url }}"><img src="/static/validhtml5.svg" width="88" height="31" alt="Valid HTML5 badge"></a>
       </footer>
+
+      <svg class="icon-container" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-rss" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></symbol>
+        <symbol id="icon-twitter" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></symbol>
+        <symbol id="icon-mastodon" aria-label="Mastodon" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%"/><path d="M409 290c-5 24-43 50-85 56-86 11-137-6-137-6 3 13-4 54 70 52 31 0 58-7 58-7l2 27c-51 24-107 15-140 6-67-17-79-90-81-162v-59c0-74 49-96 49-96 50-24 180-22 222 0 0 0 49 22 49 96 0 0 1 55-7 93" fill="#3088d4"/><path d="M358 202v91h-35v-88c0-18-8-27-23-27-18 0-27 11-27 33v47h-34v-47c0-22-9-33-27-33-15 0-23 9-23 27v88h-35v-91c0-18 5-60 52-60 39 0 50 37 50 37s10-37 50-37c45 0 52 42 52 60"/></symbol>
+        <symbol id="icon-pgp" aria-label="PGP Public Key" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#29303d"/><g fill="#29303d"><path stroke="#e0e4eb" stroke-width="32" d="M346 214v-37c0-123-180-123-180 0v37"/><rect fill="#ff0" height="210" rx="5%" width="280" x="115" y="210"/><circle cx="256" cy="296" r="28"/><path d="M262 296h-12l-16 69h44"/></g></symbol>
+        <symbol id="icon-github" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></symbol>
+      </svg>
+
     </div>
   </body>
 </html>
