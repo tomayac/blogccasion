@@ -9,7 +9,8 @@ export const render = (entry) => {
         }
         lcp.hidden = false;
         const lcpElement =  $('.lcp-element');
-        lcpElement.textContent = `${/([^>]*)/.exec(entry.element.outerHTML)[0]}>`;
+        lcpElement.textContent =
+            `${/([^>]*)/.exec(entry.element.outerHTML)[0].replace(/</, '')}`;
         $('.lcp-link').onclick = function () {
           entry.element.classList.toggle('largest-contentful-paint');
         };

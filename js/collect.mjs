@@ -16,9 +16,13 @@
   for (let [k, v] of Object.entries(o)) {
     f.append(k, v);
   }
-  fetch('https://tomayac.com/cors-proxy/collect.php', {
-    method: 'post',
-    body: f
-  });
+  try {
+    await fetch('https://tomayac.com/cors-proxy/collect.php', {
+      method: 'post',
+      body: f
+    });
+  } catch {
+    // Nothing
+  }
 })(Math.random, localStorage, screen, document, document.documentElement,
     encodeURIComponent, location, navigator, 'cid', 0);

@@ -364,6 +364,16 @@ dark-mode-toggle {
   outline: dashed 0.25rem var(--link-color);
 }
 
+.lcp-link {
+  overflow-x: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  width: fit-content;
+  max-width: 9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 @media (min-width: 1024px) {
   :root {
     font-size: 112.5%;
