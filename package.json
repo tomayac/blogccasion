@@ -33,7 +33,6 @@
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@remy/webmention": "^1.4.3",
-    "acorn": "^7.1.0",
     "dark-mode-toggle": "^0.5.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.7.2",
@@ -45,14 +44,13 @@
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.5",
     "node-fetch": "^2.6.0",
-    "npm-check-updates": "^3.2.2",
     "puppeteer": "^2.0.0",
     "shx": "^0.3.2",
     "start-server-and-test": "^1.10.6",
     "stylelint": "^12.0.0",
     "stylelint-color-format": "^1.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "terser": "^4.4.2",
+    "terser": "^4.4.3",
     "xml2js": "^0.4.22"
   },
   "stylelint": {
