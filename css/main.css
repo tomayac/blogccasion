@@ -420,6 +420,7 @@ dark-mode-toggle {
   h2,
   h3 {
     margin: var(--padding) 0;
+    letter-spacing: -0.1rem;
   }
 
   nav,
