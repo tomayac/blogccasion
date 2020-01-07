@@ -38,7 +38,7 @@ a {
 
 article a,
 .post-date a {
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 a:focus,
@@ -276,10 +276,6 @@ ul.postlist ::marker {
 .postlist-date {
   color: var(--metadata-color);
   font-size: 0.875rem;
-}
-
-.postlist-date {
-  white-space: nowrap;
 }
 
 .webmentions {
