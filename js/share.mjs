@@ -1,4 +1,4 @@
-import {articleBody, imgs as articleImages} from '/js/script.mjs';
+import {imgs} from '/js/script.mjs';
 
 const share = async () => {
   try {
@@ -20,10 +20,11 @@ button.classList.add('share', isAppleBrowser ? 'share-ios' : 'share-others');
 button.addEventListener('click', share);
 const paragraph = document.createElement('p');
 paragraph.appendChild(button);
-articleBody.appendChild(paragraph);
+const footer = document.querySelector('article > footer');
+footer.insertBefore(paragraph, footer.firstChild);
 
-if ('canShare' in navigator && articleImages.length) {
+if ('canShare' in navigator && imgs.length) {
   import('./share-image.mjs');
 }
 
-export {articleImages, button};
+export {imgs, button};

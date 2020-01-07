@@ -57,4 +57,4 @@ if (articleBody) {
   });
 }
 
-export {articleBody, imgs, fallback};
+export {imgs, fallback};

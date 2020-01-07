@@ -1,4 +1,4 @@
-import {articleImages, button as buttonTempl} from './share.mjs';
+import {imgs, button as buttonTempl} from './share.mjs';
 import {fallback} from './script.mjs';
 
 const proxyImage = async (src) => {
@@ -57,8 +57,8 @@ const share = async (e) => {
   }
 };
 
-[...articleImages].filter((img) => img.src !== fallback);
-articleImages.forEach((img) => {
+[...imgs].filter((img) => img.src !== fallback);
+imgs.forEach((img) => {
   const button = buttonTempl.cloneNode();
   button.classList.add('share-image');
   button.textContent = 'Share Image';
