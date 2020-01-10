@@ -3,7 +3,6 @@ layout: layouts/home.njk
 title: About Me
 tags:
   - nav
-  - Private
 navtitle: About
 ---
 Please feel free to contact me. There are many ways to do so...

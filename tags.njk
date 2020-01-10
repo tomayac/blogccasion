@@ -13,7 +13,7 @@ pagination:
 layout: layouts/home.njk
 renderData:
   title: Tagged “{{ tag }}”
-permalink: /tags/{{ tag }}/
+permalink: /tags/{{ tag | lower }}/
 ---
 <h2>Tagged “{{ tag }}”</h2>
 

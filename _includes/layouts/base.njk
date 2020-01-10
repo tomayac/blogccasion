@@ -160,7 +160,7 @@
         <h2>Tags</h2>
         <ul>
         {% for tag in collections.tagList %}
-          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          {% set tagUrl %}/tags/{{ tag | lower }}/{% endset %}
           <li><a href="{{ tagUrl | url }}" class="tag-item">{{ tag }}</a></li>
         {% endfor %}
         </ul>
