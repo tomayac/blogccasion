@@ -1,6 +1,10 @@
 <?php
   header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 
+  if (!$_GET['dl'] && !$_GET['dp']) {
+    return http_response_code(403);
+  }
+
   $_POST['uip'] = $_SERVER['REMOTE_ADDR'];
   $_POST['v'] = 1;
   $_POST['tid'] = 'UA-2040927-13';
@@ -13,9 +17,6 @@
   $_POST['dl'] = $_GET['dl'];
   $_POST['dp'] = $_GET['dp'];
   $_POST['dt'] = $_GET['dt'];
-
-  print_r($_POST);
-  die;
 
   $ch = curl_init();
 
