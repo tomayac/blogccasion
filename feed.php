@@ -12,7 +12,7 @@
   $_POST['z'] = substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil(17/strlen($x)) )),1,17);
   $_POST['cid'] = substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil(17/strlen($x)) )),1,17);
   $_POST['ua'] = $_SERVER['HTTP_USER_AGENT'];
-  $_POST['dr'] = 'https://blog.tomayac.com/feed/feed.xml';
+  $_POST['dr'] = 'https://feed.tomayac.com/feed/feed.xml';
   $_POST['ul'] = $_SERVER['HTTP_ACCEPT_LANGUAGE'] || '';
   $_POST['dl'] = $_GET['dl'];
   $_POST['dp'] = $_GET['dp'];
