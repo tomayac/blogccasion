@@ -23,7 +23,7 @@ eleventyExcludeFromCollections: true
 		<id>{{ absolutePostUrl }}</id>
 		<content type="html">
 			{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
-			&lt;img width=1 height=1 src=&quot;https://blog.tomayac.com/feed.php?dl={{ absolutePostUrl | urlencode }}&amp;dp={{ absolutePostUrl | replace("https://blog.tomayac.com", "") | urlencode }}&amp;dt={{ post.data.title | urlencode }}&quot; alt=&quot;&quot;&gt;
+			&lt;img width=200 height=1 src=&quot;https://blog.tomayac.com/feed.php?dl={{ absolutePostUrl | urlencode }}&amp;dp={{ absolutePostUrl | replace("https://blog.tomayac.com", "") | urlencode }}&amp;dt={{ post.data.title | urlencode }}&quot; alt=&quot;&quot;&gt;
 		</content>
 	</entry>
 	{%- endfor %}
