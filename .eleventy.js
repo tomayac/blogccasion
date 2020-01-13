@@ -58,6 +58,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("pgp_public_key.asc");
   eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("collect.php");
+  eleventyConfig.addPassthroughCopy("feed.php");
+  eleventyConfig.addPassthroughCopy("proxy.php");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
