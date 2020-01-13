@@ -17,7 +17,7 @@
     f.append(k, v);
   }
   try {
-    await fetch('https://tomayac.com/cors-proxy/collect.php', {
+    await fetch('https://blog.tomayac.com/collect.php', {
       method: 'post',
       body: f
     });

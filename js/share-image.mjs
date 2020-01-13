@@ -2,7 +2,7 @@ import {imgs, button as buttonTempl} from './share.mjs';
 import {fallback} from './script.mjs';
 
 const proxyImage = async (src) => {
-  const url = `https://tomayac.com/cors-proxy/index.php?csurl=${src}`;
+  const url = `https://blog.tomayac.com/proxy.php?csurl=${src}`;
   try {
     const response = await fetch(url);
     return await response.blob();
