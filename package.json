@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/tomayac/blogccasion",
   "devDependencies": {
-    "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@remy/webmention": "^1.4.3",
@@ -48,10 +48,10 @@
     "puppeteer": "^2.0.0",
     "shx": "^0.3.2",
     "start-server-and-test": "^1.10.6",
-    "stylelint": "^12.0.1",
+    "stylelint": "^13.0.0",
     "stylelint-color-format": "^1.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "terser": "^4.6.1",
+    "terser": "^4.6.3",
     "xml2js": "^0.4.23"
   },
   "stylelint": {
