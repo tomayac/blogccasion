@@ -33,6 +33,7 @@
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@remy/webmention": "^1.4.3",
+    "cld": "^2.5.1",
     "dark-mode-toggle": "^0.5.1",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
