@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -132,7 +132,7 @@
         <a href="/">
           <h1>blogccasion</h1>
         </a>
-        <div class="header-footer-text">
+        <div aria-hidden="true" class="header-footer-text">
           <span lang="fr">
             <strong>l'occasion</strong> <em>f</em> —
           </span>
@@ -180,7 +180,7 @@
 
       <footer>
         <ul class="header-footer-text">
-          <li>© 2005–2020 <a class="footer-link" href="/about">Thomas Steiner</a>.</li>
+          <li>© 2005–{{ 2005 | getCurrentYear }} <a class="footer-link" href="/about">Thomas Steiner</a>.</li>
           <li>Distributed under <a class="footer-link" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</li>
           <li>Contact and required <a class="footer-link" href="/about/">legal info</a>.</li>
           <li hidden class="performance-metrics">

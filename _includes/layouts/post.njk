@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.njk
 ---
-<article>
+<article lang="{{ content | detectLanguage }}">
   <header>
     <a href="{{ page.url | url }}"><h1>{{ title }}</h1></a>
-    <div class="metadata post-date">
+    <div lang="en" class="metadata post-date">
       <img class="author" src="/images/thomas_steiner_small.jpg" alt="Thomas Steiner headshot">
       <p>
         By <a href="/about/">Thomas Steiner</a>.
@@ -23,7 +23,7 @@ layout: layouts/base.njk
   <section>
     {{ content | safe }}
   </section>
-  <footer>
+  <footer lang="en">
     <p class="edit-on-github">
       You can <a href="https://github.com/tomayac/blogccasion/tree/master/{{ page.inputPath }}" rel="nofollow">edit this page on GitHub</a>.
     </p>
