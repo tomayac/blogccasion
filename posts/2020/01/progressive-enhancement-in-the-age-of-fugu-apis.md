@@ -124,26 +124,25 @@ likely a [known issue](https://github.com/codesandbox/codesandbox-client/issues/
 You can see the core API of the library below.
 
 ```js
+// The imported methods will use the Native File
+// System API or a fallback implementation.
 import {
-  fileOpenPromise,
-  fileSavePromise,
+  fileOpen,
+  fileSave,
 } from 'https://unpkg.com/browser-nativefs';
 
 (async () => {
-  // This dynamically either loads the Native
-  // File System API or the legacy module.
-  const fileOpen = (await fileOpenPromise).default;
-  const fileSave = (await fileSavePromise).default;
-
   // Open a file.
   const blob = await fileOpen({
     mimeTypes: ['image/*'],
   });
-  // Open multiple files
+
+  // Open multiple files.
   const blobs = await fileOpen({
     mimeTypes: ['image/*'],
     multiple: true,
   });
+
   // Save a file.
   await fileSave(blob, {
     fileName: 'Untitled.png',
