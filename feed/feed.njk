@@ -27,7 +27,7 @@ eleventyExcludeFromCollections: true
 		<content type="html">
 			{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
 			&lt;p&gt;
-				&lt;img width=32 height=32 src=&quot;https://blog.tomayac.com/feed.php?dl={{ absolutePostUrl | urlencode }}&amp;dp={{ absolutePostUrl | replace("https://blog.tomayac.com", "") | urlencode }}&amp;dt={{ post.data.title | urlencode }}&quot; alt=&quot;&quot;&gt;
+				&lt;img alt=&quot;Thomas Steiner&quot; width=&quot;32&quot; height=&quot;32&quot; src=&quot;https://blog.tomayac.com/feed.php?dl={{ absolutePostUrl | urlencode }}&amp;dp={{ absolutePostUrl | replace("https://blog.tomayac.com", "") | urlencode }}&amp;dt={{ post.data.title | urlencode }}&quot; alt=&quot;&quot;&gt;
 				&lt;br/&gt;This post appeared first on &lt;a href=&quot;{{ absolutePostUrl }}&quot;&gt;{{ absolutePostUrl }}&lt;/a&gt;.
 			&lt;/p&gt;
 		</content>
