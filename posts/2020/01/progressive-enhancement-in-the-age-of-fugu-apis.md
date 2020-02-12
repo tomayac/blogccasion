@@ -113,7 +113,7 @@ but I was not really happy with the code duplication I had introduced.
 
 As the logical next step, I created an experimental library
 that supports the differential loading pattern via dynamic `import()`.
-Introducing [`browser-nativefs`](https://github.com/tomayac/browser-nativefs),
+Introducing [`browser-nativefs`](https://github.com/GoogleChromeLabs/browser-nativefs),
 an abstraction layer that exposes two functions, `fileOpen()` and `fileSave()`,
 which under the hood either use the Native File System API or the `<a download>` and
 `<input type="file">` legacy approach.
@@ -210,4 +210,4 @@ that can fall back to playing an invisible video,
 which is the way [NoSleep.js](https://github.com/richtr/NoSleep.js/) implements it.
 As I wrote above, the experience probably will not be the same,
 but the next best thing.
-If you want, give [`browser-nativefs`](https://github.com/tomayac/browser-nativefs) a try.
+If you want, give [`browser-nativefs`](https://github.com/GoogleChromeLabs/browser-nativefs) a try.
