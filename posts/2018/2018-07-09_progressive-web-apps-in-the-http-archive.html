@@ -124,7 +124,7 @@ CREATE TEMPORARY FUNCTION
 <a id="user-content-approach-2-httparchivepages-tables" class="anchor"></span></a>Approach 2: <code>httparchive.pages.*</code> Tables</h4>
 <h5>
 <a id="user-content-description-1" class="anchor"></span></a>Description</h5>
-<p>Another straightforward way for estimating the amount of PWAs (however completely neglecting Web App Manifests) is to look for so-called <a href="https://cs.chromium.org/chromium/src/third_party/blink/public/platform/web_feature.mojom" rel="nofollow">use counters</a> in the <code>httparchive.pages.*</code> tables. Particularly interesting is the <code>ServiceWorkerControlledPage</code> use counter, which, <a href="https://groups.google.com/a/chromium.org/d/msg/blink-api-owners-discuss/uxwEuxCRfGA/_1VdL4_EBAAJ" rel="nofollow">according to Chrome engineer Matt Falkenhagen</a>, <em>is counted whenever a page is controlled by a service worker, which typically happens only on subsequent loads.</em></p>
+<p>Another straightforward way for estimating the amount of PWAs (however completely neglecting Web App Manifests) is to look for so-called <a href="https://cs.chromium.org/chromium/src/third_party/blink/public/mojom/web_feature/web_feature.mojom" rel="nofollow">use counters</a> in the <code>httparchive.pages.*</code> tables. Particularly interesting is the <code>ServiceWorkerControlledPage</code> use counter, which, <a href="https://groups.google.com/a/chromium.org/d/msg/blink-api-owners-discuss/uxwEuxCRfGA/_1VdL4_EBAAJ" rel="nofollow">according to Chrome engineer Matt Falkenhagen</a>, <em>is counted whenever a page is controlled by a service worker, which typically happens only on subsequent loads.</em></p>
 <h5>
 <a id="user-content-cons-1" class="anchor"></span></a>Cons</h5>
 <p>No qualitative attributes other than the absolute fact that a service worker controlled the loading of the page can be extracted. More importantly, as the counter is typically triggered on subsequent loads only (and not on the first load that the crawler sees), this method undercounts and only contains sites that claim their clients (<code>self.clients.claim()</code>) on the first load.</p>
@@ -151,7 +151,7 @@ CREATE TEMPORARY FUNCTION
   <span class="pl-k">FROM</span>
     <span class="pl-s"><span class="pl-pds">`</span>httparchive.pages.*<span class="pl-pds">`</span></span>
   <span class="pl-k">WHERE</span>
-    <span class="pl-c"><span class="pl-c">#</span> From https://cs.chromium.org/chromium/src/third_party/blink/public/platform/web_feature.mojom</span>
+    <span class="pl-c"><span class="pl-c">#</span> From https://cs.chromium.org/chromium/src/third_party/blink/public/mojom/web_feature/web_feature.mojom</span>
     JSON_EXTRACT(payload,
       <span class="pl-s"><span class="pl-pds">'</span>$._blinkFeatureFirstUsed.Features.ServiceWorkerControlledPage<span class="pl-pds">'</span></span>) <span class="pl-k">IS NOT NULL</span>)
 <span class="pl-k">LEFT JOIN</span> (
