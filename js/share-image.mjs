@@ -44,7 +44,7 @@ const share = async (e) => {
         }),
       ],
       title: '',
-      text: `👉 Image “${fileName}“ from “${document.title}” by @tomayac:`,
+      text: `Image “${fileName}“ from “${document.title}” by @tomayac:`,
       url: document.querySelector('link[rel=canonical]').href,
     };
 

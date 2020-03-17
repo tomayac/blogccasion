@@ -47,11 +47,11 @@
     "node-fetch": "^2.6.0",
     "puppeteer": "^2.1.1",
     "shx": "^0.3.2",
-    "start-server-and-test": "^1.10.10",
+    "start-server-and-test": "^1.10.11",
     "stylelint": "^13.2.1",
     "stylelint-color-format": "^1.0.0",
     "stylelint-config-standard": "^20.0.0",
-    "terser": "^4.6.6",
+    "terser": "^4.6.7",
     "xml2js": "^0.4.23"
   },
   "stylelint": {
