@@ -88,6 +88,20 @@ kbd {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
+ins {
+  background-color: #cdffd8;
+}
+
+del {
+  background-color: #ffeef0;
+}
+
+del,
+ins {
+  color: #000;
+  text-decoration: none;
+}
+
 pre {
   overflow-x: auto;
 }
@@ -188,6 +202,10 @@ aside {
 img {
   max-width: 100%;
   height: auto;
+}
+
+figcaption {
+  text-align: center;
 }
 
 iframe[src*="youtube"] {
