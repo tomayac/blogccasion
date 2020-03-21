@@ -253,7 +253,7 @@ At present, the Async Clipboard API is still limited,
 but raw clipboard access is on the radar of the
 [🐡 Project Fugu team](/2019/09/21/project-fugu-at-w3c-tpac/#breakout-session-for-a-more-capable-web%E2%80%94project-fugu)
 that I am a small part of.
-The feature is being tracked as [crbug/976996](https://crbug.com/976996).
+The feature is being tracked as [crbug/897289](https://crbug.com/897289).
 
 All that being said, raw clipboard access has its risks, too, as clearly pointed out in the
 [TAG review](https://github.com/w3ctag/design-reviews/issues/406).
