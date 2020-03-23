@@ -51,7 +51,7 @@ It has taken me a bit, but now I have found a decent WFH setup.
 ## The Furniture
 
 - A [school desk](https://commons.wikimedia.org/wiki/File:Aschau_im_Chiemgau,_Lausbuambankerl,_1.jpeg)—This
-  is a desk we had bought from eBay, placed on two kids' chairs to convert it into a standing desk.
+  is a desk we had bought earlier on eBay, placed on two kids' chairs to convert it into a standing desk.
 - Some shoe boxes to elevate the two main screens to eye height.
   I had quite some neck pain during the first couple of days.
 
