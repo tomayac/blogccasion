@@ -89,16 +89,16 @@ kbd {
 }
 
 ins {
-  background-color: #cdffd8;
+  background-color: hsl(133, 100%, 90%);
 }
 
 del {
-  background-color: #ffeef0;
+  background-color: hsl(353, 100%, 97%);
 }
 
 del,
 ins {
-  color: #000;
+  color: hsl(0, 0%, 0%);
   text-decoration: none;
 }
 
