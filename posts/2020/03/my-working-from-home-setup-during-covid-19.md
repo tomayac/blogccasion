@@ -25,7 +25,7 @@ It has taken me a bit, but now I have found a decent WFH setup.
   in the UK
   [on eBay](https://www.ebay.com/sch/i.html?_from=R40&_nkw=iPad%20Pro%20%2812.9-inch%29%20%282nd%20generation%29&_sacat=0&LH_BIN=1&rt=nc&_udlo=300&_udhi=400)
   (this is the search deeplink that I used).
-- An [iPad Air 2](https://en.wikipedia.org/wiki/IPad_Air_2): This is a private device from 2014.
+- An [iPad Air&nbsp;2](https://en.wikipedia.org/wiki/IPad_Air_2): This is a private device from 2014.
 - A [Lenovo Smart Clock](https://news.lenovo.com/pressroom/press-releases/introducing-lenovo-smart-clock-with-google-assistant/):
   This mostly just serves as a photo frame, and of course as a desk clock.
 
@@ -47,6 +47,11 @@ It has taken me a bit, but now I have found a decent WFH setup.
   with the iDisplay server running on the laptop, so I can use the iPad Air as a third screen.
   Unfortunately, since I do not have another free USB&nbsp;C port on my laptop,
   it is really laggy over Wi-Fi, but works when I really need maximum screen real estate.
+- (Out of scope) The [Free Sidecar](https://github.com/ben-z/free-sidecar) project promises to
+  enable Sidecar on older iPads like my iPad Air&nbsp;2,
+  since apparently Apple simply blocks older devices for no particular reason.
+  It requires temporarily turning off System Integrity Protection,
+  which is something I cannot (and do not want to) do on my corporate laptop.
 
 ## The Furniture
 
