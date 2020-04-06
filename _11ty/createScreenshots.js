@@ -27,14 +27,16 @@ const createScreenshots = async (page, url, output) => {
     await page.goto(url);
     // Create Light Mode screenshot
     await page.emulateMediaFeatures([{
-      name: 'prefers-color-scheme', value: 'light'}]);
+      name: 'prefers-color-scheme', value: 'light',
+    }]);
     await page.waitFor(250);
-      await page.screenshot({path: `${output}-light.png`});
+    await page.screenshot({path: `${output}-light.png`});
     // Create Dark Mode screenshot
     await page.emulateMediaFeatures([{
-      name: 'prefers-color-scheme', value: 'dark' }]);
+      name: 'prefers-color-scheme', value: 'dark',
+    }]);
     await page.waitFor(250);
-      await page.screenshot({path: `${output}-dark.png`});
+    await page.screenshot({path: `${output}-dark.png`});
   } catch (err) {
     console.error(err.name, err.message);
   }
