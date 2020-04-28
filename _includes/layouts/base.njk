@@ -83,15 +83,11 @@
     <meta property="twitter:account_id" content="1510101733">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@tomayac">
-    <meta name="twitter:title" content="{{ renderData.title or title or metadata.title }}">
-    <meta name="twitter:description" content="{{ renderData.description or description or metadata.description }}">
-    <meta name="twitter:image" content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
-
+    <meta name="twitter:title" property="og:title" content="{{ renderData.title or title or metadata.title }}">
+    <meta name="twitter:description" property="og:description" content="{{ renderData.description or description or metadata.description }}">
+    <meta name="twitter:image" property="og:image" content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
     <meta property="og:url" content="https://blog.tomayac.com{{ page.url | url }}">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ renderData.title or title or metadata.title }}">
-    <meta property="og:description" content="{{ renderData.description or description or metadata.description }}">
-    <meta property="og:image" content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
 
     <script type="application/ld+json">
       {% set schemaDotOrg %}
