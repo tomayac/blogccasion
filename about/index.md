@@ -5,7 +5,9 @@ tags:
   - nav
 navtitle: About
 ---
+
 Please feel free to contact me. There are many ways to do so...
+
 <div>
   <img style="border: 0; border-radius: 50%;" src="/images/thomas_steiner.jpg" alt="Thomas Steiner" width="200" height="200">
 </div>

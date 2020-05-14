@@ -1,5 +1,5 @@
-import {imgs, button as buttonTempl} from './share.mjs';
-import {fallback} from './script.mjs';
+import { imgs, button as buttonTempl } from './share.mjs';
+import { fallback } from './script.mjs';
 
 const proxyImage = async (src) => {
   const url = `https://blog.tomayac.com/proxy.php?csurl=${src}`;
@@ -9,7 +9,7 @@ const proxyImage = async (src) => {
   } catch (err) {
     throw new Error(`${err.name} ${err.message}`);
   }
-}
+};
 
 const imageToBlob = async (img) => {
   const src = img.getAttribute('src');
@@ -40,7 +40,7 @@ const share = async (e) => {
     const data = {
       files: [
         new File([blob], fileName, {
-          type: blob.type
+          type: blob.type,
         }),
       ],
       title: '',
@@ -49,8 +49,8 @@ const share = async (e) => {
     };
 
     if (!navigator.canShare(data)) {
-      throw new Error('Can\'t share data.', data);
-    };
+      throw new Error("Can't share data.", data);
+    }
     await navigator.share(data);
   } catch (err) {
     console.error(err.name, err.message);

@@ -13,10 +13,14 @@ const root = document.documentElement;
 
 darkModeToggle.addEventListener('colorschemechange', () => {
   setTimeout(() => {
-    themeColor.content = getComputedStyle(root).getPropertyValue('--background-color');
+    themeColor.content = getComputedStyle(root).getPropertyValue(
+      '--background-color'
+    );
   }, 0);
 });
-themeColor.content = getComputedStyle(root).getPropertyValue('--background-color');
+themeColor.content = getComputedStyle(root).getPropertyValue(
+  '--background-color'
+);
 
 let imgs = [];
 const fallback = '/static/fallback.svg';
@@ -26,21 +30,21 @@ if (articleBody) {
 
   const timeouts = {};
 
-  const onError = e => {
+  const onError = (e) => {
     const img = e.target;
     img.src = fallback;
   };
 
-  const onLoad = e => {
+  const onLoad = (e) => {
     const img = e.target;
     clearTimeout(timeouts[img.src]);
     delete timeouts[img.src];
     img.removeEventListener('error', onError);
   };
 
-  imgs.forEach(img => {
-    img.addEventListener('error', onError, {once: true});
-    img.addEventListener('load', onLoad, {once: true});
+  imgs.forEach((img) => {
+    img.addEventListener('error', onError, { once: true });
+    img.addEventListener('load', onLoad, { once: true });
 
     timeouts[img.src] = setTimeout(() => {
       img.removeEventListener('error', onError);
@@ -57,4 +61,4 @@ if (articleBody) {
   });
 }
 
-export {imgs, fallback};
+export { imgs, fallback };

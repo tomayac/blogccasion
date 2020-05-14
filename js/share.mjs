@@ -1,4 +1,4 @@
-import {imgs} from '/js/script.mjs';
+import { imgs } from '/js/script.mjs';
 
 const share = async () => {
   try {
@@ -27,4 +27,4 @@ if ('canShare' in navigator && imgs.length) {
   import('./share-image.mjs');
 }
 
-export {imgs, button};
+export { imgs, button };
