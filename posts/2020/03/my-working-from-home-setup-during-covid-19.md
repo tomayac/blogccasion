@@ -18,7 +18,7 @@ It has taken me a bit, but now I have found a decent WFH setup.
   Its keyboard is still working fine, but for ergonomic reasons, I have an external wired
   [Apple A1243 keyboard](https://en.wikipedia.org/wiki/Apple_Keyboard#/media/File:Apple_Keyboard_with_Numeric_Keyboard_9612.jpg)
   and a wired [Apple Mighty Mouse](https://en.wikipedia.org/wiki/Apple_Mighty_Mouse)
-  connected to it.
+  connected to it. Update: I have now replaced the mouse with a [Magic Trackpad 2](https://en.wikipedia.org/wiki/Magic_Trackpad_2).
 - An [iPad Pro (12.9-inch) (2nd generation)](https://en.wikipedia.org/wiki/IPad_Pro#Second_generation):
   This is a dented, scratched device from 2017 that I bought for €349.99
   (incl. tax, customs, and shipping) from a [dealer](https://www.ebay.de/usr/pre-tech?ul_noapp=true)
@@ -29,7 +29,10 @@ It has taken me a bit, but now I have found a decent WFH setup.
 - A [Lenovo Smart Clock](https://news.lenovo.com/pressroom/press-releases/introducing-lenovo-smart-clock-with-google-assistant/):
   This mostly just serves as a photo frame, and of course as a desk clock.
 
-![My COVID-19 working from home setup](/images/covid-19-wfh-setup.jpg)
+<figure>
+  <img src="/images/covid-19-wfh-setup.jpg" width="600" height=" 800" alt="School bench on two chairs. On top of the school bench are shoe boxes with a laptop on top and two iPads surrounding it.">
+  <figcaption>My COVID-19 working from home setup</figcaption>
+</figure>
 
 ## The Software
 
