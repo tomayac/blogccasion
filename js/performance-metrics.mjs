@@ -8,9 +8,10 @@ export const render = (entry) => {
           return;
         }
         lcp.hidden = false;
-        const lcpElement =  $('.lcp-element');
-        lcpElement.textContent =
-            `${/([^>]*)/.exec(entry.element.outerHTML)[0].replace(/</, '')}`;
+        const lcpElement = $('.lcp-element');
+        lcpElement.textContent = `${/([^>]*)/
+          .exec(entry.element.outerHTML)[0]
+          .replace(/</, '')}`;
         $('.lcp-link').onclick = function () {
           entry.element.classList.toggle('largest-contentful-paint');
         };

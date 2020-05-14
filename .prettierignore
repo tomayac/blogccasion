@@ -1,0 +1,5 @@
+_site/
+_includes/
+posts/
+images/
+*.min.*

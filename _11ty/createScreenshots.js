@@ -5,7 +5,7 @@ const xml2js = require('xml2js');
 const puppeteer = require('puppeteer');
 
 const parseSitemap = async () => {
-  const sitemap = await fs.readFile('_site/sitemap.xml', {encoding: 'utf-8'});
+  const sitemap = await fs.readFile('_site/sitemap.xml', { encoding: 'utf-8' });
   try {
     const xml = await xml2js.parseStringPromise(sitemap);
     const urls = [];
@@ -26,17 +26,23 @@ const createScreenshots = async (page, url, output) => {
     console.log('Creating screenshots for', url);
     await page.goto(url);
     // Create Light Mode screenshot
-    await page.emulateMediaFeatures([{
-      name: 'prefers-color-scheme', value: 'light',
-    }]);
+    await page.emulateMediaFeatures([
+      {
+        name: 'prefers-color-scheme',
+        value: 'light',
+      },
+    ]);
     await page.waitFor(250);
-    await page.screenshot({path: `${output}-light.png`});
+    await page.screenshot({ path: `${output}-light.png` });
     // Create Dark Mode screenshot
-    await page.emulateMediaFeatures([{
-      name: 'prefers-color-scheme', value: 'dark',
-    }]);
+    await page.emulateMediaFeatures([
+      {
+        name: 'prefers-color-scheme',
+        value: 'dark',
+      },
+    ]);
     await page.waitFor(250);
-    await page.screenshot({path: `${output}-dark.png`});
+    await page.screenshot({ path: `${output}-dark.png` });
   } catch (err) {
     console.error(err.name, err.message);
   }
@@ -52,8 +58,10 @@ const start = async () => {
 
   const urls = await parseSitemap();
   for (const url of urls) {
-    const output =
-        `./_site/${url.replace('https://blog.tomayac.com/', '')}screenshot`;
+    const output = `./_site/${url.replace(
+      'https://blog.tomayac.com/',
+      ''
+    )}screenshot`;
     await createScreenshots(page, url, output);
   }
   await browser.close();
