@@ -83,7 +83,7 @@ const updateCanvas = (now, metadata) => {
 video.requestVideoFrameCallback(updateCanvas);
 ```
 
-<div class="glitch-embed-wrap" style="height: 1100px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 1200px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/requestvideoframecallback?path=script.js&previewSize=100"
     title="requestvideoframecallback on Glitch"
