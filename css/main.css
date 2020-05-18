@@ -43,8 +43,9 @@ a {
 }
 
 article a,
-.post-date a {
-  word-break: break-word;
+.post-date a,
+.postlist-link {
+  overflow-wrap: break-word;
 }
 
 a:focus,
