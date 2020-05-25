@@ -20,13 +20,13 @@ At the time of writing, wake locks are implemented behind the [chrome://flags/#e
 
 My colleague [Pete LePage](https://twitter.com/petele) has written a great(!) [introductory article](https://developers.google.com/web/updates/2018/12/wakelock) on how to use the API, so definitely go read it. Just to briefly recap here, a`WakeLock` object of the `WakeLockType` type `"screen"` can be obtained like this:
 
-```
+```js
 const wakeLock = await navigator.getWakeLock("screen");
 ```
 
 Note that the resulting `WakeLock` object does not do anything yet; in order to activate it, you need to create a new `WakeLockRequest`:
 
-```
+```js
 const request = wakeLock.createRequest();
 ```
 
@@ -38,7 +38,7 @@ I have been experimenting with both types of wake locks—`"screen"` and `"syste
 
 The first demo showcases the `"screen"` use case, where I prevent the screen from sleeping for a talking [Wikipedia screensaver](https://tomayac.github.io/wikipedia-screensaver/dist/) that announces whenever an article has been edited on Wikipedia. On supported systems, you can check the “Keep screen on” checkbox and watch and listen to the screensaver forever (or till battery do us part). The [relevant code bits](https://github.com/tomayac/wikipedia-screensaver/blob/0c19ce102f7ee519a7adc58b646c0de9d979d665/src/js/main.js#L178-L202) can be seen below:
 
-```
+```js
 if ('getWakeLock' in navigator) {
   let wakeLockObj = null;
 
@@ -89,7 +89,7 @@ Depending on your version of Chrome, due to [https://crbug.com/903831](https://c
 
 You can check out the code of both applications on GitHub: [tomayac/wakelock-whereami](https://github.com/tomayac/wakelock-whereami) and [tomayac/wakelock-thereami](https://github.com/tomayac/wakelock-thereami). The [relevant code snippet](https://github.com/tomayac/wakelock-whereami/blob/661fce442ada8817165f2f6202fa5b0f2cc39a2f/script.js#L18-L103) is embedded below:
 
-```
+```js
 if ('getWakeLock' in navigator) {
   try {
     wakeLockObj = await navigator.getWakeLock('system');
