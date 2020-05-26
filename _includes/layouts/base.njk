@@ -8,46 +8,18 @@
     <meta name="monetization" content="$ilp.gatehub.net/348218105">
     <meta name="theme-color" content="#111111">
     <meta name="color-scheme" content="dark light">
+
     <title>{{ renderData.title or title or metadata.title }}</title>
 
     <link rel="modulepreload" href="/js/dark-mode-toggle.min.mjs">
-    <script type="module" src="/js/dark-mode-toggle.min.mjs"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
 
-    <script>
-      {% set js %}
-        if (matchMedia('(prefers-color-scheme:dark)').media === 'not all') {
-          document.documentElement.style.display = 'none';
-          document.head.insertAdjacentHTML(
-              'beforeend',
-              '<link rel="stylesheet" href="/css/light.css" onload="document.documentElement.style.display = \'\'">'
-          );
-        }
-      {% endset %}
-      {{ js | jsmin | safe }}
-    </script>
     <link rel="preload" href="/css/light.css" as="style">
     <link rel="preload" href="/css/dark.css" as="style">
-    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-    <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/prism-theme.css">
+    <link rel="preload" href="/css/main.css" as="style">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
-    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-    <link rel="mask-icon" color="#ff8133" href="/static/safari-pinned-tab.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" as="style">
 
-    <link rel="canonical" href="{{ page.url | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="author" href="https://tomayac.com/humans.txt" type="text/plain">
-
-    <link rel="webmention" href="https://webmention.io/blog.tomayac.com/webmention">
-    <link rel="pingback" href="https://webmention.io/blog.tomayac.com/xmlrpc">
-    <link rel="manifest" href="/manifest.webmanifest">
-
-    <script type="module" src="/js/script.mjs"></script>
     <script type="module">
       {% set js %}
         const po = new PerformanceObserver(async (entryList) => {
@@ -56,6 +28,11 @@
             switch (entry.entryType) {
               case 'largest-contentful-paint':
                 module.render({type: 'lcp', value: entry.renderTime || entry.loadTime, element: entry.element});
+                break;
+              case 'paint':
+                if (entry.name === 'first-contentful-paint') {
+                  module.render({type: 'fcp', value: entry.startTime});
+                }
                 break;
               case 'layout-shift':
                 if (entry.hadRecentInput) {
@@ -75,11 +52,48 @@
             'largest-contentful-paint',
             'first-input',
             'layout-shift',
+            'paint',
           ],
         });
       {% endset %}
       {{ js | jsmin | safe }}
     </script>
+
+    <script>
+      {% set js %}
+        if (matchMedia('(prefers-color-scheme:dark)').media === 'not all') {
+          document.documentElement.style.display = 'none';
+          document.head.insertAdjacentHTML(
+              'beforeend',
+              '<link rel="stylesheet" href="/css/light.css" onload="document.documentElement.style.display = \'\'">'
+          );
+        }
+      {% endset %}
+      {{ js | jsmin | safe }}
+    </script>
+    <script type="module" src="/js/dark-mode-toggle.min.mjs"></script>
+
+    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
+    <link rel="stylesheet" href="/css/prism-theme.css" media="not all" onload="this.media='all'">
+
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="mask-icon" color="#ff8133" href="/static/safari-pinned-tab.svg">
+
+    <link rel="canonical" href="{{ page.url | url }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="author" href="https://tomayac.com/humans.txt" type="text/plain">
+
+    <link rel="webmention" href="https://webmention.io/blog.tomayac.com/webmention">
+    <link rel="pingback" href="https://webmention.io/blog.tomayac.com/xmlrpc">
+
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <script type="module" src="/js/script.mjs"></script>
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@tomayac">
@@ -186,9 +200,10 @@
           <li>Distributed under <a class="footer-link" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</li>
           <li>Contact and required <a class="footer-link" href="/about/">legal info</a>.</li>
           <li hidden class="performance-metrics">
-            <span hidden class="lcp"><a href="https://web.dev/lcp" class="footer-link">LCP</a><span> was </span><code>&lt;</code><a class="lcp-link footer-link"><code class="lcp-element"></code></a><code>&gt;</code> at <span class="lcp-time"></span>s.</span>
-            <span hidden class="cls"><a href="https://web.dev/cls" class="footer-link">CLS</a><span> was </span><code class="cls-score"></code>.</span>
-            <span hidden class="fid"><a href="https://web.dev/fid" class="footer-link">FID</a><span> for </span><code class="fid-type"></code> event was <span class="fid-duration"></span>s.</span>
+            <span hidden class="lcp"><a href="https://web.dev/lcp/" class="footer-link">LCP</a><span> was </span><code>&lt;</code><a class="lcp-link footer-link"><code class="lcp-element"></code></a><code>&gt;</code> at <span class="lcp-time"></span>s.</span>
+            <span hidden class="cls"><a href="https://web.dev/cls/" class="footer-link">CLS</a><span> was </span><code class="cls-score"></code>.</span>
+            <span hidden class="fcp"><a href="https://web.dev/fcp/" class="footer-link">FCP</a><span> was </span> <span class="fcp-time"></span>s.</span>
+            <span hidden class="fid"><a href="https://web.dev/fid/" class="footer-link">FID</a><span> for </span><code class="fid-type"></code> event was <span class="fid-duration"></span>s.</span>
           </li>
         </ul>
         <dark-mode-toggle permanent dark="Light Theme" light="Dark Theme"></dark-mode-toggle>

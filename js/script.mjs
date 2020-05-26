@@ -23,6 +23,8 @@ themeColor.content = getComputedStyle(root).getPropertyValue(
 
 let imgs = [];
 const fallback = '/static/fallback.svg';
+const ERROR = 'error';
+const LOAD = 'load';
 
 if (articleBody) {
   imgs = articleBody.querySelectorAll('img');
@@ -38,22 +40,23 @@ if (articleBody) {
     const img = e.target;
     clearTimeout(timeouts[img.src]);
     delete timeouts[img.src];
-    img.removeEventListener('error', onError);
+    img.removeEventListener(ERROR, onError);
   };
 
+  const once = { once: true };
   imgs.forEach((img) => {
-    img.addEventListener('error', onError, { once: true });
-    img.addEventListener('load', onLoad, { once: true });
+    img.addEventListener(ERROR, onError, once);
+    img.addEventListener(LOAD, onLoad, once);
 
     timeouts[img.src] = setTimeout(() => {
-      img.removeEventListener('error', onError);
-      img.removeEventListener('load', onLoad);
+      img.removeEventListener(ERROR, onError);
+      img.removeEventListener(LOAD, onLoad);
       img.src = fallback;
     }, 20 * 1000);
 
     if (img.complete) {
-      img.removeEventListener('load', onLoad);
-      img.removeEventListener('error', onError);
+      img.removeEventListener(LOAD, onLoad);
+      img.removeEventListener(ERROR, onError);
       clearTimeout(timeouts[img.src]);
       delete timeouts[img.src];
     }

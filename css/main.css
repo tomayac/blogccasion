@@ -37,33 +37,6 @@ body {
   }
 }
 
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-article a,
-.post-date a,
-.postlist-link {
-  overflow-wrap: break-word;
-}
-
-a:focus,
-a:hover,
-a:active {
-  text-decoration: underline;
-}
-
-.header-footer-text,
-.footer-link {
-  color: var(--text-color);
-}
-
-.footer-link {
-  text-decoration: underline;
-  text-decoration-color: var(--link-color);
-}
-
 h1 {
   font-size: 2rem;
   margin: 0.67em 0;
@@ -104,6 +77,10 @@ h6,
   text-decoration: none;
 }
 
+article h1 {
+  font-size: 1.75rem;
+}
+
 pre,
 code,
 kbd {
@@ -140,8 +117,71 @@ kbd {
   border-radius: 0.25rem;
 }
 
-article h1 {
-  font-size: 1.75rem;
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+article a,
+.post-date a,
+.postlist-link {
+  overflow-wrap: break-word;
+}
+
+a:focus,
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.header-footer-text,
+.footer-link {
+  color: var(--text-color);
+}
+
+.footer-link {
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+iframe[src*='youtube'] {
+  width: 100%;
+}
+
+abbr {
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
+}
+
+abbr::after {
+  content: '?';
+  font-size: 0.8rem;
+  position: relative;
+  top: -0.2rem;
+  color: var(--metadata-color);
+  padding-inline-start: 0.1rem;
+}
+
+blockquote {
+  position: relative;
+  font-style: italic;
+}
+
+blockquote::before {
+  content: open-quote;
+  color: var(--metadata-color);
+  font-size: 3.5rem;
+  position: absolute;
+  left: -2.5rem;
 }
 
 .nav-item,
@@ -229,46 +269,6 @@ aside {
   position: relative;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-figcaption {
-  text-align: center;
-}
-
-iframe[src*='youtube'] {
-  width: 100%;
-}
-
-abbr {
-  text-decoration: underline;
-  text-decoration-color: var(--link-color);
-}
-
-abbr::after {
-  content: '?';
-  font-size: 0.8rem;
-  position: relative;
-  top: -0.2rem;
-  color: var(--metadata-color);
-  padding-inline-start: 0.1rem;
-}
-
-blockquote {
-  position: relative;
-  font-style: italic;
-}
-
-blockquote::before {
-  content: open-quote;
-  color: var(--metadata-color);
-  font-size: 3.5rem;
-  position: absolute;
-  left: -2.5rem;
-}
-
 nav,
 aside,
 main {
@@ -295,6 +295,7 @@ footer ul {
 
 footer ul {
   margin-block-end: 0;
+  max-width: calc(100% - 110px);
 }
 
 ul.postlist {
@@ -468,7 +469,7 @@ dark-mode-toggle {
   h2,
   h3 {
     margin: var(--padding) 0;
-    letter-spacing: -0.1rem;
+    letter-spacing: -0.05rem;
   }
 
   nav,

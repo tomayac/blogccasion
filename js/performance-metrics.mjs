@@ -34,6 +34,14 @@ export const render = (entry) => {
         cls.hidden = false;
         $('.cls-score').textContent = entry.value.toFixed(3);
         break;
+      case 'fcp':
+        const fcp = $('.fcp');
+        if (!fcp.hidden) {
+          return;
+        }
+        fcp.hidden = false;
+        $('.fcp-time').textContent = (entry.value / 1000).toFixed(3);
+        break;
     }
   })(document.querySelector.bind(document));
 };
