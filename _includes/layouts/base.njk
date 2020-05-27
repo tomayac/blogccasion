@@ -76,7 +76,7 @@
     <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
     <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" media="not all" onload="this.media='all'">
     <link rel="stylesheet" href="/css/prism-theme.css" media="not all" onload="this.media='all'">
 
     <link rel="shortcut icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
@@ -138,6 +138,13 @@
       {% endset %}
       {{ schemaDotOrg | jsonMinify | safe }}
     </script>
+
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
+      <link rel="stylesheet" href="/css/prism-theme.css">
+      <link rel="stylesheet" href="/css/light.css">
+    </noscript>
+
   </head>
   <body>
     <div class="container">
