@@ -1,10 +1,11 @@
-import './collect.mjs';
-
 const articleBody = document.querySelector('article section');
 
-if ('share' in navigator && articleBody) {
-  import('/js/share.mjs');
-}
+window.addEventListener('load', () => {
+  import('./collect.mjs');
+  if ('share' in navigator && articleBody) {
+    import('/js/share.mjs');
+  }
+});
 
 const darkModeToggle = document.querySelector('dark-mode-toggle');
 const themeColor = document.querySelector('meta[name="theme-color"]');

@@ -6,6 +6,7 @@
     "build": "NODE_ENV=production npx eleventy",
     "watch": "npx eleventy --watch",
     "start": "npx eleventy --serve",
+    "dev": "npm run start",
     "stop": "npx kill-port --port 8080",
     "postinstall": "shx cp ./node_modules/dark-mode-toggle/dist/dark-mode-toggle.min.mjs ./js/",
     "clean": "shx rm -rf ./_site",
