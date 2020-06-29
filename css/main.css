@@ -106,6 +106,7 @@ pre {
 }
 
 code {
+  word-break: break-word;
   overflow-wrap: break-word;
 }
 
@@ -125,6 +126,7 @@ a {
 article a,
 .post-date a,
 .postlist-link {
+  word-break: break-word;
   overflow-wrap: break-word;
 }
 
@@ -177,7 +179,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: open-quote;
+  content: "“";
   color: var(--metadata-color);
   font-size: 3.5rem;
   position: absolute;
