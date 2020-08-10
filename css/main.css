@@ -179,7 +179,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: "“";
+  content: '“';
   color: var(--metadata-color);
   font-size: 3.5rem;
   position: absolute;
