@@ -1,7 +1,7 @@
 const { DateTime } = require('luxon');
 const htmlmin = require('html-minifier');
 const fs = require('fs');
-const Terser = require('terser');
+const { minify } = require("terser");
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const cld = require('cld');
@@ -35,13 +35,13 @@ module.exports = function (eleventyConfig) {
   });
 
   // Minify inline scripts
-  eleventyConfig.addFilter('jsmin', function (code) {
-    let minified = Terser.minify(code);
+  eleventyConfig.addNunjucksAsyncFilter('jsmin', async function (code, callback) {
+    const minified = await minify(code);
     if (minified.error) {
-      console.log('Terser error: ', minified.error);
-      return code;
+      console.error('Terser error: ', minified.error);
+      return callback(null, code);
     }
-    return minified.code;
+    return callback(null, minified.code);
   });
 
   // Detect the language of a post
