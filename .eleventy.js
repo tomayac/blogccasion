@@ -43,7 +43,7 @@ module.exports = function (eleventyConfig) {
       const minified = await minify(code);
       callback(null, minified.code);
     } catch (err) {
-      console.error('Terser error: ', minified.error);
+      console.error('Terser error: ', err);
       // Fail gracefully.
       callback(null, code);
     }
