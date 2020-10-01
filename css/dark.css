@@ -6,7 +6,7 @@
   --main-background-color: hsla(0, 0%, 7%, 0.85);
   --main-background-color-transparent: hsla(0, 0%, 7%, 0);
   --metadata-color: hsl(0, 0%, 53%);
-  --link-color: red;
+  --link-color: #ec130e;
   --border-color: hsl(0, 0%, 33%);
 }
 

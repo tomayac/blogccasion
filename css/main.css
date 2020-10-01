@@ -189,18 +189,17 @@ blockquote::before {
 .nav-item,
 .tag-item {
   border-radius: 0.25rem;
+  color: hsl(0, 0%, 100%);
   padding: 0.1rem 0.25rem;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .tag-item {
-  color: hsl(0, 0%, 0%);
-  background-color: red;
+  background-color: #ec130e;
 }
 
 .nav-item {
-  color: hsl(0, 0%, 100%);
   background-color: darkgreen;
 }
 
