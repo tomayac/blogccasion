@@ -32,7 +32,7 @@ const createScreenshots = async (page, url, output) => {
         value: 'light',
       },
     ]);
-    await page.waitFor(250);
+    await page.waitForTimeout(250);
     await page.screenshot({ path: `${output}-light.png` });
     // Create Dark Mode screenshot
     await page.emulateMediaFeatures([
@@ -41,7 +41,7 @@ const createScreenshots = async (page, url, output) => {
         value: 'dark',
       },
     ]);
-    await page.waitFor(250);
+    await page.waitForTimeout(250);
     await page.screenshot({ path: `${output}-dark.png` });
   } catch (err) {
     console.error(err.name, err.message);

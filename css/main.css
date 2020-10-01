@@ -196,7 +196,7 @@ blockquote::before {
 }
 
 .tag-item {
-  background-color: #ec130e;
+  background-color: hsl(1, 89%, 49%);
 }
 
 .nav-item {
