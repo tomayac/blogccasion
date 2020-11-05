@@ -76,6 +76,7 @@ and note how it is emulating key presses.
     src="https://tomayac.github.io/chrome-dino-gamepad/"
     title="Chrome dino gamepad"
     allow="gamepad; fullscreen"
-    style="height: 100%; width: 100%; border: 0;">
+    style="height: 100%; width: 100%; border: 0;"
+    loading="lazy">
   </iframe>
 </div>
