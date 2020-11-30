@@ -86,6 +86,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('collect.php');
   eleventyConfig.addPassthroughCopy('feed.php');
   eleventyConfig.addPassthroughCopy('proxy.php');
+  eleventyConfig.addPassthroughCopy('privacy-policy.txt');
 
   /* Markdown Plugins */
   let markdownIt = require('markdown-it');
