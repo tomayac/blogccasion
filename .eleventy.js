@@ -35,32 +35,32 @@ module.exports = function (eleventyConfig) {
   });
 
   // Minify inline scripts
-  eleventyConfig.addNunjucksAsyncFilter('jsmin', async function (
-    code,
-    callback
-  ) {
-    try {
-      const minified = await minify(code);
-      callback(null, minified.code);
-    } catch (err) {
-      console.error('Terser error: ', err);
-      // Fail gracefully.
-      callback(null, code);
+  eleventyConfig.addNunjucksAsyncFilter(
+    'jsmin',
+    async function (code, callback) {
+      try {
+        const minified = await minify(code);
+        callback(null, minified.code);
+      } catch (err) {
+        console.error('Terser error: ', err);
+        // Fail gracefully.
+        callback(null, code);
+      }
     }
-  });
+  );
 
   // Detect the language of a post
-  eleventyConfig.addNunjucksAsyncFilter('detectLanguage', function (
-    post,
-    callback
-  ) {
-    cld.detect(post, function (err, result) {
-      if (err || !result.reliable) {
-        return callback(null, 'en');
-      }
-      return callback(null, result.languages[0].code);
-    });
-  });
+  eleventyConfig.addNunjucksAsyncFilter(
+    'detectLanguage',
+    function (post, callback) {
+      cld.detect(post, function (err, result) {
+        if (err || !result.reliable) {
+          return callback(null, 'en');
+        }
+        return callback(null, result.languages[0].code);
+      });
+    }
+  );
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter('head', (array, n) => {
@@ -79,8 +79,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('static');
   eleventyConfig.addPassthroughCopy('images');
-  eleventyConfig.addPassthroughCopy('css');
-  eleventyConfig.addPassthroughCopy('js');
   eleventyConfig.addPassthroughCopy('pgp_public_key.asc');
   eleventyConfig.addPassthroughCopy('favicon.ico');
   eleventyConfig.addPassthroughCopy('collect.php');

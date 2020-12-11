@@ -1,2 +1,5 @@
 README.md
 _11ty/
+js/
+css/
+postcss.config.js
