@@ -79,6 +79,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('static');
   eleventyConfig.addPassthroughCopy('images');
+  eleventyConfig.addPassthroughCopy('fonts');
   eleventyConfig.addPassthroughCopy('pgp_public_key.asc');
   eleventyConfig.addPassthroughCopy('favicon.ico');
   eleventyConfig.addPassthroughCopy('collect.php');

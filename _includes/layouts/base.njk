@@ -12,13 +12,11 @@
     <title>{{ renderData.title or title or metadata.title }}</title>
 
     <link rel="modulepreload" href="/js/dark-mode-toggle.min.mjs">
+    <link rel="modulepreload" href="/js/collect.mjs">
 
-    <link rel="preload" href="/css/light.css" as="style">
-    <link rel="preload" href="/css/dark.css" as="style">
     <link rel="preload" href="/css/main.css" as="style">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" as="style">
+    <link rel="preload" href="/fonts/ubuntu-v15-latin-regular.woff2" crossorigin as="font">
+    <link rel="preload" href="/fonts/ubuntu-mono-v10-latin-regular.woff2" crossorigin as="font">
 
     <script type="module">
       {% set js %}
@@ -55,12 +53,7 @@
             'paint',
           ],
         });
-      {% endset %}
-      {{ js | jsmin | safe }}
-    </script>
 
-    <script>
-      {% set js %}
         if (matchMedia('(prefers-color-scheme:dark)').media === 'not all') {
           document.documentElement.style.display = 'none';
           document.head.insertAdjacentHTML(
@@ -73,10 +66,9 @@
     </script>
     <script type="module" src="/js/dark-mode-toggle.min.mjs"></script>
 
-    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" media="not all" onload="this.media='all'">
     <link rel="stylesheet" href="/css/prism-theme.css" media="not all" onload="this.media='all'">
 
     <link rel="shortcut icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
@@ -84,8 +76,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
     <link rel="mask-icon" color="#ff8133" href="/static/safari-pinned-tab.svg">
 
-    <link rel="canonical" href="{{ page.url | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="canonical" href="https://blog.tomayac.com{{ page.url | url }}">
+    <link rel="alternate" href="https://blog.tomayac.com{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="author" href="https://tomayac.com/humans.txt" type="text/plain">
 
     <link rel="webmention" href="https://webmention.io/blog.tomayac.com/webmention">
@@ -140,7 +132,6 @@
     </script>
 
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
       <link rel="stylesheet" href="/css/prism-theme.css">
       <link rel="stylesheet" href="/css/light.css">
     </noscript>
