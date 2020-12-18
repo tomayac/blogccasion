@@ -4,7 +4,7 @@
       {% if webmention.author.photo %}
         <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy" class="author">
       {% else %}
-        <img src="{{ '/static/avatar.svg' | url }}" alt="" width="48" height="48" class="author">
+        <img src="{{ '/static/avatar.svg' | url }}" alt="" width="48" height="48" loading="lazy" class="author">
       {% endif %}
       <p>
         By
