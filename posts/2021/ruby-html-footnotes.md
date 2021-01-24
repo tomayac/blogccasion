@@ -331,7 +331,7 @@ and remix its
 ## Other approaches
 
 The "standards nerd and technology enthusiast"
-[Terrence Eden](https://shkspr.mobi/blog/about/) proposed to use `details` in a
+[Terence Eden](https://shkspr.mobi/blog/about/) proposed to use `details` in a
 blog post titled
 [A (terrible?) way to do footnotes in HTML](https://shkspr.mobi/blog/2020/12/a-terrible-way-to-do-footnotes-in-html/).
 Next, [Peter-Paul Koch](https://www.quirksmode.org/about/), web developer,
