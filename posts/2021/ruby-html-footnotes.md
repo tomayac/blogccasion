@@ -322,7 +322,6 @@ and remix its
   <iframe
     src="https://glitch.com/embed/#!/embed/ruby-footnotes?path=style.css&previewSize=100"
     title="ruby-footnotes on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     style="height: 100%; width: 100%; border: 0;"
     loading="lazy">
   </iframe>
