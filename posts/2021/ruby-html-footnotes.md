@@ -34,23 +34,23 @@ rendered as pop-up notes. You were supposed to use the element as in the code
 sample below (the inconsistent character casing _sic_).
 
 ```html
-<dl>
-  <dt>Hamlet:</dt>
-  <dd>
+<DL>
+  <DT>Hamlet:</DT>
+  <DD>
     You should not have believed me, for virtue cannot so
     <a href="#fn1">inoculate</a> our old stock but we shall
     <a href="#fn2">relish of it</a>. I loved you not.
-  </dd>
+  </DD>
 
-  <dt>Ophelia:</dt>
-  <dd>I was the more deceived.</dd>
+  <DT>Ophelia:</DT>
+  <DD>I was the more deceived.</DD>
 
-  <dt>Hamlet:</dt>
-  <dd>
+  <DT>Hamlet:</DT>
+  <DD>
     Get thee to a nunnery. Why wouldst thou be a breeder of sinners? I am myself
     <a href="#fn2">indifferent honest</a> ...
-  </dd>
-</dl>
+  </DD>
+</DL>
 
 <fn id="fn1"><i>inoculate</i> - graft</fn>
 <fn id="fn2"><i>relish of it</i> - smack of it (our old sinful nature)</fn>
