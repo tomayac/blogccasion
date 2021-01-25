@@ -327,6 +327,11 @@ and remix its
   </iframe>
 </div>
 
+⚠️ Please note that this is not production ready. Support seems decent on Blink/WebKit-based
+browsers, but [not so great](https://github.com/tomayac/blogccasion/issues/27) on Gecko-based
+browsers like Firefox. I have opened an [Issue](https://github.com/w3c/csswg-drafts/issues/5891)
+with the CSS Working Group to hear their opinion on the idea.
+
 ## Other approaches
 
 The "standards nerd and technology enthusiast"
