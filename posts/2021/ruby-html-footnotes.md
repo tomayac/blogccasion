@@ -307,7 +307,7 @@ to anything other than the UA stylesheet default, which is `block`. If you
 manage to get it to work such that footnote texts open inline, floating right
 under the footnote and not affecting the surrounding paragraph text, your help
 would be very welcome. I also still need to look into supporting printable
-footnotes. If you are interested, you can reach me and
+footnotes and fixing the RSS feed. If you are interested, you can reach me and
 [discuss this idea on Twitter](https://twitter.com/search?q=from%3A%40tomayac%20url%3Ahttps%3A%2F%2Fblog.tomayac.com%2F2021%2F01%2F24%2Fruby-html-footnotes%2F&src=typed_query&f=live).
 
 ## Demo
