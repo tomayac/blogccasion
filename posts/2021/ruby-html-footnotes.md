@@ -307,7 +307,8 @@ to anything other than the UA stylesheet default, which is `block`. If you
 manage to get it to work such that footnote texts open inline, floating right
 under the footnote and not affecting the surrounding paragraph text, your help
 would be very welcome. I also still need to look into supporting printable
-footnotes and fixing the RSS feed. If you are interested, you can reach me and
+footnotes, screen reader support, and fixing the RSS feed. If you are interested,
+you can reach me and
 [discuss this idea on Twitter](https://twitter.com/search?q=from%3A%40tomayac%20url%3Ahttps%3A%2F%2Fblog.tomayac.com%2F2021%2F01%2F24%2Fruby-html-footnotes%2F&src=typed_query&f=live).
 
 ## Demo
@@ -330,7 +331,17 @@ and remix its
 ⚠️ Please note that this is not production ready. Support seems decent on Blink/WebKit-based
 browsers, but [not so great](https://github.com/tomayac/blogccasion/issues/27) on Gecko-based
 browsers like Firefox. I have opened an [Issue](https://github.com/w3c/csswg-drafts/issues/5891)
-with the CSS Working Group to hear their opinion on the idea.
+with the CSS Working Group to hear their opinion on the idea, and the response was:
+
+> Although ruby was introduced to HTML & CSS primarily because of its use in Asian languages,
+  nothing about it is specific to that. Similarly, although it is often used to give a phonetic
+  pronunciation, ruby is not specific to that so other uses are okay.
+
+  And yes it is really odd that HTML has nothing for directly expressing an inline note (a
+  footnote is just one presentation possibility, more suitable to paginated content).
+
+  So I would not say it is an abuse. It is a bit creative, but mostly because people only think
+  of the most common use cases.
 
 ## Other approaches
 
