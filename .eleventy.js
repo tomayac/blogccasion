@@ -98,7 +98,7 @@ module.exports = function (eleventyConfig) {
   let opts = {
     permalink: true,
     permalinkClass: 'direct-link',
-    permalinkSymbol: '⚓',
+    permalinkSymbol: '🔗',
   };
 
   eleventyConfig.setLibrary(
