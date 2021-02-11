@@ -44,7 +44,7 @@ if (articleBody) {
           }
           try {
             navigator.clipboard.writeText(
-              `${location.origin}${location.pathname}#${heading.id}`,
+              `${location.origin}${location.pathname}#${heading.id}`
             );
             const temp = heading.innerHTML;
             heading.innerHTML += '&nbsp;<small>(📋 Copied)</small>';

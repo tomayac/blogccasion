@@ -8,17 +8,17 @@
       {% endif %}
       <p>
         By
-        <a href="{{ webmention.author.url or webmention.url }}" target="_blank" rel="noopener noreferrer">{{ webmention.author.name or webmention.url }}</a>.
+        <a href="{{ webmention.author.url or webmention.url }}" target="_blank" rel="noopener noreferrer nofollow">{{ webmention.author.name or (webmention.url | truncate(50, true, "[…]")) }}</a>.
         {% if webmention.published %}
           Written on
-          <time class="postlist-date" datetime="{{ webmention.published }}"><a href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">{{ webmention.published | readableDateFromISO }}</a></time>.
+          <time class="postlist-date" datetime="{{ webmention.published }}"><a href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer nofollow">{{ webmention.published | readableDateFromISO }}</a></time>.
         {% endif %}
       </p>
       <a class="webmention-anchor heading-effect" href="#webmention-{{ webmention['wm-id'] }}">⚓️</a>
     </div>
     {% if webmention.content.text %}
       <div class="webmention-content">
-        {{ webmention.content.text }}
+        {{ webmention.content.text | truncate(280, true, " […]") }}
       </div>
     {% endif %}
   </article>
