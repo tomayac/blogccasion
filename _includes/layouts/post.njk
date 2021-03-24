@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
-<article lang="{{ content | detectLanguage }}">
+<article lang="{{ language if language else "en" }}">
   <header>
     <a href="{{ page.url | url }}"><h1>{{ title }}</h1></a>
     <div lang="en" class="metadata post-date">

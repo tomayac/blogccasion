@@ -4,7 +4,6 @@ const fs = require('fs');
 const { minify } = require('terser');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const cld = require('cld');
 const filters = require('./_11ty/filters');
 
 module.exports = function (eleventyConfig) {
@@ -46,19 +45,6 @@ module.exports = function (eleventyConfig) {
         // Fail gracefully.
         callback(null, code);
       }
-    }
-  );
-
-  // Detect the language of a post
-  eleventyConfig.addNunjucksAsyncFilter(
-    'detectLanguage',
-    function (post, callback) {
-      cld.detect(post, function (err, result) {
-        if (err || !result.reliable) {
-          return callback(null, 'en');
-        }
-        return callback(null, result.languages[0].code);
-      });
     }
   );
 
