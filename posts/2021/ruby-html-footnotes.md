@@ -48,7 +48,7 @@ sample below (the inconsistent character casing _sic_).
   <DT>Hamlet:</DT>
   <DD>
     Get thee to a nunnery. Why wouldst thou be a breeder of sinners? I am myself
-    <a href="#fn2">indifferent honest</a> ...
+    <a href="#fn2">indifferent honest</a> …
   </DD>
 </DL>
 
@@ -104,7 +104,7 @@ number in square brackets.
 <p>
   Norman: I don't. <sup><a href="#fn1" id="r1">[1]</a></sup>
 </p>
-<p>Interviewer: You told me you did! ...</p>
+<p>Interviewer: You told me you did! …</p>
 
 <section>
   <p id="fn1">

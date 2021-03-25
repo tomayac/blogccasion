@@ -5,7 +5,7 @@ author: "Thomas Steiner"
 date: "2020-03-23T19:53:41"
 permalink: 2020/03/23/my-working-from-home-setup-during-covid-19/index.html
 tags:
-  - Private
+  - Life
 ---
 Google, like many other companies, has a required working from home (WFH) policy
 during the COVID-19 crisis.

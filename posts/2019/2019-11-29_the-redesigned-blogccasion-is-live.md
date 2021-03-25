@@ -5,7 +5,7 @@ author: "Thomas Steiner"
 date: "2019-11-29T16:02:43"
 permalink: 2019/09/29/the-redesigned-blogccasion-is-live/index.html
 tags:
-  - Private
+  - Life
 ---
 I started to blog way back in [2005](/2005/10/23/why-i-started-to-blog-010629/),
 and while I was skeptical whether it would work out and was worth my time,

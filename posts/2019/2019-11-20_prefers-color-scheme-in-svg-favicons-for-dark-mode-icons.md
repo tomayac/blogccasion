@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "`prefers-color-scheme` in SVG favicons for dark mode icons"
+title: "prefers-color-scheme in SVG favicons for dark mode icons"
 author: "Thomas Steiner"
 date: "2019-11-20T09:26:04"
 permalink: 2019/09/21/prefers-color-scheme-in-svg-favicons-for-dark-mode-icons/index.html

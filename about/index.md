@@ -6,33 +6,39 @@ tags:
 navtitle: About
 ---
 
-Please feel free to contact me. There are many ways to do so...
+This blog is run and operated by me, Thomas Steiner, since 2005.
+I'm a dad-of-3 and work as a
+[Chrome Developer Advocate](https://careers.google.com/jobs/results/?company=Google&company=Google&q=%22Developer%20Advocate%22%20%22Chrome%22)
+at [Google](https://www.google.com/) Hamburg.
+Almost needless to say:
+<span aria-label="love" role="img" class="heading-effect">🧡</span> the Web!
+You can read about [why I started this blog](/2005/10/23/why-i-started-to-blog-010629/)
+and its [current tech stack](/2019/09/29/the-redesigned-blogccasion-is-live/).
+Please feel free to contact me. There are many ways to do so…
 
 <div>
   <img style="border: 0; border-radius: 50%;" src="/images/thomas_steiner.jpg" alt="Thomas Steiner" width="200" height="200">
 </div>
-<b>Current Address:</b>
+
+## Address
 <p>
   Thomas Steiner<br>
   Neanderstr. 3<br>
   20459 Hamburg<br>
-  Germany<br>
+  Germany
 </p>
-<b>Email</b>
-<p>
-  Private: Steiner.Thomas [AT] gmail [DOT] com<br>
-  Work: { tomac [AT] google [DOT] com | info [AT] tomayac DOT com }
-</p>
-<b>Disclaimer</b>
-<p>
-  <i>Freedom of Speech</i>
-  <br>
-  The opinions expressed here are my own. Neither my employer nor any other party necessarily agrees with them.
-  <br>
-  <i>Links</i>
-  <br>
-   Links to third party websites are provided as an additional service. These pages are not within my sphere of influence. I    assume no responsibility for the content or availability of these pages or for the links provided here.<br>
-  <i>Copyleft</i>
-  <br>
-  This website and all texts, embedded graphics (i.e. not the graphics I link to) and other materials belonging to it are free for use and subject to the copyleft license. Should a third party believe itself to be the legal copyright holder of materials on this website, please inform me of this immediately.
-</p>
+
+## Email
+
+- **Private:** Steiner.Thomas [AT] gmail [DOT] com
+- **Work:** tomac [AT] google [DOT] com
+
+## Disclaimer
+
+The opinions expressed here are my own. Neither my employer nor any other party necessarily agrees with them.
+
+Links are provided for information and convenience only.
+I cannot accept responsibility for the sites linked to, or the information found there.
+A link does not imply an endorsement of a site; likewise, not linking to a particular site does
+not imply lack of endorsement.
+If you have any comments or complaints concerning a link, please contact me.
