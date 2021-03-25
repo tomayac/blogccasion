@@ -1,17 +1,18 @@
 ---
 layout: layouts/post.njk
-title: "Multi-MIME Type Copying with the Async Clipboard API"
-author: "Thomas Steiner"
-date: "2020-03-20T19:24:13"
+title: 'Multi-MIME Type Copying with the Async Clipboard API'
+author: 'Thomas Steiner'
+date: '2020-03-20T19:24:13'
 permalink: 2020/03/20/multi-mime-type-copying-with-the-async-clipboard-api/index.html
 tags:
   - Technical
 ---
+
 ## Copying an Image
 
 The [Asynchronous Clipboard API](https://w3c.github.io/clipboard-apis/#async-clipboard-api)
 provides direct access to read and write clipboard data.
-Apart from *text*, since Chrome&nbsp;76, you can also copy and paste *image* data with the API.
+Apart from _text_, since Chrome&nbsp;76, you can also copy and paste _image_ data with the API.
 For more details on this, check out my
 [article on web.dev](https://web.dev/image-support-for-async-clipboard/).
 Here's the gist of how copying an image blob works:
@@ -61,7 +62,7 @@ const paste = async () => {
   } catch (err) {
     console.error(err.name, err.message);
   }
-}
+};
 ```
 
 See how I first iterate over all `clipboardItems`
@@ -78,10 +79,10 @@ let me quickly derail to
 [server-driven content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation#Server-driven_content_negotiation), quoting straight from MDN:
 
 > In server-driven content negotiation, or proactive content negotiation, the browser
-  (or any other kind of user-agent) sends several HTTP headers along with the URL.
-  These headers describe the preferred choice of the user.
-  The server uses them as hints and an internal algorithm chooses the best content
-  to serve to the client.
+> (or any other kind of user-agent) sends several HTTP headers along with the URL.
+> These headers describe the preferred choice of the user.
+> The server uses them as hints and an internal algorithm chooses the best content
+> to serve to the client.
 
 ![Server-driven content negotiation diagram](/images/HTTPNegoServer.png)
 
@@ -91,7 +92,7 @@ A similar content negotiation mechanism takes place with copying.
 You have probably encountered this effect before
 when you have copied rich text, like formatted HTML, into a plain text field:
 the rich text is automatically converted to plain text.
-(💡 Pro tip: to force pasting into a rich text context *without* formatting,
+(💡 Pro tip: to force pasting into a rich text context _without_ formatting,
 use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>v</kbd> on Windows,
 or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>v</kbd> on macOS.)
 
@@ -99,11 +100,11 @@ So back to content negotiation with image copying.
 If you copy an SVG image, then open macOS
 [Preview](https://support.apple.com/guide/preview/welcome/mac),
 and finally click "File"&nbsp;>&nbsp;"New from Clipboard",
-you would probably expect an *image* to be pasted.
+you would probably expect an _image_ to be pasted.
 However, if you copy an SVG image and paste it into
 [Visual Studio Code](https://code.visualstudio.com/)
 or into [SVGOMG](https://jakearchibald.github.io/svgomg/)'s "Paste markup" field,
-you would probably expect the *source code* to be pasted.
+you would probably expect the _source code_ to be pasted.
 
 With multi-MIME type copying, you can achieve exactly that 🎉.
 Below is the code of a future-proof `copy` function and some helper methods
@@ -113,7 +114,7 @@ with the following functionality:
   based on the image's `alt` text attribute.
   For SVG images, it creates a textual representation based on the SVG source code.
 - At present, the Async Clipboard API only works with `image/png`,
-  but nevertheless the code *tries* to put a representation in the image's original MIME type
+  but nevertheless the code _tries_ to put a representation in the image's original MIME type
   into the clipboard, apart from a PNG representation.
 
 So in the generic case, for an SVG image, you would end up with three representations:
@@ -141,7 +142,7 @@ const copy = async (img) => {
   if (mimeType === 'image/svg+xml') {
     text = await toSourceBlob(img);
   } else {
-    text = new Blob([img.alt], {type: 'text/plain'})
+    text = new Blob([img.alt], { type: 'text/plain' });
   }
   const clipboardData = {
     'text/plain': text,
@@ -154,9 +155,7 @@ const copy = async (img) => {
     clipboardData[mimeType] = await toOriginBlob(img);
   }
   try {
-    await navigator.clipboard.write([
-      new ClipboardItem(clipboardData),
-    ]);
+    await navigator.clipboard.write([new ClipboardItem(clipboardData)]);
   } catch (err) {
     // Currently only `text/plain` and `image/png` are
     // implemented, so if there is a `NotAllowedError`,
@@ -164,12 +163,12 @@ const copy = async (img) => {
     console.warn(err.name, err.message);
     if (err.name === 'NotAllowedError') {
       const disallowedMimeType = err.message.replace(
-          /^.*?\s(\w+\/[^\s]+).*?$/, '$1')
+        /^.*?\s(\w+\/[^\s]+).*?$/,
+        '$1'
+      );
       delete clipboardData[disallowedMimeType];
       try {
-        await navigator.clipboard.write([
-          new ClipboardItem(clipboardData),
-        ]);
+        await navigator.clipboard.write([new ClipboardItem(clipboardData)]);
       } catch (err) {
         throw err;
       }
@@ -182,8 +181,7 @@ const copy = async (img) => {
 // Draws an image on an offscreen canvas
 // and converts it to a PNG blob.
 const toPNGBlob = async (img) => {
-  const canvas = new OffscreenCanvas(
-      img.naturalWidth, img.naturalHeight);
+  const canvas = new OffscreenCanvas(img.naturalWidth, img.naturalHeight);
   const ctx = canvas.getContext('2d');
   // This removes transparency. Remove at will.
   ctx.fillStyle = '#fff';
@@ -204,7 +202,7 @@ const toOriginBlob = async (img) => {
 const toSourceBlob = async (img) => {
   const response = await fetch(img.src);
   const source = await response.text();
-  return new Blob([source], {type: 'text/plain'});
+  return new Blob([source], { type: 'text/plain' });
 };
 ```
 

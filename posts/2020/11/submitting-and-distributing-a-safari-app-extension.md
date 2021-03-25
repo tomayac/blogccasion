@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Submitting and Distributing a Safari App Extension"
-author: "Thomas Steiner"
-date: "2020-11-09T10:41:29"
+title: 'Submitting and Distributing a Safari App Extension'
+author: 'Thomas Steiner'
+date: '2020-11-09T10:41:29'
 permalink: 2020/11/09/submitting-and-distributing-a-safari-app-extension/index.html
 tags:
   - Technical
 ---
+
 Safari 14 has
 [added support](https://developer.apple.com/documentation/safari-release-notes/safari-14-release-notes#New-Features:~:text=Added%20Safari%20Web%20Extensions%20support%20for%20macOS.)
 for the

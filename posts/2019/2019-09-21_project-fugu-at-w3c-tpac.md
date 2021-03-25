@@ -1,20 +1,21 @@
 ---
 layout: layouts/post.njk
-title: "Project Fugu 🐡 at W3C TPAC"
-author: "Thomas Steiner"
-date: "2019-09-21T16:03:15"
+title: 'Project Fugu 🐡 at W3C TPAC'
+author: 'Thomas Steiner'
+date: '2019-09-21T16:03:15'
 permalink: 2019/09/21/project-fugu-at-w3c-tpac/index.html
 tags:
   - Technical
 ---
+
 This week, I attended my now third <abbr title="World Wide Web Consortium">W3C</abbr>
 <abbr title="Technical Plenary and Advisory Committee">TPAC</abbr>.
 After [TPAC&nbsp;2017](https://www.w3.org/2017/11/TPAC/Overview.html)
 in Burlingame,&nbsp;CA, United States of America and
 [TPAC&nbsp;2018](https://www.w3.org/2018/10/TPAC/) in Lyon, France,
 [TPAC&nbsp;2019](https://www.w3.org/2019/09/TPAC/Overview.html) was held in Fukuoka, Japan.
-For the first time, I felt like I could *somewhat meaningfully* contribute and
-had at least a *baseline understanding* of the underlying W3C mechanics.
+For the first time, I felt like I could _somewhat meaningfully_ contribute and
+had at least a _baseline understanding_ of the underlying W3C mechanics.
 As each year, the [TPAC agenda](https://www.w3.org/2019/09/TPAC/schedule.html) was crammed
 and overlaps were unavoidable.
 Below is the write-up of the meetings I had time to attend.
@@ -210,25 +211,25 @@ the minutes for [day&nbsp;1](https://www.w3.org/2019/09/19-dap-minutes.html) and
 
 #### Conclusion
 
-As I wrote in the beginning, TPAC *slowly* starts to feel like a venue
+As I wrote in the beginning, TPAC _slowly_ starts to feel like a venue
 where I can make some valuable contributions.
 [Rowan Merewood](https://twitter.com/rowan_m) put it like this in a
 [tweet](https://twitter.com/rowan_m/status/1173808373436862464):
 
 > The biggest thing I'm learning at
-  [[#W3Ctpac](https://twitter.com/hashtag/w3ctpac?src=hashtag_click)]
-  is if you want to change the web,
-  it's a surprisingly small group of people you need to convince.
-  The surrounding appearance of the W3C and all its language is intimidating,
-  but underneath it's just other human beings you can talk to.
+> [[#W3Ctpac](https://twitter.com/hashtag/w3ctpac?src=hashtag_click)]
+> is if you want to change the web,
+> it's a surprisingly small group of people you need to convince.
+> The surrounding appearance of the W3C and all its language is intimidating,
+> but underneath it's just other human beings you can talk to.
 
 To which [Mariko Kosaka](https://twitter.com/kosamari) fittingly
 [responds](https://twitter.com/kosamari/status/1173811848518356993):
 
 > [Y]eah, but let's not forget getting to talk to that small set of people
-  most often comes with being very, very, very privileged. […]
+> most often comes with being very, very, very privileged. […]
 
-It's indeed a *massive privilege* to work for a company that has the money
+It's indeed a _massive privilege_ to work for a company that has the money
 to take part in W3C activities, fly people across the world, and let them
 stay in five star conference hotels.
 With all the love for the web and all the great memories of a fantastic TPAC,

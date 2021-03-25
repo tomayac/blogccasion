@@ -1,19 +1,20 @@
 ---
 layout: layouts/post.njk
-title: "My Working From Home Setup During COVID-19"
-author: "Thomas Steiner"
-date: "2020-03-23T19:53:41"
+title: 'My Working From Home Setup During COVID-19'
+author: 'Thomas Steiner'
+date: '2020-03-23T19:53:41'
 permalink: 2020/03/23/my-working-from-home-setup-during-covid-19/index.html
 tags:
   - Life
 ---
+
 Google, like many other companies, has a required working from home (WFH) policy
 during the COVID-19 crisis.
 It has taken me a bit, but now I have found a decent WFH setup.
 
 ## The Hardware
 
-- A [MacBook Air (Retina, 13-inch, 2018)](https://en.wikipedia.org/wiki/MacBook_Air#Third_generation_(Retina_and_USB-C)):
+- A [MacBook Air (Retina, 13-inch, 2018)](<https://en.wikipedia.org/wiki/MacBook_Air#Third_generation_(Retina_and_USB-C)>):
   This is simply the corporate machine I had before.
   Its keyboard is still working fine, but for ergonomic reasons, I have an external wired
   [Apple A1243 keyboard](https://en.wikipedia.org/wiki/Apple_Keyboard#/media/File:Apple_Keyboard_with_Numeric_Keyboard_9612.jpg)

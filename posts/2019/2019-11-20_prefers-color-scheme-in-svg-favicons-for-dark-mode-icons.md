@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "prefers-color-scheme in SVG favicons for dark mode icons"
-author: "Thomas Steiner"
-date: "2019-11-20T09:26:04"
+title: 'prefers-color-scheme in SVG favicons for dark mode icons'
+author: 'Thomas Steiner'
+date: '2019-11-20T09:26:04'
 permalink: 2019/09/21/prefers-color-scheme-in-svg-favicons-for-dark-mode-icons/index.html
 tags:
   - Technical
 ---
+
 🎉 Chrome finally accepts SVG favicons now that [crbug.com/294179](https://crbug.com/294179),
 where this feature was demanded on September 18, 2013(!), was fixed.
 This means that you can style your icon with inline [`prefers-color-scheme`](https://web.dev/prefers-color-scheme)
@@ -28,13 +29,13 @@ and you'll get two icons for the price of one!
       }
     }
   </style>
-  <circle cx="50" cy="50" r="47"/>
+  <circle cx="50" cy="50" r="47" />
 </svg>
 ```
 
 ```html
 <!-- index.html -->
-<link rel="icon" href="/icon.svg">
+<link rel="icon" href="/icon.svg" />
 ```
 
 You can see a demo of this in action at 🌒 [dark-mode-favicon.glitch.me](https://dark-mode-favicon.glitch.me/) ☀️.

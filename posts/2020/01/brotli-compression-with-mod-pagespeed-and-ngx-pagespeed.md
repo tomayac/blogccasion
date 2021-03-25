@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Brotli Compression with mod_pagespeed and ngx_pagespeed"
-author: "Thomas Steiner"
-date: "2020-01-24T09:58:47"
+title: 'Brotli Compression with mod_pagespeed and ngx_pagespeed'
+author: 'Thomas Steiner'
+date: '2020-01-24T09:58:47'
 permalink: 2020/01/24/brotli-compression-with-mod-pagespeed-and-ngx-pagespeed/index.html
 tags:
   - Technical
 ---
+
 The [PageSpeed](https://www.modpagespeed.com/) modules
 (not to be confused with the
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
@@ -17,7 +18,7 @@ for the [Apache](https://httpd.apache.org/) server and
 [ngx_pagespeed](https://github.com/apache/incubator-pagespeed-ngx)
 for the [Nginx](https://www.nginx.com/) server.
 For example, PageSpeed can automatically create WebP versions for all your image resources,
-and conditionally *only* serve the format to clients that accept `image/webp`.
+and conditionally _only_ serve the format to clients that accept `image/webp`.
 I use it on this very blog, inspect a request to [any JPEG image](/images/thomas_steiner_small.jpg)
 and see how on supporting browsers it gets served as WebP.
 
@@ -60,7 +61,7 @@ To do so, simply disable PageSpeed's HTTPCache Compression.
 Quoting from the [documentation](https://www.modpagespeed.com/doc/system#gzip_cache):
 
 > To configure cache compression, set `HttpCacheCompressionLevel` to values between `-1` and `9`,
-  with `0` being off, `-1` being `gzip`'s default compression, and `9` being maximum compression.
+> with `0` being off, `-1` being `gzip`'s default compression, and `9` being maximum compression.
 
 📢 So to make PageSpeed work with Brotli, what you want in your
 [`pagespeed.conf`](https://github.com/apache/incubator-pagespeed-mod/blob/master/install/common/pagespeed.conf.template)

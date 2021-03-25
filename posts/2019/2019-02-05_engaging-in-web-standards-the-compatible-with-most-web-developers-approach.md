@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Engaging in Web Standards—The “Compatible with Most Web Developers” Approach"
-description: "At Google, we have a humbling 👌(!) team of amazing Google Developer Experts that specialize on Web Technologies. The other day, one of them on a mailing list suggested the following feature…"
-date: "2019-02-05T17:02:06.441Z"
+title: 'Engaging in Web Standards—The “Compatible with Most Web Developers” Approach'
+description: 'At Google, we have a humbling 👌(!) team of amazing Google Developer Experts that specialize on Web Technologies. The other day, one of them on a mailing list suggested the following feature…'
+date: '2019-02-05T17:02:06.441Z'
 permalink: 2019/02/05/engaging-in-web-standards-the-compatible-with-most-web-developers-approach/index.html
 tags:
   - Technical
 ---
+
 > 😨📖 **tl;dr:** Whether you want to add something new to an already existing feature or propose a completely new one, it all starts with finding out in what organization the standardization process for this kind of feature happens and where this organization’s discussions take place. This post suggests a possible approach to engaging in standardization work in a meaningful way for regular web developers whose day job is not standards by following along a step-by-step real-world example that takes you through the journey and encourages you to make your voice heard.
 
 At Google, we have a humbling 👌(!) team of amazing [Google Developer Experts that specialize on Web Technologies](https://developers.google.com/experts/all/technology/web-technologies). The other day, one of them on a mailing list suggested the following feature (paraphrased from the email thread): “Consider adding support for a `titlecase` keyword for the CSS [`text-transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) property”. They explained:
@@ -18,8 +19,6 @@ At first sight, `text-transform: titlecase` sounds like a reasonable thing for C
 #### Ten Things CSS Can Do, the Eighth Will Make You Cry
 
 Note how the article _“the”_ is lower case, everything else upper case. According to the (randomly chosen) [title casing service](https://titlecase.com/) that I have used to do the conversion, this style is called [_Associated Press (AP)_ Style](https://www.apstylebook.com/). Just sad 😕 that the _AP Stylebook_ Twitter account some time ago tweeted the following:
-
-
 
 🤔 This already smells like trouble. Are there no simple rules after all maybe? The person who suggested the feature continued their email (again paraphrased and emphasis mine):
 
@@ -37,28 +36,28 @@ There is a clear use case (“correct” title capitalization) and an existing C
 
 > ⚠️ **Note:** The bullet list below is modeled along the running example of `text-transform`, follow the 🔗 link after each bullet to see where I am at in my process. This is not meant to be a generic “contributing to standards” guide, but with the help of a concrete example shows how one possible approach can look like.
 
--   ① Mozilla Developer Network (MDN) has become my go-to location for information about Open Web technologies, so my journey to see if `text-transform` could potentially support `titlecase` begins with a search for the **feature in question on MDN**. First, I want to see if the feature or a similar one was maybe already implemented, but mostly to get a spec link that I can dive into. (🔗 [link](https://www.google.de/search?q=mdn+css+text-transform&oq=mdn+css+text-transform&aqs=chrome..69i57.877j0j1&sourceid=chrome&ie=UTF-8))
--   ② I want to understand the status quo of the feature as it is specified. At the end of the documentation page, I find links to the **appropriate specs**, typically I begin with the latest. (🔗 [link](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform#Specifications))
--   ③ Next, I find the **details of the feature in question** somewhere in the spec. Typically MDN already has the correct deep link, and if not, it is a Wiki that everyone signed in to MDN can edit 😉. (🔗 [link](https://drafts.csswg.org/css-text-3/#propdef-text-transform))
+- ① Mozilla Developer Network (MDN) has become my go-to location for information about Open Web technologies, so my journey to see if `text-transform` could potentially support `titlecase` begins with a search for the **feature in question on MDN**. First, I want to see if the feature or a similar one was maybe already implemented, but mostly to get a spec link that I can dive into. (🔗 [link](https://www.google.de/search?q=mdn+css+text-transform&oq=mdn+css+text-transform&aqs=chrome..69i57.877j0j1&sourceid=chrome&ie=UTF-8))
+- ② I want to understand the status quo of the feature as it is specified. At the end of the documentation page, I find links to the **appropriate specs**, typically I begin with the latest. (🔗 [link](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform#Specifications))
+- ③ Next, I find the **details of the feature in question** somewhere in the spec. Typically MDN already has the correct deep link, and if not, it is a Wiki that everyone signed in to MDN can edit 😉. (🔗 [link](https://drafts.csswg.org/css-text-3/#propdef-text-transform))
 
 > ☝️**Side Note:** My colleague [Surma](https://twitter.com/DasSurma) has written an excellent guide on [how to read web specs](https://dassur.ma/things/reading-specs/) at the example of WebVR.
 
--   ④ As hard as it may initially seem if you are new to spec prose (I am), personally, I always strive to **read (at least enough of) the spec** to understand the complete background (your browser’s full text search feature helps). I fully reckon this is not everybody’s cup of tea, so feel free to skip this. Here, it turns out the CSS spec already says something about “titlecasing” (emphasis mine):
+- ④ As hard as it may initially seem if you are new to spec prose (I am), personally, I always strive to **read (at least enough of) the spec** to understand the complete background (your browser’s full text search feature helps). I fully reckon this is not everybody’s cup of tea, so feel free to skip this. Here, it turns out the CSS spec already says something about “titlecasing” (emphasis mine):
 
 > “Authors should not expect `capitalize` to follow language-specific 👉 **titlecasing** conventions (such as skipping articles in English) \[…\]”—(🔗 [link](https://drafts.csswg.org/css-text-3/#text-transform-property))
 
--   ⑤ So it looks like the designers of CSS had at least thought about title casing, but decided against it. However, the spec did not give their reasons, so I go in search of the history and find the **GitHub issues** linked at the top in the spec’s front matter where discussions might have happened regarding this design decision. (🔗 [link](https://github.com/w3c/csswg-drafts/issues))
--   ⑥ I search for the relevant keywords in **closed and open issues** (note that by default GitHub search covers just open issues). (🔗 [link](https://github.com/w3c/csswg-drafts/issues?utf8=%E2%9C%93&q=is%3Aissue++text-transform++capitalize))
--   ⑦ In this case, I do not find anything super promising `¯\_(ツ)_/¯` , so I **go back** to the [appropriate spec options list](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform#Specifications) from bullet ② and recall that the `text-transform` feature has been in earlier versions of CSS, that is, before CSS3. (🔗 [CSS2 link](https://www.w3.org/TR/CSS2/text.html#caps-prop), 🔗 [CSS1 link](https://www.w3.org/TR/CSS1/#text-transform))
--   ⑧ By reading the older specs’ front matters, I realize that discussions happened on **mailing lists** before GitHub became a thing 😲. (🔗 [link](http://lists.w3.org/Archives/Public/www-style/))
--   ⑨ With the previous keywords and variations thereof (this is not fuzzy search), I **search the mailing list archive** for evidence of the discussion. (🔗 [link](https://www.w3.org/Search/Mail/Public/search?type-index=www-style&index-type=t&keywords=text-transform+capitalize&search=Search))
--   ⑩ I find an **old discussion** from 2015 where people talk about title capitalization. (🔗 [link](https://lists.w3.org/Archives/Public/www-style/2015Jan/0422.html))
--   ⑪ Next, I trace back the argumentation history by following the **“Next in thread”** navigation of the mailing list archive. (🔗 [link](https://lists.w3.org/Archives/Public/www-style/2015Jan/0423.html))
--   ⑫ After a while, I **find** [Tab Atkins](https://twitter.com/tabatkins) chime in the discussion at one point:
+- ⑤ So it looks like the designers of CSS had at least thought about title casing, but decided against it. However, the spec did not give their reasons, so I go in search of the history and find the **GitHub issues** linked at the top in the spec’s front matter where discussions might have happened regarding this design decision. (🔗 [link](https://github.com/w3c/csswg-drafts/issues))
+- ⑥ I search for the relevant keywords in **closed and open issues** (note that by default GitHub search covers just open issues). (🔗 [link](https://github.com/w3c/csswg-drafts/issues?utf8=%E2%9C%93&q=is%3Aissue++text-transform++capitalize))
+- ⑦ In this case, I do not find anything super promising `¯\_(ツ)_/¯` , so I **go back** to the [appropriate spec options list](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform#Specifications) from bullet ② and recall that the `text-transform` feature has been in earlier versions of CSS, that is, before CSS3. (🔗 [CSS2 link](https://www.w3.org/TR/CSS2/text.html#caps-prop), 🔗 [CSS1 link](https://www.w3.org/TR/CSS1/#text-transform))
+- ⑧ By reading the older specs’ front matters, I realize that discussions happened on **mailing lists** before GitHub became a thing 😲. (🔗 [link](http://lists.w3.org/Archives/Public/www-style/))
+- ⑨ With the previous keywords and variations thereof (this is not fuzzy search), I **search the mailing list archive** for evidence of the discussion. (🔗 [link](https://www.w3.org/Search/Mail/Public/search?type-index=www-style&index-type=t&keywords=text-transform+capitalize&search=Search))
+- ⑩ I find an **old discussion** from 2015 where people talk about title capitalization. (🔗 [link](https://lists.w3.org/Archives/Public/www-style/2015Jan/0422.html))
+- ⑪ Next, I trace back the argumentation history by following the **“Next in thread”** navigation of the mailing list archive. (🔗 [link](https://lists.w3.org/Archives/Public/www-style/2015Jan/0423.html))
+- ⑫ After a while, I **find** [Tab Atkins](https://twitter.com/tabatkins) chime in the discussion at one point:
 
-> “It’s a ton of effort and complication for something that won’t even work for most content (since most content isn’t language-tagged), and so not really worth pursuing.”_—(_🔗 [_link_](https://lists.w3.org/Archives/Public/www-style/2015Jan/0451.html)_)_
+> “It’s a ton of effort and complication for something that won’t even work for most content (since most content isn’t language-tagged), and so not really worth pursuing.”*—(*🔗 [_link_](https://lists.w3.org/Archives/Public/www-style/2015Jan/0451.html)_)_
 
--   ⑬ Ultimately, I **read** Tab’s final resolution:
+- ⑬ Ultimately, I **read** Tab’s final resolution:
 
 > “I agree that that’s not great, but as others in this thread have said, it’s really not possible to do better without very high levels of domain knowledge, and even then manual tweaks are necessary (for example, for acronyms that look like real words). CSS’s auto-capitalization is pretty dumb; don’t rely on it if you want high-quality capitalization.”—(🔗 [link](https://lists.w3.org/Archives/Public/www-style/2015Jan/0467.html))
 

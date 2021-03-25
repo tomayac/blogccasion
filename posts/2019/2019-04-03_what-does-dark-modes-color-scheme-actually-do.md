@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "What Does Dark Mode’s “color-scheme” Actually Do? 🤔"
-description: "This is actually talking about a new meta tag <meta name=\"color-scheme\"> and a CSS property color-scheme that were both proposed in a CSS WG GitHub issue (under the old name supported-color-schemes)…"
-date: "2019-04-03T10:36:26.499Z"
+title: 'What Does Dark Mode’s “color-scheme” Actually Do? 🤔'
+description: 'This is actually talking about a new meta tag <meta name="color-scheme"> and a CSS property color-scheme that were both proposed in a CSS WG GitHub issue (under the old name supported-color-schemes)…'
+date: '2019-04-03T10:36:26.499Z'
 permalink: 2019/04/03/what-does-dark-modes-color-scheme-actually-do/index.html
 tags:
   - Technical
 ---
+
 The [Release Notes of Safari Technology Preview 71](https://webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/) mentioned two new dark mode features:
 
 > • Added experimental support for a `supported-color-schemes` CSS property ([r238001](https://trac.webkit.org/changeset/238001/webkit/)).
@@ -56,9 +57,9 @@ Now back to the meta tag and the CSS property (that has the same behavior as the
 
 Here are some of the values the meta tag and the CSS property can take (quoted from [Simon Fraser](https://github.com/smfr)’s [GitHub Issue text](https://github.com/w3c/csswg-drafts/issues/3299#issue-378507535), _italic_ emphasis mine):
 
--   `light dark`—The UA will choose the light or dark theme to match the user’s preference. _If the user’s preference does not match something in the list, the UA is allowed to apply transformations to the content_.
--   `only` (synonym for `light only`—The UA will only ever render the content in the light color scheme, _and never apply transformations_.
--   `light dark only`—The UA will choose the first of the listed schemes that it supports taking user preference into account, _and never apply transformations_.
+- `light dark`—The UA will choose the light or dark theme to match the user’s preference. _If the user’s preference does not match something in the list, the UA is allowed to apply transformations to the content_.
+- `only` (synonym for `light only`—The UA will only ever render the content in the light color scheme, _and never apply transformations_.
+- `light dark only`—The UA will choose the first of the listed schemes that it supports taking user preference into account, _and never apply transformations_.
 
 So iff (if, and only if) you know what you’re doing, in combination with `only`, you can then design things like your form controls to have no such transformations. In most cases, leaving it to the UA might be the better choice, as you can see in the example below, where, while in dark mode, I force my form controls to look like `light only`.
 

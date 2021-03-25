@@ -1,8 +1,8 @@
 ---
 layout: layouts/post.njk
-title: "Play the Chrome dino game on your Nintendo Switch"
-author: "Thomas Steiner"
-date: "2020-11-04T12:31:32"
+title: 'Play the Chrome dino game on your Nintendo Switch'
+author: 'Thomas Steiner'
+date: '2020-11-04T12:31:32'
 permalink: 2020/11/04/play-the-chrome-dino-game-on-your-nintendo-switch/index.html
 tags:
   - Technical
@@ -37,7 +37,7 @@ that simulates a captive portal that then redirects to a search engine.
    find the Wi-Fi network that your Switch is connected to. Tap **Change Settings**.
 1. Find the section with the **DNS Settings** and add
    [45.55.142.122](http://45.55.142.122) as a new **Primary DNS**.
-   Note that this DNS server is *not operated by me*
+   Note that this DNS server is _not operated by me_
    but a [third-party](https://www.switchbru.com/dns/), so proceed at your own risk.
 1. **Save** the settings and then tap **Connect to This Network**.
 1. The Switch will tell you that **Registration is required to use this network**. Tap **Next**.

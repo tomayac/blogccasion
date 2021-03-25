@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Progressive Web App Progress in iOS 12.2 Beta 1 (Build 16E5181f)"
-description: "As a regular (and passionate) iOS user with a strong belief in the Web, I beta-test any and all new iOS builds as soon as I can get my hands on them. My main motivation is to see how they do when it…"
-date: "2019-01-28T15:27:11.009Z"
+title: 'Progressive Web App Progress in iOS 12.2 Beta 1 (Build 16E5181f)'
+description: 'As a regular (and passionate) iOS user with a strong belief in the Web, I beta-test any and all new iOS builds as soon as I can get my hands on them. My main motivation is to see how they do when it…'
+date: '2019-01-28T15:27:11.009Z'
 permalink: 2019/01/28/progressive-web-app-progress-in-ios-12.2-beta-1-build-16e5181f/index.html
 tags:
   - Technical
 ---
+
 As a regular (and passionate) iOS user with a strong belief in the Web, I beta-test any and all new iOS builds as soon as I can get my hands on them. My main motivation is to see how they do when it comes to Progressive Web App features. Each new iOS version comes with a new version of Safari, yet changes in Safari tend to almost never get highlighted in the iOS release notes (and the [12.2 beta 1 release notes](https://developer.apple.com/documentation/ios_release_notes/ios_12_2_beta_release_notes) were no exception). So my routine is to fire up my [🕵️‍♂️ PWA Feature Detector](https://tomayac.github.io/pwa-feature-detector/)—a simple testing tool described in an accompanying [📄 research paper](https://ai.google/research/pubs/pub46739)—and to look for potential changes myself.
 
 ![[Research paper](https://ai.google/research/pubs/pub46739) “What is in a Web View? An Analysis of Progressive Web App Features When the Means of Web Access is not a Web Browser”.](/images/asset-1.png)
@@ -74,8 +75,6 @@ Concluding, this is **one heck of a release for Progressive Web Apps**, and I am
 
 While admittedly at times it might feel like shouting into a forrest, [sending feedback](https://webkit.org/reporting-bugs/) helps, or as  WebKit engineer [Chris Dumez](https://twitter.com/chris_dumez) put it…
 
-
-
 📢 So here is my call to action for universally great PWA support to all Safari users out there: **let us keep the WebKit team busy by filing bugs and commenting on existing ones**! They are listening! With experimental features included, [🕵️‍♂️ PWA Feature Detector](https://tomayac.github.io/pwa-feature-detector/) now makes Safari have four checkmarks ‘✔’, here is to the WebKit team to add some more!
 
 👉 If you want **Push Notifications** support, chime in on [WebKit Bug 182566](https://bugs.webkit.org/show_bug.cgi?id=182566).
@@ -91,8 +90,6 @@ While admittedly at times it might feel like shouting into a forrest, [sending f
 ☝️ If you **do not see your issue**, [file a new bug](https://webkit.org/new-bug) 🆕. Duplication is fine according to the WebKit team. Use a company email address, tell them why and who needs the feature, and how many of your iOS users are missing out.
 
 **Update:** Apple’s [Maciej Stachowiak](https://twitter.com/othermaciej) clarified the following points about how the team would like to receive feedback on their bug tracker:
-
-
 
 #### Acknowledgements
 

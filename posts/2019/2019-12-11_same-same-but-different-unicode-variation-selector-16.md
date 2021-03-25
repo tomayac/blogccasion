@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Same same but different: Unicode Variation Selector-16"
-author: "Thomas Steiner"
-date: "2019-12-12T12:55:16"
+title: 'Same same but different: Unicode Variation Selector-16'
+author: 'Thomas Steiner'
+date: '2019-12-12T12:55:16'
 permalink: 2019/12/12/same-same-but-different-unicode-variation-selector-16/index.html
 tags:
   - Technical
 ---
+
 The other day, I did an [analysis of Facebook's WebView](/2019/12/09/inspecting_facebooks_webview/),
 which you are kindly invited to read.
 They have a code path in which they check whether a given page is using [AMPHTML](https://amp.dev/),
@@ -16,19 +17,22 @@ of the [⚡ High Voltage emoji](https://emojipedia.org/high-voltage-sign/).
 
 ```js
 var nvtiming__fb_html_amp =
-  nvtiming__fb_html.hasAttribute("amp") ||
-  nvtiming__fb_html.hasAttribute("\u26A1");
-console.log("FBNavAmpDetect:" + nvtiming__fb_html_amp);
+  nvtiming__fb_html.hasAttribute('amp') ||
+  nvtiming__fb_html.hasAttribute('\u26A1');
+console.log('FBNavAmpDetect:' + nvtiming__fb_html_amp);
 ```
+
 ## An undetected fake AMP page
 
 I was curious to see if they did something special when they detect a page is using AMP
 (spoiler alert: they do not),
-so I quickly hacked together a fake AMP page that *seemingly* fulfilled their simple test.
+so I quickly hacked together a fake AMP page that _seemingly_ fulfilled their simple test.
 
 ```html
 <html ⚡️>
-  <body>Fake AMP</body>
+  <body>
+    Fake AMP
+  </body>
 </html>
 ```
 

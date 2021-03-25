@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "The redesigned Blogccasion is live"
-author: "Thomas Steiner"
-date: "2019-11-29T16:02:43"
+title: 'The redesigned Blogccasion is live'
+author: 'Thomas Steiner'
+date: '2019-11-29T16:02:43'
 permalink: 2019/09/29/the-redesigned-blogccasion-is-live/index.html
 tags:
   - Life
 ---
+
 I started to blog way back in [2005](/2005/10/23/why-i-started-to-blog-010629/),
 and while I was skeptical whether it would work out and was worth my time,
 I just tried it and danced 💃 and wrote like no one was watching
@@ -70,9 +71,9 @@ Here're the resources that helped me build the new Blogccasion:
   and the [Tufte CSS](https://github.com/edwardtufte/tufte-css) code.
 - The SVG icons are from the [SuperTinyIcons](https://github.com/edent/SuperTinyIcons) project.
 - Some of the CSS is based on Mozilla's [CSS Remedy](https://github.com/mozdevs/cssremedy) project.
-- Last not least, the *Valid HTML5* badge is inspired by [Bradley Taunt](https://bradleytaunt.com/)'s
+- Last not least, the _Valid HTML5_ badge is inspired by [Bradley Taunt](https://bradleytaunt.com/)'s
   article [Using HTML Validator Badges Again](https://bradleytaunt.com/html5-validator-badge/).
-- The *Synthwave '84* code theme for Visual Studio Code originally is from [Robb Owen](https://twitter.com/Robb0wen).
+- The _Synthwave '84_ code theme for Visual Studio Code originally is from [Robb Owen](https://twitter.com/Robb0wen).
   I'm using the port for [PrismJS](https://prismjs.com/) by [Marc Backes](https://twitter.com/_marcba).
 
 🙏 Thanks everyone for letting me stand on your shoulders!
@@ -82,5 +83,5 @@ There're still some rough edges, so if you encounter a problem, please report an
 It's well-known that there're a lot of encoding errors in the older posts.
 At some point I broke my database in an attempt to convert it to UTF-8 🤦‍♂️…
 If you care, you can also propose an edit straightaway,
-the *edit this page on GitHub* link is 👇 at the bottom of each post.
+the _edit this page on GitHub_ link is 👇 at the bottom of each post.
 Thanks, and welcome to the new [Blogccasion](/).

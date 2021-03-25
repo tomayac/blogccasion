@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
 title: "Inspecting Facebook's WebView"
-author: "Thomas Steiner"
-date: "2019-12-09T18:13:49"
+author: 'Thomas Steiner'
+date: '2019-12-09T18:13:49'
 permalink: 2019/12/09/inspecting-facebooks-webview/index.html
 tags:
   - Technical
 ---
+
 Both
 [Facebook's Android app](https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en)
 as well as
@@ -20,7 +21,7 @@ Technically, IABs are implemented as
 [`WebView`](https://developer.android.com/reference/android/webkit/WebView)s on Android,
 respectively as
 [`WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview)s on iOS.
-To simplify things, from hereon, I will refer to both simply as *WebViews*.
+To simplify things, from hereon, I will refer to both simply as _WebViews_.
 
 ## In-App Browsers are less capable than real browsers
 
@@ -38,12 +39,12 @@ and then click through, or try to open my
 
 ## In-App Browsers can modify webpages
 
-On top of limited features, WebViews *can* also be used for effectively conducting intended
+On top of limited features, WebViews _can_ also be used for effectively conducting intended
 [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack),
 since the IAB developer can arbitrarily
-[inject JavaScript code](https://developer.android.com/reference/android/webkit/WebView#addJavascriptInterface(java.lang.Object,%20java.lang.String))
+[inject JavaScript code](<https://developer.android.com/reference/android/webkit/WebView#addJavascriptInterface(java.lang.Object,%20java.lang.String)>)
 and also
-[intercept network traffic](https://developer.android.com/reference/android/webkit/WebViewClient.html#shouldInterceptRequest(android.webkit.WebView,%20android.webkit.WebResourceRequest)).
+[intercept network traffic](<https://developer.android.com/reference/android/webkit/WebViewClient.html#shouldInterceptRequest(android.webkit.WebView,%20android.webkit.WebResourceRequest)>).
 Most of the time, this feature is used for good.
 For example, an airline company might reuse the 💺 airplane seat selector logic
 on both their native app as well as on their Web app.
@@ -61,7 +62,7 @@ or the iOS counterpart
 [`SFSafariViewController`](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller).
 Alex [writes](https://twitter.com/slightlylate/status/1167567508619948032):
 
-> Note that responsible native apps *have* a way of creating an "in app browser" that doesn't subvert user choice or break the web:
+> Note that responsible native apps _have_ a way of creating an "in app browser" that doesn't subvert user choice or break the web:
 >
 > https://developer.chrome.com/multidevice/android/customtabs
 >
@@ -116,7 +117,7 @@ looks something like `Mozilla/5.0 (Linux; Android 5.1.1; Nexus 5 Build/LMY48B; w
 Facebook's IAB browser currently sends this:
 
 ```js
-navigator.userAgent
+navigator.userAgent;
 // "Mozilla/5.0 (Linux; Android 10; Pixel 3a Build/QQ2A.191125.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.108 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/250.0.0.14.241;]"
 ```
 
@@ -127,9 +128,9 @@ Compared to the default `user-agent` string, the identifying bit is the suffix `
 Facebook's IAB adds two new properties to `window`, with the values `0` and `1`.
 
 ```js
-window.TEMPORARY
+window.TEMPORARY;
 // 0
-window.PERSISTENT
+window.PERSISTENT;
 // 1
 ```
 
@@ -138,7 +139,7 @@ window.PERSISTENT
 Facebook further adds a new `window` object `FbQuoteShareJSInterface`.
 
 ```js
-document.onselectionchange = function() {
+document.onselectionchange = function () {
   window.FbQuoteShareJSInterface.onSelectionChange(
     window.getSelection().toString(),
     window.location.href
@@ -159,9 +160,9 @@ They also check if a given page is using [AMP](https://amp.dev/)
 by checking for the presence of the `amp` or `⚡️` attribute on `<html>`.
 
 ```js
-void (function() {
+void (function () {
   try {
-    if (window.location.href === "about:blank") {
+    if (window.location.href === 'about:blank') {
       return;
     }
     if (
@@ -177,25 +178,25 @@ void (function() {
     }
     var nvtiming__fb_t = window.performance.timing;
     if (nvtiming__fb_t.responseEnd > 0) {
-      console.log("FBNavResponseEnd:" + nvtiming__fb_t.responseEnd);
+      console.log('FBNavResponseEnd:' + nvtiming__fb_t.responseEnd);
     }
     if (nvtiming__fb_t.domContentLoadedEventStart > 0) {
       console.log(
-        "FBNavDomContentLoaded:" + nvtiming__fb_t.domContentLoadedEventStart
+        'FBNavDomContentLoaded:' + nvtiming__fb_t.domContentLoadedEventStart
       );
     }
     if (nvtiming__fb_t.loadEventEnd > 0) {
-      console.log("FBNavLoadEventEnd:" + nvtiming__fb_t.loadEventEnd);
+      console.log('FBNavLoadEventEnd:' + nvtiming__fb_t.loadEventEnd);
     }
-    var nvtiming__fb_html = document.getElementsByTagName("html")[0];
+    var nvtiming__fb_html = document.getElementsByTagName('html')[0];
     if (nvtiming__fb_html) {
       var nvtiming__fb_html_amp =
-        nvtiming__fb_html.hasAttribute("amp") ||
-        nvtiming__fb_html.hasAttribute("\u26A1");
-      console.log("FBNavAmpDetect:" + nvtiming__fb_html_amp);
+        nvtiming__fb_html.hasAttribute('amp') ||
+        nvtiming__fb_html.hasAttribute('\u26A1');
+      console.log('FBNavAmpDetect:' + nvtiming__fb_html_amp);
     }
   } catch (err) {
-    console.log("fb_navigation_timing_error:" + err.message);
+    console.log('fb_navigation_timing_error:' + err.message);
   }
 })();
 // FBNavResponseEnd:1575904580720
@@ -204,9 +205,9 @@ void (function() {
 ```
 
 ```js
-document.addEventListener("DOMContentLoaded", event => {
+document.addEventListener('DOMContentLoaded', (event) => {
   console.info(
-    "FBNavDomContentLoaded:" +
+    'FBNavDomContentLoaded:' +
       window.performance.timing.domContentLoadedEventStart
   );
 });
@@ -222,78 +223,78 @@ You can see the documentation for the tested
 on the Mozilla Developer Network.
 
 ```js
-(function() {
+(function () {
   function getFeaturePolicyAllowListOnPage(features) {
     const map = {};
     const featurePolicy = document.policy || document.featurePolicy;
     for (const feature of features) {
       map[feature] = {
         allowed: featurePolicy.allowsFeature(feature),
-        allowList: featurePolicy.getAllowlistForFeature(feature)
+        allowList: featurePolicy.getAllowlistForFeature(feature),
       };
     }
     return map;
   }
   const allPolicies = [
-    "geolocation",
-    "midi",
-    "ch-ect",
-    "execution-while-not-rendered",
-    "layout-animations",
-    "vertical-scroll",
-    "forms",
-    "oversized-images",
-    "document-access",
-    "magnetometer",
-    "picture-in-picture",
-    "modals",
-    "unoptimized-lossless-images-strict",
-    "accelerometer",
-    "vr",
-    "document-domain",
-    "serial",
-    "encrypted-media",
-    "font-display-late-swap",
-    "unsized-media",
-    "ch-downlink",
-    "ch-ua-arch",
-    "presentation",
-    "xr-spatial-tracking",
-    "lazyload",
-    "idle-detection",
-    "popups",
-    "scripts",
-    "unoptimized-lossless-images",
-    "sync-xhr",
-    "ch-width",
-    "ch-ua-model",
-    "top-navigation",
-    "ch-lang",
-    "camera",
-    "ch-viewport-width",
-    "loading-frame-default-eager",
-    "payment",
-    "pointer-lock",
-    "focus-without-user-activation",
-    "downloads-without-user-activation",
-    "ch-rtt",
-    "fullscreen",
-    "autoplay",
-    "execution-while-out-of-viewport",
-    "ch-dpr",
-    "hid",
-    "usb",
-    "wake-lock",
-    "ch-ua-platform",
-    "ambient-light-sensor",
-    "gyroscope",
-    "document-write",
-    "unoptimized-lossy-images",
-    "sync-script",
-    "ch-device-memory",
-    "orientation-lock",
-    "ch-ua",
-    "microphone"
+    'geolocation',
+    'midi',
+    'ch-ect',
+    'execution-while-not-rendered',
+    'layout-animations',
+    'vertical-scroll',
+    'forms',
+    'oversized-images',
+    'document-access',
+    'magnetometer',
+    'picture-in-picture',
+    'modals',
+    'unoptimized-lossless-images-strict',
+    'accelerometer',
+    'vr',
+    'document-domain',
+    'serial',
+    'encrypted-media',
+    'font-display-late-swap',
+    'unsized-media',
+    'ch-downlink',
+    'ch-ua-arch',
+    'presentation',
+    'xr-spatial-tracking',
+    'lazyload',
+    'idle-detection',
+    'popups',
+    'scripts',
+    'unoptimized-lossless-images',
+    'sync-xhr',
+    'ch-width',
+    'ch-ua-model',
+    'top-navigation',
+    'ch-lang',
+    'camera',
+    'ch-viewport-width',
+    'loading-frame-default-eager',
+    'payment',
+    'pointer-lock',
+    'focus-without-user-activation',
+    'downloads-without-user-activation',
+    'ch-rtt',
+    'fullscreen',
+    'autoplay',
+    'execution-while-out-of-viewport',
+    'ch-dpr',
+    'hid',
+    'usb',
+    'wake-lock',
+    'ch-ua-platform',
+    'ambient-light-sensor',
+    'gyroscope',
+    'document-write',
+    'unoptimized-lossy-images',
+    'sync-script',
+    'ch-device-memory',
+    'orientation-lock',
+    'ch-ua',
+    'microphone',
   ];
   return getFeaturePolicyAllowListOnPage(allPolicies);
 })();
@@ -307,15 +308,11 @@ result in an object as follows.
 {
   "geolocation": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "midi": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "ch-ect": {
     "allowed": false,
@@ -347,15 +344,11 @@ result in an object as follows.
   },
   "magnetometer": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "picture-in-picture": {
     "allowed": true,
-    "allowList": [
-      "*"
-    ]
+    "allowList": ["*"]
   },
   "modals": {
     "allowed": false,
@@ -367,21 +360,15 @@ result in an object as follows.
   },
   "accelerometer": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "vr": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "document-domain": {
     "allowed": true,
-    "allowList": [
-      "*"
-    ]
+    "allowList": ["*"]
   },
   "serial": {
     "allowed": false,
@@ -389,9 +376,7 @@ result in an object as follows.
   },
   "encrypted-media": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "font-display-late-swap": {
     "allowed": false,
@@ -439,9 +424,7 @@ result in an object as follows.
   },
   "sync-xhr": {
     "allowed": true,
-    "allowList": [
-      "*"
-    ]
+    "allowList": ["*"]
   },
   "ch-width": {
     "allowed": false,
@@ -461,9 +444,7 @@ result in an object as follows.
   },
   "camera": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "ch-viewport-width": {
     "allowed": false,
@@ -495,15 +476,11 @@ result in an object as follows.
   },
   "fullscreen": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "autoplay": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "execution-while-out-of-viewport": {
     "allowed": false,
@@ -519,9 +496,7 @@ result in an object as follows.
   },
   "usb": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "wake-lock": {
     "allowed": false,
@@ -533,15 +508,11 @@ result in an object as follows.
   },
   "ambient-light-sensor": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "gyroscope": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   },
   "document-write": {
     "allowed": false,
@@ -569,9 +540,7 @@ result in an object as follows.
   },
   "microphone": {
     "allowed": true,
-    "allowList": [
-      "https://example.com"
-    ]
+    "allowList": ["https://example.com"]
   }
 }
 ```
@@ -579,7 +548,7 @@ result in an object as follows.
 ## HTTP headers
 
 I checked the response and request headers, but nothing special stood out.
-The only remarkable thing given that they look at Feature Policy is the *absence* of the
+The only remarkable thing given that they look at Feature Policy is the _absence_ of the
 [`Feature-Policy` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy).
 
 ### Request header
@@ -624,7 +593,7 @@ on the pages that I have tested.
 I didn't notice any click listeners or scroll listeners
 (that could be used for engagement tracking of Facebook users with the pages they browse on)
 or any other kind of "phoning home" functionality,
-but they *could* of course have implemented this natively
+but they _could_ of course have implemented this natively
 via the WebView's
 [`View.OnScrollChangeListener`](https://developer.android.com/reference/android/view/View.OnScrollChangeListener)
 or
@@ -639,7 +608,7 @@ it's well hidden, but definitely possible: `Settings > Media and Contacts > Link
 ![Facebook Settings option: "Links open externally"](/images/settings.png)
 
 It goes without saying, but just in case:
-*all code snippets in this post are owned by and copyright of Facebook*.
+_all code snippets in this post are owned by and copyright of Facebook_.
 
 Did you run a similar analysis with similar (or maybe different) findings?
 Let me know on Twitter or Mastodon by posting your thoughts with a [link to this post](.).

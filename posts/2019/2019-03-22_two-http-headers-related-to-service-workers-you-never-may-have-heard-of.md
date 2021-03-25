@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Two HTTP headers related to Service Workers you never may have heard of"
-description: "The other day, one of my former Google Mobile Solutions Consultant colleagues sent an email to an internal mailing list that (paraphrased) went like this: I suspect at least some of you are the same…"
-date: "2019-03-22T09:51:16.943Z"
+title: 'Two HTTP headers related to Service Workers you never may have heard of'
+description: 'The other day, one of my former Google Mobile Solutions Consultant colleagues sent an email to an internal mailing list that (paraphrased) went like this: I suspect at least some of you are the same…'
+date: '2019-03-22T09:51:16.943Z'
 permalink: 2019/03/22/two-http-headers-related-to-service-workers-you-never-may-have-heard-of/index.html
 tags:
   - Technical
 ---
+
 ## The second one will make you talk to your webmaster…
 
 The other day, one of my former Google Mobile Solutions Consultant colleagues sent an email to an internal mailing list that (paraphrased) went like this:
@@ -23,13 +24,13 @@ Now why does this matter? Let’s briefly recall the [concept of a Service Worke
 
 Now you may notice that in the case of Google Docs, the default `scope` would be `https://docs.google.com/document/offline/`, which is not enough, as the user is working in `https://docs.google.com/document/u/0/`. This is where finally the `service-worker-allowed` header comes in. It allows Google Docs to ask for a wider `scope` of `https://docs.google.com/document/` instead 🎉. This header is [supported by all browsers](https://wpt.fyi/results/service-workers/service-worker/Service-Worker-Allowed-header.https.html?label=master&product=chrome%5Bexperimental%5D&product=edge&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&aligned&q=service-worker-allowed) and if you’re interested in all the details, this is the [deep link to the header’s section in the spec](https://w3c.github.io/ServiceWorker/#service-worker-allowed). You can see it in action in the screenshot below.
 
-![HTTP header \`service-worker-allowed\` in action on Google Docs](/images/asset-1_copy.png)
+![HTTP header `service-worker-allowed` in action on Google Docs](/images/asset-1_copy.png)
 
 #### Header № 2: \`**service-worker\`**
 
 As we’re at it, another header you might not have heard of is `service-worker`. It indicates when a request is for a Service Worker’s script resource and helps administrators and webmasters log such requests and detect threats (so talk to them, they’ll probably appreciate it; [Jake Archibald](https://twitter.com/jaffathecake)’s [article](https://jakearchibald.com/2014/launching-sw-without-breaking-the-web/#pros) has all the details). This header as well is [supported by all browsers](https://wpt.fyi/results/service-workers/service-worker/service-worker-header.https.html?label=master&product=chrome%5Bexperimental%5D&product=edge&product=firefox%5Bexperimental%5D&product=safari%5Bexperimental%5D&aligned&q=service-worker), and here is the [deep link to its section in the spec](https://w3c.github.io/ServiceWorker/#service-worker-script-request). You can see it in action when you go to Facebook. Facebook’s Service Worker comes from `[https://www.facebook.com/sw?s=push](https://www.facebook.com/sw?s=push)`, but if you try to open this URL, you’ll not see the JavaScript code, but a Facebook error page. You actually _need_ to send the header in order for Facebook to return the code.
 
-![HTTP header \`service-worker\` in action on Facebook](/images/asset-2_copy.png)
+![HTTP header `service-worker` in action on Facebook](/images/asset-2_copy.png)
 
 This initially caught me when I developed the [👷‍♀️ 👷 Service Worker Detector browser extension](https://github.com/google/service-worker-detector#--installation), but after reading the spec, I was then [sending the correct header](https://github.com/google/service-worker-detector/blob/f257aa9a77951f8ec972bf271093c75e86f73e55/contentscript.js#L71-L75) in the extension’s content script, so that it now works as expected.
 

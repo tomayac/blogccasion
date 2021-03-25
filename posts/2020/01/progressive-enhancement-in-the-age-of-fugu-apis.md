@@ -1,40 +1,41 @@
 ---
 layout: layouts/post.njk
-title: "Progressive Enhancement In the Age of Fugu APIs"
-author: "Thomas Steiner"
-date: "2020-01-23T13:44:57"
+title: 'Progressive Enhancement In the Age of Fugu APIs'
+author: 'Thomas Steiner'
+date: '2020-01-23T13:44:57'
 permalink: 2020/01/23/progressive-enhancement-in-the-age-of-fugu-apis/index.html
 tags:
   - Technical
 ---
+
 Back in March 2003, [Nick Finck](http://nickfinck.com/) and
 [Steven Champeon](https://twitter.com/schampeo) stunned the web design world
 with the concept of
 [progressive enhancement](http://hesketh.com/publications/inclusive_web_design_for_the_future/):
 
 > Rather than hoping for graceful degradation, [progressive enhancement] builds documents
-  for the least capable or differently capable devices first,
-  then moves on to enhance those documents with separate logic for presentation,
-  in ways that don't place an undue burden on baseline devices
-  but which allow a richer experience for those users with modern graphical browser software.
+> for the least capable or differently capable devices first,
+> then moves on to enhance those documents with separate logic for presentation,
+> in ways that don't place an undue burden on baseline devices
+> but which allow a richer experience for those users with modern graphical browser software.
 
-While in *2003*, progressive enhancement was mostly about using *presentational* features
+While in _2003_, progressive enhancement was mostly about using _presentational_ features
 like at the time modern CSS properties, unobtrusive JavaScript for improved usability,
 and even nowadays basic things like Scalable Vector Graphics;
-I see progressive enhancement in *2020* as being about using new *functional* browser capabilities.
+I see progressive enhancement in _2020_ as being about using new _functional_ browser capabilities.
 
 ## Sometimes we agree to disagree
 
 Feature support for core JavaScript language features by major browsers is great.
 Kangax' [ECMAScript 2016+ compatibility table](https://kangax.github.io/compat-table/es2016plus/)
 is almost all green, and browser vendors generally agree and are quick to implement.
-In contrast, there is less agreement on what we colloquially call *Fugu 🐡* features.
+In contrast, there is less agreement on what we colloquially call _Fugu 🐡_ features.
 In [Project Fugu](https://developers.google.com/web/updates/capabilities),
 our objective is the following:
 
 > Enable web apps to do anything native apps can,
-  by exposing the capabilities of native platforms to the web platform,
-  while maintaining user security, privacy, trust, and other core tenets of the web.
+> by exposing the capabilities of native platforms to the web platform,
+> while maintaining user security, privacy, trust, and other core tenets of the web.
 
 You can see all the capabilities we want to tackle in the context of the project
 by having a look at our [Fugu API tracker](https://goo.gle/fugu-api-tracker).
@@ -58,7 +59,7 @@ But what does this mean for developers?
 Now and then, in 2003 just like in 2020,
 [feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
 plays a central role.
-Before using a *potentially future* new browser capability like, say, the
+Before using a _potentially future_ new browser capability like, say, the
 [Native File System API](https://web.dev/native-file-system/),
 developers need to feature-detect the presence of the API.
 For the Native File System API, it might look like this:
@@ -126,10 +127,7 @@ You can see the core API of the library below.
 ```js
 // The imported methods will use the Native File
 // System API or a fallback implementation.
-import {
-  fileOpen,
-  fileSave,
-} from 'https://unpkg.com/browser-nativefs';
+import { fileOpen, fileSave } from 'https://unpkg.com/browser-nativefs';
 
 (async () => {
   // Open a file.
@@ -193,7 +191,7 @@ that can be used to cancel many things, including
 rather than more specific mechanisms.
 When the lower-level primitives are there, developers can build abstractions on top,
 and optionally never expose the primitives, just like the `fileOpen()` and `fileSave()` methods
-in `browser-nativefs` that one *can* (but never has to) perfectly use
+in `browser-nativefs` that one _can_ (but never has to) perfectly use
 without ever touching a `FileSystemHandle`.
 
 ## Conclusion

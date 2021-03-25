@@ -1,14 +1,15 @@
 ---
 layout: layouts/post.njk
-title: "Not All Is Nothing—Finding Out If the Browser Supports a Given Media Query"
-author: "Thomas Steiner"
-date: "2019-09-16T00:19:54"
+title: 'Not All Is Nothing—Finding Out If the Browser Supports a Given Media Query'
+author: 'Thomas Steiner'
+date: '2019-09-16T00:19:54'
 permalink: 2019/09/16/not-all-is-nothing-finding-out-if-the-browser-supports-a-given-media-query/index.html
 tags:
   - Technical
 ---
+
 On the Google Chrome team, we're working on solving the interesting problem that some platforms
-like Windows&nbsp;10 show a native *←&nbsp;Back* button in the app window's title bar
+like Windows&nbsp;10 show a native _←&nbsp;Back_ button in the app window's title bar
 when the user has navigated into a standalone or fullscreen Progressive Web App (PWA).
 This can lead to PWAs inadvertently showing two means of in-app navigation:
 one from the operating system and one from the app itself.
@@ -103,5 +104,5 @@ window.matchMedia('(navigation-controls)').media;
 The interesting value here is `"not all"`, meaning the browser doesn't understand the media feature.
 If the browser doesn't have the slightest clue what `navigation-controls` is about,
 it tells you the serialization of this (unknown) media feature is something that will never match:
-the media *type* `@media not all`.
+the media _type_ `@media not all`.
 Because `not all` is [nothing](https://en.wikipedia.org/wiki/Nothing).

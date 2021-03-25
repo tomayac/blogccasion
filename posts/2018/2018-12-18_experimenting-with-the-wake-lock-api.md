@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Experimenting with the Wake Lock API"
-description: "During this year’s Chrome Dev Summit, we wrote for the first time publicly about our capabilities project, code-named project fugu 🐡 (← the project label). The purpose of the project is to make the…"
-date: "2018-12-18T17:32:16.699Z"
+title: 'Experimenting with the Wake Lock API'
+description: 'During this year’s Chrome Dev Summit, we wrote for the first time publicly about our capabilities project, code-named project fugu 🐡 (← the project label). The purpose of the project is to make the…'
+date: '2018-12-18T17:32:16.699Z'
 permalink: 2018/12/18/experimenting-with-the-wake-lock-api/index.html
 tags:
   - Technical
 ---
+
 During this year’s [Chrome Dev Summit](https://developer.chrome.com/devsummit/), we wrote for the first time publicly about our [capabilities](https://developers.google.com/web/updates/capabilities) project, code-named [project fugu 🐡](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=proj-fugu&sort=m&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified) (← the project label). The purpose of the project is to make the web a first class platform for developing apps, and to do so in an open and transparent environment where the emphasis is on developer feedback.
 
 It’s encouraging to see the community’s positive response to the APIs that we’re working on, and one that I’m personally especially excited about is the _experimental_ [Wake Lock API](https://w3c.github.io/wake-lock/). It will definitely still change and is under heavy development, but a first implementation (behind a feature flag) is now ready for testing. A wake lock prevents some aspect of the device or operating system from entering a power-saving state, for example, preventing the system from turning off the screen. Currently, the specification defines two types of wake locks:
@@ -21,7 +22,7 @@ At the time of writing, wake locks are implemented behind the [chrome://flags/#e
 My colleague [Pete LePage](https://twitter.com/petele) has written a great(!) [introductory article](https://developers.google.com/web/updates/2018/12/wakelock) on how to use the API, so definitely go read it. Just to briefly recap here, a`WakeLock` object of the `WakeLockType` type `"screen"` can be obtained like this:
 
 ```js
-const wakeLock = await navigator.getWakeLock("screen");
+const wakeLock = await navigator.getWakeLock('screen');
 ```
 
 Note that the resulting `WakeLock` object does not do anything yet; in order to activate it, you need to create a new `WakeLockRequest`:
@@ -42,28 +43,31 @@ The first demo showcases the `"screen"` use case, where I prevent the screen fro
 if ('getWakeLock' in navigator) {
   let wakeLockObj = null;
 
-  navigator.getWakeLock('screen').then((wlObj) => {
-    wakeLockObj = wlObj;
-    let wakeLockRequest = null;
+  navigator
+    .getWakeLock('screen')
+    .then((wlObj) => {
+      wakeLockObj = wlObj;
+      let wakeLockRequest = null;
 
-    const toggleWakeLock = () => {
-      if (wakeLockRequest) {
-        wakeLockRequest.cancel();
-        wakeLockRequest = null;
-        return;
-      }
-      wakeLockRequest = wakeLockObj.createRequest();
-    };
+      const toggleWakeLock = () => {
+        if (wakeLockRequest) {
+          wakeLockRequest.cancel();
+          wakeLockRequest = null;
+          return;
+        }
+        wakeLockRequest = wakeLockObj.createRequest();
+      };
 
-    wakeLockCheckbox.addEventListener('click', () => {
-      toggleWakeLock();
-      return console.log(
-          `Wake lock is ${
-          wakeLockObj.active ? 'active' : 'not active'}`);
+      wakeLockCheckbox.addEventListener('click', () => {
+        toggleWakeLock();
+        return console.log(
+          `Wake lock is ${wakeLockObj.active ? 'active' : 'not active'}`
+        );
+      });
+    })
+    .catch((err) => {
+      return console.error('Could not obtain wake lock', err);
     });
-  }).catch((err) => {
-    return console.error('Could not obtain wake lock', err);
-  });
 }
 ```
 
@@ -75,7 +79,7 @@ The second demo uses a `"system"` wake lock to keep the system awake for a run t
 
 ![Woman with a run tracker (Source: [Filip Mroz](https://unsplash.com/@mroz?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)).](/images/asset-2_.jpeg)
 
-The demo consists of two parts. The first part [_Where am I 📍_](https://whereami.glitch.me/) simulates the actual tracker application that you would have on your phone while running. The second part [_There Am I 🗺_](https://thereami.glitch.me/)  serves simply as a control dashboard where you can see if the system is working. You could, for example, have it open on a stationary PC.
+The demo consists of two parts. The first part [_Where am I 📍_](https://whereami.glitch.me/) simulates the actual tracker application that you would have on your phone while running. The second part [_There Am I 🗺_](https://thereami.glitch.me/) serves simply as a control dashboard where you can see if the system is working. You could, for example, have it open on a stationary PC.
 
 ![_Where Am I 📍_ tracker application running on a Pixel 1 (Source: [https://whereami.glitch.me/](https://whereami.glitch.me/)).](/images/asset-3_.jpeg)
 
@@ -94,9 +98,9 @@ if ('getWakeLock' in navigator) {
   try {
     wakeLockObj = await navigator.getWakeLock('system');
     wakeLockObj.addEventListener('activechange', () => {
-      wakelock.textContent =
-          `The ${wakeLockObj.type} wake lock is ${
-          wakeLockObj.active ? 'active' : 'not active'}.`;
+      wakelock.textContent = `The ${wakeLockObj.type} wake lock is ${
+        wakeLockObj.active ? 'active' : 'not active'
+      }.`;
     });
   } catch (err) {
     console.error('Could not obtain wake lock', err);
@@ -138,11 +142,10 @@ Thinking of how such a wake lock indication could look like, we can take inspira
 
 A similar solution can be found on Android, where especially the latest generation of Pixel 3 phones have started to reserve the right side of the “notch” for system-level notifications:
 
-![Background activity notifications on Android (Source: [https://arstechnica.com/?post\_type=post&p=1385999](https://arstechnica.com/?post_type=post&p=1385999))](/images/asset-6_.jpeg)
+![Background activity notifications on Android (Source: [https://arstechnica.com/?post_type=post&p=1385999](https://arstechnica.com/?post_type=post&p=1385999))](/images/asset-6_.jpeg)
 
 One could imagine a similar feature for active wake locks. Somewhat more playful, on macOS, the [Caffeine freeware tool](http://lightheadsw.com/caffeine/) implements something like a screen wake lock, but at the operating system level. Whenever it is active, a steaming coffee cup is shown in the macOS Menu Bar… ☕️
 
 It is exciting times for [project fugu 🐡](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=proj-fugu&sort=m&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified) and I am thrilled about the new use cases APIs like Wake Lock can unlock, but also a little [uncomfortably excited](https://plus.google.com/+avinash/posts/h7DEiJXnTiA) about the risks and dangers. Let us work together to slice this fish properly!
-
 
 _🙏 I would like to thank_ [_Pete LePage_](https://twitter.com/petele)_,_ [_Jeffrey Yasskin_](https://twitter.com/jyasskin)_,_ [_Surma_](https://twitter.com/DasSurma)_, and_ [_Harleen Batra_](https://twitter.com/harleenkbatra) _for their reviews of this article and their helpful comments that have helped improve it._

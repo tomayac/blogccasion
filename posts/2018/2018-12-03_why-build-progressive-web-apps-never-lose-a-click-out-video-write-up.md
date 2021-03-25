@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Why Build Progressive Web Apps: Never Lose a Click-Out!—Video Write-Up"
-description: "(This is the write-up of the first episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the video is embedded below.) (Also check out the the write-up of the…"
-date: "2018-12-03T14:03:09.463Z"
+title: 'Why Build Progressive Web Apps: Never Lose a Click-Out!—Video Write-Up'
+description: '(This is the write-up of the first episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the video is embedded below.) (Also check out the the write-up of the…'
+date: '2018-12-03T14:03:09.463Z'
 permalink: 2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up/index.html
 tags:
   - Technical
 ---
+
 _(This is the write-up of the first episode of my new YouTube show “Why Build Progressive Web Apps.” If you prefer watching, the_ [_video_](https://www.youtube.com/watch?v=4UK_TDTTWnQ) _is embedded below.)_
 
 _(Also check out the the_ [_write-up of the second episode_](https://medium.com/dev-channel/why-build-progressive-web-apps-push-but-dont-be-pushy-video-write-up-aa78296886e) _and the_ [_write-up of the third episode_](https://medium.com/dev-channel/why-build-progressive-web-apps-if-its-just-a-bookmark-it-s-not-a-pwa-video-write-up-7ccca1c58034)_, or watch the_ [_second episode video_](https://www.youtube.com/watch?v=vRsVx8_94UQ) _and the_ [_third episode video_](https://youtu.be/kENeCdS3fzU)_.)_
@@ -23,7 +24,7 @@ Many sessions with comparison sites happen “on the go,” say, on the commute 
 
 ![About to lose your mobile connection (Credits: [https://unsplash.com/photos/wVcQqwNeDj8](https://unsplash.com/photos/wVcQqwNeDj8)).](/images/asset-2__.png)
 
-In order to demonstrate how to deal with such situations, I have created my own sample comparison site called  [**🐈 AffiliCats**](https://googlechromelabs.github.io/affilicats/) with purely dummy content, but coming from _real APIs_ like the [Wikimedia API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L64-L74), the [Google Static Maps API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L183-L189), the [Random Number API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L202-L204), the [Bacon Ipsum API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L202-L204), and the [Place Kittens API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L270).
+In order to demonstrate how to deal with such situations, I have created my own sample comparison site called [**🐈 AffiliCats**](https://googlechromelabs.github.io/affilicats/) with purely dummy content, but coming from _real APIs_ like the [Wikimedia API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L64-L74), the [Google Static Maps API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L183-L189), the [Random Number API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L202-L204), the [Bacon Ipsum API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L202-L204), and the [Place Kittens API](https://github.com/GoogleChromeLabs/affilicats/blob/895c27b2f87f377049d477ea90c8927ce52f1fb5/src/js/main.js#L270).
 
 ![🐈 AffiliCats sample app (Source: [https://googlechromelabs.github.io/affilicats/](https://googlechromelabs.github.io/affilicats/)).](/images/asset-3__.png)
 

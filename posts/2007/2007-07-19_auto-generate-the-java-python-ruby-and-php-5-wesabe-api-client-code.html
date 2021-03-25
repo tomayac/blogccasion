@@ -1,45 +1,77 @@
 ---
 layout: layouts/post.njk
-title: "Auto-generate the Java, Python, Ruby, and PHP 5 Wesabe API client code"
-author: "Thomas Steiner"
-date: "2007-07-19T10:19:52"
+title: 'Auto-generate the Java, Python, Ruby, and PHP 5 Wesabe API client code'
+author: 'Thomas Steiner'
+date: '2007-07-19T10:19:52'
 permalink: 2007/07/19/auto-generate-the-java-python-ruby-and-php-5-wesabe-api-client-code-101952/index.html
 tags:
   - Work
 ---
-<b>Auto-generate the Java, Python, Ruby, and PHP 5 Wesabe API client code</b><br />
-<br />
-<img src="https://www3.wesabe.com/images/wesabe.gif?1184269260" alt="Wesabe Logo" style="float: left;" />This is a very quick tutorial on how to auto-generate sample code for the <a href="https://www.wesabe.com/page/api">Wesabe API</a> yourself. <a href="https://www.wesabe.com/page/about">Wesabe</a> is a community site that makes managing your money easy by means of a REST API.<br />
-<br />
-<b>Step 1:</b><br />
-<br />
-Copy the following generic sample requests into the clip board:<pre>https://www.wesabe.com/accounts.xml<br />
-https://www.wesabe.com/accounts/show/{accountId}.{format}?page=2&month=5&year=2007<br />
-https://www.wesabe.com/tags/show/{tagName}?format=xml&page=2&month=5&year=2007<br />
-https://www.wesabe.com/merchants/{merchantId}.{format}?page=2&month=5&year=2007<br />
-https://www.wesabe.com/txactions/search=amazon&format=xml</pre><b>Step 2:</b><br />
-<br />
-Point your browser to <a href="http://tomayac.com/rest-describe/latest/RestDescribe.html">http://tomayac.com/rest-describe/latest/RestDescribe.html</a>. You should now see an application called "REST Describe & Compile". In the upper panel with the heading <b>"Request Sample"</b> find the button <b>"URI Batch Analysis"</b>. Click it.<br />
-<br />
-<b>Step 3:</b><br />
-<br />
-Paste the sample requests copied above in the appearing pop-up dialog . Hit the <b>"OK"</b> button and confirm the "This may take some time…" alert box.<br />
-<br />
-<b>Step 4:</b><br />
-<br />
-After a short while you should see a tree-like XML document, actually this is a <a href="https://wadl.dev.java.net/">WADL</a> file (you don't need to care about what it is, we want the code…). Now find the <b>"Generate Code"</b> button on the lower right panel. Click it.<br />
-<br />
-<b>Step 5:</b><br />
-<br />
-Finally you should see five buttons, <b>"Java"</b>, <b>"PHP 5"</b>, etc. Click the button of your preferred programming language. There you go, this is your code.<br />
-<br />
-<b>Step 6:</b><br />
-<br />
-If you feel like, you can fine-tune the generated classes. Therefore change the <b>"Naming Depth Level"</b> from 1 to 2, or in addition to that, click the <b>"Settings"</b> link in the upper right corner, then go to the <b>"Code Generation"</b> tab. Hit <b>"Re-Compile"</b> after you have made your changes. Once you are happy with the class names, hit the <b>"Select All"</b> button and paste the code into some text editor.<br />
-<br />
-<b>Step 7:</b><br />
-<br />
-In the newly generated file find the credentials at the very beginning, enter your Wesabe user and password. Now you can start the "Hello World" of Wesabe, simply retrieve your accounts by calling the method <span style="font-family:monospace;"><b>AccountsXml</b></span>, for example in Ruby this can be done via:<pre>>\ Accounts = AccountsXml.new()<br />
->\ puts Accounts.submit()</pre>If this sounds like too complicated, I have thrown together a short screencast and uploaded it to YouTube: <a href="http://www.youtube.com/watch?v=QoM7tCcIq9o">http://www.youtube.com/watch?v=QoM7tCcIq9o</a>.<br />
-<center><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/QoM7tCcIq9o"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/QoM7tCcIq9o" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object></center><br />
-<small>Image from <a href="https://www3.wesabe.com/images/wesabe.gif?1184269260">wesabe.com</a></small>
+
+<b>Auto-generate the Java, Python, Ruby, and PHP 5 Wesabe API client code</b
+><br /><br /><img
+  src="https://www3.wesabe.com/images/wesabe.gif?1184269260"
+  alt="Wesabe Logo"
+  style="float: left"
+/>This is a very quick tutorial on how to auto-generate sample code for the
+<a href="https://www.wesabe.com/page/api">Wesabe API</a> yourself.
+<a href="https://www.wesabe.com/page/about">Wesabe</a> is a community site that
+makes managing your money easy by means of a REST API.<br /><br /><b>Step 1:</b
+><br /><br />Copy the following generic sample requests into the clip board:
+<pre>https://www.wesabe.com/accounts.xml<br>
+https://www.wesabe.com/accounts/show/{accountId}.{format}?page=2&amp;month=5&amp;year=2007<br>
+https://www.wesabe.com/tags/show/{tagName}?format=xml&amp;page=2&amp;month=5&amp;year=2007<br>
+https://www.wesabe.com/merchants/{merchantId}.{format}?page=2&amp;month=5&amp;year=2007<br>
+https://www.wesabe.com/txactions/search=amazon&amp;format=xml</pre>
+<b>Step 2:</b><br /><br />Point your browser to
+<a href="http://tomayac.com/rest-describe/latest/RestDescribe.html"
+  >http://tomayac.com/rest-describe/latest/RestDescribe.html</a
+>. You should now see an application called "REST Describe &amp; Compile". In
+the upper panel with the heading <b>"Request Sample"</b> find the button
+<b>"URI Batch Analysis"</b>. Click it.<br /><br /><b>Step 3:</b
+><br /><br />Paste the sample requests copied above in the appearing pop-up
+dialog . Hit the <b>"OK"</b> button and confirm the "This may take some time…"
+alert box.<br /><br /><b>Step 4:</b><br /><br />After a short while you should
+see a tree-like XML document, actually this is a
+<a href="https://wadl.dev.java.net/">WADL</a> file (you don't need to care about
+what it is, we want the code…). Now find the <b>"Generate Code"</b> button on
+the lower right panel. Click it.<br /><br /><b>Step 5:</b><br /><br />Finally
+you should see five buttons, <b>"Java"</b>, <b>"PHP 5"</b>, etc. Click the
+button of your preferred programming language. There you go, this is your
+code.<br /><br /><b>Step 6:</b><br /><br />If you feel like, you can fine-tune
+the generated classes. Therefore change the <b>"Naming Depth Level"</b> from 1
+to 2, or in addition to that, click the <b>"Settings"</b> link in the upper
+right corner, then go to the <b>"Code Generation"</b> tab. Hit
+<b>"Re-Compile"</b> after you have made your changes. Once you are happy with
+the class names, hit the <b>"Select All"</b> button and paste the code into some
+text editor.<br /><br /><b>Step 7:</b><br /><br />In the newly generated file
+find the credentials at the very beginning, enter your Wesabe user and password.
+Now you can start the "Hello World" of Wesabe, simply retrieve your accounts by
+calling the method <span style="font-family: monospace"><b>AccountsXml</b></span
+>, for example in Ruby this can be done via:
+<pre>&gt;\ Accounts = AccountsXml.new()<br>
+&gt;\ puts Accounts.submit()</pre>
+If this sounds like too complicated, I have thrown together a short screencast
+and uploaded it to YouTube:
+<a href="http://www.youtube.com/watch?v=QoM7tCcIq9o"
+  >http://www.youtube.com/watch?v=QoM7tCcIq9o</a
+>.<br />
+<center>
+  <object width="425" height="350">
+    <param name="movie" value="http://www.youtube.com/v/QoM7tCcIq9o" />
+    <param name="wmode" value="transparent" />
+    <embed
+      src="http://www.youtube.com/v/QoM7tCcIq9o"
+      type="application/x-shockwave-flash"
+      wmode="transparent"
+      width="425"
+      height="350"
+    />
+  </object>
+</center>
+<br /><small
+  >Image from
+  <a href="https://www3.wesabe.com/images/wesabe.gif?1184269260"
+    >wesabe.com</a
+  ></small
+>

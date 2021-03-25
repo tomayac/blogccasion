@@ -1,16 +1,23 @@
 ---
 layout: layouts/post.njk
-title: "Dynamically created tables in Internet Explorer"
-author: "Thomas Steiner"
-date: "2006-06-23T21:43:31"
+title: 'Dynamically created tables in Internet Explorer'
+author: 'Thomas Steiner'
+date: '2006-06-23T21:43:31'
 permalink: 2006/06/23/dynamically-created-tables-in-internet-explorer-214331/index.html
 tags:
   - Technical
 ---
-<img src="http://spreadfirefox.org/safer.gif" alt="Spread Firefox Logo" style="float: left;" /><br />
+
+<img
+  src="http://spreadfirefox.org/safer.gif"
+  alt="Spread Firefox Logo"
+  style="float: left"
+/><br />
 <b>Dynamically created tables in Internet Explorer</b><br />
 <br />
-A weird behavior of Internet Explorer almost made me go up the wall: imagine you want to dynamically create a table in an (X)HTML document. A straight-forward implementation of this feature might look like this:<br />
+A weird behavior of Internet Explorer almost made me go up the wall: imagine you
+want to dynamically create a table in an (X)HTML document. A straight-forward
+implementation of this feature might look like this:<br />
 <br />
 <pre>
 &lt;html&gt;<br />
@@ -35,10 +42,28 @@ A weird behavior of Internet Explorer almost made me go up the wall: imagine you
     &lt;/div&gt;<br />
   &lt;/body&gt;<br />
 &lt;html&gt;<br />
-</pre><br />
+</pre>
 <br />
-In Firefox this just works the way you would have expected it to work: you click the button and a table is created. In Internet Explorer however, you click the button and nothing happens. No error message, nothing. Using the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=e59c3964-672d-4511-bb3e-2d5e1db91038&displaylang=en">Internet Explorer Developer Toolbar</a>, you see that the table actually appears in the DOM tree, i.e. it is there, the table gets created. So why does the browser not display it? The solution is simple. Maybe too simple. In HTML 4, all table elements <i>can</i> contain the thead, tfoot and <a href="http://www.w3schools.com/tags/tag_tbody.asp">tbody</a> element. The idea behind this is to group a table into logic units. When printing a large table for example, a smart browser could include the thead and tfoot element on each page in order to simplify orientation on the printed sheets. This element however is rarely used, and the described feature is even less implemented.<br />
-To make a long story short, <b>in order to dynamically create tables in Internet Explorer, you need to </b>(at least)<b> create the tbody element</b>. The following snippet shows you how:<br />
+<br />
+In Firefox this just works the way you would have expected it to work: you click
+the button and a table is created. In Internet Explorer however, you click the
+button and nothing happens. No error message, nothing. Using the
+<a
+  href="http://www.microsoft.com/downloads/details.aspx?FamilyID=e59c3964-672d-4511-bb3e-2d5e1db91038&displaylang=en"
+  >Internet Explorer Developer Toolbar</a
+>, you see that the table actually appears in the DOM tree, i.e. it is there,
+the table gets created. So why does the browser not display it? The solution is
+simple. Maybe too simple. In HTML 4, all table elements <i>can</i> contain the
+thead, tfoot and
+<a href="http://www.w3schools.com/tags/tag_tbody.asp">tbody</a> element. The
+idea behind this is to group a table into logic units. When printing a large
+table for example, a smart browser could include the thead and tfoot element on
+each page in order to simplify orientation on the printed sheets. This element
+however is rarely used, and the described feature is even less implemented.<br />
+To make a long story short,
+<b>in order to dynamically create tables in Internet Explorer, you need to </b
+>(at least)<b> create the tbody element</b>. The following snippet shows you
+how:<br />
 <br />
 <pre>
 &lt;html&gt;<br />
@@ -65,8 +90,12 @@ To make a long story short, <b>in order to dynamically create tables in Internet
     &lt;/div&gt;<br />
   &lt;/body&gt;<br />
 &lt;html&gt;<br />
-</pre><br />
+</pre>
+<br />
 <br />
 Hope this saves you some time…<br />
 <br />
-<small>Image from <a href="http://spreadfirefox.org/safer.gif">spreadfirefox.org</a></small>
+<small
+  >Image from
+  <a href="http://spreadfirefox.org/safer.gif">spreadfirefox.org</a></small
+>

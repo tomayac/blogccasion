@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "The requestVideoFrameCallback API"
-author: "Thomas Steiner"
-date: "2020-05-15T13:19:44"
+title: 'The requestVideoFrameCallback API'
+author: 'Thomas Steiner'
+date: '2020-05-15T13:19:44'
 permalink: 2020/05/15/the-requestvideoframecallback-api/index.html
 tags:
   - Technical
 ---
+
 There's a new Web API on the block, defined in the
 [HTMLVideoElement.requestVideoFrameCallback()](https://wicg.github.io/video-rvfc/)
 specification.
@@ -27,10 +28,10 @@ which usually fires about 60 times per second,
 [exception](https://wicg.github.io/video-rvfc/#ref-for-update-the-rendering③:~:text=Note%3A%20The%20effective%20rate%20at%20which,browser%20would%20fire%20callbacks%20at%2060hz.):
 
 > The effective rate at which callbacks are run is the lesser rate between the video's rate
-  and the browser's rate.
-  This means a 25fps video playing in a browser that paints at 60Hz
-  would fire callbacks at 25Hz.
-  A 120fps video in that same 60Hz browser would fire callbacks at 60Hz.
+> and the browser's rate.
+> This means a 25fps video playing in a browser that paints at 60Hz
+> would fire callbacks at 25Hz.
+> A 120fps video in that same 60Hz browser would fire callbacks at 60Hz.
 
 Due to its similarity with `window.requestAnimationFrame()`, the API initially
 was [proposed as `video.requestAnimationFrame()`](https://discourse.wicg.io/t/proposal-video-requestanimationframe/3691), but I'm happy the new name

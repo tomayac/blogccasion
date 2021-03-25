@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Let there be darkness! 🌚 Maybe…"
-description: "With Dark Mode, Apple in macOS Mojave introduced what they call “a dramatic new look that’s easy on your eyes and helps you focus on your work. [It] uses a dark color scheme that works system wide…"
-date: "2019-04-04T10:57:58.763Z"
+title: 'Let there be darkness! 🌚 Maybe…'
+description: 'With Dark Mode, Apple in macOS Mojave introduced what they call “a dramatic new look that’s easy on your eyes and helps you focus on your work. [It] uses a dark color scheme that works system wide…'
+date: '2019-04-04T10:57:58.763Z'
 permalink: 2019/04/04/let-there-be-darkness-maybe/index.html
 tags:
   - Technical
 ---
+
 ## Dark Theme Developer Survey Results
 
 With [Dark Mode](https://support.apple.com/en-us/HT208976), Apple in [macOS Mojave](https://www.apple.com/lae/macos/mojave/) introduced what they call _“a dramatic new look that’s easy on your eyes and helps you focus on your work. \[It\] uses a dark color scheme that works system wide, including with the apps that come with your Mac.”_ The Safari browser doesn’t allow Dark Mode to _automatically_ change the appearance of web pages, but in [Safari Technology Preview 68](https://webkit.org/blog/8475/release-notes-for-safari-technology-preview-68/), Apple added support for the [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) user preference media query that allows developers to _manually_ style their content for Dark Mode. There also is a [meta tag](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d) [`<meta name="supported-color-schemes">`](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d) [and corresponding CSS property](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d) [`supported-color-schemes`](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d) that are currently being standardized so that sites can explicitly express that they fully support a dark theme and that the browser should load a different user agent stylesheet and not ever apply transformations. The media query is supported in [Firefox since version 67](https://bugzilla.mozilla.org/show_bug.cgi?id=1494034) and [Chrome started work](https://bugs.chromium.org/p/chromium/issues/detail?id=889087) on it. This media query enables (and also requires!) CSS designers to craft special CSS rules for Dark Mode, however, not everyone will do this! So where does this leave us? We ran a survey to find out.
@@ -20,8 +21,6 @@ In Chrome, we’re trying to go one step further and to come up with an intellig
 ### Developer survey design
 
 Automatically darkening web pages may or may not be what end users want. In order to get a feeling for _some_ of the opinions on the matter, a couple of days ago I started collecting developer feedback in a survey that was shared on Twitter. The survey announcement tweet (embedded below) gained 41,836 impressions and 461 clicks on the included link to the survey, resulting in 243 survey responses, which means 0.58% of people who saw the tweet responded, and 52.71% of people who clicked through to the survey.
-
-
 
 There were two opening yes/no questions and one drill down yes/no question, all three with a required free form text field to provide some background on the given answer. I wanted to give people enough room to express their thoughts, and not limit them to a preselected list of options. When interpreting the free form answers, I have grouped similar opinions together, taking maximum care to keep friction losses to a minimum. Sometimes people expressed several opinions at once (_e.g._, “I use Dark Mode because A, B, and C”), in such cases I have counted all individual points separately, which is why if you sum up the numbers in the bar charts below, you will count more than the number of respondents.
 
@@ -83,11 +82,11 @@ What do you think? If you haven’t had the chance to respond to the survey, ple
 
 ### Related Links
 
--   The [“A Color-Theme Media Query and System Colors” discussion](https://discourse.wicg.io/t/proposal-a-color-theme-media-query-and-system-colors/2844) in the Web Incubator Community Group.
--   The original `prefers-color-scheme` [GitHub Issue](https://github.com/w3c/csswg-drafts/issues/2735) (closed) in the CSS W3C Working Group and the related [Chromium bug](https://crbug.com/889087).
--   The `<meta name="supported-color-schemes">` [GitHub Issue](https://github.com/w3c/csswg-drafts/issues/3299) in the CSS W3C Working Group and the related [Chromium bug](https://crbug.com/925935).
--   The [Chrome Platform Status](https://www.chromestatus.com/features#color-scheme) pages for the media query and the meta tag.
--   The `supported-color-schemes` meta tag and CSS property [article](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d).
+- The [“A Color-Theme Media Query and System Colors” discussion](https://discourse.wicg.io/t/proposal-a-color-theme-media-query-and-system-colors/2844) in the Web Incubator Community Group.
+- The original `prefers-color-scheme` [GitHub Issue](https://github.com/w3c/csswg-drafts/issues/2735) (closed) in the CSS W3C Working Group and the related [Chromium bug](https://crbug.com/889087).
+- The `<meta name="supported-color-schemes">` [GitHub Issue](https://github.com/w3c/csswg-drafts/issues/3299) in the CSS W3C Working Group and the related [Chromium bug](https://crbug.com/925935).
+- The [Chrome Platform Status](https://www.chromestatus.com/features#color-scheme) pages for the media query and the meta tag.
+- The `supported-color-schemes` meta tag and CSS property [article](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d).
 
 #### Acknowledgements
 

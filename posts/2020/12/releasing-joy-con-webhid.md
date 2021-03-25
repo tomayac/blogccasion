@@ -1,12 +1,13 @@
 ---
 layout: layouts/post.njk
-title: "Releasing Joy-Con WebHID"
-author: "Thomas Steiner"
-date: "2020-12-21T14:13:18"
+title: 'Releasing Joy-Con WebHID'
+author: 'Thomas Steiner'
+date: '2020-12-21T14:13:18'
 permalink: 2020/12/21/releasing-joy-con-webhid/index.html
 tags:
   - Technical
 ---
+
 The [WebHID API](https://web.dev/hid/) received its
 [third LGTM](https://groups.google.com/a/chromium.org/g/blink-dev/c/rL1csFYD1Ms/m/d7y9_OftAQAJ) on December 17,
 which means it is approved for shipping in Chrome&nbsp;🎉.
