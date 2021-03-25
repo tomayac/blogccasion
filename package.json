@@ -12,6 +12,7 @@
     "stop": "npx kill-port --port 8080",
     "postinstall": "shx cp ./node_modules/dark-mode-toggle/dist/dark-mode-toggle.min.mjs ./js/",
     "clean": "shx rm -rf ./_site",
+    "fix": "npx prettier . --write",
     "lint": "npm run lint:css && npx prettier . --write",
     "lint:css": "npx stylelint ./css/ --fix",
     "webmentions": "npx webmention _site/feed/feed.xml --limit 0 --send",

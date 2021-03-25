@@ -21,6 +21,7 @@ Please feel free to contact me. There are many ways to do so…
 </div>
 
 ## Address
+
 <p>
   Thomas Steiner<br>
   Neanderstr. 3<br>
