@@ -12,7 +12,7 @@ _(This is the write-up of the third episode of my new YouTube show “Why Build 
 
 _(Also check out the_ [_write-up of the first episode_](https://medium.com/dev-channel/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-74cbbc466afd) _and the_ [_write-up of the second episode_](https://medium.com/dev-channel/why-build-progressive-web-apps-push-but-dont-be-pushy-video-write-up-aa78296886e)_, or watch the_ [_first episode video_](https://www.youtube.com/watch?v=4UK_TDTTWnQ) _and the_ [_second episode video_](https://www.youtube.com/watch?v=vRsVx8_94UQ)_.)_
 
-<Embed src="https://www.youtube.com/embed/kENeCdS3fzU?feature=oembed" caption="“Why Build Progressive Web Apps,” episode 3: If It’s Just a Bookmark, It’s not a PWA!" />
+<Embed src="https://www.youtube-nocookie.com/embed/kENeCdS3fzU?feature=oembed" caption="“Why Build Progressive Web Apps,” episode 3: If It’s Just a Bookmark, It’s not a PWA!" />
 
 _Add to Home Screen_ is a concept almost as old as the original iPhone. In fact, it was introduced in February 2008 with [iPhone OS version 1.1.3](https://www.macworld.com/article/1131616/iphone_update.html). Today, more than 10 years later, the feature has come a really long way. What started as a mere bookmark, has now turned into a PWA super power.
 

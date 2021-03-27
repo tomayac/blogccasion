@@ -234,7 +234,7 @@ since [webappsec-feature-policy#322](https://github.com/w3c/webappsec-feature-po
 is still open.</ins>
 The demo works if you [open it directly on Glitch](https://async-clipboard-demo.glitch.me/).
 
-<div class="glitch-embed-wrap" style="height: 600px; width: 100%; margin-block-end: 2rem;">
+<div style="height: 600px; width: 100%; margin-block-end: 2rem;">
   <iframe
     src="https://glitch.com/embed/#!/embed/async-clipboard-demo?path=script.js&previewSize=100"
     title="async-clipboard-demo on Glitch"

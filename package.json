@@ -16,7 +16,7 @@
     "lint": "npm run lint:css && npx prettier . --write",
     "lint:css": "npx stylelint ./css/ --fix",
     "webmentions": "npx webmention _site/feed/feed.xml --limit 0 --send",
-    "screenshots": "npm stop && npx start-server-and-test start http://localhost:8080 'npx ./_11ty/createScreenshots.js' && npm stop",
+    "screenshots": "npm stop && npx start-server-and-test start http://localhost:8080 'node ./_11ty/createScreenshots.js' && npm stop",
     "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
@@ -41,7 +41,7 @@
     "cssnano": "^4.1.10",
     "dark-mode-toggle": "^0.8.0",
     "dotenv": "^8.2.0",
-    "eslint": "^7.22.0",
+    "eslint": "^7.23.0",
     "eslint-config-google": "^0.14.0",
     "html-minifier": "^4.0.0",
     "kill-port": "^1.6.1",

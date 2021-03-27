@@ -106,7 +106,7 @@ The [Glitch](https://glitch.com/~animated-svg-favicon) embedded below shows all 
 My recommendation would be to stick with CSS animations whenever you can,
 since it's the most compatible and future-proof variant.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div style="height: 420px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/animated-svg-favicon?path=icon_js.svg&previewSize=100"
     title="animated-svg-favicon on Glitch"

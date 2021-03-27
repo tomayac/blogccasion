@@ -14,7 +14,7 @@ _(Also check out the the_ [_write-up of the first episode_](https://medium.com/d
 
 Let’s face it, on the web, push notifications have become a bit of an omnipresent annoyance. The reason for the bad reputation of push notifications—in my opinion—is that we have been, well, a bit too _“pushy”_ in trying to get people to allow them.
 
-<Embed src="https://www.youtube.com/embed/vRsVx8_94UQ?feature=oembed" caption="“Why Build Progressive Web Apps,” episode 2: Push, but Don’t Be Pushy!" />
+<Embed src="https://www.youtube-nocookie.com/embed/vRsVx8_94UQ?feature=oembed" caption="“Why Build Progressive Web Apps,” episode 2: Push, but Don’t Be Pushy!" />
 
 The folks over at Mozilla have phrased it like this in a [blog post](https://blog.mozilla.org/firefox/no-notifications/):
 

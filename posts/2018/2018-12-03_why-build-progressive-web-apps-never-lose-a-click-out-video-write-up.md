@@ -14,7 +14,7 @@ _(Also check out the the_ [_write-up of the second episode_](https://medium.com/
 
 On the Google Chrome Developers [YouTube channel](https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw), we have been pushing the concept of Progressive Web Apps (PWA) a fair bit, and there have been some great [success](https://youtu.be/Xryhxi45Q5M) [stories](https://youtu.be/SJiKWwBtQaU) of companies building PWAs. But you might wonder, what may have worked for the mentioned partners, might not necessarily work for your company. In my new video series called _“Why build Progressive Web Apps,”_ I want to show you common **_use-case driven patterns for applying PWA features_** that set _you_ up for success. In the first episode, I look at affiliate sites and how they can manage to never lose a click-out.
 
-<Embed src="https://www.youtube.com/embed/4UK_TDTTWnQ?feature=oembed" caption="“Why Build Progressive Web Apps,” episode 1: Never Lose a Click-Out!" />
+<Embed src="https://www.youtube-nocookie.com/embed/4UK_TDTTWnQ?feature=oembed" caption="“Why Build Progressive Web Apps,” episode 1: Never Lose a Click-Out!" />
 
 You have maybe seen or even used a **_comparison site_** in the past. For example, to find out what is the cheapest internet provider, or to get the best hotel offer for your next vacation. Many of these comparison sites rely on **_commission-based affiliate marketing_**: when you click out to a third-party vendor site and end up converting, the referring comparison site earns a small fee. In consequence, such sites want you to click through to the best offer, and under no circumstances do they want to risk losing a click-out.
 

@@ -319,7 +319,7 @@ also play with a standalone [demo](https://ruby-footnotes.glitch.me/) on Glitch
 and remix its
 [source code](https://glitch.com/edit/#!/ruby-footnotes?path=style.css%3A18%3A11).
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div style="height: 420px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/ruby-footnotes?path=style.css&previewSize=100"
     title="ruby-footnotes on Glitch"
