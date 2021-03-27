@@ -1,5 +1,6 @@
 const { DateTime } = require('luxon');
 const htmlmin = require('html-minifier');
+const _ = require('lodash');
 const fs = require('fs');
 const { minify } = require('terser');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
@@ -62,6 +63,17 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
+
+  const _ = require('lodash');
+
+  eleventyConfig.addCollection('postsByYear', (collection) => {
+    return _.chain(collection.getAllSorted())
+      .filter((item) => 'tags' in item.data && item.data.tags.includes('posts'))
+      .groupBy((post) => post.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
+  });
 
   eleventyConfig.addPassthroughCopy('static');
   eleventyConfig.addPassthroughCopy('images');
