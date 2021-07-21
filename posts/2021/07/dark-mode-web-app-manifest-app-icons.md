@@ -59,4 +59,4 @@ You can test it for yourself by installing the app embedded below ([launch it in
   </iframe>
 </div>
 
-(Credits: The app is a remix of [Alexey Rodionov](https://twitter.com/alexey_rodionov)'s app [fir-skirt.glitch.me](https://fir-skirt.glitch.me/). Alexey, you guessed it, is also the one who asked me about this.)
+(Credits: The app is a remix of [Alan Cutter](https://glitch.com/@alancutter)'s app [fir-skirt.glitch.me](https://fir-skirt.glitch.me/).)
