@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title:
-  'Public statement of support for Annalena Baerbock and die Grünen for #BTW21'
+  'Public statement of support for Annalena Baerbock and Die Grünen for #BTW21'
 author: 'Thomas Steiner'
 date: '2021-09-13T13:28:03'
 permalink: 2021/09/13/public-statement-of-support-for-annalena-baerbock-and-die-gruenen-for-btw21/index.html
