@@ -73,6 +73,8 @@ module.exports = function (eleventyConfig) {
       .value();
   });
 
+  eleventyConfig.addPassthroughCopy('js');
+  eleventyConfig.addPassthroughCopy('css');
   eleventyConfig.addPassthroughCopy('static');
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('fonts');
