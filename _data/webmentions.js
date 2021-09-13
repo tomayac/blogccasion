@@ -1,5 +1,6 @@
+import fetch from 'node-fetch';
+
 const fs = require('fs');
-const fetch = require('node-fetch');
 const unionBy = require('lodash/unionBy');
 const domain = require('./metadata.json').domain;
 require('dotenv').config();
