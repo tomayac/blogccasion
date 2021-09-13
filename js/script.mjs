@@ -13,14 +13,12 @@ const root = document.documentElement;
 
 darkModeToggle.addEventListener('colorschemechange', () => {
   setTimeout(() => {
-    themeColor.content = getComputedStyle(root).getPropertyValue(
-      '--background-color'
-    );
+    themeColor.content =
+      getComputedStyle(root).getPropertyValue('--background-color');
   }, 0);
 });
-themeColor.content = getComputedStyle(root).getPropertyValue(
-  '--background-color'
-);
+themeColor.content =
+  getComputedStyle(root).getPropertyValue('--background-color');
 
 let imgs = [];
 const fallback = '/static/fallback.svg';

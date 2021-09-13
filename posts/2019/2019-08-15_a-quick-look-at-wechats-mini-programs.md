@@ -8,13 +8,28 @@ tags:
   - Technical
 ---
 
-While preparing for my [presentation](https://events.google.cn/intl/zh-CN/developerdays2019/agenda/#table-row-1-7) at the [Google Developer Days 2019 in Shanghai, China](https://events.google.cn/intl/zh-CN/developerdays2019/) I was reminded again that China is a market where few super apps like [WeChat](https://www.wechat.com/en) host a [gazillion mini apps or mini programs](https://techcrunch.com/2018/11/07/wechat-mini-apps-200-million-users/) that fulfill everyday needs like booking cabs, reserving tables, etc.
+While preparing for my
+[presentation](https://events.google.cn/intl/zh-CN/developerdays2019/agenda/#table-row-1-7)
+at the
+[Google Developer Days 2019 in Shanghai, China](https://events.google.cn/intl/zh-CN/developerdays2019/)
+I was reminded again that China is a market where few super apps like
+[WeChat](https://www.wechat.com/en) host a
+[gazillion mini apps or mini programs](https://techcrunch.com/2018/11/07/wechat-mini-apps-200-million-users/)
+that fulfill everyday needs like booking cabs, reserving tables, etc.
 
-I got curious and [downloaded the SDK](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) and after playing a bit with the [Your First Mini App tutorial](https://developers.weixin.qq.com/miniprogram/en/dev/), I realized the whole thing is so close to building for the actual web, it both fascinates, intrigues, and honestly somewhat infuriates me.
+I got curious and
+[downloaded the SDK](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
+and after playing a bit with the
+[Your First Mini App tutorial](https://developers.weixin.qq.com/miniprogram/en/dev/),
+I realized the whole thing is so close to building for the actual web, it both
+fascinates, intrigues, and honestly somewhat infuriates me.
 
 #### App Architecture
 
-- You style your apps with [WXSS](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxss.html), which is essentially CSS with some neat additions like [responsive pixels](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxss.html).
+- You style your apps with
+  [WXSS](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxss.html),
+  which is essentially CSS with some neat additions like
+  [responsive pixels](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxss.html).
 
 ```css
 page-section-gap {
@@ -27,7 +42,10 @@ page-section-gap {
 }
 ```
 
-- You write your app logic with JavaScript (or TypeScript), with `App` as the top level object and `wx` as the object you get all the cool capabilities from. The [API](https://developers.weixin.qq.com/miniprogram/en/dev/api/) is incredibly powerful.
+- You write your app logic with JavaScript (or TypeScript), with `App` as the
+  top level object and `wx` as the object you get all the cool capabilities
+  from. The [API](https://developers.weixin.qq.com/miniprogram/en/dev/api/) is
+  incredibly powerful.
 
 Here are the keys of the `wx` object:
 
@@ -396,7 +414,13 @@ Here are the keys of the `wx` object:
 ];
 ```
 
-- You describe your interface with [WXML](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxml/), which is something between [JSX](https://reactjs.org/docs/introducing-jsx.html), [Vue's declarative rendering](https://vuejs.org/v2/guide/#Declarative-Rendering); it also reminds me of old concepts like XSLT's [`<xsl:if>`](https://www.w3.org/TR/xslt-30/#xsl-if):
+- You describe your interface with
+  [WXML](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxml/),
+  which is something between
+  [JSX](https://reactjs.org/docs/introducing-jsx.html),
+  [Vue's declarative rendering](https://vuejs.org/v2/guide/#Declarative-Rendering);
+  it also reminds me of old concepts like XSLT's
+  [`<xsl:if>`](https://www.w3.org/TR/xslt-30/#xsl-if):
 
 ```html
 <view wx:if="{{view == 'WEBVIEW'}}"> WEBVIEW </view>
@@ -404,11 +428,18 @@ Here are the keys of the `wx` object:
 <view wx:else="{{view == 'MINA'}}"> MINA </view>
 ```
 
-Overall a really nice separation of concerns. I could very well imagine being productive with this in no time. The onboarding experience of the documentation is pretty neat. The SDK is well made with (essentially an adapted) [Chrome DevTools integrated](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/devtools.html) and some VS Code like features like code completion.
+Overall a really nice separation of concerns. I could very well imagine being
+productive with this in no time. The onboarding experience of the documentation
+is pretty neat. The SDK is well made with (essentially an adapted)
+[Chrome DevTools integrated](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/devtools.html)
+and some VS Code like features like code completion.
 
 #### Programming Concept
 
-The overall programming concept [reminds of OpenSocial](http://opensocial.github.io/spec/2.5.1/Social-Gadget.xml#rfc.section.3.1.2) (if anyone remembers that) where there is a baseline assumption of a logged in user whose social graph can be explored:
+The overall programming concept
+[reminds of OpenSocial](http://opensocial.github.io/spec/2.5.1/Social-Gadget.xml#rfc.section.3.1.2)
+(if anyone remembers that) where there is a baseline assumption of a logged in
+user whose social graph can be explored:
 
 ```js
 // OpenSocial
@@ -438,7 +469,10 @@ wx.getSetting({
 
 #### Component Library
 
-They also have nice [set of declarative components](https://developers.weixin.qq.com/miniprogram/en/dev/component/), think web components essentially, that you can create with WXML and interact with from JavaScript:
+They also have nice
+[set of declarative components](https://developers.weixin.qq.com/miniprogram/en/dev/component/),
+think web components essentially, that you can create with WXML and interact
+with from JavaScript:
 
 ```html
 <map
@@ -494,15 +528,29 @@ Page({
 
 ![WeChat `<map>` component sample running in WeChat DevTools](https://user-images.githubusercontent.com/145676/63084474-8d902f80-bf4b-11e9-9267-c69f4923e795.png)
 
-And of course they have a [`<web-view>`](https://developers.weixin.qq.com/miniprogram/en/dev/component/web-view.html).
+And of course they have a
+[`<web-view>`](https://developers.weixin.qq.com/miniprogram/en/dev/component/web-view.html).
 
 ![WeChat `<web-view>` component sample running in WeChat DevTools](https://user-images.githubusercontent.com/145676/63084476-8d902f80-bf4b-11e9-9cb5-d3a216a4d4af.png)
 
 #### Inner Mechanics
 
-From what I understand, it's all running in an iframe, Chrome/WeChat DevTools then hides the container, and all you see is the WXML layer.
-When you look at the SDK's package contents, they make no real effort at hiding any of the inner mechanics: it's all HTML (of particular interest: `/Applications/wechatwebdevtools.app/Contents/Resources/package.nw/html/standalone.html`), CSS (of particular interest: `/Applications/wechatwebdevtools.app/Contents/Resources/package.nw/static/app.css`), and JavaScript (of particular interest: `/Applications/wechatwebdevtools.app/Contents/Resources/package.nw/js/vendor/index.js`).
+From what I understand, it's all running in an iframe, Chrome/WeChat DevTools
+then hides the container, and all you see is the WXML layer. When you look at
+the SDK's package contents, they make no real effort at hiding any of the inner
+mechanics: it's all HTML (of particular interest:
+`/Applications/wechatwebdevtools.app/Contents/Resources/package.nw/html/standalone.html`),
+CSS (of particular interest:
+`/Applications/wechatwebdevtools.app/Contents/Resources/package.nw/static/app.css`),
+and JavaScript (of particular interest:
+`/Applications/wechatwebdevtools.app/Contents/Resources/package.nw/js/vendor/index.js`).
 
 ![Inspecting package contents of the WeChat DevTools](https://user-images.githubusercontent.com/145676/63084475-8d902f80-bf4b-11e9-954a-aff06f9b0e8d.png)
 
-Finally there is a local web server running that allows them to link from the online docs to local URLs like [127.0.0.1:32123/minicode/VBZ3Jim26zYu](http://127.0.0.1:32123/minicode/VBZ3Jim26zYu), which in turn allows them to open code samples from the docs that are ready to play with a click in WeChat DevTools. The web server [luckily](https://medium.com/bugbountywriteup/zoom-zero-day-4-million-webcams-maybe-an-rce-just-get-them-to-visit-your-website-ac75c83f4ef5) only runs when the WeChat DevTools are open.
+Finally there is a local web server running that allows them to link from the
+online docs to local URLs like
+[127.0.0.1:32123/minicode/VBZ3Jim26zYu](http://127.0.0.1:32123/minicode/VBZ3Jim26zYu),
+which in turn allows them to open code samples from the docs that are ready to
+play with a click in WeChat DevTools. The web server
+[luckily](https://medium.com/bugbountywriteup/zoom-zero-day-4-million-webcams-maybe-an-rce-just-get-them-to-visit-your-website-ac75c83f4ef5)
+only runs when the WeChat DevTools are open.

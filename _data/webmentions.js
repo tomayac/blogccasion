@@ -1,4 +1,5 @@
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const fs = require('fs');
 const unionBy = require('lodash/unionBy');
 const domain = require('./metadata.json').domain;
