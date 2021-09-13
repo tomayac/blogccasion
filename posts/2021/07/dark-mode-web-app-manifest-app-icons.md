@@ -59,4 +59,10 @@ You can test it for yourself by installing the app embedded below ([launch it in
   </iframe>
 </div>
 
+<strong>Update:</strong> [Alexey Rodionov](https://twitter.com/alexey_rodionov) has let me know that this even works for
+[app shortcut icons](https://web.dev/app-shortcuts/#icons-%28optional%29). You can play with Alexey's [demo](https://shortcuts-svg-dark-theme-icons.glitch.me/)
+or check out the screenshot below.
+
+<img src="/images/app-shortcut-icons.png" alt="App shortcut icons displayed in dark mode." width="613" height="605" />
+
 (Credits: The app is a remix of [Alan Cutter](https://glitch.com/@alancutter)'s app [fir-skirt.glitch.me](https://fir-skirt.glitch.me/).)
