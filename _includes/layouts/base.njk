@@ -8,15 +8,17 @@
     <meta name="monetization" content="$ilp.gatehub.net/348218105">
     <meta name="theme-color" content="#111111">
     <meta name="color-scheme" content="dark light">
+    <meta http-equiv="origin-trial" content="AvB/RS6zVGs3NCJTJLdiMRG50umvLkW+RoPWdKxkgvk9WI/+u2vUV9afPnWh0ZzDMF7qnzY2tASErdQJsAH0mQYAAABaeyJvcmlnaW4iOiJodHRwczovL2Jsb2cudG9tYXlhYy5jb206NDQzIiwiZmVhdHVyZSI6IlByaW9yaXR5SGludHNBUEkiLCJleHBpcnkiOjE2NDc5OTM1OTl9">
 
     <title>{{ renderData.title or title or metadata.title }}</title>
 
-    <link rel="modulepreload" href="/js/dark-mode-toggle.min.mjs">
-    <link rel="modulepreload" href="/js/collect.mjs">
+    <link rel="modulepreload" href="/js/script.mjs" importance="high">
+    <link rel="modulepreload" href="/js/dark-mode-toggle.min.mjs" importance="high">
+    <link rel="modulepreload" href="/js/collect.mjs" importance="low">
 
-    <link rel="preload" href="/css/main.css" as="style">
-    <link rel="preload" href="/fonts/ubuntu-v15-latin-regular.woff2" crossorigin as="font">
-    <link rel="preload" href="/fonts/ubuntu-mono-v10-latin-regular.woff2" crossorigin as="font">
+    <link rel="preload" href="/css/main.css" as="style" importance="high">
+    <link rel="preload" href="/fonts/ubuntu-v15-latin-regular.woff2" crossorigin as="font" importance="high">
+    <link rel="preload" href="/fonts/ubuntu-mono-v10-latin-regular.woff2" crossorigin as="font" importance="high">
 
     <script type="module">
       {% set js %}
@@ -66,10 +68,10 @@
     </script>
     <script type="module" src="/js/dark-mode-toggle.min.mjs"></script>
 
-    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
-    <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/prism-theme.css" media="not all" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)" importance="high">
+    <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)" importance="high">
+    <link rel="stylesheet" href="/css/main.css" importance="high">
+    <link rel="stylesheet" href="/css/prism-theme.css" media="not all" onload="this.media='all'" importance="low">
 
     <link rel="shortcut icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
@@ -206,7 +208,7 @@
           </li>
         </ul>
         <dark-mode-toggle permanent dark="Light Theme" light="Dark Theme"></dark-mode-toggle>
-        <a class="validator" href="https://validator.w3.org/nu/?doc={{ metadata.url }}{{ page.url | url }}"><img src="/static/validhtml5.svg" width="88" height="31" alt="Valid HTML5 badge"></a>
+        <a class="validator" href="https://validator.w3.org/nu/?doc={{ metadata.url }}{{ page.url | url }}"><img src="/static/validhtml5.svg" width="88" height="31" alt="Valid HTML5 badge" importance="low"></a>
       </footer>
 
       <svg class="icon-container" xmlns="http://www.w3.org/2000/svg">
