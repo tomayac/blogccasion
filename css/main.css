@@ -112,12 +112,12 @@ ins {
 
 del {
   background-color: hsl(353, 100%, 97%);
+  text-decoration: line-through;
 }
 
 del,
 ins {
   color: hsl(0, 0%, 0%);
-  text-decoration: none;
 }
 
 pre {
