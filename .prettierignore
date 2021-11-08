@@ -1,3 +1,4 @@
 _site/
 *.min.js
 *.min.mjs
+htaccess.njk

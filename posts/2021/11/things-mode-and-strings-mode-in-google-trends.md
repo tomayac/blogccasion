@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: 'Things mode and strings mode in Google Trends'
 author: 'Thomas Steiner'
 date: '2021-11-08T09:31:27'
-permalink: 2021/11/08/things-mode-and-stings-mode-in-google-trends/index.html
+permalink: 2021/11/08/things-mode-and-strings-mode-in-google-trends/index.html
 tags:
   - Technical
 ---
