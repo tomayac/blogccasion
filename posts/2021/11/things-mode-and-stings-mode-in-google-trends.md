@@ -33,6 +33,10 @@ you
 [search for `"11bzxympx6"` on Google](https://www.google.com/search?q=%2211bzxympx6%22&oq=%2211bzxympx6%22&aqs=chrome..69i57.994j0j1&sourceid=chrome&ie=UTF-8),
 you end up with exactly one search result that points to the
 [Wikidata page for Progressive Web Apps](https://www.wikidata.org/wiki/Q23679990).
+If you know the Knowledge Graph ID of something, you can hand-craft a URL that
+points people at exactly the right semantic search result on Google:
+<a href="https://www.google.com/search?kgmid=/g/11bzxympx6"><code>https://www.google.com/search?kgmid=/g/<strong>11bzxympx6</strong></code></a>.
+See the bold Knowledge Graph ID at the end of the URL.
 
 ![Google Trends showing "strings" and "things" mode side by side.](/images/google-trends.png)
 
