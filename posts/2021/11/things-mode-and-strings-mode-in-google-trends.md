@@ -10,14 +10,14 @@ tags:
 
 [Google Trends](https://trends.google.com/trends/) has essentially two modes:
 
-- **Strings:** (["jaguar"](https://trends.google.com/trends/explore?q=jaguar),
+- **Strings:** ["jaguar"](https://trends.google.com/trends/explore?q=jaguar),
   where it doesn't know if you mean the
   [car make](https://en.wikipedia.org/wiki/Jaguar_Cars), the
   [animal](https://en.wikipedia.org/wiki/Jaguar), or even the ancient
-  [MacOS X operating system version](https://en.wikipedia.org/wiki/Mac_OS_X_Jaguar)).
+  [MacOS X operating system version](https://en.wikipedia.org/wiki/Mac_OS_X_Jaguar).
 - **Things:**
-  (["Jaguar (car make)"](https://trends.google.com/trends/explore?q=%2Fm%2F012x34&geo=DE),
-  where you tell it very clearly that you mean the car make).
+  ["Jaguar (car make)"](https://trends.google.com/trends/explore?q=%2Fm%2F012x34&geo=DE),
+  where you tell it very clearly that you mean the car make.
 
 A colleague of mine fell for this and was looking at the
 [landing page for Progressive Web Apps in _strings_ mode](https://trends.google.com/trends/explore?q=progressive%20web%20apps)
