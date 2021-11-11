@@ -31,7 +31,13 @@ module.exports = function (eleventyConfig) {
 
   // Minify JSON, used for Schema.org inline markup
   eleventyConfig.addFilter('jsonMinify', function (code) {
-    return JSON.stringify(JSON.parse(code));
+    let json = code;
+    try {
+      json = JSON.stringify(JSON.parse(code));
+    } catch (err) {
+      console.error(err.name, err.message, code);
+    }
+    return json;
   });
 
   // Minify inline scripts
