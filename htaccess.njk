@@ -22,18 +22,18 @@ Redirect 301 /2018/12/05/why-build-progressive-web-apps-push-but-don-t-be-pushy-
 Redirect 301 /2019/12/09/inspecting_facebooks_webview/ /2019/12/09/inspecting-facebooks-webview/
 Redirect 301 /2021/11/08/things-mode-and-stings-mode-in-google-trends/ /2021/11/08/things-mode-and-strings-mode-in-google-trends/
 
-# BEGIN Expire headers  
-<IfModule mod_expires.c>    
+# BEGIN Expire headers
+<IfModule mod_expires.c>
   ExpiresActive on
   # Set the default expiry times.
   ExpiresDefault "access plus 2 days"
   ExpiresByType image/* "access plus 1 month"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType text/javascript "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"      
+  ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType text/html "access plus 600 seconds"
   ExpiresByType font/woff2 "access plus 1 year"
-</IfModule>  
+</IfModule>
 # END Expire headers
 
 
