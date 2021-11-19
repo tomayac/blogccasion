@@ -304,6 +304,7 @@ svg.icon {
   width: 1rem;
   height: 1rem;
   vertical-align: middle;
+  margin-inline-end: 0.25rem;
 }
 
 nav ul,
