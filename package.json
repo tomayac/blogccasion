@@ -41,7 +41,7 @@
     "cssnano": "^5.0.11",
     "dark-mode-toggle": "^0.10.0",
     "dotenv": "^10.0.0",
-    "eslint": "^8.2.0",
+    "eslint": "^8.3.0",
     "eslint-config-google": "^0.14.0",
     "html-minifier": "^4.0.0",
     "kill-port": "^1.6.1",
