@@ -22,15 +22,6 @@ embedded below.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kcvfyQh6J-0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-I have even created a Twitter account for the app, so if you want to stay
-up-to-date on future development, follow
-[@svgco_de](https://twitter.com/svgco_de).
-
-<a class="twitter-timeline" data-width="320" data-height="400" data-dnt="true" data-theme="dark" href="https://twitter.com/svgco_de?ref_src=twsrc%5Etfw">Tweets
-by @svgco_de</a>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 [SVGcode](https://svgco.de/) is starting to get some coverage, for example, from
 [XDA Developers](https://www.xda-developers.com/svgcode-web-app/) and even a
 Chinese website called
