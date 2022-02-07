@@ -33,7 +33,8 @@ post
 
 (Side remark about a little gotcha: Note how I need to "lie" about the icon's
 dimensions in the web app manifest, where I say it's `144x144` pixels compared
-to the `width` and `height` in the source code.)
+to the `width` and `height` in the source code. This won't be necessary once
+[crbug/1107123](https://crbug.com/1107123) is fixed.)
 
 ```html
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
