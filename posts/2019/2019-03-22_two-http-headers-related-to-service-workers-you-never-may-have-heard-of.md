@@ -37,8 +37,7 @@ file comes from
 (your query parameters may differ).
 
 Now why does this matter? Let’s briefly recall the
-[concept of a Service Worker’s](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope)
-`[scope](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope)`:
+[concept of a Service Worker’s `scope`](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope):
 The `scope` of the Service Worker determines which files the Service Worker
 controls, in other words, from which path the Service Worker will intercept
 requests. The default `scope` is the location of the Service Worker file, and
@@ -72,7 +71,7 @@ and here is the
 [deep link to its section in the spec](https://w3c.github.io/ServiceWorker/#service-worker-script-request).
 You can see it in action when you go to Facebook. Facebook’s Service Worker
 comes from
-`[https://www.facebook.com/sw?s=push](https://www.facebook.com/sw?s=push)`, but
+[`https://www.facebook.com/sw?s=push`](https://www.facebook.com/sw?s=push), but
 if you try to open this URL, you’ll not see the JavaScript code, but a Facebook
 error page. You actually _need_ to send the header in order for Facebook to
 return the code.
@@ -92,7 +91,7 @@ sessions in the browser or from the terminal, a cool Chrome DevTools tip is to
 right-click the Service Worker request and then “Copy as cURL” or “Copy as
 fetch”. 👌
 
-![Fetch a resource exactly as the browser did with “Copy as cURL” or “Copy as fetch”](/images/asset-4.png)
+![Fetch a resource exactly as the browser did with “Copy as cURL” or “Copy as fetch”](/images/copy-as-curl.png)
 
 Did _you_ know about these headers? Let me know in the comments or ping me,
 [@tomayac](https://twitter.com/tomayac), on Twitter. Oh, by the way, while I
