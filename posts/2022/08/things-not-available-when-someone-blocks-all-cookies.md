@@ -147,5 +147,5 @@ behavior is different, though. To align with `document.cookie`'s write
 behavior, should write operations for the Cookie Store API fail silently
 when cookies are blocked? Asked this question in an
 [Issue](https://github.com/WICG/cookie-store/issues/209) in the Cookie Store
-API's repo… (Fun fact: spelling "occurred" is hard, double 'c' and double
+API's repo… Fun fact: spelling "occurred" is hard, double 'c' and double
 'r' ([crbug/1359247](https://crbug.com/1359247)).
