@@ -118,3 +118,34 @@ and love MDN 😍), when I discovered a
 [@bershanskiy](https://github.com/bershanskiy)!)
 
 ![MDN with blocked cookies](/images/mdn-error.png)
+
+## Amendment: `document.cookie` and the Cookie Store API
+
+Since the user blocks cookies, I assumed cookies would of course not work, but
+I was made aware of an interesting interoperability case by
+[@Semmel_Of_Nine](https://twitter.com/Semmel_Of_Nine/status/1565386373355421696?s=20&t=u3q_x3gPj3mYfKcu1KCXeg)
+when comparing the behavior of `document.cookie` and the
+[Cookie Store API](https://developer.mozilla.org/en-US/docs/Web/API/Cookie_Store_API):
+
+```js
+// All cookies are blocked in browser settings.
+
+document.cookie = 'silently=ignored'; 
+// > 'silently=ignored'
+document.cookie;
+// > ''
+
+await cookieStore.set('throws', 'on-write');
+// > Uncaught DOMException: An unknown error occured while writing the cookie.
+await cookieStore.getAll();
+// > []
+```
+
+The reading behavior is the same, both act as if there were no cookies by
+returning an empty string or an empty array respectively. The writing
+behavior is different, though. To align with `document.cookie`'s write
+behavior, should write operations for the Cookie Store API fail silently
+when cookies are blocked? Asked this question in an
+[Issue](https://github.com/WICG/cookie-store/issues/209) in the Cookie Store
+API's repo… (Fun fact: spelling "occurred" is hard, double 'c' and double
+'r' ([crbug/1359247](https://crbug.com/1359247)).
