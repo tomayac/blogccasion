@@ -45,6 +45,7 @@ ones that I found:
 - [Origin Private File System](https://web.dev/file-system-access/#accessing-the-origin-private-file-system)
 - [`webkitRequestFileSystem()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestFileSystem)
   (obsolete)
+- [Web Locks](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API)
 
 The code sample below shows all these APIs and the error messages they throw
 when you try to use them with cookies blocked.
@@ -89,6 +90,12 @@ webkitRequestFileSystem(
   (err) => console.error(err)
 );
 // DOMException: An ongoing operation was aborted, typically with a call to abort().
+
+await navigator.locks.request('test', () => {});
+// Uncaught DOMException: The request was denied.
+
+await navigator.locks.query();
+// Uncaught DOMException: The request was denied.
 ```
 
 Did I miss anything? If so, please let me know!
@@ -119,7 +126,7 @@ and love MDN 😍), when I discovered a
 
 ![MDN with blocked cookies](/images/mdn-error.png)
 
-## Amendment: `document.cookie` and the Cookie Store API
+## Amendment 1: `document.cookie` and the Cookie Store API
 
 Since the user blocks cookies, I assumed cookies would of course not work, but I
 was made aware of an interesting interoperability case by
@@ -149,3 +156,9 @@ blocked? Asked this question in an
 [Issue](https://github.com/WICG/cookie-store/issues/209) in the Cookie Store
 API's repo… Fun fact: spelling "occurred" is hard, double 'c' and double 'r'
 ([crbug/1359247](https://crbug.com/1359247)).
+
+## Amendment 2: Web Locks API
+
+Twitter user
+[@\_bayotop pointed out](https://twitter.com/_bayotop/status/1568220796673314817)
+that the Web Lock API is also affected.
