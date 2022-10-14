@@ -62,6 +62,10 @@
       {{ js | jsmin | safe }}
     </script>
     <script type="module" src="/js/dark-mode-toggle.min.mjs"></script>
+    <noscript>
+      <link rel="stylesheet" href="/css/prism-theme.css">
+      <link rel="stylesheet" href="/css/light.css">
+    </noscript>
     <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="/css/main.css">
@@ -123,10 +127,6 @@
       {% endset %}
       {{ schemaDotOrg | jsonMinify | safe }}
     </script>
-    <noscript>
-      <link rel="stylesheet" href="/css/prism-theme.css">
-      <link rel="stylesheet" href="/css/light.css">
-    </noscript>
   </head>
   <body tabindex="0">
     <div class="container">
