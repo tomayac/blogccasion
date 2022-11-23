@@ -25,8 +25,8 @@ feel free to contact me. There are many ways to do so…
 
 <p>
   Thomas Steiner<br>
-  Neanderstr. 3<br>
-  20459 Hamburg<br>
+  Haselnussweg 3/1<br>
+  72770 Reutlingen<br>
   Germany
 </p>
 
