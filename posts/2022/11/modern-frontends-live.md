@@ -38,7 +38,10 @@ or [let me know](/about/) directly, and I will happily link to it.
   by Kent C. Dodds
 - [Modern Frontends Live](https://dylanbeattie.net/2022/11/22/modern-frontends-2022.html)
   by Dylan Beattie
-- [Nathalia Rus on Instagram](https://www.instagram.com/p/ClTNFQQDTIv/) by Nathalia Rus  
+- [Nathalia Rus on Instagram](https://www.instagram.com/p/ClTNFQQDTIv/) by
+  Nathalia Rus
+- [Patty O'Callaghan on Twitter](https://twitter.com/pattyneta/thread/1595495394557022208)
+  by Patty O'Callaghan
 
 Niall Maher even made a video about the conference experience. Lean back and
 enjoy… 🍿
