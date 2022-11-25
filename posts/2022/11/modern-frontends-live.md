@@ -42,6 +42,8 @@ or [let me know](/about/) directly, and I will happily link to it.
   Nathalia Rus
 - [Patty O'Callaghan on Twitter](https://twitter.com/pattyneta/thread/1595495394557022208)
   by Patty O'Callaghan
+- [My experience at Modern Frontends](https://kilianvalkhof.com/2022/web/my-experience-at-modern-frontends/)
+  by Kilian Valkhof
 
 Niall Maher even made a video about the conference experience. Lean back and
 enjoy… 🍿
