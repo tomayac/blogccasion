@@ -44,8 +44,11 @@ or [let me know](/about/) directly, and I will happily link to it.
   by Patty O'Callaghan
 - [My experience at Modern Frontends](https://kilianvalkhof.com/2022/web/my-experience-at-modern-frontends/)
   by Kilian Valkhof
+- [A letter to Modern Frontends](https://roe.dev/blog/a-letter-to-modern-frontends) by Daniel Roe
 
-Niall Maher even made a video about the conference experience. Lean back and
+Niall Maher and James Q Quick even made videos about the conference experience. Lean back and
 enjoy… 🍿
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Ekn-qiH8Ozw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CHJrO8TvNjI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
