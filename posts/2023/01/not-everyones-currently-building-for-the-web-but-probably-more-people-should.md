@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title:
-  "Not everyone's currently building for the web, but probably more people
+  "Not everyone's currently building for the Web, but probably more people
   should"
 author: 'Thomas Steiner'
 date: '2023-01-16T09:27:32'
@@ -13,25 +13,25 @@ tags:
 If you want to build an app, you have several ways of doing it. You can build a
 platform-specific app for the platforms you care about, for example, Windows,
 Android, and iOS. In which case you would build three apps. You can also build a
-(progressive) web app, possibly _in addition to_ platform-specific apps.
+(progressive) Web app, possibly _in addition to_ platform-specific apps.
 Alternatively, you can choose a cross-platform framework such as
 [Electron.js](https://www.electronjs.org/) or
 [Ionic](https://ionicframework.com/) that promises to let you write once and run
 anywhere. Let me begin by walking you through three extraordinary examples of
-apps whose makers chose to _also_ build for the web, apart from building
+apps whose makers chose to _also_ build for the Web, apart from building
 platform-specific apps.
 
-## Beacon cases that demonstrate the web's abilities
+## Beacon cases that demonstrate the Web's abilities
 
 ### Photoshop
 
 I always saw Photoshop as one of the last bastions of high quality apps that
-supposedly would never make it to the web platform. Forget that—this last
+supposedly would never make it to the Web platform. Forget that—this last
 bastion has finally fallen. With [Photoshop](https://web.dev/ps-on-the-web/),
 Adobe, together with Chromium engineering, has managed to get a beta version of
 Photoshop running in the browser that can serve as the new beacon showcase of
-what is possible on the web. In it, you can try out the commenting workflow and
-test some early Photoshop editing features Adobe is piloting on the web. You and
+what is possible on the Web. In it, you can try out the commenting workflow and
+test some early Photoshop editing features Adobe is piloting on the Web. You and
 your collaborators can now open and view Photoshop cloud documents in the
 browser, provide feedback, and make basic edits. All in one place without having
 to download or launch the app.
@@ -39,32 +39,32 @@ to download or launch the app.
 <figure>
   <img src="/images/photoshop.avif", alt="Adobe Photoshop running in the browser.", width="800", height="500">
   <figcaption>
-    Photoshop on the web
+    Photoshop on the Web
   </figcaption>
 </figure>
 
 ### Visual Studio Code
 
 Similarly, Microsoft has launched
-[Visual Studio Code on the web](https://code.visualstudio.com/blogs/2021/10/20/vscode-dev),
-a fully fledged, installable web experience of its integrated development
+[Visual Studio Code on the Web](https://code.visualstudio.com/blogs/2021/10/20/vscode-dev),
+a fully fledged, installable Web experience of its integrated development
 environment (IDE) that makes developing completely in the browser possible,
 including the option to open and edit files on the local file system.
 
 <figure>
   <img src="/images/vscode.avif", alt="Microsoft VS Code running in the browser.", width="800", height="483" >
   <figcaption>
-    VS Code on the web
+    VS Code on the Web
   </figcaption>
 </figure>
 
 ### Twitter
 
-Lastly Twitter—whose progressive web app (PWA) is
+Lastly Twitter—whose progressive Web app (PWA) is
 [largely seen](https://www.thurrott.com/cloud/social/150171/twitter-lite-now-adapts-larger-screens#:~:text=probably%20the%20best%20mainstream%20progressive%20web%20app)
-as _probably the best mainstream progressive web app_—has
+as _probably the best mainstream Progressive Web App_—has
 [used](https://blog.twitter.com/engineering/en_us/topics/insights/2019/twitter-for-mac-is-coming-back#:~:text=This%20led%20to%20our%20Responsive%20Web%20codebase%20being%20the%20spearhead%20for%20all%20platforms%20via%20web%20browsers)
-its responsive web codebase for all platforms, mobile and desktop, via web
+its responsive Web codebase for all platforms, mobile and desktop, via Web
 browsers. On Windows, the PWA is the experience the company is confident enough
 to make _the_ Twitter experience that you get when you
 [install](https://blog.twitter.com/en_us/topics/product/2018/a-new-twitter-experience-on-windows)
@@ -77,12 +77,12 @@ the app from the Microsoft Store.
   </figcaption>
 </figure>
 
-## Linkability and universality: the web's super powers
+## Linkability and universality: the Web's super powers
 
-All three companies, Adobe, Microsoft, and Twitter, in parallel with their web
+All three companies, Adobe, Microsoft, and Twitter, in parallel with their Web
 apps, have well-established, platform-specific Windows, macOS, Android, iOS, and
 Linux versions of their apps Photoshop, Visual Studio Code, and Twitter
-respectively. So why did they build for the web on top? The answer lies in its
+respectively. So why did they build for the Web on top? The answer lies in its
 linkability and universality.
 
 As Google's Thomas Nattestad
@@ -104,7 +104,7 @@ to ensuring people can get from an article straight into the app, where they can
 read or engage with the linked tweet.
 
 Web applications are inherently universal. They run on whatever operating system
-is capable of running a web browser and they do not need to be compiled for each
+is capable of running a Web browser and they do not need to be compiled for each
 operating system separately. The same code base powers the application on all
 platforms. This does not mean that there are no compatibility issues—there are
 plenty actually—but there is a
@@ -114,7 +114,7 @@ applications can build upon.
 ### Linkability of platform-specific apps
 
 While more ubiquitous on mobile, linking into a platform-specific app from the
-web on desktop is comparatively rare. On mobile (and macOS), this works via a
+Web on desktop is comparatively rare. On mobile (and macOS), this works via a
 technology called
 [Universal Links](https://developer.apple.com/ios/universal-links/) on iOS (and
 on macOS), and [App Links](https://developer.android.com/training/app-links/) on
@@ -123,12 +123,12 @@ Android. Platform-specific apps alternatively can rely on
 such as `itms-apps:` for when you want to deep-link into the App Store app on
 macOS or iOS, or register your own custom schemes for your own apps. So while
 technically possible, linking into platform-specific apps is a lot less flexible
-and requires more plumbing work than simply linking into a web app.
+and requires more plumbing work than simply linking into a Web app.
 
 ## The slow decline of interest in cross-platform app frameworks and the rise of Flutter
 
-The web isn't the only platform that promises _"write once, run anywhere"_.
-Cross-platform frameworks _à la_ Electron.js do, too. With the web becoming
+The Web isn't the only platform that promises _"write once, run anywhere"_.
+Cross-platform frameworks _à la_ Electron.js do, too. With the Web becoming
 powerful enough to drive apps such as Photoshop that were thought to be
 impossible, we can, however, observe a slow decline of interest in
 cross-platform desktop app frameworks such as
@@ -190,10 +190,10 @@ technology on StackOverflow is not beyond the realms of possibility.
   </figcaption>
 </figure>
 
-## Shouldn't everybody be building for the web, then?
+## Shouldn't everybody be building for the Web, then?
 
 Given the examples of Photoshop, VS Code, and Twitter, that show that it is
-indeed possible to build amazing applications on the web, and given the web's
+indeed possible to build amazing applications on the Web, and given the Web's
 super powers of linkability and universality, two research questions come up:
 
 - <span id="research-question-1">Research question ①:</span>
@@ -217,12 +217,12 @@ interface paradigm of having the
 [app menu at the top of the screen](https://developer.apple.com/design/human-interface-guidelines/macos/menus/menu-bar-menus/).
 It can easily be achieved with frameworks such as Electron.js via the
 <code>[Menu](https://www.electronjs.org/docs/latest/api/menu)</code> class. (On
-the web, the next best thing is
+the Web, the next best thing is
 [Window Controls Overlay](https://web.dev/window-controls-overlay/); getting
 support for app menus is tracked as [crbug/1295253](https://crbug.com/1295253).)
 Another example is in-app purchases on macOS that can be handled via Electron's
 <code>[inAppPurchase()](https://www.electronjs.org/docs/latest/tutorial/in-app-purchases)</code>
-method. (On the web, the next best thing is the
+method. (On the Web, the next best thing is the
 [Digital Goods API](https://developer.chrome.com/docs/android/trusted-web-activity/receive-payments-play-billing/),
 currently limited to Android and ChromeOS.) Installers are a common way users
 have learned to install applications on Windows. With Electron.js, it is
@@ -230,13 +230,13 @@ possible to create
 [installers](https://www.electronjs.org/docs/latest/api/auto-updater#windows)
 and make installed applications
 [update automatically](https://www.electronjs.org/docs/latest/api/auto-updater).
-(On the web, [Web Bundles](https://web.dev/web-bundles/) are the next best
+(On the Web, [Web Bundles](https://web.dev/web-bundles/) are the next best
 alternative in Chrome.) This list is not exhaustive, and Electron.js is
 mentioned as a representative apps framework out of several.
 
 ##### How big a challenge is this?
 
-There are undeniably a number of capabilities that are missing from the web. In
+There are undeniably a number of capabilities that are missing from the Web. In
 many cases, they are "nice-to-have", but not necessarily required for a still
 great experience. Carefully assess if a capability can be seen as a progressive
 enhancement. For an example of this approach, check out the article
@@ -266,8 +266,8 @@ headsets, has announced that PWAs would be accepted into the
 
 If your users are on one of the platforms whose stores accept PWAs, you can
 publish your app to the stores in question. Remember linkability as one of the
-web's super powers. Your app is discoverable, advertisable, and linkable from
-the web, too. Investing in a memorable domain name can sometimes actually be
+Web's super powers. Your app is discoverable, advertisable, and linkable from
+the Web, too. Investing in a memorable domain name can sometimes actually be
 better for discoverability. Even for app stores, people still rely most on
 recommendations from friends and family members to discover new apps according
 to
@@ -279,7 +279,7 @@ Apart from making apps themselves available for a fee, apps can also be
 monetized by selling items as in-app purchases (for example, items in a game
 app), or by selling subscriptions (for example, regular courses in a fitness
 app). If the developer integrates with payment providers, all of this is
-available to web apps as well, but the smooth integration of stores and their
+available to Web apps as well, but the smooth integration of stores and their
 related payment systems make this a lot more attractive for platform-specific
 apps, albeit at a 15–30% commission. For apps built using
 [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/)
@@ -301,23 +301,23 @@ example is
 #### Hiring or retraining developers
 
 From personal experience through talking to many of Google's partners, a lot of
-[companies struggle with hiring great web developers](https://medium.com/javascript-scene/why-hiring-is-so-hard-in-tech-c462c3230017).
+[companies struggle with hiring great Web developers](https://medium.com/javascript-scene/why-hiring-is-so-hard-in-tech-c462c3230017).
 The talent shortage is real, and recruiting costs are high, which is why
 startups commonly hire in-house recruiters who often approach recruiting with a
 breadth-first approach that has not helped the reputation of recruiters with IT
 professionals. Also, companies often already employ teams of Android and/or iOS
-developers that they cannot just retrain to become web developers. Creating a
-PWA requires a high level of specialization that not all web developers can
+developers that they cannot just retrain to become Web developers. Creating a
+PWA requires a high level of specialization that not all Web developers can
 offer.
 
 ##### How big a challenge is this?
 
 In the current economic situation, hiring <em>any</em> kind of developer is
-difficult. Hiring someone with web development skills is, in comparison to other
+difficult. Hiring someone with Web development skills is, in comparison to other
 platform-specific coding skills, still easier
 [according to StackOverflow surveys](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language-prof),
 which (in part) also explains the popularity of app frameworks such as React
-Native, Ionic, Flutter, and others that are based on web technologies.
+Native, Ionic, Flutter, and others that are based on Web technologies.
 
 #### Existing apps legacy (and migrating the user base)
 
@@ -354,7 +354,7 @@ and
 
 ##### How big a challenge is this?
 
-Compatibility is the top priority for web developers and browser vendors alike.
+Compatibility is the top priority for Web developers and browser vendors alike.
 With feature testing and progressive enhancement, impressive apps which behave
 well on all browsers can be built. For an example of this approach, check out
 the article
@@ -372,7 +372,7 @@ frameworks were all cited.
 
 ##### How big a challenge is this?
 
-The tooling and framework situation in the web development world is infamous for
+The tooling and framework situation in the Web development world is infamous for
 being confusing and hard to keep up with. In practice, though, companies would
 use one technology and tooling stack and stay true to it for many years. The
 world of tech Twitter is one thing, the reality in businesses, where the
@@ -388,7 +388,7 @@ trusted certificate to be used, developers pin the certificate authority issuer,
 public keys, or even end-entity certificates of their choice. Clients connecting
 to that server will treat all other certificates as invalid and refuse to make
 an HTTPS connection. The hope is that this renders "person-in-the-middle"
-attacks impossible, so platform-specific apps are more "secure" than web apps,
+attacks impossible, so platform-specific apps are more "secure" than Web apps,
 where traffic can easily be sniffed with browser DevTools. There are ways to
 [circumvent pinned certificates](https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/)
 on all platforms, so it is mostly the theater of security at this point.
@@ -408,7 +408,7 @@ advanced technologies such as [WebAssembly](https://webassembly.org/) (including
 [SIMD](https://v8.dev/features/simd)),
 [WebGPU](https://gpuweb.github.io/gpuweb/), and general JavaScript engine
 progress in recent years. Nonetheless, a carefully developed, platform-specific
-app will typically outperform a web-based application (albeit the situations
+app will typically outperform a Web-based application (albeit the situations
 where this _actually_ matters may be limited). With even high-performance
 audio-editing tools like [Soundtrap](https://www.soundtrap.com/) (thanks to the
 [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API) and
@@ -439,7 +439,7 @@ For [research question ②](#research-question-2), one possible explanation is
 that it is a
 [Google-backed](https://flutter.dev/#:~:text=Flutter%20is%20Google%27s%20UI%20toolkit%20for%20building%20beautiful%2C%20natively%20compiled%20applications%20for%20mobile%2C%20web%2C%20desktop%2C%20and%20embedded%20devices%20from%20a%20single%20codebase.)
 toolkit for _"building beautiful, natively compiled applications for mobile,
-web, desktop, and embedded devices from a single codebase"_. If even Google, as
+Web, desktop, and embedded devices from a single codebase"_. If even Google, as
 the maker of Android, trusts Flutter enough to build some of its strategic apps
 with it, such as
 [Stadia](https://stadia.dev/blog/how-flutter-helped-us-make-stadia-controller-setup-better-for-users/)
@@ -447,7 +447,7 @@ with it, such as
 and
 [Assistant apps](https://developers.googleblog.com/2019/05/Flutter-io19.html) on
 smart display embedded devices, that is quite a signal to send. Also note how
-web and desktop are included in Flutter's output options, which means Flutter is
+Web and desktop are included in Flutter's output options, which means Flutter is
 no longer limited to just mobile (with submission into app stores as the
 carrot), and the promise is that it reduces the development cost of apps by the
 number of targeted platforms. (Prominent target platform omissions so far are
@@ -457,10 +457,10 @@ An argument that is frequently brought up for Flutter is
 [hot reloading](https://flutter.dev/docs/development/tools/hot-reload). On the
 backend, Flutter also
 [plays well with Firebase](https://firebase.google.com/docs/flutter/setup?platform=ios),
-so apps are easy to scale. Important for web, and as Flutter was initially
+so apps are easy to scale. Important for Web, and as Flutter was initially
 criticized for rendering everything inaccessibly onto a `<canvas>`, the
 framework now has
-[two different web renderers](https://flutter.dev/docs/development/tools/web-renderers)
+[two different Web renderers](https://flutter.dev/docs/development/tools/web-renderers)
 it can automatically choose from:
 
 - **HTML renderer:** This renderer uses a combination of HTML elements, CSS,
@@ -501,25 +501,25 @@ The Flutter community is thriving and it's easy to find help if you are stuck.
 
 ## Conclusions
 
-It is undeniable that amazing apps can be built on the web. Photoshop, VS Code,
+It is undeniable that amazing apps can be built on the Web. Photoshop, VS Code,
 and Twitter are the stand-out examples in this article, but there are many
-others. One of the web's super powers is its linkability, which is hard to beat
-on platforms other than the web. There seems to be a certain tendency for
+others. One of the Web's super powers is its linkability, which is hard to beat
+on platforms other than the Web. There seems to be a certain tendency for
 cross-platform app frameworks to become less attractive to developers, with the
-notable exception of Flutter, which allows for web as one of its target
-platforms. Reasons for _not_ building for the web are easy to find, but it is
+notable exception of Flutter, which allows for Web as one of its target
+platforms. Reasons for _not_ building for the Web are easy to find, but it is
 also not hard to find counter-arguments to take these reasons apart. Some of
 them rely on outdated or weak assumptions, for example, PWAs not being welcome
 on app stores, or platform-specific apps being more secure than PWAs. Others are
-things that are in process, like closing the app gap by adding missing web
+things that are in process, like closing the app gap by adding missing Web
 platform APIs. Some reasons apply equally to both worlds, for example, for
 hiring to be a challenge. I could go on, but in the end it all boils down to the
 concrete circumstances your use case needs to be built for. In this article, I
-have given a number of really strong arguments for building for the web, while
-also not hiding the fact that the web is a platform that is still not perfect,
+have given a number of really strong arguments for building for the Web, while
+also not hiding the fact that the Web is a platform that is still not perfect,
 and pointing out that other alternatives exist. And as the three stand-out
 examples have shown, the decision is also not mutually exclusive. You can build
-a powerful web app, and have a great, platform-specific application at the same
+a powerful Web app, and have a great, platform-specific application at the same
 time. It is up to you to decide if you want to. And as I said in the title:
-_"Not everyone's currently building for the web, but probably more people
+_"Not everyone's currently building for the Web, but probably more people
 should"_. In my humble opinion.
