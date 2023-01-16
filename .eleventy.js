@@ -3,8 +3,8 @@ const htmlmin = require('html-minifier');
 const _ = require('lodash');
 const fs = require('fs');
 const { minify } = require('terser');
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const filters = require('./_11ty/filters');
@@ -96,17 +96,17 @@ module.exports = function (eleventyConfig) {
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
-    linkify: true
+    linkify: true,
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "after",
-      class: "direct-link",
-      symbol: "🔗"
+      placement: 'after',
+      class: 'direct-link',
+      symbol: '🔗',
     }),
-    level: [1,2,3,4],
-    slugify: eleventyConfig.getFilter("slugify")
+    level: [1, 2, 3, 4],
+    slugify: eleventyConfig.getFilter('slugify'),
   });
-  eleventyConfig.setLibrary("md", markdownLibrary);
+  eleventyConfig.setLibrary('md', markdownLibrary);
 
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
