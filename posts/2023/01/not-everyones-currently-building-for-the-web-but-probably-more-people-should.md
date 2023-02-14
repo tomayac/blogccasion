@@ -204,7 +204,7 @@ super powers of linkability and universality, two research questions come up:
 ### Why do people not fully bet on PWA?
 
 For [research question ①](#research-question-1), the answer is complex and
-manyfold. I want to break it down into different sub-categories.
+manifold. I want to break it down into different sub-categories.
 
 #### Missing capabilities: aka the app gap
 
