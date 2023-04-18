@@ -27,7 +27,7 @@ I think the `.de` domain was parked for a while gathering dust, until it was tak
 
 For some nostalgic reason a couple of days ago, I decided to see if I could get my domain back. So I emailed André out of the blue based on the [imprint of `linux-abos.de`](https://www.linux-abos.de/impressum/) and asked him how much it would cost to transfer `tomayac.de` back to me, and what happened next is just the nicest story.
 
-André kindly offered to sell it back to me for a back link and the price he originally payed for the domain, that is 12€, plus 1€ for his tax advisor, since, turns out, domains are fixed assets. Before I even had a chance to pay him, he sent me the auth code. I ended up sending him 25€ as a **thank you** after successfully moving the domain to [Google Domains](https://domains.google/).
+André kindly offered to sell it back to me for the price he originally payed for the domain, that is 12€, plus 1€ for his tax advisor, since, turns out, domains are fixed assets. Before I even had a chance to pay him, he sent me the auth code. I ended up sending him 25€ as a **thank you** after successfully moving the domain to [Google Domains](https://domains.google/).
 
 ![Google Domains admin panel showing the DNS section of the domain tomayac.de being edited.](/images/google-domains.png)
 
