@@ -80,7 +80,7 @@ you launch the app. No other storage means apart from cookies are copied. _"When
 **👀 Observation:** Extensions don't run and likewise aren't displayed. Also
 probably a conscious decision.
 
-**👀 Observation:** Same-origin links are handled in-app, cross-origin links open in the default browser.
+**👀 Observation:** Same-origin (in-scope) links are handled in-app, cross-origin (out-of-scope) links open in the default browser. A notable exception are OAuth flow links, which are handled in-app based on a heuristic.
 
 If a user navigates to an already installed app
 in Safari, a prompt is displayed that invites the user to **Open in web app**.
