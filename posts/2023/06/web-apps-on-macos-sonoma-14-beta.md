@@ -326,6 +326,8 @@ _Activity Monitor showing all processes associated with a web app._
 
 ## Wish list for Apple
 
+(Also see [Most wanted PWA features on iOS/iPadOS/macOS Safari](https://docs.google.com/document/d/1chkEulpKBNQQfGIgTfQSbJhjw5mtZhvE47PF4tyTEXc/edit#).)
+
 - Add support for the
   [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API),
   so users can install apps and edit files directly, rather than opening them
