@@ -139,7 +139,7 @@ all the usual web standards implemented by WebKit, just like web apps
 the app requesting the Notifications permission. Notifications then work as
 expected, though, including using the correct icon.
 
-![Notifications permission prompt with the wrong app name and icon.](/images/webappsonmacos--f4adwfi8t1t.png)
+![Notifications permission prompt with the wrong app name and icon.](/images/webappsonmacos--f4adwfi8t1.png)
 
 _Notifications permission prompt with the wrong app name and icon._
 
