@@ -36,7 +36,7 @@ _Adding an app via the **File** menu._
 
 You can adjust the name and icon if desired. The URL is the URL you're on for
 pages without a manifest, or the `start_url` for pages with a manifest. It can't
-be changed.
+be changed. For pages without an icon, Safari will create a fallback icon based on the first letter of the page's title.
 
 **👀 Observation:** Unlike on iOS/iPadOS, you can't add the same app twice,
 unless you rename it.
