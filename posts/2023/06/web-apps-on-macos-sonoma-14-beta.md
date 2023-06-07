@@ -71,7 +71,7 @@ _Web app running without any Safari UI._
 
 **👀 Observation:** Different from iOS/iPadOS, credentials in cookies are copied
 over, so if you were logged in when running in the tab, you're logged in when
-you launch the app. No other storage means apart from cookies are copied.
+you launch the app. No other storage means apart from cookies are copied. _"When a user adds a website to their Dock, Safari will copy the website's cookies to the web app. That way, if someone is logged into their account in Safari, they will remain logged in within the web app. This will only work if the authentication state is stored within cookies. Safari does not copy over any other kind of local storage. After a user adds a web app to the Dock, no other website data is shared, which is great for privacy"._
 
 **👀 Observation:** DevTools are blocked. This looks like a conscious decision.
 
