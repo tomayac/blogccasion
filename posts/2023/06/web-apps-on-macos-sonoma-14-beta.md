@@ -135,7 +135,7 @@ Web apps on Mac support
 all the usual web standards implemented by WebKit, just like web apps
 [on iOS and iPadOS](https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/).
 
-**👀 Observation:** There seems to be a bug where the hosting Web App appears as
+**👀 Observation:** There seems to be a [bug](https://bugs.webkit.org/show_bug.cgi?id=257807) where the hosting Web App appears as
 the app requesting the Notifications permission. Notifications then work as
 expected, though, including using the correct icon.
 
