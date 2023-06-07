@@ -187,6 +187,8 @@ _Web app **Settings** dialog on the **Privacy** tab._
 
 ## Technical analysis
 
+(See [comment #7 of Chromium bug 1451667](https://bugs.chromium.org/p/chromium/issues/detail?id=1451667#c7) for the full details.)
+
 All apps are stored in `~/Applications/`. The package contents of each apps are:
 
 - a `_CodeSignature` folder with code signature metadata
