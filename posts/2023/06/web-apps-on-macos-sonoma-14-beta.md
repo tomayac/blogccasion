@@ -155,6 +155,8 @@ but with a different `"display"` mode,
 ![Web app Settings dialog on the General tab.](/images/webappsonmacos--kgsu98ksrqf.png)
 _Web app **Settings** dialog on the **General** tab._
 
+**👀 Observation:** There's currently a [bug](https://bugs.webkit.org/show_bug.cgi?id=257806) where web apps don't correctly report `matchMedia('(display-mode: standalone)')`. Added to the Dock web apps think they run in a tab.
+
 With navigation controls enabled, there's an **Open in Safari** icon in the
 upper right corner. Despite its label, it actually respects the user's default
 browser.
