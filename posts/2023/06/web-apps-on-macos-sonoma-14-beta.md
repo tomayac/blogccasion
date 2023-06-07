@@ -148,7 +148,7 @@ icon can be changed and navigation controls can be toggled on or off. The
 [theming behavior of the title bar](https://developer.apple.com/documentation/safari-release-notes/safari-15-release-notes#:~:text=Added%20support%20for%20the%20theme%2Dcolor%20meta%20tag%20to%20change%20the%20tab%20bar%20background%20and%20over%2Dscroll%20area%20in%20macOS%20and%20iPadOS%2C%20and%20the%20status%20bar%20in%20iOS.)
 can be changed, too.
 
-**👀 Observation:** navigation controls are toggled off when there's a manifest
+**👀 Observation:** Navigation controls are toggled off when there's a manifest
 with `"display": "standalone"`. In all other cases, even if a manifest exists
 but with a different `"display"` mode,
 
@@ -170,9 +170,11 @@ There's no reload button.
 
 _Back and forward buttons._
 
-**👀 Observation:** with navigation controls toggled to off, the title of the
+**👀 Observation:** With navigation controls toggled to off, the title of the
 web app sourced from the manifest is not shown. With navigation controls toggled
 to on, the title sourced from the `<title>` is shown.
+
+**👀 Observation:** When you right-click, there's a context menu with **Reload** or **Back** and **Reload**. This works independent from whether navigation controls are toggled on or off.
 
 The **Privacy** tab allows the user to clear website data and links into the
 **Privacy & Security Settings** of the System Settings app.
