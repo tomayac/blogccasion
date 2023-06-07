@@ -79,6 +79,8 @@ you launch the app. No other storage means apart from cookies are copied. _"When
 probably a conscious decision. If a user navigates to an already installed app
 in Safari, a prompt is displayed that invites the user to **Open in web app**.
 
+**👀 Observation:** Same-origin links are handled in-app, cross-origin links open in the default browser.
+
 ![Prompt inviting the user to Open in web app.](/images/webappsonmacos--k85cr23x5v.png)
 
 _Prompt inviting the user to **Open in web app**._
