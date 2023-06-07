@@ -76,10 +76,12 @@ you launch the app. No other storage means apart from cookies are copied. _"When
 **👀 Observation:** Web Inspector (DevTools) is blocked, even with the **Show features for web developers** checkbox checked. There's no **Develop** menu item nor can you right-click and **Inspect Element**. This looks like a conscious decision.
 
 **👀 Observation:** Extensions don't run and likewise aren't displayed. Also
-probably a conscious decision. If a user navigates to an already installed app
-in Safari, a prompt is displayed that invites the user to **Open in web app**.
+probably a conscious decision.
 
 **👀 Observation:** Same-origin links are handled in-app, cross-origin links open in the default browser.
+
+If a user navigates to an already installed app
+in Safari, a prompt is displayed that invites the user to **Open in web app**.
 
 ![Prompt inviting the user to Open in web app.](/images/webappsonmacos--k85cr23x5v.png)
 
