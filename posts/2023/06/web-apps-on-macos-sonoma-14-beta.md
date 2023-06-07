@@ -57,6 +57,8 @@ launch the app manually.
 
 _Web app added to the Dock._
 
+When right-clicking the Dock icon, you can uncheck **Keep in Dock** and still launch the app via Launchpad, Spotlight Search, or even just by double-clicking the app icon in `~/Applications/`.
+
 ## Launch experience
 
 The out-of-the box launch experience of web apps is fantastic. Nowhere does it
