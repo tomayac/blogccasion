@@ -75,12 +75,16 @@ _Web app running without any Safari UI._
 over, so if you were logged in when running in the tab, you're logged in when
 you launch the app. No other storage means apart from cookies are copied. _"When a user adds a website to their Dock, Safari will copy the website's cookies to the web app. That way, if someone is logged into their account in Safari, they will remain logged in within the web app. This will only work if the authentication state is stored within cookies. Safari does not copy over any other kind of local storage. After a user adds a web app to the Dock, no other website data is shared, which is great for privacy"._
 
-**👀 Observation:** Web Inspector (DevTools) is blocked, even with the **Show features for web developers** checkbox checked. There's no **Develop** menu item nor can you right-click and **Inspect Element**. This looks like a conscious decision.
+**👀 Observation:** Web Inspector (DevTools) is blocked, even with the **Show features for web developers** checkbox checked. There's no **Develop** menu item nor can you right-click and **Inspect Element**. This looks like a conscious decision. **Update:** [@samedwards@mastodon.social](https://mastodon.social/@samedwards) helpfully [pointed out](https://mastodon.social/@samedwards/110504651650657859) that you can debug apps via Safari's **Develop > $machineName > $appName** menu item.
+
+![Debugging a web app via Safari.](/images/webappsonmacos--hysefdcnykd.png)
+
+_Debugging a web app via Safari._
 
 **👀 Observation:** Extensions don't run and likewise aren't displayed. Also
 probably a conscious decision.
 
-**👀 Observation:** Same-origin (in-scope) links are handled in-app, cross-origin (out-of-scope) links open in the default browser. A notable exception are OAuth flow links, which are handled in-app based on a heuristic.
+**👀 Observation:** Same-origin (or in-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links are handled in-app, cross-origin (or out-of-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links open in the default browser. A notable exception are OAuth flow links, which are handled in-app based on a heuristic.
 
 If a user navigates to an already installed app
 in Safari, a prompt is displayed that invites the user to **Open in web app**.
@@ -150,7 +154,7 @@ can be changed, too.
 
 **👀 Observation:** Navigation controls are toggled off when there's a manifest
 with `"display": "standalone"`. In all other cases, even if a manifest exists
-but with a different `"display"` mode,
+but with a different `"display"` mode, navigation controls are toggled on.
 
 ![Web app Settings dialog on the General tab.](/images/webappsonmacos--kgsu98ksrqf.png)
 _Web app **Settings** dialog on the **General** tab._
@@ -389,7 +393,7 @@ _Spotify web app title bar experience._
 ## Recommendations for Chrome
 
 - Better respect macOS' design paradigms. Currently web app icon handling looks
-  not integrated and icon shapes are all over the place. The examples below are
+  not integrated and icon shapes are all over the place. This is tracked as [crbug/1230792](https://crbug.com/1230792). The examples below are
   all web apps installed via Chrome.
 
 ![Web app icon shapes installed from Chrome don't respect the squircle.](/images/webappsonmacos--pp6i6yqgm9l.png)
