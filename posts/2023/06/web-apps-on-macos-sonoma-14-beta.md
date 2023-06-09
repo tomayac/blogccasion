@@ -84,7 +84,7 @@ _Debugging a web app via Safari._
 **👀 Observation:** Extensions don't run and likewise aren't displayed. Also
 probably a conscious decision.
 
-**👀 Observation:** Same-origin (or in-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links are handled in-app, cross-origin (or out-of-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links open in the default browser. A notable exception are OAuth flow links, which are handled in-app based on a heuristic.
+**👀 Observation:** Same-origin (or in-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links are handled in-app, cross-origin (or out-of-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links open in the default browser. A notable exception are OAuth flow links, which are handled in-app based on a heuristic. Links opened via `window.open()` will always open in the web app.
 
 If a user navigates to an already installed app
 in Safari, a prompt is displayed that invites the user to **Open in web app**.
