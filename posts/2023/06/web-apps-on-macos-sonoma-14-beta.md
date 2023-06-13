@@ -36,7 +36,8 @@ _Adding an app via the **File** menu._
 
 You can adjust the name and icon if desired. The URL is the URL you're on for
 pages without a manifest, or the `start_url` for pages with a manifest. It can't
-be changed. For pages without an icon, Safari will create a fallback icon based on the first letter of the page's title.
+be changed. For pages without an icon, Safari will create a fallback icon based
+on the first letter of the page's title.
 
 **👀 Observation:** Unlike on iOS/iPadOS, you can't add the same app twice,
 unless you rename it.
@@ -57,7 +58,9 @@ launch the app manually.
 
 _Web app added to the Dock._
 
-When right-clicking the Dock icon, you can uncheck **Keep in Dock** and still launch the app via Launchpad, Spotlight Search, or even just by double-clicking the app icon in `~/Applications/`.
+When right-clicking the Dock icon, you can uncheck **Keep in Dock** and still
+launch the app via Launchpad, Spotlight Search, or even just by double-clicking
+the app icon in `~/Applications/`.
 
 ## Launch experience
 
@@ -73,9 +76,22 @@ _Web app running without any Safari UI._
 
 **👀 Observation:** Different from iOS/iPadOS, credentials in cookies are copied
 over, so if you were logged in when running in the tab, you're logged in when
-you launch the app. No other storage means apart from cookies are copied. _"When a user adds a website to their Dock, Safari will copy the website's cookies to the web app. That way, if someone is logged into their account in Safari, they will remain logged in within the web app. This will only work if the authentication state is stored within cookies. Safari does not copy over any other kind of local storage. After a user adds a web app to the Dock, no other website data is shared, which is great for privacy"._
+you launch the app. No other storage means apart from cookies are copied. _"When
+a user adds a website to their Dock, Safari will copy the website's cookies to
+the web app. That way, if someone is logged into their account in Safari, they
+will remain logged in within the web app. This will only work if the
+authentication state is stored within cookies. Safari does not copy over any
+other kind of local storage. After a user adds a web app to the Dock, no other
+website data is shared, which is great for privacy"._
 
-**👀 Observation:** Web Inspector (DevTools) works a little differently than, for example, in Chrome: even with the **Show features for web developers** checkbox in Safari checked, there's no **Develop** menu item nor can you right-click and **Inspect Element** in a web app. Instead, you debug apps via Safari's **Develop > $machineName > $appName** menu item (thanks, [@samedwards@mastodon.social](https://mastodon.social/@samedwards/110504651650657859)). If all app windows are closed but the app isn't quit, a potential service worker will be inspectable until it gets terminated after a couple of seconds.
+**👀 Observation:** Web Inspector (DevTools) works a little differently than,
+for example, in Chrome: even with the **Show features for web developers**
+checkbox in Safari checked, there's no **Develop** menu item nor can you
+right-click and **Inspect Element** in a web app. Instead, you debug apps via
+Safari's **Develop > $machineName > $appName** menu item (thanks,
+[@samedwards@mastodon.social](https://mastodon.social/@samedwards/110504651650657859)).
+If all app windows are closed but the app isn't quit, a potential service worker
+will be inspectable until it gets terminated after a couple of seconds.
 
 ![Debugging a web app via Safari.](/images/webappsonmacos--hysefdcnykd.png)
 
@@ -84,10 +100,16 @@ _Debugging a web app via Safari._
 **👀 Observation:** Extensions don't run and likewise aren't displayed. Also
 probably a conscious decision.
 
-**👀 Observation:** Same-origin (or in-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links are handled in-app, cross-origin (or out-of-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a manifest exists) links open in the default browser. A notable exception are OAuth flow links, which are handled in-app based on a heuristic. Links opened via `window.open()` will always open in the web app.
+**👀 Observation:** Same-origin (or
+in-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a
+manifest exists) links are handled in-app, cross-origin (or
+out-of-[scope](https://developer.mozilla.org/en-US/docs/Web/Manifest/scope) if a
+manifest exists) links open in the default browser. A notable exception are
+OAuth flow links, which are handled in-app based on a heuristic. Links opened
+via `window.open()` will always open in the web app.
 
-If a user navigates to an already installed app
-in Safari, a prompt is displayed that invites the user to **Open in web app**.
+If a user navigates to an already installed app in Safari, a prompt is displayed
+that invites the user to **Open in web app**.
 
 ![Prompt inviting the user to Open in web app.](/images/webappsonmacos--k85cr23x5v.png)
 
@@ -139,9 +161,10 @@ Web apps on Mac support
 all the usual web standards implemented by WebKit, just like web apps
 [on iOS and iPadOS](https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/).
 
-**👀 Observation:** There seems to be a [bug](https://bugs.webkit.org/show_bug.cgi?id=257807) where the hosting Web App appears as
-the app requesting the Notifications permission. Notifications then work as
-expected, though, including using the correct icon.
+**👀 Observation:** There seems to be a
+[bug](https://bugs.webkit.org/show_bug.cgi?id=257807) where the hosting Web App
+appears as the app requesting the Notifications permission. Notifications then
+work as expected, though, including using the correct icon.
 
 ![Notifications permission prompt with the wrong app name and icon.](/images/webappsonmacos--f4adwfi8t1.png)
 
@@ -159,7 +182,10 @@ but with a different `"display"` mode, navigation controls are toggled on.
 ![Web app Settings dialog on the General tab.](/images/webappsonmacos--kgsu98ksrqf.png)
 _Web app **Settings** dialog on the **General** tab._
 
-**👀 Observation:** There's currently a [bug](https://bugs.webkit.org/show_bug.cgi?id=257806) where web apps don't correctly report `matchMedia('(display-mode: standalone)')`. Added to the Dock web apps think they run in a tab.
+**👀 Observation:** There's currently a
+[bug](https://bugs.webkit.org/show_bug.cgi?id=257806) where web apps don't
+correctly report `matchMedia('(display-mode: standalone)')`. Added to the Dock
+web apps think they run in a tab.
 
 With navigation controls enabled, there's an **Open in Safari** icon in the
 upper right corner. Despite its label, it actually respects the user's default
@@ -180,7 +206,9 @@ _Back and forward buttons._
 web app sourced from the manifest is not shown. With navigation controls toggled
 to on, the title sourced from the `<title>` is shown.
 
-**👀 Observation:** When you right-click, there's a context menu with **Reload** or **Back** and **Reload**. This works independent from whether navigation controls are toggled on or off.
+**👀 Observation:** When you right-click, there's a context menu with **Reload**
+or **Back** and **Reload**. This works independent from whether navigation
+controls are toggled on or off.
 
 The **Privacy** tab allows the user to clear website data and links into the
 **Privacy & Security Settings** of the System Settings app.
@@ -191,7 +219,9 @@ _Web app **Settings** dialog on the **Privacy** tab._
 
 ## Technical analysis
 
-(See [comment #7 of Chromium bug 1451667](https://bugs.chromium.org/p/chromium/issues/detail?id=1451667#c7) for the full details.)
+(See
+[comment #7 of Chromium bug 1451667](https://bugs.chromium.org/p/chromium/issues/detail?id=1451667#c7)
+for the full details.)
 
 All apps are stored in `~/Applications/`. The package contents of each apps are:
 
@@ -342,7 +372,8 @@ _Activity Monitor showing all processes associated with a web app._
 
 ## Wish list for Apple
 
-(Also see [Most wanted PWA features on iOS/iPadOS/macOS Safari](https://docs.google.com/document/d/1chkEulpKBNQQfGIgTfQSbJhjw5mtZhvE47PF4tyTEXc/edit#).)
+(Also see
+[Most wanted PWA features on iOS/iPadOS/macOS Safari](https://docs.google.com/document/d/1chkEulpKBNQQfGIgTfQSbJhjw5mtZhvE47PF4tyTEXc/edit#).)
 
 - Add support for the
   [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API),
@@ -393,8 +424,9 @@ _Spotify web app title bar experience._
 ## Recommendations for Chrome
 
 - Better respect macOS' design paradigms. Currently web app icon handling looks
-  not integrated and icon shapes are all over the place. This is tracked as [crbug/1230792](https://crbug.com/1230792). The examples below are
-  all web apps installed via Chrome.
+  not integrated and icon shapes are all over the place. This is tracked as
+  [crbug/1230792](https://crbug.com/1230792). The examples below are all web
+  apps installed via Chrome.
 
 ![Web app icon shapes installed from Chrome don't respect the squircle.](/images/webappsonmacos--pp6i6yqgm9l.png)
 
@@ -416,7 +448,8 @@ With Chrome and Safari now allowing web apps to be installed on macOS, it would
 be fantastic if installed apps could respect macOS UX guidelines and populate
 the system-level menu. Ideally Apple and Google engage jointly on the
 corresponding Project Fugu 🐡 API request tracked in
-[crbug/1295253](https://crbug.com/1295253). The screenshots below show all menu items as per the current default.
+[crbug/1295253](https://crbug.com/1295253). The screenshots below show all menu
+items as per the current default.
 
 ![Web app default app name menu.](/images/webappsonmacos--svgcode.png)
 
