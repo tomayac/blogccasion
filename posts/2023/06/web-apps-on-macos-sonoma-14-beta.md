@@ -416,11 +416,35 @@ With Chrome and Safari now allowing web apps to be installed on macOS, it would
 be fantastic if installed apps could respect macOS UX guidelines and populate
 the system-level menu. Ideally Apple and Google engage jointly on the
 corresponding Project Fugu 🐡 API request tracked in
-[crbug/1295253](https://crbug.com/1295253).
+[crbug/1295253](https://crbug.com/1295253). The screenshots below show all menu items as per the current default.
 
-![Web app default menu.](/images/webappsonmacos--gg6jy7x6mg.png)
+![Web app default app name menu.](/images/webappsonmacos--svgcode.png)
 
-_Web app default menu._
+_Web app **default app name** menu._
+
+![Web app File menu.](/images/webappsonmacos--file.png)
+
+_Web app **File** menu._
+
+![Web app Edit menu.](/images/webappsonmacos--edit.png)
+
+_Web app **Edit** menu._
+
+![Web app View menu.](/images/webappsonmacos--view.png)
+
+_Web app **View** menu._
+
+![Web app Go menu.](/images/webappsonmacos--go.png)
+
+_Web app **Go** menu._
+
+![Web app Window menu.](/images/webappsonmacos--window.png)
+
+_Web app **Window** menu._
+
+![Web app Help menu.](/images/webappsonmacos--help.png)
+
+_Web app **Help** menu._
 
 ## Conclusion
 
