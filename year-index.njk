@@ -1,0 +1,24 @@
+---
+pagination:
+  data: collections.postsByYear
+  size: 1
+  alias: year
+layout: layouts/home.njk
+permalink: /{{ year[0] }}/
+
+---
+
+<h2>{{ year[0] }} Archive</h2>
+
+{% for postedYear, yearPosts in collections.postsByYear %}
+  {% if postedYear === year[0] %}
+  <ul class="postlist">
+    {% for post in yearPosts | reverse %}
+      <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+        <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endfor %}
