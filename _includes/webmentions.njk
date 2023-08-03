@@ -18,8 +18,13 @@
 
 <!-- Set replies as mentions that are `in-reply-to`  -->
 {% set mentionsOf = mentions | webmentionsByType('mention-of') %}
-<!-- Count the total mentionsOf -->
-{% set mentionsOfSize = mentionsOf | size %}
+<!-- Count the total qualifying mentionsOf -->
+{% set mentionsOfSize = 0 %}
+{% for webmention in mentionsOf %}
+  {% if webmention.author and webmention.url and webmention.content.text %}
+    {% set mentionsOfSize = mentionsOfSize + 1 %}
+  {% endif %}
+{% endfor %}
 
 {% if (repliesSize > 0) or (mentionsOfSize > 0) %}
   <section>
