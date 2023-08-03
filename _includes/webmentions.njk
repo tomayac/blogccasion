@@ -28,7 +28,10 @@
 
 {% if (repliesSize > 0) or (mentionsOfSize > 0) %}
   <section>
-    <h3>Webmentions</h3>
+    <h3 id="webmentions" tabindex="-1">
+      Webmentions
+      <a class="direct-link" href="#webmentions" aria-hidden="true">🔗</a>
+    </h3>
     {% if repliesSize > 0 %}
       <div class="webmentions">
         <h4>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h4>
