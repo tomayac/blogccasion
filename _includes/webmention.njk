@@ -1,4 +1,4 @@
-{% if webmention.author and webmention.url %}
+{% if webmention.author and webmention.url and webmention.content.text %}
   <article id="webmention-{{ webmention['wm-id'] }}">
     <div class="metadata post-date">
       {% if webmention.author.photo %}
@@ -16,10 +16,8 @@
       </p>
       <a class="webmention-anchor heading-effect" href="#webmention-{{ webmention['wm-id'] }}">⚓️</a>
     </div>
-    {% if webmention.content.text %}
-      <div class="webmention-content">
-        {{ webmention.content.text | truncate(280, true, " […]") }}
-      </div>
-    {% endif %}
+    <div class="webmention-content">
+      {{ webmention.content.text | truncate(280, true, " […]") }}
+    </div>
   </article>
 {% endif %}
