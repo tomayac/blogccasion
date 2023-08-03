@@ -35,7 +35,7 @@
     {% if repliesSize > 0 %}
       <div class="webmentions">
         <h4 id="webmentions-replies]" tabindex="-1">
-          Replies
+          {{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}
           <a class="direct-link" href="#webmentions-replies" aria-hidden="true">🔗</a>
         </h4>
         {% for webmention in replies %}
@@ -46,7 +46,7 @@
     {% if mentionsOfSize > 0 %}
       <div class="webmentions">
         <h4 id="webmentions-mentions" tabindex="-1">
-          Mentions
+          {{ mentionsOfSize }} {% if mentionsOfSize == "1" %}Mention{% else %}Mentions{% endif %}
           <a class="direct-link" href="#webmentions-mentions" aria-hidden="true">🔗</a>
         </h4>
         {% for webmention in mentionsOf %}
