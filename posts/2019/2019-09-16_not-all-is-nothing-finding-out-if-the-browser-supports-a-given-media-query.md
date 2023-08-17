@@ -104,6 +104,7 @@ Bringing things together, we can thus check if the browser understands it by
 looking at the `media` property.
 
 ```js
+// 🚨 Careful, this no longer works! See the update below.
 window.matchMedia('(navigation-controls)').media;
 // Returns `"not all"` when the browser doesn't understand
 // the media query, or `"(navigation-controls)"` else.
@@ -115,3 +116,27 @@ what `navigation-controls` is about, it tells you the serialization of this
 (unknown) media feature is something that will never match: the media _type_
 `@media not all`. Because `not all` is
 [nothing](https://en.wikipedia.org/wiki/Nothing).
+
+## Update August 2023
+
+In a discussion, [Mathias Bynens](https://mathiasbynens.be/) pointed out that
+the previous approach no longer works. The reason is that the
+[syntax](https://drafts.csswg.org/mediaqueries-4/#mq-syntax_ now says that any
+`<general-enclosed>` is a valid media query, even if it is not recognized. This
+means that the
+[error handling](https://drafts.csswg.org/mediaqueries-4/#error-handling)
+mechanism will no longer replace it by `"not all"` during parsing.
+
+To check if a browser supports a media query, the following code should be used
+instead, initially proposed in a
+[comment](https://github.com/w3c/csswg-drafts/issues/5272#issuecomment-651954249)
+by [Oriol Brufau](https://github.com/Loirooriol):
+
+```js
+const testMedia = (mq) => matchMedia(`${mq}, not all and ${mq}`).matches;
+
+testMedia('(prefers-this-doesnt-exist: lolwat)'); // false
+testMedia('(prefers-color-scheme: light)'); // true
+testMedia('(prefers-color-scheme: dark)'); // true
+testMedia('(prefers-color-scheme: lolwat)'); // false
+```
