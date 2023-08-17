@@ -28,9 +28,9 @@ potential changes myself.
 #### Web Share API Support (😃)
 
 For the last couple of releases, there were only
-[two checkmarks](https://twitter.com/tomayac/status/1003910651151085568) ‘✔’ for
-“Offline Capabilities” and “Payment Request,” however 12.2 beta 1 had a surprise
-present: the PWA Feature Detector tool reported that now “Web Share” is
+[two checkmarks](https://twitter.com/tomayac/status/1003910651151085568) ‘✔’
+for “Offline Capabilities” and “Payment Request,” however 12.2 beta 1 had a
+surprise present: the PWA Feature Detector tool reported that now “Web Share” is
 supported, too. The [Web Share API — Level 1](https://wicg.github.io/web-share/)
 defines an API for sharing text, links, and other content to an arbitrary
 destination of the user’s choice. I tested it with the official
