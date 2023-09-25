@@ -2,8 +2,8 @@
 layout: layouts/post.njk
 title: 'W3C TPAC 2023 Trip Report'
 author: 'Thomas Steiner'
-date: '2023-09-28T16:19:45'
-permalink: 2023/09/28/w3c-tpac-2023-trip-report/index.html
+date: '2023-09-25T16:19:45'
+permalink: 2023/09/25/w3c-tpac-2023-trip-report/index.html
 tags:
   - Work
 ---
