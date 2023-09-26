@@ -36,15 +36,15 @@ working group, the first topic was the
 which was mostly driven by questions and improvement proposals the WebKit folks
 had after implementing it.
 
-Next, the group discussed the Badging API, which is
-only available after installation, and browsers differ on whether they make the
-API detectable when the app is running in a tab.
+Next, the group discussed the Badging API, which is only available after
+installation, and browsers differ on whether they make the API detectable when
+the app is running in a tab.
 
-An interesting corner case was
-debated in the context of the joint meeting with the
-[Devices and Sensors Working Group](https://www.w3.org/groups/wg/das/). Apple
-can't join the group due to its unwillingness to implement some of the APIs and
-the sheer volume of proposals the team would have to review. The workaround is
+An interesting corner case was debated in the context of the joint meeting with
+the [Devices and Sensors Working Group](https://www.w3.org/groups/wg/das/).
+Apple can't join the group due to its unwillingness to implement some of the
+APIs and the sheer volume of proposals the team would have to review. The
+workaround is
 [shared deliverables](https://w3c.github.io/webappswg/charter/draft-charter-2023.html#working-mode),
 where the APIs that there _is_ agreement on get cross-delivered by a working
 group Apple is part of.
@@ -101,8 +101,8 @@ Group ([WICG](https://www.w3.org/community/wicg/)) meeting. The topics I was
 interested in were Low Level Device APIs and First Party Sets (now Related
 Website Sets).
 
-In the first part, Vincent Scheib presented on low level device
-APIs. Firefox has rolled out
+In the first part, Vincent Scheib presented on low level device APIs. Firefox
+has rolled out
 [Web MIDI access based on an ad-hoc extension](https://www.midi.org/forum/1332-web-midi-api-for-firefox),
 which didn't seem it would convince Apple people. Apple also had doubts whether
 a permission prompt would be enough for people to understand that devices can be
@@ -117,8 +117,8 @@ following the
 It's rolling out to Chrome slowly. Other browser vendors do not implement First
 Party Sets at the moment.
 
-On Tuesday, the big topic was installable web apps
-where Dan Murphy presented our existing solutions around
+On Tuesday, the big topic was installable web apps where Dan Murphy presented
+our existing solutions around
 [Launch Handling](https://developer.chrome.com/docs/web-platform/launch-handler/).
 Marcos from Apple and Olli from Mozilla questioned the queue model vs. an event
 model and suggested to replace `LaunchParams` with `DataTransferItem`. Apple
@@ -126,15 +126,15 @@ noted that a launch handling feature is something that they would probably need.
 
 > Apple's questioning of Chrome's established solution caused me to raise a meta
 > question: Chromium already asked for input years ago and got no meaningful
-> feedback and then shipped a solution that was proven to be successful. Now other
-> vendors are interested, but want to change the fundamental design (and perhaps
-> together we can all agree on a better design). What is the process here? Are we
-> as Chrome supposed to unship ours?
+> feedback and then shipped a solution that was proven to be successful. Now
+> other vendors are interested, but want to change the fundamental design (and
+> perhaps together we can all agree on a better design). What is the process
+> here? Are we as Chrome supposed to unship ours?
 
-Sangwhan Moon provided the Technical
-Architecture Group ([TAG](https://tag.w3.org/)) perspective that Chrome makes
-sure other vendors provide input before Chrome ships. Chrome can't wait until
-vendors have an active interest. The group agreed to discuss next steps.
+Sangwhan Moon provided the Technical Architecture Group
+([TAG](https://tag.w3.org/)) perspective that Chrome makes sure other vendors
+provide input before Chrome ships. Chrome can't wait until vendors have an
+active interest. The group agreed to discuss next steps.
 
 Diego from Microsoft then presented the
 [Install API proposal](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/WebInstall/explainer.md).
@@ -161,8 +161,7 @@ Apple was neutral-ish to, and my [app menu proposal](https://crbug.com/1295253)
 which Apple committed to coming up with a proposal for. Mozilla notably was in
 the room, but had no opinion on almost all topics close to PWA.
 
-Apple then
-dropped a
+Apple then dropped a
 [proposal for declarative push notifications](https://github.com/WebKit/explainers/blob/main/DeclarativeWebPush/README.md).
 I filed a
 [number of questions](https://github.com/WebKit/explainers/blob/main/DeclarativeWebPush/README.md)
@@ -307,16 +306,15 @@ between the Web Apps WG and the Devices and Sensors WG, since Apple can't commit
 to joining the Device and Sensors WG but is interested in some of the things the
 group is working on.
 
-Next, we looked at the privacy principles and how they are
-applied by some of the specs. Marian Harbach briefly presented the `permission`
-element.
+Next, we looked at the privacy principles and how they are applied by some of
+the specs. Marian Harbach briefly presented the `permission` element.
 
 In suite, Intel talked about testability improvements they made around
 WebDriver.
 
-Regarding Generic Sensors, we made a resolution to ensure Generic
-Sensor-based specs have mitigations normatively defined for factory calibration
-device fingerprinting, matching
+Regarding Generic Sensors, we made a resolution to ensure Generic Sensor-based
+specs have mitigations normatively defined for factory calibration device
+fingerprinting, matching
 [existing normative mitigations in the DeviceOrientation Events spec](https://w3c.github.io/deviceorientation/#security-and-privacy:~:text=The%20calibration%20of%20accelerometers%2C%20gyroscopes%20and%20magnetometers%20may%20reveal%20persistent%20details%20about%20the%20particular%20sensor%20hardware).
 
 After that, we went through all the APIs in scope of the working group and
@@ -369,10 +367,10 @@ The day ended with a look at the
 mostly stable but could add improvements around encouraging more coarse location
 access.
 
-As a meta remark, I feel like as a working group, we didn't achieve much
-new things compared to last year, mostly due to a lack of cross-implementer
-support for some of the APIs like the generic sensor APIs, and only a limited
-appetite to move on with things vendors at least partially agree on like screen
+As a meta remark, I feel like as a working group, we didn't achieve much new
+things compared to last year, mostly due to a lack of cross-implementer support
+for some of the APIs like the generic sensor APIs, and only a limited appetite
+to move on with things vendors at least partially agree on like screen
 brightness or ambient light sensor.
 
 #### Notes and resources
@@ -384,9 +382,12 @@ brightness or ambient light sensor.
 ### WHAT Working Group
 
 On Friday, I saw an interesting
-[proposal for a `headinglevelstart`](https://github.com/whatwg/html/issues/5033) attribute that would allow authors to embed content with a heading structure into another context with an already existing heading structure, while overall correctly nesting both heading structures. This was mostly driven by GitHub, who embed`README.md`
-files into repository homepages and who wish to adjust heading levels
-accordingly.
+[proposal for a `headinglevelstart`](https://github.com/whatwg/html/issues/5033)
+attribute that would allow authors to embed content with a heading structure
+into another context with an already existing heading structure, while overall
+correctly nesting both heading structures. This was mostly driven by GitHub, who
+embed`README.md` files into repository homepages and who wish to adjust heading
+levels accordingly.
 
 Next, a
 [focus navigation start point proposal](https://github.com/whatwg/html/issues/5326)
@@ -410,9 +411,9 @@ In the afternoon, I attended Web Incubator Community Group
 ([WICG](https://wicg.io/)) sessions focused on the Accessibility Object Model
 (AOM), the Shape Detection API, and the File System.
 
-Unfortunately the AOM
-session was a little confusing and it was not entirely clear what the status of
-the AOM was and which parts of it are cross-browser vs. abandoned. The
+Unfortunately the AOM session was a little confusing and it was not entirely
+clear what the status of the AOM was and which parts of it are cross-browser vs.
+abandoned. The
 [AOM explainer](https://github.com/WICG/aom/blob/gh-pages/explainer.md) contains
 many abandoned sections and the [AOM spec](https://wicg.github.io/aom/spec/) is
 just a barebones skeleton, plus the
@@ -431,10 +432,9 @@ future venue of the proposal, hinting it could be the
 noted that Apple's implementation works, but only on the main thread and not in
 workers. This is a known issue and "for reasons", according to Apple.
 
-The File
-System Access session proposed by Austin Sullivan unluckily saw no attendance
-from Apple or Mozilla, so the meeting was adjourned since it would have been
-Googlers preaching to Googlers (and Google Developer Expert
+The File System Access session proposed by Austin Sullivan unluckily saw no
+attendance from Apple or Mozilla, so the meeting was adjourned since it would
+have been Googlers preaching to Googlers (and Google Developer Expert
 [Christian Liebel](https://christianliebel.com/)).
 
 #### Notes and resources
@@ -484,8 +484,8 @@ Spanish dinner times. My food quality indicator was always to check the bread:
 if it's plastic-sealed, the food will be fine; if it's fresh, it will be
 amazing.
 
-Coffee was available in the breaks, and either horrible if you got the
-milk directly from the machine, or great if you got the milk separately from a
+Coffee was available in the breaks, and either horrible if you got the milk
+directly from the machine, or great if you got the milk separately from a
 waiter.
 
 ### Google attendance
