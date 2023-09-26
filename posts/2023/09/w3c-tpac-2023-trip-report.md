@@ -348,7 +348,7 @@ brightness or ambient light sensor.
 ### WHAT Working Group
 
 On Friday, I saw an interesting
-[proposal for a `headinglevelstart](https://github.com/whatwg/html/issues/5033)`attribute that would allow authors to embed content with a heading structure into another context with an already existing heading structure, while overall correctly nesting both heading structures. This was mostly driven by GitHub, who embed`README.md`
+[proposal for a `headinglevelstart`](https://github.com/whatwg/html/issues/5033) attribute that would allow authors to embed content with a heading structure into another context with an already existing heading structure, while overall correctly nesting both heading structures. This was mostly driven by GitHub, who embed`README.md`
 files into repository homepages and who wish to adjust heading levels
 accordingly. Next, a
 [focus navigation start point proposal](https://github.com/whatwg/html/issues/5326)
