@@ -34,22 +34,29 @@ Monday and Tuesday. After a quick rundown of all the APIs in scope for the
 working group, the first topic was the
 [Screen Orientation API](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation),
 which was mostly driven by questions and improvement proposals the WebKit folks
-had after implementing it. Next, the group discussed the Badging API, which is
+had after implementing it.
+
+Next, the group discussed the Badging API, which is
 only available after installation, and browsers differ on whether they make the
-API detectable when the app is running in a tab. An interesting corner case was
+API detectable when the app is running in a tab.
+
+An interesting corner case was
 debated in the context of the joint meeting with the
 [Devices and Sensors Working Group](https://www.w3.org/groups/wg/das/). Apple
 can't join the group due to its unwillingness to implement some of the APIs and
 the sheer volume of proposals the team would have to review. The workaround is
 [shared deliverables](https://w3c.github.io/webappswg/charter/draft-charter-2023.html#working-mode),
 where the APIs that there _is_ agreement on get cross-delivered by a working
-group Apple is part of. Following this, we talked about whether the
+group Apple is part of.
+
+Following this, we talked about whether the
 [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API)
 should use
 [transient](https://developer.mozilla.org/en-US/docs/Glossary/Transient_activation)
 or
 [sticky activation](https://developer.mozilla.org/en-US/docs/Glossary/Sticky_activation).
-The group made no progress on François Beaufort 's suggestion for a
+
+The group made no progress on François Beaufort's suggestion for a
 [Screen Brightness API](https://github.com/w3c/screen-wake-lock/blob/gh-pages/brightness-mode-explainer.md).
 
 On the topic of
@@ -58,7 +65,9 @@ vs. [Generic Sensor API](https://www.w3.org/TR/generic-sensor/), the
 soft-conclusion was that the new API provides not enough advantage over the
 existing API. There's still disagreement about whether using the API should
 require a permission, which is mostly used for fraud detection to determine if a
-real user is holding a device. For the
+real user is holding a device.
+
+For the
 [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API),
 most discussion circulated around limiting its precision by encouraging more
 coarse data. On the opposite side, there's also still the open question of
@@ -70,7 +79,9 @@ discussion was taken over repeatedly by trolls, which made proper discussion
 partly impossible. It's a solve-worthy problem, albeit it's a heated space.
 [Geolocation Sensor](https://www.w3.org/TR/geolocation-sensor/) had promises but
 we're not sure it's worth bringing this over, since the callback can easily be
-wrapped. There was a joint meeting with the
+wrapped.
+
+There was a joint meeting with the
 [Internationalization Working Group](https://www.w3.org/International/core/) to
 discuss long-standing
 [open questions regarding translations of the Web App Manifest](https://github.com/w3c/manifest/issues/1045)
@@ -88,7 +99,9 @@ I foresee challenges when looking at the `"shortcuts"` member.
 On Monday afternoon, I switched over to the Web Platform Incubator Community
 Group ([WICG](https://www.w3.org/community/wicg/)) meeting. The topics I was
 interested in were Low Level Device APIs and First Party Sets (now Related
-Website Sets). In the first part, Vincent Scheib presented on low level device
+Website Sets).
+
+In the first part, Vincent Scheib presented on low level device
 APIs. Firefox has rolled out
 [Web MIDI access based on an ad-hoc extension](https://www.midi.org/forum/1332-web-midi-api-for-firefox),
 which didn't seem it would convince Apple people. Apple also had doubts whether
@@ -102,19 +115,23 @@ For First Party Sets, there are currently only a few entries in the
 following the
 [Submission Guidelines](https://github.com/GoogleChrome/first-party-sets/blob/main/FPS-Submission_Guidelines.md).
 It's rolling out to Chrome slowly. Other browser vendors do not implement First
-Party Sets at the moment. On Tuesday, the big topic was installable web apps
+Party Sets at the moment.
+
+On Tuesday, the big topic was installable web apps
 where Dan Murphy presented our existing solutions around
 [Launch Handling](https://developer.chrome.com/docs/web-platform/launch-handler/).
 Marcos from Apple and Olli from Mozilla questioned the queue model vs. an event
 model and suggested to replace `LaunchParams` with `DataTransferItem`. Apple
 noted that a launch handling feature is something that they would probably need.
 
-Apple's questioning of Chrome's established solution caused me to raise a meta
-question: \_Chromium already asked for input years ago and got no meaningful
-feedback and then shipped a solution that was proven to be successful. Now other
-vendors are interested, but want to change the fundamental design (and perhaps
-together we can all agree on a better design). What is the process here? Are we
-as Chrome supposed to unship ours?\_Sangwhan Moon provided the Technical
+> Apple's questioning of Chrome's established solution caused me to raise a meta
+> question: Chromium already asked for input years ago and got no meaningful
+> feedback and then shipped a solution that was proven to be successful. Now other
+> vendors are interested, but want to change the fundamental design (and perhaps
+> together we can all agree on a better design). What is the process here? Are we
+> as Chrome supposed to unship ours?
+
+Sangwhan Moon provided the Technical
 Architecture Group ([TAG](https://tag.w3.org/)) perspective that Chrome makes
 sure other vendors provide input before Chrome ships. Chrome can't wait until
 vendors have an active interest. The group agreed to discuss next steps.
@@ -123,20 +140,28 @@ Diego from Microsoft then presented the
 [Install API proposal](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/WebInstall/explainer.md).
 There was general interest in a solution, but a lot of skepticism when it comes
 to cross-origin installations, which would be an important use case for app
-stores or search engines. The group further discussed the standardization of
+stores or search engines.
+
+The group further discussed the standardization of
 [iOS' proprietary `navigator.standalone](https://github.com/w3c/manifest/issues/1092)`.
+
 After that, we looked at the
 [update algorithm](https://www.w3.org/2022/09/13-webapps-minutes.html#t03)
 discussed at the last TPAC and confirmed an update token would be the way to go.
+
 The group briefly touched upon isolation of installed apps from the running
-browser context and the challenges it introduces with OAuth etc. Next was
+browser context and the challenges it introduces with OAuth etc.
+
+Next was
 [protocol handling](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/protocol_handlers)
 which Apple mostly opposed,
 [window controls overlay](https://developer.mozilla.org/en-US/docs/Web/API/Window_Controls_Overlay_API)
 and [tabbed application mode](https://web.dev/tabbed-application-mode/) which
 Apple was neutral-ish to, and my [app menu proposal](https://crbug.com/1295253)
 which Apple committed to coming up with a proposal for. Mozilla notably was in
-the room, but had no opinion on almost all topics close to PWA. Apple then
+the room, but had no opinion on almost all topics close to PWA.
+
+Apple then
 dropped a
 [proposal for declarative push notifications](https://github.com/WebKit/explainers/blob/main/DeclarativeWebPush/README.md).
 I filed a
@@ -246,7 +271,7 @@ installed apps. Currently, Chrome and Edge expose extensions, Safari doesn't.
 
 #### Notes and resources
 
-- [The cross-browser futureof Installable Web Apps](https://docs.google.com/presentation/d/1t_0WsgKFy2VmFY9lzpdLy00FgXK3Z9d0XJybOtCl-Tk/edit#slide=id.p)
+- [The cross-browser future of Installable Web Apps](https://docs.google.com/presentation/d/1t_0WsgKFy2VmFY9lzpdLy00FgXK3Z9d0XJybOtCl-Tk/edit#slide=id.p)
 - [The cross-browser future of Installable Web Apps](https://docs.google.com/document/d/1QzHTKGDxHol7KybdqY-rll1VGd1FIirvW-mtAFxPjC4/edit#heading=h.5wzb241vwwm2)
 
 ### Installing Web Apps
@@ -280,15 +305,20 @@ part of the day was occupied by a charter discussion between Philippe Le Hégare
 from the W3C. The core question that was discussed was cross-deliverables
 between the Web Apps WG and the Devices and Sensors WG, since Apple can't commit
 to joining the Device and Sensors WG but is interested in some of the things the
-group is working on. Next, we looked at the privacy principles and how they are
+group is working on.
+
+Next, we looked at the privacy principles and how they are
 applied by some of the specs. Marian Harbach briefly presented the `permission`
 element.
 
 In suite, Intel talked about testability improvements they made around
-WebDriver. Regarding Generic Sensors, we made a resolution to ensure Generic
+WebDriver.
+
+Regarding Generic Sensors, we made a resolution to ensure Generic
 Sensor-based specs have mitigations normatively defined for factory calibration
 device fingerprinting, matching
 [existing normative mitigations in the DeviceOrientation Events spec](https://w3c.github.io/deviceorientation/#security-and-privacy:~:text=The%20calibration%20of%20accelerometers%2C%20gyroscopes%20and%20magnetometers%20may%20reveal%20persistent%20details%20about%20the%20particular%20sensor%20hardware).
+
 After that, we went through all the APIs in scope of the working group and
 looked at their status:
 
@@ -325,15 +355,21 @@ Next, Intel gave a device market overview followed by an implementation overview
 including compelling use case demonstrations for the
 [Device Posture API](https://www.w3.org/2023/09/14-dap-minutes.html#t22).
 Fine-grained angle information was removed from the spec due to privacy
-concerns. In the following, Intel continued on presenting on the
+concerns.
+
+In the following, Intel continued on presenting on the
 [Compute Pressure API](https://www.w3.org/2023/09/14-dap-minutes.html#t23), with
 a special focus on cross-site tracking mitigations through randomization that
 were proven to be effective in experiments, plus showing future extensions for
 the API like memory stalls and an "it's you" hint when the current process is
-responsible for CPU usage peaks. The day ended with a look at the
+responsible for CPU usage peaks.
+
+The day ended with a look at the
 [Geolocation API](https://www.w3.org/2023/09/14-dap-minutes.html#t26), which is
 mostly stable but could add improvements around encouraging more coarse location
-access. As a meta remark, I feel like as a working group, we didn't achieve much
+access.
+
+As a meta remark, I feel like as a working group, we didn't achieve much
 new things compared to last year, mostly due to a lack of cross-implementer
 support for some of the APIs like the generic sensor APIs, and only a limited
 appetite to move on with things vendors at least partially agree on like screen
@@ -350,11 +386,15 @@ brightness or ambient light sensor.
 On Friday, I saw an interesting
 [proposal for a `headinglevelstart`](https://github.com/whatwg/html/issues/5033) attribute that would allow authors to embed content with a heading structure into another context with an already existing heading structure, while overall correctly nesting both heading structures. This was mostly driven by GitHub, who embed`README.md`
 files into repository homepages and who wish to adjust heading levels
-accordingly. Next, a
+accordingly.
+
+Next, a
 [focus navigation start point proposal](https://github.com/whatwg/html/issues/5326)
 was brought forward, which would allow to set the start point for the next focus
 point (which is not the same as the focus). Again this was driven by GitHub, who
-wanted to make the file tree fully keyboard-navigable. Noteworthy was also a
+wanted to make the file tree fully keyboard-navigable.
+
+Noteworthy was also a
 [proposal for an Observable API](https://github.com/WICG/observable) presented
 by Dominic Farolino , which would allow for more convenient event handling
 scenarios and that was greeted with great interest.
@@ -368,13 +408,16 @@ scenarios and that was greeted with great interest.
 
 In the afternoon, I attended Web Incubator Community Group
 ([WICG](https://wicg.io/)) sessions focused on the Accessibility Object Model
-(AOM), the Shape Detection API, and the File System. Unfortunately the AOM
+(AOM), the Shape Detection API, and the File System.
+
+Unfortunately the AOM
 session was a little confusing and it was not entirely clear what the status of
 the AOM was and which parts of it are cross-browser vs. abandoned. The
 [AOM explainer](https://github.com/WICG/aom/blob/gh-pages/explainer.md) contains
 many abandoned sections and the [AOM spec](https://wicg.github.io/aom/spec/) is
 just a barebones skeleton, plus the
 [demo](https://wicg.github.io/aom/demos/tictactoe.html) doesn't work (anymore).
+
 For the
 [Shape Detection API](https://developer.chrome.com/articles/shape-detection/),
 there's some interest from Apple to implement this. They raised questions about
@@ -386,7 +429,9 @@ Apple was also worried about the Chrome-specificity of the test suite and the
 future venue of the proposal, hinting it could be the
 [WebML WG](https://www.w3.org/groups/wg/webmachinelearning). As a final point, I
 noted that Apple's implementation works, but only on the main thread and not in
-workers. This is a known issue and "for reasons", according to Apple. The File
+workers. This is a known issue and "for reasons", according to Apple.
+
+The File
 System Access session proposed by Austin Sullivan unluckily saw no attendance
 from Apple or Mozilla, so the meeting was adjourned since it would have been
 Googlers preaching to Googlers (and Google Developer Expert
@@ -437,7 +482,9 @@ better. There was typically an early dinner train, which ended up in one of the
 tourist trap-ish restaurants in old town that open early compared to local
 Spanish dinner times. My food quality indicator was always to check the bread:
 if it's plastic-sealed, the food will be fine; if it's fresh, it will be
-amazing. Coffee was available in the breaks, and either horrible if you got the
+amazing.
+
+Coffee was available in the breaks, and either horrible if you got the
 milk directly from the machine, or great if you got the milk separately from a
 waiter.
 
