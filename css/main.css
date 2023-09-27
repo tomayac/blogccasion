@@ -110,10 +110,15 @@ h6,
   -webkit-background-clip: text;
   background-clip: text;
   text-decoration: none;
+  text-wrap: balance;
 }
 
 article h1 {
   font-size: 1.75rem;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 pre,
@@ -458,6 +463,15 @@ dark-mode-toggle {
   max-width: 9rem;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+fed-embed li {
+  border: solid 1px var(--border-color);
+  border-radius: var(--padding);
+  margin-block-end: var(--padding);
+  padding: var(--padding);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 1024px) {

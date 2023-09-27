@@ -17,9 +17,16 @@ navtitle: Home
   </p>
 </div>
 
-<h2>Latest Posts</h2>
+<h2>Latest Blog Posts</h2>
 
 {% set postslist = collections.posts | head(-20) %}
 {% include "postslist.njk" %}
 
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+<p>More blog posts in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+
+<h2>Latest Mastodon Toots</h2>
+
+<fed-embed data-user="https://toot.cafe/@tomayac"></fed-embed>
+<script src="/js/fed-embed.min.js"></script>
+
+<p>More toots on <a href="https://toot.cafe/@tomayac">Mastodon</a>.</p>
