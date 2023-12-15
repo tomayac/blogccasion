@@ -17,7 +17,7 @@ h6,
 .heading-effect {
   background: linear-gradient(
     90deg,
-    hsl(23, 100%, 60%) 0%,
-    hsl(44, 100%, 60%) 100%
+    hsl(13, 100%, 60%) 0%,
+    hsl(34, 100%, 50%) 100%
   );
 }

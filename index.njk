@@ -19,14 +19,17 @@ navtitle: Home
 
 <h2>Latest Blog Posts</h2>
 
-{% set postslist = collections.posts | head(-20) %}
+{% set postslist = collections.posts | head(-10) %}
 {% include "postslist.njk" %}
 
 <p>More blog posts in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
 
-<h2>Latest Mastodon Toots</h2>
+<h2>Search</h2>
 
-<fed-embed data-user="https://toot.cafe/@tomayac"></fed-embed>
-<script src="/js/fed-embed.min.js"></script>
-
-<p>More toots on <a href="https://toot.cafe/@tomayac">Mastodon</a>.</p>
+<script src="/pagefind/pagefind-ui.js"></script>
+<search id="search"></search>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false });
+    });
+</script>

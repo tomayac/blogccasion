@@ -5,6 +5,17 @@ tags:
 navtitle: Archive
 permalink: /posts/
 ---
+
+<h2>Search</h2>
+
+<script src="/pagefind/pagefind-ui.js"></script>
+<search id="search"></search>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false });
+    });
+</script>
+
 <h2>Archive</h2>
 
 {% for year, yearPosts in collections.postsByYear %}

@@ -72,7 +72,34 @@ body {
   }
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-effect {
+  width: fit-content;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+  text-wrap: balance;
+}
+
+header .heading-effect {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h1,
+header .heading-effect {
   font-size: 2rem;
   margin: 0.67em 0;
 }
@@ -95,22 +122,6 @@ h5 {
 
 h6 {
   font-size: 0.67rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.heading-effect {
-  width: fit-content;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-decoration: none;
-  text-wrap: balance;
 }
 
 article h1 {
@@ -518,7 +529,8 @@ fed-embed li {
 
   h1,
   h2,
-  h3 {
+  h3,
+  header .heading-effect {
     margin: var(--padding) 0;
     letter-spacing: -0.05rem;
   }
