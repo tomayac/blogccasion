@@ -16,6 +16,6 @@ The solution was to disable the "Smart Power" option in the screen's settings. A
 
 > Smart Power intelligently distributes power to connected USB and USB Type-C devices, maximizing power supply efficiency while also reducing overall consumption.
 
-Turns out, it wasn't so smart after all. I saw it range between 65W and 90W, but after turning the option off, the laptop gets a constant 65W, all my USB-C devices still work, and I'm happy to report that the screen no longer randomly turns off.
+Turns out, it wasn't so smart after all. I saw it range between 65W and 90W, but after turning the option off, the laptop gets a constant 65W, all my USB-C devices still work, and I'm happy to report that the screen no longer randomly turns off. This is the blog post I wish I had found when I was looking for a solution, so I hope it helps someone else.
 
 ![Lenovo ThinkVision P27h-20 settings with the Smart Power option circled.](/images/lenovo-p27h-20.jpg)
