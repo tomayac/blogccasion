@@ -554,6 +554,11 @@ fed-embed li {
   }
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
+.pagefind-ui__search-clear {
+  display: none;
+}
+
 /* Footnote text styling. */
 rt {
   background-color: hsl(0, 0%, 93%);

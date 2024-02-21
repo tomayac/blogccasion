@@ -30,6 +30,7 @@ navtitle: Home
 <search id="search"></search>
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false });
+      new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false });
+      document.querySelector('.pagefind-ui__search-input').type = 'search';
     });
 </script>
