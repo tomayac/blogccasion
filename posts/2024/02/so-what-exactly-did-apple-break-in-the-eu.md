@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: 'So, what exactly did Apple break in the EU?'
 author: 'Thomas Steiner'
 date: '2024-02-28T10:30:53'
-permalink: 2024/02/so-what-exactly-did-apple-break-in-the-eu.md/index.html
+permalink: 2024/02/28/so-what-exactly-did-apple-break-in-the-eu/index.html
 tags:
   - Technical
 ---
