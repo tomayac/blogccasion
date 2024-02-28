@@ -62,6 +62,10 @@ Then, on February 2, 2024, [Tixie](https://tixie.name/) opened a
 268643 - [iOS 17.4 Beta (21E5184k)] REGRESSION: PWA added to Home Screen are
 forced to open in Safari."_
 
+**🆕 Update:** The message in the release candidate of iOS 17.4 (21E217) is now:
+_"Open 'Example app' in 'Default browser'? In your region, web apps now open in
+your default browser"._
+
 ## What does Apple say?
 
 By now, you have probably heard that
@@ -107,7 +111,7 @@ services. The
 says:
 
 > Moreover, the Commission considers, in line with Apple's view, that iOS,
-> iPadOS, macOS, watchOS, and tvOS constitute distinct CPSs [core platform
+> iPadOS, macOS, watchOS, and tvOS constitute distinct CPSs [core platform >
 > services] within the meaning of Article 2, point (2), sub (f), of Regulation
 > (EU) 2022/1925.
 
