@@ -121,7 +121,7 @@ in standalone mode as they always did.
 
 **💡 Note:** This article exclusively talks about Home Screen Web Apps, not
 bookmarks. According to
-[Apple's documentation](https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/#:~:text=Web%20developers%20have,any%20other%20browser.)
+[Apple's documentation](https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/#:~:text=Web%20developers%20have,any%20other%20browser.),
 _"Web developers have the option to create a
 [manifest file](https://developer.mozilla.org/en-US/docs/Web/Manifest) (with its
 [`display`](https://developer.mozilla.org/en-US/docs/Web/Manifest/display)
