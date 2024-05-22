@@ -111,7 +111,7 @@ services. The
 says:
 
 > Moreover, the Commission considers, in line with Apple's view, that iOS,
-> iPadOS, macOS, watchOS, and tvOS constitute distinct CPSs [core platform > >
+> iPadOS, macOS, watchOS, and tvOS constitute distinct CPSs [core platform > > >
 > services] within the meaning of Article 2, point (2), sub (f), of Regulation
 > (EU) 2022/1925.
 

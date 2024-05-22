@@ -32,29 +32,29 @@ together with TikTok.
 
 ##### Keynote I: Factuality Challenges in the Era of Large Language Models
 
-**Speaker:** [Dr. Preslav
-Nakov](https://mbzuai.ac.ae/study/faculty/preslav-nakov/), Professor and
-Department Chair of NLP, MBZUAI
+**Speaker:**
+[Dr. Preslav Nakov](https://mbzuai.ac.ae/study/faculty/preslav-nakov/),
+Professor and Department Chair of NLP, MBZUAI
 
 Fact-checking the output of LLMs: Decompose the output of an LLM into its
 individual claims, decide which are check-worthy, check one-by-one:
 
--  [Factcheck-Bench: Fine-Grained Evaluation Benchmark for Automatic Fact-checkers](https://arxiv.org/pdf/2311.09000)
--  [yuxiaw/Factcheck-GPT](https://github.com/yuxiaw/Factcheck-GPT)
+- [Factcheck-Bench: Fine-Grained Evaluation Benchmark for Automatic Fact-checkers](https://arxiv.org/pdf/2311.09000)
+- [yuxiaw/Factcheck-GPT](https://github.com/yuxiaw/Factcheck-GPT)
 
 Detecting LLM-generated texts:
 
--  [Release Strategies and the Social Impacts of Language Models](https://d4mucfpksywv.cloudfront.net/papers/GPT_2_Report.pdf)
+- [Release Strategies and the Social Impacts of Language Models](https://d4mucfpksywv.cloudfront.net/papers/GPT_2_Report.pdf)
 
--  [RoBERTa](https://huggingface.co/openai-community/roberta-large-openai-detector)
-    (for GTP-2)
+- [RoBERTa](https://huggingface.co/openai-community/roberta-large-openai-detector)
+  (for GTP-2)
 
 Arabic LLM:
 
--  [Jais Arabic LLM](https://inceptioniai.org/jais/), see the
-    [prompt instructions](https://huggingface.co/core42/jais-13b-chat#:~:text=prompt_eng%20%3D%20%22%23%23%23%20Instruction%3A%20Your%20name%20is%20Jais%2C%20and%20you,%D9%88%20%5B%7CAI%7C%5D%3A%5Cn%23%23%23%20Input%3A%20%5B%7CHuman%7C%5D%20%7BQuestion%7D%5Cn%23%23%23%20Response%3A%20%5B%7CAI%7C%5D%22).
+- [Jais Arabic LLM](https://inceptioniai.org/jais/), see the
+  [prompt instructions](https://huggingface.co/core42/jais-13b-chat#:~:text=prompt_eng%20%3D%20%22%23%23%23%20Instruction%3A%20Your%20name%20is%20Jais%2C%20and%20you,%D9%88%20%5B%7CAI%7C%5D%3A%5Cn%23%23%23%20Input%3A%20%5B%7CHuman%7C%5D%20%7BQuestion%7D%5Cn%23%23%23%20Response%3A%20%5B%7CAI%7C%5D%22).
 
--  [Demo](https://arabic-gpt.ai/)
+- [Demo](https://arabic-gpt.ai/)
 
 Audience question: Why don't we use LLMs for what they are good for: working
 with language like reformulating or summarizing, but not asking them to come up
@@ -68,21 +68,21 @@ of Engineering, Meta
 For many languages there isn't enough actually harmful labeled content, so
 models are trained on artificially oversampled labeled examples.
 
--  [Semi Supervised Monotonic Regression For Calibrating Social Media Classifiers](https://research.facebook.com/publications/semi-supervised-monotonic-regression-for-calibrating-social-media-classifiers/)
+- [Semi Supervised Monotonic Regression For Calibrating Social Media Classifiers](https://research.facebook.com/publications/semi-supervised-monotonic-regression-for-calibrating-social-media-classifiers/)
 
 Facebook posts ranking formula: probability you like something, probability you
 share something, probability you hide something. Like, comment, and send are not
 good signals for bad experiences. Hiding, reporting from the three dot overflow
 menu are.
 
--  [Detecting and Limiting Negative User Experiences in Social Media Platforms](https://dl.acm.org/doi/pdf/10.1145/3543507.3583883)
+- [Detecting and Limiting Negative User Experiences in Social Media Platforms](https://dl.acm.org/doi/pdf/10.1145/3543507.3583883)
 
 Future challenges with LLMs:
 
--  [Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations](https://arxiv.org/pdf/2402.17152)
+- [Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations](https://arxiv.org/pdf/2402.17152)
 
-Meta folks are organizing the [Integrity
-Workshop](https://integrity-workshop.org/) series.
+Meta folks are organizing the
+[Integrity Workshop](https://integrity-workshop.org/) series.
 
 ##### The Dynamics of (Not) Unfollowing Misinformation Spreaders
 
@@ -95,7 +95,7 @@ non-misinformation spreaders than they are to unfollow misinformation spreaders.
 Reciprocity, initial exposure, and ideology are the most important factors for
 predicting unfollowing.
 
--  [The Dynamics of (Not) Unfollowing Misinformation Spreaders](https://arxiv.org/pdf/2401.13480)
+- [The Dynamics of (Not) Unfollowing Misinformation Spreaders](https://arxiv.org/pdf/2401.13480)
 
 #### Web4All (Sponsored by Google)
 
@@ -105,10 +105,9 @@ Touchpad Mapper: maps the position of objects in images to the touchpad area, so
 when the screen reader user moves their finger over the touchpad, the position
 of the finger is taken into account for announcing the image contents.
 
--  [Touchpad
-    Mapper](https://athersharif.github.io/touchpadmapper/index.html), requires
-    a backend app to extract the exact physical coordinates of the finger on
-    the touchpad.
+- [Touchpad Mapper](https://athersharif.github.io/touchpadmapper/index.html),
+  requires a backend app to extract the exact physical coordinates of the finger
+  on the touchpad.
 
 <figure>
     <img alt="Diagram showing the data flow from touchpad to Mac app to backend server to browser to user." src="/images/thewebconf2024--eur2u7qn0cm.png">
@@ -145,9 +144,9 @@ Looked at how journalists cover scientific research. Scientific findings
 frequently undergo subtle distortions when reported, e.g., with regard to
 certainty, generality, and causality.
 
--  [Sentence BERT](https://sbert.net/): framework to compute sentence /
-    text embeddings for more than 100 languages. These embeddings can then be
-    compared, e.g. with cosine-similarity, to find sentences with a similar meaning.
+- [Sentence BERT](https://sbert.net/): framework to compute sentence / text
+  embeddings for more than 100 languages. These embeddings can then be compared,
+  e.g. with cosine-similarity, to find sentences with a similar meaning.
 
 ### Day 2
 
@@ -155,17 +154,17 @@ certainty, generality, and causality.
 
 ##### Keynote Speech: Liddy Nevile "Accessibility?"
 
-(Liddy Nevile is the mother of one of the organizers, [Charles
-McCathieNevile](https://www.w3.org/People/Charles/), aka. Chaals.) Her son went
-to university at 10 to learn Logo, so she would learn it, too. Got to know folks
-at MIT. One of them was Tim Berners-Lee. Worked with Mosaic folks and how blind
-kids would use it. Concerned about inappropriate content. Founded [Platform for
-Internet Content Selection](https://www.w3.org/PICS/) (PICS) W3C group, which
-created a numbering system to classify content. Opened the way for what people
-at the time thought of as curation of content. Was well received by the adult
-industry. [Eric Miller](https://www.w3.org/People/EM/) wondered why, if PICS
-worked, couldn't embedded descriptions, ideally structured, also work? Created
-"metadata" catalog, which ended up becoming Dublin Core. Published
+(Liddy Nevile is the mother of one of the organizers,
+[Charles McCathieNevile](https://www.w3.org/People/Charles/), aka. Chaals.) Her
+son went to university at 10 to learn Logo, so she would learn it, too. Got to
+know folks at MIT. One of them was Tim Berners-Lee. Worked with Mosaic folks and
+how blind kids would use it. Concerned about inappropriate content. Founded
+[Platform for Internet Content Selection](https://www.w3.org/PICS/) (PICS) W3C
+group, which created a numbering system to classify content. Opened the way for
+what people at the time thought of as curation of content. Was well received by
+the adult industry. [Eric Miller](https://www.w3.org/People/EM/) wondered why,
+if PICS worked, couldn't embedded descriptions, ideally structured, also work?
+Created "metadata" catalog, which ended up becoming Dublin Core. Published
 [An Introduction to the Resource Description Framework](https://asistdl.onlinelibrary.wiley.com/doi/full/10.1002/bult.105).
 
 <figure>
@@ -176,20 +175,19 @@ Internet Content Selection (PICS)</figcaption>
 </figure>
 
 _Platform for Internet Content Selection (PICS,
-[source](https://www.w3.org/PICS/PICS-FAQ-980126.html))_
- W3C used a grant to set up the [Web Accessibility
-Initiative](https://www.w3.org/WAI/) (WAI). Worked on how to encode resources so
-they would be accessible to users. How could a blind person find out where the
-cursor is? How could flickering content be avoided? WAI brought people together
-to learn about making accessible websites. Some countries converted WAI into
-national laws. Could compliance be put into the resource, just like PICS?
-Different countries do things differently. Australia doesn't prosecute people
-for not complying with [Web Content Accessibility
-Guidelines](https://www.w3.org/TR/WCAG21/) (WCAG). Worked on making math books
-accessible with MathML. Inclusion (make something accessible just in case) or
-accessibility (make something accessible just in time). Worked on structured
-accessibility data. [Jutta
-Treviranus](https://en.wikipedia.org/wiki/Jutta_Treviranus) worked on
+[source](https://www.w3.org/PICS/PICS-FAQ-980126.html))_ W3C used a grant to set
+up the [Web Accessibility Initiative](https://www.w3.org/WAI/) (WAI). Worked on
+how to encode resources so they would be accessible to users. How could a blind
+person find out where the cursor is? How could flickering content be avoided?
+WAI brought people together to learn about making accessible websites. Some
+countries converted WAI into national laws. Could compliance be put into the
+resource, just like PICS? Different countries do things differently. Australia
+doesn't prosecute people for not complying with
+[Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/) (WCAG).
+Worked on making math books accessible with MathML. Inclusion (make something
+accessible just in case) or accessibility (make something accessible just in
+time). Worked on structured accessibility data.
+[Jutta Treviranus](https://en.wikipedia.org/wiki/Jutta_Treviranus) worked on
 [Access4Al](https://raisingthefloor.org/our-approach-accessforall/): _"Whether
 using a public workstation, or engaging in an on-line learning environment,
 computer systems should fit the individual preferences and requirements of the
@@ -247,12 +245,13 @@ created code.
 
 ##### Evaluating the Effectiveness of STEM Images Captioning
 
-Teaches university students Web development. Asks them to take the [#NoMouse
-Challenge](https://nomouse.org/). Split their group in two groups: one was
-trained on image accessibility, one wasn't. Correctness (does the description
-accurately describe what the image depicts) vs. usefulness (does the description
-accurately describe the conveyed meaning) of describing images. Created AI image
-descriptions with [IDEFICS](https://huggingface.co/blog/idefics)
+Teaches university students Web development. Asks them to take the
+[#NoMouse Challenge](https://nomouse.org/). Split their group in two groups: one
+was trained on image accessibility, one wasn't. Correctness (does the
+description accurately describe what the image depicts) vs. usefulness (does the
+description accurately describe the conveyed meaning) of describing images.
+Created AI image descriptions with
+[IDEFICS](https://huggingface.co/blog/idefics)
 ([demo](https://huggingface.co/spaces/HuggingFaceM4/idefics_playground)).
 Students were asked to evaluate human-generated vs. AI-generated descriptions.
 Describing STEM images (like diagrams describing photosynthesis) generally is
@@ -286,7 +285,8 @@ it's noticeable and research is required to reintroduce these emotions.
 
 #### Welcome reception
 
-The welcome reception took place in the [Tipsy Unicorn](https://www.tipsyunicorn.com.sg/).
+The welcome reception took place in the
+[Tipsy Unicorn](https://www.tipsyunicorn.com.sg/).
 
 <figure>
 <img alt="A band playing on a stage. In front of the stage is a pool with persons, one of them me. Behind the stage is a screen with a conference slide announcing the resource track. The slide has my headshot." src="/images/thewebconf2024--4hpmqvcole7.png">
@@ -302,9 +302,9 @@ The welcome reception took place in the [Tipsy Unicorn](https://www.tipsyunicorn
 
 #### Keynote#1: Challenges toward AGI and its impact to [sic] the Web
 
-**Speaker:** [Jie Tang](https://keg.cs.tsinghua.edu.cn/jietang/)
-This keynote was about how they created the Chinese ChatGPT called [ChatGLM
-(智谱清言)](https://chatglm.cn/), which means "clear words of wisdom".
+**Speaker:** [Jie Tang](https://keg.cs.tsinghua.edu.cn/jietang/) This keynote
+was about how they created the Chinese ChatGPT called
+[ChatGLM (智谱清言)](https://chatglm.cn/), which means "clear words of wisdom".
 
 #### Web4Good
 
@@ -329,138 +329,143 @@ prediction. (I would love to see this run on top of Memegen.)
 
 **Panelists:**
 
--  **Panel Chair:**
-    -  Andrew Tomkins, Research Scientist, Google
--  **Panelists:**
-    -  Jon Kleinberg, Cornell University
-    -  Yoelle Maarek, Chief Researcher, Technology Innovation Institute
-    -  Jie Tang, Tsinghua University
+- **Panel Chair:**
+  - Andrew Tomkins, Research Scientist, Google
+- **Panelists:**
+  - Jon Kleinberg, Cornell University
+  - Yoelle Maarek, Chief Researcher, Technology Innovation Institute
+  - Jie Tang, Tsinghua University
 
 **Questions:**
 
--  Do we expect websites to have LLM-based front-ends?
-    -  Jie thinks it's quite possible. Each website may have an agent
-        that could also interact with other websites' agents.
-    -  Yoelle thinks that if the content of websites is generated by
-        LLMs and LLMs train themselves on the content they created, this may
-        lead to a rich get richer symptom and all LLMs learn the same. Maybe
-        more diverse LLMs can help rather than one dominating one.
-        Hallucinations are a big problem, and they will continue to be. People
-        need the feeling that the information comes from somewhere, to have
-        sources. We need to be careful not to take this feeling away.
-    -  The most popular app on the Web is search. Search puts itself
-        between the page and the searcher. If search doesn't lead to traffic to
-        pages, there's no incentive to create content.
+- Do we expect websites to have LLM-based front-ends?
 
--  Websites don't need to expose APIs anymore, agents can just talk to
-    websites using natural language. Will this cause specialized search engines
-    to arise? Do we expect one central agent to rule them all?
-    -  Yoelle says before common Web search engines, there was a
-        federated search engine, but it died. Strongly believing in RAG, you
-        need special agents to surface hidden content.
-    -  Jon states it's an old question, special agents like for flight
-        search. You could take special agents and hide them under one common
-        interface. It's mostly a UI question.
-    -  Jie says we have a network of webpages, and later Linked Data.
-        Now AI to answer questions. We could have linked AI to answer special questions.
+  - Jie thinks it's quite possible. Each website may have an agent that could
+    also interact with other websites' agents.
+  - Yoelle thinks that if the content of websites is generated by LLMs and LLMs
+    train themselves on the content they created, this may lead to a rich get
+    richer symptom and all LLMs learn the same. Maybe more diverse LLMs can help
+    rather than one dominating one. Hallucinations are a big problem, and they
+    will continue to be. People need the feeling that the information comes from
+    somewhere, to have sources. We need to be careful not to take this feeling
+    away.
+  - The most popular app on the Web is search. Search puts itself between the
+    page and the searcher. If search doesn't lead to traffic to pages, there's
+    no incentive to create content.
 
--  The Web is special. Someone has gone through the work of, for example,
-    collecting great spots to visit at a place. We would love for this person
-    to keep the benefits. We can do so through advertising. Now the model is
-    changing. Why would people keep creating content under these circumstances?
-    What are possible models for this to work in the future?
-    -  Jon says the Web has always been powered by altruism. Search
-        isn't always about finding the answer, but also about exploring the
-        landscape. People want to hear different takes on a question. LLMs will
-        not just be used to find one answer. If there's economic value created.
-        Mashups is a 2005 concept, we mashed up Google Maps with stuff.
-    -  Yoelle states most websites are automatically created. It's like
-        AirBnB, it's business, not regular people renting out a spare room. If
-        you have specialized RAG-supported LLMs, you have a transaction when
-        hidden content is being found. This isn't the Open Web, maybe it has
-        already disappeared. Economic value could be protected like this.
-    -  Jie isn't sure about this. People only want to consume, they
-        don't necessarily search for something concrete, like TikTok or Douyin.
-    -  Yoelle really wants to disagree. We want serendipity, I love this
-        journey of searching. It's something I must have to earn.
-    -  Jon talks about the economic model. If you're a standup comedian,
-        you start imitating others, and eventually you develop your own style.
-        That's LLMs. You don't owe the comedians you took inspiration from early on.
+- Websites don't need to expose APIs anymore, agents can just talk to websites
+  using natural language. Will this cause specialized search engines to arise?
+  Do we expect one central agent to rule them all?
 
--  Audience question by Natasha Noy: I want to broaden this. If we have a
-    highly curated extra layer, it hides this personal layer. We need to
-    discuss this layer.
-    -  Jon says this could be something like an LLM giving out "Likes",
-        or Google Scholar citation counts. Could this be self-prophesying, so
-        people create content only to be cited by LLMs.
+  - Yoelle says before common Web search engines, there was a federated search
+    engine, but it died. Strongly believing in RAG, you need special agents to
+    surface hidden content.
+  - Jon states it's an old question, special agents like for flight search. You
+    could take special agents and hide them under one common interface. It's
+    mostly a UI question.
+  - Jie says we have a network of webpages, and later Linked Data. Now AI to
+    answer questions. We could have linked AI to answer special questions.
 
--  Want to talk about privacy and safety. But before that, I want to talk
-    about crawling. It's a massive business. Crawlers asking for access to
-    content could look different than regular users, they already do. Could
-    there be a third class of LLM traffic to websites?
-    -  Yoelle sees the point. People don't protect their websites too
-        much, like with robots.txt, because they know they get traffic back.
-        Now with LLMs it's different. They don't get the value back. It's
-        costly for providers to crawl, Azure, Google, AWS, they make a lot of
-        money off LLM crawlers. We need to think about protocols to support this.
-    -  Jie thinks in the future this depends, if in the future the Web
-        will interact with human beings, if the Web itself is a personal
-        assistant, the Web will change. Not sure how.
-    -  Jon thinks this question is orthogonal to the question of LLMs.
-        We already have alerts and notifications like has the flight price
-        changed, has an article been published on a topic. This is a pilot case
-        for what LLMs could do in a general manner.
+- The Web is special. Someone has gone through the work of, for example,
+  collecting great spots to visit at a place. We would love for this person to
+  keep the benefits. We can do so through advertising. Now the model is
+  changing. Why would people keep creating content under these circumstances?
+  What are possible models for this to work in the future?
 
--  Audience question: One of the issues now is who owns the content creator?
-    Google etc. make profit from profiling users. Would we all come to a
-    conference to listen to bot-written papers? When we lose trust in the
-    reflective power of an LLM, who's going to pay for this technology? Is it
-    either you, or my personal information? Will this model work in the future?
-    -  Jie isn't sure about the economic aspect. AI is still occupied
-        with improving its performance. The trust still needs to be earned.
-    -  Yoelle means people won't use AI for trivial things they can do
-        themselves. Reasoning examples we see today are trivial, because the AI
-        is still learning. In the early days of the Web it was authority
-        through PageRank and clicks that brought you value as a creator.
-        Research may be needed to explore if we can somehow give back to
-        creators, I hope  it will come naturally. We can also think as
-        creators, what information do we want to make accessible to LLMs.
-    -  Jon asks what's the value we're adding. If we're angry at an LLM,
-        what can I add? Wolfram Alpha now just solves math problems which a
-        hundred years ago you could publish a math paper about.
+  - Jon says the Web has always been powered by altruism. Search isn't always
+    about finding the answer, but also about exploring the landscape. People
+    want to hear different takes on a question. LLMs will not just be used to
+    find one answer. If there's economic value created. Mashups is a 2005
+    concept, we mashed up Google Maps with stuff.
+  - Yoelle states most websites are automatically created. It's like AirBnB,
+    it's business, not regular people renting out a spare room. If you have
+    specialized RAG-supported LLMs, you have a transaction when hidden content
+    is being found. This isn't the Open Web, maybe it has already disappeared.
+    Economic value could be protected like this.
+  - Jie isn't sure about this. People only want to consume, they don't
+    necessarily search for something concrete, like TikTok or Douyin.
+  - Yoelle really wants to disagree. We want serendipity, I love this journey of
+    searching. It's something I must have to earn.
+  - Jon talks about the economic model. If you're a standup comedian, you start
+    imitating others, and eventually you develop your own style. That's LLMs.
+    You don't owe the comedians you took inspiration from early on.
 
--  Audience question: The age of information abundance. In the past, there
-    was information scarcity. For example, you needed to travel to different
-    countries to get information. Now it's the opposite, you have way too much
-    information. Generative AI makes this a lot worse, it creates so much
-    information.
-    -  Yoelle thinks the question is funny. LLMs are good at finding
-        hidden information. But you don't know if it's a hallucination. You
-        don't have the context, so you can't easily verify. The world now isn't
-        deterministic. We're all computer scientists, we're used to
-        determinism. Now it's not the one truth. You live in a fuzzy world now.
-        Maybe we all become computer artists. Scared by the uncertainty. I want
-        proof, I lost this.
-    -  Jon disagrees a bit. You visit a doctor, and each doctor you
-        visit tells you something different. Indeterminism existed before. It's
-        a fascinating tension. Huge fan of the abundance question, wrote papers
-        about this. In the early 1970ies, there was a book about information
-        abundance. Abundance is consuming human attention.
+- Audience question by Natasha Noy: I want to broaden this. If we have a highly
+  curated extra layer, it hides this personal layer. We need to discuss this
+  layer.
 
--  Let's touch on trust and safety. There's privacy questions, there's
-    government standpoint questions, there's questions on where LLMs should be
-    hosted. Finance has concerns about data safety. Can you share thoughts
-    about what's the biggest risk right now?
-    -  Jie thinks all this is very important. Technology is super
-        important. AI will self-improve and self-reflect. We could have built a
-        common model to check the quality of models. If AIs in the future will
-        be smarter about this, this would be great.
-    -  Yoelle says it's super important to have many open source LLMs.
-        We need diversity. You could come back to different models, even if
-        they are biased. For many sensitive topics, you can bring models
-        in-house trained on your data, even with lower general quality.
-    -  Jon means powerful tools will reflect society, including its
-        biases. We rely on LLMs as to make decisions.
+  - Jon says this could be something like an LLM giving out "Likes", or Google
+    Scholar citation counts. Could this be self-prophesying, so people create
+    content only to be cited by LLMs.
+
+- Want to talk about privacy and safety. But before that, I want to talk about
+  crawling. It's a massive business. Crawlers asking for access to content could
+  look different than regular users, they already do. Could there be a third
+  class of LLM traffic to websites?
+
+  - Yoelle sees the point. People don't protect their websites too much, like
+    with robots.txt, because they know they get traffic back. Now with LLMs it's
+    different. They don't get the value back. It's costly for providers to
+    crawl, Azure, Google, AWS, they make a lot of money off LLM crawlers. We
+    need to think about protocols to support this.
+  - Jie thinks in the future this depends, if in the future the Web will
+    interact with human beings, if the Web itself is a personal assistant, the
+    Web will change. Not sure how.
+  - Jon thinks this question is orthogonal to the question of LLMs. We already
+    have alerts and notifications like has the flight price changed, has an
+    article been published on a topic. This is a pilot case for what LLMs could
+    do in a general manner.
+
+- Audience question: One of the issues now is who owns the content creator?
+  Google etc. make profit from profiling users. Would we all come to a
+  conference to listen to bot-written papers? When we lose trust in the
+  reflective power of an LLM, who's going to pay for this technology? Is it
+  either you, or my personal information? Will this model work in the future?
+
+  - Jie isn't sure about the economic aspect. AI is still occupied with
+    improving its performance. The trust still needs to be earned.
+  - Yoelle means people won't use AI for trivial things they can do themselves.
+    Reasoning examples we see today are trivial, because the AI is still
+    learning. In the early days of the Web it was authority through PageRank and
+    clicks that brought you value as a creator. Research may be needed to
+    explore if we can somehow give back to creators, I hope it will come
+    naturally. We can also think as creators, what information do we want to
+    make accessible to LLMs.
+  - Jon asks what's the value we're adding. If we're angry at an LLM, what can I
+    add? Wolfram Alpha now just solves math problems which a hundred years ago
+    you could publish a math paper about.
+
+- Audience question: The age of information abundance. In the past, there was
+  information scarcity. For example, you needed to travel to different countries
+  to get information. Now it's the opposite, you have way too much information.
+  Generative AI makes this a lot worse, it creates so much information.
+
+  - Yoelle thinks the question is funny. LLMs are good at finding hidden
+    information. But you don't know if it's a hallucination. You don't have the
+    context, so you can't easily verify. The world now isn't deterministic.
+    We're all computer scientists, we're used to determinism. Now it's not the
+    one truth. You live in a fuzzy world now. Maybe we all become computer
+    artists. Scared by the uncertainty. I want proof, I lost this.
+  - Jon disagrees a bit. You visit a doctor, and each doctor you visit tells you
+    something different. Indeterminism existed before. It's a fascinating
+    tension. Huge fan of the abundance question, wrote papers about this. In the
+    early 1970ies, there was a book about information abundance. Abundance is
+    consuming human attention.
+
+- Let's touch on trust and safety. There's privacy questions, there's government
+  standpoint questions, there's questions on where LLMs should be hosted.
+  Finance has concerns about data safety. Can you share thoughts about what's
+  the biggest risk right now?
+  - Jie thinks all this is very important. Technology is super important. AI
+    will self-improve and self-reflect. We could have built a common model to
+    check the quality of models. If AIs in the future will be smarter about
+    this, this would be great.
+  - Yoelle says it's super important to have many open source LLMs. We need
+    diversity. You could come back to different models, even if they are biased.
+    For many sensitive topics, you can bring models in-house trained on your
+    data, even with lower general quality.
+  - Jon means powerful tools will reflect society, including its biases. We rely
+    on LLMs as to make decisions.
 
 #### History of the Web #1
 
@@ -504,8 +509,7 @@ AI-generated content and limit access to user data.
 Fun anecdote: IE showed the `alt` attribute like a tooltip. The author is the
 official translator of the WCAG standard for Portuguese and got into
 accessibility when he was made aware that Brazil's government required websites
-to be accessible.
-[[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3652002)]
+to be accessible. [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3652002)]
 
 ##### From Files to Streams: Revisiting Web History and Exploring Potentials for Future Prospects
 
@@ -581,12 +585,12 @@ you should be having a salad. Sees AI as a semi-autonomous vehicle.
 about Internet [speed tests](https://speed.measurementlab.net/#/) available.
 Measurement Lab is led by teams based at Code for Science & Society; Google,
 Inc; and supported by partners around the world. Internally, the Google team
-responsible is called [Open Internet
-Measurement](https://moma.corp.google.com/team/1360534536144). Median latencies
-for Starlink is ~40–50ms, while mobile networks are ~30ms. NA and EU (regions
-with dense ground stations concentration) enjoy the best coverage. Very few
-locations where Starlink outperforms cellular. Closeness to the ground station
-determines latency a lot.
+responsible is called
+[Open Internet Measurement](https://moma.corp.google.com/team/1360534536144).
+Median latencies for Starlink is ~40–50ms, while mobile networks are ~30ms. NA
+and EU (regions with dense ground stations concentration) enjoy the best
+coverage. Very few locations where Starlink outperforms cellular. Closeness to
+the ground station determines latency a lot.
 [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589334.3645328)]
 
 ##### PASS: Predictive Auto-Scaling System for Large-scale Enterprise Web Applications
@@ -624,7 +628,6 @@ real world data. (Code:
 <figcaption>The performance of WebGPU was inferior to the performance of WebGL.</figcaption>
 </figure>
 
-
 ##### QUIC is not Quick Enough over Fast Internet
 
 The paper examines QUIC's performance over high-speed networks. They find that
@@ -647,7 +650,8 @@ reasons. [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589334.3645323)]
 
 <iframe loading="lazy" src="https://docs.google.com/presentation/d/e/2PACX-1vTyXwDC0QeZkbMGG2AgsCuypfFMQgFhINlocmvva96oFDjz0esEsa5N0_00EycD00EwC-tfPOBmWakj/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" style="width: 100%;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-[[Slides](https://docs.google.com/presentation/d/1VGBhUDdPrYMqo34UrJQq5cxGmlRdDwJZzEeu9fZUZnU/edit?usp=sharing)] [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651999)]
+[[Slides](https://docs.google.com/presentation/d/1VGBhUDdPrYMqo34UrJQq5cxGmlRdDwJZzEeu9fZUZnU/edit?usp=sharing)]
+[[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651999)]
 
 ##### Revisiting 30 years of the Network Time Protocol
 
@@ -663,19 +667,20 @@ look at Mars Internet. The
 
 ##### History of the Semantic Web
 
-A walk down memory lane of the Semantic Web with [Jim
-Hendler](https://faculty.rpi.edu/james-hendler). Started with the
+A walk down memory lane of the Semantic Web with
+[Jim Hendler](https://faculty.rpi.edu/james-hendler). Started with the
 [Scientific American article](https://www.scientificamerican.com/article/the-semantic-web/)
 in roughly 2000. In 2005, started moving from reasoning to linking data. 2010
 was the year of
 [Web 3.0, the dawn of semantic search](https://ieeexplore.ieee.org/document/5398788).
-2014 Google Sem Webbers: R.V. Guha, Dan Brickley, Denny Vrandecic, Natasha Noy, Chris Welty. Guha in 2014: > 20% of pages included structured data. In 2016 Peter Norvig
-mentioned >60%. Facebook created Open Graph in 2011. IBM Watson in 2017.
-Facebook's Graph API made the Knowledge Graph concept more well-known. 44% of
-pages now use [schema.org](schema.org) markup. Wikidata as a free editable
-knowledge base. The semantic web sort of won, but where are the intelligent
-agents? AI is getting there, but they are not directly using semantic web
-technologies.
+2014 Google Sem Webbers: R.V. Guha, Dan Brickley, Denny Vrandecic, Natasha Noy,
+Chris Welty. Guha in 2014: > 20% of pages included structured data. In 2016
+Peter Norvig mentioned >60%. Facebook created Open Graph in 2011. IBM Watson
+in 2017. Facebook's Graph API made the Knowledge Graph concept more well-known.
+44% of pages now use [schema.org](schema.org) markup. Wikidata as a free
+editable knowledge base. The semantic web sort of won, but where are the
+intelligent agents? AI is getting there, but they are not directly using
+semantic web technologies.
 
 #### Verso: A web browser that plays old world blues to build new world hope
 
@@ -695,8 +700,8 @@ Provides a WebView, too. Shards identities, storage, sign-in. Next steps: close
 early funding round, set up non-profit organization at Commons Conservancy,
 don't sell search, convince [Next Generation Internet](https://www.ngi.eu/)
 (NGI) EU framework to accept the project. They want to launch in summer, coming
-to this conference was the first step. ([Nightly
-builds](https://web.crabnebula.cloud/verso/verso-nightly/releases))
+to this conference was the first step.
+([Nightly builds](https://web.crabnebula.cloud/verso/verso-nightly/releases))
 
 <figure>
 <img alt="Slide with the text 'Verso is not a Servo engine'." src="/images/thewebconf2024--mx8wptpmsk.png">
@@ -718,24 +723,23 @@ synthetic porn affecting many K-pop stars. Political deepfakes can affect
 elections. The liars dividend: people start questioning actual images and
 calling them deepfake. Responses to deepfakes:
 
--  **Law:** Can get active via transparency requirements, consumer
-    regulators, criminal offenses, online safety. [OECD principles of ethical
-    AI](https://oecd.ai/en/ai-principles).
--  **Education:** Look for errors in images and videos, but early signals
-    like
-    [blinking patterns](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9072088)
-    have been improved by technology.
--  **Tech:** Enforce voluntary guardrails to not create terrorist material,
-    pornography,… Release detection tools, but they often only work on the
-    companies' own AI products. Industry has introduced an official [Content
-    Credentials Icon](https://c2pa.org/post/contentcredentials/) (C2PA).
+- **Law:** Can get active via transparency requirements, consumer regulators,
+  criminal offenses, online safety.
+  [OECD principles of ethical AI](https://oecd.ai/en/ai-principles).
+- **Education:** Look for errors in images and videos, but early signals like
+  [blinking patterns](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9072088)
+  have been improved by technology.
+- **Tech:** Enforce voluntary guardrails to not create terrorist material,
+  pornography,… Release detection tools, but they often only work on the
+  companies' own AI products. Industry has introduced an official
+  [Content Credentials Icon](https://c2pa.org/post/contentcredentials/) (C2PA).
 
-    Participants in the initiative:
+  Participants in the initiative:
 
-    <img alt="The logos of Adobe, the BBC, Google, Intel, Microsoft, the Publicis Groupe, OpenAI, Sony, and Truepic." src="/images/thewebconf2024--yjrlx6nag7.png">
+   <img alt="The logos of Adobe, the BBC, Google, Intel, Microsoft, the Publicis Groupe, OpenAI, Sony, and Truepic." src="/images/thewebconf2024--yjrlx6nag7.png">
 
-    Digital watermarks, but it's a cat and mouse game. Watermarks might not
-    survive screenshots or photos of AI-generated photos.
+  Digital watermarks, but it's a cat and mouse game. Watermarks might not
+  survive screenshots or photos of AI-generated photos.
 
 #### Resource
 
@@ -791,19 +795,18 @@ traceable. [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651444)]
 Working on personalization in information retrieval. Used StackExchange
 community questions and answers, tags, and user profile metadata. Trained
 different models on the dataset. Personalization based on tags improved the
-quality.
-[[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651445)]
+quality. [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651445)]
 
 ##### Can LLM Substitute Human Labeling? A Case Study of Fine-grained Chinese Address Entity Recognition Dataset for UAV Delivery
 
 Drone delivery systems in China use named entity recognition to convert raw
 addresses into precise locations using large language models. Needs specifically
-trained Chinese dataset. Released [CNER-UAV
-dataset](https://github.com/zhhvvv/CNER-UAV). Contains lots of "in the building"
-or "in the unit complex" or even "in the room" address refinements. Tested with
-different models and evaluated precision and recall. ChatGLM (the Chinese
-ChatGPT) performs poorly, GPT compares fine, but struggles with room and other
-address annotations.
+trained Chinese dataset. Released
+[CNER-UAV dataset](https://github.com/zhhvvv/CNER-UAV). Contains lots of "in the
+building" or "in the unit complex" or even "in the room" address refinements.
+Tested with different models and evaluated precision and recall. ChatGLM (the
+Chinese ChatGPT) performs poorly, GPT compares fine, but struggles with room and
+other address annotations.
 [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651446)]
 
 ##### Graphameleon: Relational Learning and Anomaly Detection on Web Navigation Traces Captured as Knowledge Graphs
