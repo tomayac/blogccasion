@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="monetization" content="$ilp.gatehub.net/348218105">
     <meta name="theme-color" content="#111111">
     <meta name="color-scheme" content="dark light">
     <meta name="citation_issn" content="2941-0452">
     <title>{{ renderData.title or title or metadata.title }}</title>
-    <link rel="modulepreload" href="/js/script.mjs">
-    <link rel="modulepreload" href="/js/dark-mode-toggle.min.mjs">
-    <link rel="modulepreload" href="/js/collect.mjs">
+    <link rel="modulepreload" href="/js/script.mjs" fetchpriority="high">
+    <link rel="modulepreload" href="/js/dark-mode-toggle.min.mjs" fetchpriority="high">
+    <link rel="modulepreload" href="/js/collect.mjs" fetchpriority="low">
     <link rel="preload" href="/css/main.css" as="style">
     <link rel="preload" href="/fonts/ubuntu-v15-latin-regular.woff2" crossorigin as="font">
     <link rel="preload" href="/fonts/ubuntu-mono-v10-latin-regular.woff2" crossorigin as="font">
-    <link rel="monetization" href="$ilp.gatehub.net/348218105">
+    <link rel="monetization" href="https://ilp.gatehub.net/348218105">
     <script type="module">
       {% set js %}
       const po = new PerformanceObserver(async (entryList) => {
@@ -69,13 +68,17 @@
       <link rel="stylesheet" href="/css/light.css">
     </noscript>
     <script type="speculationrules">
+      {% set inlineJSON %}
       {
         "prerender": [{
           "where": { "href_matches": "/*" },
           "eagerness": "moderate"
         }]
       }
+      {% endset %}
+      {{ inlineJSON | jsonMinify | safe }}
     </script>
+    <script type="module" src="/js/script.mjs"></script>
     <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="/css/main.css">
@@ -91,7 +94,6 @@
     <link rel="pingback" href="https://webmention.io/blog.tomayac.com/xmlrpc">
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="me" href="https://glitch.com/@tomayac" />
-    <script type="module" src="/js/script.mjs"></script>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@tomayac">
     <meta name="twitter:title" property="og:title" content="{{ renderData.title or title or metadata.title }}">
@@ -102,9 +104,10 @@
       content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
     <meta property="og:url" content="https://blog.tomayac.com{{ page.url | url }}">
     <meta property="og:type" content="article">
+    <meta property="fediverse:creator" content="@tomayac@toot.cafe" />
     <meta property="twitter:account_id" content="1510101733">
     <script type="application/ld+json">
-      {% set schemaDotOrg %}
+      {% set inlineJSON %}
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -136,7 +139,7 @@
         }
       }
       {% endset %}
-      {{ schemaDotOrg | jsonMinify | safe }}
+      {{ inlineJSON | jsonMinify | safe }}
     </script>
   </head>
   <body tabindex="0">
@@ -158,7 +161,7 @@
             —
           </span>
           <span lang="fr">
-            <q>à l'occasion</q>
+            <q>à&nbsp;l'occasion</q>
           </span>
           <p>I #StandWithUkraine 🇺🇦.</p>
         </div>
