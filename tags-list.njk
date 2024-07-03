@@ -1,10 +1,13 @@
 ---
 permalink: /tags/
 layout: layouts/home.njk
+title: Tags
 ---
 <h2>Tags</h2>
 
-{% for tag in collections.tagList %}
+<ul>
+{% for tag in collections.tagList | sort %}
   {% set tagUrl %}/tags/{{ tag | lower }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+  <li><a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a></li>
 {% endfor %}
+</ul>

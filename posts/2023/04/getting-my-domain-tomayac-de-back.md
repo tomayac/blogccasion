@@ -5,7 +5,7 @@ author: 'Thomas Steiner'
 date: '2023-04-18T08:26:04'
 permalink: 2023/04/18/getting-my-domain-tomayac-de-back/index.html
 tags:
-  - Personal
+  - Life
 ---
 
 There's this old mantra that

@@ -172,7 +172,7 @@
       <nav>
         <h2>Pages</h2>
         <ul>
-          {% for nav in collections.nav | reverse %}
+          {% for nav in collections.nav %}
             <li>
               <a class="nav-item {% if nav.url == page.url %} nav-item-active {% endif %}" href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a>
             </li>
@@ -180,7 +180,7 @@
         </ul>
         <h2>Tags</h2>
         <ul>
-          {% for tag in collections.tagList %}
+          {% for tag in collections.tagList | sort %}
             {% set tagUrl %}/tags/{{ tag | lower }}/{% endset %}
             <li>
               <a href="{{ tagUrl | url }}" class="tag-item">{{ tag }}</a>

@@ -11,7 +11,7 @@ layout: layouts/base.njk
         Written on
         <time datetime="{{ page.date.toISOString() }}"><a href="{{ page.url | url }}">{{ page.date.toDateString() }}</a></time>.
         {% if tags %}
-          {% for tag in tags %}
+          {% for tag in tags | sort %}
             {% if tag !== 'posts' %}
               <a href="/tags/{{ tag | lower }}" class="tag-item">{{ tag }}</a>
             {% endif %}
