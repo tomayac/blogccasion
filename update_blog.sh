@@ -5,6 +5,7 @@ PATH=$PATH:/home/tsteiner/.nvm/versions/node/$(ls /home/tsteiner/.nvm/versions/n
 git stash save --keep-index && git stash drop
 git pull
 npm install
+npm i pagefind @pagefind/linux-x64
 npm run clean
 npm run build
 npm run screenshots
