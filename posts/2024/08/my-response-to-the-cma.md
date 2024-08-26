@@ -5,7 +5,7 @@ author: 'Thomas Steiner'
 date: '2024-08-26T10:38:47'
 permalink: 2024/08/26/my-response-to-the-cma/index.html
 tags:
-  - Work
+  - Technical
 ---
 
 The [Open Web Advocacy](https://open-web-advocacy.org/) (OWA) initiative in their recent blog post
