@@ -1,4 +1,5 @@
 const { DateTime } = require('luxon');
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const htmlmin = require('html-minifier');
 const _ = require('lodash');
 const fs = require('fs');
@@ -10,6 +11,20 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const filters = require('./_11ty/filters');
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    transformOnRequest: true,
+    extensions: "html",
+    outputDir: "./images/",
+    // The image formats to generate, in order of preference
+    formats: ["avif", "webp", "auto"],
+    // The images sizes to generate
+    widths: [368, 736, 900],
+    defaultAttributes: {
+      sizes: "auto",
+      loading: "lazy",
+      decoding: "async",
+    },
+  });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.setDataDeepMerge(true);
