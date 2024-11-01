@@ -98,21 +98,28 @@
     <meta name="twitter:creator" content="@tomayac">
     <meta name="twitter:title" property="og:title" content="{{ renderData.title or title or metadata.title }}">
     <meta name="twitter:description" property="og:description" content="{{ renderData.description or description or metadata.description }}">
+    <!--
     <meta
       name="twitter:image"
       property="og:image"
       content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
+    -->
+    <meta
+      name="twitter:image"
+      property="og:image"
+      content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fblog.tomayac.com{{ page.url | url | urlencode }}/opengraph/">
     <meta property="og:url" content="https://blog.tomayac.com{{ page.url | url }}">
     <meta property="og:type" content="article">
     <meta property="fediverse:creator" content="@tomayac@toot.cafe" />
     <meta property="twitter:account_id" content="1510101733">
+    <!-- "image": "https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png", -->
     <script type="application/ld+json">
       {% set inlineJSON %}
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "{{ renderData.title or title or metadata.title }}",
-        "image": "https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png",
+        "image": "https://v1.screenshot.11ty.dev/https%3A%2F%2Fblog.tomayac.com{{ page.url | url | urlencode }}/opengraph/",
         "url": "https://blog.tomayac.com{{ page.url | url }}",
         "datePublished": "{{ page.date.toISOString() }}",
         "dateCreated": "{{ page.date.toISOString() }}",
@@ -126,7 +133,8 @@
           "@type": "Person",
           "name": "Thomas Steiner",
           "email": "steiner.thomas@gmail.com",
-          "image": "https://blog.tomayac.com/static/icon.png"
+          "image": "https://blog.tomayac.com/static/icon.png",
+          "url": "https://blog.tomayac.com/about/"
         },
         "publisher": {
           "@type": "Organization",

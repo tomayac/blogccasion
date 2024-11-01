@@ -193,6 +193,7 @@ a:active {
 }
 
 .footer-link {
+  cursor: pointer;
   text-decoration: underline;
   text-decoration-color: var(--link-color);
 }
