@@ -61,11 +61,11 @@ I successfully went through the process with two extensions now:
 
 - <a href="https://apps.apple.com/us/app/service-worker-detector/id1530808337?mt=12&amp;itscg=30200&amp;itsct=apps_box">
     Service Worker Detector
-    <div><img alt="Service Worker Detector extension icon" width="64" height="64" src="https://github.com/google/service-worker-detector/blob/master/assets/icon-female-128.png?raw=true"></div>
+    <div><img alt="Service Worker Detector extension icon" width="64" height="64" src="/images/icon-female-128.png"></div>
   </a>
 - <a href="https://apps.apple.com/us/app/link-to-text-fragment/id1532224396?mt=12&amp;itscg=30200&amp;itsct=apps_box">
     Link to Text Fragment
-    <div><img alt="Link to Text Fragment extension icon" width="64" height="64" src="https://raw.githubusercontent.com/GoogleChromeLabs/link-to-text-fragment/master/assets/icon.svg"></div>
+    <div><img alt="Link to Text Fragment extension icon" width="64" height="64" src="/images/link-to-text-fragment.svg"></div>
   </a>
 
 (Thanks to [Timothy Hatcher](https://twitter.com/xeenon) who has been very
