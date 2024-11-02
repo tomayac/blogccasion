@@ -50,8 +50,8 @@ about my experience with making the app performantly available on iOS Safari:
 > Thomas Steiner
 >
 > ——\
-> P.S. While I am employed by Google, I am speaking in a personal capacity for my
-> work as a hobbyist developer outside of Google.
+> P.S. While I am employed by Google, I am speaking in a personal capacity for
+> my work as a hobbyist developer outside of Google.
 
 More impactful and lawyer-approved than mine are the responses from **Mozilla**
 and **Google**, though, which I invite you to read in their entirety. Below just
