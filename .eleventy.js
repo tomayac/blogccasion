@@ -96,7 +96,7 @@ module.exports = function (eleventyConfig) {
       .value();
   });
 
-  // Month collection
+  // Year / Month collection
   eleventyConfig.addCollection('postsByYearMonth', (collection) => {
     return _.chain(collection.getAllSorted())
       .filter((item) => 'tags' in item.data && item.data.tags.includes('posts'))
@@ -110,7 +110,7 @@ module.exports = function (eleventyConfig) {
       .value();
   });
 
-  // Day collection
+  // Year / Month / Day collection
   eleventyConfig.addCollection('postsByYearMonthDay', (collection) => {
     return _.chain(collection.getAllSorted())
       .filter((item) => 'tags' in item.data && item.data.tags.includes('posts'))
