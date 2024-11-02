@@ -12,11 +12,10 @@ const filters = require('./_11ty/filters');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    transformOnRequest: true,
+    transformOnRequest: false,
     extensions: "html",
-    outputDir: "./images/",
     // The image formats to generate, in order of preference
-    formats: ["avif", "webp", "auto"],
+    formats: ["avif", "webp", "svg", "auto"],
     // The images sizes to generate
     widths: [368, 736, 900],
     defaultAttributes: {
