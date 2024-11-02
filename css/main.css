@@ -203,6 +203,10 @@ img {
   height: auto;
 }
 
+picture {
+  flex-shrink: 0;
+}
+
 figcaption {
   text-align: center;
 }
