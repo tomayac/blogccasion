@@ -1,7 +1,5 @@
 .DS_Store
 .env
 _site/
-_cache/
-.cache/
 node_modules/
 package-lock.json

@@ -13,7 +13,7 @@ Progressive Web App that lets you convert raster images like JPG, PNG, GIF,
 WebP, AVIF, etc. to vector graphics in SVG format. You can find the
 [source code on GitHub](https://github.com/tomayac/SVGcode).
 
-<a href="https://svgco.de/">![SVGcode app screenshot.](https://svgco.de/screenshots/desktop.png)</a>
+<a href="https://svgco.de/">![SVGcode app screenshot.](/images/desktop-dark.png)</a>
 
 To learn more about the features of the app, read my article
 [SVGcode: a PWA to convert raster images to SVG vector graphics](https://web.dev/svgcode/)

@@ -45,9 +45,9 @@ this feature will have landed in Chrome Stable/Beta/Dev/Canary, be sure to test
 it with the last Chromium build that you can download from François Beaufort's
 [Chromium Downloader](https://download-chromium.appspot.com/).
 
-![Demo app running in dark mode, showing the dark mode favicon being used.](https://pbs.twimg.com/media/EJzWSAxWsAAdteb?format=png&name=small)
+![Demo app running in dark mode, showing the dark mode favicon being used.](/images/dark.png)
 
-![Demo app running in light mode, showing the light mode favicon being used.](https://pbs.twimg.com/media/EJzWSAyXYAE624Z?format=png&name=small)
+![Demo app running in light mode, showing the light mode favicon being used.](/images/light.png)
 
 Full credits to [Mathias Bynens](https://twitter.com/mathias), who
 [independently](https://bugs.chromium.org/p/chromium/issues/detail?id=294179#c72)
