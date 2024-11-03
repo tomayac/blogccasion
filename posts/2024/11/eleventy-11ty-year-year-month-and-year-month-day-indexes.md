@@ -17,7 +17,7 @@ I love hackable URLs. A hackable URL is a URL that makes sense to a human reader
 
 ## `.eleventy.js`
 
-If you have a URL structure that's similar to mine, feel free to copy the relevant excerpts quoted in the following snippet from [my `.eleventy.js`](https://github.com/tomayac/blogccasion/blob/main/.eleventy.js) and add them to your `.eleventy.js`. The `_.chain()` is from the [lodash](https://lodash.com/docs/4.17.15#chain) library.
+If you have a URL structure that's similar to mine, feel free to copy the relevant excerpts quoted in the following snippet from [my `.eleventy.js`](https://github.com/tomayac/blogccasion/blob/main/.eleventy.js) and add them to your `.eleventy.js`. The `_.chain()` function is from the [lodash](https://lodash.com/docs/4.17.15#chain) library.
 
 ```js
 // Year collection
