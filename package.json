@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Thomas Steiner's blog named Blogccasion",
   "scripts": {
-    "build": "NODE_ENV=production npx eleventy && npm run minify:js && npm run minify:css && npm run pagefind",
+    "build": "NODE_ENV=production npx @11ty/eleventy && npm run minify:js && npm run minify:css && npm run pagefind",
     "minify:js": "shx mkdir -p _site/js && npx terser ./js/collect.mjs -o ./_site/js/collect.mjs && npx terser ./js/dark-mode-toggle.min.mjs -o ./_site/js/dark-mode-toggle.min.mjs && npx terser ./js/performance-metrics.mjs -o ./_site/js/performance-metrics.mjs && npx terser ./js/script.mjs -o ./_site/js/script.mjs && npx terser ./js/share-image.mjs -o ./_site/js/share-image.mjs && npx terser ./js/share.mjs -o ./_site/js/share.mjs",
     "minify:css": "shx mkdir -p _site/css && npx postcss ./css/dark.css > ./_site/css/dark.css && npx postcss ./css/light.css > ./_site/css/light.css && npx postcss ./css/main.css > ./_site/css/main.css && npx postcss ./css/prism-theme.css > ./_site/css/prism-theme.css",
-    "watch": "npx eleventy --watch",
-    "start": "npx eleventy --serve",
+    "watch": "npx @11ty/eleventy --watch",
+    "start": "npx @11ty/eleventy --serve",
     "dev": "npm run start",
     "stop": "npx kill-port --port 8080",
     "pagefind": "npx pagefind --site \"_site\" --glob \"[2][0][0-9][0-9]/[0-9][0-9]/**/*.{html}\"",
@@ -19,7 +19,7 @@
     "lint:links": "npx check-html-links ./_site",
     "webmentions": "npx webmention _site/feed/feed.xml --limit 0 --send",
     "screenshots": "npm stop && npx start-server-and-test start http://localhost:8080 'node ./_11ty/createScreenshots.js' && npm stop",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -58,7 +58,7 @@
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
     "prettier": "^3.3.3",
-    "puppeteer": "^23.6.1",
+    "puppeteer": "^23.7.0",
     "shx": "^0.3.4",
     "start-server-and-test": "^2.0.8",
     "stylelint": "^16.10.0",

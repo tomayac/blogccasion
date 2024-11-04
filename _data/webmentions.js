@@ -21,6 +21,7 @@ async function fetchWebmentions(since, perPage = 10000) {
     url += `&since=${since}`; // only fetch new mentions
   }
   const response = await fetch(url);
+  console.log(await response.text());
   if (response.ok) {
     const feed = await response.json();
     console.log(
