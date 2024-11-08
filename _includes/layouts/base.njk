@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="theme-color" content="#111111">
     <meta name="color-scheme" content="dark light">
     <meta name="citation_issn" content="2941-0452">
@@ -98,12 +99,6 @@
     <meta name="twitter:creator" content="@tomayac">
     <meta name="twitter:title" property="og:title" content="{{ renderData.title or title or metadata.title }}">
     <meta name="twitter:description" property="og:description" content="{{ renderData.description or description or metadata.description }}">
-    <!--
-    <meta
-      name="twitter:image"
-      property="og:image"
-      content="https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png">
-    -->
     <meta
       name="twitter:image"
       property="og:image"
@@ -112,7 +107,6 @@
     <meta property="og:type" content="article">
     <meta property="fediverse:creator" content="@tomayac@toot.cafe" />
     <meta property="twitter:account_id" content="1510101733">
-    <!-- "image": "https://blog.tomayac.com{{ page.url | url }}screenshot-dark.png", -->
     <script type="application/ld+json">
       {% set inlineJSON %}
       {
