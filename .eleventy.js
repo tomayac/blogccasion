@@ -12,7 +12,6 @@ const filters = require('./_11ty/filters');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    concurrency: 2,
     transformOnRequest: false,
     extensions: 'html',
     // The image formats to generate, in order of preference
