@@ -1,5 +1,5 @@
 const { DateTime } = require('luxon');
-const { eleventyImageTransformPlugin } = require('@11ty/eleventy-img');
+const { eleventyImageTransformPlugin, concurrency } = require('@11ty/eleventy-img');
 const htmlmin = require('html-minifier');
 const _ = require('lodash');
 const fs = require('fs');
@@ -12,6 +12,7 @@ const filters = require('./_11ty/filters');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    concurrency: 2,
     transformOnRequest: false,
     extensions: 'html',
     // The image formats to generate, in order of preference
