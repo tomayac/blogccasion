@@ -1,5 +1,6 @@
 const { DateTime } = require('luxon');
-const { eleventyImageTransformPlugin, concurrency } = require('@11ty/eleventy-img');
+const eleventyImage = require("@11ty/eleventy-img");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const htmlmin = require('html-minifier');
 const _ = require('lodash');
 const fs = require('fs');
@@ -9,6 +10,8 @@ const markdownItAnchor = require('markdown-it-anchor');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const filters = require('./_11ty/filters');
+
+eleventyImage.concurrency = 1;
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
