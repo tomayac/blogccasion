@@ -17,7 +17,7 @@
     "lint": "npm run lint:css && npx prettier . --write",
     "lint:css": "npx stylelint ./css/ --fix",
     "lint:links": "npx check-html-links ./_site",
-    "webmentions": "npx webmention _site/feed/feed.xml --limit 0 --send",
+    "webmentions": "npx webmention _site/feed/feed.xml --limit 2 --send",
     "screenshots": "npm stop && npx start-server-and-test start http://localhost:8080 'node ./_11ty/createScreenshots.js' && npm stop",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
