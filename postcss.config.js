@@ -1,6 +1,8 @@
-module.exports = {
+import cssnano from 'cssnano';
+
+export default {
   plugins: [
-    require('cssnano')({
+    cssnano({
       preset: 'default',
     }),
   ],
