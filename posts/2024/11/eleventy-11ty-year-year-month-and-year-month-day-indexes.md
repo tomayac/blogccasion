@@ -8,16 +8,28 @@ tags:
   - Technical
 ---
 
-I love hackable URLs. A hackable URL is a URL that makes sense to a human reader, and where the human reader can guess what to change to get to another page. For example, if you look at the URL of this very blog post, [`https://blog.tomayac.com/2024/11/02/eleventy-11ty-year-year-month-and-year-month-day-indexes/`](/2024/11/02/eleventy-11ty-year-year-month-and-year-month-day-indexes/), what would you expect happens if you hack the URL to any of the following values?
+I love hackable URLs. A hackable URL is a URL that makes sense to a human
+reader, and where the human reader can guess what to change to get to another
+page. For example, if you look at the URL of this very blog post,
+[`https://blog.tomayac.com/2024/11/02/eleventy-11ty-year-year-month-and-year-month-day-indexes/`](/2024/11/02/eleventy-11ty-year-year-month-and-year-month-day-indexes/),
+what would you expect happens if you hack the URL to any of the following
+values?
 
-- [`https://blog.tomayac.com/2024/11/02/`](/2024/11/02/) lists all posts that were published on November 2, 2024.
-- [`https://blog.tomayac.com/2024/11/`](/2024/11/) lists all posts that were published in November, 2024.
-- [`https://blog.tomayac.com/2024/`](/2024/) lists all posts that were published in 2024.
+- [`https://blog.tomayac.com/2024/11/02/`](/2024/11/02/) lists all posts that
+  were published on November 2, 2024.
+- [`https://blog.tomayac.com/2024/11/`](/2024/11/) lists all posts that were
+  published in November, 2024.
+- [`https://blog.tomayac.com/2024/`](/2024/) lists all posts that were published
+  in 2024.
 - [`https://blog.tomayac.com/`](/) leads to this blog's home.
 
 ## `.eleventy.js`
 
-If you have a URL structure that's similar to mine, feel free to copy the relevant excerpts quoted in the following snippet from [my `.eleventy.js`](https://github.com/tomayac/blogccasion/blob/main/.eleventy.js) and add them to your `.eleventy.js`. The `_.chain()` function is from the [lodash](https://lodash.com/docs/4.17.15#chain) library.
+If you have a URL structure that's similar to mine, feel free to copy the
+relevant excerpts quoted in the following snippet from
+[my `.eleventy.js`](https://github.com/tomayac/blogccasion/blob/main/.eleventy.js)
+and add them to your `.eleventy.js`. The `_.chain()` function is from the
+[lodash](https://lodash.com/docs/4.17.15#chain) library.
 
 ```js
 // Year collection
@@ -79,7 +91,8 @@ Then, in your blog's root, add three files:
 - `year-month-index.njk`
 - `year-month-day-index.njk`
 
-They're all three pretty similar, but for the sake of completeness, here are all three.
+They're all three pretty similar, but for the sake of completeness, here are all
+three.
 
 ### `year-index.njk`:
 
@@ -167,7 +180,8 @@ permalink: /{{ yearMonthDay[0] }}/
 
 ## Helped by AI
 
-And here's my dirty, little secret 🤫: I only actually coded `year-index.njk` myself, and then asked [Claude](https://claude.ai/) to code the rest for me.
+And here's my dirty, little secret 🤫: I only actually coded `year-index.njk`
+myself, and then asked [Claude](https://claude.ai/) to code the rest for me.
 
 ### Initial prompt
 
@@ -224,7 +238,9 @@ Can you create the rest?
 
 ### Correcting prompt
 
-It worked on the second attempt. In the first attempt, it invented a `split` Nunjucks filter, so I just told it about the error, and after that it just worked.
+It worked on the second attempt. In the first attempt, it invented a `split`
+Nunjucks filter, so I just told it about the error, and after that it just
+worked.
 
 ```
 This fails now:
@@ -233,4 +249,7 @@ Error: filter not found: split (via Template render error)
 
 ## Conclusion
 
-There may be more elegant ways to achieve this, but this approach is what worked for me, and, hey, it all happens on the server at build time, so you, dear reader, get just the optimized HTML. Happy URL hacking! Oh, and whatever happened on [March 3, 2009](/2009/03/03)?
+There may be more elegant ways to achieve this, but this approach is what worked
+for me, and, hey, it all happens on the server at build time, so you, dear
+reader, get just the optimized HTML. Happy URL hacking! Oh, and whatever
+happened on [March 3, 2009](/2009/03/03)?

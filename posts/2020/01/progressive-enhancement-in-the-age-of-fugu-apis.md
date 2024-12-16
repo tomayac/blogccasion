@@ -13,11 +13,11 @@ Back in March 2003, [Nick Finck](http://nickfinck.com/) and
 with the concept of
 [progressive enhancement](http://hesketh.com/publications/inclusive_web_design_for_the_future/):
 
-> Rather than hoping for graceful degradation, [progressive enhancement] builds documents
-> for the least capable or differently capable devices first, then moves on to enhance
-> those documents with separate logic for presentation, in ways that don't place
-> an undue burden on baseline devices but which allow a richer experience for those
-> users with modern graphical browser software.
+> Rather than hoping for graceful degradation, [progressive enhancement] builds
+> documents for the least capable or differently capable devices first, then
+> moves on to enhance those documents with separate logic for presentation, in
+> ways that don't place an undue burden on baseline devices but which allow a
+> richer experience for those users with modern graphical browser software.
 
 While in _2003_, progressive enhancement was mostly about using _presentational_
 features like at the time modern CSS properties, unobtrusive JavaScript for

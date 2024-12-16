@@ -59,8 +59,8 @@ The toot that all the news outlets cited was the
 
 Then, on February 2, 2024, [Tixie](https://tixie.name/) opened a
 [WebKit bug](https://bugs.webkit.org/show_bug.cgi?id=268643) titled _"Bug
-268643 - [iOS 17.4 Beta (21E5184k)] REGRESSION: PWA added to Home Screen are forced
-to open in Safari."_
+268643 - [iOS 17.4 Beta (21E5184k)] REGRESSION: PWA added to Home Screen are
+forced to open in Safari."_
 
 **🆕 Update:** The message in the release candidate of iOS 17.4 (21E217) is now:
 _"Open 'Example app' in 'Default browser'? In your region, web apps now open in
@@ -112,8 +112,9 @@ says:
 
 > Moreover, the Commission considers, in line with Apple's view, that iOS,
 > iPadOS, macOS, watchOS, and tvOS constitute distinct CPSs [core platform > > >
+>
 > > services] within the meaning of Article 2, point (2), sub (f), of Regulation
-> (EU) 2022/1925.
+> > (EU) 2022/1925.
 
 This means on iPadOS and macOS, everything will stay the same. You can still add
 Web apps to the Home Screen on iPadOS or the Dock on macOS, and they will open

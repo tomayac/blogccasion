@@ -1,6 +1,6 @@
-const { DateTime } = require('luxon'); // Already in eleventy-base-blog
+import { DateTime } from 'luxon';
 
-module.exports = {
+export default {
   getWebmentionsForUrl: (webmentions, url) => {
     return webmentions.children.filter((entry) => entry['wm-target'] === url);
   },

@@ -1,19 +1,21 @@
-const { DateTime } = require('luxon');
-const eleventyImage = require("@11ty/eleventy-img");
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
-const htmlmin = require('html-minifier');
-const _ = require('lodash');
-const fs = require('fs');
-const { minify } = require('terser');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const filters = require('./_11ty/filters');
+import { DateTime } from 'luxon';
+import eleventyImage, {
+  eleventyImageTransformPlugin,
+} from '@11ty/eleventy-img';
+import htmlmin from 'html-minifier';
+import _ from 'lodash';
+import fs from 'fs';
+import { minify } from 'terser';
+import markdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
+import pluginRss from '@11ty/eleventy-plugin-rss';
+import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import filters from './_11ty/filters.js';
+import tagList from './_11ty/getTagList.js';
 
-eleventyImage.concurrency = 1;
+eleventyImage.concurrency = 20;
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     transformOnRequest: false,
     extensions: 'html',
@@ -87,7 +89,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName]);
   });
 
-  eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
+  eleventyConfig.addCollection('tagList', tagList);
 
   // Year collection
   eleventyConfig.addCollection('postsByYear', (collection) => {
@@ -214,4 +216,4 @@ module.exports = function (eleventyConfig) {
       output: '_site',
     },
   };
-};
+}

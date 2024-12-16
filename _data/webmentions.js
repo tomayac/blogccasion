@@ -1,14 +1,12 @@
-const fetch = (...args) =>
-  import('node-fetch').then(({ default: fetch }) => fetch(...args));
-const fs = require('fs');
-const unionBy = require('lodash/unionBy');
-const domain = require('./metadata.json').domain;
-require('dotenv').config();
+import fs from 'fs';
+import unionBy from 'lodash/unionBy.js';
+import metadata from './metadata.js';
 
 // Define Cache Location and API Endpoint
+const domain = metadata.domain;
 const CACHE_FILE_PATH = '.cache/webmentions.json';
 const API = 'https://webmention.io/api';
-const TOKEN = process.env.WEBMENTION_IO_TOKEN;
+const TOKEN = metadata.webmention_io_token;
 
 async function fetchWebmentions(since, perPage = 10000) {
   // If we don't have a domain name or token, abort
@@ -65,7 +63,7 @@ function readFromCache() {
   };
 }
 
-module.exports = async function () {
+export default async function () {
   console.log('>>> Reading webmentions from cache...');
   const cache = readFromCache();
   if (cache.children.length) {
@@ -85,4 +83,4 @@ module.exports = async function () {
     }
   }
   return cache;
-};
+}

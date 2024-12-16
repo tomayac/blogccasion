@@ -187,14 +187,15 @@ is the list of the sessions I attended.
 
 This session introduced JWST, a JavaScript to WebAssembly static translator
 (compiler) co-developed by Huawei and a professor from a university in Beijing,
-after claiming the (somewhat [citation needed]) problem of slowness of JavaScript
-being a problem for web apps and the lack of DOM access of Wasm as a major challenge.
-The presented compiler in their example converted a ~1.6MB JavaScript app (which
-is already big) into a >20MB Wasm app that under _certain_ conditions slightly outperformed
-the JavaScript solution in their benchmark. I asked for more details about the compiler,
-but there wasn't any and the Huawei representatives said they weren't entirely sure
-about open-sourcing it. As it stands, my current evaluation of the solution is that
-it's technology feasibility demonstration at best.
+after claiming the (somewhat [citation needed]) problem of slowness of
+JavaScript being a problem for web apps and the lack of DOM access of Wasm as a
+major challenge. The presented compiler in their example converted a ~1.6MB
+JavaScript app (which is already big) into a >20MB Wasm app that under _certain_
+conditions slightly outperformed the JavaScript solution in their benchmark. I
+asked for more details about the compiler, but there wasn't any and the Huawei
+representatives said they weren't entirely sure about open-sourcing it. As it
+stands, my current evaluation of the solution is that it's technology
+feasibility demonstration at best.
 
 #### Notes and resources
 
