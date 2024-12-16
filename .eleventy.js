@@ -13,7 +13,7 @@ import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import filters from './_11ty/filters.js';
 import tagList from './_11ty/getTagList.js';
 
-eleventyImage.concurrency = 4;
+eleventyImage.concurrency = 2;
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
