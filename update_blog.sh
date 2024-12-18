@@ -1,4 +1,4 @@
-find /tmp/puppeteer* -mtime +1 -exec rm -rf {} \;
+# find /tmp/puppeteer* -mtime +1 -exec rm -rf {} \;
 cd
 cd ./Documents/blogccasion
 PATH=$PATH:/home/tsteiner/.nvm/versions/node/$(ls /home/tsteiner/.nvm/versions/node)/bin/
