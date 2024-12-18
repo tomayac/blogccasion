@@ -19,10 +19,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     transformOnRequest: false,
     extensions: 'html',
+    urlPath: '/images/',
+    outputDir: './images/',
     // The image formats to generate, in order of preference
     formats: ['avif', 'webp', 'svg', 'auto'],
     // The images sizes to generate
-    widths: [368, 736, 900],
+    widths: [368, 736, 'auto'],
     defaultAttributes: {
       sizes: 'auto',
       loading: 'lazy',
