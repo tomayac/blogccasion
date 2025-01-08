@@ -1,7 +1,7 @@
 # find /tmp/puppeteer* -mtime +1 -exec rm -rf {} \;
 cd
 cd ./Documents/blogccasion
-PATH=$PATH:/home/tsteiner/.nvm/versions/node/$(ls /home/tsteiner/.nvm/versions/node)/bin/
+PATH=$PATH:/home/$(whoami)/.nvm/versions/node/$(ls /home/$(whoami)/.nvm/versions/node)/bin/
 git stash save --keep-index && git stash drop
 git pull
 npm install
