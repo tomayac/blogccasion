@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"cachedAt":1751562268556,"type":"buffer","metadata":{"response":{"url":"https://www.south-pole.com/scott3.jpg","status":200,"headers":{"accept-ranges":"bytes","connection":"keep-alive","content-length":"18672","content-type":"image/jpeg","date":"Thu, 03 Jul 2025 17:04:28 GMT","server":"Apache","x-ws-ratelimit-limit":"1000","x-ws-ratelimit-remaining":"999"}}}}
-=======
-{"cachedAt":1750331109214,"type":"buffer","metadata":{"response":{"url":"https://www.south-pole.com/scott3.jpg","status":200,"headers":{"accept-ranges":"bytes","connection":"keep-alive","content-length":"18672","content-type":"image/jpeg","date":"Thu, 19 Jun 2025 11:05:09 GMT","server":"Apache","x-ws-ratelimit-limit":"1000","x-ws-ratelimit-remaining":"998"}}}}
->>>>>>> d76f11f7f93398fcac06899bdfb2bface125ba13
+{"cachedAt":1751565861672,"type":"buffer","metadata":{"response":{"url":"https://www.south-pole.com/scott3.jpg","status":200,"headers":{"accept-ranges":"bytes","connection":"keep-alive","content-length":"18672","content-type":"image/jpeg","date":"Thu, 03 Jul 2025 18:04:21 GMT","server":"Apache","x-ws-ratelimit-limit":"1000","x-ws-ratelimit-remaining":"999"}}}}
