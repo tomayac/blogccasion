@@ -53,12 +53,12 @@ if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
 ```
 
 I have created a small
-[demo on Glitch](https://requestvideoframecallback.glitch.me/) that shows how
-frames are drawn on a canvas at exactly the frame rate of the video and where
-the frame metadata is logged for debugging purposes. The core logic is just a
-couple of lines of JavaScript. As a developer, the API's look and feel does
-indeed remind of `requestAnimationFrame()`, but as outlined above, it's still
-different in what it actually does.
+[demo](https://https://tomayac.github.io/blogccasion-demos/requestvideoframecallback/)
+that shows how frames are drawn on a canvas at exactly the frame rate of the
+video and where the frame metadata is logged for debugging purposes. The core
+logic is just a couple of lines of JavaScript. As a developer, the API's look
+and feel does indeed remind of `requestAnimationFrame()`, but as outlined above,
+it's still different in what it actually does.
 
 ```js
 let paintCount = 0;
@@ -84,8 +84,7 @@ video.requestVideoFrameCallback(updateCanvas);
 
 <div style="height: 1200px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/requestvideoframecallback?path=script.js&previewSize=100"
-    title="requestvideoframecallback on Glitch"
+    src="https://tomayac.github.io/blogccasion-demos/requestvideoframecallback/"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     style="height: 100%; width: 100%; border: 0;"
     loading="lazy">

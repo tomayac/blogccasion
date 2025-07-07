@@ -105,14 +105,14 @@ referenced via the `src` attribute of an `<img>` tag, in an `<iframe>`, or
 inlined in the main document. Again, SVG scripts have access to the _global
 scope_, so they should definitely be used with care. Some user agents, for
 example, Google Chrome, don't run scripts for SVGs in `<img>`. The
-[Glitch](https://glitch.com/~animated-svg-favicon) embedded below shows all
-variants in action. My recommendation would be to stick with CSS animations
-whenever you can, since it's the most compatible and future-proof variant.
+[demo](https://tomayac.github.io/blogccasion-demos/animated-svg-favicon/)
+embedded below shows all variants in action. My recommendation would be to stick
+with CSS animations whenever you can, since it's the most compatible and
+future-proof variant.
 
 <div style="height: 420px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/animated-svg-favicon?path=icon_js.svg&previewSize=100"
-    title="animated-svg-favicon on Glitch"
+    src="https://tomayac.github.io/blogccasion-demos/animated-svg-favicon/"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     style="height: 100%; width: 100%; border: 0;"
     loading="lazy">
@@ -130,8 +130,8 @@ so I wanted to see if animated SVGs work, too. Long story short, it seems only
 Firefox supports them at the time of writing, and only favicons that are
 animated with either CSS or JS. You can see this working in Firefox in the
 screencast embedded below. If you open my
-[Glitch demo](https://animated-svg-favicon.glitch.me/) in a standalone window,
-you can test this yourself with the radio buttons at the top.
+[demo](https://tomayac.github.io/blogccasion-demos/animated-svg-favicon/) in a
+standalone window, you can test this yourself with the radio buttons at the top.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SlesN-eGdIE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 

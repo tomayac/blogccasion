@@ -19,14 +19,14 @@ light mode?”_
 #### Survey and Results
 
 I created a little
-[Dark Mode Colors 🌘 Re-Colorization Playground app](https://dark-mode-colors.glitch.me/)
+[Dark Mode Colors 🌘 Re-Colorization Playground app](https://tomayac.github.io/blogccasion-demos/dark-mode-colors/)
 that allows people to toy around with different re-colorization options and
 report their preferences in a survey. The playground app was shared
 [on Twitter](https://twitter.com/ChromiumDev/status/1123886638965383168) and
 also on multiple Google-internal _misc_ mailing lists with both technical and
 non-technical audiences.
 
-<Embed src="https://glitch.com/embed/#!/embed/dark-mode-colors?path=index.html&previewSize=100&attributionHidden=false&previewFirst=false&sidebarCollapsed=false" caption="[https://dark-mode-colors.glitch.me/](https://dark-mode-colors.glitch.me/)" />
+<iframe style="width: 100%; height: 500px" src="https://tomayac.github.io/blogccasion-demos/dark-mode-colors"></iframe>
 
 I’m now happy to briefly report on the results. All in all, I have collected 137
 responses, the

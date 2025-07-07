@@ -207,9 +207,9 @@ const toSourceBlob = async (img) => {
 ```
 
 If you use this `copy` function ([demo](#demo) below ⤵️) to copy an SVG image,
-for example, everyone's favorite
-[symptoms of coronavirus 🦠 disease diagram](https://cdn.glitch.com/8b0b00bb-4f86-41e8-b428-3d07b2b652a5%2FSymptoms_of_coronavirus_disease_2019_2.0.svg?v=1584617175181),
-and paste it in macOS Preview (that does not support SVG) or the "Paste markup"
+for example, everyone's favorite and paste it in macOS Preview (that does not
+support SVG) or the "Paste markup"
+[symptoms of coronavirus 🦠 disease diagram](https://raw.githubusercontent.com/tomayac/blogccasion-demos/refs/heads/main/async-clipboard-demo/Symptoms_of_coronavirus_disease_2019_2.0.svg),
 field of SVGOMG, this is what you get:
 
 <figure>
@@ -233,12 +233,11 @@ field of SVGOMG, this is what you get:
 yet, since
 [webappsec-feature-policy#322](https://github.com/w3c/webappsec-feature-policy/issues/322)
 is still open.</ins> The demo works if you
-[open it directly on Glitch](https://async-clipboard-demo.glitch.me/).
+[open it directly](https://tomayac.github.io/blogccasion-demos/async-clipboard-demo/).
 
 <div style="height: 600px; width: 100%; margin-block-end: 2rem;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-demo?path=script.js&previewSize=100"
-    title="async-clipboard-demo on Glitch"
+    src="https://tomayac.github.io/blogccasion-demos/async-clipboard-demo/"
     allow="clipboard-write; clipboard-read"
     style="height: 100%; width: 100%; border: 0;"
     loading="lazy">

@@ -126,7 +126,6 @@ you can more easily test it on your own.
    ![Special about:debugging page with the Inspect button highlighted.](/images/testingaiinfer--2z5827cdx7b.png)
 
 1. The `browser.trial.ml` namespace exposes the following functions:
-
    - `createEngine()`: creates an inference engine.
    - `runEngine()`: runs an inference engine.
    - `onProgress()`: listener for engine events

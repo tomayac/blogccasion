@@ -12,14 +12,15 @@ I was asked if one could use SVG web app manifest app icons that are reactive to
 [`prefers-color-scheme`](https://web.dev/prefers-color-scheme/). To illustrate
 what this means, here is an excerpt of a manifest where I set the icon to an SVG
 that is reactive to the color scheme. You can play with it by navigating
-directly to [icon.svg](https://dark-mode-favicon.glitch.me/icon.svg) and
-toggling your operating system's color scheme setting.
+directly to
+[icon.svg](https://tomayac.github.io/blogccasion-demos/dark-mode-favicon/icon.svg)
+and toggling your operating system's color scheme setting.
 
 ```json
 {
   "icons": [
     {
-      "src": "https://dark-mode-favicon.glitch.me/icon.svg",
+      "src": "https://tomayac.github.io/blogccasion-demos/dark-mode-favicon/icon.svg",
       "sizes": "144x144",
       "type": "image/svg+xml"
     }
@@ -64,12 +65,11 @@ install time.
 ![macOS Settings shows the system is set to light mode, but the app icon is still presented in dark mode, since it was installed when dark mode was enabled.](/images/dark-mode-app-icons.png)
 
 You can test it for yourself by installing the app embedded below
-([launch it in its own window](https://general-sly-olive.glitch.me/)).
+([launch it in its own window](https://tomayac.github.io/blogccasion-demos/general-sly-olive/)).
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div style="height: 420px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/general-sly-olive?path=manifest.webmanifest&previewSize=100"
-    title="general-sly-olive on Glitch"
+    src="https://tomayac.github.io/blogccasion-demos/general-sly-olive/"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -77,11 +77,7 @@ You can test it for yourself by installing the app embedded below
 
 <strong>Update:</strong> [Alexey Rodionov](https://twitter.com/alexey_rodionov)
 has let me know that this even works for
-[app shortcut icons](https://web.dev/app-shortcuts/#icons-%28optional%29). You
-can play with Alexey's [demo](https://shortcuts-svg-dark-theme-icons.glitch.me/)
-or check out the screenshot below.
+[app shortcut icons](https://web.dev/app-shortcuts/#icons-%28optional%29). Check
+out the screenshot below.
 
 <img src="/images/app-shortcut-icons.png" alt="App shortcut icons displayed in dark mode." width="613" height="605" />
-
-(Credits: The app is a remix of [Alan Cutter](https://glitch.com/@alancutter)'s
-app [fir-skirt.glitch.me](https://fir-skirt.glitch.me/).)

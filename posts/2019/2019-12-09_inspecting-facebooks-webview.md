@@ -109,8 +109,9 @@ Twitter thread:
 > most common browser behind Chrome and Safari).
 
 I have thus followed up on the invitation and had a closer look at their IAB by
-inspecting [example.org](https://example.org/) and also a simple test page
-[facebook-debug.glitch.me](https://facebook-debug.glitch.me/) that contains the
+inspecting [example.org](https://example.org/) and also a simple
+[test page](https://tomayac.github.io/blogccasion-demos/facebook-debug/) that
+contains the
 [`debugger`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
 statement in its head. I have linked a
 [debug trace](/images/example_com_profile.json) 📄 that you can open for
@@ -567,7 +568,7 @@ the
 ### Request header
 
 ```
-:authority: facebook-debug.glitch.me
+:authority: tomayac.github.io
 :method: GET
 :path: /
 :scheme: https

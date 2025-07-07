@@ -126,13 +126,14 @@ runs by continuously storing the geolocation traces during a course.
 ![Woman with a run tracker (Source: [Filip Mroz](https://unsplash.com/@mroz?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)).](/images/asset-2_.jpeg)
 
 The demo consists of two parts. The first part
-[_Where am I 📍_](https://whereami.glitch.me/) simulates the actual tracker
-application that you would have on your phone while running. The second part
-[_There Am I 🗺_](https://thereami.glitch.me/) serves simply as a control
-dashboard where you can see if the system is working. You could, for example,
-have it open on a stationary PC.
+[_Where am I 📍_](https://tomayac.github.io/blogccasion-demos/whereami/)
+simulates the actual tracker application that you would have on your phone while
+running. The second part
+[_There Am I 🗺_](https://tomayac.github.io/blogccasion-demos/thereami/) serves
+simply as a control dashboard where you can see if the system is working. You
+could, for example, have it open on a stationary PC.
 
-![_Where Am I 📍_ tracker application running on a Pixel 1 (Source: [https://whereami.glitch.me/](https://whereami.glitch.me/)).](/images/asset-3_.jpeg)
+![_Where Am I 📍_ tracker application running on a Pixel 1 (Source: [https://tomayac.github.io/blogccasion-demos/whereami/](https://tomayac.github.io/blogccasion-demos/whereami/)).](/images/asset-3_.jpeg)
 
 ⚠️ Privacy warning: for this demo, everyone’s position and their user agent are
 publicly shared as shown on the photo below, so if you do not want to be seen,
@@ -142,7 +143,7 @@ via Chrome Developer Tools. To make debugging easier when not moving, the
 tracker application also sends a heartbeat signal to the dashboard to check if
 the system wake lock is active.
 
-![There Am I 🗺 control dashboard running on a Pixelbook (Source: [https://thereami.glitch.me/](https://thereami.glitch.me/)).](/images/asset-4_.jpeg)
+![There Am I 🗺 control dashboard running on a Pixelbook (Source: [https://tomayac.github.io/blogccasion-demos/thereami/](https://tomayac.github.io/blogccasion-demos/thereami/)).](/images/asset-4_.jpeg)
 
 When you are about to start a run (or, _ahem_, a walk), you can tap the “Start
 tracking” button in _Where Am I 📍_, which will create a system wake lock. You

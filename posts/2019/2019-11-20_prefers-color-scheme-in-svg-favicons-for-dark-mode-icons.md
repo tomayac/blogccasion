@@ -39,11 +39,11 @@ get two icons for the price of one!
 <link rel="icon" href="/icon.svg" />
 ```
 
-You can see a demo of this in action at 🌒
-[dark-mode-favicon.glitch.me](https://dark-mode-favicon.glitch.me/) ☀️. Until
-this feature will have landed in Chrome Stable/Beta/Dev/Canary, be sure to test
-it with the last Chromium build that you can download from François Beaufort's
-[Chromium Downloader](https://download-chromium.appspot.com/).
+You can see a
+[demo of this in action 🌒 ☀️](https://tomayac.github.io/blogccasion-demos/dark-mode-favicon/).
+Until this feature will have landed in Chrome Stable/Beta/Dev/Canary, be sure to
+test it with the last Chromium build that you can download from François
+Beaufort's [Chromium Downloader](https://download-chromium.appspot.com/).
 
 ![Demo app running in dark mode, showing the dark mode favicon being used.](/images/dark.png)
 
@@ -51,8 +51,7 @@ it with the last Chromium build that you can download from François Beaufort's
 
 Full credits to [Mathias Bynens](https://twitter.com/mathias), who
 [independently](https://bugs.chromium.org/p/chromium/issues/detail?id=294179#c72)
-has created almost the same [demo](https://numerous-sulfur.glitch.me) as me that
-I didn't check, but whose link to
+has created almost the same demo as me that I didn't check, but whose link to
 [Jake Archibald](https://twitter.com/jaffathecake)'s post
 [SVG &amp; media queries](https://jakearchibald.com/2016/svg-media-queries/) I
 did follow. Mathias has now filed the follow-up bug

@@ -113,12 +113,17 @@ with link relations as outlined in the code sample below (or just use
 ```
 
 I have a little test tool called
-[iOS Add to Home Screen](https://ios-a2hs-demo.glitch.me/) that in its
-[manifest](https://ios-a2hs-demo.glitch.me/manifest.webmanifest) lists
-gazillions (well, almost) of differently sized icons, but the one iOS ends up
-using is still the Safari-generated screenshot-based one.
+[iOS Add to Home Screen](https://tomayac.github.io/blogccasion-demos/ios-a2hs-demo/)
+that in its
+[manifest](https://tomayac.github.io/blogccasion-demos/ios-a2hs-demo/manifest.webmanifest)
+lists gazillions (well, almost) of differently sized icons, but the one iOS ends
+up using is still the Safari-generated screenshot-based one.
 
-![[iOS Add to Home Screen](https://ios-a2hs-demo.glitch.me/) tool (left) showing iOS still ignores icons specified in [its Web App Manifest](https://ios-a2hs-demo.glitch.me/manifest.webmanifest) (right).](/images/asset-5.png)
+![iOS Add to Home Screen](/images/asset-5.png)
+
+_[iOS Add to Home Screen](https://tomayac.github.io/blogccasion-demos/ios-a2hs-demo/)
+tool (left) showing iOS still ignores icons specified in
+[its Web App Manifest](https://ios-a2hs-demo.glitch.me/manifest.webmanifest) (right)._
 
 #### Media Capabilities API and Intersection Observer As Experimental Features (😃)
 

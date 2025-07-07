@@ -315,14 +315,12 @@ interested, you can reach me and
 
 I have enabled `ruby` footnotes right on my <ruby tabindex="0">blog <rt>This is
 the second footnote, the other is at the [top](#top).</rt></ruby>, but you can
-also play with a standalone [demo](https://ruby-footnotes.glitch.me/) on Glitch
-and remix its
-[source code](https://glitch.com/edit/#!/ruby-footnotes?path=style.css%3A18%3A11).
+also play with a standalone
+[demo](https://tomayac.github.io/blogccasion-demos/ruby-footnotes/).
 
 <div style="height: 420px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/ruby-footnotes?path=style.css&previewSize=100"
-    title="ruby-footnotes on Glitch"
+    src="https://tomayac.github.io/blogccasion-demos/ruby-footnotes/"
     style="height: 100%; width: 100%; border: 0;"
     loading="lazy">
   </iframe>

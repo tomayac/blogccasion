@@ -423,8 +423,9 @@ For the
 [Shape Detection API](https://developer.chrome.com/articles/shape-detection/),
 there's some interest from Apple to implement this. They raised questions about
 batch processing and synchronization challenges with video, which would likewise
-apply to blurring. I pointed at my [demo](https://mediastreamtrack.glitch.me/)
-that solves this with
+apply to blurring. I pointed at my
+[demo](https://tomayac.github.io/blogccasion-demos/mediastreamtrack/) that
+solves this with
 [MediaStreamTrack Insertable Media Processing using Streams](https://alvestrand.github.io/mediacapture-transform/chrome-96.html).
 Apple was also worried about the Chrome-specificity of the test suite and the
 future venue of the proposal, hinting it could be the
