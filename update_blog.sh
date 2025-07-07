@@ -3,7 +3,8 @@ cd
 cd ./Documents/blogccasion
 PATH=$PATH:/home/$(whoami)/.nvm/versions/node/$(ls /home/$(whoami)/.nvm/versions/node)/bin/
 git stash save --keep-index && git stash drop
-git pull
+git fetch --all
+git reset --hard origin/main
 npm install
 npm i pagefind @pagefind/linux-x64
 npm run clean
