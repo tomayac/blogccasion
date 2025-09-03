@@ -19,3 +19,7 @@ h6,
 .heading-effect {
   background: linear-gradient(to right, hsl(51, 100%, 50%), hsl(23, 100%, 60%));
 }
+
+article code {
+  color: hsl(90, 100%, 49%);
+}

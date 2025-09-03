@@ -171,7 +171,6 @@ kbd {
 
 a {
   color: var(--link-color);
-  text-decoration: none;
 }
 
 article a,
@@ -184,7 +183,7 @@ article a,
 a:focus,
 a:hover,
 a:active {
-  text-decoration: underline;
+  text-decoration-style: double;
 }
 
 .header-footer-text,
