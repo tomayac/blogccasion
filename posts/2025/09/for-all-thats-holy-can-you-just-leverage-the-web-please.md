@@ -6,6 +6,7 @@ date: '2025-09-03T09:59:24'
 permalink: 2025/09/03/for-all-thats-holy-can-you-just-leverage-the-web-please/index.html
 tags:
   - Life
+  - Technical
 ---
 
 When I moved in with my wife Laura in 2005, we lived in a shared apartment in
