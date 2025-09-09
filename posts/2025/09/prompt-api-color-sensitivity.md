@@ -45,3 +45,7 @@ on GitHub. Toggle between light mode and dark mode and choose red or
 `CanvasText` as the font color.
 
 <iframe src="https://tomayac.github.io/blogccasion-demos/canvas-prompt-api/" allow="language-model" style="border: none; width: 100%; height: 600px;"></iframe>
+
+**Update:** It's a lot worse if the canvas background color is pure black
+`#000000`. I've updated the demo to use pure black, and have filed a
+[Chromium bug](https://crbug.com/443950694).
