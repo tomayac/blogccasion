@@ -30,6 +30,11 @@ Not something really super actionable, other than maybe a heads up to play with
 color-preprocessing if the model's recognition performance is poorer than you
 expected.
 
+Oh, and almost forgot the results of my stress test: on my MacBook Pro 16-inch,
+Nov 2024 with an Apple M4 Pro and 48&nbsp;GB of RAM, the model was able to keep
+up with about one complete (but not necessarily correct) prompt response per
+second. (Yes, I know that this machine is not what the average user has.)
+
 ![Test case showing the model gets the time wrong in dark mode when a red font is used to paint on the canvas.](/images/canvas-prompt-api.png)
 
 You can play with the
