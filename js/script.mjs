@@ -99,7 +99,7 @@ let monetizationSum = 0;
 
 window.addEventListener('monetization', (event) => {
   const { value, currency } = event.amountSent;
-  monetizationSum += value;
+  monetizationSum += Number(value);
   webMonetization.querySelector('span').textContent = new Intl.NumberFormat(
     'en-US',
     { style: 'currency', currency }
