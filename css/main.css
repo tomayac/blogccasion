@@ -462,7 +462,8 @@ dark-mode-toggle {
   padding: 0.25rem 0.1rem 0.25rem calc(24px * 0.75 + 0.1rem);
 }
 
-.performance-metrics {
+.performance-metrics,
+.web-monetization {
   margin-block-start: var(--padding);
 }
 
