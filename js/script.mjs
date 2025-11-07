@@ -94,4 +94,17 @@ if (articleBody) {
   });
 }
 
+const webMonetization = document.querySelector('.web-monetization');
+let monetizationSum = 0;
+
+window.addEventListener('monetization', (event) => {
+  const { value, currency } = event.amountSent;
+  monetizationSum += value;
+  webMonetization.querySelector('span').textContent = new Intl.NumberFormat(
+    'en-US',
+    { style: 'currency', currency }
+  ).format(monetizationSum);
+  webMonetization.hidden = false;
+});
+
 export { imgs, fallback };
