@@ -38,7 +38,7 @@ actual transactions are all in real fiat money, Euro in my case.
 
 ## As an extension user
 
-Connect your wallet, and browse to a page that supports Web Monetization. You
+Connect your wallet and browse to a page that supports Web Monetization. You
 will notice whether a page is monetized when the extension has a green
 checkmark. My blog happens to be monetized.
 
