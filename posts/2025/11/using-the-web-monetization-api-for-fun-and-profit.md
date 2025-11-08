@@ -9,9 +9,9 @@ tags:
 ---
 
 I recently [spoke at JSConf Mexico](https://jsconfmx.org/speaker/W3Eio), where
-spent a lot of time with the [Interledger Foundation](https://interledger.org/)
+I spent a lot of time with the [Interledger Foundation](https://interledger.org/)
 folks in the hallway track and at the after party events, namely with
-[Ioana](https://www.linkedin.com/in/ioanachiorean/) (Eningeering Manager) and
+[Ioana](https://www.linkedin.com/in/ioanachiorean/) (Engineering Manager) and
 [Marian](https://www.linkedin.com/in/marianvilla/) (DevRel) to talk about
 [Web Monetization](https://webmonetization.org/).
 
