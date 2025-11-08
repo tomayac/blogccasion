@@ -8,6 +8,7 @@ eleventyExcludeFromCollections: true
 	<subtitle>{{ metadata.feed.subtitle }}</subtitle>
 	<link href="{{ metadata.feed.url }}" rel="self"/>
 	<link href="{{ metadata.url }}"/>
+	<link href="https://ilp.gatehub.net/348218105/eur" rel="monetization"/>
 	<updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<id>{{ metadata.feed.id }}</id>
 	<author>
