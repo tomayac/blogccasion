@@ -161,3 +161,16 @@ tips on how to avoid FOUC** (Flash of Unstyled Content). You can also play with
 a [demo](https://tomayac.github.io/input-switch-polyfill/) of the polyfill that
 shows off more features of the polyfill, like all the various writing modes, and
 the different ways to style the switch. And with that: happy switching!
+
+## Thank you
+
+I would like to wholeheartedly thank
+[Samuel Proulx](https://fed.interfree.ca/@fastfinge) and
+[Curtis Wilcox](https://c.im/@cwilcox808) for their accessibility advice and
+testing. I'm also grateful to
+[Vadim Makeev](https://mastodon.social/@pepelsbey),
+[Luke Warlow](https://toot.wales/@Lukew), and
+[Jeffrey Yasskin](https://hachyderm.io/@jyasskin) for their technical and
+non-technical feedback. Finally, huge props to
+[Barry Pollard](https://mastodon.social/@tunetheweb) for the performance tweaks
+to avoid FOUC.
