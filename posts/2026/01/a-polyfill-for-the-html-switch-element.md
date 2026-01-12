@@ -90,7 +90,7 @@ If a checkbox becomes a switch, the browser automatically applies the
 role. This role is functionally identical to the `checkbox` role, except that
 instead of representing "checked" and "unchecked" states, which are fairly
 generic in meaning, the switch role represents the states "on" and "off". The
-polyfill does this for you.
+polyfill does this for you. Also another exception is that switches don't support an indeterminate/mixed state that checkboxes support.
 
 When your users have the
 [`prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast)
