@@ -171,6 +171,7 @@ testing. I'm also grateful to
 [Vadim Makeev](https://mastodon.social/@pepelsbey),
 [Luke Warlow](https://toot.wales/@Lukew), and
 [Jeffrey Yasskin](https://hachyderm.io/@jyasskin) for their technical and
-non-technical feedback. Finally, huge props to
+non-technical feedback. [Thomas Broyer](https://piaille.fr/@tbroyer) has been
+crucial for improving support on Firefox. Finally, huge props to
 [Barry Pollard](https://mastodon.social/@tunetheweb) for the performance tweaks
 to avoid FOUC.
