@@ -116,7 +116,7 @@ interacting with it. I personally think smartphones—most notably the iPhone—
 taught people how to use switches, but I still recommend you do your own
 usability research before adding a switch to your site.
 
-## Internationalization, and styling
+## Internationalization and styling
 
 The polyfill supports the various
 [`writing-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode)
