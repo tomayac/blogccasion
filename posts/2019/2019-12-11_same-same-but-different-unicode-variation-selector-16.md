@@ -43,8 +43,8 @@ emoji picker. To my surprise, Facebook logged `"FBNavAmpDetect: false"`. Huh �
 
 ## ⚡️ High Voltage sign is a valid attribute name
 
-My first reaction was: `<html ⚡️>` does not quite look like what the founders
-of HTML had in mind, so maybe
+My first reaction was: `<html ⚡️>` does not quite look like what the founders of
+HTML had in mind, so maybe
 [`hasAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttribute)
 is [specified](https://dom.spec.whatwg.org/#dom-element-hasattribute) to return
 `false` when an attribute name is invalid. But what even is a valid attribute
