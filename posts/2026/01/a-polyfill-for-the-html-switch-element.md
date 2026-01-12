@@ -70,7 +70,7 @@ switch, and one with a red
   if (!('switch' in HTMLInputElement.prototype))
     await import('/js/input-switch-polyfill.js');
   else 
-    document.head.insertAdjacentHTML('beforeend', '<style>label:has(input[switch]),input[switch]{animation:none}</style>');
+    document.head.insertAdjacentHTML('beforeend', '<style>label:has(input[switch]),input[switch]{animation:none!important}</style>');
 </script>
 <label>Toggle me <input type="checkbox" switch checked></label>
 
