@@ -38,4 +38,6 @@ Redirect 301 /2024/02/so-what-exactly-did-apple-break-in-the-eu.md/ /2024/02/28/
 </IfModule>
 # END Expire headers
 
-
+<Files "feed.xml">
+    Header set Access-Control-Allow-Origin "*"
+</Files>
