@@ -1,5 +1,5 @@
 :root {
-  --padding: 0.75rem;
+  --padding: 1rem;
 
   color-scheme: dark light;
   font-size: 100%;
@@ -91,10 +91,8 @@ h6,
 header .heading-effect {
   display: block;
   font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-block: 0.67em;
+  margin-inline: 0;
   font-weight: bold;
 }
 
@@ -128,8 +126,39 @@ article h1 {
   font-size: 1.75rem;
 }
 
+h1:not([role="img"]),
+h2:not([role="img"]),
+h3:not([role="img"]),
+h4:not([role="img"]),
+h5:not([role="img"]),
+h6:not([role="img"]),
+.heading-effect:not([role="img"]) {
+  letter-spacing: -0.02em;
+}
+
 p {
   text-wrap: pretty;
+}
+
+time {
+  white-space: nowrap;
+}
+
+article section {
+  line-height: 1.7;
+}
+
+fed-embed li {
+  border: solid 1px var(--border-color);
+  border-radius: var(--padding);
+  margin-block-end: var(--padding);
+  padding: var(--padding);
+  overflow-wrap: break-word;
+}
+
+article section p,
+article section li {
+  max-width: 70ch;
 }
 
 pre,
@@ -183,12 +212,29 @@ article a,
 a:focus,
 a:hover,
 a:active {
-  text-decoration-style: double;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+:is(article, .container) > header > a {
+  text-decoration: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+:is(article, .container) > header > a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
 }
 
 .header-footer-text,
 .footer-link {
   color: var(--text-color);
+}
+
+.container > header .header-footer-text {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
 }
 
 .footer-link {
@@ -204,6 +250,10 @@ img {
 
 picture {
   flex-shrink: 0;
+}
+
+.metadata picture {
+  margin-block-end: 0;
 }
 
 figcaption {
@@ -243,24 +293,49 @@ blockquote::before {
 
 .nav-item,
 .tag-item {
-  border-radius: 0.25rem;
-  color: hsl(0, 0%, 100%);
-  padding: 0.1rem 0.25rem;
+  border-radius: 999px;
   text-decoration: none;
   white-space: nowrap;
+  transition: box-shadow 0.15s ease;
 }
 
 .tag-item {
-  background-color: hsl(1, 89%, 49%);
+  font-size: 0.8rem;
+  color: var(--link-color);
+  border: 1.5px solid var(--link-color);
+  background: transparent;
+  padding: 0.1rem 0.55rem;
 }
 
 .nav-item {
-  background-color: darkgreen;
+  font-size: 0.72rem;
+  color: hsl(0deg 0% 100%);
+  background: linear-gradient(135deg, hsl(12deg 100% 50%), hsl(36deg 100% 50%));
+  padding: 0.25rem 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
-.nav-item,
-.aside-item,
-.tag-item {
+@supports (color: color(display-p3 0 0 0)) {
+  .nav-item {
+    background: linear-gradient(
+      135deg,
+      color(display-p3 0.96 0.14 0.03),
+      color(display-p3 1 0.60 0.01)
+    );
+  }
+}
+
+.nav-item:hover,
+.tag-item:hover {
+  box-shadow: 0 0 0 3px var(--link-glow);
+}
+
+#search > div > form > input {
+  font-size: 1.125rem;
+}
+
+.aside-item {
   font-size: 0.875rem;
 }
 
@@ -270,23 +345,17 @@ blockquote::before {
     'header header header'
     'nav content aside'
     'footer footer footer';
-  grid-template-columns: 9rem minmax(0, 1fr) 9rem;
+  grid-template-columns: 10rem minmax(0, 1fr) 10rem;
   grid-template-rows: auto 1fr auto;
-  max-width: 1024px;
+  max-width: 1100px;
   width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .container > header {
   grid-area: header;
-  border-left: solid 0.1rem var(--border-color);
-  border-right: solid 0.1rem var(--border-color);
-  border-top: solid 0.1rem var(--border-color);
-  border-radius: var(--padding) var(--padding) 0 0;
-  background-image: linear-gradient(
-    to bottom,
-    var(--main-background-color-transparent) 0%,
-    var(--main-background-color) 70%
-  );
+  background-color: var(--main-background-color);
   display: flex;
   padding: var(--padding);
   justify-content: flex-end;
@@ -295,7 +364,6 @@ blockquote::before {
 
 nav {
   grid-area: nav;
-  border-left: solid 0.1rem var(--border-color);
 }
 
 main {
@@ -304,22 +372,13 @@ main {
 
 aside {
   grid-area: aside;
-  border-right: solid 0.1rem var(--border-color);
 }
 
 .container > footer {
   grid-area: footer;
-  border-left: solid 0.1rem var(--border-color);
-  border-right: solid 0.1rem var(--border-color);
-  border-bottom: solid 0.1rem var(--border-color);
-  border-radius: 0 0 var(--padding) var(--padding);
   font-size: 0.75rem;
   padding: var(--padding);
-  background-image: linear-gradient(
-    to top,
-    var(--main-background-color-transparent) 0%,
-    var(--main-background-color) 70%
-  );
+  background-color: var(--main-background-color);
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -355,6 +414,10 @@ footer ul {
   max-width: calc(100% - 110px);
 }
 
+footer ul li:first-child {
+  margin-block-end: 0.75rem;
+}
+
 ul.postlist {
   padding-inline-start: 1.5em;
   list-style-type: square;
@@ -365,9 +428,10 @@ ul.postlist ::marker {
 }
 
 .author {
+  display: block;
   width: 2rem;
   height: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   margin-inline-end: 0.25rem;
   background-image: linear-gradient(
     to bottom,
@@ -481,15 +545,6 @@ dark-mode-toggle {
   text-overflow: ellipsis;
 }
 
-fed-embed li {
-  border: solid 1px var(--border-color);
-  border-radius: var(--padding);
-  margin-block-end: var(--padding);
-  padding: var(--padding);
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
 @media (min-width: 1024px) {
   :root {
     font-size: 112.5%;
@@ -498,7 +553,7 @@ fed-embed li {
 
 @media (max-width: 800px) {
   :root {
-    --padding: 0.25rem;
+    --padding: 0.5rem;
   }
 
   .container {
@@ -532,6 +587,11 @@ fed-embed li {
     margin-block-end: calc(2 * var(--padding));
   }
 
+  aside ul li,
+  footer ul li {
+    margin-block-end: 0.1rem;
+  }
+
   h1,
   h2,
   h3,
@@ -544,8 +604,6 @@ fed-embed li {
   aside,
   main {
     padding: var(--padding);
-    border-left: solid 0.1rem var(--border-color);
-    border-right: solid 0.1rem var(--border-color);
   }
 }
 

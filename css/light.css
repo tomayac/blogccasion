@@ -1,11 +1,23 @@
 :root {
-  --text-color: hsl(0, 0%, 7%);
-  --background-color: hsl(60, 100%, 99%);
-  --main-background-color-transparent: hsla(0, 0%, 100%, 0);
-  --main-background-color: hsla(0, 0%, 100%, 0.85);
-  --metadata-color: hsl(0, 0%, 33%);
-  --link-color: blue;
-  --border-color: hsl(0, 0%, 40%);
+  --text-color: hsl(0deg 0% 10%);
+  --background-color: hsl(35deg 50% 96%);
+  --main-background-color-transparent: hsl(0deg 0% 100% / 0%);
+  --main-background-color: hsl(0deg 0% 100% / 90%);
+  --metadata-color: hsl(0deg 0% 36%);
+  --link-color: hsl(20deg 100% 40%);
+  --border-color: hsl(0deg 0% 72%);
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-background: hsl(0deg 0% 100%);
+  --pagefind-ui-text: hsl(0deg 0% 10%);
+  --pagefind-ui-border: hsl(0deg 0% 72%);
+  --pagefind-ui-primary: hsl(20deg 100% 40%);
+  --link-glow: hsl(20deg 100% 40% / 14%);
+}
+
+@supports (color: color(display-p3 0 0 0)) {
+  :root {
+    --link-color: color(display-p3 0.84 0.22 0.01);
+  }
 }
 
 h1,
@@ -15,13 +27,46 @@ h4,
 h5,
 h6,
 .heading-effect {
-  background: linear-gradient(
-    90deg,
-    hsl(13, 100%, 60%) 0%,
-    hsl(34, 100%, 50%) 100%
-  );
+  background: linear-gradient(90deg, hsl(12deg 100% 50%) 0%, hsl(38deg 100% 50%) 100%);
+}
+
+@supports (color: color(display-p3 0 0 0)) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .heading-effect {
+    background: linear-gradient(
+      90deg,
+      color(display-p3 0.97 0.14 0.03) 0%,
+      color(display-p3 1 0.60 0.01) 100%
+    );
+  }
+}
+
+.webmention-content {
+  color-scheme: light;
 }
 
 article code {
-  color: hsl(120, 100%, 20%);
+  color: hsl(120deg 100% 20%);
+}
+
+#search > div > form > input {
+  appearance: none;
+  background-color: hsl(0deg 0% 100%);
+  color: hsl(0deg 0% 10%);
+  border: 1.5px solid var(--link-color);
+  border-radius: 0.5rem;
+  color-scheme: light;
+  box-shadow: none;
+  transition: box-shadow 0.15s ease;
+}
+
+#search > div > form > input:hover,
+#search > div > form > input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--link-glow);
 }

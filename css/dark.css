@@ -1,13 +1,25 @@
 :root {
   -webkit-font-smoothing: antialiased;
 
-  --text-color: hsl(0, 0%, 100%);
-  --background-color: hsl(0, 0%, 0%);
-  --main-background-color: hsla(0, 0%, 7%, 0.85);
-  --main-background-color-transparent: hsla(0, 0%, 7%, 0);
-  --metadata-color: hsl(0, 0%, 53%);
-  --link-color: hsl(1, 89%, 49%);
-  --border-color: hsl(0, 0%, 33%);
+  --text-color: hsl(0deg 0% 95%);
+  --background-color: hsl(220deg 18% 7%);
+  --main-background-color: hsl(222deg 14% 10% / 90%);
+  --main-background-color-transparent: hsl(222deg 14% 10% / 0%);
+  --metadata-color: hsl(0deg 0% 55%);
+  --link-color: hsl(26deg 100% 60%);
+  --border-color: hsl(0deg 0% 26%);
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-background: hsl(222deg 14% 14%);
+  --pagefind-ui-text: hsl(0deg 0% 90%);
+  --pagefind-ui-border: hsl(0deg 0% 28%);
+  --pagefind-ui-primary: hsl(26deg 100% 60%);
+  --link-glow: hsl(26deg 100% 60% / 32%);
+}
+
+@supports (color: color(display-p3 0 0 0)) {
+  :root {
+    --link-color: color(display-p3 1 0.44 0.02);
+  }
 }
 
 h1,
@@ -17,9 +29,42 @@ h4,
 h5,
 h6,
 .heading-effect {
-  background: linear-gradient(to right, hsl(51, 100%, 50%), hsl(23, 100%, 60%));
+  background: linear-gradient(to right, hsl(46deg 100% 54%), hsl(22deg 100% 58%));
+}
+
+@supports (color: color(display-p3 0 0 0)) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .heading-effect {
+    background: linear-gradient(
+      to right,
+      color(display-p3 1 0.70 0.01) 0%,
+      color(display-p3 1 0.28 0.04) 100%
+    );
+  }
 }
 
 article code {
-  color: hsl(90, 100%, 49%);
+  color: hsl(90deg 100% 55%);
+}
+
+#search > div > form > input {
+  appearance: none;
+  background-color: hsl(222deg 14% 14%);
+  color: hsl(0deg 0% 90%);
+  border: 1.5px solid var(--link-color);
+  border-radius: 0.5rem;
+  color-scheme: dark;
+  box-shadow: none;
+  transition: box-shadow 0.15s ease;
+}
+
+#search > div > form > input:hover,
+#search > div > form > input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--link-glow);
 }
