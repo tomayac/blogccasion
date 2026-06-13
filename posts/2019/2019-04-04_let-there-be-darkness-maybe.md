@@ -9,6 +9,7 @@ date: '2019-04-04T10:57:58.763Z'
 permalink: 2019/04/04/let-there-be-darkness-maybe/index.html
 tags:
   - Technical
+  - Dark Mode
 ---
 
 ## Dark Theme Developer Survey Results

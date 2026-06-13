@@ -9,6 +9,7 @@ date: '2018-12-03T14:03:09.463Z'
 permalink: 2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up/index.html
 tags:
   - Technical
+  - PWA
 ---
 
 _(This is the write-up of the first episode of my new YouTube show “Why Build

@@ -6,6 +6,8 @@ date: '2022-12-05T14:23:34'
 permalink: 2022/12/05/project-fugu-on-the-js-party-podcast/index.html
 tags:
   - Work
+  - Project Fugu
+  - Podcast
 ---
 
 I had the honor of being interviewed on the

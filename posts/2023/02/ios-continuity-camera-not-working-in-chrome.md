@@ -6,6 +6,7 @@ date: '2023-02-16T11:28:03'
 permalink: 2023/02/16/ios-continuity-camera-not-working-in-chrome/index.html
 tags:
   - Technical
+  - Apple
 ---
 
 I'm a big fan of the macOS

@@ -6,6 +6,8 @@ date: '2019-09-21T16:03:15'
 permalink: 2019/09/21/project-fugu-at-w3c-tpac/index.html
 tags:
   - Technical
+  - Project Fugu
+  - Conference
 ---
 
 This week, I attended my now third

@@ -6,6 +6,8 @@ date: '2024-05-22T12:03:46'
 permalink: 2024/05/22/the-web-conf-2024-singapore-trip-report/index.html
 tags:
   - Work
+  - Conference
+  - Research
 ---
 
 ## Background

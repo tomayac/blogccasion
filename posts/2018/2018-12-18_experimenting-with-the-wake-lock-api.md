@@ -9,6 +9,7 @@ date: '2018-12-18T17:32:16.699Z'
 permalink: 2018/12/18/experimenting-with-the-wake-lock-api/index.html
 tags:
   - Technical
+  - Project Fugu
 ---
 
 During this year’s [Chrome Dev Summit](https://developer.chrome.com/devsummit/),

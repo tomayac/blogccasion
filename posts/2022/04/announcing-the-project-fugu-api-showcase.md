@@ -6,6 +6,7 @@ date: '2022-04-25T11:56:10'
 permalink: 2022/04/25/announcing-the-project-fugu-api-showcase/index.html
 tags:
   - Work
+  - Project Fugu
 ---
 
 One of the most frequent questions we hear on the Project Fugu team is: 🤔

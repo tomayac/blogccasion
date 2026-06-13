@@ -6,6 +6,7 @@ date: '2022-11-23T13:07:39'
 permalink: 2022/11/23/modern-frontends-live/index.html
 tags:
   - Work
+  - Conference
 ---
 
 ![Dictionary definition of the term "shitshow": noun, vulgar, slang. A situation or event marked by chaos or controversy.](/images/shitshow.png)

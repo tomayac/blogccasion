@@ -9,6 +9,7 @@ date: '2019-03-22T09:51:16.943Z'
 permalink: 2019/03/22/two-http-headers-related-to-service-workers-you-never-may-have-heard-of/index.html
 tags:
   - Technical
+  - Service Workers
 ---
 
 ## The second one will make you talk to your webmaster…

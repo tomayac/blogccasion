@@ -6,6 +6,7 @@ date: '2025-02-05T13:56:27'
 permalink: 2025/02/05/testing-browser-use-a-scriptable-ai-browser-agent/index.html
 tags:
   - Technical
+  - AI
 ---
 
 I'm not a big LinkedIn user, but the other day, my Google colleague Franziska

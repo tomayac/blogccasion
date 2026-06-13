@@ -6,6 +6,8 @@ date: '2021-06-01T09:07:58'
 permalink: 2021/06/01/excalidraw-and-project-fugu-at-google-io/index.html
 tags:
   - Technical
+  - Project Fugu
+  - Conference
 ---
 
 Google I/O 2020, like all the I/O conferences before, was planned as a physical

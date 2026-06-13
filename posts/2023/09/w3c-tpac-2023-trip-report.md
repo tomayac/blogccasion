@@ -6,6 +6,7 @@ date: '2023-09-25T16:19:45'
 permalink: 2023/09/25/w3c-tpac-2023-trip-report/index.html
 tags:
   - Work
+  - Conference
 ---
 
 ## Background

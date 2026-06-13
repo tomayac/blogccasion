@@ -6,6 +6,8 @@ date: '2020-12-21T14:13:18'
 permalink: 2020/12/21/releasing-joy-con-webhid/index.html
 tags:
   - Technical
+  - Project Fugu
+  - Open Source
 ---
 
 The [WebHID API](https://web.dev/hid/) received its

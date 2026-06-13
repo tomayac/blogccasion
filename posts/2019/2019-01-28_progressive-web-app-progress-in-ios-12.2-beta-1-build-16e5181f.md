@@ -9,6 +9,8 @@ date: '2019-01-28T15:27:11.009Z'
 permalink: 2019/01/28/progressive-web-app-progress-in-ios-12.2-beta-1-build-16e5181f/index.html
 tags:
   - Technical
+  - PWA
+  - Apple
 ---
 
 As a regular (and passionate) iOS user with a strong belief in the Web, I

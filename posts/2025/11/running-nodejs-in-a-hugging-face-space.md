@@ -6,6 +6,7 @@ date: '2025-11-03T06:19:54'
 permalink: 2025/11/03/running-nodejs-in-a-hugging-face-space/index.html
 tags:
   - Technical
+  - AI
 ---
 
 Like many developers, I was bummed when I learned about the

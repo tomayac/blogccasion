@@ -6,6 +6,7 @@ date: '2019-11-20T09:26:04'
 permalink: 2019/09/21/prefers-color-scheme-in-svg-favicons-for-dark-mode-icons/index.html
 tags:
   - Technical
+  - Dark Mode
 ---
 
 🎉 Chrome finally accepts SVG favicons now that

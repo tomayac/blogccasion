@@ -6,6 +6,7 @@ date: '2024-02-28T10:30:53'
 permalink: 2024/02/28/so-what-exactly-did-apple-break-in-the-eu/index.html
 tags:
   - Technical
+  - Apple
 ---
 
 ## Disclaimer, just in case…

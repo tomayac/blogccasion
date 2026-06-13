@@ -6,6 +6,7 @@ date: '2022-10-14T10:35:52'
 permalink: 2022/10/14/reflections-about-project-fugu/index.html
 tags:
   - Work
+  - Project Fugu
 ---
 
 I had the honor of being asked to contribute some lines to

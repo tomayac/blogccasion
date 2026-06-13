@@ -6,6 +6,7 @@ date: '2021-11-22T08:55:53'
 permalink: 2021/11/22/releasing-svgcode/index.html
 tags:
   - Technical
+  - Open Source
 ---
 
 Just a quick note to say that I have released [SVGcode](https://svgco.de/), a

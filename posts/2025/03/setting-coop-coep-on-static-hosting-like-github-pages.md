@@ -6,6 +6,7 @@ date: '2025-03-08T20:39:51'
 permalink: 2025/03/08/setting-coop-coep-headers-on-static-hosting-like-github-pages/index.html
 tags:
   - Technical
+  - Service Workers
 ---
 
 Remember the Cross-Origin-Embedder-Policy

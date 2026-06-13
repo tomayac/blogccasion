@@ -6,6 +6,8 @@ date: '2021-07-21T10:52:37'
 permalink: 2021/07/21/dark-mode-web-app-manifest-app-icons/index.html
 tags:
   - Technical
+  - Project Fugu
+  - Dark Mode
 ---
 
 I was asked if one could use SVG web app manifest app icons that are reactive to

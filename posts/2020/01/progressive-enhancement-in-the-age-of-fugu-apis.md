@@ -6,6 +6,8 @@ date: '2020-01-23T13:44:57'
 permalink: 2020/01/23/progressive-enhancement-in-the-age-of-fugu-apis/index.html
 tags:
   - Technical
+  - PWA
+  - Project Fugu
 ---
 
 Back in March 2003, [Nick Finck](http://nickfinck.com/) and

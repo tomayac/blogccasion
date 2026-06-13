@@ -6,6 +6,7 @@ date: '2024-01-17T11:04:26'
 permalink: 2024/01/17/a-wasm-new-year/index.html
 tags:
   - Work
+  - Conference
 ---
 
 ## Background

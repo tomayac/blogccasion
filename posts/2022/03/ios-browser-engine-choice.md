@@ -6,6 +6,7 @@ date: '2022-03-25T08:55:53'
 permalink: 2022/03/25/ios-browser-engine-choice/index.html
 tags:
   - Technical
+  - Apple
 ---
 
 I'm following the

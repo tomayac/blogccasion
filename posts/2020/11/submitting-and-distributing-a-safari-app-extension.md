@@ -6,6 +6,8 @@ date: '2020-11-09T10:41:29'
 permalink: 2020/11/09/submitting-and-distributing-a-safari-app-extension/index.html
 tags:
   - Technical
+  - Browser Extensions
+  - Apple
 ---
 
 Safari 14 has

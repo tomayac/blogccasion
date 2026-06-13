@@ -6,6 +6,7 @@ date: '2026-01-12T09:21:24'
 permalink: 2026/01/12/a-polyfill-for-the-html-switch-element/index.html
 tags:
   - Technical
+  - Project Fugu
 ---
 
 In Safari 17.4, the WebKit team at Apple

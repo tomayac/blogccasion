@@ -6,6 +6,7 @@ date: '2025-09-09T16:37:09'
 permalink: 2025/09/16/prompt-api-color-sensitivity/index.html
 tags:
   - Technical
+  - AI
 ---
 
 I was playing with stress-testing the

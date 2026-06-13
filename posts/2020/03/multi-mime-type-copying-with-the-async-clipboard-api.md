@@ -6,6 +6,7 @@ date: '2020-03-20T19:24:13'
 permalink: 2020/03/20/multi-mime-type-copying-with-the-async-clipboard-api/index.html
 tags:
   - Technical
+  - Project Fugu
 ---
 
 ## Copying an Image

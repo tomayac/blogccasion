@@ -6,6 +6,8 @@ date: '2025-02-07T17:15:43'
 permalink: 2025/02/07/playing-with-ai-inference-in-firefox-web-extensions/index.html
 tags:
   - Technical
+  - AI
+  - Browser Extensions
 ---
 
 Recently, in a blog post titled

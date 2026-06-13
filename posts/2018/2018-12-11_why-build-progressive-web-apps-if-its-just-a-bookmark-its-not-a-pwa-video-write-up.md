@@ -11,6 +11,7 @@ date: '2018-12-11T11:13:43.612Z'
 permalink: 2018/12/11/why-build-progressive-web-apps-if-its-just-a-bookmark-its-not-a-pwa-video-write-up/index.html
 tags:
   - Technical
+  - PWA
 ---
 
 _(This is the write-up of the third episode of my new YouTube show “Why Build

@@ -6,6 +6,8 @@ date: '2023-06-07T13:39:59'
 permalink: 2023/06/07/web-apps-on-macos-sonoma-14-beta/index.html
 tags:
   - Work
+  - PWA
+  - Apple
 ---
 
 ## Executive summary
