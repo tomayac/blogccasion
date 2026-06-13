@@ -3,47 +3,10 @@
 
   color-scheme: dark light;
   font-size: 100%;
-  font-family:
-    'Ubuntu',
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji',
-    'EmojiOne Color',
-    sans-serif;
+  font-family: system-ui, sans-serif;
   line-height: 1.5;
 }
 
-/* ubuntu-regular - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local(''),
-    url('/fonts/ubuntu-v15-latin-regular.woff2') format('woff2');
-}
-
-/* ubuntu-mono-regular - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Ubuntu Mono';
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local(''),
-    url('/fonts/ubuntu-mono-v10-latin-regular.woff2') format('woff2');
-}
 
 *,
 ::before,
@@ -164,7 +127,7 @@ article section li {
 pre,
 code,
 kbd {
-  font-family: 'Ubuntu Mono', Consolas, Monaco, 'Andale Mono', monospace;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
 ins {
@@ -306,16 +269,16 @@ blockquote::before {
   transition: box-shadow 0.15s ease;
 }
 
-.tag-cloud .tag-item {
-  font-size: clamp(0.72rem, calc(0.7rem + var(--count, 1) * 0.01rem), 1.3rem);
-}
-
 .tag-item {
   font-size: 0.8rem;
   color: var(--link-color);
   border: 1.5px solid var(--link-color);
   background: transparent;
   padding: 0.1rem 0.55rem;
+}
+
+.tag-cloud .tag-item {
+  font-size: clamp(0.72rem, calc(0.7rem + var(--count, 1) * 0.01rem), 1.3rem);
 }
 
 .nav-item {
