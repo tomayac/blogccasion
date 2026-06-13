@@ -8,6 +8,8 @@ tags:
   - Technical
   - Browser Extensions
   - Apple
+  - macOS
+  - Safari
 ---
 
 Safari 14 has

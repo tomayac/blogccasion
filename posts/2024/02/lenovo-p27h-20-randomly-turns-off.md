@@ -8,6 +8,7 @@ date: '2024-02-21T09:13:56'
 permalink: 2024/02/lenovo-p27h-20-randomly-turns-off/index.html
 tags:
   - Technical
+  - Hardware
 ---
 
 The

@@ -8,6 +8,7 @@ tags:
   - Work
   - PWA
   - Apple
+  - macOS
 ---
 
 ## Executive summary

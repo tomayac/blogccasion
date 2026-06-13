@@ -10,6 +10,7 @@ permalink: 2019/03/22/two-http-headers-related-to-service-workers-you-never-may-
 tags:
   - Technical
   - Service Workers
+  - HTTP
 ---
 
 ## The second one will make you talk to your webmaster…

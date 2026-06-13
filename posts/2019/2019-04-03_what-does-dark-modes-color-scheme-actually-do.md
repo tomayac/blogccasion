@@ -10,6 +10,7 @@ permalink: 2019/04/03/what-does-dark-modes-color-scheme-actually-do/index.html
 tags:
   - Technical
   - Dark Mode
+  - CSS
 ---
 
 The

@@ -8,6 +8,7 @@ tags:
   - Technical
   - Project Fugu
   - Conference
+  - W3C
 ---
 
 This week, I attended my now third

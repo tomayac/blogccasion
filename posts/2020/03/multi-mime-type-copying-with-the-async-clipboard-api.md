@@ -7,6 +7,9 @@ permalink: 2020/03/20/multi-mime-type-copying-with-the-async-clipboard-api/index
 tags:
   - Technical
   - Project Fugu
+  - JavaScript
+  - API
+  - Clipboard
 ---
 
 ## Copying an Image

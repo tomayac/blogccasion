@@ -11,6 +11,7 @@ permalink: 2018/12/04/why-build-progressive-web-apps-push-but-dont-be-pushy-vide
 tags:
   - Technical
   - PWA
+  - Video
 ---
 
 _(This is the write-up of the second episode of my new YouTube show “Why Build

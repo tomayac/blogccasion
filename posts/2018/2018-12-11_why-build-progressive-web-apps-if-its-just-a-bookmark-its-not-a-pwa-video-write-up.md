@@ -12,6 +12,7 @@ permalink: 2018/12/11/why-build-progressive-web-apps-if-its-just-a-bookmark-its-
 tags:
   - Technical
   - PWA
+  - Video
 ---
 
 _(This is the write-up of the third episode of my new YouTube show “Why Build

@@ -6,6 +6,8 @@ date: '2019-12-09T18:13:49'
 permalink: 2019/12/09/inspecting-facebooks-webview/index.html
 tags:
   - Technical
+  - WebView
+  - DevTools
 ---
 
 Both

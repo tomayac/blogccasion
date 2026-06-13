@@ -333,6 +333,11 @@ blockquote::before {
 
 #search > div > form > input {
   font-size: 1.125rem;
+  border-radius: 999px;
+  padding-inline: 1rem;
+  field-sizing: content;
+  min-width: 20ch;
+  max-width: 100%;
 }
 
 .aside-item {
@@ -604,6 +609,10 @@ dark-mode-toggle {
   aside,
   main {
     padding: var(--padding);
+  }
+
+  #search > div > form > input {
+    font-size: 1rem;
   }
 }
 

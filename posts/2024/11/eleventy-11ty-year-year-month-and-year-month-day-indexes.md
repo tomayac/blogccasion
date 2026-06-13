@@ -6,6 +6,8 @@ date: '2024-11-02T21:52:06'
 permalink: 2024/11/02/eleventy-11ty-year-year-month-and-year-month-day-indexes/index.html
 tags:
   - Technical
+  - JavaScript
+  - Node.js
 ---
 
 I love hackable URLs. A hackable URL is a URL that makes sense to a human

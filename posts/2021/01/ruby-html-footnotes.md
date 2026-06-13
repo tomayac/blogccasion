@@ -6,6 +6,8 @@ date: '2021-01-24T18:48:57'
 permalink: 2021/01/24/ruby-html-footnotes/index.html
 tags:
   - Technical
+  - CSS
+  - HTML
 ---
 
 It is sometimes surprising to me to see what kind of use cases HTML has a

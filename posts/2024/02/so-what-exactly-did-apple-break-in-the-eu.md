@@ -7,6 +7,9 @@ permalink: 2024/02/28/so-what-exactly-did-apple-break-in-the-eu/index.html
 tags:
   - Technical
   - Apple
+  - Privacy
+  - Web Standards
+  - iOS
 ---
 
 ## Disclaimer, just in case…

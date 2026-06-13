@@ -6,6 +6,11 @@ date: '2019-12-01T13:41:10'
 permalink: 2019/12/01/animated-svg-favicons/index.html
 tags:
   - Technical
+  - SVG
+  - Favicon
+  - HTML
+  - CSS
+  - JavaScript
 ---
 
 When it comes to animating SVGs, there're three options: using

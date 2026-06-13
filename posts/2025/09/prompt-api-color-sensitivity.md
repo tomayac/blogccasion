@@ -7,6 +7,7 @@ permalink: 2025/09/16/prompt-api-color-sensitivity/index.html
 tags:
   - Technical
   - AI
+  - JavaScript
 ---
 
 I was playing with stress-testing the

@@ -7,6 +7,8 @@ permalink: 2022/03/25/ios-browser-engine-choice/index.html
 tags:
   - Technical
   - Apple
+  - iOS
+  - Web Standards
 ---
 
 I'm following the

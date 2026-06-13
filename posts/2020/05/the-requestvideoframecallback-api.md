@@ -6,6 +6,8 @@ date: '2020-05-15T13:19:44'
 permalink: 2020/05/15/the-requestvideoframecallback-api/index.html
 tags:
   - Technical
+  - Media
+  - Video
 ---
 
 There's a new Web API on the block, defined in the

@@ -7,6 +7,8 @@ permalink: 2020/11/05/learning-from-mini-apps-w3c-tpac-breakout-session/index.ht
 tags:
   - Technical
   - Conference
+  - W3C
+  - Mini Apps
 ---
 
 After my W3C TPAC breakout session focused on

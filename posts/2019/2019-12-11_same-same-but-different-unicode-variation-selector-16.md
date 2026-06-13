@@ -6,6 +6,7 @@ date: '2019-12-12T12:55:16'
 permalink: 2019/12/12/same-same-but-different-unicode-variation-selector-16/index.html
 tags:
   - Technical
+  - Unicode
 ---
 
 The other day, I did an

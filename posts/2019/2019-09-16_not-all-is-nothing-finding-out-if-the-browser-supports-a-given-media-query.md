@@ -7,6 +7,7 @@ date: '2019-09-16T00:19:54'
 permalink: 2019/09/16/not-all-is-nothing-finding-out-if-the-browser-supports-a-given-media-query/index.html
 tags:
   - Technical
+  - JavaScript
 ---
 
 On the Google Chrome team, we're working on solving the interesting problem that

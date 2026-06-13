@@ -6,6 +6,8 @@ date: '2022-08-30T12:56:58'
 permalink: 2022/08/30/things-not-available-when-someone-blocks-all-cookies/index.html
 tags:
   - Work
+  - Privacy
+  - Security
 ---
 
 The other day, I received a harmless-looking

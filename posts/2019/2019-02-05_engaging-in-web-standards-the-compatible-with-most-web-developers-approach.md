@@ -10,6 +10,8 @@ date: '2019-02-05T17:02:06.441Z'
 permalink: 2019/02/05/engaging-in-web-standards-the-compatible-with-most-web-developers-approach/index.html
 tags:
   - Technical
+  - Web Standards
+  - W3C
 ---
 
 > 😨📖 **tl;dr:** Whether you want to add something new to an already existing

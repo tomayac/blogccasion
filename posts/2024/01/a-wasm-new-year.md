@@ -7,6 +7,7 @@ permalink: 2024/01/17/a-wasm-new-year/index.html
 tags:
   - Work
   - Conference
+  - WebAssembly
 ---
 
 ## Background

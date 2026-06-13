@@ -8,6 +8,7 @@ tags:
   - Technical
   - Project Fugu
   - Dark Mode
+  - CSS
 ---
 
 I was asked if one could use SVG web app manifest app icons that are reactive to

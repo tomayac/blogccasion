@@ -8,6 +8,8 @@ tags:
   - Technical
   - Project Fugu
   - Open Source
+  - Hardware
+  - HID
 ---
 
 The [WebHID API](https://web.dev/hid/) received its

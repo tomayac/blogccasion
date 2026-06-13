@@ -6,6 +6,8 @@ date: '2020-11-04T12:31:32'
 permalink: 2020/11/04/play-the-chrome-dino-game-on-your-nintendo-switch/index.html
 tags:
   - Technical
+  - Hardware
+  - Gaming
 ---
 
 I have landed an article over on [web.dev](https://web.dev/) that

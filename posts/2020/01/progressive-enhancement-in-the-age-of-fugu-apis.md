@@ -8,6 +8,7 @@ tags:
   - Technical
   - PWA
   - Project Fugu
+  - JavaScript
 ---
 
 Back in March 2003, [Nick Finck](http://nickfinck.com/) and

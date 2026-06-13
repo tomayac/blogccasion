@@ -7,6 +7,8 @@ permalink: 2023/09/25/w3c-tpac-2023-trip-report/index.html
 tags:
   - Work
   - Conference
+  - W3C
+  - Web Standards
 ---
 
 ## Background

@@ -8,6 +8,7 @@ tags:
   - Technical
   - AI
   - Browser Extensions
+  - Firefox
 ---
 
 Recently, in a blog post titled

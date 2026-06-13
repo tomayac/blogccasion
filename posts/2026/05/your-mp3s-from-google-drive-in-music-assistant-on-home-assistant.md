@@ -6,6 +6,8 @@ date: '2026-05-30T15:28:59'
 permalink: 2026/05/30/your-mp3s-from-google-drive-in-music-assistant-on-home-assistant/index.html
 tags:
   - Technical
+  - Audio
+  - Home Automation
 ---
 
 Like most millennials, I grew up with [Napster](https://en.wikipedia.org/wiki/Napster), then [Kazaa](https://en.wikipedia.org/wiki/Kazaa), then [eDonkey2000](https://en.wikipedia.org/wiki/EDonkey2000), obviously [CD rips](https://en.wikipedia.org/wiki/Ripping), and of course [LAN parties](https://en.wikipedia.org/wiki/LAN_party). Over the years, this has led to a large collection of completely legal MP3 files that I have backed up on two large external USB spinning disks that haven't spun for a long time now, but the files also exist on Google Drive.

@@ -10,6 +10,7 @@ permalink: 2019/05/28/re-colorization-for-dark-mode/index.html
 tags:
   - Technical
   - Dark Mode
+  - CSS
 ---
 
 A couple of weeks ago, I have collected feedback regarding people’s preferences

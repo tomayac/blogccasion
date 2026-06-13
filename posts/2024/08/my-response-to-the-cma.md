@@ -7,6 +7,8 @@ permalink: 2024/08/26/my-response-to-the-cma/index.html
 tags:
   - Technical
   - Apple
+  - Privacy
+  - Web Standards
 ---
 
 The [Open Web Advocacy](https://open-web-advocacy.org/) (OWA) initiative in

@@ -6,6 +6,7 @@ date: '2025-07-26T00:32:20'
 permalink: 2025/07/26/what-a-difference-a-semicolon-makes/index.html
 tags:
   - Technical
+  - JavaScript
 ---
 
 The other day, I was hit by a baffling

@@ -7,6 +7,9 @@ permalink: 2025/11/07/using-the-web-monetization-api-for-fun-and-profit/index.ht
 tags:
   - Technical
   - Project Fugu
+  - JavaScript
+  - API
+  - Payments
 ---
 
 I recently [spoke at JSConf Mexico](https://jsconfmx.org/speaker/W3Eio), where I

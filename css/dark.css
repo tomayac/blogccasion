@@ -57,7 +57,7 @@ article code {
   background-color: hsl(222deg 14% 14%);
   color: hsl(0deg 0% 90%);
   border: 1.5px solid var(--link-color);
-  border-radius: 0.5rem;
+  border-radius: 999px;
   color-scheme: dark;
   box-shadow: none;
   transition: box-shadow 0.15s ease;

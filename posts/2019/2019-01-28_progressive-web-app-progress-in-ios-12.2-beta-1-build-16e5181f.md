@@ -11,6 +11,7 @@ tags:
   - Technical
   - PWA
   - Apple
+  - iOS
 ---
 
 As a regular (and passionate) iOS user with a strong belief in the Web, I

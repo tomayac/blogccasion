@@ -10,6 +10,7 @@ permalink: 2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-vide
 tags:
   - Technical
   - PWA
+  - Video
 ---
 
 _(This is the write-up of the first episode of my new YouTube show “Why Build

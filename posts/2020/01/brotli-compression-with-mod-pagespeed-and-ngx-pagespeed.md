@@ -6,6 +6,9 @@ date: '2020-01-24T09:58:47'
 permalink: 2020/01/24/brotli-compression-with-mod-pagespeed-and-ngx-pagespeed/index.html
 tags:
   - Technical
+  - HTTP
+  - Performance
+  - Compression
 ---
 
 The [PageSpeed](https://www.modpagespeed.com/) modules (not to be confused with

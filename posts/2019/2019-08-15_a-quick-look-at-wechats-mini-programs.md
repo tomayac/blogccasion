@@ -6,6 +6,7 @@ date: '2019-08-15T11:59:52'
 permalink: 2019/08/15/a-quick-look-at-wechats-mini-programs/index.html
 tags:
   - Technical
+  - Mini Apps
 ---
 
 While preparing for my
