@@ -196,7 +196,6 @@ a:active {
 }
 
 .container > header .header-footer-text {
-  font-variant-caps: all-small-caps;
   letter-spacing: 0.04em;
 }
 
@@ -286,7 +285,6 @@ blockquote::before {
   color: hsl(0deg 0% 100%);
   background: linear-gradient(135deg, hsl(12deg 100% 50%), hsl(36deg 100% 50%));
   padding: 0.25rem 0.7rem;
-  text-transform: uppercase;
   letter-spacing: 0.07em;
 }
 
