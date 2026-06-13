@@ -17,6 +17,14 @@ permalink: /posts/
     });
 </script>
 
+<h2>Tags</h2>
+<div class="tag-cloud">
+  {% for tag in collections.tagList | sort %}
+    {% set tagUrl %}/tags/{{ tag | lower }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="tag-item" style="--count: {{ collections[tag] | length }}">{{ tag }}</a>
+  {% endfor %}
+</div>
+
 <h2>Archive</h2>
 
 {% for year, yearPosts in collections.postsByYear %}

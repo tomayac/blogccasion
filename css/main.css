@@ -291,12 +291,23 @@ blockquote::before {
   left: -2.5rem;
 }
 
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+  align-items: baseline;
+}
+
 .nav-item,
 .tag-item {
   border-radius: 999px;
   text-decoration: none;
   white-space: nowrap;
   transition: box-shadow 0.15s ease;
+}
+
+.tag-cloud .tag-item {
+  font-size: clamp(0.72rem, calc(0.7rem + var(--count, 1) * 0.01rem), 1.3rem);
 }
 
 .tag-item {

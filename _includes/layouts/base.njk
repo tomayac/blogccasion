@@ -180,15 +180,6 @@
             </li>
           {% endfor %}
         </ul>
-        <h2>Tags</h2>
-        <ul>
-          {% for tag in collections.tagList | sort %}
-            {% set tagUrl %}/tags/{{ tag | lower }}/{% endset %}
-            <li>
-              <a href="{{ tagUrl | url }}" class="tag-item">{{ tag }}</a>
-            </li>
-          {% endfor %}
-        </ul>
       </nav>
       <aside>
         <h2>Related</h2>
