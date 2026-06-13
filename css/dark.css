@@ -48,6 +48,24 @@ h6,
   }
 }
 
+.nav-item {
+  background:
+    linear-gradient(var(--main-background-color), var(--main-background-color)) padding-box,
+    linear-gradient(to right, hsl(46deg 100% 54%), hsl(22deg 100% 58%)) border-box;
+}
+
+@supports (color: color(display-p3 0 0 0)) {
+  .nav-item {
+    background:
+      linear-gradient(var(--main-background-color), var(--main-background-color)) padding-box,
+      linear-gradient(
+        to right,
+        color(display-p3 1 0.70 0.01) 0%,
+        color(display-p3 1 0.28 0.04) 100%
+      ) border-box;
+  }
+}
+
 article code {
   color: hsl(90deg 100% 55%);
 }

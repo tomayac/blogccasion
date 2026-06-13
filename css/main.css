@@ -282,20 +282,31 @@ blockquote::before {
 
 .nav-item {
   font-size: 0.72rem;
-  color: hsl(0deg 0% 100%);
-  background: linear-gradient(135deg, hsl(12deg 100% 50%), hsl(36deg 100% 50%));
+  background:
+    linear-gradient(var(--main-background-color), var(--main-background-color)) padding-box,
+    linear-gradient(90deg, hsl(12deg 100% 50%), hsl(38deg 100% 50%)) border-box;
+  border: 2px solid transparent;
+  color: var(--link-color);
   padding: 0.25rem 0.7rem;
   letter-spacing: 0.07em;
 }
 
 @supports (color: color(display-p3 0 0 0)) {
   .nav-item {
-    background: linear-gradient(
-      135deg,
-      color(display-p3 0.96 0.14 0.03),
-      color(display-p3 1 0.60 0.01)
-    );
+    background:
+      linear-gradient(var(--main-background-color), var(--main-background-color)) padding-box,
+      linear-gradient(
+        90deg,
+        color(display-p3 0.97 0.14 0.03) 0%,
+        color(display-p3 1 0.60 0.01) 100%
+      ) border-box;
   }
+}
+
+nav .nav-item {
+  display: block;
+  text-align: center;
+  padding-block: 0.5rem;
 }
 
 .nav-item:hover,
@@ -341,6 +352,12 @@ blockquote::before {
 
 nav {
   grid-area: nav;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 main {
@@ -555,8 +572,7 @@ dark-mode-toggle {
   }
 
   nav ul {
-    display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 
   li {
