@@ -33,10 +33,15 @@ version-controlled original. After editing this one:
 ssh tomayac 'cat > ~/bin/deploy-blog.sh && chmod +x ~/bin/deploy-blog.sh' < deploy/deploy-blog.sh
 ```
 
-## Email on failure
+## Email
 
-The script mails `steiner.thomas@gmail.com` when a deploy starts failing and
-again when it recovers, never on every run. It sends through `msmtp` using
+The script mails `steiner.thomas@gmail.com` in three cases, each throttled so
+cron cannot turn it into a stream:
+
+- a deploy starts failing, and again when it recovers
+- the generated Caddy maps no longer match what the server is running
+
+It never mails on an ordinary successful run. It sends through `msmtp` using
 `~/.msmtprc` on the server, which is a copy of the root `/etc/msmtprc` owned by
 the `tomayac` user. That file holds an SMTP password and is deliberately **not**
 in this repo.
@@ -82,7 +87,14 @@ no longer means editing config by hand. They build into `_site/caddy/`, which
 the deploy keeps **out** of the published site and copies to `~/caddy-staging/`
 instead.
 
-Installing them still needs root, so the deploy only reports drift:
+Installing them still needs root, so the deploy cannot do it. Instead it copies
+the new maps to `~/caddy-staging/`, logs the change, and **emails you** with the
+diff and the command to run. That mail is keyed on a fingerprint of the
+generated files, so you get one per actual change: later deploys stay quiet
+while the same change is still uninstalled, a further change mails again, and
+installing clears the state.
+
+Until you install them the site is published and fine; only the redirects lag.
 
 ```
 Caddy config changed: blogccasion-tagrenames.caddy -- run deploy/install-caddy-maps.sh to apply

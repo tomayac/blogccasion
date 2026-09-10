@@ -26,6 +26,7 @@ LOCK="${LOCK:-$HOME/.cache/deploy-blog.lock}"
 MIN_PAGES="${MIN_PAGES:-500}" # a healthy build is ~675 files; well under that means something broke
 CADDY_DIR="${CADDY_DIR:-/etc/caddy}"          # where the generated map files belong
 CADDY_STAGE="${CADDY_STAGE:-$HOME/caddy-staging}" # where this script leaves them for you
+DRIFTMARK="${DRIFTMARK:-$HOME/.cache/deploy-blog.caddy-drift}"
 NOTIFY="${NOTIFY:-steiner.thomas@gmail.com}" # empty string disables email
 FAILMARK="${FAILMARK:-$HOME/.cache/deploy-blog.failing}"
 FORCE=0
@@ -83,7 +84,8 @@ Retries every 5 minutes. You will get one more mail when it recovers."
   exit 1
 }
 
-trap 's=$?; [ $s -ne 0 ] && say "ABORTED at line $LINENO (exit $s); live site untouched"; exit $s' ERR
+published=0 # so the abort message can tell you whether the site changed
+trap 's=$?; [ $s -ne 0 ] && say "ABORTED at line $LINENO (exit $s); $([ "$published" -eq 1 ] && echo "site was already published" || echo "live site untouched")"; exit $s' ERR
 
 # Keep the log from growing without bound.
 if [ -f "$LOG" ] && [ "$(wc -c <"$LOG")" -gt 2000000 ]; then
@@ -163,20 +165,62 @@ mv "$staging" "$WEBROOT" || {
 rm -rf "$previous"
 
 echo "$remote_sha" >"$STATE"
+published=1
 say "published ${remote_sha:0:9} to $WEBROOT ($pages pages)"
 
 # The build regenerates Caddy's map files. Installing them needs root, which
-# this script does not have, so leave them ready and point out any drift.
+# this script does not have, so leave them ready and say so. Mailed once per
+# distinct change, keyed on a fingerprint of the generated files: re-running
+# while the same change is still uninstalled stays quiet, a further change
+# mails again, and installing clears the state.
 if [ -d "$REPO/_site/caddy" ]; then
   mkdir -p "$CADDY_STAGE"
   cp -f "$REPO"/_site/caddy/*.caddy "$CADDY_STAGE/" 2>/dev/null || true
+
   drifted=""
   for f in "$REPO"/_site/caddy/*.caddy; do
     name="$(basename "$f")"
-    if ! cmp -s "$f" "$CADDY_DIR/$name"; then drifted="$drifted $name"; fi
+    cmp -s "$f" "$CADDY_DIR/$name" || drifted="$drifted $name"
   done
-  if [ -n "$drifted" ]; then
+
+  if [ -z "$drifted" ]; then
+    rm -f "$DRIFTMARK"
+  else
     say "Caddy config changed:$drifted -- run deploy/install-caddy-maps.sh to apply"
+    fingerprint="$(cat "$REPO"/_site/caddy/*.caddy | sha256sum | cut -d" " -f1)"
+    if [ "$(cat "$DRIFTMARK" 2>/dev/null || true)" = "$fingerprint" ]; then
+      log "same Caddy change as before; mail already sent"
+    else
+      changes=""
+      for name in $drifted; do
+        changes="$changes
+--- $name
+$(diff -u "$CADDY_DIR/$name" "$CADDY_STAGE/$name" 2>/dev/null | tail -n +3 | grep -E '^[+-]' | head -30 || true)"
+      done
+      mail_out "blog: Caddy redirects need installing on $(hostname -s)" \
+"The build generated new Caddy redirect maps. The site itself is published
+and fine; only the redirects are waiting.
+
+Until you install them, requests to the changed old URLs keep hitting the
+previous rules.
+
+  changed: $drifted
+  commit:  ${remote_sha:0:9}
+  when:    $(date -u '+%Y-%m-%d %H:%M:%SZ')
+
+To apply, on the server:
+
+  ~/Documents/blogccasion/deploy/install-caddy-maps.sh
+
+It shows a diff, installs, validates, and reloads Caddy, and leaves the
+previous config in place if validation fails. It asks for your sudo
+password.
+$changes
+
+(Truncated to 30 lines per file. Full files: $CADDY_STAGE)"
+      printf '%s\n' "$fingerprint" >"$DRIFTMARK"
+      say "mailed the Caddy change to $NOTIFY"
+    fi
   fi
 fi
 
