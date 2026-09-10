@@ -52,6 +52,14 @@ export default function (eleventyConfig) {
     return new Date().getFullYear();
   });
 
+  // The URL of a tag page. Several templates link to these, so the slug lives
+  // in one place to keep them from drifting apart. Slugified rather than just
+  // lowercased, so that tags like "Cross-Origin Storage" don't end up as
+  // `/tags/cross-origin%20storage/`.
+  eleventyConfig.addFilter('tagUrl', function (tag) {
+    return `/tags/${eleventyConfig.getFilter('slugify')(tag)}/`;
+  });
+
   // Minify JSON, used for Schema.org inline markup
   eleventyConfig.addFilter('jsonMinify', function (code) {
     let json = code;
@@ -165,7 +173,7 @@ export default function (eleventyConfig) {
       class: 'direct-link',
       symbol: '🔗',
     }),
-    level: [1, 2, 3, 4],
+    level: [1, 2, 3, 4, 5],
     slugify: eleventyConfig.getFilter('slugify'),
   });
   eleventyConfig.setLibrary('md', markdownLibrary);

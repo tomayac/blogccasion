@@ -57,6 +57,6 @@ predecessor Freebase to the community-maintained Wikidata.
 It's rare that I get to tell anyone about this stuff, so now you know more than
 you probably wanted to ever hear about this… You can learn more about this time
 of my Google life in my previous
-[blog post](</2021/10/02/14-years-at-google/#the-phd-time-(2010%E2%80%932014)>).
-My manager back in the days didn't care about any of this, but maybe it's at
-least interesting to you… `:-)`
+[blog post](/2021/10/02/14-years-at-google/#the-phd-time-2010-2014). My manager
+back in the days didn't care about any of this, but maybe it's at least
+interesting to you… `:-)`

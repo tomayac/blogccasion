@@ -10,7 +10,7 @@ tags:
 ---
 
 The other day, I did an
-[analysis of Facebook's WebView](/2019/12/09/inspecting_facebooks_webview/),
+[analysis of Facebook's WebView](/2019/12/09/inspecting-facebooks-webview/),
 which you are kindly invited to read. They have a code path in which they check
 whether a given page is using [AMPHTML](https://amp.dev/), where `\u26A1` is the
 [Unicode code point escape](https://mathiasbynens.be/notes/javascript-escapes#unicode-code-point)

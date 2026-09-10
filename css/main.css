@@ -7,7 +7,6 @@
   line-height: 1.5;
 }
 
-
 *,
 ::before,
 ::after {
@@ -17,7 +16,7 @@
 body {
   color: var(--text-color);
   background-color: var(--background-color);
-  background-image: url(/static/background.svg);
+  background-image: url('/static/background.svg');
   background-attachment: fixed;
   margin: 0;
   padding: var(--padding);
@@ -89,13 +88,13 @@ article h1 {
   font-size: 1.75rem;
 }
 
-h1:not([role="img"]),
-h2:not([role="img"]),
-h3:not([role="img"]),
-h4:not([role="img"]),
-h5:not([role="img"]),
-h6:not([role="img"]),
-.heading-effect:not([role="img"]) {
+h1:not([role='img']),
+h2:not([role='img']),
+h3:not([role='img']),
+h4:not([role='img']),
+h5:not([role='img']),
+h6:not([role='img']),
+.heading-effect:not([role='img']) {
   letter-spacing: -0.02em;
 }
 
@@ -127,21 +126,23 @@ article section li {
 pre,
 code,
 kbd {
-  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-family:
+    ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+    'DejaVu Sans Mono', monospace;
 }
 
 ins {
-  background-color: hsl(133, 100%, 90%);
+  background-color: hsl(133deg 100% 90%);
 }
 
 del {
-  background-color: hsl(353, 100%, 97%);
+  background-color: hsl(353deg 100% 97%);
   text-decoration: line-through;
 }
 
 del,
 ins {
-  color: hsl(0, 0%, 0%);
+  color: hsl(0deg 0% 0%);
 }
 
 pre {
@@ -149,15 +150,13 @@ pre {
 }
 
 code {
-  word-break: break-word;
   overflow-wrap: break-word;
 }
 
 kbd {
-  color: hsl(0, 0%, 0%);
+  color: hsl(0deg 0% 0%);
   background-color: lightgray;
   border: solid 1px darkgray;
-  padding: -1px;
   border-radius: 0.25rem;
 }
 
@@ -168,7 +167,6 @@ a {
 article a,
 .post-date a,
 .postlist-link {
-  word-break: break-word;
   overflow-wrap: break-word;
 }
 
@@ -283,7 +281,8 @@ blockquote::before {
 .nav-item {
   font-size: 0.72rem;
   background:
-    linear-gradient(var(--main-background-color), var(--main-background-color)) padding-box,
+    linear-gradient(var(--main-background-color), var(--main-background-color))
+      padding-box,
     linear-gradient(90deg, hsl(12deg 100% 50%), hsl(38deg 100% 50%)) border-box;
   border: 2px solid transparent;
   color: var(--link-color);
@@ -294,12 +293,17 @@ blockquote::before {
 @supports (color: color(display-p3 0 0 0)) {
   .nav-item {
     background:
-      linear-gradient(var(--main-background-color), var(--main-background-color)) padding-box,
       linear-gradient(
-        90deg,
-        color(display-p3 0.97 0.14 0.03) 0%,
-        color(display-p3 1 0.60 0.01) 100%
-      ) border-box;
+          var(--main-background-color),
+          var(--main-background-color)
+        )
+        padding-box,
+      linear-gradient(
+          90deg,
+          color(display-p3 0.97 0.14 0.03) 0%,
+          color(display-p3 1 0.6 0.01) 100%
+        )
+        border-box;
   }
 }
 
@@ -418,7 +422,7 @@ ul.postlist {
 }
 
 ul.postlist ::marker {
-  color: hsl(51, 100%, 50%);
+  color: hsl(51deg 100% 50%);
 }
 
 .author {
@@ -472,8 +476,8 @@ ul.postlist ::marker {
 }
 
 dark-mode-toggle {
-  --dark-mode-toggle-light-icon: url(/static/moon.svg);
-  --dark-mode-toggle-dark-icon: url(/static/sun.svg);
+  --dark-mode-toggle-light-icon: url('/static/moon.svg');
+  --dark-mode-toggle-dark-icon: url('/static/sun.svg');
   --dark-mode-toggle-color: var(--text-color);
   --dark-mode-toggle-icon-filter: invert(100%);
 
@@ -490,7 +494,7 @@ dark-mode-toggle {
   border: 1px solid var(--main-background-color);
   display: block;
   cursor: pointer;
-  color: hsl(0, 0%, 100%);
+  color: hsl(0deg 0% 100%);
   font-family: inherit;
   font-size: inherit;
   padding: 0.5rem 0.25rem 0.5rem calc(24px + 0.25rem);
@@ -506,11 +510,11 @@ dark-mode-toggle {
 }
 
 .share.share-ios {
-  background-image: url(/static/share-ios.svg);
+  background-image: url('/static/share-ios.svg');
 }
 
 .share.share-others {
-  background-image: url(/static/share-others.svg);
+  background-image: url('/static/share-others.svg');
 }
 
 .share-image {
@@ -539,13 +543,13 @@ dark-mode-toggle {
   text-overflow: ellipsis;
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   :root {
     font-size: 112.5%;
   }
 }
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
   :root {
     --padding: 0.5rem;
   }
@@ -604,7 +608,7 @@ dark-mode-toggle {
   }
 }
 
-@media (max-width: 240px) {
+@media (width <= 240px) {
   .container {
     overflow-x: hidden;
   }
@@ -621,8 +625,8 @@ dark-mode-toggle {
 
 /* Footnote text styling. */
 rt {
-  background-color: hsl(0, 0%, 93%);
-  color: hsl(0, 0%, 7%);
+  background-color: hsl(0deg 0% 93%);
+  color: hsl(0deg 0% 7%);
   font-size: 0.75rem;
   padding: 0.2rem;
   margin: 0.2rem;

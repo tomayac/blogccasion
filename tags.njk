@@ -9,11 +9,15 @@ pagination:
     - post
     - posts
     - tagList
+    # Date archives, which have their own /year/month/day templates.
+    - postsByYear
+    - postsByYearMonth
+    - postsByYearMonthDay
   addAllPagesToCollections: true
 layout: layouts/home.njk
 eleventyComputed:
   title: Tagged “{{ tag }}”
-permalink: /tags/{{ tag | lower }}/
+permalink: "{{ tag | tagUrl }}"
 ---
 <h2>Tagged “{{ tag }}”</h2>
 

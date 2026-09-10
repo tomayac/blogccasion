@@ -253,7 +253,7 @@ is still open.</ins> The demo works if you
 Programmatic multi-MIME type copying is a powerful feature. At present, the
 Async Clipboard API is still limited, but raw clipboard access is on the radar
 of the
-[🐡 Project Fugu team](/2019/09/21/project-fugu-at-w3c-tpac/#breakout-session-for-a-more-capable-web%E2%80%94project-fugu)
+[🐡 Project Fugu team](/2019/09/21/project-fugu-at-w3c-tpac/#breakout-session-for-a-more-capable-web-project-fugu)
 that I am a small part of. The feature is being tracked as
 [crbug/897289](https://crbug.com/897289).
 

@@ -627,5 +627,6 @@ owned by and copyright of Facebook_.
 
 Did you run a similar analysis with similar (or maybe different) findings? Let
 me know on Twitter or Mastodon by posting your thoughts with a
-[link to this post](.). It will then show up as a Webmention at the bottom. On
-supporting platforms, you can simply use the "Share Article" button below.
+[link to this post](https://blog.tomayac.com/2019/12/09/inspecting-facebooks-webview/).
+It will then show up as a Webmention at the bottom. On supporting platforms, you
+can simply use the "Share Article" button below.

@@ -254,4 +254,4 @@ Error: filter not found: split (via Template render error)
 There may be more elegant ways to achieve this, but this approach is what worked
 for me, and, hey, it all happens on the server at build time, so you, dear
 reader, get just the optimized HTML. Happy URL hacking! Oh, and whatever
-happened on [March 3, 2009](/2009/03/03)?
+happened on [March 3, 2009](/2009/03/03/)?

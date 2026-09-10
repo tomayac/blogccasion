@@ -7,7 +7,6 @@ title: Tags
 
 <ul>
 {% for tag in collections.tagList | sort %}
-  {% set tagUrl %}/tags/{{ tag | lower }}/{% endset %}
-  <li><a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a></li>
+  <li><a href="{{ tag | tagUrl | url }}" class="tag">{{ tag }}</a></li>
 {% endfor %}
 </ul>

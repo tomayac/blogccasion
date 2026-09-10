@@ -13,7 +13,7 @@ layout: layouts/base.njk
         {% if tags %}
           {% for tag in tags | sort %}
             {% if tag !== 'posts' %}
-              <a href="/tags/{{ tag | lower }}" class="tag-item">{{ tag }}</a>
+              <a href="{{ tag | tagUrl | url }}" class="tag-item">{{ tag }}</a>
             {% endif %}
           {% endfor %}
         {% endif %}

@@ -205,7 +205,8 @@ Looking forward to seeing accessibility services working with AI at last doing
 what we dreamed of so many years ago. If accessibility is an opt-in, it needs to
 be made sure that the data isn't abused. Good privacy fields help, it's about
 the people, everyone occasionally needs accessibility features. (The speaker
-said they were very thankful to Google for the [schema.org](schema.org) work.)
+said they were very thankful to Google for the [schema.org](https://schema.org/)
+work.)
 
 ##### Decoding the Privacy Policies of Assistive Technologies
 
@@ -611,10 +612,10 @@ transmission. Merged rendering leads to reduced transmission. How can it be
 determined which objects can be merged? Graphics rendering configurations. They
 introduce FusionRender. Input: user-defined configurations, output: WebGPU.
 Joins objects with identical signatures. Uses a hash map, objects are grouped
-based on their hash. Implemented a prototype for [Three.js](Three.js), tested on
-MacBook Pro, ThinkPad X1, and Pixel 6 with Chrome and Firefox. FusionRender
-shows improvements between ~29% and ~120% with synthetic data, about ~30% with
-real world data. (Code:
+based on their hash. Implemented a prototype for
+[Three.js](https://threejs.org/), tested on MacBook Pro, ThinkPad X1, and Pixel
+6 with Chrome and Firefox. FusionRender shows improvements between ~29% and
+~120% with synthetic data, about ~30% with real world data. (Code:
 [qqyzk/FusionRender](https://github.com/qqyzk/FusionRender))
 [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589334.3645395)]
 
@@ -672,8 +673,8 @@ was the year of
 Chris Welty. Guha in 2014: > 20% of pages included structured data. In 2016
 Peter Norvig mentioned >60%. Facebook created Open Graph in 2011. IBM Watson
 in 2017. Facebook's Graph API made the Knowledge Graph concept more well-known.
-44% of pages now use [schema.org](schema.org) markup. Wikidata as a free
-editable knowledge base. The semantic web sort of won, but where are the
+44% of pages now use [schema.org](https://schema.org/) markup. Wikidata as a
+free editable knowledge base. The semantic web sort of won, but where are the
 intelligent agents? AI is getting there, but they are not directly using
 semantic web technologies.
 
@@ -750,12 +751,12 @@ TensorFlow, HuggingFace, or PyTorch.
 There are many table corpora, typically used to evaluate ML systems. The corpora
 use different schemata and formats. Introducing schema.org table corpora to
 bridge the gap. Use the Common Crawl corpus. Group by host (for example
-[imdb.com](imdb.com)) and class. Remove sparse entities and poor annotations.
-The resulting tables can contain nested entities, for example, the actor type.
-Needs flattening. Tables and meta statistics files are available for download.
-Used for table annotation benchmarks, for Q&A datasets, entity matching (based
-on unique identifiers, like telephone numbers), or as a source for training
-data. [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651441)]
+[imdb.com](https://www.imdb.com/)) and class. Remove sparse entities and poor
+annotations. The resulting tables can contain nested entities, for example, the
+actor type. Needs flattening. Tables and meta statistics files are available for
+download. Used for table annotation benchmarks, for Q&A datasets, entity
+matching (based on unique identifiers, like telephone numbers), or as a source
+for training data. [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651441)]
 
 ##### Tel2Veh: Fusion of Telecom Data and Vehicle Flow to Predict Camera-Free Traffic via a Spatio-Temporal Framework
 

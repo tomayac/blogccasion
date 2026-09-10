@@ -146,7 +146,7 @@ to cross-origin installations, which would be an important use case for app
 stores or search engines.
 
 The group further discussed the standardization of
-[iOS' proprietary `navigator.standalone](https://github.com/w3c/manifest/issues/1092)`.
+[iOS' proprietary `navigator.standalone`](https://github.com/w3c/manifest/issues/1092).
 
 After that, we looked at the
 [update algorithm](https://www.w3.org/2022/09/13-webapps-minutes.html#t03)

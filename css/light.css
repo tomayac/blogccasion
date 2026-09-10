@@ -27,7 +27,11 @@ h4,
 h5,
 h6,
 .heading-effect {
-  background: linear-gradient(90deg, hsl(12deg 100% 50%) 0%, hsl(38deg 100% 50%) 100%);
+  background: linear-gradient(
+    90deg,
+    hsl(12deg 100% 50%) 0%,
+    hsl(38deg 100% 50%) 100%
+  );
 }
 
 @supports (color: color(display-p3 0 0 0)) {
@@ -41,7 +45,7 @@ h6,
     background: linear-gradient(
       90deg,
       color(display-p3 0.97 0.14 0.03) 0%,
-      color(display-p3 1 0.60 0.01) 100%
+      color(display-p3 1 0.6 0.01) 100%
     );
   }
 }

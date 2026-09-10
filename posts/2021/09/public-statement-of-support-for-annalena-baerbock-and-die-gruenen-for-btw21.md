@@ -9,9 +9,9 @@ tags:
   - Political
 ---
 
-It's not often that I post something with the [Political](/tags/Political) tag
+It's not often that I post something with the [Political](/tags/political/) tag
 on my blog. In the recent months and probably years, I've in the majority
-sticked to [Technical](/tags/Technical) posts, but this one is different. For
+sticked to [Technical](/tags/technical/) posts, but this one is different. For
 folks like me in tech, it's way too easy to limit oneself to just the mostly
 uncontroversial (as in: it _truly_ matters) technical stuff and stay silent
 about other aspects of life. Yesterday, I watched the
