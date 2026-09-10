@@ -82,6 +82,18 @@ repo root:
 | `blogccasion-tagrenames.caddy`  | tag URLs that predate slugs, e.g. `/tags/dark mode/`             |
 | `blogccasion-categorymap.caddy` | `ViewByCategories.php?category=X` -> the tag slug                |
 
+The first is derived from the posts themselves: only pre-2016 permalinks carry
+the `-HHMMSS` suffix it keys on, so new posts never affect it.
+
+The other two describe **URLs that used to exist**, which is history rather than
+current state, so their keys are frozen in `_data/legacyTags.js` — the PHP
+blog's ten categories, and the fifteen tag pages that predate slugs. Only their
+targets follow the current tags. That means adding a tag changes nothing: a tag
+invented today never had one of those URLs. Renaming a tag that appears in that
+file **fails the build** with a message naming it, because the alternative is a
+redirect quietly pointing at a 404. Move the value and the old URL keeps
+working.
+
 They follow the posts and tags automatically, so renaming a tag or adding a post
 no longer means editing config by hand. They build into `_site/caddy/`, which
 the deploy keeps **out** of the published site and copies to `~/caddy-staging/`

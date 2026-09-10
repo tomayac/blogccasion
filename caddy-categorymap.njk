@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 {#- Generated. Install to /etc/caddy/blogccasion-categorymap.caddy; see deploy/README.md. -#}
 {#- Imported inside a `map` block, hence the indentation. -#}
-		{# Old ViewByCategories.php values -> current tag slug. #}
-{%- for entry in collections.tagList | categoryMap %}
+		{# The PHP blog's categories; keys frozen in _data/legacyTags.js. #}
+{%- for entry in legacyTags.categories | legacyCategoryRedirects(collections.tagList) %}
 		"{{ entry.key }}" "{{ entry.slug }}"
 {%- endfor %}

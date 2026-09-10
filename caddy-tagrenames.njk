@@ -4,9 +4,9 @@ eleventyExcludeFromCollections: true
 ---
 {#- Generated. Install to /etc/caddy/blogccasion-tagrenames.caddy; see deploy/README.md. -#}
 {#- Imported inside a `map` block, hence the indentation. -#}
-		{# Tags whose URL was the plain lowercased name before slugs. #}
-{%- for rename in collections.tagList | tagRenames %}
-		"{{ rename.from }}" "{{ rename.to }}"
+		{# Tag pages that predate slugs; keys frozen in _data/legacyTags.js. #}
+{%- for redirect in legacyTags.tagUrls | legacyTagUrlRedirects(collections.tagList) %}
+		"{{ redirect.from }}" "{{ redirect.to }}"
 {%- endfor %}
 
 		{# Tag pages generated from Eleventy collection names by mistake. #}

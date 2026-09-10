@@ -63,33 +63,43 @@ export default function (eleventyConfig) {
   // in one place to keep them from drifting apart.
   eleventyConfig.addFilter('tagUrl', (tag) => `/tags/${tagSlug(tag)}/`);
 
-  // Tags whose URL is not simply the lowercased tag. Those had a different URL
-  // before slugs were introduced, so Caddy still redirects the old form.
-  eleventyConfig.addFilter('tagRenames', (tags) =>
-    (tags || [])
-      .map((tag) => ({
-        from: `/tags/${String(tag).toLowerCase()}/`,
-        to: `/tags/${tagSlug(tag)}/`,
+  // Historical URLs are frozen (see _data/legacyTags.js); only their targets
+  // follow the current tags. A target that no longer exists would redirect to
+  // a 404 silently, so stop the build instead.
+  const resolveLegacy = (mapping, tags, what) =>
+    Object.entries(mapping || {}).map(([from, tag]) => {
+      if (!(tags || []).includes(tag)) {
+        throw new Error(
+          `legacyTags: the ${what} "${from}" points at the tag "${tag}", ` +
+            `which no longer exists. Update _data/legacyTags.js so the old ` +
+            `URL keeps working.`
+        );
+      }
+      return { from, slug: tagSlug(tag) };
+    });
+
+  // Tag pages that predate slugs: /tags/<old>/ -> /tags/<slug>/.
+  eleventyConfig.addFilter('legacyTagUrlRedirects', (mapping, tags) =>
+    resolveLegacy(mapping, tags, 'tag URL')
+      .map(({ from, slug }) => ({
+        from: `/tags/${from}/`,
+        to: `/tags/${slug}/`,
       }))
       .filter(({ from, to }) => from !== to)
       .sort((a, b) => cmp(a.from, b.from))
   );
 
-  // Values the old blog's ViewByCategories.php could have been called with,
-  // mapped to the tag slug. Case is preserved as well as folded, because the
-  // old URLs used the tag's display casing and the file system is case
-  // sensitive.
-  eleventyConfig.addFilter('categoryMap', (tags) => {
+  // Old ViewByCategories.php values -> the tag slug. Case is folded as well
+  // as preserved, because the old URLs used the category's display casing and
+  // the file system is case sensitive.
+  eleventyConfig.addFilter('legacyCategoryRedirects', (mapping, tags) => {
     const seen = new Map();
-    // Sorted, because `collections.tagList` comes out of a Set and its order
-    // varies between builds. Unsorted output would make every deploy look
-    // like the server config had changed.
-    const sorted = [...(tags || [])]
-      .map(String)
-      .sort((a, b) => cmp(a.toLowerCase(), b.toLowerCase()) || cmp(a, b));
-    for (const name of sorted) {
-      const slug = tagSlug(name);
-      for (const key of [name, name.toLowerCase(), name.toUpperCase()]) {
+    const entries = resolveLegacy(mapping, tags, 'category').sort(
+      (a, b) =>
+        cmp(a.from.toLowerCase(), b.from.toLowerCase()) || cmp(a.from, b.from)
+    );
+    for (const { from, slug } of entries) {
+      for (const key of [from, from.toLowerCase(), from.toUpperCase()]) {
         if (!seen.has(key)) seen.set(key, slug);
       }
     }
