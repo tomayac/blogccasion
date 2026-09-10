@@ -1,0 +1,16 @@
+<h2>Search</h2>
+
+<script src="/pagefind/pagefind-ui.js"></script>
+<search id="search"></search>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const pagefindUI = new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false, translations: { placeholder: "Search posts…" } });
+      document.querySelector('.pagefind-ui__search-input').type = 'search';
+      // Offer the search to agents that speak WebMCP.
+      if ('modelContext' in document) {
+        import('/js/webmcp.mjs').then(({ registerSearchTool }) => {
+          registerSearchTool(pagefindUI);
+        });
+      }
+    });
+</script>

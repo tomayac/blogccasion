@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.njk
 ---
-<article lang="{{ language if language else "en" }}">
+<article lang="{{ language if language else "en" }}" data-pagefind-body>
   <header>
     <a href="{{ page.url | url }}"><h1>{{ title }}</h1></a>
-    <div lang="en" class="metadata post-date">
+    <div lang="en" class="metadata post-date" data-pagefind-ignore>
       <img class="author" src="/images/thomas_steiner_small.jpg" width="64" height="64" alt="Thomas Steiner headshot" fetchpriority="high" loading="eager">
       <p>
         By <a href="/about/">Thomas Steiner</a>.
@@ -23,7 +23,7 @@ layout: layouts/base.njk
   <section>
     {{ content | safe }}
   </section>
-  <footer lang="en">
+  <footer lang="en" data-pagefind-ignore>
     <p class="edit-on-github">
       You can <a href="https://github.com/tomayac/blogccasion/tree/main/{{ page.inputPath }}" rel="nofollow">edit this page on GitHub</a>.
     </p>

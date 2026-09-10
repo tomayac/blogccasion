@@ -7,15 +7,7 @@ title: Archive
 permalink: /posts/
 ---
 
-<h2>Search</h2>
-
-<script src="/pagefind/pagefind-ui.js"></script>
-<search id="search"></search>
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false, translations: { placeholder: "Search posts…" } });
-    });
-</script>
+{% include "search.njk" %}
 
 <h2>Tags</h2>
 <div class="tag-cloud">
