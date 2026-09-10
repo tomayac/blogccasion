@@ -3,3 +3,4 @@ _11ty/
 js/
 css/
 postcss.config.js
+deploy/

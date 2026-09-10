@@ -1,0 +1,107 @@
+(blogccasion) {
+	root * /var/www/html/blogccasion
+	encode zstd gzip
+
+	# Serve /feed/ as feed.xml (Apache: DirectoryIndex feed.xml).
+	file_server {
+		index index.html feed.xml
+	}
+
+	# --- Legacy Apache rewrites (301) -------------------------------------
+	route {
+		# Old permalink form: /index.php?date=YYYY-MM-DD&time=HH:MM:SS&perma=...
+		# Apache used a RewriteMap keyed on the post time (HHMMSS); the date is
+		# ignored because post times are unique. Stage 1 extracts the time key.
+		map {query} {tkey} {
+			~^date=\d{4}-\d{2}-\d{2}&time=(\d{2}):(\d{2}):(\d{2}) "${1}${2}${3}"
+			default ""
+		}
+		# Stage 2: time key -> new permalink (generated from
+		# blogccasion/.htaccess_rewritemap.txt; regenerate that file -> re-run
+		# the generator if posts change).
+		map {tkey} {legacyurl} {
+			default ""
+			import /etc/caddy/blogccasion-legacymap.caddy
+		}
+		@legacypost {
+			path /index.php
+			expression {legacyurl} != ""
+		}
+		redir @legacypost {legacyurl} 301
+
+		# Category pages: /ViewByCategories.php?category=X -> /tags/<slug>/
+		# The previous rule passed the category through verbatim, so
+		# ?category=Work redirected to /tags/Work/, which 404s on a
+		# case-sensitive filesystem. Map to the real slug instead.
+		map {http.request.uri.query.category} {catslug} {
+			default ""
+			import /etc/caddy/blogccasion-categorymap.caddy
+		}
+		@category {
+			path /ViewByCategories.php
+			expression {catslug} != ""
+		}
+		redir @category /tags/{catslug}/ 301
+		# Unrecognized category: the tag index beats a 404.
+		@categoryunknown path /ViewByCategories.php
+		redir @categoryunknown /tags/ 301
+
+		# Tag URLs renamed on 2026-09-10, when tag slugs replaced plain
+		# lowercasing (so "Cross-Origin Storage" stopped producing
+		# /tags/cross-origin%20storage/). Also mops up three tag pages that
+		# were generated from Eleventy collection names by mistake.
+		map {path} {tagrename} {
+			default ""
+			import /etc/caddy/blogccasion-tagrenames.caddy
+		}
+		@tagrenamed expression {tagrename} != ""
+		redir @tagrenamed {tagrename} 301
+
+		# Old Atom feed -> current feed.
+		@atom path /atom.php
+		redir @atom /feed/feed.xml 301
+
+		# Manual permalink corrections (typos fixed after publishing).
+		redir /2019/12/01/animated-svg-favicon/ /2019/12/01/animated-svg-favicons/ 301
+		redir /2018/12/05/why-build-progressive-web-apps-push-but-don-t-be-pushy-video-write-up-094452/ /2018/12/04/why-build-progressive-web-apps-push-but-dont-be-pushy-video-write-up/ 301
+		redir /2019/12/09/inspecting_facebooks_webview/ /2019/12/09/inspecting-facebooks-webview/ 301
+		redir /2021/11/08/things-mode-and-stings-mode-in-google-trends/ /2021/11/08/things-mode-and-strings-mode-in-google-trends/ 301
+		redir /2023/09/28/w3c-tpac-2023-trip-report/ /2023/09/25/w3c-tpac-2023-trip-report/ 301
+		redir /2024/02/so-what-exactly-did-apple-break-in-the-eu.md/ /2024/02/28/so-what-exactly-did-apple-break-in-the-eu/ 301
+	}
+
+	# Enable PHP (collect.php / feed.php / proxy.php).
+	php_fastcgi unix//run/php/php-fpm.sock
+
+	# CORS + cache for the syndication feed.
+	@feed path /feed/feed.xml
+	header @feed {
+		Access-Control-Allow-Origin "*"
+		Cache-Control "public, max-age=3600"
+	}
+
+	# Caching (Apache mod_expires).
+	@images {
+		path_regexp images \.(png|jpe?g|gif|svg|webp|avif|ico)$
+	}
+	header @images Cache-Control "public, max-age=31536000, immutable"
+	@css_js {
+		path_regexp css_js \.(css|mjs|js)$
+	}
+	header @css_js Cache-Control "public, max-age=31536000, immutable"
+	@fonts {
+		path_regexp fonts \.(woff|woff2|ttf|otf|eot)$
+	}
+	header @fonts Cache-Control "public, max-age=31536000, immutable"
+	@other_static {
+		path_regexp other_static \.(txt|html|json|xml|webmanifest)$
+	}
+	header @other_static Cache-Control "public, max-age=3600"
+
+	# Apache: ErrorDocument 404 /404.html
+	handle_errors {
+		@404 expression {http.error.status_code} == 404
+		rewrite @404 /404.html
+		file_server
+	}
+}
