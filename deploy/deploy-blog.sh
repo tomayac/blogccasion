@@ -24,6 +24,8 @@ LOG="${LOG:-$HOME/Documents/deploy-blog.log}"
 STATE="${STATE:-$HOME/.cache/deploy-blog.sha}"
 LOCK="${LOCK:-$HOME/.cache/deploy-blog.lock}"
 MIN_PAGES="${MIN_PAGES:-500}" # a healthy build is ~675 files; well under that means something broke
+CADDY_DIR="${CADDY_DIR:-/etc/caddy}"          # where the generated map files belong
+CADDY_STAGE="${CADDY_STAGE:-$HOME/caddy-staging}" # where this script leaves them for you
 NOTIFY="${NOTIFY:-steiner.thomas@gmail.com}" # empty string disables email
 FAILMARK="${FAILMARK:-$HOME/.cache/deploy-blog.failing}"
 FORCE=0
@@ -146,7 +148,9 @@ fi
 staging="$WEBROOT.staging"
 previous="$WEBROOT.previous"
 rm -rf "$staging"
-rsync -a --delete "$REPO/_site/" "$staging/" || die "rsync to staging failed"
+# `caddy/` holds generated server config, not site content: keep it out of the
+# published tree so it is not downloadable.
+rsync -a --delete --exclude '/caddy/' "$REPO/_site/" "$staging/" || die "rsync to staging failed"
 [ -s "$staging/index.html" ] || die "staging copy is missing index.html"
 
 rm -rf "$previous"
@@ -160,6 +164,21 @@ rm -rf "$previous"
 
 echo "$remote_sha" >"$STATE"
 say "published ${remote_sha:0:9} to $WEBROOT ($pages pages)"
+
+# The build regenerates Caddy's map files. Installing them needs root, which
+# this script does not have, so leave them ready and point out any drift.
+if [ -d "$REPO/_site/caddy" ]; then
+  mkdir -p "$CADDY_STAGE"
+  cp -f "$REPO"/_site/caddy/*.caddy "$CADDY_STAGE/" 2>/dev/null || true
+  drifted=""
+  for f in "$REPO"/_site/caddy/*.caddy; do
+    name="$(basename "$f")"
+    if ! cmp -s "$f" "$CADDY_DIR/$name"; then drifted="$drifted $name"; fi
+  done
+  if [ -n "$drifted" ]; then
+    say "Caddy config changed:$drifted -- run deploy/install-caddy-maps.sh to apply"
+  fi
+fi
 
 # Sending webmentions is a courtesy to other sites, not part of publishing.
 # Never let it fail the deploy.

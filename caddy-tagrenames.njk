@@ -1,0 +1,15 @@
+---
+permalink: /caddy/blogccasion-tagrenames.caddy
+eleventyExcludeFromCollections: true
+---
+{#- Generated. Install to /etc/caddy/blogccasion-tagrenames.caddy; see deploy/README.md. -#}
+{#- Imported inside a `map` block, hence the indentation. -#}
+		{# Tags whose URL was the plain lowercased name before slugs. #}
+{%- for rename in collections.tagList | tagRenames %}
+		"{{ rename.from }}" "{{ rename.to }}"
+{%- endfor %}
+
+		{# Tag pages generated from Eleventy collection names by mistake. #}
+		"/tags/postsbyyear/" "/tags/"
+		"/tags/postsbyyearmonth/" "/tags/"
+		"/tags/postsbyyearmonthday/" "/tags/"

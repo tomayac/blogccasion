@@ -1,0 +1,14 @@
+---
+permalink: /caddy/blogccasion-legacymap.caddy
+eleventyExcludeFromCollections: true
+---
+{#- Generated. Install to /etc/caddy/blogccasion-legacymap.caddy; see deploy/README.md. -#}
+{#- Imported inside a `map` block, hence the indentation. -#}
+		{# The old blog's "about" page, the one key with no post behind it. #}
+		180510 "/about"
+{%- for post in collections.posts %}
+{%- set key = post.url | legacyTimeKey %}
+{%- if key %}
+		{{ key }} "{{ post.url }}"
+{%- endif %}
+{%- endfor %}

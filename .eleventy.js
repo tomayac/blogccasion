@@ -52,12 +52,48 @@ export default function (eleventyConfig) {
     return new Date().getFullYear();
   });
 
+  // The slug of a tag page. Slugified rather than just lowercased, so that
+  // tags like "Cross-Origin Storage" don't end up as `cross-origin%20storage`.
+  const tagSlug = (tag) => eleventyConfig.getFilter('slugify')(String(tag));
+
   // The URL of a tag page. Several templates link to these, so the slug lives
-  // in one place to keep them from drifting apart. Slugified rather than just
-  // lowercased, so that tags like "Cross-Origin Storage" don't end up as
-  // `/tags/cross-origin%20storage/`.
-  eleventyConfig.addFilter('tagUrl', function (tag) {
-    return `/tags/${eleventyConfig.getFilter('slugify')(tag)}/`;
+  // in one place to keep them from drifting apart.
+  eleventyConfig.addFilter('tagUrl', (tag) => `/tags/${tagSlug(tag)}/`);
+
+  // Tags whose URL is not simply the lowercased tag. Those had a different URL
+  // before slugs were introduced, so Caddy still redirects the old form.
+  eleventyConfig.addFilter('tagRenames', (tags) =>
+    (tags || [])
+      .map((tag) => ({
+        from: `/tags/${String(tag).toLowerCase()}/`,
+        to: `/tags/${tagSlug(tag)}/`,
+      }))
+      .filter(({ from, to }) => from !== to)
+      .sort((a, b) => a.from.localeCompare(b.from))
+  );
+
+  // Values the old blog's ViewByCategories.php could have been called with,
+  // mapped to the tag slug. Case is preserved as well as folded, because the
+  // old URLs used the tag's display casing and the file system is case
+  // sensitive.
+  eleventyConfig.addFilter('categoryMap', (tags) => {
+    const seen = new Map();
+    for (const tag of tags || []) {
+      const slug = tagSlug(tag);
+      const name = String(tag);
+      for (const key of [name, name.toLowerCase(), name.toUpperCase()]) {
+        if (!seen.has(key)) seen.set(key, slug);
+      }
+    }
+    return [...seen].map(([key, slug]) => ({ key, slug }));
+  });
+
+  // The HHMMSS key the pre-2016 blog used in its permalinks, taken from the
+  // suffix Eleventy still carries in the URL. Empty for posts that never had
+  // one, which is how the legacy redirect map skips them.
+  eleventyConfig.addFilter('legacyTimeKey', (url) => {
+    const match = /-(\d{6})\/$/.exec(String(url || ''));
+    return match ? match[1] : '';
   });
 
   // Minify JSON, used for Schema.org inline markup
