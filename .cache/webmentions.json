@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-06-24T10:52:32.272Z",
+  "lastFetched": "2026-09-10T11:39:11.623Z",
   "children": [
     {
       "type": "entry",
@@ -74495,6 +74495,177 @@
       },
       "in-reply-to": "https://blog.tomayac.com/2026/05/30/your-mp3s-from-google-drive-in-music-assistant-on-home-assistant/",
       "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kai",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/464b7f5a32cfda388c8010cb75b8ad07d46b1eae0c65fc43e21ab4bbcb09be94.jpg",
+        "url": "https://mastodon.social/@Schweinepriester"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#favorited-by-108197209921559900",
+      "published": null,
+      "wm-received": "2026-08-13T15:59:35Z",
+      "wm-id": 2023262,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117083034786250397/108197209921559900",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "iamdtms",
+        "photo": "https://assets.toot.cafe/cache/accounts/avatars/109/825/233/735/739/401/original/1ae688cb1ed1528d.webp",
+        "url": "https://mas.to/@iamdtms"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#reblogged-by-109825233735739401",
+      "published": null,
+      "wm-received": "2026-08-12T18:23:04Z",
+      "wm-id": 2018769,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117083034786250397/109825233735739401",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthias Zöchling",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/ead615ec62dd8daf9419df05f75686984c21ddd74876236d8782e7f02b43bd3b.jpg",
+        "url": "https://mas.to/@CSSence"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#reblogged-by-109258950400364720",
+      "published": null,
+      "wm-received": "2026-08-12T17:46:52Z",
+      "wm-id": 2018545,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117083034786250397/109258950400364720",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Curtis Wilcox",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/0420c3d68553f90b79bc3a720f1602dddc548654d07adad891d1cd66432ae2ce.jpg",
+        "url": "https://c.im/@cwilcox808"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#reblogged-by-109529483948860003",
+      "published": null,
+      "wm-received": "2026-08-12T17:21:44Z",
+      "wm-id": 2018348,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117083034786250397/109529483948860003",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "An Cao",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/47a56fd34225479839e05303e2aeaa30f5df240d49abdc173ff875cfda98dbf1.jpg",
+        "url": "https://toot.cafe/@kcjpop"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#favorited-by-2199",
+      "published": null,
+      "wm-received": "2026-08-12T17:21:44Z",
+      "wm-id": 2018347,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117083034786250397/2199",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "kuki :unverified:",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/bbcccf14cb2340fca4dde17b1e33b1f7d6d267b188eee12d026e9812823ae162.png",
+        "url": "https://layer8.space/@kuki"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#favorited-by-109356125322618821",
+      "published": null,
+      "wm-received": "2026-08-12T15:45:33Z",
+      "wm-id": 2018037,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117083034786250397/109356125322618821",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Dave Rupert",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/5e8dddd6a99d3f3deaac5a2af59d9fb92bc8aacc40acc0d216b7be589725661d.jpg",
+        "url": "https://mastodon.social/@davatron5000"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#favorited-by-360",
+      "published": null,
+      "wm-received": "2026-08-12T15:16:04Z",
+      "wm-id": 2018034,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117083034786250397/360",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Patrick Brosset",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/3f01a406e262c5a71f408a5c8d9e33bd33dafdf0121ce29db6fb80337aad3c68.jpg",
+        "url": "https://mas.to/@patrickbrosset"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#reblogged-by-109306951179283334",
+      "published": null,
+      "wm-received": "2026-08-12T14:50:03Z",
+      "wm-id": 2018026,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117083034786250397/109306951179283334",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Patrick Brosset",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/3f01a406e262c5a71f408a5c8d9e33bd33dafdf0121ce29db6fb80337aad3c68.jpg",
+        "url": "https://mas.to/@patrickbrosset"
+      },
+      "url": "https://toot.cafe/@tomayac/117083034786250397#favorited-by-109306951179283334",
+      "published": null,
+      "wm-received": "2026-08-12T14:50:00Z",
+      "wm-id": 2018025,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117083034786250397/109306951179283334",
+      "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "like-of",
       "wm-private": false
     }
   ]
