@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import unionBy from 'lodash/unionBy.js';
 import metadata from './metadata.js';
 
@@ -38,11 +39,11 @@ function mergeWebmentions(a, b) {
 
 // Save combined webmentions in cache file
 function writeToCache(data) {
-  const dir = '_cache';
+  const dir = path.dirname(CACHE_FILE_PATH);
   const fileContent = JSON.stringify(data, null, 2);
   // Create cache folder if it doesn't exist already
   if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
+    fs.mkdirSync(dir, { recursive: true });
   }
   // Write data to cache json file
   fs.writeFile(CACHE_FILE_PATH, fileContent, (err) => {
@@ -74,9 +75,17 @@ export default async function () {
     console.log('>>> Checking for new webmentions...');
     const feed = await fetchWebmentions(cache.lastFetched);
     if (feed) {
+      const children = mergeWebmentions(cache, feed);
+      if (children.length === cache.children.length) {
+        // Nothing new. The cache is several megabytes, so don't rewrite all
+        // of it just to refresh a timestamp. Leaving `lastFetched` where it
+        // is only means the next fetch asks for a slightly wider window.
+        console.log('>>> no new webmentions, cache left as is');
+        return cache;
+      }
       const webmentions = {
         lastFetched: new Date().toISOString(),
-        children: mergeWebmentions(cache, feed),
+        children,
       };
       writeToCache(webmentions);
       return webmentions;
