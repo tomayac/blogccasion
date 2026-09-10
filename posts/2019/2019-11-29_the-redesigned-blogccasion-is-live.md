@@ -22,7 +22,7 @@ respectively I only wrote one post, but plenty of
 the
 [old blog](https://web.archive.org/web/20060214094329/http://blog.tomayac.de/index.php?date=2005-10-23&time=01:06:29&perma=Why+I+started+to+blo.html&):
 
-![The old Blogccasion](https://user-images.githubusercontent.com/145676/69877570-e1d4da80-12c2-11ea-8a5b-34615919751f.png)
+![The old Blogccasion](/images/69877570-e1d4da80-12c2-11ea-8a5b-34615919751f.png)
 
 One of the reasons why I blogged less was also my hand-rolled stack that the
 blog was built upon: A classic LAMP stack, consisting of Linux, Apache, MySQL,

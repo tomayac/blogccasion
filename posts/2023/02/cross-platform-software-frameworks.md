@@ -52,16 +52,11 @@ npm start
 
 ## Screenshots
 
-- Electron.js
-  ![](https://github.com/tomayac/cross-platform-software-frameworks/raw/main/screenshots/svgcode-electron.png)
-- NW.js
-  ![](https://github.com/tomayac/cross-platform-software-frameworks/raw/main/screenshots/svgcode-nw_js.png)
-- Tauri
-  ![](https://github.com/tomayac/cross-platform-software-frameworks/raw/main/screenshots/svgcode-tauri.png)
-- Neutralinojs
-  ![](https://github.com/tomayac/cross-platform-software-frameworks/raw/main/screenshots/svgcode-neutralinojs.png)
-- Gluon
-  ![](https://github.com/tomayac/cross-platform-software-frameworks/raw/main/screenshots/svgcode-gluon.png)
+- Electron.js ![](/images/svgcode-electron.png)
+- NW.js ![](/images/svgcode-nw_js.png)
+- Tauri ![](/images/svgcode-tauri.png)
+- Neutralinojs ![](/images/svgcode-neutralinojs.png)
+- Gluon ![](/images/svgcode-gluon.png)
 
 ## Issues
 
@@ -241,7 +236,7 @@ looks like it has the most developed toolchain, but when I ran
 `svgcode-electron.app` that only showed a white screen, despite the
 `electron-forge start` development app working mostly fine.
 
-![](https://github.com/tomayac/cross-platform-software-frameworks/raw/main/screenshots/svgcode-electron-app.png)
+![](/images/svgcode-electron-app.png)
 
 To build the apps, run the following command in each subfolder. (So far I have
 only worked on Electron.js.)

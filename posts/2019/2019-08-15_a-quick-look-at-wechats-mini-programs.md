@@ -466,7 +466,7 @@ wx.getSetting({
 });
 ```
 
-![The "My First Mini Program" app running in the WeChat DevTools](https://user-images.githubusercontent.com/145676/63084473-8cf79900-bf4b-11e9-8838-447688caf661.png)
+![The "My First Mini Program" app running in the WeChat DevTools](/images/63084473-8cf79900-bf4b-11e9-8838-447688caf661.png)
 
 #### Component Library
 
@@ -527,12 +527,12 @@ Page({
 });
 ```
 
-![WeChat `<map>` component sample running in WeChat DevTools](https://user-images.githubusercontent.com/145676/63084474-8d902f80-bf4b-11e9-9267-c69f4923e795.png)
+![WeChat `<map>` component sample running in WeChat DevTools](/images/63084474-8d902f80-bf4b-11e9-9267-c69f4923e795.png)
 
 And of course they have a
 [`<web-view>`](https://developers.weixin.qq.com/miniprogram/en/dev/component/web-view.html).
 
-![WeChat `<web-view>` component sample running in WeChat DevTools](https://user-images.githubusercontent.com/145676/63084476-8d902f80-bf4b-11e9-9cb5-d3a216a4d4af.png)
+![WeChat `<web-view>` component sample running in WeChat DevTools](/images/63084476-8d902f80-bf4b-11e9-9cb5-d3a216a4d4af.png)
 
 #### Inner Mechanics
 
@@ -546,7 +546,7 @@ CSS (of particular interest:
 and JavaScript (of particular interest:
 `/Applications/wechatwebdevtools.app/Contents/Resources/package.nw/js/vendor/index.js`).
 
-![Inspecting package contents of the WeChat DevTools](https://user-images.githubusercontent.com/145676/63084475-8d902f80-bf4b-11e9-954a-aff06f9b0e8d.png)
+![Inspecting package contents of the WeChat DevTools](/images/63084475-8d902f80-bf4b-11e9-954a-aff06f9b0e8d.png)
 
 Finally there is a local web server running that allows them to link from the
 online docs to local URLs like
