@@ -52,6 +52,9 @@ export default function (eleventyConfig) {
     return new Date().getFullYear();
   });
 
+  // Locale-independent ordering: `localeCompare` can vary with the ICU build.
+  const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+
   // The slug of a tag page. Slugified rather than just lowercased, so that
   // tags like "Cross-Origin Storage" don't end up as `cross-origin%20storage`.
   const tagSlug = (tag) => eleventyConfig.getFilter('slugify')(String(tag));
@@ -69,7 +72,7 @@ export default function (eleventyConfig) {
         to: `/tags/${tagSlug(tag)}/`,
       }))
       .filter(({ from, to }) => from !== to)
-      .sort((a, b) => a.from.localeCompare(b.from))
+      .sort((a, b) => cmp(a.from, b.from))
   );
 
   // Values the old blog's ViewByCategories.php could have been called with,
@@ -78,9 +81,14 @@ export default function (eleventyConfig) {
   // sensitive.
   eleventyConfig.addFilter('categoryMap', (tags) => {
     const seen = new Map();
-    for (const tag of tags || []) {
-      const slug = tagSlug(tag);
-      const name = String(tag);
+    // Sorted, because `collections.tagList` comes out of a Set and its order
+    // varies between builds. Unsorted output would make every deploy look
+    // like the server config had changed.
+    const sorted = [...(tags || [])]
+      .map(String)
+      .sort((a, b) => cmp(a.toLowerCase(), b.toLowerCase()) || cmp(a, b));
+    for (const name of sorted) {
+      const slug = tagSlug(name);
       for (const key of [name, name.toLowerCase(), name.toUpperCase()]) {
         if (!seen.has(key)) seen.set(key, slug);
       }
