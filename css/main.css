@@ -623,6 +623,73 @@ dark-mode-toggle {
   display: none;
 }
 
+/* The question box that replaces the search field when the browser can answer
+   questions itself. Pagefind's own result list stays, so the answer and the
+   matching posts appear together. */
+/* stylelint-disable-next-line selector-class-pattern */
+.ask-enabled .pagefind-ui__search-input {
+  display: none;
+}
+
+.ask {
+  margin-bottom: 1rem;
+}
+
+.ask-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ask-field {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: inherit;
+  background-color: var(--background-color);
+  border: 1px solid var(--pagefind-ui-border);
+  border-radius: 0.35rem;
+}
+
+.ask-submit {
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  color: var(--background-color);
+  cursor: pointer;
+  background-color: var(--pagefind-ui-primary);
+  border: 0;
+  border-radius: 0.35rem;
+}
+
+.ask-submit[disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.ask-status {
+  margin: 0.35rem 0;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.ask-question {
+  margin: 1rem 0 0.25rem;
+  font-weight: 700;
+}
+
+.ask-answer > :first-child {
+  margin-top: 0.25rem;
+}
+
+.ask-answer img {
+  max-width: 100%;
+}
+
+.ask-failed {
+  color: var(--pagefind-ui-primary);
+}
+
 /* Footnote text styling. */
 rt {
   background-color: hsl(0deg 0% 93%);

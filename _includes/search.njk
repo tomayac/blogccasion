@@ -6,10 +6,15 @@
     window.addEventListener('DOMContentLoaded', (event) => {
       const pagefindUI = new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false, translations: { placeholder: "Search posts…" } });
       document.querySelector('.pagefind-ui__search-input').type = 'search';
-      // Offer the search to agents that speak WebMCP.
+      // Offer the search to agents that speak WebMCP, then, if this browser
+      // can answer questions itself, let it use that same tool.
       if ('modelContext' in document) {
-        import('/js/webmcp.mjs').then(({ registerSearchTool }) => {
-          registerSearchTool(pagefindUI);
+        import('/js/webmcp.mjs').then(async ({ registerSearchTool }) => {
+          await registerSearchTool(pagefindUI);
+          if ('LanguageModel' in self) {
+            const { enhanceSearch } = await import('/js/ask.mjs');
+            await enhanceSearch(pagefindUI);
+          }
         });
       }
     });
