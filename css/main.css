@@ -631,6 +631,13 @@ dark-mode-toggle {
   display: none;
 }
 
+/* While deciding whether the ask box replaces the search field, keep the
+   field's space but not its pixels, so nothing flashes and nothing shifts. */
+/* stylelint-disable-next-line selector-class-pattern */
+.search-undecided .pagefind-ui__search-input {
+  visibility: hidden;
+}
+
 .ask {
   margin-bottom: 1rem;
 }

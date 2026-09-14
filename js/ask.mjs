@@ -5,18 +5,29 @@
 /**
  * Replaces the Pagefind search field with a question box, when the browser can
  * actually answer questions: the Prompt API present, its model already on the
- * device, and tool calling supported. The page's WebMCP tools are handed to
- * the model, so asking a question runs the same search the field would have,
- * and Pagefind's own result list still renders underneath.
+ * device, and tool calling supported.
+ *
+ * The model is handed the same search tools `webmcp.mjs` offers to visiting
+ * agents, but calls them directly rather than through WebMCP, so this works on
+ * browsers that have a model and no WebMCP at all. Asking a question therefore
+ * runs the search the field would have run, and Pagefind's own result list
+ * still renders underneath.
  *
  * Everything here is additive. If any of it is missing or fails, the Pagefind
  * field is left exactly as it was.
  */
 
-import {
-  EasyLanguageModel,
-  renderStreamingHTML,
-} from '/js/easy-language-model.js';
+import { createSearchTools } from '/js/search-tools.mjs';
+
+/**
+ * The language model wrapper, fetched on first use. Keeping it out of this
+ * module's imports matters twice over: the decision about which search control
+ * to show is not held up by ~90 kB of parser, and a reader who never asks
+ * anything never downloads it at all.
+ */
+let libraryPromise = null;
+const getLibrary = () =>
+  (libraryPromise ??= import('/js/easy-language-model.js'));
 
 /**
  * Whether this browser can run a tool-calling session right now.
@@ -38,69 +49,7 @@ const canAnswer = async () => {
   }
 };
 
-/**
- * A tool result is `{content: [...]}`, holding either `text` or an object
- * under `object` / `value` / `json`, or else `structuredContent`. Flatten
- * whichever it is into something the model can read.
- */
-const readResult = (raw) => {
-  let result = raw;
-  if (typeof result === 'string') {
-    try {
-      result = JSON.parse(result);
-    } catch {
-      return result;
-    }
-  }
-  if (!result || typeof result !== 'object') return String(result);
-  const parts = (result.content ?? []).map((part) =>
-    typeof part?.text === 'string'
-      ? part.text
-      : (part?.object ?? part?.value ?? part?.json ?? part)
-  );
-  const payload =
-    parts.length === 1
-      ? parts[0]
-      : parts.length
-        ? parts
-        : result.structuredContent;
-  const text =
-    typeof payload === 'string' ? payload : JSON.stringify(payload ?? result);
-  return result.isError ? `The tool reported an error: ${text}` : text;
-};
-
-/**
- * Chrome changed this contract during 155: builds up to 155.0.8050 wanted the
- * arguments as a JSON string, later ones want the object and reject a string.
- * Try the object, and switch for good if this build is an older one.
- */
-let passArgsAsString = false;
-const callTool = async (tool, args) => {
-  const payload = args ?? {};
-  if (!passArgsAsString) {
-    try {
-      return await document.modelContext.executeTool(tool, payload);
-    } catch (err) {
-      if (!/parse input arguments/i.test(err?.message ?? '')) throw err;
-      passArgsAsString = true;
-    }
-  }
-  return document.modelContext.executeTool(tool, JSON.stringify(payload));
-};
-
-const adaptTools = (discovered) =>
-  discovered.map((tool) => ({
-    name: tool.name,
-    description: tool.description,
-    // Older builds hand the schema over as a JSON string rather than an object.
-    inputSchema:
-      typeof tool.inputSchema === 'string'
-        ? JSON.parse(tool.inputSchema)
-        : tool.inputSchema,
-    execute: async (args) => readResult(await callTool(tool, args)),
-  }));
-
-const build = (toolCount) => {
+const build = () => {
   const form = document.createElement('form');
   form.className = 'ask';
 
@@ -129,7 +78,7 @@ const build = (toolCount) => {
   row.className = 'ask-row';
   row.append(field, submit);
   form.append(row, status, log);
-  return { form, field, submit, status, log, toolCount };
+  return { form, field, submit, status, log };
 };
 
 /**
@@ -142,11 +91,19 @@ const enhanceSearch = async (pagefindUI) => {
   if (!search || !pagefindField) return;
   if (!(await canAnswer())) return;
 
-  const discovered = await document.modelContext.getTools();
-  if (!discovered.length) return;
-  const tools = adaptTools(discovered);
+  // The model calls these directly, so the result is a plain value rather than
+  // anything WebMCP-shaped. JSON, because a model quotes data and paraphrases
+  // prose, and a URL is worth quoting exactly.
+  const tools = createSearchTools(pagefindUI).map(
+    ({ name, description, inputSchema, run }) => ({
+      name,
+      description,
+      inputSchema,
+      execute: async (args) => JSON.stringify(await run(args)),
+    })
+  );
 
-  const ui = build(tools.length);
+  const ui = build();
   search.prepend(ui.form);
   // Hides Pagefind's own field while leaving its result list visible.
   search.classList.add('ask-enabled');
@@ -160,6 +117,7 @@ const enhanceSearch = async (pagefindUI) => {
   let session;
   const getSession = async () => {
     // Created on the first question, so the Prompt API sees a user gesture.
+    const { EasyLanguageModel } = await getLibrary();
     session ??= await EasyLanguageModel.create({
       tools,
       // The reader gets progress, not plumbing: a failing tool is the model's
@@ -201,6 +159,7 @@ const enhanceSearch = async (pagefindUI) => {
 
     try {
       const model = await getSession();
+      const { renderStreamingHTML } = await getLibrary();
       await model
         .promptStreamingHTML(question)
         .pipeTo(renderStreamingHTML(answer));

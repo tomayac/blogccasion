@@ -4,18 +4,28 @@
 <search id="search"></search>
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
+      const search = document.querySelector('#search');
+      // Whether the ask box replaces the search field is only known after an
+      // async check, so hold the field back until then: the reader should
+      // never see one control appear and be swapped for another. Decided
+      // synchronously, and only when there is anything to decide.
+      const mayAsk = 'LanguageModel' in self;
+      if (mayAsk) {
+        search.classList.add('search-undecided');
+      }
+
       const pagefindUI = new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false, translations: { placeholder: "Search posts…" } });
       document.querySelector('.pagefind-ui__search-input').type = 'search';
-      // Offer the search to agents that speak WebMCP, then, if this browser
-      // can answer questions itself, let it use that same tool.
+
+      // Two independent features over the same search. Either can be missing.
       if ('modelContext' in document) {
-        import('/js/webmcp.mjs').then(async ({ registerSearchTool }) => {
-          await registerSearchTool(pagefindUI);
-          if ('LanguageModel' in self) {
-            const { enhanceSearch } = await import('/js/ask.mjs');
-            await enhanceSearch(pagefindUI);
-          }
-        });
+        import('/js/webmcp.mjs').then(({ registerTools }) => registerTools(pagefindUI));
+      }
+      if (mayAsk) {
+        import('/js/ask.mjs')
+          .then(({ enhanceSearch }) => enhanceSearch(pagefindUI))
+          .catch((error) => console.warn('Ask: unavailable.', error))
+          .finally(() => search.classList.remove('search-undecided'));
       }
     });
 </script>
