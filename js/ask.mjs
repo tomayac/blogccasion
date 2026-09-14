@@ -17,6 +17,7 @@
  * field is left exactly as it was.
  */
 
+import { announce } from '/js/ai-status.mjs';
 import { createSearchTools } from '/js/search-tools.mjs';
 
 /**
@@ -107,6 +108,7 @@ const enhanceSearch = async (pagefindUI) => {
   search.prepend(ui.form);
   // Hides Pagefind's own field while leaving its result list visible.
   search.classList.add('ask-enabled');
+  announce('prompt', true);
 
   let answer = null; // set while a turn is running
   const say = (text) => {
@@ -137,6 +139,7 @@ const enhanceSearch = async (pagefindUI) => {
     search.classList.remove('ask-enabled');
     ui.form.remove();
     ui.status.hidden = true;
+    announce('prompt', false);
     console.warn('Ask: falling back to the search field.', message);
   };
 

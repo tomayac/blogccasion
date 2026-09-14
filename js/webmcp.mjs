@@ -18,6 +18,7 @@
  * Callers are expected to have feature-detected `document.modelContext`.
  */
 
+import { announce } from '/js/ai-status.mjs';
 import { createSearchTools } from '/js/search-tools.mjs';
 
 /**
@@ -58,6 +59,7 @@ const asToolResult = async (run, args) => {
  * @param {object} pagefindUI The `PagefindUI` instance driving the page.
  */
 const registerTools = async (pagefindUI) => {
+  let registered = 0;
   for (const { name, description, inputSchema, run } of createSearchTools(
     pagefindUI
   )) {
@@ -68,10 +70,13 @@ const registerTools = async (pagefindUI) => {
         inputSchema,
         execute: (args) => asToolResult(run, args),
       });
+      registered++;
     } catch (err) {
       console.warn(`Could not register the WebMCP tool ${name}.`, err);
     }
   }
+  // Tell the footer, but only about tools an agent can really call.
+  announce('webmcp', registered > 0);
 };
 
 export { registerTools };
