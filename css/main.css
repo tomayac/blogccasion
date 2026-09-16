@@ -246,6 +246,7 @@ blockquote {
 blockquote::before {
   content: '“';
   color: var(--metadata-color);
+  font-family: sans-serif;
   font-size: 3.5rem;
   position: absolute;
   left: -2.5rem;
