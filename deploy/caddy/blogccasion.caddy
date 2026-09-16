@@ -89,10 +89,12 @@
 		# Pagefind's index shards and metadata carry a content hash.
 		~^/pagefind/(fragment|index)/ "public, max-age=31536000, immutable"
 		~^/pagefind/pagefind\.[^/]+\.pf_meta$ "public, max-age=31536000, immutable"
+		# Copies the build names after their contents (_11ty/hashAssets.js).
+		~^/(js|css|static|fonts)/.+\.[0-9a-f]{10}\.[^./]+$ "public, max-age=31536000, immutable"
 		# Feed readers poll; an hour is plenty.
 		/feed/feed.xml "public, max-age=3600"
-		# Stable names that change on deploy: short enough that a CSS or JS
-		# change shows up within the hour.
+		# The unhashed originals, which the pages no longer use but outside
+		# links may: short enough that a change shows up within the hour.
 		~\.(css|mjs|js)$ "public, max-age=3600"
 		# Icons, SVGs, and fonts under stable names rarely change.
 		~\.(png|jpe?g|gif|svg|webp|avif|ico|woff2?|ttf|otf|eot)$ "public, max-age=604800"

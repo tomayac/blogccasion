@@ -69,6 +69,28 @@ server's SSH key has a passphrase, which is what used to make every deploy
 prompt for it. It also means the server cannot push, which is the right
 capability for a deploy target.
 
+## Content-hashed assets
+
+`npm run build` ends with `_11ty/hashAssets.js`, which gives every file under
+`static/`, `fonts/`, `css/`, and `js/` a copy named after its contents
+(`main.css` -> `main.dab7526dfb.css`) and points the pages at the copies. Caddy
+caches those for a year, so an edit reaches readers on their next page load
+without anything being served stale.
+
+- HTML, the web app manifest, CSS `url()`s, and static-file paths in JS are
+  rewritten to the hashed names. `<pre>` and `<code>` blocks in posts are not.
+- Module imports are **not** rewritten, because the modules import each other in
+  a cycle. Every page carries an import map instead, which resolves
+  `/js/script.mjs` (and relative imports) to the hashed file.
+- The unhashed originals are still published, for outside links, with an hour of
+  caching.
+- A deploy keeps hashed files that dropped out of the build for a week, so a
+  page loaded before the deploy can still lazily import the modules it knows,
+  then prunes them.
+
+Reference assets by their normal paths in templates, CSS, and JS; the hashing
+happens only in `_site`. `npm start` serves the unhashed files.
+
 ## Caddy
 
 The blog's share of the Caddy config. The live files are root-owned, so

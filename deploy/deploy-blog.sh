@@ -165,8 +165,17 @@ fi
 # a second.
 # `caddy/` holds generated server config, not site content: keep it out of the
 # published tree so it is not downloadable.
+# Content-hashed assets (`main.0123456789.css`, see _11ty/hashAssets.js) that
+# this build no longer has are protected from the delete: a page loaded before
+# the deploy still asks for them, for example when it lazily imports a module.
+# They are pruned a week later, below.
+hex='[0-9a-f]'
+hashed_glob="*.$hex$hex$hex$hex$hex$hex$hex$hex$hex$hex.*"
 published=1
-rsync -a --delete-after --delay-updates --exclude '/caddy/' "$REPO/_site/" "$WEBROOT/" \
+rsync -a --delete-after --delay-updates --exclude '/caddy/' \
+  --filter "P /js/**$hashed_glob" --filter "P /css/**$hashed_glob" \
+  --filter "P /static/**$hashed_glob" --filter "P /fonts/**$hashed_glob" \
+  "$REPO/_site/" "$WEBROOT/" \
   || die "rsync to $WEBROOT failed; the live site may be partially updated"
 [ -s "$WEBROOT/index.html" ] || die "web root is missing index.html after rsync"
 say "published ${remote_sha:0:9} to $WEBROOT ($pages pages)"
@@ -179,6 +188,19 @@ live="$(live_sha)"
   || die "$SITE_URL/$VERSION_FILE serves '${live:-nothing}', expected $remote_sha; does Caddy's root still point at $WEBROOT?"
 echo "$remote_sha" >"$STATE"
 say "verified $SITE_URL serves ${remote_sha:0:9}"
+
+# Hashed assets that left the build over a week ago. rsync gives files that
+# are still in the build a fresh mtime on every deploy, so age alone would
+# work, but checking the build too means a long pause between deploys can
+# never remove anything the site still uses.
+pruned=0
+while IFS= read -r -d '' old; do
+  [ -e "$REPO/_site/${old#"$WEBROOT"/}" ] && continue
+  rm -f "$old" && pruned=$((pruned + 1))
+done < <(find "$WEBROOT/js" "$WEBROOT/css" "$WEBROOT/static" "$WEBROOT/fonts" \
+  -type f -mtime +7 -regextype posix-extended \
+  -regex '.*\.[0-9a-f]{10}\.[^./]+' -print0 2>/dev/null || true)
+[ "$pruned" -eq 0 ] || say "pruned $pruned hashed assets no longer in the build"
 
 # The build regenerates Caddy's map files. Installing them needs root, which
 # this script does not have, so leave them ready and say so. Mailed once per
