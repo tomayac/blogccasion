@@ -1,5 +1,5 @@
 (blogccasion) {
-	root * /var/www/html/blogccasion
+	root * /var/www/blog
 	encode zstd gzip
 
 	# Serve /feed/ as feed.xml (Apache: DirectoryIndex feed.xml).

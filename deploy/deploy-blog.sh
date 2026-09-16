@@ -2,8 +2,8 @@
 #
 # Deploy blog.tomayac.com from GitHub, but only when there is something new.
 #
-# Safe to run every few minutes from cron: the common case is one `git fetch`
-# and an early exit. Nothing touches the live site unless a fresh build has
+# Safe to run every few minutes from cron: the common case is one `git fetch`,
+# one request to the live site, and an early exit. Nothing touches the live site unless a fresh build has
 # been produced and sanity-checked first, so a failure anywhere leaves the
 # currently published site exactly as it was.
 #
@@ -13,12 +13,14 @@
 #
 # Usage:  deploy-blog.sh [--force] [--dry-run]
 #   --force    rebuild and republish even if the commit is already deployed
-#   --dry-run  do everything except swapping the new build into the web root
+#   --dry-run  do everything except copying the new build into the web root
 
 set -Eeuo pipefail
 
 REPO="${REPO:-$HOME/Documents/blogccasion}"
-WEBROOT="${WEBROOT:-/var/www/html/blogccasion}"
+WEBROOT="${WEBROOT:-/var/www/blog}" # must match `root` in Caddy's (blogccasion) snippet
+SITE_URL="${SITE_URL:-https://blog.tomayac.com}"
+VERSION_FILE="deploy-version.txt" # published with the commit hash, to check what is live
 BRANCH="${BRANCH:-main}"
 LOG="${LOG:-$HOME/Documents/deploy-blog.log}"
 STATE="${STATE:-$HOME/.cache/deploy-blog.sha}"
@@ -66,7 +68,7 @@ die() {
   if [ ! -f "$FAILMARK" ]; then
     printf '%s\n%s\n' "$(date -u '+%Y-%m-%d %H:%M:%SZ')" "$*" >"$FAILMARK"
     mail_out "blog deploy FAILED on $(hostname -s)" \
-"The blog deploy failed and the live site was left untouched.
+"The blog deploy failed. $([ "$published" -eq 1 ] && echo "The build was already copied to $WEBROOT." || echo "The live site was left untouched.")
 
   what:   $*
   when:   $(date -u '+%Y-%m-%d %H:%M:%SZ')
@@ -85,7 +87,7 @@ Retries every 5 minutes. You will get one more mail when it recovers."
 }
 
 published=0 # so the abort message can tell you whether the site changed
-trap 's=$?; [ $s -ne 0 ] && say "ABORTED at line $LINENO (exit $s); $([ "$published" -eq 1 ] && echo "site was already published" || echo "live site untouched")"; exit $s' ERR
+trap 's=$?; [ $s -ne 0 ] && say "ABORTED at line $LINENO (exit $s); $([ "$published" -eq 1 ] && echo "site was already (partly) published" || echo "live site untouched")"; exit $s' ERR
 
 # Keep the log from growing without bound.
 if [ -f "$LOG" ] && [ "$(wc -c <"$LOG")" -gt 2000000 ]; then
@@ -105,6 +107,8 @@ NVM_BIN="$(ls -d "$HOME"/.nvm/versions/node/*/bin 2>/dev/null | sort -V | tail -
 export PATH
 command -v node >/dev/null || die "node not found (looked in $HOME/.nvm/versions/node/*/bin)"
 command -v rsync >/dev/null || die "rsync not found"
+command -v curl >/dev/null || die "curl not found"
+[ -d "$WEBROOT" ] && [ -w "$WEBROOT" ] || die "web root $WEBROOT is missing or not writable"
 
 cd "$REPO" || die "repo not found at $REPO"
 
@@ -113,9 +117,17 @@ git fetch --quiet --prune origin "$BRANCH" || die "git fetch failed"
 remote_sha="$(git rev-parse "origin/$BRANCH")"
 deployed_sha="$(cat "$STATE" 2>/dev/null || echo none)"
 
+# What the site actually serves, as opposed to what this script last wrote.
+# They differ when the web server's root has moved away from $WEBROOT.
+live_sha() { curl -fsS --max-time 20 "$SITE_URL/$VERSION_FILE?t=$(date +%s)" 2>/dev/null | head -c 64 || true; }
+live="$(live_sha)"
+
 if [ "$FORCE" -eq 0 ] && [ "$deployed_sha" = "$remote_sha" ] && [ -f "$WEBROOT/index.html" ]; then
-  log "up to date at ${remote_sha:0:9}; nothing to do"
-  exit 0
+  if [ "$live" = "$remote_sha" ]; then
+    log "up to date at ${remote_sha:0:9}; nothing to do"
+    exit 0
+  fi
+  say "last published ${remote_sha:0:9}, but $SITE_URL serves '${live:0:9}'; publishing again"
 fi
 
 say "deploying ${remote_sha:0:9} (was ${deployed_sha:0:9})"
@@ -137,6 +149,7 @@ npm run build >>"$LOG" 2>&1 || die "npm run build failed (see $LOG)"
 pages="$(find "$REPO/_site" -name '*.html' | wc -l)"
 [ "$pages" -ge "$MIN_PAGES" ] || die "only $pages HTML files built, expected >= $MIN_PAGES"
 say "build ok: $pages HTML files"
+printf '%s\n' "$remote_sha" >"$REPO/_site/$VERSION_FILE"
 
 if [ "$DRY_RUN" -eq 1 ]; then
   say "dry run: not publishing"
@@ -144,29 +157,28 @@ if [ "$DRY_RUN" -eq 1 ]; then
 fi
 
 # --- Publish ----------------------------------------------------------------
-# Stage next to the live directory (same filesystem), then swap with two
-# renames so the site is never half-written and never absent for longer than
-# it takes to rename two directories.
-staging="$WEBROOT.staging"
-previous="$WEBROOT.previous"
-rm -rf "$staging"
+# Copy straight into the web root. Swapping in a staged directory by rename
+# would be atomic, but needs write access to the root-owned parent (/var/www).
+# `--delay-updates` writes every changed file to a temporary name first and
+# renames them all at the end, and `--delete-after` removes stale files only
+# once the new ones are in place, so the half-updated window is a fraction of
+# a second.
 # `caddy/` holds generated server config, not site content: keep it out of the
 # published tree so it is not downloadable.
-rsync -a --delete --exclude '/caddy/' "$REPO/_site/" "$staging/" || die "rsync to staging failed"
-[ -s "$staging/index.html" ] || die "staging copy is missing index.html"
-
-rm -rf "$previous"
-if [ -d "$WEBROOT" ]; then mv "$WEBROOT" "$previous"; fi
-mv "$staging" "$WEBROOT" || {
-  # Put the old site back rather than leaving nothing served.
-  [ -d "$previous" ] && mv "$previous" "$WEBROOT"
-  die "swap failed; rolled back"
-}
-rm -rf "$previous"
-
-echo "$remote_sha" >"$STATE"
 published=1
+rsync -a --delete-after --delay-updates --exclude '/caddy/' "$REPO/_site/" "$WEBROOT/" \
+  || die "rsync to $WEBROOT failed; the live site may be partially updated"
+[ -s "$WEBROOT/index.html" ] || die "web root is missing index.html after rsync"
 say "published ${remote_sha:0:9} to $WEBROOT ($pages pages)"
+
+# Make sure the site now serves this commit. Catches the web server's root
+# pointing somewhere other than $WEBROOT, which would otherwise look like a
+# successful deploy.
+live="$(live_sha)"
+[ "$live" = "$remote_sha" ] \
+  || die "$SITE_URL/$VERSION_FILE serves '${live:-nothing}', expected $remote_sha; does Caddy's root still point at $WEBROOT?"
+echo "$remote_sha" >"$STATE"
+say "verified $SITE_URL serves ${remote_sha:0:9}"
 
 # The build regenerates Caddy's map files. Installing them needs root, which
 # this script does not have, so leave them ready and say so. Mailed once per

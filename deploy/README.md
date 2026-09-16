@@ -14,10 +14,17 @@ The blog is built and published on the server that hosts it
 It fetches `origin/main`, compares it against the last commit it actually
 published, and exits in about half a second when there is nothing new — which is
 almost always. When something has changed it resets the checkout, runs `npm ci`
-and `npm run build`, checks that the build looks sane, and only then swaps it
-into `/var/www/html/blogccasion`.
+and `npm run build`, checks that the build looks sane, and only then copies it
+into `/var/www/blog`, the `root` of the `(blogccasion)` Caddy snippet.
 
-If anything fails, the live site is left exactly as it was.
+If anything fails before that copy, the live site is left exactly as it was.
+
+After publishing, it fetches `https://blog.tomayac.com/deploy-version.txt` and
+fails (and mails) unless the site serves the commit it just built. Every
+otherwise idle run makes the same check, so if the web server's `root` ever
+moves away from the script's `WEBROOT` again, the next run notices instead of
+reporting success while the live site stays stale. The two must be changed
+together.
 
 Run it by hand with `~/bin/deploy-blog.sh --force`, or `--dry-run` to build
 without publishing.
