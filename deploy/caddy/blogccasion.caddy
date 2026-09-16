@@ -73,30 +73,36 @@
 	# Enable PHP (collect.php / feed.php / proxy.php).
 	php_fastcgi unix//run/php/php-fpm.sock
 
-	# CORS + cache for the syndication feed.
+	# CORS for the syndication feed.
 	@feed path /feed/feed.xml
-	header @feed {
-		Access-Control-Allow-Origin "*"
-		Cache-Control "public, max-age=3600"
-	}
+	header @feed Access-Control-Allow-Origin "*"
 
-	# Caching (Apache mod_expires).
-	@images {
-		path_regexp images \.(png|jpe?g|gif|svg|webp|avif|ico)$
+	# --- Caching ----------------------------------------------------------
+	# First match wins. Only files whose names change with their contents are
+	# kept forever. Everything else keeps its name across deploys, so pinning
+	# it for a year (as a rule by extension did) left an edited main.css stale
+	# for a year. Caddy sends ETag and Last-Modified, so `no-cache` costs a
+	# 304 per request, not a download.
+	map {path} {blog_cache} {
+		# eleventy-img output: the name is a hash of source and options.
+		~^/images/ "public, max-age=31536000, immutable"
+		# Pagefind's index shards and metadata carry a content hash.
+		~^/pagefind/(fragment|index)/ "public, max-age=31536000, immutable"
+		~^/pagefind/pagefind\.[^/]+\.pf_meta$ "public, max-age=31536000, immutable"
+		# Feed readers poll; an hour is plenty.
+		/feed/feed.xml "public, max-age=3600"
+		# Stable names that change on deploy: short enough that a CSS or JS
+		# change shows up within the hour.
+		~\.(css|mjs|js)$ "public, max-age=3600"
+		# Icons, SVGs, and fonts under stable names rarely change.
+		~\.(png|jpe?g|gif|svg|webp|avif|ico|woff2?|ttf|otf|eot)$ "public, max-age=604800"
+		# HTML, the feed index, pagefind.js and its entry JSON, sitemap, text:
+		# always revalidate, so a deploy is visible on the next load.
+		default "no-cache"
 	}
-	header @images Cache-Control "public, max-age=31536000, immutable"
-	@css_js {
-		path_regexp css_js \.(css|mjs|js)$
-	}
-	header @css_js Cache-Control "public, max-age=31536000, immutable"
-	@fonts {
-		path_regexp fonts \.(woff|woff2|ttf|otf|eot)$
-	}
-	header @fonts Cache-Control "public, max-age=31536000, immutable"
-	@other_static {
-		path_regexp other_static \.(txt|html|json|xml|webmanifest)$
-	}
-	header @other_static Cache-Control "public, max-age=3600"
+	# `?` only sets it if the handler did not, so the PHP endpoints keep
+	# control of their own caching.
+	header ?Cache-Control {blog_cache}
 
 	# Apache: ErrorDocument 404 /404.html
 	handle_errors {
