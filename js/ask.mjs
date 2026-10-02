@@ -33,13 +33,17 @@ const getLibrary = () =>
 /**
  * Whether this browser can run a tool-calling session right now.
  *
- * `tool-call` is only a member of `LanguageModelMessageType` in builds that
- * support tool use, so an unsupported build rejects it the way it rejects any
- * unknown enum value. Requiring `available` rather than `downloadable` keeps
- * the search field in place instead of trading it for a multi-gigabyte
- * download the reader did not ask for.
+ * `LanguageModelToolCall` is only exposed when tool use is enabled. Builds
+ * without it can still report the model as `available` for a `tool-call`
+ * input, and only refuse once a session is created with `tools`, so the
+ * interface check comes first. Requiring `available` keeps the search field in
+ * place when the alternative is a multi-gigabyte download the reader did not
+ * ask for.
  */
 const canAnswer = async () => {
+  if (!('LanguageModel' in self) || !('LanguageModelToolCall' in self)) {
+    return false;
+  }
   try {
     const availability = await LanguageModel.availability({
       expectedInputs: [{ type: 'tool-call' }],
@@ -78,7 +82,7 @@ const build = () => {
   const row = document.createElement('div');
   row.className = 'ask-row';
   row.append(field, submit);
-  form.append(row, status, log);
+  form.append(row, status);
   return { form, field, submit, status, log };
 };
 
@@ -106,6 +110,10 @@ const enhanceSearch = async (pagefindUI) => {
 
   const ui = build();
   search.prepend(ui.form);
+  // The answers go below Pagefind's result list. The results appear as soon as
+  // the model searches, and an answer streaming in underneath them only grows
+  // downward, so it never pushes them around.
+  search.append(ui.log);
   // Hides Pagefind's own field while leaving its result list visible.
   search.classList.add('ask-enabled');
   announce('prompt', true);
@@ -138,6 +146,7 @@ const enhanceSearch = async (pagefindUI) => {
   const standDown = (message) => {
     search.classList.remove('ask-enabled');
     ui.form.remove();
+    ui.log.remove();
     ui.status.hidden = true;
     announce('prompt', false);
     console.warn('Ask: falling back to the search field.', message);
@@ -158,7 +167,8 @@ const enhanceSearch = async (pagefindUI) => {
     answer = document.createElement('div');
     answer.className = 'ask-answer';
     entry.append(asked, answer);
-    ui.log.prepend(entry);
+    // Only the latest answer is shown, matching the one result list above it.
+    ui.log.replaceChildren(entry);
 
     try {
       const model = await getSession();
