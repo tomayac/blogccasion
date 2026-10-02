@@ -535,6 +535,11 @@ dark-mode-toggle {
 }
 
 .lcp-link {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
   overflow-x: hidden;
   display: inline-block;
   vertical-align: bottom;

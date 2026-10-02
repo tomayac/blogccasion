@@ -13,7 +13,10 @@ export const render = (entry) => {
           .exec(entry.element.outerHTML)[0]
           .replace(/</, '')}`;
         $('.lcp-link').onclick = function () {
-          entry.element.classList.toggle('largest-contentful-paint');
+          const highlighted = entry.element.classList.toggle(
+            'largest-contentful-paint'
+          );
+          this.setAttribute('aria-pressed', highlighted);
         };
         $('.lcp-time').textContent = (entry.value / 1000).toFixed(3);
         break;
