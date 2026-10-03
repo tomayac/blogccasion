@@ -84,6 +84,11 @@ without anything being served stale.
   `/js/script.mjs` (and relative imports) to the hashed file.
 - The unhashed originals are still published, for outside links, with an hour of
   caching.
+- Pagefind writes its files after that, so `_11ty/hashPagefind.js` runs last and
+  does the same for `/pagefind/pagefind.js`: it adds a hashed copy to the import
+  map. Since the hashed name hides the bundle location from Pagefind, the search
+  UI and `js/search-tools.mjs` pass `basePath: '/pagefind/'`. The rest of
+  `/pagefind/` either carries a hash already or must be revalidated.
 - A deploy keeps hashed files that dropped out of the build for a week, so a
   page loaded before the deploy can still lazily import the modules it knows,
   then prunes them.

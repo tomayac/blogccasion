@@ -34,6 +34,9 @@ const getPagefind = () => {
   // built site, not while running `npm run watch`.
   pagefindPromise ??= import('/pagefind/pagefind.js')
     .then(async (pagefind) => {
+      // The import map serves a hashed copy (_11ty/hashPagefind.js), whose
+      // name Pagefind cannot derive its bundle location from.
+      await pagefind.options({ basePath: '/pagefind/' });
       await pagefind.init();
       return pagefind;
     })
