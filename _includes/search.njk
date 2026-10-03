@@ -1,6 +1,9 @@
 <h2>Search</h2>
 
-<script src="/pagefind/pagefind-ui.js"></script>
+<!-- Deferred, so it does not hold up rendering the rest of the page. The
+     script below waits for DOMContentLoaded, which deferred scripts run
+     before. -->
+<script defer src="/pagefind/pagefind-ui.js"></script>
 <search id="search"></search>
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {

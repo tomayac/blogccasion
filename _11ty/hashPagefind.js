@@ -131,8 +131,9 @@ const uiName = await writeHashed(
 
 const ENTRY_URL = '/pagefind/pagefind.js';
 const hashedUrl = `/pagefind/${pagefindName}`;
-const UI_SCRIPT = '<script src="/pagefind/pagefind-ui.js">';
-const hashedUiScript = `<script src="/pagefind/${uiName}">`;
+// Matches the attribute alone, so the tag can carry others, like `defer`.
+const UI_SRC = 'src="/pagefind/pagefind-ui.js"';
+const hashedUiSrc = `src="/pagefind/${uiName}"`;
 
 // hashAssets.js writes the map right after <meta charset>, so the first match
 // is it. Posts that show an import map or a script tag in a code sample have
@@ -151,7 +152,7 @@ for (const path of pages) {
   const tag = `<script type="importmap">${JSON.stringify(map)}</script>`;
   const result = text
     .replace(IMPORT_MAP, () => tag)
-    .replaceAll(UI_SCRIPT, hashedUiScript);
+    .replaceAll(UI_SRC, hashedUiSrc);
   if (result !== text) await writeFile(path, result);
   mapped++;
 }
@@ -164,7 +165,7 @@ if (!home.includes(`"${ENTRY_URL}":"${hashedUrl}"`)) {
     `_site/index.html did not get ${hashedUrl} in its import map`
   );
 }
-if (!home.includes(hashedUiScript)) {
+if (!home.includes(hashedUiSrc)) {
   throw new Error(`_site/index.html does not load /pagefind/${uiName}`);
 }
 
