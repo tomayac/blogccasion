@@ -35,8 +35,14 @@ const getPagefind = () => {
   pagefindPromise ??= import('/pagefind/pagefind.js')
     .then(async (pagefind) => {
       // The import map serves a hashed copy (_11ty/hashPagefind.js), whose
-      // name Pagefind cannot derive its bundle location from.
-      await pagefind.options({ basePath: '/pagefind/' });
+      // name Pagefind cannot derive its bundle location from. Without a
+      // `metaCacheTag`, Pagefind appends `?ts=${Date.now()}` to its entry
+      // JSON, which would defeat caching the hashed copy. The name changes
+      // with the contents, so a constant tag is enough.
+      await pagefind.options({
+        basePath: '/pagefind/',
+        metaCacheTag: 'hashed',
+      });
       await pagefind.init();
       return pagefind;
     })

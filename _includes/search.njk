@@ -14,8 +14,9 @@
         search.classList.add('search-undecided');
       }
 
-      // basePath: pagefind.js is loaded under a hashed name (_11ty/hashPagefind.js).
-      const pagefindUI = new PagefindUI({ element: "#search", basePath: "/pagefind/", showSubResults: true, showImages: false, resetStyles: false, translations: { placeholder: "Search posts…" } });
+      // basePath and metaCacheTag: Pagefind is loaded under hashed names
+      // (_11ty/hashPagefind.js). See js/search-tools.mjs.
+      const pagefindUI = new PagefindUI({ element: "#search", basePath: "/pagefind/", metaCacheTag: "hashed", showSubResults: true, showImages: false, resetStyles: false, translations: { placeholder: "Search posts…" } });
       document.querySelector('.pagefind-ui__search-input').type = 'search';
 
       // Two independent features over the same search. Either can be missing.

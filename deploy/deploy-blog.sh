@@ -166,17 +166,19 @@ fi
 # `caddy/` holds generated server config, not site content: keep it out of the
 # published tree so it is not downloadable.
 # Content-hashed assets (`main.0123456789.css`, see _11ty/hashAssets.js and
-# _11ty/hashPagefind.js) that
-# this build no longer has are protected from the delete: a page loaded before
-# the deploy still asks for them, for example when it lazily imports a module.
-# They are pruned a week later, below.
+# _11ty/hashPagefind.js) that this build no longer has are protected from the
+# delete: a page loaded before the deploy still asks for them, for example when
+# it lazily imports a module. That includes Pagefind's index shards and
+# metadata, which its hashed entry JSON names, so search keeps working on a
+# page that loaded the previous index. They are pruned a week later, below.
 hex='[0-9a-f]'
 hashed_glob="*.$hex$hex$hex$hex$hex$hex$hex$hex$hex$hex.*"
 published=1
 rsync -a --delete-after --delay-updates --exclude '/caddy/' \
   --filter "P /js/**$hashed_glob" --filter "P /css/**$hashed_glob" \
   --filter "P /static/**$hashed_glob" --filter "P /fonts/**$hashed_glob" \
-  --filter "P /pagefind/pagefind.$hex$hex$hex$hex$hex$hex$hex$hex$hex$hex.js" \
+  --filter "P /pagefind/$hashed_glob" --filter "P /pagefind/*.pf_meta" \
+  --filter "P /pagefind/fragment/**" --filter "P /pagefind/index/**" \
   "$REPO/_site/" "$WEBROOT/" \
   || die "rsync to $WEBROOT failed; the live site may be partially updated"
 [ -s "$WEBROOT/index.html" ] || die "web root is missing index.html after rsync"
@@ -201,7 +203,7 @@ while IFS= read -r -d '' old; do
   rm -f "$old" && pruned=$((pruned + 1))
 done < <(find "$WEBROOT/js" "$WEBROOT/css" "$WEBROOT/static" "$WEBROOT/fonts" \
   "$WEBROOT/pagefind" -type f -mtime +7 -regextype posix-extended \
-  -regex '.*/(js|css|static|fonts)/.*\.[0-9a-f]{10}\.[^./]+|.*/pagefind/pagefind\.[0-9a-f]{10}\.js' \
+  -regex '.*/(js|css|static|fonts)/.*\.[0-9a-f]{10}\.[^./]+|.*/pagefind/([^/]+\.[0-9a-f]{10}\.[^./]+|[^/]+\.pf_meta|(fragment|index)/.+)' \
   -print0 2>/dev/null || true)
 [ "$pruned" -eq 0 ] || say "pruned $pruned hashed assets no longer in the build"
 

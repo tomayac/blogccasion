@@ -85,10 +85,15 @@ without anything being served stale.
 - The unhashed originals are still published, for outside links, with an hour of
   caching.
 - Pagefind writes its files after that, so `_11ty/hashPagefind.js` runs last and
-  does the same for `/pagefind/pagefind.js`: it adds a hashed copy to the import
-  map. Since the hashed name hides the bundle location from Pagefind, the search
-  UI and `js/search-tools.mjs` pass `basePath: '/pagefind/'`. The rest of
-  `/pagefind/` either carries a hash already or must be revalidated.
+  hashes the Pagefind files the site loads: `pagefind.js`, `pagefind-worker.js`,
+  `pagefind-entry.json`, `pagefind-ui.js`, and the WebAssembly. They name each
+  other, so each hashed copy points at the hashed copies of what it loads.
+  `pagefind.js` goes into the import map, and the pages load the hashed
+  `pagefind-ui.js`. Since the hashed name hides the bundle location from
+  Pagefind, the search UI and `js/search-tools.mjs` pass
+  `basePath: '/pagefind/'`. The index shards and metadata carry Pagefind's own
+  hash. The rewrites match strings in Pagefind's generated code, so the build
+  fails if a Pagefind upgrade changes them.
 - A deploy keeps hashed files that dropped out of the build for a week, so a
   page loaded before the deploy can still lazily import the modules it knows,
   then prunes them.
