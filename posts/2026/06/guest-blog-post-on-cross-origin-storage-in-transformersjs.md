@@ -13,7 +13,7 @@ I'm very excited to share a guest post I wrote for the Hugging Face 🤗 blog! T
 post is called
 👉&nbsp;[Experimenting with the proposed Cross-Origin Storage API in Transformers.js](https://huggingface.co/blog/cross-origin-storage)&nbsp;👈!
 This proposed new browser API,
-`navigator.crossOriginStorage.requestFileHandle(hash)`, has the potential of
+`navigator.crossOriginStorage.getFileHandle(hash)`, has the potential of
 revolutionizing the Web, a little bit at least. Learn more by reading the
 [Explainer for the Cross-Origin Storage (COS) API](https://github.com/WICG/cross-origin-storage).
 
@@ -36,7 +36,7 @@ const hash = {
 };
 
 try {
-  const handle = await navigator.crossOriginStorage.requestFileHandle(hash);
+  const handle = await navigator.crossOriginStorage.getFileHandle(hash);
   // Cache hit! Get the file as a Blob and use it directly.
   const fileBlob = await handle.getFile();
 } catch {
@@ -44,7 +44,7 @@ try {
   const fileBlob = await fetch(
     'https://cdn.jsdelivr.net/.../ort-wasm-simd-threaded.asyncify.wasm'
   ).then((r) => r.blob());
-  const handle = await navigator.crossOriginStorage.requestFileHandle(hash, {
+  const handle = await navigator.crossOriginStorage.getFileHandle(hash, {
     create: true,
     origins: '*',
   });
@@ -53,5 +53,9 @@ try {
   await writableStream.close();
 }
 ```
+
+**Update:** The API's entry point has since been renamed from
+`requestFileHandle()` to `getFileHandle()`, and I've updated the code in this
+post to match. The Hugging Face blog post still uses the old name.
 
 ![The Cross-Origin Storage API logo: a stylized walking person, as typically encountered on crosswalk signs.](/images/cos.svg)
