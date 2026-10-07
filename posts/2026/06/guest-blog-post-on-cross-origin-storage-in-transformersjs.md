@@ -54,8 +54,4 @@ try {
 }
 ```
 
-**Update:** The API's entry point has since been renamed from
-`requestFileHandle()` to `getFileHandle()`, and I've updated the code in this
-post to match. The Hugging Face blog post still uses the old name.
-
 ![The Cross-Origin Storage API logo: a stylized walking person, as typically encountered on crosswalk signs.](/images/cos.svg)
