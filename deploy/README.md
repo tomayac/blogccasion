@@ -13,8 +13,8 @@ The blog is built and published on the server that hosts it
 
 It fetches `origin/main`, compares it against the last commit it actually
 published, and exits in about half a second when there is nothing new — which is
-almost always. When something has changed it resets the checkout, runs `npm ci`
-and `npm run build`, checks that the build looks sane, and only then copies it
+almost always. When something has changed it resets the checkout, runs
+`pnpm install --frozen-lockfile` and `pnpm run build`, checks that the build looks sane, and only then copies it
 into `/var/www/blog`, the `root` of the `(blogccasion)` Caddy snippet.
 
 If anything fails before that copy, the live site is left exactly as it was.
@@ -28,6 +28,10 @@ together.
 
 Run it by hand with `~/bin/deploy-blog.sh --force`, or `--dry-run` to build
 without publishing.
+
+The script uses the highest Node installed with nvm, and expects pnpm to be
+installed into that same Node. After installing a new Node version, run
+`npm install -g pnpm` with it, or the next deploy fails with "pnpm not found".
 
 ## Why the script lives outside the repo
 
@@ -165,8 +169,8 @@ config if validation fails.
 `update_blog.sh` was the old manual deploy. It has no error handling — a failed
 build still published — it deleted the live directory before the replacement
 existed, and `npm i pagefind @pagefind/linux-x64` dirtied `package.json` on
-every run, which is what the `git stash` line existed to work around. `npm ci`
-resolves the Linux binary from the lockfile on its own.
+every run, which is what the `git stash` line existed to work around. The
+lockfile resolves the Linux binary on its own.
 
 `htaccess.njk` and `feed/htaccess.njk` were Apache config. The server has run
 Caddy for a while, so they did nothing except get published as

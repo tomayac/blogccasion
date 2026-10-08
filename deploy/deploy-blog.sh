@@ -106,6 +106,9 @@ NVM_BIN="$(ls -d "$HOME"/.nvm/versions/node/*/bin 2>/dev/null | sort -V | tail -
 [ -n "$NVM_BIN" ] && PATH="$NVM_BIN:$PATH"
 export PATH
 command -v node >/dev/null || die "node not found (looked in $HOME/.nvm/versions/node/*/bin)"
+# Installed into that same Node with `npm install -g pnpm`, so installing a
+# newer Node means installing pnpm into it again.
+command -v pnpm >/dev/null || die "pnpm not found in $NVM_BIN (npm install -g pnpm)"
 command -v rsync >/dev/null || die "rsync not found"
 command -v curl >/dev/null || die "curl not found"
 [ -d "$WEBROOT" ] && [ -w "$WEBROOT" ] || die "web root $WEBROOT is missing or not writable"
@@ -138,9 +141,12 @@ say "deploying ${remote_sha:0:9} (was ${deployed_sha:0:9})"
 git reset --quiet --hard "origin/$BRANCH" || die "git reset failed"
 git clean -qfd || die "git clean failed"
 
-npm ci --no-audit --no-fund >>"$LOG" 2>&1 || die "npm ci failed (see $LOG)"
-npm run clean >>"$LOG" 2>&1 || die "npm run clean failed"
-npm run build >>"$LOG" 2>&1 || die "npm run build failed (see $LOG)"
+# `--frozen-lockfile` fails when `pnpm-lock.yaml` and `package.json` disagree,
+# like `npm ci` did. `CI=true` lets pnpm replace a `node_modules` it did not
+# create without stopping to ask, which it would otherwise do with no TTY.
+CI=true pnpm install --frozen-lockfile >>"$LOG" 2>&1 || die "pnpm install failed (see $LOG)"
+pnpm run clean >>"$LOG" 2>&1 || die "pnpm run clean failed"
+pnpm run build >>"$LOG" 2>&1 || die "pnpm run build failed (see $LOG)"
 
 # --- Sanity-check the build before it is allowed near the web root ----------
 [ -s "$REPO/_site/index.html" ] || die "build produced no index.html"
@@ -265,7 +271,7 @@ fi
 
 # Sending webmentions is a courtesy to other sites, not part of publishing.
 # Never let it fail the deploy.
-if ! npm run webmentions >>"$LOG" 2>&1; then
+if ! pnpm run webmentions >>"$LOG" 2>&1; then
   say "note: webmentions step failed (site is published regardless)"
 fi
 
