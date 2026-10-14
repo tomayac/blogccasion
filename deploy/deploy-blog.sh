@@ -24,6 +24,7 @@ VERSION_FILE="deploy-version.txt" # published with the commit hash, to check wha
 BRANCH="${BRANCH:-main}"
 LOG="${LOG:-$HOME/Documents/deploy-blog.log}"
 STATE="${STATE:-$HOME/.cache/deploy-blog.sha}"
+WM_STATE="${WM_STATE:-$HOME/.cache/deploy-blog.webmentions}" # when the last published build started
 LOCK="${LOCK:-$HOME/.cache/deploy-blog.lock}"
 MIN_PAGES="${MIN_PAGES:-500}" # a healthy build is ~675 files; well under that means something broke
 CADDY_DIR="${CADDY_DIR:-/etc/caddy}"          # where the generated map files belong
@@ -125,17 +126,53 @@ deployed_sha="$(cat "$STATE" 2>/dev/null || echo none)"
 live_sha() { curl -fsS --max-time 20 "$SITE_URL/$VERSION_FILE?t=$(date +%s)" 2>/dev/null | head -c 64 || true; }
 live="$(live_sha)"
 
+# How many WebMentions webmention.io has received since the given time, with
+# the domain and token the build itself uses from `_data/metadata.js`. The
+# build fetches new ones into the page, so any at all mean a rebuild shows
+# something new. Prints nothing when the check fails, so a webmention.io
+# outage neither triggers nor blocks a deploy. Counts at most 100, which is
+# plenty to decide.
+webmentions_since() {
+  node --input-type=module -e '
+    const { default: m } = await import(process.cwd() + "/_data/metadata.js");
+    const url = new URL("https://webmention.io/api/mentions.jf2");
+    url.search = new URLSearchParams({
+      domain: m.domain,
+      token: m.webmention_io_token,
+      since: process.argv[1],
+      "per-page": "100",
+    });
+    const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+    if (!response.ok) process.exit(1);
+    console.log((await response.json()).children.length);
+  ' "$1" 2>/dev/null || true
+}
+
 if [ "$FORCE" -eq 0 ] && [ "$deployed_sha" = "$remote_sha" ] && [ -f "$WEBROOT/index.html" ]; then
   if [ "$live" = "$remote_sha" ]; then
-    log "up to date at ${remote_sha:0:9}; nothing to do"
-    exit 0
+    # Before `WM_STATE` existed, the last publish is the best estimate.
+    wm_since="$(cat "$WM_STATE" 2>/dev/null || date -u -r "$STATE" '+%Y-%m-%dT%H:%M:%SZ')"
+    wm_new="$(webmentions_since "$wm_since")"
+    if [ -z "$wm_new" ]; then
+      log "up to date at ${remote_sha:0:9}; could not check for new webmentions"
+      exit 0
+    fi
+    if [ "$wm_new" -eq 0 ]; then
+      log "up to date at ${remote_sha:0:9}; nothing to do"
+      exit 0
+    fi
+    say "$wm_new new webmentions since $wm_since; rebuilding ${remote_sha:0:9}"
+  else
+    say "last published ${remote_sha:0:9}, but $SITE_URL serves '${live:0:9}'; publishing again"
   fi
-  say "last published ${remote_sha:0:9}, but $SITE_URL serves '${live:0:9}'; publishing again"
 fi
 
 say "deploying ${remote_sha:0:9} (was ${deployed_sha:0:9})"
 
 # --- Build ------------------------------------------------------------------
+# Taken before the build fetches WebMentions, so one that arrives while it
+# runs is still counted as new on the next run.
+build_started="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
 # `reset --hard` plus `clean -fd` discards the churn a build leaves behind.
 # `clean` without -x keeps node_modules, which is gitignored.
 git reset --quiet --hard "origin/$BRANCH" || die "git reset failed"
@@ -197,6 +234,7 @@ live="$(live_sha)"
 [ "$live" = "$remote_sha" ] \
   || die "$SITE_URL/$VERSION_FILE serves '${live:-nothing}', expected $remote_sha; does Caddy's root still point at $WEBROOT?"
 echo "$remote_sha" >"$STATE"
+printf '%s\n' "$build_started" >"$WM_STATE"
 say "verified $SITE_URL serves ${remote_sha:0:9}"
 
 # Hashed assets that left the build over a week ago. rsync gives files that

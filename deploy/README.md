@@ -12,10 +12,14 @@ The blog is built and published on the server that hosts it
 ```
 
 It fetches `origin/main`, compares it against the last commit it actually
-published, and exits in about half a second when there is nothing new — which is
-almost always. When something has changed it resets the checkout, runs
-`pnpm install --frozen-lockfile` and `pnpm run build`, checks that the build looks sane, and only then copies it
-into `/var/www/blog`, the `root` of the `(blogccasion)` Caddy snippet.
+published, and asks webmention.io whether any WebMentions arrived since the last
+published build started. It exits in about a second when there is nothing new,
+which is almost always. When the commit changed or new WebMentions arrived, it
+resets the checkout, runs `pnpm install --frozen-lockfile` and `pnpm run build`
+(which fetches the new WebMentions into the pages), checks that the build looks
+sane, and only then copies it into `/var/www/blog`, the `root` of the
+`(blogccasion)` Caddy snippet. If webmention.io cannot be reached, the run
+behaves as before and only deploys new commits.
 
 If anything fails before that copy, the live site is left exactly as it was.
 
