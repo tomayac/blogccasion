@@ -28,7 +28,7 @@ potential changes myself.
 
 ![[Research paper](https://ai.google/research/pubs/pub46739) “What is in a Web View? An Analysis of Progressive Web App Features When the Means of Web Access is not a Web Browser”.](/images/asset-1.png)
 
-#### Web Share API Support (😃)
+## Web Share API Support (😃)
 
 For the last couple of releases, there were only
 [two checkmarks](https://twitter.com/tomayac/status/1003910651151085568) ‘✔’ for
@@ -42,7 +42,7 @@ charm! This is brilliant news, thanks Apple 🎉!
 
 ![[🕵️‍♂️ PWA Feature Detector](https://tomayac.github.io/pwa-feature-detector/) running on iOS 12.2 beta 1, showing support for the Web Share API (left) and the Web Share API in action with this [demo](https://wicg.github.io/web-share/demos/share.html) (right).](/images/asset-2.png)
 
-#### Out-of-Scope Links in “Add to Home Screen” Apps (😃)
+## Out-of-Scope Links in “Add to Home Screen” Apps (😃)
 
 If you add an app to the home screen on iOS, it runs in an environment called
 Web.app. As far as I can tell, there is no public documentation about it, but
@@ -63,7 +63,7 @@ this seems to not be a user-configurable setup.
 
 ![Out-of-scope link viewed in _Twitter Lite PWA (left) and_ in the native Twitter app (right). There is no reload button and no share sheet, and also no reader mode button in the new experience on the left.](/images/asset-3.jpeg)
 
-#### Keeping State When Multitasking (😃)
+## Keeping State When Multitasking (😃)
 
 I have kept the maybe biggest change for the end. It seems like there is work
 underway to finally **make PWAs that are added to the home screen to keep
@@ -98,7 +98,7 @@ trivago’s app and had to redo my search.
 
 ![First trivago’s PWA shown at 13:11 o’clock (left), then switching back to the home screen (middle), and finally with restored state at 13:12 o’clock (right).](/images/asset-4.jpeg)
 
-#### Still Not Respecting the Web App Manifest Icons (😕)
+## Still Not Respecting the Web App Manifest Icons (😕)
 
 Where there is light, there is shadow (but just a little).
 [Icons specified in the Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#icons)
@@ -128,7 +128,7 @@ _[iOS Add to Home Screen](https://tomayac.github.io/blogccasion-demos/ios-a2hs-d
 tool (left) showing iOS still ignores icons specified in
 [its Web App Manifest](https://ios-a2hs-demo.glitch.me/manifest.webmanifest) (right)._
 
-#### Media Capabilities API and Intersection Observer As Experimental Features (😃)
+## Media Capabilities API and Intersection Observer As Experimental Features (😃)
 
 I want to continue this post on a positive note, so here are a couple more
 surprises: several new APIs made it in Safari’s “Experimental WebKit Features”
@@ -145,7 +145,7 @@ configuration is not supported.
 
 ![Media Capabilities API support is the forth checkmark in [PWA Feature Detector](https://tomayac.github.io/pwa-feature-detector/) (left). The [demo](https://googlechrome.github.io/samples/media-capabilities/decoding-info.html) (right) lets the app know that the media configuration will not be supported, not play smoothly, and not be power efficient.](/images/asset-6.jpeg)
 
-#### Other New Features (😃)
+## Other New Features (😃)
 
 A second (not PWA-related, yet still important in the context) API that was
 added as an experiment is `IntersectionObserver`, an API which is essential for
@@ -168,7 +168,7 @@ the current implementation probably works well enough for most use cases.
 
 ![<input type=”color”> in action on this [demo](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color).](/images/asset-7.png)
 
-#### Conclusion and Call to Action (🎉)
+## Conclusion and Call to Action (🎉)
 
 Concluding, this is **one heck of a release for Progressive Web Apps**, and I am
 really happy that Apple engineers are listening to user feedback. Another
@@ -219,7 +219,7 @@ feature, and how many of your iOS users are missing out.
 clarified the following points about how the team would like to receive feedback
 on their bug tracker:
 
-#### Acknowledgements
+## Acknowledgements
 
 There are a couple of like-minded iOS beta nerds 🤓 out there who have helped
 unearth or get more details on some of these features. I was in Twitter

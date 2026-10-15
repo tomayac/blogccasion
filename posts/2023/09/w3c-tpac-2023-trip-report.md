@@ -300,7 +300,7 @@ apps in general, and then a concrete prompt to install a given app.
 
 ## Thursday
 
-## Devices and Sensors
+### Devices and Sensors
 
 I spent Thursday in the Devices and Sensors Working Group meeting. The first
 part of the day was occupied by a charter discussion between Philippe Le Hégaret

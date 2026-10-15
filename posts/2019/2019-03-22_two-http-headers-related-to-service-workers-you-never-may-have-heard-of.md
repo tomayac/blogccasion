@@ -27,7 +27,7 @@ but also a second interesting HTTP header related to Service Workers that are
 both probably _not_ the ones you read about when you follow any of the many
 Service Worker tutorials out there.
 
-#### **Header** № 1: \`**service-worker-allowed\`**
+### **Header** № 1: \`**service-worker-allowed\`**
 
 This is one of the a little more obscure Service Worker features, but it’s very
 useful. You can see it in action on Google Docs, where the URL you’re on with
@@ -59,7 +59,7 @@ You can see it in action in the screenshot below.
 
 ![HTTP header `service-worker-allowed` in action on Google Docs](/images/asset-1_copy.png)
 
-#### Header № 2: \`**service-worker\`**
+### Header № 2: \`**service-worker\`**
 
 As we’re at it, another header you might not have heard of is `service-worker`.
 It indicates when a request is for a Service Worker’s script resource and helps

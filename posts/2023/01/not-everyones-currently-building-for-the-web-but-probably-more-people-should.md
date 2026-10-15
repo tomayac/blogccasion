@@ -37,7 +37,7 @@ browser, provide feedback, and make basic edits. All in one place without having
 to download or launch the app.
 
 <figure>
-  <img src="/images/photoshop.avif", alt="Adobe Photoshop running in the browser.", width="800", height="500">
+  <img src="/images/photoshop.avif" alt="Adobe Photoshop running in the browser." width="800" height="500">
   <figcaption>
     Photoshop on the Web
   </figcaption>
@@ -52,7 +52,7 @@ environment (IDE) that makes developing completely in the browser possible,
 including the option to open and edit files on the local file system.
 
 <figure>
-  <img src="/images/vscode.avif", alt="Microsoft VS Code running in the browser.", width="800", height="483" >
+  <img src="/images/vscode.avif" alt="Microsoft VS Code running in the browser." width="800" height="483" >
   <figcaption>
     VS Code on the Web
   </figcaption>
@@ -71,7 +71,7 @@ to make _the_ Twitter experience that you get when you
 the app from the Microsoft Store.
 
 <figure>
-  <img src="/images/twitter.avif", alt="Microsoft Store showing the Twitter app.", width="800", height="568" >
+  <img src="/images/twitter.avif" alt="Microsoft Store showing the Twitter app." width="800" height="568" >
   <figcaption>
     Twitter in the Microsoft Store
   </figcaption>
@@ -150,7 +150,7 @@ nevertheless it is clearly _not_ an exact science.
   <div style="height: 425px; width: 100%;">
     <iframe src="https://trends.google.com/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22%2Fg%2F11bw_559wr%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22today%205-y%22%7D%2C%7B%22keyword%22%3A%22%2Fg%2F11f11js9bh%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22today%205-y%22%7D%2C%7B%22keyword%22%3A%22%2Fm%2F06znsr5%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22today%205-y%22%7D%2C%7B%22keyword%22%3A%22%2Fg%2F11f03_rzbg%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22today%205-y%22%7D%2C%7B%22keyword%22%3A%22%2Fg%2F11h03gfxy9%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22today%205-y%22%7D%5D%2C%22category%22%3A5%2C%22property%22%3A%22%22%7D&tz=-60&forceMobileMode=false&isPreviewMode=true&eq=q%3D%252Fg%252F11bw_559wr%2C%252Fg%252F11f11js9bh%2C%252Fm%252F06znsr5%2C%252Fg%252F11f03_rzbg%2C%252Fg%252F11h03gfxy9%26date%3Dtoday%25205-y%26cat%3D5%23TIMESERIES&hl=enUS"
       title="Google Trends interest over time for Electron, NW.js, Apache Cordova, Flutter, and React Native."
-      style="height: 100%; width: 100%; border: 0;">
+      style="height: 100%; width: 100%; border: 0;"
     >
     </iframe>
   </div>
@@ -168,7 +168,7 @@ according to which Flutter has passed React Native as the most popular
 framework.
 
 <figure>
-  <img src="/images/statista.avif", alt="Flutter is the most popular cross-platform mobile framework used by global developers, according to a 2021 developer survey. Based on the survey, 42 percent of software developers used Flutter. On the whole, roughly one third of mobile developers use cross-platform technologies or frameworks; the rest of mobile developers use native tools.", width="800", height="594" >
+  <img src="/images/statista.avif" alt="Flutter is the most popular cross-platform mobile framework used by global developers, according to a 2021 developer survey. Based on the survey, 42 percent of software developers used Flutter. On the whole, roughly one third of mobile developers use cross-platform technologies or frameworks; the rest of mobile developers use native tools." width="800" height="594" >
   <figcaption>
     Cross-platform mobile frameworks used by software developers worldwide from 2019 to 2021.
     [<a href="https://www.statista.com/statistics/869224/worldwide-software-developer-working-hours/">Source</a>]
@@ -183,7 +183,7 @@ using a technology correlating with people asking questions about that
 technology on StackOverflow is not beyond the realms of possibility.
 
 <figure>
-  <img style="font-face: system-ui, sans-serif; background-color: #fff;" src="/images/stackoverflow.svg", alt="How technologies have trended over time based on use of their tags since 2008, when Stack Overflow was founded. Comparing the tags flutter, react-native, electron, and ionic-framework. Flutter's curve increases the steepest, with React Native being the flattening second and Ionic and Electron the flattening 'also ran'.", width="800", height="492" >
+  <img style="font-family: system-ui, sans-serif; background-color: #fff;" src="/images/stackoverflow.svg" alt="How technologies have trended over time based on use of their tags since 2008, when Stack Overflow was founded. Comparing the tags flutter, react-native, electron, and ionic-framework. Flutter's curve increases the steepest, with React Native being the flattening second and Ionic and Electron the flattening 'also ran'." width="800" height="492" >
   <figcaption>
     StackOverflow statistics on tag usage.
     [<a href="https://insights.stackoverflow.com/trends?tags=flutter%2Creact-native%2Celectron%2Cionic-framework">Source</a>]
@@ -495,7 +495,7 @@ makes getting started with a baseline scaffolding a simple copy and paste job.
 The Flutter community is thriving and it's easy to find help if you are stuck.
 
 <figure>
-  <img src="/images/flutter.avif", alt="Blue cartoon bird.", width="800", height="450" >
+  <img src="/images/flutter.avif" alt="Blue cartoon bird." width="800" height="450" >
   <figcaption>Dash, the mascot for the Dart language and the Flutter framework.</figcaption>
 </figure>
 

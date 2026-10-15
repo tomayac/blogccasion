@@ -28,16 +28,16 @@
 
 {% if (repliesSize > 0) or (mentionsOfSize > 0) %}
   <section>
-    <h3 id="webmentions" tabindex="-1">
+    <h2 id="webmentions" tabindex="-1">
       Webmentions
       <a class="direct-link" href="#webmentions" aria-hidden="true">🔗</a>
-    </h3>
+    </h2>
     {% if repliesSize > 0 %}
       <div class="webmentions">
-        <h4 id="webmentions-replies" tabindex="-1">
+        <h3 id="webmentions-replies" tabindex="-1">
           {{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}
           <a class="direct-link" href="#webmentions-replies" aria-hidden="true">🔗</a>
-        </h4>
+        </h3>
         {% for webmention in replies %}
           {% include 'webmention.njk' %}
         {% endfor %}
@@ -45,10 +45,10 @@
     {% endif %}
     {% if mentionsOfSize > 0 %}
       <div class="webmentions">
-        <h4 id="webmentions-mentions" tabindex="-1">
+        <h3 id="webmentions-mentions" tabindex="-1">
           {{ mentionsOfSize }} {% if mentionsOfSize == "1" %}Mention{% else %}Mentions{% endif %}
           <a class="direct-link" href="#webmentions-mentions" aria-hidden="true">🔗</a>
-        </h4>
+        </h3>
         {% for webmention in mentionsOf %}
           {% include 'webmention.njk' %}
         {% endfor %}

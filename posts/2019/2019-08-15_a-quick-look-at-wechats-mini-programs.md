@@ -25,7 +25,7 @@ and after playing a bit with the
 I realized the whole thing is so close to building for the actual web, it both
 fascinates, intrigues, and honestly somewhat infuriates me.
 
-#### App Architecture
+## App Architecture
 
 - You style your apps with
   [WXSS](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxss.html),
@@ -435,7 +435,7 @@ is pretty neat. The SDK is well made with (essentially an adapted)
 [Chrome DevTools integrated](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/devtools.html)
 and some VS Code like features like code completion.
 
-#### Programming Concept
+## Programming Concept
 
 The overall programming concept
 [reminds of OpenSocial](http://opensocial.github.io/spec/2.5.1/Social-Gadget.xml#rfc.section.3.1.2)
@@ -468,7 +468,7 @@ wx.getSetting({
 
 ![The "My First Mini Program" app running in the WeChat DevTools](/images/63084473-8cf79900-bf4b-11e9-8838-447688caf661.png)
 
-#### Component Library
+## Component Library
 
 They also have nice
 [set of declarative components](https://developers.weixin.qq.com/miniprogram/en/dev/component/),
@@ -534,7 +534,7 @@ And of course they have a
 
 ![WeChat `<web-view>` component sample running in WeChat DevTools](/images/63084476-8d902f80-bf4b-11e9-9cb5-d3a216a4d4af.png)
 
-#### Inner Mechanics
+## Inner Mechanics
 
 From what I understand, it's all running in an iframe, Chrome/WeChat DevTools
 then hides the container, and all you see is the WXML layer. When you look at

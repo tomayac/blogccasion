@@ -25,7 +25,7 @@ mechanics. As each year, the
 overlaps were unavoidable. Below is the write-up of the meetings I had time to
 attend.
 
-#### Day 1
+## Day 1
 
 On Monday, I attended the
 [Service Workers Working Group](https://www.w3.org/sw/) (WG) meeting. The
@@ -36,7 +36,7 @@ working on a summary post, so I leave it to him to summarize the day. The
 [raw meeting minutes](https://docs.google.com/document/d/1q090ovJ4gd8wSfVtvuoZLMZ51YkiFDsEZ0Jiqi41Iys/edit)
 are available in case you're interested.
 
-#### Day 2
+## Day 2
 
 On Tuesday, I visited the
 [Web Application Security Working Group](https://www.w3.org/2011/webappsec/)
@@ -56,14 +56,14 @@ in place to prevent this. The
 [meeting minutes](https://github.com/w3c/webappsec/blob/master/meetings/2019/2019-09-TPAC-minutes.md)
 cover the entire day.
 
-#### Day 3
+## Day 3
 
 Wednesday was unconference day with
 [59(!) breakout sessions](https://w3c.github.io/tpac-breakouts/sessions.html).
 Other than the at times tedious working group sessions, I find breakout sessions
 to be oftentimes more interesting and an opportunity to learn new things.
 
-##### Breakout Session JS Built-in Modules
+### Breakout Session JS Built-in Modules
 
 The first breakout session I attended was on
 [JS built-in modules](https://w3c.github.io/tpac-breakouts/sessions.html#jsbuiltin),
@@ -73,7 +73,7 @@ The [session's minutes](https://www.w3.org/2019/09/18-jsbuiltin-minutes.html)
 are available, in general there was a lot of discussion and disagreement around
 namespaces and how built-in modules should be governed.
 
-##### Breakout Session New Module Types: JSON, CSS, and HTML
+### Breakout Session New Module Types: JSON, CSS, and HTML
 
 The next session was on
 [new module types for JSON, CSS, and HTML](https://w3c.github.io/tpac-breakouts/sessions.html#new-modules).
@@ -97,7 +97,7 @@ import styles from 'styles.css' as stylesheet;
 import settings from 'settings.json' as json;
 ```
 
-##### Breakout Session Mini App Standardization
+### Breakout Session Mini App Standardization
 
 The
 [Mini App Standardization](https://w3c.github.io/tpac-breakouts/sessions.html#miniapp)
@@ -122,7 +122,7 @@ all details. One of the results of the session was the creation of the
 [MiniApps Ecosystem Community Group](https://www.w3.org/community/miniapps/)
 that I hope to join.
 
-##### Breakout Session For a More Capable Web—Project Fugu
+### Breakout Session For a More Capable Web—Project Fugu
 
 Together with [Anssi Kostiainen](https://twitter.com/anssik) from Intel and
 [John Jansen](https://twitter.com/thejohnjansen) from Microsoft, I organized a
@@ -139,9 +139,9 @@ discussion in the excellent(!)
 [session minutes](https://www.w3.org/2019/09/18-capable-web-minutes.html),
 courtesy of Anssi.
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSBOBqz_UiNBce-HxpS8EC2lVSeAbzn2lrreesUhhnNaF-3zSieO8A5RaqVc-YhbuuZN0MFKOBsKf7g/embed?start=false&loop=false&delayms=3000" frameborder="0" width="800" height="477" style="max-width: 100%; width: 800px;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSBOBqz_UiNBce-HxpS8EC2lVSeAbzn2lrreesUhhnNaF-3zSieO8A5RaqVc-YhbuuZN0MFKOBsKf7g/embed?start=false&loop=false&delayms=3000" frameborder="0" width="800" height="477" style="max-width: 100%; width: 800px;" allowfullscreen></iframe>
 
-#### Day 4 and Day 5
+## Day 4 and Day 5
 
 Thursday and Friday were dedicated to the
 [Devices and Sensor WG](https://www.w3.org/das/). The
@@ -217,7 +217,7 @@ days brilliantly, the minutes for
 [day&nbsp;1](https://www.w3.org/2019/09/19-dap-minutes.html) and
 [day&nbsp;2](https://www.w3.org/2019/09/20-dap-minutes.html) are both online.
 
-#### Conclusion
+## Conclusion
 
 As I wrote in the beginning, TPAC _slowly_ starts to feel like a venue where I
 can make some valuable contributions.

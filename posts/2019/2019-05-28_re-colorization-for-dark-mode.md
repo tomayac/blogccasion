@@ -18,7 +18,7 @@ when it comes to re-colorization of websites for dark mode. The core research
 question was: _“Do people expect images to look different in dark mode than in
 light mode?”_
 
-#### Survey and Results
+## Survey and Results
 
 I created a little
 [Dark Mode Colors 🌘 Re-Colorization Playground app](https://tomayac.github.io/blogccasion-demos/dark-mode-colors/)
@@ -60,7 +60,7 @@ is preserved, but some of the brilliance and vibrancy (that can be disturbing in
 [contexts where people would typically use dark mode](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d))
 is reduced.
 
-#### Re-Colorization in Practice
+## Re-Colorization in Practice
 
 How can you put these findings in practice? One way is to make the amount of
 grayscaling flexible by leveraging
@@ -86,7 +86,7 @@ document.documentElement.style.setProperty(
     '--grayscale-percentage', value);
 ```
 
-#### Conclusion
+## Conclusion
 
 As a closing thought, when you implement dark mode for a site, always keep in
 mind your users. Not everyone may like your default re-colorization choices

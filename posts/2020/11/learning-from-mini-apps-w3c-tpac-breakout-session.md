@@ -40,9 +40,7 @@ of course):
   width="960"
   height="569"
   style="max-width: 100%; width: 960px;"
-  allowfullscreen="true"
-  mozallowfullscreen="true"
-  webkitallowfullscreen="true"
+  allowfullscreen
   loading="lazy"
 ></iframe>
 

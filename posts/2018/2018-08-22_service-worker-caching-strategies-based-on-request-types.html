@@ -18,14 +18,14 @@ tags:
     >Medium.com</a
   >.)
 </p>
-<h4>TL;DR</h4>
+<h2>TL;DR</h2>
 <p>
   Instead of purely relying on URL-based pattern matching, also consider
   leveraging the lesser-known—but super useful—<code
     ><a
       href="https://developer.mozilla.org/en-US/docs/Web/API/Request/destination"
       data-href="https://developer.mozilla.org/en-US/docs/Web/API/Request/destination"
-      rel="nofollow noopener nofollow noopener"
+      rel="nofollow noopener"
       target="_blank"
       >Request.destination</a
     ></code
@@ -39,20 +39,20 @@ tags:
     ><a
       href="https://tomayac.github.io/blogccasion-demos/request-destination-playground/"
       data-href="https://tomayac.github.io/blogccasion-demos/request-destination-playground/"
-      rel="nofollow noopener noopener nofollow noopener"
+      rel="nofollow noopener"
       target="_blank"
       >Request.destination</a
     ></code
   ><a
     href="https://tomayac.github.io/blogccasion-demos/request-destination-playground/"
     data-href="https://tomayac.github.io/blogccasion-demos/request-destination-playground/"
-    rel="nofollow noopener noopener nofollow noopener"
+    rel="nofollow noopener"
     target="_blank"
     >playground app</a
   >
   to see <code>Request.destination</code> in action.
 </p>
-<h4>Different Caching Strategies for Different Types of Resources</h4>
+<h2>Different Caching Strategies for Different Types of Resources</h2>
 <p>
   When it comes to establishing caching strategies for Progressive Web Apps, not
   all resources should be treated equally. For example, for a shopping PWA, your
@@ -61,7 +61,7 @@ tags:
   <a
     href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#network-only"
     data-href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#network-only"
-    rel="nofollow noopener nofollow noopener"
+    rel="nofollow noopener"
     target="_blank"
     >Network Only</a
   >
@@ -70,7 +70,7 @@ tags:
   <a
     href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-only"
     data-href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-only"
-    rel="nofollow noopener nofollow noopener"
+    rel="nofollow noopener"
     target="_blank"
     >Cache Only</a
   >
@@ -79,13 +79,13 @@ tags:
   <a
     href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#network-falling-back-to-cache"
     data-href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#network-falling-back-to-cache"
-    rel="nofollow noopener nofollow noopener"
+    rel="nofollow noopener"
     target="_blank"
     >Network Falling Back to Cache</a
   >
   strategy.
 </p>
-<h4>URL-based Determination of the Request&nbsp;Type</h4>
+<h2>URL-based Determination of the Request&nbsp;Type</h2>
 <p>
   Commonly, developers have relied on the known URL structure of their PWAs and
   regular expressions to determine the appropriate caching strategy for a given
@@ -124,9 +124,9 @@ tags:
   WebP to a future superior image format, you would need to remember to update
   your service worker's logic as well.
 </p>
-<h4>
+<h2>
   <code>Request.destination</code>-based Determination of the Request&nbsp;Type
-</h4>
+</h2>
 <p>
   It turns out, the platform has a built-in way for determining the type of a
   request: it's called
@@ -149,7 +149,7 @@ tags:
   >. Quoting straight from the spec:
 </p>
 <blockquote>
-  <em>A request has an associated destination, which is the empty string, </em
+  <em>“A request has an associated destination, which is the empty string, </em
   ><code><em>"audio"</em></code
   ><em>, </em><code><em>"audioworklet"</em></code
   ><em>, </em><code><em>"document"</em></code
@@ -168,7 +168,7 @@ tags:
   ><em>, </em><code><em>"video"</em></code
   ><em>, </em><code><em>"worker"</em></code
   ><em>, or </em><code><em>"xslt"</em></code
-  ><em>. Unless stated otherwise it is the empty string.</em>
+  ><em>. Unless stated otherwise it is the empty string.”</em>
 </blockquote>
 <p>
   The empty string default value is the biggest caveat. Essentially, you can't
@@ -349,7 +349,7 @@ tags:
   completely agnostic of the URL structure, so there's no tight coupling at all.
 </p>
 <pre>// In serviceworker.js<br>self.addEventListener('fetch', (event) =&gt; {<br>  const destination = event.request.destination;<br>  switch (destination) {<br>    case 'style':<br>    case 'script':<br>    case 'document':<br>    case 'image': {<br>      event.respondWith(<br>          /* "Network Falling Back to Cache" strategy */);<br>      return;<br>    }<br>    case 'font': {<br>      event.respondWith(/* "Cache Only" strategy */);<br>      return;<br>    }<br>    // All `XMLHttpRequest` or `fetch()` calls where<br>    // `Request.destination` is the empty string default value<br>    default: {<br>      event.respondWith(/* "Network Only" strategy */);<br>      return;<br>    }<br>  }<br>});</pre>
-<h4>Browser Support for <code>Request.destination</code></h4>
+<h2>Browser Support for <code>Request.destination</code></h2>
 <p>
   <code>Request.destination</code> is universally supported by Chrome, Opera,
   Firefox, Safari, and Edge. For Chrome, support was added in Chrome 65, so for
@@ -365,7 +365,7 @@ tags:
     >Chrome Platform Status page</a
   >.
 </p>
-<h4>When <code>Request.destination</code> isn't&nbsp;Enough</h4>
+<h2>When <code>Request.destination</code> isn't&nbsp;Enough</h2>
 <p>
   If you have more complex caching needs, you will soon realize that
   <em>purely</em> relying on <code>Request.destination</code> is
@@ -386,7 +386,7 @@ tags:
   dealing with a navigational request (<code>Request.mode === 'navigate'</code>)
   in single-page apps.
 </p>
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>
   Coming up with a reasonable caching strategy for a PWA is hard enough. Having
   ways to tame this complexity is definitely welcome, so whenever feasible—given
@@ -396,7 +396,7 @@ tags:
   exceptions and corner cases, but it's definitely a good idea to reduce the
   coupling of service worker logic and URL structure as much as possible.
 </p>
-<h4>Acknowledgements</h4>
+<h2>Acknowledgements</h2>
 <p>
   Thanks to
   <a

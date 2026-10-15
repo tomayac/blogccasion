@@ -34,11 +34,11 @@ the Web.
 <pre>
 MIME-Version: 1.0
 Date: Thu, 22 Aug 2024 00:21:47 +0200
-Message-ID: <CABscCcNuWtJYg5v9MGc2nQ9FUEhjR_QwjJRfewN0N0i6_-oXWg@mail.gmail.com>
+Message-ID: &lt;CABscCcNuWtJYg5v9MGc2nQ9FUEhjR_QwjJRfewN0N0i6_-oXWg@mail.gmail.com&gt;
 Subject: Thoughts on the CMA's list of remedies
-From: Thomas Steiner <steiner.thomas@gmail.com>
+From: Thomas Steiner &lt;steiner.thomas@gmail.com&gt;
 To: browsersandcloud@cma.gov.uk
-Cc: Thomas Steiner <tomac@google.com>
+Cc: Thomas Steiner &lt;tomac@google.com&gt;
 </pre>
 
 <hr>

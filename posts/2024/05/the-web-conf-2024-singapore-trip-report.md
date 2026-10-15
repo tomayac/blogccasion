@@ -644,7 +644,7 @@ reasons. [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589334.3645323)]
 
 ##### Toward Making Opaque Web Content More Accessible: Accessibility From Adobe Flash to Canvas-Rendered Apps
 
-<iframe loading="lazy" src="https://docs.google.com/presentation/d/e/2PACX-1vTyXwDC0QeZkbMGG2AgsCuypfFMQgFhINlocmvva96oFDjz0esEsa5N0_00EycD00EwC-tfPOBmWakj/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" style="width: 100%;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe loading="lazy" src="https://docs.google.com/presentation/d/e/2PACX-1vTyXwDC0QeZkbMGG2AgsCuypfFMQgFhINlocmvva96oFDjz0esEsa5N0_00EycD00EwC-tfPOBmWakj/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" style="width: 100%;" allowfullscreen></iframe>
 
 [[Slides](https://docs.google.com/presentation/d/1VGBhUDdPrYMqo34UrJQq5cxGmlRdDwJZzEeu9fZUZnU/edit?usp=sharing)]
 [[Paper](https://dl.acm.org/doi/pdf/10.1145/3589335.3651999)]
