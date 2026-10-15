@@ -47,13 +47,13 @@ Note that the
 can't be used to detect media query support. Before we dive into this question,
 let's get some things defined first.
 
-#### Media types
+## Media types
 
 [Media types](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_types)
 describe the general category of a device. Some examples are `print`, `screen`,
 `speech`, or simply the default media type `all`.
 
-#### Media features
+## Media features
 
 [Media features](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features)
 describe specific characteristics of the user agent, output device, or
@@ -81,7 +81,7 @@ sure you only use hover events if the user agent has some kind of hoverable
 device like a mouse. In this case, you can simply test for
 `@media (hover) { … }`.
 
-#### Testing if a browser understands a media query
+## Testing if a browser understands a media query
 
 The
 [`window.matchMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)

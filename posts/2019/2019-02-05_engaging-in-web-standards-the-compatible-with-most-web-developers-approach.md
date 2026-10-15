@@ -43,7 +43,7 @@ At first sight, `text-transform: titlecase` sounds like a reasonable thing for
 CSS to have. It would take a heading markup like
 `<h1>Ten things CSS can do, the eighth will make you cry</h1>` and render it as…
 
-#### Ten Things CSS Can Do, the Eighth Will Make You Cry
+## Ten Things CSS Can Do, the Eighth Will Make You Cry
 
 Note how the article _“the”_ is lower case, everything else upper case.
 According to the (randomly chosen)
@@ -62,7 +62,7 @@ and emphasis mine):
 
 ![World Wide Web Consortium (W3C) logo](/images/asset-1_3.png)
 
-#### Contributing to Web Standards as Someone Who Self-Identifies as “Most Web Developers”
+## Contributing to Web Standards as Someone Who Self-Identifies as “Most Web Developers”
 
 It would probably get a
 [`[citation needed]`](https://en.wikipedia.org/wiki/Wikipedia:Citation_needed)
@@ -75,7 +75,7 @@ various W3C specs. With that out of the way, let me guide you through **_my
 personal approach_** to potentially landing a feature request like “correct”
 title case support.
 
-#### Understanding the Status Quo of Existing Features
+## Understanding the Status Quo of Existing Features
 
 There is a clear use case (“correct” title capitalization) and an existing CSS
 feature (`text-transform`) that somewhat does the desired thing, but not
@@ -172,7 +172,7 @@ of—or have thought of in the past—something that I would have never realized
 myself. Standards are about finding a compromise—and finding one might take a
 while sometimes.
 
-#### Challenging the Status Quo of Existing Features
+## Challenging the Status Quo of Existing Features
 
 Now this does not mean that the discussion has to stop here, there can always be
 a “bullet ⑭” (to symbolically continue the numbering scheme from above), where I
@@ -190,7 +190,7 @@ features.
 
 ![Ecma International, Technical Committee 39 (TC39) logo](/images/asset-2_3.png)
 
-#### New JavaScript Features
+## New JavaScript Features
 
 If an idea is about new JavaScript features like the fictive (at least at the
 time of writing 🙂) proposed property `Intl.TitleFormat` from the running
@@ -210,7 +210,7 @@ guidelines.
 
 ![Web Incubator Community Group (WICG) logo](/images/asset-3_3.png)
 
-#### New Web Platform Features
+## New Web Platform Features
 
 If an idea does not fall in the category of things that already exist (like
 adding new allowed keywords to a CSS property or proposing a new property for an
@@ -227,7 +227,7 @@ else has thought about my feature before. After posting an idea or chiming in on
 someone else’s idea, I will then be pointed in the right direction regarding
 next steps.
 
-#### Conclusion
+## Conclusion
 
 With all that said, do not let yourself be discouraged from engaging in web
 standards work. In many cases,
@@ -252,7 +252,7 @@ their _HTTP 203_ series, embedded below.
 
 <Embed src="https://www.youtube-nocookie.com/embed/y1TEPQz02iU?feature=oembed" caption="Jake Archibald and Surma on “Changing Web Standards” on YouTube" />
 
-#### 🙏 Acknowledgements
+## 🙏 Acknowledgements
 
 I would like to thank [Jake Archibald](https://twitter.com/jaffathecake) (💯),
 as well as [Sam Dutton](https://twitter.com/sw12),

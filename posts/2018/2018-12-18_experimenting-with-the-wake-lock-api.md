@@ -75,7 +75,7 @@ the browser tab the lock was created from.
 I have been experimenting with both types of wake locks—`"screen"` and
 `"system"`—and have created two fun demos.
 
-#### Demo 1: Screen Wake Lock for a Talking Wikipedia Screensaver
+## Demo 1: Screen Wake Lock for a Talking Wikipedia Screensaver
 
 The first demo showcases the `"screen"` use case, where I prevent the screen
 from sleeping for a talking
@@ -120,7 +120,7 @@ if ('getWakeLock' in navigator) {
 
 ![Talking Wikipedia Screensaver (Source: [https://tomayac.github.io/wikipedia-screensaver/dist/](https://tomayac.github.io/wikipedia-screensaver/dist/)).](/images/asset-1_.png)
 
-#### Demo 2: System Wake Lock for a Run Tracker
+## Demo 2: System Wake Lock for a Run Tracker
 
 The second demo uses a `"system"` wake lock to keep the system awake for a run
 tracker kind of application prototype where the idea is to keep track of one’s
@@ -202,7 +202,7 @@ track.addEventListener('click', () => {
 });
 ```
 
-#### Closing Thoughts
+## Closing Thoughts
 
 Until the Wake Lock API is ready for business, a little more
 [spec fine-tuning](https://github.com/w3c/wake-lock/issues) is needed. Some

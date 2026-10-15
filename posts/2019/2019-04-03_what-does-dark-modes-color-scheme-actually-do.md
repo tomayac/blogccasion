@@ -37,7 +37,7 @@ and a **CSS property** `color-scheme` that were both proposed in
 the old name `supported-color-schemes`), but the meta tag is now being
 standardized in the [WHATWG](https://github.com/whatwg/html/issues/4504).
 
-#### User-Agent stylesheets
+## User-Agent stylesheets
 
 💡 Before I continue, let me briefly describe what a **user-agent stylesheet**
 is: a user-agent (UA for short) stylesheet determines the default look and feel
@@ -91,7 +91,7 @@ Note that there is _no_ custom CSS at all included, let alone the
 `@media (prefers-color-scheme)` media query. The above is purely based on the UA
 stylesheet.
 
-#### The meta tag `<meta name="color-scheme"> and the CSS property "color-scheme"`
+## The meta tag `<meta name="color-scheme"> and the CSS property "color-scheme"`
 
 Now back to the meta tag and the CSS property (that has the same behavior as the
 meta tag, but optionally limited to just subsections of a page). They both mean

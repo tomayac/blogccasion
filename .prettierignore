@@ -3,3 +3,4 @@ _site/
 *.min.mjs
 htaccess.njk
 .cache/webmentions.json
+pnpm-lock.yaml

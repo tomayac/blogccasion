@@ -16,7 +16,7 @@ tags:
   <a href="https://twitter.com/tomayac">@tomayac</a> • 😸
   <a href="https://github.com/tomayac">tomayac</a>
 </p>
-<h4><a></a><em>Abstract</em></h4>
+<h2><a></a><em>Abstract</em></h2>
 <p>
   <em
     >In this document, we present three different approaches and discuss their
@@ -32,7 +32,7 @@ tags:
     share publicly.</em
   >
 </p>
-<h4><a></a>Introduction to Progressive Web Apps</h4>
+<h2><a></a>Introduction to Progressive Web Apps</h2>
 <p>
   Progressive Web Apps (PWA) are a new class of web applications, enabled for
   the most part by the
@@ -63,7 +63,7 @@ tags:
   >
   in 2015.
 </p>
-<h4><a></a>Research Questions and Problem Statement</h4>
+<h2><a></a>Research Questions and Problem Statement</h2>
 <p>
   As service workers are now finally
   <a href="https://jakearchibald.github.io/isserviceworkerready/" rel="nofollow"
@@ -123,7 +123,7 @@ tags:
   >, not all PWA features are classified in their tagging system. In short, PWA
   catalogues are not very well suited for answering our research questions.
 </p>
-<h4><a></a>The HTTP Archive to the Rescue</h4>
+<h2><a></a>The HTTP Archive to the Rescue</h2>
 <p>
   The <a href="https://httparchive.org/" rel="nofollow">HTTP Archive</a> tracks
   how the web is built and provides historical data to quantitatively illustrate
@@ -207,8 +207,8 @@ tags:
       alt="Notice of the amount of to-be-processed data"
   /></a>
 </p>
-<h4><a></a>Approach 1: <code>httparchive.lighthouse.*</code> Tables</h4>
-<h5><a></a>Description</h5>
+<h2><a></a>Approach 1: <code>httparchive.lighthouse.*</code> Tables</h2>
+<h3><a></a>Description</h3>
 <p>
   <a href="https://developers.google.com/web/tools/lighthouse/" rel="nofollow"
     >Lighthouse</a
@@ -222,7 +222,7 @@ tags:
     >example</a
   >) of past reports that can be extracted via BigQuery.
 </p>
-<h5><a></a>Cons</h5>
+<h3><a></a>Cons</h3>
 <p>
   The biggest con is that obviously the tables only contain data of web pages
   that were ever run through the tool, so there is a blind spot. Additionally,
@@ -237,7 +237,7 @@ tags:
   in the current version so that now <em>Performance</em> is first. In the query
   we need to take this corner case into account.
 </p>
-<h5><a></a>Pros</h5>
+<h3><a></a>Pros</h3>
 <p>
   On the positive side, Lighthouse has clear scoring guidelines based on the
   <a
@@ -259,7 +259,7 @@ tags:
   namely, we can require offline capabilities and make sure the app can be added
   to the home screen.
 </p>
-<h5><a></a>Query and Results</h5>
+<h3><a></a>Query and Results</h3>
 <p>
   Running the query below and then selecting distinct PWA URLs returns
   <a
@@ -328,7 +328,7 @@ CREATE TEMPORARY FUNCTION
 <span>  url,</span>
 <span>  date DESC;</span></pre>
 </div>
-<h5><a></a>Research Ideas</h5>
+<h3><a></a>Research Ideas</h3>
 <p>
   An interesting analysis we can run based on this data is the development of
   average Lighthouse PWA scores over time and the number of PWAs (note that the
@@ -366,8 +366,8 @@ CREATE TEMPORARY FUNCTION
       alt="Number of PWAs over time, the trend is going up from ~100 in June 2017 to ~340 in May 2018"
   /></a>
 </p>
-<h4><a></a>Approach 2: <code>httparchive.pages.*</code> Tables</h4>
-<h5><a></a>Description</h5>
+<h2><a></a>Approach 2: <code>httparchive.pages.*</code> Tables</h2>
+<h3><a></a>Description</h3>
 <p>
   Another straightforward way for estimating the amount of PWAs (however
   completely neglecting Web App Manifests) is to look for so-called
@@ -388,7 +388,7 @@ CREATE TEMPORARY FUNCTION
     typically happens only on subsequent loads.</em
   >
 </p>
-<h5><a></a>Cons</h5>
+<h3><a></a>Cons</h3>
 <p>
   No qualitative attributes other than the absolute fact that a service worker
   controlled the loading of the page can be extracted. More importantly, as the
@@ -397,13 +397,13 @@ CREATE TEMPORARY FUNCTION
   that claim their clients (<code>self.clients.claim()</code>) on the first
   load.
 </p>
-<h5><a></a>Pros</h5>
+<h3><a></a>Pros</h3>
 <p>
   On the bright side, the precision is high due to the browser-level tracking,
   so we can be sure the page actually registered a service worker. The query
   also covers both desktop and mobile.
 </p>
-<h5><a></a>Query and Results</h5>
+<h3><a></a>Query and Results</h3>
 <p>
   This approach, at time of writing, turns up
   <a
@@ -452,7 +452,7 @@ CREATE TEMPORARY FUNCTION
   <span>date</span> <span>DESC</span>,
   pwa_url;</pre>
 </div>
-<h5><a></a>Research Ideas</h5>
+<h3><a></a>Research Ideas</h3>
 <p>
   Similar to the second query in <em>Approach&nbsp;1</em> from above, we can
   also track the number of pages controlled by a service worker over time (the
@@ -480,8 +480,8 @@ CREATE TEMPORARY FUNCTION
       alt="Number of pages controlled by a service worker over time, the trend is going up from ~100 in December 2016 to ~2,000 in June 2018"
   /></a>
 </p>
-<h4><a></a>Approach 3: <code>httparchive.response_body.*</code> Tables</h4>
-<h5><a></a>Description</h5>
+<h2><a></a>Approach 3: <code>httparchive.response_body.*</code> Tables</h2>
+<h3><a></a>Description</h3>
 <p>
   A third less obvious way to answer our research questions is to look at actual
   response bodies. The <code>httparchive.response_bodies.*</code> tables contain
@@ -493,7 +493,7 @@ CREATE TEMPORARY FUNCTION
   <code>&lt;link rel="manifest"</code> that point to a potential Web App
   Manifest on the other hand.
 </p>
-<h5><a></a>Cons</h5>
+<h3><a></a>Cons</h3>
 <p>
   The downside of this approach is that we are trying to parse HTML with regular
   expressions to begin with, which is
@@ -508,7 +508,7 @@ CREATE TEMPORARY FUNCTION
   >. One example where things can go wrong is that we might detect out-commented
   code or struggle with incorrectly nested code.
 </p>
-<h5><a></a>Pros</h5>
+<h3><a></a>Pros</h3>
 <p>
   Despite all challenges, as the service worker JavaScript files and the Web App
   Manifest JSON files are subresources of the page and therefore stored in the
@@ -520,7 +520,7 @@ CREATE TEMPORARY FUNCTION
   by looking at the Web App Manifest JSON document, we can see if the PWA
   specifies a start URL, provides a name, and so on.
 </p>
-<h5><a></a>Query and Results</h5>
+<h3><a></a>Query and Results</h3>
 <p>
   We have split the analysis of service workers and Web App Manifests, and use a
   common helper table to extract PWA candidates from the large response body
@@ -543,7 +543,7 @@ CREATE TEMPORARY FUNCTION
   <code>window.location.href + 'sw.js'</code>, so our regular expressions are a
   bit involved to make sure we exclude these cases.
 </p>
-<h6><a></a>PWA Candidates Helper Table</h6>
+<h4><a></a>PWA Candidates Helper Table</h4>
 <div>
   <pre><span><span>#</span>standardSQL</span>
 CREATE TEMPORARY FUNCTION
@@ -586,7 +586,7 @@ CREATE TEMPORARY FUNCTION
   rank <span>ASC</span>,
   pwa_url;</pre>
 </div>
-<h6><a></a>Web App Manifests Analysis</h6>
+<h4><a></a>Web App Manifests Analysis</h4>
 <p>
   Based on this helper table, we can then run the analysis of the Web App
   Manifests. We check for the existence of properties defined in the
@@ -695,7 +695,7 @@ CREATE TEMPORARY FUNCTION
   platform,
   manifest_url;</pre>
 </div>
-<h6><a></a>Research Ideas</h6>
+<h4><a></a>Research Ideas</h4>
 <p>
   With this data at hand, we can extract all (well, not really <em>all</em>, but
   all known according to our query) PWAs that still use the deprecated Google
@@ -711,7 +711,7 @@ CREATE TEMPORARY FUNCTION
 <span>WHERE</span>
   gcm_sender_id_property;</pre>
 </div>
-<h6><a></a>Service Workers Analysis</h6>
+<h4><a></a>Service Workers Analysis</h4>
 <p>
   Similarly to the analysis of Web App Manifests, the analysis of the various
   <a
@@ -785,7 +785,7 @@ CREATE TEMPORARY FUNCTION
 <span>  platform,</span>
 <span>  sw_url;</span></pre>
 </div>
-<h6><a></a>Research Ideas</h6>
+<h4><a></a>Research Ideas</h4>
 <p>
   Having detailed service worker data allows for interesting analyses. For
   example, we can use this data to track Workbox usage over time.
@@ -917,7 +917,7 @@ CREATE TEMPORARY FUNCTION
       alt="Service worker events over time, showing an increasing usage of the fetch and the message event from February to June 2018"
   /></a>
 </p>
-<h4><a></a>Meta Approach: <em>Approaches 13</em> Combined</h4>
+<h2><a></a>Meta Approach: <em>Approaches 1–3</em> Combined</h2>
 <p>
   An interesting meta analysis is to combine all approaches to get a feeling for
   the overall landscape of PWAs in the HTTP Archive (with all aforementioned
@@ -1000,7 +1000,7 @@ CREATE TEMPORARY FUNCTION
       alt="PWAs over time showing linear growth from February 2017 to June 2018, with a slight decline in May and June 2018"
   /></a>
 </p>
-<h4><a></a>Future Work and Conclusions</h4>
+<h2><a></a>Future Work and Conclusions</h2>
 <p>
   In this document, we have presented three different approaches to extracting
   PWA data from the HTTP Archive. Each has its individual pros and cons, but
@@ -1029,7 +1029,7 @@ CREATE TEMPORARY FUNCTION
   is the case. We look forward to learning about new ways people make use of our
   research and to PWAs becoming more and more mainstream.
 </p>
-<h4><a></a>Acknowledgements</h4>
+<h2><a></a>Acknowledgements</h2>
 <p>
   In no particular order we would like to thank
   <a href="https://twitter.com/mathias" rel="nofollow">Mathias Bynens</a> for

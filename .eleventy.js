@@ -258,6 +258,31 @@ export default function (eleventyConfig) {
     },
   });
 
+  // eleventy-img sets `sizes="auto"` on every `<source>`, even on ones with a
+  // single `srcset` candidate (no `w` descriptor), which is invalid HTML. If a
+  // `<source>` does keep `sizes="auto"`, the `<img>` needs it, too.
+  eleventyConfig.addTransform('fixImageSizes', function (content, outputPath) {
+    if (!outputPath || !outputPath.endsWith('.html')) {
+      return content;
+    }
+    return content.replace(/<picture>[\s\S]*?<\/picture>/g, (picture) => {
+      picture = picture.replace(/<source\b[^>]*>/g, (source) => {
+        const srcset = source.match(/\ssrcset="([^"]*)"/);
+        if (srcset && !/\s\d+w(?:\s*,|\s*$)/.test(srcset[1])) {
+          return source.replace(/\s+sizes="[^"]*"/, '');
+        }
+        return source;
+      });
+      if (/<source\b[^>]*\ssizes="auto"/.test(picture)) {
+        picture = picture.replace(
+          /<img\b(?![^>]*\ssizes=)/,
+          '<img sizes="auto"'
+        );
+      }
+      return picture;
+    });
+  });
+
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {

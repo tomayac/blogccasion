@@ -16,4 +16,4 @@ I had the honor of being interviewed on the
 [Nick Nisi](https://t.co/DZ4ioWAWMX), for the interesting questions. Here's the
 episode for your listening pleasure.
 
-<iframe src="https://changelog.com/jsparty/254/embed" scrolling="no" frameborder="no" height="220" width="100%"></iframe>
+<iframe src="https://changelog.com/jsparty/254/embed" scrolling="no" frameborder="no" height="220" style="width: 100%"></iframe>
