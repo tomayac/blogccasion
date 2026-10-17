@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-09-10T11:53:32.461Z",
+  "lastFetched": "2026-10-17T17:41:02.631Z",
   "children": [
     {
       "type": "entry",
@@ -74665,6 +74665,819 @@
       "wm-target": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
       "wm-protocol": "webmention",
       "like-of": "https://blog.tomayac.com/2026/01/12/a-polyfill-for-the-html-switch-element/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "",
+        "photo": "",
+        "url": ""
+      },
+      "url": "https://lars-christian.com/notes/2026-10-09-refueling-an-ev",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-14T18:40:26Z",
+      "wm-id": 2040608,
+      "wm-source": "https://lars-christian.com/notes/2026-10-09-refueling-an-ev",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "mention-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Arif Hossain",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:d3wuvx56itevtctimcednlqx/bafkreiepzyk7cy6pmbvgzpi7hpyxjstj6lelqgsriz4z434ti5bdnkeq7m",
+        "url": "https://bsky.app/profile/arif-dev.bsky.social"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#liked_by_did:plc:d3wuvx56itevtctimcednlqx",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-11T14:20:24Z",
+      "wm-id": 2039435,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Ad3wuvx56itevtctimcednlqx",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "",
+        "photo": "",
+        "url": "https://bsky.app/profile/divdev.bsky.social"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#reposted_by_did:plc:kmhqy4byj3ys5v3hatxxo2is",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-11T06:35:28Z",
+      "wm-id": 2039373,
+      "wm-source": "https://brid.gy/repost/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Akmhqy4byj3ys5v3hatxxo2is",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "quixote",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/65b536e5d801ea3102eb2814ea5ca0910cb97a0cfe7483d593c78c9f1b97f57c.png",
+        "url": "https://mastodon.nz/@quixote"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-109308856116229532",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-10T10:03:25Z",
+      "wm-id": 2039234,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/109308856116229532",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Dirk Primbs",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:cbql3zs7oz632roqilpoc5im/bafkreievkx6totegbrh3ln6vuqw2evwbdo2haf6h7uluzpk4kumiud2vci",
+        "url": "https://bsky.app/profile/dirkprimbs.bsky.social"
+      },
+      "url": "https://bsky.app/profile/dirkprimbs.bsky.social/post/3mxhd7zf47s2w",
+      "published": "2026-10-09T15:49:42+00:00",
+      "published_ts": 1791560982,
+      "wm-received": "2026-10-10T08:13:11Z",
+      "wm-id": 2039218,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Acbql3zs7oz632roqilpoc5im%252Fapp.bsky.feed.post%252F3mxhd7zf47s2w",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "I personally was confused for a week with my EX40 and now I really appreciate that the car loads up while I sleep or during a lunch break and with the 5 apps I registered once I'm covered pretty much anywhere... 2/2"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Tyler Sticka",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:xs4kp6lv77kme3cfthgi5owr/bafkreibk7vgvahxisvzqcxid3ehtbgr4f3jt63htrxeokjizf6vaqcyqfu",
+        "url": "https://bsky.app/profile/tylersticka.com"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#liked_by_did:plc:xs4kp6lv77kme3cfthgi5owr",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-10T08:12:53Z",
+      "wm-id": 2039216,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Axs4kp6lv77kme3cfthgi5owr",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Steiner",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:no4ezg3ozd6jmlpq4lrmedux/bafkreicmv7yzwb4x2cenhssiopeos7unho7w3rapsv5tbgga4pv7ahprsm",
+        "url": "https://bsky.app/profile/tomayac.com"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#reposted_by_did:plc:no4ezg3ozd6jmlpq4lrmedux",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-10T08:12:53Z",
+      "wm-id": 2039217,
+      "wm-source": "https://brid.gy/repost/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "EricLaw 🎻",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:53ql7yabvtv6jjrhq7hcpot5/bafkreiax33jgfvlan44mlqlf2gv7tw3ny5l4i6t6shh55osxwnjno4zqwe",
+        "url": "https://bsky.app/profile/ericlawrence.com"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#liked_by_did:plc:53ql7yabvtv6jjrhq7hcpot5",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-10T08:12:52Z",
+      "wm-id": 2039215,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253A53ql7yabvtv6jjrhq7hcpot5",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Greg",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:djrlcnzd6octzwryjhubsl23/bafkreibnlncoo5tv6zlihxuojq4iv7qdtcbtdzlgcte4pjcnbfuihxga2q",
+        "url": "https://bsky.app/profile/gbwilliams1956.bsky.social"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#liked_by_did:plc:djrlcnzd6octzwryjhubsl23",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-10T08:12:46Z",
+      "wm-id": 2039213,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Adjrlcnzd6octzwryjhubsl23",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Steiner",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:no4ezg3ozd6jmlpq4lrmedux/bafkreicmv7yzwb4x2cenhssiopeos7unho7w3rapsv5tbgga4pv7ahprsm",
+        "url": "https://bsky.app/profile/tomayac.com"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxh77ocdxs2r",
+      "published": "2026-10-09T14:37:55+00:00",
+      "published_ts": 1791556675,
+      "wm-received": "2026-10-10T08:12:46Z",
+      "wm-id": 2039214,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxh77ocdxs2r",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "Best car I ever owned. Also the first. Jokes aside: it's a fantastic car. We have the 2021 facelift edition: <a href=\"https://en.wikipedia.org/wiki/Hyundai_Kona#:~:text=Kona%20Hybrid%20(facelift)-,2021%20Kona%20Electric%20(facelift),-2021%20Kona%20Electric\">en.wikipedia.org/wiki/Hyundai...</a> (not the one from the preview).\nIt has no app, no cloud but Android Auto, is economic, and perfectly sized for our family of 5 (we're all 170cm or smaller).",
+        "text": "Best car I ever owned. Also the first. Jokes aside: it's a fantastic car. We have the 2021 facelift edition: en.wikipedia.org/wiki/Hyundai... (not the one from the preview).\nIt has no app, no cloud but Android Auto, is economic, and perfectly sized for our family of 5 (we're all 170cm or smaller)."
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Steiner",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:no4ezg3ozd6jmlpq4lrmedux/bafkreicmv7yzwb4x2cenhssiopeos7unho7w3rapsv5tbgga4pv7ahprsm",
+        "url": "https://bsky.app/profile/tomayac.com"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxhun3goak2h",
+      "published": "2026-10-09T21:01:14+00:00",
+      "published_ts": 1791579674,
+      "wm-received": "2026-10-10T08:12:43Z",
+      "wm-id": 2039211,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxhun3goak2h",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "That's the law in question: <a href=\"https://eur-lex.europa.eu/eli/reg/2023/1804/oj/eng\">eur-lex.europa.eu/eli/reg/2023...</a>. I can't wait for January 1, 2027. Thank you for the pointer.",
+        "text": "That's the law in question: eur-lex.europa.eu/eli/reg/2023.... I can't wait for January 1, 2027. Thank you for the pointer."
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "EricLaw 🎻",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:53ql7yabvtv6jjrhq7hcpot5/bafkreiax33jgfvlan44mlqlf2gv7tw3ny5l4i6t6shh55osxwnjno4zqwe",
+        "url": "https://bsky.app/profile/ericlawrence.com"
+      },
+      "url": "https://bsky.app/profile/ericlawrence.com/post/3mxh5jzf3u22p",
+      "published": "2026-10-09T14:07:55+00:00",
+      "published_ts": 1791554875,
+      "wm-received": "2026-10-10T08:12:43Z",
+      "wm-id": 2039212,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253A53ql7yabvtv6jjrhq7hcpot5%252Fapp.bsky.feed.post%252F3mxh5jzf3u22p",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "How’s the Kona?"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Tim Perry",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:ni5gg2ajesd2gxy2nk23m2uf/bafkreieajns5bp4lc747dkt7kkut55d7bu2d2vwjtwegncg5l5mht2gx34",
+        "url": "https://bsky.app/profile/pimterry.fyi"
+      },
+      "url": "https://bsky.app/profile/pimterry.fyi/post/3mxhrbhtnz226",
+      "published": "2026-10-09T20:01:03+00:00",
+      "published_ts": 1791576063,
+      "wm-received": "2026-10-10T08:12:42Z",
+      "wm-id": 2039210,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Ani5gg2ajesd2gxy2nk23m2uf%252Fapp.bsky.feed.post%252F3mxhrbhtnz226",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "For the EU at least, they have now regulated a bunch of this: <a href=\"https://www.autonext.co/tips-guides/ev-charger-card-payment-afir-ad-hoc-price\">www.autonext.co/tips-guides/...</a>. Does that cover it? Applies to all newly built fast chargers already, all existing fast chargers from 1 Jan 2027.",
+        "text": "For the EU at least, they have now regulated a bunch of this: www.autonext.co/tips-guides/.... Does that cover it? Applies to all newly built fast chargers already, all existing fast chargers from 1 Jan 2027."
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Dirk Primbs",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:cbql3zs7oz632roqilpoc5im/bafkreievkx6totegbrh3ln6vuqw2evwbdo2haf6h7uluzpk4kumiud2vci",
+        "url": "https://bsky.app/profile/dirkprimbs.bsky.social"
+      },
+      "url": "https://bsky.app/profile/dirkprimbs.bsky.social/post/3mxhd7z6hdc2w",
+      "published": "2026-10-09T15:49:42+00:00",
+      "published_ts": 1791560982,
+      "wm-received": "2026-10-10T08:12:32Z",
+      "wm-id": 2039209,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Acbql3zs7oz632roqilpoc5im%252Fapp.bsky.feed.post%252F3mxhd7z6hdc2w",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "Is it more of a mess or just an unfamiliar one? I mean, leaded, unleaded, high octane, low octane, diesel, regular, subscription cards, finding the next gas station; those are all complexities too, just the ones we know. 1/2"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "EricLaw 🎻",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:53ql7yabvtv6jjrhq7hcpot5/bafkreiax33jgfvlan44mlqlf2gv7tw3ny5l4i6t6shh55osxwnjno4zqwe",
+        "url": "https://bsky.app/profile/ericlawrence.com"
+      },
+      "url": "https://bsky.app/profile/ericlawrence.com/post/3mxh7la4hes2p",
+      "published": "2026-10-09T14:44:23+00:00",
+      "published_ts": 1791557063,
+      "wm-received": "2026-10-10T08:12:30Z",
+      "wm-id": 2039208,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253A53ql7yabvtv6jjrhq7hcpot5%252Fapp.bsky.feed.post%252F3mxh7la4hes2p",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "Awesome! I love my leaf, but it is mostly a city car. I have mixed feelings about my equinox EV."
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jan Lehnardt :couchdb:",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/d1630de1028ec04a96edcda4ee4b4be17305c7a4869045167c37e2124cbc7960.jpg",
+        "url": "https://narrativ.es/@janl"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-109728127893902070",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-10T07:26:51Z",
+      "wm-id": 2039195,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/109728127893902070",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jan Lehnardt :couchdb:",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/d1630de1028ec04a96edcda4ee4b4be17305c7a4869045167c37e2124cbc7960.jpg",
+        "url": "https://narrativ.es/@janl"
+      },
+      "url": "https://narrativ.es/@janl/117415312331760874",
+      "published": "2026-10-10T06:58:03+00:00",
+      "published_ts": 1791615483,
+      "wm-received": "2026-10-10T07:26:49Z",
+      "wm-id": 2039194,
+      "wm-source": "https://brid.gy/comment/mastodon/@tomayac@toot.cafe/117409532921770953/117415312386454827",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p><span class=\"h-card\"><a href=\"https://toot.cafe/@tomayac\" class=\"u-url\">@<span>tomayac</span></a></span> hehe been there :)</p>",
+        "text": "@tomayac hehe been there :)"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Steiner :chrome:",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/bfc6c0c43c877e20f52745c3797f2df8b399c676f61af5b28b562461b499f345.jpg",
+        "url": "https://toot.cafe/@tomayac"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#reblogged-by-55387",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T18:42:54Z",
+      "wm-id": 2039030,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117409532921770953/55387",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Steiner :chrome:",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/bfc6c0c43c877e20f52745c3797f2df8b399c676f61af5b28b562461b499f345.jpg",
+        "url": "https://toot.cafe/@tomayac"
+      },
+      "url": "https://toot.cafe/@tomayac/117410237918079704",
+      "published": "2026-10-09T09:27:34+00:00",
+      "published_ts": 1791538054,
+      "wm-received": "2026-10-09T18:42:52Z",
+      "wm-id": 2039027,
+      "wm-source": "https://brid.gy/comment/mastodon/@tomayac@toot.cafe/117409532921770953/117410237918079704",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p><span class=\"h-card\"><a href=\"https://mastodon.social/@Schepp\" class=\"u-url\">@<span>Schepp</span></a></span> <span class=\"h-card\"><a href=\"https://mastodon.social/@matthiasott\" class=\"u-url\">@<span>matthiasott</span></a></span> Wow, I didn't know that. We're sort of back to that with upper class restaurants in the middle of nowhere offering Tesla Superchargers. 🤷</p>",
+        "text": "@Schepp @matthiasott Wow, I didn't know that. We're sort of back to that with upper class restaurants in the middle of nowhere offering Tesla Superchargers. 🤷"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David Schmidt",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/75fbfcbb12e5ef50008005f4c079078dddda90beb54c8a1ab48b6647f2e5375d.jpg",
+        "url": "https://mastodon.social/@individual8"
+      },
+      "url": "https://mastodon.social/@individual8/117412370049944918",
+      "published": "2026-10-09T18:29:47+00:00",
+      "published_ts": 1791570587,
+      "wm-received": "2026-10-09T18:42:52Z",
+      "wm-id": 2039028,
+      "wm-source": "https://brid.gy/comment/mastodon/@tomayac@toot.cafe/117409532921770953/117412371484897121",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p><span class=\"h-card\"><a href=\"https://toot.cafe/@tomayac\" class=\"u-url\">@<span>tomayac</span></a></span> Thx for the insight. </p><p>I can see that it can happen, never happened to me though. Most probably because I drive a Tesla Model 3 since almost 5 years and am mostly charging at Tesla's own infrastructure on the road.</p><p>I know that Tesla became controversial in Germany in the last 3 years. Anyway, Tesla still provides the most advanced package for EV lovers. I would choose Tesla again...</p>",
+        "text": "@tomayac Thx for the insight. \n\nI can see that it can happen, never happened to me though. Most probably because I drive a Tesla Model 3 since almost 5 years and am mostly charging at Tesla's own infrastructure on the road.\n\nI know that Tesla became controversial in Germany in the last 3 years. Anyway, Tesla still provides the most advanced package for EV lovers. I would choose Tesla again..."
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David Schmidt",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/75fbfcbb12e5ef50008005f4c079078dddda90beb54c8a1ab48b6647f2e5375d.jpg",
+        "url": "https://mastodon.social/@individual8"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-110985686434029778",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T18:42:52Z",
+      "wm-id": 2039029,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/110985686434029778",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Adrian Marius Popa",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:quiratstqs5dkfmulyg2eare/bafkreifomyht7ihxpdplqfmeok3fzv3sdch5ihud46s4irmqowb4afntpy",
+        "url": "https://bsky.app/profile/mapopa.bsky.social"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#liked_by_did:plc:quiratstqs5dkfmulyg2eare",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T12:13:21Z",
+      "wm-id": 2038849,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Aquiratstqs5dkfmulyg2eare",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Adrian Marius Popa",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:quiratstqs5dkfmulyg2eare/bafkreifomyht7ihxpdplqfmeok3fzv3sdch5ihud46s4irmqowb4afntpy",
+        "url": "https://bsky.app/profile/mapopa.bsky.social"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#reposted_by_did:plc:quiratstqs5dkfmulyg2eare",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T12:13:21Z",
+      "wm-id": 2038850,
+      "wm-source": "https://brid.gy/repost/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Aquiratstqs5dkfmulyg2eare",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Chetwin",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:uea5qzucpwb2g5bd7jzp2d6t/bafkreie234pfhwqwt4s7fkq2trzqn4bzrnfry7gafuhciim36se3ybug4i",
+        "url": "https://bsky.app/profile/tchetwin.bsky.social"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#liked_by_did:plc:uea5qzucpwb2g5bd7jzp2d6t",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T12:13:20Z",
+      "wm-id": 2038847,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Auea5qzucpwb2g5bd7jzp2d6t",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Marvin Hagemeister",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:qxrys7rkfs6q6zg3gqhij4gp/bafkreidpwounrag7idbpxlk3hymzx3kvme436ir5kissgx2unmaz7arheu",
+        "url": "https://bsky.app/profile/marvinh.dev"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgdvlfopc2f#liked_by_did:plc:qxrys7rkfs6q6zg3gqhij4gp",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T12:13:20Z",
+      "wm-id": 2038848,
+      "wm-source": "https://brid.gy/like/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/did%253Aplc%253Aqxrys7rkfs6q6zg3gqhij4gp",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Steiner",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:no4ezg3ozd6jmlpq4lrmedux/bafkreicmv7yzwb4x2cenhssiopeos7unho7w3rapsv5tbgga4pv7ahprsm",
+        "url": "https://bsky.app/profile/tomayac.com"
+      },
+      "url": "https://bsky.app/profile/tomayac.com/post/3mxgj755rfs2r",
+      "published": "2026-10-09T08:03:55+00:00",
+      "published_ts": 1791533035,
+      "wm-received": "2026-10-09T12:13:19Z",
+      "wm-id": 2038845,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgj755rfs2r",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "If you ask me, only regulation can fix this. It's a total mess."
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Chetwin",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:uea5qzucpwb2g5bd7jzp2d6t/bafkreie234pfhwqwt4s7fkq2trzqn4bzrnfry7gafuhciim36se3ybug4i",
+        "url": "https://bsky.app/profile/tchetwin.bsky.social"
+      },
+      "url": "https://bsky.app/profile/tchetwin.bsky.social/post/3mxgk7unl722g",
+      "published": "2026-10-09T08:22:14+00:00",
+      "published_ts": 1791534134,
+      "wm-received": "2026-10-09T12:13:19Z",
+      "wm-id": 2038846,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Auea5qzucpwb2g5bd7jzp2d6t%252Fapp.bsky.feed.post%252F3mxgk7unl722g",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "All the videos I’ve watched make use of the Octopus Electroverse. Does that streamline any of these things? <a href=\"https://electroverse.com/\">electroverse.com</a>",
+        "text": "All the videos I’ve watched make use of the Octopus Electroverse. Does that streamline any of these things? electroverse.com"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Marvin Hagemeister",
+        "photo": "https://cdn.bsky.app/img/avatar/plain/did:plc:qxrys7rkfs6q6zg3gqhij4gp/bafkreidpwounrag7idbpxlk3hymzx3kvme436ir5kissgx2unmaz7arheu",
+        "url": "https://bsky.app/profile/marvinh.dev"
+      },
+      "url": "https://bsky.app/profile/marvinh.dev/post/3mxgiukbwi22e",
+      "published": "2026-10-09T07:58:00+00:00",
+      "published_ts": 1791532680,
+      "wm-received": "2026-10-09T12:13:18Z",
+      "wm-id": 2038844,
+      "wm-source": "https://brid.gy/comment/bluesky/did:plc:no4ezg3ozd6jmlpq4lrmedux/at%253A%252F%252Fdid%253Aplc%253Ano4ezg3ozd6jmlpq4lrmedux%252Fapp.bsky.feed.post%252F3mxgdvlfopc2f/at%253A%252F%252Fdid%253Aplc%253Aqxrys7rkfs6q6zg3gqhij4gp%252Fapp.bsky.feed.post%252F3mxgiukbwi22e",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "content": {
+        "text": "Agree, it always felt that it was stupid to not have the same cashless payment options as everywhere else. The app-fication really hurt adoption growth gravely. Could've been so much better from the start"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thomas Griesbaum",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/b25f5a7e4cfe35eda94e6b9ca3eafc980c96da7b30bd7f18ba594559c070f64d.jpg",
+        "url": "https://mstdn.io/@tencate"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#reblogged-by-109366763639086361",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T09:26:46Z",
+      "wm-id": 2038831,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117409532921770953/109366763639086361",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "thefathippy",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/03b56b2fdb2243fef75ac6760b452e9e78ff047e53424498d3ccaf0e02ed7abb.jpg",
+        "url": "https://mastodon.world/@thefathippy"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-109877224390346861",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T08:21:33Z",
+      "wm-id": 2038830,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/109877224390346861",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "R_Stieltjes",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/787f45409441b354f6bda646450777e067bf720ebb7d00f219ba7829b2fd3ea3.png",
+        "url": "https://mastodon.nl/@R_Stieltjes"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-111652082468043308",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T07:27:06Z",
+      "wm-id": 2038823,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/111652082468043308",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "david M brooke",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/225bee5b28e3b8c79c8b3f7626a74fa0ce3f1932c1abf72a823c753a7eb9aefd.jpg",
+        "url": "https://mastodon.green/@davidMbrooke"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#reblogged-by-109404550464821726",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T07:27:06Z",
+      "wm-id": 2038824,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117409532921770953/109404550464821726",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Cesare Pautasso",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/cbf2bb558d6b2c0e9f2068f0305a95baf844f0f268dbbf371e127ae645cbb999.jpg",
+        "url": "https://scholar.social/@pautasso"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#reblogged-by-55928",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T06:53:44Z",
+      "wm-id": 2038820,
+      "wm-source": "https://brid.gy/repost/mastodon/@tomayac@toot.cafe/117409532921770953/55928",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthias Ott",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/9b43cf4597a9f2b93cd61be3728cd124f5684dee709abdbd2633121ff273ba00.png",
+        "url": "https://mastodon.social/@matthiasott"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-31455",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T06:53:37Z",
+      "wm-id": 2038818,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/31455",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Christian \"Schepp\" Schaefer",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/3829f676c9cdd996595c6f1852d595f2edf2fbc599423eb30604b2a2eeea65ad.jpg",
+        "url": "https://mastodon.social/@Schepp"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-78136",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T06:53:37Z",
+      "wm-id": 2038819,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/78136",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Christian \"Schepp\" Schaefer",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/3829f676c9cdd996595c6f1852d595f2edf2fbc599423eb30604b2a2eeea65ad.jpg",
+        "url": "https://mastodon.social/@Schepp"
+      },
+      "url": "https://mastodon.social/@Schepp/117409563141519918",
+      "published": "2026-10-09T06:35:57+00:00",
+      "published_ts": 1791527757,
+      "wm-received": "2026-10-09T06:53:36Z",
+      "wm-id": 2038815,
+      "wm-source": "https://brid.gy/comment/mastodon/@tomayac@toot.cafe/117409532921770953/117409563297923592",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "photo": [
+        "https://files.mastodon.social/media_attachments/files/117/409/551/492/113/756/original/5950ad8fb23db870.jpg"
+      ],
+      "content": {
+        "html": "<p><span class=\"h-card\"><a href=\"https://toot.cafe/@tomayac\" class=\"u-url\">@<span>tomayac</span></a></span> found this a few years back at the Mercedes-Benz Museum (when visiting it together with <span class=\"h-card\"><a href=\"https://mastodon.social/@matthiasott\" class=\"u-url\">@<span>matthiasott</span></a></span> ♥️)</p>",
+        "text": "@tomayac found this a few years back at the Mercedes-Benz Museum (when visiting it together with @matthiasott ♥️)"
+      },
+      "in-reply-to": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "konsonantenboy",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/4e54297d77c583a98decd3c5b2644dd71e2f3ff2041f2a980bbac966c1f2203b.jpg",
+        "url": "https://hachyderm.io/@konsonantenboy"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-114403771256603211",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T06:53:36Z",
+      "wm-id": 2038816,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/114403771256603211",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Cesare Pautasso",
+        "photo": "https://avatars.webmention.io/assets.toot.cafe/cbf2bb558d6b2c0e9f2068f0305a95baf844f0f268dbbf371e127ae645cbb999.jpg",
+        "url": "https://scholar.social/@pautasso"
+      },
+      "url": "https://toot.cafe/@tomayac/117409532921770953#favorited-by-55928",
+      "published": null,
+      "published_ts": null,
+      "wm-received": "2026-10-09T06:53:36Z",
+      "wm-id": 2038817,
+      "wm-source": "https://brid.gy/like/mastodon/@tomayac@toot.cafe/117409532921770953/55928",
+      "wm-target": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
+      "wm-protocol": "webmention",
+      "like-of": "https://blog.tomayac.com/2026/10/08/refueling-an-ev-be-like/",
       "wm-property": "like-of",
       "wm-private": false
     }
