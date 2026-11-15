@@ -96,12 +96,12 @@ app.listen(PORT, HOST, () => console.log(`Listening on ${HOST}:${PORT}`));
 
 You can find the app, together with its `package-lock.json` file, in my
 [`tomayac/hello-node`](https://github.com/tomayac/hello-node) repository on
-GitHub. Fork it as the starting point for your own app. Locally, `npm start`
-runs the app at `http://localhost:3000/`, where the sun is `unknown`, since
-there's no Home Assistant to ask. The app reads all its settings from
-environment variables, and it listens on `0.0.0.0`. The latter matters in a
-container: an app that only listens on `localhost` is unreachable from outside
-the container.
+GitHub. Fork it as the starting point for your own app. Locally, `npm install`
+followed by `npm start` runs the app at `http://localhost:3000/`, where the sun
+is `unknown`, since there's no Home Assistant to ask. The app reads all its
+settings from environment variables, and it listens on `0.0.0.0`. The latter
+matters in a container: an app that only listens on `localhost` is unreachable
+from outside the container.
 
 ## The container environment
 
