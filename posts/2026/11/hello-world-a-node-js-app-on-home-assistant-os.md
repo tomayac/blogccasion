@@ -94,12 +94,14 @@ app.get('/', async (req, res) => {
 app.listen(PORT, HOST, () => console.log(`Listening on ${HOST}:${PORT}`));
 ```
 
-Run `npm install` once to create a `package-lock.json` file, and push all three
-files to a GitHub repository. Locally, `npm start` runs the app at
-`http://localhost:3000/`, where the sun is `unknown`, since there's no Home
-Assistant to ask. The app reads all its settings from environment variables, and
-it listens on `0.0.0.0`. The latter matters in a container: an app that only
-listens on `localhost` is unreachable from outside the container.
+You can find the app, together with its `package-lock.json` file, in my
+[`tomayac/hello-node`](https://github.com/tomayac/hello-node) repository on
+GitHub. Fork it as the starting point for your own app. Locally, `npm start`
+runs the app at `http://localhost:3000/`, where the sun is `unknown`, since
+there's no Home Assistant to ask. The app reads all its settings from
+environment variables, and it listens on `0.0.0.0`. The latter matters in a
+container: an app that only listens on `localhost` is unreachable from outside
+the container.
 
 ## The container environment
 
@@ -124,7 +126,9 @@ container:
 
 ## The wrapper
 
-The wrapper is a folder in the `/addons` directory of your Home Assistant:
+The wrapper is a folder in the `/addons` directory of your Home Assistant. You
+can also find its files in the `home-assistant` folder of the
+[`tomayac/hello-node`](https://github.com/tomayac/hello-node) repository.
 
 ```text
 /addons/hello_node/
@@ -156,7 +160,7 @@ ports_description:
 webui: http://[HOST]:[PORT:3000]/
 homeassistant_api: true
 options:
-  repository: https://github.com/your-name/hello-node.git
+  repository: https://github.com/tomayac/hello-node.git
   ref: main
   greeting: Hello, world
 schema:
@@ -300,11 +304,12 @@ click **Check for updates**. The app then shows up in a section called **Local
 apps**. Click it, click **Install**, and wait while the Supervisor builds the
 image.
 
-Once it's installed, enter the URL of your GitHub repository on the
-**Configuration** tab, start the app on the **Info** tab, and follow along on
-the **Log** tab. The first start takes a while, since `npm ci` runs on the
-device. As soon as the `Listening on 0.0.0.0:3000` line appears, **Open web UI**
-takes you to the app at `http://homeassistant.local:3000/`.
+Once it's installed, change `repository` on the **Configuration** tab to the URL
+of your fork, or keep the default to try my hello world app. Start the app on
+the **Info** tab, and follow along on the **Log** tab. The first start takes a
+while, since `npm ci` runs on the device. As soon as the
+`Listening on 0.0.0.0:3000` line appears, **Open web UI** takes you to the app
+at `http://homeassistant.local:3000/`.
 
 ## Updating
 
